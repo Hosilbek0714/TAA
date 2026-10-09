@@ -123,7 +123,7 @@ Password: zabbix
 Quyidagilarni ishlatish mumkin:
 
 ```bash
-docker exec zoddix-postgres-1 psql -U zabbix -d zabbix -c "select h.host,h.name,hi.ip,hi.port from hosts h left join interface hi on hi.hostid=h.hostid where h.host='core-sw01';"
+docker exec taa-db psql -U taa -d taa -c "select h.host,h.name,hi.ip,hi.port from hosts h left join interface hi on hi.hostid=h.hostid where h.host='core-sw01';"
 ```
 
 Kutilgan natija:
@@ -135,25 +135,25 @@ core-sw01 | Catalyst 3560G - core-sw01 | 192.168.99.2 | 161
 Triggerlarni tekshirish:
 
 ```bash
-docker exec zoddix-postgres-1 psql -U zabbix -d zabbix -c "select triggerid,description,status,priority from triggers where description ilike '%core-sw01%' order by triggerid;"
+docker exec taa-db psql -U taa -d taa -c "select triggerid,description,status,priority from triggers where description ilike '%core-sw01%' order by triggerid;"
 ```
 
 Router triggerini tekshirish:
 
 ```bash
-docker exec zoddix-postgres-1 psql -U zabbix -d zabbix -c "select triggerid,description,status,priority from triggers where description ilike '%edge-rt01%' order by triggerid;"
+docker exec taa-db psql -U taa -d taa -c "select triggerid,description,status,priority from triggers where description ilike '%edge-rt01%' order by triggerid;"
 ```
 
 Actionlarni tekshirish:
 
 ```bash
-docker exec zoddix-postgres-1 psql -U zabbix -d zabbix -c "select actionid,name,status from actions where name ilike '%core-sw01%' order by actionid;"
+docker exec taa-db psql -U taa -d taa -c "select actionid,name,status from actions where name ilike '%core-sw01%' order by actionid;"
 ```
 
 Router actionini tekshirish:
 
 ```bash
-docker exec zoddix-postgres-1 psql -U zabbix -d zabbix -c "select actionid,name,status from actions where name ilike '%edge-rt01%' order by actionid;"
+docker exec taa-db psql -U taa -d taa -c "select actionid,name,status from actions where name ilike '%edge-rt01%' order by actionid;"
 ```
 
 Status qiymati:

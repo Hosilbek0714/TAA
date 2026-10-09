@@ -3,16 +3,16 @@
 global $DB;
 
 $DB['TYPE']     = 'POSTGRESQL';
-$DB['SERVER']   = 'postgres';
+$DB['SERVER']   = 'taa-db';
 $DB['PORT']     = '5432';
-$DB['DATABASE'] = 'zabbix';
-$DB['USER']     = 'zabbix';
-$DB['PASSWORD'] = 'zabbix_password';
+$DB['DATABASE'] = 'taa';
+$DB['USER']     = 'taa';
+$DB['PASSWORD'] = 'taa_password';
 
 // Schema name. Used for PostgreSQL.
 $DB['SCHEMA'] = '';
 
-$ZBX_SERVER      = 'zabbix-server';
+$ZBX_SERVER      = 'taa-server';
 $ZBX_SERVER_PORT = '10051';
 $ZBX_SERVER_NAME = 'TAA Monitoring';
 

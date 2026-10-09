@@ -350,7 +350,7 @@ Switch# write memory
 - [ ] Switch'larda `show snmp host` natijasida `10.0.10.10` ko'rinmoqda
 - [ ] TAA UI da `Monitoring -> Latest data` dan switch metrikalari kelmoqda (CPU, interface bayt'lari)
 - [ ] Telegram bot test xabarini yubordi (`Administration -> Media types -> Telegram -> Test`)
-- [ ] `docker compose exec taa-db psql -U zabbix -d zabbix -c "select count(*) from leases;"` — qiymat > 0
+- [ ] `docker compose exec taa-db psql -U taa -d taa -c "select count(*) from leases;"` — qiymat > 0
 - [ ] Test loop (ikkita patchcord'ni TP-Link'ga ulash) yaratganda BPDU guard ishga tushadi va TAA alert keladi
 - [ ] Windows hostlarda `Get-Service "TAA Agent 2"` **`Running`**
 - [ ] Router'da `show event manager policy registered` natijasida `wan_brute_detect.tcl` ko'rinmoqda

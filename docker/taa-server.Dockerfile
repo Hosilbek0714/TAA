@@ -1,5 +1,5 @@
 # =============================================================================
-# TAA Server (custom) — Zabbix Server + Python + msmtp + TAA skriptlar
+# TAA Server (custom) — monitoring server + Python + msmtp + TAA skriptlar
 # -----------------------------------------------------------------------------
 # Maqsad: docker compose up -d qilingan zahoti TAA Action'lar ichidan
 #         scripts/ ichidagi Python va Bash skriptlar to'g'ridan-to'g'ri ishlasin.
@@ -42,6 +42,10 @@ RUN chmod 750 /usr/lib/zabbix/alertscripts/*    /usr/lib/zabbix/externalscripts/
  && chown -R zabbix:zabbix /usr/lib/zabbix/alertscripts /usr/lib/zabbix/externalscripts \
  && install -d -o zabbix -g zabbix -m 0750 /var/lib/taa \
  && install -d -o zabbix -g zabbix -m 0750 /var/log/taa
+
+# Tashqi yangilanish serveriga murojaat qilmaslik (interfeysdagi
+# "yangi versiya bor" bloki va tashqi havolalar chiqmaydi)
+RUN echo "AllowSoftwareUpdateCheck=0" >> /etc/zabbix/zabbix_server.conf
 
 # Vaqt zonasi
 ENV TZ=Asia/Tashkent

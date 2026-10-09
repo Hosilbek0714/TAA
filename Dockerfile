@@ -1,4 +1,4 @@
-# Zabbix veb imageni asos qilib olish
+# TAA veb-interfeysi (asos: rasmiy 7.0 veb image)
 FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest
 
 # Rootga o'tamiz (papkalar/COPY uchun)
@@ -18,6 +18,7 @@ COPY ui/include/gettextwrapper.inc.php /usr/share/zabbix/include/gettextwrapper.
 COPY ui/include/classes/html/CHostAvailability.php /usr/share/zabbix/include/classes/html/CHostAvailability.php
 COPY ui/include/classes/html/CHtmlPageHeader.php /usr/share/zabbix/include/classes/html/CHtmlPageHeader.php
 COPY ui/include/views/general.browserwarning.php /usr/share/zabbix/include/views/general.browserwarning.php
+COPY ui/include/classes/helpers/CMediatypeHelper.php /usr/share/zabbix/include/classes/helpers/CMediatypeHelper.php
 
 # gettext (PO -> MO uchun)
 RUN apk add --no-cache gettext
@@ -80,7 +81,7 @@ RUN set -eux; \
     if [ -f "$css" ]; then \
       { \
         echo ''; \
-        echo '/* Custom logo override - replace all default Zabbix logos */'; \
+        echo '/* TAA logo override */'; \
         echo 'div.zabbix-logo{background:url("assets/img/logo.svg") no-repeat !important;background-size:contain !important;width:114px !important;height:30px !important;}'; \
         echo 'div.zabbix-logo-sidebar{background:url("assets/img/logo-sidebar.svg") no-repeat !important;background-size:contain !important;width:91px !important;height:24px !important;}'; \
         echo 'div.zabbix-logo-sidebar-compact{background:url("assets/img/logo-compact.svg") no-repeat !important;background-size:contain !important;width:24px !important;height:24px !important;}'; \
@@ -90,6 +91,15 @@ RUN set -eux; \
   done
 
 RUN sed -i 's/en_US/uz_UZ/' /usr/share/zabbix/include/defines.inc.php
+
+# TAA: interfeysdagi "Zabbix" nomini butunlay olib tashlash.
+# Barcha COPY'lardan keyin turishi shart - repo'dan ko'chirilgan fayllar ham
+# qayta ishlanadi. perl faqat shu qadam uchun o'rnatiladi va o'chiriladi.
+COPY docker/taa-rebrand-web.sh /tmp/taa-rebrand-web.sh
+RUN apk add --no-cache --virtual .taa-rebrand perl \
+ && sh /tmp/taa-rebrand-web.sh \
+ && apk del .taa-rebrand \
+ && rm -f /tmp/taa-rebrand-web.sh
 
 # Ish muhitini sozlash va default userga qaytish
 WORKDIR /usr/share/zabbix

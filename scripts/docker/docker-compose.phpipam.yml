@@ -38,7 +38,7 @@ services:
     volumes:
       - phpipam-db:/var/lib/mysql
     networks:
-      - zabbix-network
+      - taa-network
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${PHPIPAM_DB_ROOT_PASS}"]
       interval: 10s
@@ -68,7 +68,7 @@ services:
     volumes:
       - phpipam-logo:/phpipam/css/images/logo
     networks:
-      - zabbix-network
+      - taa-network
 
   # ---------------------------------------------------------------------------
   # phpIPAM cron — ichki vazifalar (scan, status update) har 1 daqiqada
@@ -88,14 +88,14 @@ services:
       IPAM_DATABASE_NAME: "phpipam"
       SCAN_INTERVAL: "1m"
     networks:
-      - zabbix-network
+      - taa-network
 
 # -----------------------------------------------------------------------------
-# Tarmoq: asosiy docker-compose.yml dagi "zabbix-network" ga ulanamiz.
+# Tarmoq: asosiy docker-compose.yml dagi "taa-network" ga ulanamiz.
 # external: true — bu compose tarmoq yaratmaydi, mavjudini topib ulanadi.
 # -----------------------------------------------------------------------------
 networks:
-  zabbix-network:
+  taa-network:
     external: true
 
 # -----------------------------------------------------------------------------

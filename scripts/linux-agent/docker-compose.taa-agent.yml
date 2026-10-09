@@ -25,10 +25,10 @@ services:
       # Hostda 10053 -> konteynerda 10050 (Windows agenti bilan to'qnashmaslik uchun)
       - "10053:10050"
     networks:
-      - zabbix-network
+      - taa-network
     restart: unless-stopped
 
 networks:
   # Asosiy compose faylida e'lon qilingan tarmoqdan foydalanish
-  zabbix-network:
+  taa-network:
     external: true

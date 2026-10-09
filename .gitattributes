@@ -18,3 +18,8 @@
 /build-backend.xml -text
 database/elasticsearch/elasticsearch.map -text
 ui/tests/api_json/data/data_test.sql eol=lf
+
+# Windows skriptlari CRLF bilan qolsin
+*.bat text eol=crlf
+# Konteyner ichida ishlaydigan skriptlar LF bilan qolsin
+*.sh text eol=lf
