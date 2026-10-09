@@ -3,13 +3,13 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of GitHub repository monitoring by Zabbix via GitHub REST API and doesn't require any external scripts.
+This template is designed for the effortless deployment of GitHub repository monitoring by TAA via GitHub REST API and doesn't require any external scripts.
 
 For more details about GitHub REST API, refer to the [official documentation](https://docs.github.com/en/rest?apiVersion=2022-11-28).
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -74,7 +74,7 @@ Note: Update intervals and timeouts for script items can be changed individually
 |Name|Description|Default|
 |----|-----------|-------|
 |{$GITHUB.API.URL}|<p>Set the API URL here.</p>|`https://api.github.com/`|
-|{$GITHUB.USER_AGENT}|<p>The user agent that is used in headers for HTTP requests.</p>|`Zabbix/7.4`|
+|{$GITHUB.USER_AGENT}|<p>The user agent that is used in headers for HTTP requests.</p>|`TAA/7.4`|
 |{$GITHUB.API_VERSION}|<p>The API version that is used in headers for HTTP requests.</p>|`2022-11-28`|
 |{$GITHUB.REPO.OWNER}|<p>Set the repository owner here.</p>|`<SET THE REPO OWNER>`|
 |{$GITHUB.REPO.NAME}|<p>Set the repository name here.</p>|`<SET THE REPO NAME>`|
@@ -215,5 +215,5 @@ Note: Update intervals and timeouts for script items can be changed individually
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

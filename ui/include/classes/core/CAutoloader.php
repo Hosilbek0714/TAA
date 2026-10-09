@@ -15,7 +15,7 @@
 
 
 /**
- * The Zabbix autoloader class.
+ * The TAA autoloader class.
  */
 class CAutoloader {
 

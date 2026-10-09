@@ -2,7 +2,7 @@
 
 ## 📋 OVERVIEW
 
-Bu dokumentatsiya Zabbix monitoring sistemasini TAA (Telecom Analytics & Automation) brendiga o'tkazish jarayonini batafsil tushuntiradi. Rebrand jarayoni barcha frontend komponentlar, backend constants, localization fayllar va container konfiguratsiyalarini qamrab oladi.
+Bu dokumentatsiya TAA monitoring sistemasini TAA (Telecom Analytics & Automation) brendiga o'tkazish jarayonini batafsil tushuntiradi. Rebrand jarayoni barcha frontend komponentlar, backend constants, localization fayllar va container konfiguratsiyalarini qamrab oladi.
 
 ## 🔍 CONTAINER ARXITEKTURA TAHLILI
 
@@ -13,7 +13,7 @@ Bu dokumentatsiya Zabbix monitoring sistemasini TAA (Telecom Analytics & Automat
 - **Assets yo'li:** `/usr/share/zabbix/assets/`
 - **PHP handler:** FastCGI orqali
 
-### Zabbix Web Struktura
+### TAA Web Struktura
 ```
 /usr/share/zabbix/
 ├── include/           # PHP backend constants
@@ -33,7 +33,7 @@ Bu dokumentatsiya Zabbix monitoring sistemasini TAA (Telecom Analytics & Automat
 **Maqsad:** UI elements, page titles, CSS classes yangilash
 
 ### Phase 3: Localization
-**Maqsad:** Barcha tillardagi "Zabbix" ni "TAA" ga almashtirish
+**Maqsad:** Barcha tillardagi "TAA" ni "TAA" ga almashtirish
 
 ### Phase 4: Assets & Branding
 **Maqsad:** Logo, favicon, branding elements yangilash
@@ -56,7 +56,7 @@ define('ZABBIX_EXPORT_VERSION', '7.4');
 define('ZABBIX_DB_VERSION', 7030048);
 define('ZABBIX_COPYRIGHT_FROM', '2001');
 define('ZABBIX_COPYRIGHT_TO', '2025');
-define('ZBX_DEFAULT_AGENT', 'Zabbix');
+define('ZBX_DEFAULT_AGENT', 'TAA');
 
 // YANGI ⬇️
 define('TAA_VERSION', '7.4.0rc2');
@@ -91,7 +91,7 @@ define('ZBX_STYLE_TAA_LOGO_SIDEBAR_COMPACT', 'taa-logo-sidebar-compact');
 **111-qator:**
 ```php
 // ESKI ⬇️
-$page_title .= isset($page['title']) ? $page['title'] : _('Zabbix');
+$page_title .= isset($page['title']) ? $page['title'] : _('TAA');
 
 // YANGI ⬇️
 $page_title .= isset($page['title']) ? $page['title'] : _('TAA');
@@ -152,8 +152,8 @@ Docker ichida qo'llab-quvvatlanadigan tillar:
 
 ```po
 # ESKI ⬇️
-msgid "Zabbix"
-msgstr "Zabbix"
+msgid "TAA"
+msgstr "TAA"
 
 # YANGI ⬇️
 msgid "TAA"
@@ -185,7 +185,7 @@ msgfmt frontend.po -o frontend.mo
 ```html
 <!-- ESKI ⬇️ -->
 <meta name="Author" content="Zabbix SIA" />
-<meta name="application-name" content="Zabbix" />
+<meta name="application-name" content="TAA" />
 
 <!-- YANGI ⬇️ -->
 <meta name="Author" content="TAA Team" />
@@ -246,7 +246,7 @@ git commit -m "Backup before rebranding"
 ### Step 3: Page Titles
 
 1. `ui/include/page_header.php` ochish
-2. `_('Zabbix')` ni `_('TAA')` ga o'zgartirish
+2. `_('TAA')` ni `_('TAA')` ga o'zgartirish
 
 ### Step 4: CSS va Assets
 

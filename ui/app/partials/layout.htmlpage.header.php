@@ -36,7 +36,7 @@ if (!empty($DB['DB'])) {
 		->addStyle(getTriggerSeverityCss())
 		->addStyle(getTriggerStatusCss());
 
-	// Perform Zabbix server check only for standard pages.
+	// Perform TAA server check only for standard pages.
 	if ($data['config']['server_check_interval']) {
 		$scripts[] = 'servercheck.js';
 	}

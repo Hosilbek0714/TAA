@@ -598,7 +598,7 @@
                     </master_item>
                 </item>
                 <item>
-                    <name>Zabbix internal1</name>
+                    <name>TAA internal1</name>
                     <type>INTERNAL</type>
                     <key>zabbix[boottime]</key>
                 </item>
@@ -765,7 +765,7 @@
                     <interface_ref>if1</interface_ref>
                 </item>
                 <item>
-                    <name>Zabbix trapper1</name>
+                    <name>TAA trapper1</name>
                     <type>TRAP</type>
                     <key>trap</key>
                     <delay>10s</delay>

@@ -15,7 +15,7 @@
 #include "config.h"
 
 #ifdef HAVE_SQLITE3
-#	error SQLite is not supported as a main Zabbix database backend.
+#	error SQLite is not supported as a main TAA database backend.
 #endif
 
 #include "postinit/postinit.h"
@@ -119,12 +119,12 @@ static const char	*usage_message[] = {
 };
 
 static const char	*help_message[] = {
-	"The core daemon of Zabbix software.",
+	"The core daemon of TAA software.",
 	"",
 	"Options:",
 	"  -c --config config-file        Path to the configuration file",
 	"                                 (default: \"" DEFAULT_CONFIG_FILE "\")",
-	"  -f --foreground                Run Zabbix server in foreground",
+	"  -f --foreground                Run TAA server in foreground",
 	"  -R --runtime-control runtime-option   Perform administrative functions",
 	"",
 	"    Runtime control options:",
@@ -342,7 +342,7 @@ static char	*config_java_gateway		= NULL;
 static int	config_java_gateway_port	= ZBX_DEFAULT_GATEWAY_PORT;
 static char	*config_ssh_key_location	= NULL;
 
-/* how often Zabbix server sends configuration data to passive proxy, in seconds */
+/* how often TAA server sends configuration data to passive proxy, in seconds */
 static int	config_proxyconfig_frequency	= 10;
 static int	config_proxydata_frequency	= 1;	/* 1s */
 
@@ -1255,7 +1255,7 @@ static void	zbx_on_exit(int ret, void *on_exit_args)
 
 	zbx_unload_modules();
 
-	zabbix_log(LOG_LEVEL_INFORMATION, "Zabbix Server stopped. Zabbix %s (revision %s).",
+	zabbix_log(LOG_LEVEL_INFORMATION, "TAA Server stopped. TAA %s (revision %s).",
 			ZABBIX_VERSION, ZABBIX_REVISION);
 
 	if (NULL != on_exit_args)
@@ -1508,7 +1508,7 @@ static int	zbx_check_db(void)
 out:
 	if (SUCCEED != ret)
 	{
-		zabbix_log(LOG_LEVEL_INFORMATION, "Zabbix Server stopped. Zabbix %s (revision %s).",
+		zabbix_log(LOG_LEVEL_INFORMATION, "TAA Server stopped. TAA %s (revision %s).",
 				ZABBIX_VERSION, ZABBIX_REVISION);
 		zbx_db_version_info_clear(&db_version_info);
 	}
@@ -1517,7 +1517,7 @@ out:
 
 /******************************************************************************
  *                                                                            *
- * Purpose: save Zabbix server status to database                             *
+ * Purpose: save TAA server status to database                             *
  *                                                                            *
  ******************************************************************************/
 static void	zbx_db_save_server_status(void)
@@ -2305,7 +2305,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 
 	if (0 != (flags & ZBX_TASK_FLAG_FOREGROUND))
 	{
-		printf("Starting Zabbix Server. Zabbix %s (revision %s).\nPress Ctrl+C to exit.\n\n",
+		printf("Starting TAA Server. TAA %s (revision %s).\nPress Ctrl+C to exit.\n\n",
 				ZABBIX_VERSION, ZABBIX_REVISION);
 	}
 
@@ -2383,7 +2383,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 #	define TLS_FEATURE_STATUS	" NO"
 #endif
 
-	zabbix_log(LOG_LEVEL_INFORMATION, "Starting Zabbix Server. Zabbix %s (revision %s).",
+	zabbix_log(LOG_LEVEL_INFORMATION, "Starting TAA Server. TAA %s (revision %s).",
 			ZABBIX_VERSION, ZABBIX_REVISION);
 
 	zabbix_log(LOG_LEVEL_INFORMATION, "****** Enabled features ******");
@@ -2464,14 +2464,14 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 
 	if (ZBX_DB_UNKNOWN == (db_type = zbx_db_get_database_type()))
 	{
-		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": database is not a Zabbix database",
+		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": database is not a TAA database",
 				zbx_db_config->dbname);
 		goto out;
 	}
 	else if (ZBX_DB_SERVER != db_type)
 	{
 		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": its \"users\" table is empty (is this the"
-				" Zabbix proxy database?)", zbx_db_config->dbname);
+				" TAA proxy database?)", zbx_db_config->dbname);
 		goto out;
 	}
 

@@ -151,7 +151,7 @@ class testFormFilterHosts extends testFormFilter {
 			[
 				[
 					'Name' => 'Test name',
-					'Host groups' => ['Zabbix servers'],
+					'Host groups' => ['TAA servers'],
 					'IP' => '192.168.10.1',
 					'DNS' => 'test.name',
 					'Port' => '10055',

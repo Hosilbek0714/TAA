@@ -15,7 +15,7 @@
 
 
 /**
- * A class for Zabbix re-branding.
+ * A class for TAA re-branding.
  */
 class CBrandHelper {
 

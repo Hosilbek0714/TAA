@@ -27,13 +27,13 @@ class testPageQueueOverview extends CLegacyWebTest {
 		$this->zbxTestTextPresent(['Items', '5 seconds', '10 seconds', '30 seconds', '1 minute', '5 minutes', 'More than 10 minutes']);
 		$this->zbxTestTextPresent(
 			[
-				'Zabbix agent',
-				'Zabbix agent (active)',
+				'TAA agent',
+				'TAA agent (active)',
 				'Simple check',
 				'SNMPv2 agent',
 				'SNMPv2 agent',
 				'SNMPv3 agent',
-				'Zabbix internal',
+				'TAA internal',
 				'External check',
 				'Database monitor',
 				'IPMI agent',

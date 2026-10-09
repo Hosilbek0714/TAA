@@ -3,14 +3,14 @@
 
 ## Overview
 
-This template is designed for monitoring Nextcloud by HTTP via Zabbix, and it works without any external scripts.
+This template is designed for monitoring Nextcloud by HTTP via TAA, and it works without any external scripts.
 Nextcloud is a suite of client-server software for creating and using file hosting services.
 For more information, see the [`official documentation`](https://docs.nextcloud.com/server/latest/developer_manual/client_apis/OCS/ocs-api-overview.html#)
 
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -133,5 +133,5 @@ The user must be included in the Administrators group.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

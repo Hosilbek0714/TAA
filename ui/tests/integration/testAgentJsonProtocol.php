@@ -511,7 +511,7 @@ class testAgentJsonProtocol extends CIntegrationTest {
 	}
 
 	/**
-	 * Test Zabbix Get functionality
+	 * Test TAA Get functionality
 	 *
 	 * @required-components agent, agent_3.0, agent2
 	 */

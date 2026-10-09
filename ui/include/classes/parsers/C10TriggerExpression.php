@@ -61,7 +61,7 @@ class C10TriggerExpression {
 	public $error_pos;
 
 	/**
-	 * An array of trigger functions like {Zabbix server:agent.ping.last(0)}
+	 * An array of trigger functions like {TAA server:agent.ping.last(0)}
 	 * The array isn't unique. Same functions can repeat.
 	 *
 	 * @deprecated  use result tokens instead
@@ -234,15 +234,15 @@ class C10TriggerExpression {
 	 *
 	 * Examples:
 	 *   expression:
-	 *     {Zabbix server:agent.ping.last(0)}=1 and {TRIGGER.VALUE}={$TRIGGER.VALUE}
+	 *     {TAA server:agent.ping.last(0)}=1 and {TRIGGER.VALUE}={$TRIGGER.VALUE}
 	 *   results:
 	 *     $this->isValid : true
 	 *     $this->error : ''
 	 *     $this->expressions : array(
 	 *       0 => array(
-	 *         'expression' => '{Zabbix server:agent.ping.last(0)}',
+	 *         'expression' => '{TAA server:agent.ping.last(0)}',
 	 *         'pos' => 0,
-	 *         'host' => 'Zabbix server',
+	 *         'host' => 'TAA server',
 	 *         'item' => 'agent.ping',
 	 *         'function' => 'last(0)',
 	 *         'functionName' => 'last',

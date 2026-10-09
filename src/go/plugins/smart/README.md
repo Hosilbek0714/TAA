@@ -2,7 +2,7 @@
 
 ## Overview
 
-The Zabbix SMART plugin for `zabbix_agent2` provides monitoring of storage devices' health and performance. It utilizes the `smartctl` utility to collect and report SMART metrics, helping to identify potential hardware issues before they result in failures.
+The TAA SMART plugin for `zabbix_agent2` provides monitoring of storage devices' health and performance. It utilizes the `smartctl` utility to collect and report SMART metrics, helping to identify potential hardware issues before they result in failures.
 
 ## Supported versions
 - **Smartmontools**: Version 7.1 or later is required to provide the `smartctl` utility for SMART data retrieval.
@@ -11,7 +11,7 @@ The Zabbix SMART plugin for `zabbix_agent2` provides monitoring of storage devic
 
 - The SMART plugin can be configured through the `zabbix_agent2` configuration file (e.g., `zabbix_agent2.conf`) or a dedicated plugin configuration file (e.g., `smart.conf`).
 
-- Grant Zabbix agent 2 super/admin user privileges for smartctl utility.
+- Grant TAA agent 2 super/admin user privileges for smartctl utility.
 
 ### Configuration Parameters
 

@@ -566,7 +566,7 @@
                     </application>
                     <delay>1m</delay>
                     <attempts>1</attempts>
-                    <agent>Zabbix</agent>
+                    <agent>TAA</agent>
                     <http_proxy/>
                     <variables/>
                     <headers/>

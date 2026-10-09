@@ -5,7 +5,7 @@
 	"name": "Item navigator",
 	"namespace": "ItemNavigator",
 	"version": "1.0",
-	"author": "Zabbix",
+	"author": "TAA",
 	"description": "Displays item hierarchy with ability to control other widgets based on selected item.",
 	"url": "web_interface/frontend_sections/dashboards/widgets/item_navigator",
 	"widget": {

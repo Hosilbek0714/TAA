@@ -19,7 +19,7 @@
 #########################################
 
 # This is an embedded perl SNMP trapper receiver designed for sending data to the server.
-# The receiver will pass the received SNMP traps to Zabbix server or proxy running on the
+# The receiver will pass the received SNMP traps to TAA server or proxy running on the
 # same machine. Please configure the server/proxy accordingly.
 #
 # Read more about using embedded perl with Net-SNMP:
@@ -133,6 +133,6 @@ sub zabbix_receiver
 }
 
 NetSNMP::TrapReceiver::register("all", \&zabbix_receiver) or
-	die "failed to register Zabbix SNMP trap receiver\n";
+	die "failed to register TAA SNMP trap receiver\n";
 
-print STDOUT "Loaded Zabbix SNMP trap receiver\n";
+print STDOUT "Loaded TAA SNMP trap receiver\n";

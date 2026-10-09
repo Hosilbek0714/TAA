@@ -22,7 +22,7 @@
 /* the variable keeps timeout setting for item processing */
 static int	item_timeout = 0;
 
-/* module SHOULD define internal functions as static and use a naming pattern different from Zabbix internal */
+/* module SHOULD define internal functions as static and use a naming pattern different from TAA internal */
 /* symbols (zbx_*) and loadable module API functions (zbx_module_*) to avoid conflicts                       */
 static int	dummy_ping(AGENT_REQUEST *request, AGENT_RESULT *result);
 static int	dummy_echo(AGENT_REQUEST *request, AGENT_RESULT *result);
@@ -42,7 +42,7 @@ static zbx_metric_t keys[] =
  * Purpose: returns version number of the module interface                    *
  *                                                                            *
  * Return value: ZBX_MODULE_API_VERSION - version of module.h module is       *
- *               compiled with, in order to load module successfully Zabbix   *
+ *               compiled with, in order to load module successfully TAA   *
  *               MUST be compiled with the same version of this header file   *
  *                                                                            *
  ******************************************************************************/
@@ -256,7 +256,7 @@ static void	dummy_history_log_cb(const ZBX_HISTORY_LOG *history, int history_num
 
 /******************************************************************************
  *                                                                            *
- * Purpose: returns a set of module functions Zabbix will call to export      *
+ * Purpose: returns a set of module functions TAA will call to export      *
  *          different types of historical data                                *
  *                                                                            *
  * Return value: structure with callback function pointers (can be NULL if    *

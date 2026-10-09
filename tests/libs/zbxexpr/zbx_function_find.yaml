@@ -178,7 +178,7 @@ out:
 ---
 test case: "function with LLD function 1"
 in:
-  param: '{{#VALUE}.regsub([0-9]+, \0)}+avg("Zabbix server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)}'
+  param: '{{#VALUE}.regsub([0-9]+, \0)}+avg("TAA server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)}'
 out:
   return: 'SUCCEED'
   func_pos: 30
@@ -187,7 +187,7 @@ out:
 ---
 test case: "function with LLD function 2"
 in:
-  param: '{{#VALUE}.iregsub([0-9]+, \0)}+avg("Zabbix server:trap[\"{{#VALUE}.iregsub([0-9]+, \0)}\"]",600) + {{#VALUE}.iregsub([0-9], \0)}'
+  param: '{{#VALUE}.iregsub([0-9]+, \0)}+avg("TAA server:trap[\"{{#VALUE}.iregsub([0-9]+, \0)}\"]",600) + {{#VALUE}.iregsub([0-9], \0)}'
 out:
   return: 'SUCCEED'
   func_pos: 31
@@ -196,7 +196,7 @@ out:
 ---
 test case: "function with LLD function 3"
 in:
-  param: '{{#VALUE}.fmttime(%B, -1M)}+avg("Zabbix server:trap[\"{{#VALUE}.fmttime(%B, -1M)}\"]",600) + {{#VALUE}.fmttime(%B, -1M)}'
+  param: '{{#VALUE}.fmttime(%B, -1M)}+avg("TAA server:trap[\"{{#VALUE}.fmttime(%B, -1M)}\"]",600) + {{#VALUE}.fmttime(%B, -1M)}'
 out:
   return: 'SUCCEED'
   func_pos: 28
@@ -205,7 +205,7 @@ out:
 ---
 test case: "function with LLD function 4"
 in:
-  param: '{{#VALUE}.fmtnum(2)}+avg("Zabbix server:trap[\"{{#VALUE}.fmtnum(2)}\"]",600) + {{#VALUE}.fmtnum(2)}'
+  param: '{{#VALUE}.fmtnum(2)}+avg("TAA server:trap[\"{{#VALUE}.fmtnum(2)}\"]",600) + {{#VALUE}.fmtnum(2)}'
 out:
   return: 'SUCCEED'
   func_pos: 21
@@ -214,7 +214,7 @@ out:
 ---
 test case: "function with LLD function in macro context"
 in:
-  param: '{$MACRO:"{{#VALUE}.regsub([0-9]+, \0)}"}+avg("Zabbix server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)}'
+  param: '{$MACRO:"{{#VALUE}.regsub([0-9]+, \0)}"}+avg("TAA server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)}'
 out:
   return: 'SUCCEED'
   func_pos: 41
@@ -223,7 +223,7 @@ out:
 ---
 test case: "function with LLD function in macro context"
 in:
-  param: '{$MACRO:"{{#VALUE}.iregsub([0-9]+, \0)}"}+avg("Zabbix server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)}'
+  param: '{$MACRO:"{{#VALUE}.iregsub([0-9]+, \0)}"}+avg("TAA server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)}'
 out:
   return: 'SUCCEED'
   func_pos: 42
@@ -232,7 +232,7 @@ out:
 ---
 test case: "function with LLD function double escaped"
 in:
-  param: avg("Zabbix server:trap[\"{{#VALUE}.regsub(\\"[0-9]+\\", \0)}\"]",600)'
+  param: avg("TAA server:trap[\"{{#VALUE}.regsub(\\"[0-9]+\\", \0)}\"]",600)'
 out:
   return: 'SUCCEED'
   func_pos: 0
@@ -241,7 +241,7 @@ out:
 ---
 test case: "Check that opening of LLD function macro is skipped if no macro"
 in:
-  param: '{{#avg("Zabbix server:trap[{#VALUE}]",600)'
+  param: '{{#avg("TAA server:trap[{#VALUE}]",600)'
 out:
   return: 'SUCCEED'
   func_pos: 3
@@ -250,7 +250,7 @@ out:
 ---
 test case: "Check that emptynested LLD function macro is skipped if no macro"
 in:
-  param: '{{#}avg("Zabbix server:trap[{#VALUE}]",600)'
+  param: '{{#}avg("TAA server:trap[{#VALUE}]",600)'
 out:
   return: 'SUCCEED'
   func_pos: 4
@@ -487,7 +487,7 @@ out:
 ---
 test case: "function with LLD function, string comparison"
 in:
-  param: '{{#VALUE}.regsub([0-9]+, \0)}+avg("Zabbix server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)} = "{#VALUE}"'
+  param: '{{#VALUE}.regsub([0-9]+, \0)}+avg("TAA server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)} = "{#VALUE}"'
 out:
   return: 'SUCCEED'
   func_pos: 30
@@ -496,7 +496,7 @@ out:
 ---
 test case: "function with LLD function in macro context, string comparison"
 in:
-  param: '{$MACRO:"{{#VALUE}.regsub([0-9]+, \0)}"}+avg("Zabbix server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)} <> "{#VALUE} {#VALUE}"'
+  param: '{$MACRO:"{{#VALUE}.regsub([0-9]+, \0)}"}+avg("TAA server:trap[\"{{#VALUE}.regsub([0-9]+, \0)}\"]",600) + {{#VALUE}.regsub([0-9], \0)} <> "{#VALUE} {#VALUE}"'
 out:
   return: 'SUCCEED'
   func_pos: 41
@@ -505,7 +505,7 @@ out:
 ---
 test case: "function with LLD function double escaped, string comparison"
 in:
-  param: avg("Zabbix server:trap[\"{{#VALUE}.regsub(\\"[0-9]+\\", \0)}\"]",600) + "12"="11"'
+  param: avg("TAA server:trap[\"{{#VALUE}.regsub(\\"[0-9]+\\", \0)}\"]",600) + "12"="11"'
 out:
   return: 'SUCCEED'
   func_pos: 0
@@ -514,7 +514,7 @@ out:
 ---
 test case: "Check that opening of LLD function macro is skipped if no macro, string comparison"
 in:
-  param: '{{#avg("Zabbix server:trap[{#VALUE}]",600) + ("12"=22)'
+  param: '{{#avg("TAA server:trap[{#VALUE}]",600) + ("12"=22)'
 out:
   return: 'SUCCEED'
   func_pos: 3

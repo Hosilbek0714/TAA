@@ -3,14 +3,14 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Microsoft SharePoint monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Microsoft SharePoint monitoring by TAA via HTTP and doesn't require any external scripts.
 
 SharePoint includes a Representational State Transfer (REST) service. Developers can perform read operations from their SharePoint Add-ins, solutions, and client applications, using REST web technologies and standard Open Data Protocol (OData) syntax. Details in
 https://docs.microsoft.com/ru-ru/sharepoint/dev/sp-add-ins/get-to-know-the-sharepoint-rest-service?tabs=csom
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -58,7 +58,7 @@ It is recommended to fill in the values of the filter macros to avoid getting re
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MS SharePoint: Error getting directory structure.|<p>Error getting directory structure. Check the Zabbix server log for more details.</p>|`last(/Microsoft SharePoint by HTTP/sharepoint.get_dir.status)<>200`|Warning|**Manual close**: Yes|
+|MS SharePoint: Error getting directory structure.|<p>Error getting directory structure. Check the TAA server log for more details.</p>|`last(/Microsoft SharePoint by HTTP/sharepoint.get_dir.status)<>200`|Warning|**Manual close**: Yes|
 |MS SharePoint: Server responds slowly to API request||`last(/Microsoft SharePoint by HTTP/sharepoint.get_dir.time)>2000`|Warning|**Manual close**: Yes|
 |MS SharePoint: Bad health score||`last(/Microsoft SharePoint by HTTP/sharepoint.health_score)>"{$SHAREPOINT.MAX_HEALTH_SCORE}"`|Average||
 
@@ -86,5 +86,5 @@ It is recommended to fill in the values of the filter macros to avoid getting re
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

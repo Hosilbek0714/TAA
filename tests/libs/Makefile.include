@@ -1,4 +1,4 @@
-# This file contains dependencies for public Zabbix libraries.
+# This file contains dependencies for public TAA libraries.
 # To get such list for a particular library - run "grep_dependencies.sh <public library name e.g. zbxeval>" .
 # Ignore Windows dependencies for now.
 # Libraries that depend only on zbxcommon - are listed as they are.

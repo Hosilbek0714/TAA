@@ -1,8 +1,8 @@
-# AGENTS.md - Developer Guide for Zabbix/TAA Monitoring Platform
+# AGENTS.md - Developer Guide for TAA/TAA Monitoring Platform
 
 ## Project Overview
 
-This is a **Zabbix monitoring platform** that is being customized and rebranded as **TAA (Telecom Analytics & Automation / Tizimshunoslik va Analitik Asboblar)** with full Uzbek language localization support.
+This is a **TAA monitoring platform** that is being customized and rebranded as **TAA (Telecom Analytics & Automation / Tizimshunoslik va Analitik Asboblar)** with full Uzbek language localization support.
 
 **Core Technology Stack:**
 - **Backend (C)**: Core monitoring engine, server, proxy, and agent components
@@ -77,10 +77,10 @@ This is a **Zabbix monitoring platform** that is being customized and rebranded 
 ### Documentation
 
 - `README.md` - Project overview
-- `ZABBIX_TO_TAA_REBRANDING_DOCUMENTATION.md` - Rebranding guide
-- `ZABBIX_UZBEK_LOCALIZATION.md` - Uzbek localization documentation
+- `TAA_REBRANDING_DOCUMENTATION.md` - Rebranding guide
+- `TAA_UZBEK_LOCALIZATION.md` - Uzbek localization documentation
 - `TAA_FRONTEND_REBRANDING_GUIDE.md` - Frontend branding guide
-- `ZABBIX_DOCKER_BRANDING_DOCUMENTATION.md` - Docker branding guide
+- `TAA_DOCKER_BRANDING_DOCUMENTATION.md` - Docker branding guide
 - `man/` - Manual pages for command-line tools
 
 ## Key Development Guidelines
@@ -153,7 +153,7 @@ This is a **Zabbix monitoring platform** that is being customized and rebranded 
 
 ### Branding (TAA Project Specific)
 
-- Replace "Zabbix" with "TAA" in:
+- Replace "TAA" with "TAA" in:
   - PHP constants (`ui/include/defines.inc.php`)
   - CSS class names and styles
   - Page titles and meta tags
@@ -329,14 +329,14 @@ phpunit --testsuite api_json
 - **Official Documentation**: https://www.zabbix.com/documentation/
 - **API Documentation**: https://www.zabbix.com/documentation/current/en/manual/api
 - **Git Repository**: Check commit history for examples
-- **Community**: Zabbix forums and mailing lists
+- **Community**: TAA forums and mailing lists
 
 ## Project-Specific Notes (TAA)
 
 This is a **rebranding and localization project**. Key objectives:
 
 1. **Uzbek Localization**: Complete translation to Uzbek (Latin and Cyrillic)
-2. **TAA Rebranding**: Replace all Zabbix references with TAA branding
+2. **TAA Rebranding**: Replace all TAA references with TAA branding
 3. **Custom Identity**: Unique logos, icons, and visual identity
 4. **Docker Deployment**: Containerized setup for easy deployment
 
@@ -347,7 +347,7 @@ This is a **rebranding and localization project**. Key objectives:
 - Docker integration: ✅ Complete
 
 When making changes, ensure:
-- Maintain compatibility with base Zabbix features
+- Maintain compatibility with base TAA features
 - Preserve upgradeability
 - Document TAA-specific modifications
 - Test with both Uzbek and other languages

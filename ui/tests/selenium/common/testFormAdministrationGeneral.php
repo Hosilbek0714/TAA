@@ -124,7 +124,7 @@ class testFormAdministrationGeneral extends CWebTest {
 					$form->fill(
 						[
 							'Group for discovered hosts' => 'Empty group',
-							'User group for database down message' => 'Zabbix administrators'
+							'User group for database down message' => 'TAA administrators'
 						]
 					);
 				}

@@ -349,7 +349,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with same other host identity and different PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,
@@ -366,7 +366,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with same host identity and PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'Connections to host' => 'PSK',
@@ -381,7 +381,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with different host identity and same PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'Connections to host' => 'PSK',
@@ -397,7 +397,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with same proxy identity and different PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,
@@ -414,7 +414,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with same proxy identity and same PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,
@@ -429,7 +429,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with different proxy identity and same PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,
@@ -445,7 +445,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with same autoregistration identity and different PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'Connections to host' => 'PSK',
@@ -462,7 +462,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with same autoregistration identity and same PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,
@@ -477,7 +477,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with different autoregistration identity and same PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,
@@ -492,7 +492,7 @@ class testPSKEncryption extends CWebTest {
 					'url' => 'zabbix.php?action=host.list',
 					'fields' => [
 						'Host name' => 'Host with unique identity and PSK',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'psk_fields' => [
 						'id:tls_in_psk' => true,

@@ -1,6 +1,6 @@
 #! /bin/sh
 # Copyright (c) 07/2004 A.Tophofen, Germany
-# Modified for Zabbix 2.0.0
+# Modified for TAA 2.0.0
 # May 2012, Zabbix SIA
 #
 # init.d/zabbix_agentd

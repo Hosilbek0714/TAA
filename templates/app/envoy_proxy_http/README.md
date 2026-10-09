@@ -3,14 +3,14 @@
 
 ## Overview
 
-The template to monitor Envoy Proxy by Zabbix that works without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+The template to monitor Envoy Proxy by TAA that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
 Template `Envoy Proxy by HTTP` - collects metrics by HTTP agent from  metrics endpoint {$ENVOY.METRICS.PATH} endpoint (default: /stats/prometheus).
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -36,7 +36,7 @@ Also, see the Macros section for a list of macros used to set trigger values.
 |Name|Description|Default|
 |----|-----------|-------|
 |{$ENVOY.URL}|<p>Instance URL.</p>|`http://localhost:9901`|
-|{$ENVOY.METRICS.PATH}|<p>The path Zabbix will scrape metrics in prometheus format from.</p>|`/stats/prometheus`|
+|{$ENVOY.METRICS.PATH}|<p>The path TAA will scrape metrics in prometheus format from.</p>|`/stats/prometheus`|
 |{$ENVOY.CERT.MIN}|<p>Minimum number of days before certificate expiration used for trigger expression.</p>|`7`|
 
 ### Items
@@ -79,7 +79,7 @@ Also, see the Macros section for a list of macros used to set trigger values.
 |----|-----------|----------|--------|--------------------------------|
 |Envoy Proxy: Server state is not live||`last(/Envoy Proxy by HTTP/envoy.server.state) > 0`|Average||
 |Envoy Proxy: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Envoy Proxy by HTTP/envoy.server.uptime)<10m`|Info|**Manual close**: Yes|
-|Envoy Proxy: Failed to fetch metrics data|<p>Zabbix has not received data for items for the last 10 minutes.</p>|`nodata(/Envoy Proxy by HTTP/envoy.server.uptime,10m)=1`|Warning|**Manual close**: Yes|
+|Envoy Proxy: Failed to fetch metrics data|<p>TAA has not received data for items for the last 10 minutes.</p>|`nodata(/Envoy Proxy by HTTP/envoy.server.uptime,10m)=1`|Warning|**Manual close**: Yes|
 |Envoy Proxy: SSL certificate expires soon|<p>Please check certificate. Less than {$ENVOY.CERT.MIN} days left until the next certificate being managed will expire.</p>|`last(/Envoy Proxy by HTTP/envoy.server.days_until_first_cert_expiring)<{$ENVOY.CERT.MIN}`|Warning||
 
 ### LLD rule Cluster metrics discovery
@@ -152,5 +152,5 @@ Also, see the Macros section for a list of macros used to set trigger values.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

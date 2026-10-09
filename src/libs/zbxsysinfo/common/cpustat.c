@@ -102,7 +102,7 @@ static int	refresh_kstat(ZBX_CPUS_STAT_DATA *pcpus)
 	{
 		if (cpu_over_count_prev < cpu_over_count)
 		{
-			zabbix_log(LOG_LEVEL_WARNING, "%d new processor(s) added. Restart Zabbix agentd to enable"
+			zabbix_log(LOG_LEVEL_WARNING, "%d new processor(s) added. Restart TAA agentd to enable"
 					" collecting new data.", cpu_over_count - cpu_over_count_prev);
 			cpu_over_count_prev = cpu_over_count;
 		}
@@ -144,7 +144,7 @@ int	init_cpu_collector(ZBX_CPUS_STAT_DATA *pcpus)
 	/* report counters "\Processor Information(0, n)" with 0 <= n <= 31 and "\Processor Information(1,n)". */
 
 	/* Microsoft documentation clearly says that, systems with fewer than 64 logical processors always     */
-	/* have a single processor group, Group 0. However, Zabbix users reported a rare bug, when there are   */
+	/* have a single processor group, Group 0. However, TAA users reported a rare bug, when there are   */
 	/* two processor groups on systems with 64 or less logical CPUs. This resulted in having the           */
 	/* "\Processor(n)" counters for only one processor group out of two. The actual root cause of this bug */
 	/* is not known. However, a similar case was described at stackoverflow.com, and the root cause there  */

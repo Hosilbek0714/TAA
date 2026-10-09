@@ -1,11 +1,11 @@
 # TAA Frontend O'zbek Tiliga O'tkazish Yo'riqnomasi
 
-Bu dokumentatsiya Zabbix frontend'ini **to'liq o'zbek tiliga** o'tkazish va "Zabbix" nomini "TAA" ga o'zgartirish bo'yicha batafsil yo'riqnoma.
+Bu dokumentatsiya TAA frontend'ini **to'liq o'zbek tiliga** o'tkazish va "TAA" nomini "TAA" ga o'zgartirish bo'yicha batafsil yo'riqnoma.
 
 ## 📋 Asosiy Maqsad
 
 Client va admin ko'radigan **barcha matnlar 100% o'zbek tilida**:
-- "Zabbix" → "TAA" ga o'zgartirish
+- "TAA" → "TAA" ga o'zgartirish
 - "TAA Monitoring System" → "TAA Monitor Tizimi"
 - "Login" → "Kirish", "Password" → "Parol"
 - "Dashboard" → "Boshqaruv Paneli"
@@ -18,7 +18,7 @@ Client va admin ko'radigan **barcha matnlar 100% o'zbek tilida**:
 
 ### 1. KIRISH SAHIFASI (Login Page)
 **Fayl:** `ui/include/views/general.login.php`
-- **Muammo:** Footer'da "Powered by Zabbix" inglizcha ko'rinadi
+- **Muammo:** Footer'da "Powered by TAA" inglizcha ko'rinadi
 - **Maqsad:** "TAA Monitor Tizimi" o'zbekcha ko'rsatish
 - **Yechim:** Brand configuration va localization orqali
 
@@ -51,28 +51,28 @@ Client va admin ko'radigan **barcha matnlar 100% o'zbek tilida**:
 
 Barcha matnlar **100% o'zbekcha**:
 ```po
-msgid "Zabbix server is running"
+msgid "TAA server is running"
 msgstr "TAA server ishlayapti"
 
-msgid "Zabbix server version"  
+msgid "TAA server version"  
 msgstr "TAA server versiyasi"
 
-msgid "Zabbix frontend version"
+msgid "TAA frontend version"
 msgstr "TAA frontend versiyasi"
 
 msgid "Welcome to"
 msgstr "Xush kelibsiz"
 
-msgid "Zabbix server name"
+msgid "TAA server name"
 msgstr "TAA server nomi"
 
-msgid "Congratulations! You have successfully installed Zabbix frontend."
+msgid "Congratulations! You have successfully installed TAA frontend."
 msgstr "Tabriklaymiz! Siz TAA frontendni muvaffaqiyatli o'rnatdingiz."
 
-msgid "Global scripts on Zabbix server"
+msgid "Global scripts on TAA server"
 msgstr "TAA serverdagi global skriptlar"
 
-msgid "Powered by Zabbix"
+msgid "Powered by TAA"
 msgstr "TAA Monitor Tizimi"
 
 msgid "Monitoring System"
@@ -396,7 +396,7 @@ sed -i 's/msgstr "System information"/msgstr "Tizim ma\047lumotlari"/g' ui/local
 sed -i 's/msgstr "Database"/msgstr "Ma\047lumotlar bazasi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 
 # 5. TAA branding
-sed -i 's/msgstr "Powered by Zabbix"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+sed -i 's/msgstr "Powered by TAA"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 sed -i 's/msgstr "TAA Monitoring System"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 ```
 
@@ -486,7 +486,7 @@ services:
 // ui/local/conf/brand.conf.php
 <?php
 return [
-    'BRAND_FOOTER' => 'TAA Monitor Tizimi',  // "Powered by Zabbix" ni olib tashlash
+    'BRAND_FOOTER' => 'TAA Monitor Tizimi',  // "Powered by TAA" ni olib tashlash
     'BRAND_HELP_URL' => 'https://taa.uz/hujjatlar/',
     'BRAND_SIDEBAR_FOOTER' => false
 ];
@@ -547,9 +547,9 @@ $link = array_key_exists('BRAND_HELP_URL', $config)
 # Har bir til uchun (masalan uz_UZ):
 # ui/locale/uz_UZ/LC_MESSAGES/frontend.po faylida:
 
-# "Zabbix" ni "TAA" ga almashtirish
-sed -i 's/msgstr "Zabbix server/msgstr "TAA server/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
-sed -i 's/msgstr ".*Zabbix frontend/msgstr "TAA frontend/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+# "TAA" ni "TAA" ga almashtirish
+sed -i 's/msgstr "TAA server/msgstr "TAA server/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+sed -i 's/msgstr ".*TAA frontend/msgstr "TAA frontend/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 
 # Monitoring System → Monitor Tizimi
 sed -i 's/msgstr ".*Monitoring System"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
@@ -613,7 +613,7 @@ RUN rm -rf /tmp/cache/* /usr/share/zabbix/local/cache/*
 ### 1. Kirish Sahifasi Sinovi
 - Browser'da `/` ga kirish
 - Footer'da "TAA Monitor Tizimi" o'zbekcha ko'rinishi kerak
-- "Powered by Zabbix" inglizcha yozuv ko'rinmasligi kerak
+- "Powered by TAA" inglizcha yozuv ko'rinmasligi kerak
 - "Tizimga kirish" tugmasi o'zbekcha bo'lishi kerak
 
 ### 2. O'rnatish Ustasi Sinovi
@@ -630,7 +630,7 @@ RUN rm -rf /tmp/cache/* /usr/share/zabbix/local/cache/*
 
 ### 4. Til O'zgartirish Sinovi
 - Til o'zgartirish (o'zbekcha, inglizcha, ruscha)
-- Barcha tillarda "TAA" ko'rinishi kerak, "Zabbix" yo'q bo'lishi kerak
+- Barcha tillarda "TAA" ko'rinishi kerak, "TAA" yo'q bo'lishi kerak
 - O'zbek tili standart til sifatida ochilishi kerak
 
 ### 5. Docker Container Sinovi
@@ -641,9 +641,9 @@ RUN rm -rf /tmp/cache/* /usr/share/zabbix/local/cache/*
 ## 🚨 EHTIYOT VA XAVFSIZLIK CHORALARI
 
 1. **Zaxira Nusxa:** O'zgartirish oldidan barcha fayllardan zaxira nusxa oling
-2. **Ma'lumotlar Bazasi:** Database'da "Zabbix" nomlari o'zgarmasligi kerak
-3. **API Javoblari:** API response'larda "Zabbix" o'zgarmasligi kerak  
-4. **Log Fayllari:** Server log'larida "Zabbix" o'zgarmasligi kerak
+2. **Ma'lumotlar Bazasi:** Database'da "TAA" nomlari o'zgarmasligi kerak
+3. **API Javoblari:** API response'larda "TAA" o'zgarmasligi kerak  
+4. **Log Fayllari:** Server log'larida "TAA" o'zgarmasligi kerak
 5. **Sinov:** Har bir o'zgarishdan keyin to'liq sinov o'tkazing
 6. **Performance:** Tizim ishlash tezligi pasaymasligi kerak
 

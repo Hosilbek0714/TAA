@@ -675,7 +675,7 @@ class testFormAction extends CLegacyWebTest {
 						'NNTP',
 						'IMAP',
 						'TCP',
-						'Zabbix agent',
+						'TAA agent',
 						'SNMPv1 agent',
 						'SNMPv2 agent',
 						'SNMPv3 agent',
@@ -1213,17 +1213,17 @@ class testFormAction extends CLegacyWebTest {
 					'conditions' => [
 						[
 							'Type' => CFormElement::RELOADABLE_FILL('Host name'),
-							'Value' => 'Zabbix'
+							'Value' => 'TAA'
 						],
 						[
 							'Type' => CFormElement::RELOADABLE_FILL('Host metadata'),
 							'Operator'=> 'does not contain',
-							'Value' => 'Zabbix'
+							'Value' => 'TAA'
 						]
 					],
 					'expected conditions' => [
-						'A' => 'Host name contains Zabbix',
-						'B' => 'Host metadata does not contain Zabbix'
+						'A' => 'Host name contains TAA',
+						'B' => 'Host metadata does not contain TAA'
 					],
 					'operations' => [
 						[
@@ -1274,7 +1274,7 @@ class testFormAction extends CLegacyWebTest {
 						]
 					],
 					'expected operations' => [
-						'Send message to users: Admin (Zabbix Administrator) via Email'
+						'Send message to users: Admin (TAA Administrator) via Email'
 					]
 				]
 			],
@@ -1334,7 +1334,7 @@ class testFormAction extends CLegacyWebTest {
 					],
 					'expected operations' => [
 						'Send message to user groups: Selenium user group via all media',
-						'Run script "Reboot" on Zabbix server'
+						'Run script "Reboot" on TAA server'
 					]
 				]
 			],
@@ -1450,7 +1450,7 @@ class testFormAction extends CLegacyWebTest {
 
 			if (array_key_exists('operations', $data)) {
 				$expected_operations = [
-					'Send message to users: Admin (Zabbix Administrator) via Email',
+					'Send message to users: Admin (TAA Administrator) via Email',
 					'Run script "Reboot" on current host'
 				];
 				if (array_key_exists('expected operations', $data)) {
@@ -1531,8 +1531,8 @@ class testFormAction extends CLegacyWebTest {
 		$operation_form->getField('Send to media type')->select('SMS');
 		$operation_form->submit();
 		$this->zbxTestAssertElementText("//tr[@id='operations_0']//td[@class='wordbreak']",
-			"Send message to users: Admin (Zabbix Administrator) via SMS ".
-			"Send message to user groups: Enabled debug mode, Zabbix administrators via SMS");
+			"Send message to users: Admin (TAA Administrator) via SMS ".
+			"Send message to user groups: Enabled debug mode, TAA administrators via SMS");
 
 		$this->zbxTestClickXpathWait('//table[@id="op-table"]//button[text()="Add"]');
 		$this->zbxTestWaitUntilElementVisible(WebDriverBy::xpath('//div[@class="overlay-dialogue-footer"]//button[text()="Add"]'));
@@ -1541,18 +1541,18 @@ class testFormAction extends CLegacyWebTest {
 		// add target current host
 		$this->zbxTestCheckboxSelect('operation-command-chst');
 
-		// add target host Zabbix server
+		// add target host TAA server
 		$this->zbxTestClickButtonMultiselect('operation_opcommand_hst__hostid');
 		$this->zbxTestLaunchOverlayDialog('Hosts');
 		$this->zbxTestClickButtonMultiselect('popup_host_group');
 		$this->zbxTestLaunchOverlayDialog('Host groups');
-		$this->query('link:Zabbix servers')->one()->waitUntilClickable()->click();
+		$this->query('link:TAA servers')->one()->waitUntilClickable()->click();
 
 		$this->zbxTestClickLinkTextWait('Simple form test host');
-		// add target group Zabbix servers
+		// add target group TAA servers
 		$this->zbxTestClickButtonMultiselect('operation_opcommand_grp__groupid');
 		$this->zbxTestLaunchOverlayDialog('Host groups');
-		$this->zbxTestClickLinkTextWait('Zabbix servers');
+		$this->zbxTestClickLinkTextWait('TAA servers');
 
 		$operation_form->submit();
 
@@ -1562,12 +1562,12 @@ class testFormAction extends CLegacyWebTest {
 
 		$this->zbxTestWaitUntilElementClickable(WebDriverBy::className('js-add'));
 		$this->zbxTestAssertElementText("//tr[@id='operations_0']//td[@class='wordbreak']",
-			"Send message to users: Admin (Zabbix Administrator) via SMS ".
-			"Send message to user groups: Enabled debug mode, Zabbix administrators via SMS");
+			"Send message to users: Admin (TAA Administrator) via SMS ".
+			"Send message to user groups: Enabled debug mode, TAA administrators via SMS");
 		$this->zbxTestAssertElementText("//tr[@id='operations_1']//td[@class='wordbreak']",
 			"Run script \"Reboot\" on current host ".
 			"Run script \"Reboot\" on hosts: Simple form test host ".
-			"Run script \"Reboot\" on host groups: Zabbix servers");
+			"Run script \"Reboot\" on host groups: TAA servers");
 
 		$this->zbxTestClickXpathWait('//table[@id="op-table"]//button[text()="Add"]');
 		$this->zbxTestWaitUntilElementVisible(WebDriverBy::xpath('//div[@class="overlay-dialogue-footer"]//button[text()="Add"]'));
@@ -1578,12 +1578,12 @@ class testFormAction extends CLegacyWebTest {
 		$operation_form->submit();
 		$this->query('xpath://tr[@id="operations_2"]')->waitUntilVisible();
 		$this->zbxTestAssertElementText("//tr[@id='operations_0']//td[@class='wordbreak']",
-			"Send message to users: Admin (Zabbix Administrator) via SMS ".
-			"Send message to user groups: Enabled debug mode, Zabbix administrators via SMS");
+			"Send message to users: Admin (TAA Administrator) via SMS ".
+			"Send message to user groups: Enabled debug mode, TAA administrators via SMS");
 		$this->zbxTestAssertElementText("//tr[@id='operations_1']//td[@class='wordbreak']",
 			"Run script \"Reboot\" on current host ".
 			"Run script \"Reboot\" on hosts: Simple form test host ".
-			"Run script \"Reboot\" on host groups: Zabbix servers");
+			"Run script \"Reboot\" on host groups: TAA servers");
 		$this->zbxTestAssertElementText("//tr[@id='operations_2']//td[@class='wordbreak']",
 			"Run script \"Reboot\" on current host");
 		$this->zbxTestAssertElementText("//tr[@id='operations_2']//td", '1 - 2');

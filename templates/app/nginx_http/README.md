@@ -3,8 +3,8 @@
 
 ## Overview
 
-This template is developed to monitor Nginx by Zabbix that works without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+This template is developed to monitor Nginx by TAA that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
 The template collects metrics by polling the module [`ngx_http_stub_status_module`](https://nginx.ru/en/docs/http/ngx_http_stub_status_module.html) with HTTP agent remotely:
 
@@ -17,7 +17,7 @@ Reading: 6 Writing: 179 Waiting: 106
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -26,7 +26,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -39,7 +39,7 @@ Example configuration of Nginx:
 ```text
 location = /basic_status {
     stub_status;
-    allow <IP of your Zabbix server/proxy>;
+    allow <IP of your TAA server/proxy>;
     deny all;
 }
 ```
@@ -88,7 +88,7 @@ Reading: 6 Writing: 179 Waiting: 106
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Nginx: Failed to fetch stub status page|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`find(/Nginx by HTTP/nginx.get_stub_status,,"iregexp","HTTP\\/[\\d.]+\\s+200")=0 or nodata(/Nginx by HTTP/nginx.get_stub_status,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Nginx: Service is down</li></ul>|
+|Nginx: Failed to fetch stub status page|<p>TAA has not received any data for items for the last 30 minutes.</p>|`find(/Nginx by HTTP/nginx.get_stub_status,,"iregexp","HTTP\\/[\\d.]+\\s+200")=0 or nodata(/Nginx by HTTP/nginx.get_stub_status,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Nginx: Service is down</li></ul>|
 |Nginx: Service is down||`last(/Nginx by HTTP/net.tcp.service[http,"{$NGINX.STUB_STATUS.HOST}","{$NGINX.STUB_STATUS.PORT}"])=0`|Average|**Manual close**: Yes|
 |Nginx: Service response time is too high||`min(/Nginx by HTTP/net.tcp.service.perf[http,"{$NGINX.STUB_STATUS.HOST}","{$NGINX.STUB_STATUS.PORT}"],5m)>{$NGINX.RESPONSE_TIME.MAX.WARN}`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Nginx: Service is down</li></ul>|
 |Nginx: High connections drop rate|<p>The rate of dropping connections has been greater than {$NGINX.DROP_RATE.MAX.WARN} for the last 5 minutes.</p>|`min(/Nginx by HTTP/nginx.connections.dropped.rate,5m) > {$NGINX.DROP_RATE.MAX.WARN}`|Warning|**Depends on**:<br><ul><li>Nginx: Service is down</li></ul>|
@@ -98,5 +98,5 @@ Reading: 6 Writing: 179 Waiting: 106
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

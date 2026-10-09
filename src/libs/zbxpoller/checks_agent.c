@@ -24,7 +24,7 @@
 
 /******************************************************************************
  *                                                                            *
- * Purpose: retrieves data from Zabbix agent                                  *
+ * Purpose: retrieves data from TAA agent                                  *
  *                                                                            *
  * Parameters: item             - [IN] item we are interested in              *
  *             config_source_ip - [IN]                                        *

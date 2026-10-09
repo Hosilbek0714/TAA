@@ -21,7 +21,7 @@ use SCIM\ScimApiService;
 class ServiceProviderConfig extends ScimApiService {
 
 	/**
-	 * Returns array with information that is or is not supported by Zabbix SCIM model.
+	 * Returns array with information that is or is not supported by TAA SCIM model.
 	 *
 	 * @return array
 	 */

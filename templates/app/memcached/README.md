@@ -1,13 +1,13 @@
 
-# Memcached by Zabbix agent 2
+# Memcached by TAA agent 2
 
 ## Overview
 
-This template is designed for the effortless deployment of Memcached monitoring by Zabbix via Zabbix agent 2 and doesn't require any external scripts.
+This template is designed for the effortless deployment of Memcached monitoring by TAA via TAA agent 2 and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -38,8 +38,8 @@ Test availability: `zabbix_get -s memcached-host -k memcached.ping`
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get status||Zabbix agent|memcached.stats["{$MEMCACHED.CONN.URI}"]|
-|Ping||Zabbix agent|memcached.ping["{$MEMCACHED.CONN.URI}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Get status||TAA agent|memcached.stats["{$MEMCACHED.CONN.URI}"]|
+|Ping||TAA agent|memcached.ping["{$MEMCACHED.CONN.URI}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
 |Max connections|<p>Max number of concurrent connections</p>|Dependent item|memcached.connections.max<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.max_connections`</p></li><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
 |Maximum number of bytes|<p>Maximum number of bytes allowed in cache. You can adjust this setting via a config file or the command line while starting your Memcached server.</p>|Dependent item|memcached.config.limit_maxbytes<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.limit_maxbytes`</p></li><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
 |CPU sys|<p>System CPU consumed by the Memcached server</p>|Dependent item|memcached.cpu.sys<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.rusage_system`</p></li></ul>|
@@ -69,18 +69,18 @@ Test availability: `zabbix_get -s memcached-host -k memcached.ping`
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Memcached: Service is down||`last(/Memcached by Zabbix agent 2/memcached.ping["{$MEMCACHED.CONN.URI}"])=0`|Average|**Manual close**: Yes|
-|Memcached: Failed to fetch info data|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`nodata(/Memcached by Zabbix agent 2/memcached.cpu.sys,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Memcached: Service is down</li></ul>|
-|Memcached: Too many queued connections|<p>The max number of connections is reached and a new connection had to wait in the queue as a result.</p>|`min(/Memcached by Zabbix agent 2/memcached.connections.queued.rate,5m)>{$MEMCACHED.CONN.QUEUED.MAX.WARN}`|Warning||
-|Memcached: Too many throttled connections|<p>Number of times a client connection was throttled is too high.<br>When sending GETs in batch mode and the connection contains too many requests (limited by -R parameter) the connection might be throttled to prevent starvation.</p>|`min(/Memcached by Zabbix agent 2/memcached.connections.throttled.rate,5m)>{$MEMCACHED.CONN.THROTTLED.MAX.WARN}`|Warning||
-|Memcached: Total number of connected clients is too high|<p>When the number of connections reaches the value of the "max_connections" parameter, new connections will be rejected.</p>|`min(/Memcached by Zabbix agent 2/memcached.connections.current,5m)/last(/Memcached by Zabbix agent 2/memcached.connections.max)*100>{$MEMCACHED.CONN.PRC.MAX.WARN}`|Warning||
-|Memcached: Version has changed|<p>The Memcached version has changed. Acknowledge to close the problem manually.</p>|`last(/Memcached by Zabbix agent 2/memcached.version,#1)<>last(/Memcached by Zabbix agent 2/memcached.version,#2) and length(last(/Memcached by Zabbix agent 2/memcached.version))>0`|Info|**Manual close**: Yes|
-|Memcached: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Memcached by Zabbix agent 2/memcached.uptime)<10m`|Info|**Manual close**: Yes|
-|Memcached: Memory usage is too high||`min(/Memcached by Zabbix agent 2/memcached.stats.bytes,5m)/last(/Memcached by Zabbix agent 2/memcached.config.limit_maxbytes)*100>{$MEMCACHED.MEM.PUSED.MAX.WARN}`|Warning||
+|Memcached: Service is down||`last(/Memcached by TAA agent 2/memcached.ping["{$MEMCACHED.CONN.URI}"])=0`|Average|**Manual close**: Yes|
+|Memcached: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Memcached by TAA agent 2/memcached.cpu.sys,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Memcached: Service is down</li></ul>|
+|Memcached: Too many queued connections|<p>The max number of connections is reached and a new connection had to wait in the queue as a result.</p>|`min(/Memcached by TAA agent 2/memcached.connections.queued.rate,5m)>{$MEMCACHED.CONN.QUEUED.MAX.WARN}`|Warning||
+|Memcached: Too many throttled connections|<p>Number of times a client connection was throttled is too high.<br>When sending GETs in batch mode and the connection contains too many requests (limited by -R parameter) the connection might be throttled to prevent starvation.</p>|`min(/Memcached by TAA agent 2/memcached.connections.throttled.rate,5m)>{$MEMCACHED.CONN.THROTTLED.MAX.WARN}`|Warning||
+|Memcached: Total number of connected clients is too high|<p>When the number of connections reaches the value of the "max_connections" parameter, new connections will be rejected.</p>|`min(/Memcached by TAA agent 2/memcached.connections.current,5m)/last(/Memcached by TAA agent 2/memcached.connections.max)*100>{$MEMCACHED.CONN.PRC.MAX.WARN}`|Warning||
+|Memcached: Version has changed|<p>The Memcached version has changed. Acknowledge to close the problem manually.</p>|`last(/Memcached by TAA agent 2/memcached.version,#1)<>last(/Memcached by TAA agent 2/memcached.version,#2) and length(last(/Memcached by TAA agent 2/memcached.version))>0`|Info|**Manual close**: Yes|
+|Memcached: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Memcached by TAA agent 2/memcached.uptime)<10m`|Info|**Manual close**: Yes|
+|Memcached: Memory usage is too high||`min(/Memcached by TAA agent 2/memcached.stats.bytes,5m)/last(/Memcached by TAA agent 2/memcached.config.limit_maxbytes)*100>{$MEMCACHED.MEM.PUSED.MAX.WARN}`|Warning||
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

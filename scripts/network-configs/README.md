@@ -156,7 +156,7 @@ core-sw01# more flash:/export.log
 edge-rt01# more flash:/brute.log
 ```
 
-TAA serverda esa SNMP trap'lar `snmptrapd` log fayliga (yoki Zabbix
+TAA serverda esa SNMP trap'lar `snmptrapd` log fayliga (yoki TAA
 trapper itemiga) tushishi kerak:
 
 ```bash

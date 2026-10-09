@@ -1,16 +1,16 @@
 
-# MongoDB node by Zabbix agent 2
+# MongoDB node by TAA agent 2
 
 ## Overview
 
-The template to monitor single MongoDB server by Zabbix that work without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+The template to monitor single MongoDB server by TAA that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
-`MongoDB node by Zabbix Agent 2` — collects metrics by polling zabbix-agent2.
+`MongoDB node by TAA Agent 2` — collects metrics by polling zabbix-agent2.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,13 +19,13 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 1. Setup and configure zabbix-agent2 compiled with the MongoDB monitoring plugin.
 2. Set the {$MONGODB.CONNSTRING} such as <protocol(host:port)> or named session.
-3. Set the user name and password in host macros ({$MONGODB.USER}, {$MONGODB.PASSWORD}) if you want to override parameters from the Zabbix agent configuration file.
+3. Set the user name and password in host macros ({$MONGODB.USER}, {$MONGODB.PASSWORD}) if you want to override parameters from the TAA agent configuration file.
 
 **Note**, depending on the number of DBs and collections discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.NOT_MATCHES}.
 
@@ -53,12 +53,12 @@ Test availability: `zabbix_get -s mongodb.node -k 'mongodb.ping["{$MONGODB.CONNS
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get server status|<p>Returns a database's state.</p>|Zabbix agent|mongodb.server.status["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
-|Get Replica Set status|<p>Returns the replica set status from the point of view of the member where the method is run.</p>|Zabbix agent|mongodb.rs.status["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
-|Get oplog stats|<p>Returns status of the replica set, using data polled from the oplog.</p>|Zabbix agent|mongodb.oplog.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
-|Ping|<p>Test if a connection is alive or not.</p>|Zabbix agent|mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
-|Get collections usage stats|<p>Returns usage statistics for each collection.</p>|Zabbix agent|mongodb.collections.usage["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
-|MongoDB version|<p>Version of the MongoDB server.</p>|Zabbix agent|mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `12h`</p></li></ul>|
+|Get server status|<p>Returns a database's state.</p>|TAA agent|mongodb.server.status["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Get Replica Set status|<p>Returns the replica set status from the point of view of the member where the method is run.</p>|TAA agent|mongodb.rs.status["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Get oplog stats|<p>Returns status of the replica set, using data polled from the oplog.</p>|TAA agent|mongodb.oplog.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Ping|<p>Test if a connection is alive or not.</p>|TAA agent|mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
+|Get collections usage stats|<p>Returns usage statistics for each collection.</p>|TAA agent|mongodb.collections.usage["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|MongoDB version|<p>Version of the MongoDB server.</p>|TAA agent|mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `12h`</p></li></ul>|
 |Uptime|<p>Number of seconds that the mongod process has been active.</p>|Dependent item|mongodb.uptime<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.uptime`</p></li></ul>|
 |Asserts: message, rate|<p>The number of message assertions raised per second.</p><p>Check the log file for more information about these messages.</p>|Dependent item|mongodb.asserts.msg.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.asserts.msg`</p></li><li>Change per second</li></ul>|
 |Asserts: user, rate|<p>The number of "user asserts" that have occurred per second.</p><p>These are errors that user may generate, such as out of disk space or duplicate key.</p>|Dependent item|mongodb.asserts.user.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.asserts.user`</p></li><li>Change per second</li></ul>|
@@ -102,25 +102,25 @@ Test availability: `zabbix_get -s mongodb.node -k 'mongodb.ping["{$MONGODB.CONNS
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MongoDB node: Connection to MongoDB is unavailable|<p>Connection to MongoDB instance is currently unavailable.</p>|`last(/MongoDB node by Zabbix agent 2/mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"])=0`|High||
-|MongoDB node: Version has changed|<p>MongoDB version has changed. Acknowledge to close the problem manually.</p>|`last(/MongoDB node by Zabbix agent 2/mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"],#1)<>last(/MongoDB node by Zabbix agent 2/mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"],#2) and length(last(/MongoDB node by Zabbix agent 2/mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]))>0`|Info|**Manual close**: Yes|
-|MongoDB node: mongod process has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MongoDB node by Zabbix agent 2/mongodb.uptime)<10m`|Info|**Manual close**: Yes|
-|MongoDB node: Failed to fetch info data|<p>Zabbix has not received data for items for the last 10 minutes</p>|`nodata(/MongoDB node by Zabbix agent 2/mongodb.uptime,10m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MongoDB node: Connection to MongoDB is unavailable</li></ul>|
-|MongoDB node: Total number of open connections is too high|<p>Too few available connections.<br>If MongoDB runs low on connections, in may not be able to handle incoming requests in a timely manner.</p>|`min(/MongoDB node by Zabbix agent 2/mongodb.connections.current,5m)/(last(/MongoDB node by Zabbix agent 2/mongodb.connections.available)+last(/MongoDB node by Zabbix agent 2/mongodb.connections.current))*100>{$MONGODB.CONNS.PCT.USED.MAX.WARN}`|Warning||
-|MongoDB node: Too many cursors opened by MongoDB for clients||`min(/MongoDB node by Zabbix agent 2/mongodb.cursor.open.total,5m)>{$MONGODB.CURSOR.OPEN.MAX.WARN}`|Warning||
-|MongoDB node: Too many cursors are timing out||`min(/MongoDB node by Zabbix agent 2/mongodb.cursor.timed_out.rate,5m)>{$MONGODB.CURSOR.TIMEOUT.MAX.WARN}`|Warning||
+|MongoDB node: Connection to MongoDB is unavailable|<p>Connection to MongoDB instance is currently unavailable.</p>|`last(/MongoDB node by TAA agent 2/mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"])=0`|High||
+|MongoDB node: Version has changed|<p>MongoDB version has changed. Acknowledge to close the problem manually.</p>|`last(/MongoDB node by TAA agent 2/mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"],#1)<>last(/MongoDB node by TAA agent 2/mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"],#2) and length(last(/MongoDB node by TAA agent 2/mongodb.version["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]))>0`|Info|**Manual close**: Yes|
+|MongoDB node: mongod process has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MongoDB node by TAA agent 2/mongodb.uptime)<10m`|Info|**Manual close**: Yes|
+|MongoDB node: Failed to fetch info data|<p>TAA has not received data for items for the last 10 minutes</p>|`nodata(/MongoDB node by TAA agent 2/mongodb.uptime,10m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MongoDB node: Connection to MongoDB is unavailable</li></ul>|
+|MongoDB node: Total number of open connections is too high|<p>Too few available connections.<br>If MongoDB runs low on connections, in may not be able to handle incoming requests in a timely manner.</p>|`min(/MongoDB node by TAA agent 2/mongodb.connections.current,5m)/(last(/MongoDB node by TAA agent 2/mongodb.connections.available)+last(/MongoDB node by TAA agent 2/mongodb.connections.current))*100>{$MONGODB.CONNS.PCT.USED.MAX.WARN}`|Warning||
+|MongoDB node: Too many cursors opened by MongoDB for clients||`min(/MongoDB node by TAA agent 2/mongodb.cursor.open.total,5m)>{$MONGODB.CURSOR.OPEN.MAX.WARN}`|Warning||
+|MongoDB node: Too many cursors are timing out||`min(/MongoDB node by TAA agent 2/mongodb.cursor.timed_out.rate,5m)>{$MONGODB.CURSOR.TIMEOUT.MAX.WARN}`|Warning||
 
 ### LLD rule Database discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Database discovery|<p>Collect database metrics.</p><p>Note, depending on the number of DBs this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}.</p>|Zabbix agent|mongodb.db.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Database discovery|<p>Collect database metrics.</p><p>Note, depending on the number of DBs this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}.</p>|TAA agent|mongodb.db.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 
 ### Item prototypes for Database discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|MongoDB {#DBNAME}: Get db stats {#DBNAME}|<p>Returns statistics reflecting the database system's state.</p>|Zabbix agent|mongodb.db.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}"]|
+|MongoDB {#DBNAME}: Get db stats {#DBNAME}|<p>Returns statistics reflecting the database system's state.</p>|TAA agent|mongodb.db.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}"]|
 |MongoDB {#DBNAME}: Objects, avg size|<p>The average size of each document in bytes.</p>|Dependent item|mongodb.db.size["{#DBNAME}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.avgObjSize`</p></li></ul>|
 |MongoDB {#DBNAME}: Size, data|<p>Total size of the data held in this database including the padding factor.</p>|Dependent item|mongodb.db.data_size["{#DBNAME}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.dataSize`</p></li></ul>|
 |MongoDB {#DBNAME}: Size, file|<p>Total size of the data held in this database including the padding factor (only available with the mmapv1 storage engine).</p>|Dependent item|mongodb.db.file_size["{#DBNAME}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.fileSize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
@@ -134,13 +134,13 @@ Test availability: `zabbix_get -s mongodb.node -k 'mongodb.ping["{$MONGODB.CONNS
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Collection discovery|<p>Collect collections metrics.</p><p>Note, depending on the number of DBs and collections this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.NOT_MATCHES}.</p>|Zabbix agent|mongodb.collections.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Collection discovery|<p>Collect collections metrics.</p><p>Note, depending on the number of DBs and collections this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.NOT_MATCHES}.</p>|TAA agent|mongodb.collections.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 
 ### Item prototypes for Collection discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|MongoDB {#DBNAME}.{#COLLECTION}: Get collection stats {#DBNAME}.{#COLLECTION}|<p>Returns a variety of storage statistics for a given collection.</p>|Zabbix agent|mongodb.collection.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}","{#COLLECTION}"]|
+|MongoDB {#DBNAME}.{#COLLECTION}: Get collection stats {#DBNAME}.{#COLLECTION}|<p>Returns a variety of storage statistics for a given collection.</p>|TAA agent|mongodb.collection.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}","{#COLLECTION}"]|
 |MongoDB {#DBNAME}.{#COLLECTION}: Size|<p>The total size in bytes of the data in the collection plus the size of every indexes on the mongodb.collection.</p>|Dependent item|mongodb.collection.size["{#DBNAME}","{#COLLECTION}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.size`</p></li></ul>|
 |MongoDB {#DBNAME}.{#COLLECTION}: Objects, avg size|<p>The size of the average object in the collection in bytes.</p>|Dependent item|mongodb.collection.avg_obj_size["{#DBNAME}","{#COLLECTION}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.avgObjSize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |MongoDB {#DBNAME}.{#COLLECTION}: Objects, count|<p>Total number of objects in the collection.</p>|Dependent item|mongodb.collection.count["{#DBNAME}","{#COLLECTION}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.count`</p></li></ul>|
@@ -172,7 +172,7 @@ Test availability: `zabbix_get -s mongodb.node -k 'mongodb.ping["{$MONGODB.CONNS
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Replication discovery|<p>Collect metrics by Zabbix agent if it exists.</p>|Dependent item|mongodb.rs.discovery<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
+|Replication discovery|<p>Collect metrics by TAA agent if it exists.</p>|Dependent item|mongodb.rs.discovery<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
 
 ### Item prototypes for Replication discovery
 
@@ -204,9 +204,9 @@ Test availability: `zabbix_get -s mongodb.node -k 'mongodb.ping["{$MONGODB.CONNS
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MongoDB node: Node in ReplicaSet changed the state|<p>Node in ReplicaSet  changed the state. Acknowledge to close the problem manually.</p>|`last(/MongoDB node by Zabbix agent 2/mongodb.rs.state[{#RS_NAME}],#1)<>last(/MongoDB node by Zabbix agent 2/mongodb.rs.state[{#RS_NAME}],#2)`|Warning|**Manual close**: Yes|
-|MongoDB node: Replication lag with primary is too high||`min(/MongoDB node by Zabbix agent 2/mongodb.rs.lag[{#RS_NAME}],5m)>{$MONGODB.REPL.LAG.MAX.WARN}`|Warning||
-|MongoDB node: There are unhealthy replicas in ReplicaSet||`last(/MongoDB node by Zabbix agent 2/mongodb.rs.unhealthy_count[{#RS_NAME}])>0 and length(last(/MongoDB node by Zabbix agent 2/mongodb.rs.unhealthy[{#RS_NAME}]))>0`|Average||
+|MongoDB node: Node in ReplicaSet changed the state|<p>Node in ReplicaSet  changed the state. Acknowledge to close the problem manually.</p>|`last(/MongoDB node by TAA agent 2/mongodb.rs.state[{#RS_NAME}],#1)<>last(/MongoDB node by TAA agent 2/mongodb.rs.state[{#RS_NAME}],#2)`|Warning|**Manual close**: Yes|
+|MongoDB node: Replication lag with primary is too high||`min(/MongoDB node by TAA agent 2/mongodb.rs.lag[{#RS_NAME}],5m)>{$MONGODB.REPL.LAG.MAX.WARN}`|Warning||
+|MongoDB node: There are unhealthy replicas in ReplicaSet||`last(/MongoDB node by TAA agent 2/mongodb.rs.unhealthy_count[{#RS_NAME}])>0 and length(last(/MongoDB node by TAA agent 2/mongodb.rs.unhealthy[{#RS_NAME}]))>0`|Average||
 
 ### LLD rule WiredTiger metrics
 
@@ -240,12 +240,12 @@ Test availability: `zabbix_get -s mongodb.node -k 'mongodb.ping["{$MONGODB.CONNS
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MongoDB node: Available WiredTiger read tickets is low|<p>Too few available read tickets.<br>When the number of available read tickets remaining reaches zero, new read requests will be queued until a new read ticket is available.</p>|`max(/MongoDB node by Zabbix agent 2/mongodb.wired_tiger.concurrent_transactions.read.available[{#SINGLETON}],5m)<{$MONGODB.WIRED_TIGER.TICKETS.AVAILABLE.MIN.WARN}`|Warning||
-|MongoDB node: Available WiredTiger write tickets is low|<p>Too few available write tickets.<br>When the number of available write tickets remaining reaches zero, new write requests will be queued until a new write ticket is available.</p>|`max(/MongoDB node by Zabbix agent 2/mongodb.wired_tiger.concurrent_transactions.write.available[{#SINGLETON}],5m)<{$MONGODB.WIRED_TIGER.TICKETS.AVAILABLE.MIN.WARN}`|Warning||
+|MongoDB node: Available WiredTiger read tickets is low|<p>Too few available read tickets.<br>When the number of available read tickets remaining reaches zero, new read requests will be queued until a new read ticket is available.</p>|`max(/MongoDB node by TAA agent 2/mongodb.wired_tiger.concurrent_transactions.read.available[{#SINGLETON}],5m)<{$MONGODB.WIRED_TIGER.TICKETS.AVAILABLE.MIN.WARN}`|Warning||
+|MongoDB node: Available WiredTiger write tickets is low|<p>Too few available write tickets.<br>When the number of available write tickets remaining reaches zero, new write requests will be queued until a new write ticket is available.</p>|`max(/MongoDB node by TAA agent 2/mongodb.wired_tiger.concurrent_transactions.write.available[{#SINGLETON}],5m)<{$MONGODB.WIRED_TIGER.TICKETS.AVAILABLE.MIN.WARN}`|Warning||
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

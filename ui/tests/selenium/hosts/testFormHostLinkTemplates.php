@@ -23,7 +23,7 @@ require_once __DIR__.'/../../include/CLegacyWebTest.php';
 class testFormHostLinkTemplates extends CLegacyWebTest {
 	const HOST_VISIBLE_NAME = 'Visible host for template linkage';
 	const TEMPLATE = 'Form test template';
-	const LINKED_TEMPLATE = 'Linux by Zabbix agent active';
+	const LINKED_TEMPLATE = 'Linux by TAA agent active';
 
 	protected static $hostid;
 
@@ -36,7 +36,7 @@ class testFormHostLinkTemplates extends CLegacyWebTest {
 			[
 				'host' => 'Template linkage test host',
 				'name' => self::HOST_VISIBLE_NAME,
-				'groups' => ['groupid' => 4] // Zabbix servers.
+				'groups' => ['groupid' => 4] // TAA servers.
 			]
 		])['hostids'][0];
 	}

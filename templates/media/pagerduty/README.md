@@ -3,28 +3,28 @@
 
 ## Overview
 
-This guide describes how to integrate your Zabbix installation with PagerDuty using the Zabbix webhook feature, providing instructions on setting up a media type, user, and action in Zabbix.
+This guide describes how to integrate your TAA installation with PagerDuty using the TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
 
-### Why PagerDuty + Zabbix
+### Why PagerDuty + TAA
 
-* Notify on-call responders based on alerts sent from Zabbix.
-* Send enriched event data from Zabbix, including operational data triggered during the event.
-* Create high- and low-urgency incidents based on the severity of the event from Zabbix.
-* Problem updates are synchronized to PagerDuty from Zabbix.
-* Incidents will automatically resolve in PagerDuty when the metric in Zabbix returns to normal.
+* Notify on-call responders based on alerts sent from TAA.
+* Send enriched event data from TAA, including operational data triggered during the event.
+* Create high- and low-urgency incidents based on the severity of the event from TAA.
+* Problem updates are synchronized to PagerDuty from TAA.
+* Incidents will automatically resolve in PagerDuty when the metric in TAA returns to normal.
 
 ### How it works
 
-* When a trigger fires, Zabbix sends an event to a service in PagerDuty. Events from Zabbix will trigger a new incident on the corresponding PagerDuty service or will be grouped as alerts into an existing incident.
+* When a trigger fires, TAA sends an event to a service in PagerDuty. Events from TAA will trigger a new incident on the corresponding PagerDuty service or will be grouped as alerts into an existing incident.
 * Once the trigger is resolved, a resolving event will be sent to the PagerDuty service to resolve the alert and the associated incident on that service.
 
 ### Supported versions
 
-PagerDuty integrations with Zabbix require an Events API v2 key. If you do not have permission to create an Event API v2 key, please reach out to an Admin or Account Owner within your organization to help you configure the integration.
+PagerDuty integrations with TAA require an Events API v2 key. If you do not have permission to create an Event API v2 key, please reach out to an Admin or Account Owner within your organization to help you configure the integration.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Parameters
 
@@ -36,7 +36,7 @@ The configurable parameters are intended to be changed according to the webhook 
 
 |Name|Value|Description|
 |----|-----|-----------|
-|zabbix_url|\{$ZABBIX\.URL\}|Current Zabbix URL.|
+|zabbix_url|\{$ZABBIX\.URL\}|Current TAA URL.|
 
 ### Internal parameters
 
@@ -84,27 +84,27 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
     [![](images/thumb.1.3.png?raw=true)](images/1.3.png)
 
-    *  In the *Integrations* section, select the Zabbix Webhook using the search field and click *Create service*.
+    *  In the *Integrations* section, select the TAA Webhook using the search field and click *Create service*.
 
     [![](images/thumb.1.4.png?raw=true)](images/1.4.png)
 
-* If you are adding your integration to an existing service, click the name of the service you want to add the integration to. Then click the *Integrations* tab and click the *+Add an Integration* button, select the Zabbix Webhook using the search field, and click *Add*.
+* If you are adding your integration to an existing service, click the name of the service you want to add the integration to. Then click the *Integrations* tab and click the *+Add an Integration* button, select the TAA Webhook using the search field, and click *Add*.
 
     [![](images/thumb.2.png?raw=true)](images/2.png)
 
-* After successfully adding the integration, use its Integration Key in the **token** macros for the PagerDuty Zabbix media type.
+* After successfully adding the integration, use its Integration Key in the **token** macros for the PagerDuty TAA media type.
 
     [![](images/thumb.3.png?raw=true)](images/3.png)
 
-## Zabbix configuration
+## TAA configuration
 
-The configuration includes a media type in Zabbix that invokes a webhook to send alerts to PagerDuty through the PagerDuty Event API v2. To use this media type, we will create a Zabbix user to represent PagerDuty and set up an alert action to notify this user whenever a problem is detected.
+The configuration includes a media type in TAA that invokes a webhook to send alerts to PagerDuty through the PagerDuty Event API v2. To use this media type, we will create a TAA user to represent PagerDuty and set up an alert action to notify this user whenever a problem is detected.
 
 ### Create global macro
 
-1\. In the Zabbix web interface, go to *Administration* > *Macros*.
+1\. In the TAA web interface, go to *Administration* > *Macros*.
 
-2\. Add the macro `{$ZABBIX.URL}` with Zabbix frontend URL (for example, http://192.168.7.123:8081).
+2\. Add the macro `{$ZABBIX.URL}` with TAA frontend URL (for example, http://192.168.7.123:8081).
 
 [![](images/thumb.6.png?raw=true)](images/6.png)
 
@@ -112,7 +112,7 @@ The configuration includes a media type in Zabbix that invokes a webhook to send
 
 ### Create the PagerDuty media type
 
-1\. In the Zabbix interface *Alerts* > *Media types* section, click the *Import* button.
+1\. In the TAA interface *Alerts* > *Media types* section, click the *Import* button.
 
 [![](images/thumb.7.png?raw=true)](images/7.png)
 
@@ -120,11 +120,11 @@ The configuration includes a media type in Zabbix that invokes a webhook to send
 
 ### Create the PagerDuty user for alerting
 
-1\. In the Zabbix interface, go to *Users* > *Users* and click the *Create user* button.
+1\. In the TAA interface, go to *Users* > *Users* and click the *Create user* button.
 
 [![](images/thumb.8.png?raw=true)](images/8.png)
 
-2\. Assign the new user the username "PagerDuty User". The default settings should suffice as this user will not be logging into Zabbix.
+2\. Assign the new user the username "PagerDuty User". The default settings should suffice as this user will not be logging into TAA.
 
 3\. Click the *Select* button next to *Groups*.
 
@@ -149,10 +149,10 @@ The configuration includes a media type in Zabbix that invokes a webhook to send
 
 7\. Use the PagerDuty User in any actions of your choice.
 
-For more information, please see the [Zabbix](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [PagerDuty](https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2) documentation.
+For more information, please see the [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [PagerDuty](https://v2.developer.pagerduty.com/docs/send-an-event-events-api-v2) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

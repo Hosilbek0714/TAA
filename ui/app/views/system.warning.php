@@ -19,7 +19,7 @@
  * @var array $data
  */
 
-$page_header = (new CHtmlPageHeader(_('Fatal error, please report to the Zabbix team'), CWebUser::getLang()));
+$page_header = (new CHtmlPageHeader(_('Fatal error, please report to the TAA team'), CWebUser::getLang()));
 
 $page_header
 	->setTheme($data['theme'])
@@ -44,7 +44,7 @@ else {
 echo '<body';
 
 (new CDiv((new CTag('main', true,
-	new CWarning(_('Fatal error, please report to the Zabbix team'), $data['messages'], $buttons)
+	new CWarning(_('Fatal error, please report to the TAA team'), $data['messages'], $buttons)
 ))))
 	->addClass(ZBX_STYLE_LAYOUT_WRAPPER)
 	->show();

@@ -3,14 +3,14 @@
 
 ## Overview
 
-The template to monitor Kubernetes Scheduler by Zabbix that works without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+The template to monitor Kubernetes Scheduler by TAA that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
 Template `Kubernetes Scheduler by HTTP` - collects metrics by HTTP agent from Scheduler /metrics endpoint.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -29,7 +29,7 @@ Template needs to use Authorization via API token.
 Don't forget change macros {$KUBE.SCHEDULER.SERVER.URL}, {$KUBE.API.TOKEN}.
 Also, see the Macros section for a list of macros used to set trigger values.
 
-*NOTE.* You might need to set the `--binding-address` option for Scheduler to the address where Zabbix proxy can reach it.
+*NOTE.* You might need to set the `--binding-address` option for Scheduler to the address where TAA proxy can reach it.
 For example, for clusters created with `kubeadm` it can be set in the following manifest file (changes will be applied immediately):
 
 - /etc/kubernetes/manifests/kube-scheduler.yaml
@@ -127,5 +127,5 @@ For example, for clusters created with `kubeadm` it can be set in the following 
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

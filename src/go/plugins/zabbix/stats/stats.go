@@ -61,8 +61,8 @@ type response struct {
 func init() {
 	err := plugin.RegisterMetrics(
 		&impl, "ZabbixStats",
-		"zabbix.stats", "Return a set of Zabbix server or proxy internal "+
-			"metrics or return number of monitored items in the queue which are delayed on Zabbix server or proxy.",
+		"zabbix.stats", "Return a set of TAA server or proxy internal "+
+			"metrics or return number of monitored items in the queue which are delayed on TAA server or proxy.",
 	)
 	if err != nil {
 		panic(errs.Wrap(err, "failed to register metrics"))

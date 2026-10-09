@@ -89,7 +89,7 @@ void	zbx_db_flush_version_requirements(const char *version)
 
 /*********************************************************************************
  *                                                                               *
- * Purpose: verify that Zabbix server/proxy will start with provided DB version  *
+ * Purpose: verify that TAA server/proxy will start with provided DB version  *
  *          and configuration                                                    *
  *                                                                               *
  * Parameters: info              - [IN] DB version information                   *
@@ -116,7 +116,7 @@ int	zbx_db_check_version_info(struct zbx_db_version_info_t *info, int allow_unsu
 		if (0 == allow_unsupported || 0 != server_db_deprecated)
 		{
 			zabbix_log(LOG_LEVEL_ERR, " ");
-			zabbix_log(LOG_LEVEL_ERR, "Unable to start Zabbix %s due to unsupported %s database"
+			zabbix_log(LOG_LEVEL_ERR, "Unable to start TAA %s due to unsupported %s database"
 					" version (%s).", program_type_s, info->database,
 					info->friendly_current_version);
 
@@ -137,7 +137,7 @@ int	zbx_db_check_version_info(struct zbx_db_version_info_t *info, int allow_unsu
 			if (0 == server_db_deprecated)
 			{
 				zabbix_log(LOG_LEVEL_ERR, "Override by setting AllowUnsupportedDBVersions=1"
-						" in Zabbix %s configuration file at your own risk.", program_type_s);
+						" in TAA %s configuration file at your own risk.", program_type_s);
 			}
 
 			zabbix_log(LOG_LEVEL_ERR, " ");
@@ -247,7 +247,7 @@ const char	*zbx_host_key_string(zbx_uint64_t itemid)
  *                                                                            *
  * Comments: Users has access rights or can view personal information only    *
  *           about themselves and other user who belong to their group.       *
- *           "Zabbix Super Admin" can view and has access rights to           *
+ *           "TAA Super Admin" can view and has access rights to           *
  *           information about any user.                                      *
  *                                                                            *
  ******************************************************************************/

@@ -95,24 +95,24 @@ class CExpressionMacroParserTest extends TestCase {
 				'match' => '{? last(/host/key, #25) + max(sum(/host/key, 1d:now/d), sum(/host/key, 1d:now/d-1d)) }',
 				'length' => 86
 			]],
-			['text {?last(/Zabbix server/system.cpu.load, {#LLD})}', [], 5, [
+			['text {?last(/TAA server/system.cpu.load, {#LLD})}', [], 5, [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'length' => 0
 			]],
-			['text {?last(/Zabbix server/system.cpu.load, {#LLD})}', ['lldmacros' => true], 5, [
+			['text {?last(/TAA server/system.cpu.load, {#LLD})}', ['lldmacros' => true], 5, [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '{?last(/Zabbix server/system.cpu.load, {#LLD})}',
+				'match' => '{?last(/TAA server/system.cpu.load, {#LLD})}',
 				'length' => 47
 			]],
-			['text {?last(/Zabbix server/system.cpu.load, {$MACRO})}', [], 5, [
+			['text {?last(/TAA server/system.cpu.load, {$MACRO})}', [], 5, [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'length' => 0
 			]],
-			['text {?last(/Zabbix server/system.cpu.load, {$MACRO})}', ['usermacros' => true], 5, [
+			['text {?last(/TAA server/system.cpu.load, {$MACRO})}', ['usermacros' => true], 5, [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '{?last(/Zabbix server/system.cpu.load, {$MACRO})}',
+				'match' => '{?last(/TAA server/system.cpu.load, {$MACRO})}',
 				'length' => 49
 			]],
 			['text {? 1 + 1   text', [], 5, [
@@ -120,19 +120,19 @@ class CExpressionMacroParserTest extends TestCase {
 				'match' => '',
 				'length' => 0
 			]],
-			['text {?nodata(/Zabbix server/system.cpu.load, "\\\\")}', [], 5, [
+			['text {?nodata(/TAA server/system.cpu.load, "\\\\")}', [], 5, [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '{?nodata(/Zabbix server/system.cpu.load, "\\\\")}',
+				'match' => '{?nodata(/TAA server/system.cpu.load, "\\\\")}',
 				'length' => 47
 			]],
-			['text {?nodata(/Zabbix server/system.cpu.load, "\\\\")}', ['escape_backslashes' => false], 5, [
+			['text {?nodata(/TAA server/system.cpu.load, "\\\\")}', ['escape_backslashes' => false], 5, [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'length' => 0
 			]],
-			['text {?nodata(/Zabbix server/system.cpu.load, "\\ ")}', ['escape_backslashes' => false], 5, [
+			['text {?nodata(/TAA server/system.cpu.load, "\\ ")}', ['escape_backslashes' => false], 5, [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '{?nodata(/Zabbix server/system.cpu.load, "\\ ")}',
+				'match' => '{?nodata(/TAA server/system.cpu.load, "\\ ")}',
 				'length' => 47
 			]],
 			['text {? min({FUNCTION.VALUE}, {FUNCTION.VALUE9}) / {FUNCTION.RECOVERY.VALUE1} } text', ['macros_n' => ['{FUNCTION.VALUE}', '{FUNCTION.RECOVERY.VALUE}']], 5, [

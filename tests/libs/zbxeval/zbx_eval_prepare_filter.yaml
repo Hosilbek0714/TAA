@@ -65,16 +65,16 @@ out:
   - {type: ZBX_EVAL_TOKEN_OP_NOT, token: '<>', opt: 0}
   - {type: ZBX_EVAL_TOKEN_OP_OR, token: 'or', opt: 0}
 ---
-test case: Expression '(group="Zabbix servers") or ("Zabbix servers"=group)'
+test case: Expression '(group="TAA servers") or ("TAA servers"=group)'
 in:
-  expression: '(group="Zabbix servers") or ("Zabbix servers"=group)'
+  expression: '(group="TAA servers") or ("TAA servers"=group)'
 out:
   result: SUCCEED
   stack:
-  - {type: ZBX_EVAL_TOKEN_VAR_STR, token: '"Zabbix servers"', opt: 0}
+  - {type: ZBX_EVAL_TOKEN_VAR_STR, token: '"TAA servers"', opt: 0}
   - {type: ZBX_EVAL_TOKEN_FUNCTION, token: 'group', opt: 1}
   - {type: ZBX_EVAL_TOKEN_NOP, token: '', opt: 0}
-  - {type: ZBX_EVAL_TOKEN_VAR_STR, token: '"Zabbix servers"', opt: 0}
+  - {type: ZBX_EVAL_TOKEN_VAR_STR, token: '"TAA servers"', opt: 0}
   - {type: ZBX_EVAL_TOKEN_FUNCTION, token: 'group', opt: 1}
   - {type: ZBX_EVAL_TOKEN_NOP, token: '', opt: 0}
   - {type: ZBX_EVAL_TOKEN_OP_OR, token: 'or', opt: 0}

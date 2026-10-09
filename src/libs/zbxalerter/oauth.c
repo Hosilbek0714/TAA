@@ -111,7 +111,7 @@ int	zbx_oauth_access_refresh(zbx_oauth_data_t *data, const char *mediatype_name,
 	ZBX_UNUSED(timeout);
 	ZBX_UNUSED(config_source_ip);
 	ZBX_UNUSED(config_ssl_ca_location);
-	*error = zbx_dsprintf(*error, "OAuth requires curl library. This Zabbix server binary was compiled without curl"
+	*error = zbx_dsprintf(*error, "OAuth requires curl library. This TAA server binary was compiled without curl"
 		" library support.");
 	return FAIL;
 #else

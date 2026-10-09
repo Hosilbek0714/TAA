@@ -384,13 +384,13 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_STRING_UTF8, 'length' => 16],
-				'Zabbix server',
+				'TAA server',
 				'/1/name',
-				'Zabbix server'
+				'TAA server'
 			],
 			[
 				['type' => API_STRING_UTF8, 'length' => 16],
-				'Zabbix Server++++',
+				'TAA Server++++',
 				'/1/name',
 				'Invalid parameter "/1/name": value is too long.'
 			],
@@ -1880,7 +1880,7 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_OBJECT, 'fields' => []],
-				['host' => 'Zabbix server'],
+				['host' => 'TAA server'],
 				'/',
 				'Invalid parameter "/": should be empty.'
 			],
@@ -1888,17 +1888,17 @@ class CApiInputValidatorTest extends TestCase {
 				['type' => API_OBJECT, 'fields' => [
 					'host' => ['type' => API_STRING_UTF8]
 				]],
-				['host' => 'Zabbix server'],
+				['host' => 'TAA server'],
 				'/',
-				['host' => 'Zabbix server']
+				['host' => 'TAA server']
 			],
 			[
 				['type' => API_OBJECT, 'fields' => [
 					'host' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'Zabbix server',
-					'name' => 'Zabbix server'
+					'host' => 'TAA server',
+					'name' => 'TAA server'
 				],
 				'/',
 				'Invalid parameter "/": unexpected parameter "name".'
@@ -1908,13 +1908,13 @@ class CApiInputValidatorTest extends TestCase {
 					'host' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'Zabbix server',
-					'name' => 'Zabbix server'
+					'host' => 'TAA server',
+					'name' => 'TAA server'
 				],
 				'/',
 				[
-					'host' => 'Zabbix server',
-					'name' => 'Zabbix server'
+					'host' => 'TAA server',
+					'name' => 'TAA server'
 				]
 			],
 			[
@@ -1923,11 +1923,11 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'Zabbix server'
+					'host' => 'TAA server'
 				],
 				'/',
 				[
-					'host' => 'Zabbix server'
+					'host' => 'TAA server'
 				]
 			],
 			[
@@ -1936,11 +1936,11 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'Zabbix server'
+					'host' => 'TAA server'
 				],
 				'/',
 				[
-					'host' => 'Zabbix server'
+					'host' => 'TAA server'
 				]
 			],
 			[
@@ -1949,13 +1949,13 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'Zabbix server',
-					'name' => 'Zabbix server'
+					'host' => 'TAA server',
+					'name' => 'TAA server'
 				],
 				'/',
 				[
-					'host' => 'Zabbix server',
-					'name' => 'Zabbix server'
+					'host' => 'TAA server',
+					'name' => 'TAA server'
 				]
 			],
 			[
@@ -1965,11 +1965,11 @@ class CApiInputValidatorTest extends TestCase {
 				]],
 				[
 					'uuid' => '',
-					'name' => 'Zabbix server'
+					'name' => 'TAA server'
 				],
 				'/',
 				[
-					'name' => 'Zabbix server'
+					'name' => 'TAA server'
 				]
 			],
 			[
@@ -1979,7 +1979,7 @@ class CApiInputValidatorTest extends TestCase {
 				]],
 				[
 					'uuid' => '56079badd056419383cc26e6a4fcc7e0',
-					'name' => 'Zabbix server'
+					'name' => 'TAA server'
 				],
 				'/',
 				'Invalid parameter "/uuid": value must be empty.'
@@ -1990,7 +1990,7 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8, 'flags' => API_REQUIRED]
 				]],
 				[
-					'host' => 'Zabbix server'
+					'host' => 'TAA server'
 				],
 				'/',
 				'Invalid parameter "/": the parameter "name" is missing.'
@@ -2322,15 +2322,15 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_OBJECTS, 'fields' => []],
-				[['host' => 'Zabbix server']],
+				[['host' => 'TAA server']],
 				'/',
 				'Invalid parameter "/1": should be empty.'
 			],
 			[
 				['type' => API_OBJECTS, 'flags' => API_ALLOW_UNEXPECTED, 'fields' => []],
-				[['host' => 'Zabbix server']],
+				[['host' => 'TAA server']],
 				'/',
-				[['host' => 'Zabbix server']]
+				[['host' => 'TAA server']]
 			],
 			[
 				['type' => API_OBJECTS, 'fields' => [
@@ -2338,13 +2338,13 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					['host' => 'Zabbix server', 'name' => 'Zabbix server'],
-					['host' => 'Zabbix server']
+					['host' => 'TAA server', 'name' => 'TAA server'],
+					['host' => 'TAA server']
 				],
 				'/',
 				[
-					['host' => 'Zabbix server', 'name' => 'Zabbix server'],
-					['host' => 'Zabbix server']
+					['host' => 'TAA server', 'name' => 'TAA server'],
+					['host' => 'TAA server']
 				]
 			],
 			[
@@ -2356,13 +2356,13 @@ class CApiInputValidatorTest extends TestCase {
 					'height' => ['type' => API_INT32]
 				]],
 				[
-					['name' => 'Zabbix server 1'],
-					['name' => 'Zabbix server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
+					['name' => 'TAA server 1'],
+					['name' => 'TAA server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
 				],
 				'/',
 				[
-					['name' => 'Zabbix server 1', 'col' => 0, 'row' => 1],
-					['name' => 'Zabbix server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
+					['name' => 'TAA server 1', 'col' => 0, 'row' => 1],
+					['name' => 'TAA server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
 				]
 			],
 			[
@@ -2371,8 +2371,8 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8, 'flags' => API_REQUIRED]
 				]],
 				[
-					['host' => 'Zabbix server', 'name' => 'Zabbix server'],
-					['host' => 'Zabbix server']
+					['host' => 'TAA server', 'name' => 'TAA server'],
+					['host' => 'TAA server']
 				],
 				'/',
 				'Invalid parameter "/2": the parameter "name" is missing.'
@@ -3038,13 +3038,13 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_HG_NAME, 'length' => 16],
-				'Zabbix servers',
+				'TAA servers',
 				'/1/name',
-				'Zabbix servers'
+				'TAA servers'
 			],
 			[
 				['type' => API_HG_NAME, 'length' => 16],
-				'Zabbix Servers+++',
+				'TAA Servers+++',
 				'/1/name',
 				'Invalid parameter "/1/name": value is too long.'
 			],
@@ -3111,13 +3111,13 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_H_NAME, 'length' => 16],
-				'Zabbix server',
+				'TAA server',
 				'/1/name',
-				'Zabbix server'
+				'TAA server'
 			],
 			[
 				['type' => API_H_NAME, 'length' => 16],
-				'Zabbix server++++',
+				'TAA server++++',
 				'/1/name',
 				'Invalid parameter "/1/name": value is too long.'
 			],
@@ -3148,7 +3148,7 @@ class CApiInputValidatorTest extends TestCase {
 			[
 				['type' => API_H_NAME],
 				// broken UTF-8 byte sequence
-				'Zabbix '."\xd1".'server',
+				'TAA '."\xd1".'server',
 				'/1/name',
 				'Invalid parameter "/1/name": invalid byte sequence in UTF-8.'
 			],

@@ -1,12 +1,12 @@
-# Zabbix O'zbek Tarjimalari - To'liq Yechim Dokumentatsiyasi
+# TAA O'zbek Tarjimalari - To'liq Yechim Dokumentatsiyasi
 
 ## Kirish
 
-Bu dokumentatsiya Zabbix Docker konteynerida o'zbek tarjimalarini to'liq faollashtirish uchun **professional yechim** taqdim etadi. Volume mount ishlatmasdan, **Dockerfile ichida** barcha o'zgarishlarni amalga oshirish usuli keltirilgan.
+Bu dokumentatsiya TAA Docker konteynerida o'zbek tarjimalarini to'liq faollashtirish uchun **professional yechim** taqdim etadi. Volume mount ishlatmasdan, **Dockerfile ichida** barcha o'zgarishlarni amalga oshirish usuli keltirilgan.
 
-## Zabbix Tarjima Sistemi - Chuqur Tahlil
+## TAA Tarjima Sistemi - Chuqur Tahlil
 
-### Zabbix Til Sistemining Ishlash Prinsipi (Technical Deep Dive)
+### TAA Til Sistemining Ishlash Prinsipi (Technical Deep Dive)
 
 #### 1. Request Processing Flow (HTTP → PHP)
 
@@ -32,7 +32,7 @@ PHP-FPM Process Manager:
 └── Environment: LANG=uz_UZ.UTF-8, LC_ALL=uz_UZ.UTF-8
 ```
 
-#### 2. Zabbix Application Initialization (PHP → Zabbix Core)
+#### 2. TAA Application Initialization (PHP → TAA Core)
 
 ```
 PHP Script Execution:
@@ -42,7 +42,7 @@ PHP Script Execution:
 ├── require_once 'include/classes/core/APP.php';
 └── APP::run(EXEC_MODE_DEFAULT);
     ↓
-Zabbix APP::run() Method:
+TAA APP::run() Method:
 ├── File: /usr/share/zabbix/include/classes/core/APP.php
 ├── Line: ~69 public function run(int $exec_mode): void
 ├── Initialization: ZBase::initLocales(?string $language)
@@ -116,7 +116,7 @@ Step 4 - Environment Validation:
 └── Result: Translation system ready
 ```
 
-#### 5. Widget Rendering Process (Zabbix → Widget → Gettext)
+#### 5. Widget Rendering Process (TAA → Widget → Gettext)
 
 ```
 Dashboard Controller Execution:
@@ -164,11 +164,11 @@ Alternative - Translation Not Found:
 └── Debug: Check gettext debug mode
 ```
 
-#### 6. HTTP Response Generation (Zabbix → Nginx → Browser)
+#### 6. HTTP Response Generation (TAA → Nginx → Browser)
 
 ```
 HTML Generation:
-├── Template Engine: Zabbix view system
+├── Template Engine: TAA view system
 ├── Widget HTML: <div class="widget-title">CPU ishlatishini bo'liman topish</div>
 ├── Encoding: UTF-8 character encoding
 └── Validation: HTML5 standards
@@ -316,7 +316,7 @@ services:
       PHP_FPM_PM_MIN_SPARE_SERVERS: "5"
       PHP_FPM_PM_MAX_SPARE_SERVERS: "35"
       
-      # Zabbix web uchun
+      # TAA web uchun
       ZBX_MAXEXECUTIONTIME: "300"
       ZBX_MEMORYLIMIT: "128M"
       ZBX_POSTMAXSIZE: "16M"
@@ -460,7 +460,7 @@ curl -s "http://localhost:8098" | grep -i "CPU ishlatishini"
    # Yoki Developer Tools → Application → Storage → Clear storage
    ```
 
-2. **Zabbix session tozalash:**
+2. **TAA session tozalash:**
    ```bash
    docker exec zabbix-web rm -rf /var/lib/php84/sessions/*
    docker restart zabbix-web
@@ -500,7 +500,7 @@ docker exec zabbix-web grep -n "CPU utilization" /usr/share/zabbix/widgets/topho
 
 ## Maintenance va Updates
 
-### Zabbix versiyasi yangilanganda:
+### TAA versiyasi yangilanganda:
 
 1. **Dockerfile o'zgarishlarini saqlash**
 2. **PO fayllarni backup qilish**
@@ -514,7 +514,7 @@ docker exec zabbix-web grep -n "CPU utilization" /usr/share/zabbix/widgets/topho
 
 ## Xulosa
 
-Bu yechim **volume mount ishlatmasdan**, to'liq **Dockerfile-based approach** orqali Zabbix ni o'zbek tiliga moslaydi. Barcha o'zgarishlar konteyner ichida permanent saqlanadi va production environment uchun mos keladi.
+Bu yechim **volume mount ishlatmasdan**, to'liq **Dockerfile-based approach** orqali TAA ni o'zbek tiliga moslaydi. Barcha o'zgarishlar konteyner ichida permanent saqlanadi va production environment uchun mos keladi.
 
 **Asosiy afzalliklar:**
 - ✅ Volume mount yo'q
@@ -523,7 +523,7 @@ Bu yechim **volume mount ishlatmasdan**, to'liq **Dockerfile-based approach** or
 - ✅ Maintainable
 - ✅ Widget name'lari to'liq tarjima qilinadi
 
-Bu dokumentatsiya bo'yicha amal qiling va Zabbix ni to'liq o'zbek tilida ishlatishingiz mumkin!
+Bu dokumentatsiya bo'yicha amal qiling va TAA ni to'liq o'zbek tilida ishlatishingiz mumkin!
 
 
 /////////////////

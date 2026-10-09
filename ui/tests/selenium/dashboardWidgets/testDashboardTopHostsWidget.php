@@ -1029,7 +1029,7 @@ class testDashboardTopHostsWidget extends testWidgets {
 					'main_fields' => [
 						'Name' => 'Name of Top hosts widget 😅',
 						'Refresh interval' => 'Default (1 minute)',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Hosts' => 'ЗАББИКС Сервер',
 						'Show hosts in maintenance' => true,
 						'Order' => 'Bottom N',
@@ -2082,7 +2082,7 @@ class testDashboardTopHostsWidget extends testWidgets {
 					'main_fields' => [
 						'Name' => 'Updated main fields',
 						'Refresh interval' => '2 minutes',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Hosts' => 'ЗАББИКС Сервер',
 						'Show hosts in maintenance' => true,
 						'Order' => 'Bottom N',

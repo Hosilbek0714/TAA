@@ -3,11 +3,11 @@
 
 ## Overview
 
-This guide describes how to integrate your Zabbix installation with Zammad using the Zabbix webhook feature, providing instructions on setting up a media type, user, and action in Zabbix.
+This guide describes how to integrate your TAA installation with Zammad using the TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Parameters
 
@@ -19,11 +19,11 @@ The configurable parameters are intended to be changed according to the webhook 
 
 |Name|Value|Description|
 |----|-----|-----------|
-|zabbix_url|\{$ZABBIX\.URL\}|The URL of the Zabbix frontend.|
+|zabbix_url|\{$ZABBIX\.URL\}|The URL of the TAA frontend.|
 |zammad_access_token|\<PUT YOUR ACCESS TOKEN\>|Zammad access token.|
 |zammad_customer|\<PUT YOUR CUSTOMER EMAIL\>|Zammad customer email.|
 |zammad_group|Users|Zammad user group. Change if needed.|
-|zammad_enable_tags|false|Zammad enable tags toggle. Zabbix event tags will be added to Zammad tickets if it is set to one of the following values: 1, true, yes, on.|
+|zammad_enable_tags|false|Zammad enable tags toggle. TAA event tags will be added to Zammad tickets if it is set to one of the following values: 1, true, yes, on.|
 |zammad_url|\<PUT YOUR ZAMMAD URL\>|Zammad URL.|
 
 ### Internal parameters
@@ -63,11 +63,11 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 4. Copy and save the created token somewhere, as, for security reasons, it will be shown **only once**!
 
-## Zabbix configuration
+## TAA configuration
 
 1. Before you can start using the Zammad webhook, you need to set up the global macro `{$ZABBIX.URL}`:
-  - In the Zabbix web interface, go to *Administration* > *Macros* in the top-left dropdown menu.
-  - Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the Zabbix frontend. The URL should be either an IP address, a fully qualified domain name, or a localhost.
+  - In the TAA web interface, go to *Administration* > *Macros* in the top-left dropdown menu.
+  - Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or a localhost.
   - Specifying a protocol is mandatory, whereas the port is optional. Depending on the web server configuration, you might also need to append `/zabbix` to the end of URL. Good examples:
     - `http://zabbix.com`
     - `https://zabbix.lan/zabbix`
@@ -87,17 +87,17 @@ Internal parameters are reserved for predefined macros that are not meant to be 
   - `zammad_access_token` - the access token that you created during Zammad configuration
   - `zammad_url` - the frontend URL of your Zammad installation
   - `zammad_customer` - the Zammad user email
-  - `zammad_enable_tags` - if you want to add the Zabbix event tags to the Zammad tickets that are created, you can set it to one of the following values: `1`, `true`, `yes`, `on` (note that if tag support is enabled, each tag is sent via a separate HTTP request and the created tags will also remain in Zammad when tickets are closed/deleted)
+  - `zammad_enable_tags` - if you want to add the TAA event tags to the Zammad tickets that are created, you can set it to one of the following values: `1`, `true`, `yes`, `on` (note that if tag support is enabled, each tag is sent via a separate HTTP request and the created tags will also remain in Zammad when tickets are closed/deleted)
   - `zammad_group` - if needed, you can change the Zammad user group
 
 [![](images/thumb.5.png?raw=true)](images/5.png)
 
-4. If you want to prioritize issues according to the severity values in Zabbix, you can define mapping parameters (create them as additional webhook parameters):
+4. If you want to prioritize issues according to the severity values in TAA, you can define mapping parameters (create them as additional webhook parameters):
   - `severity_<name>` - the Zammad priority ID (`<name>` in the parameter name can be one of the following values: `not_classified`, `information`, `warning`, `average`, `high`, `disaster`)
 
 [![](images/thumb.6.png?raw=true)](images/6.png)
 
-5. Create a Zabbix user and add media:
+5. Create a TAA user and add media:
   - If you want to create a new user,  go to the *Users* > *Users* section and click the *Create user* button in the top-right corner. In the *User* tab, fill in all the required fields (marked with red asterisks).
   - In the *Media* tab, add a new media and select **Zammad** from the *Type* drop-down list. Though the *Send to* field is not used in the Zammad webhook, it cannot be left empty. To comply with frontend requirements, enter any symbol in the field.
   - Make sure this user has access to all the hosts for which you would like problem notifications to be sent to Zammad.
@@ -106,10 +106,10 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 6. Done! You can now start using this media type in actions and create tickets.
 
-For more information, please see [Zabbix](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Zammad](https://zammad.org/documentation) documentation.
+For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Zammad](https://zammad.org/documentation) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

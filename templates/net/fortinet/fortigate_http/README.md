@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of FortiGate monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of FortiGate monitoring by TAA via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -24,7 +24,7 @@ This template has been tested on:
 2. Enter a profile name (ex. zabbix_ro) and enable all the Read permissions. Please note the profile name, it will be used a bit later.
 3. Go to `System > Administrators > Create New > REST API Admin`.
 4. Enter the API-user's name and select the profile name you created in step 2.
-5. The trusted host can be specified to ensure that only Zabbix server can reach the FortiGate.
+5. The trusted host can be specified to ensure that only TAA server can reach the FortiGate.
 6. Click OK and an API token will be generated. Make a note of the API token as it's only shown once and cannot be retrieved.
 7. Put the API token into `{$FGATE.API.TOKEN}` macro.
 8. Set your FortiGate GUI IP/FQDN as `{$FGATE.API.FQDN}` macro value.
@@ -290,5 +290,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

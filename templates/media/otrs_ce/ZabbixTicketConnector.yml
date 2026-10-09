@@ -2,7 +2,7 @@
 Debugger:
   DebugThreshold: error
   TestMode: '0'
-Description: Zabbix Ticket Connector
+Description: TAA Ticket Connector
 FrameworkVersion: 6.0.27
 Provider:
   Operation:

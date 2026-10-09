@@ -976,7 +976,7 @@ int	zbx_is_time_suffix(const char *str, int *value, int length)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: calculate sleep time for Zabbix processes                         *
+ * Purpose: calculate sleep time for TAA processes                         *
  *                                                                            *
  * Parameters: nextcheck     - [IN] next check or -1 (FAIL) if nothing to do  *
  *             max_sleeptime - [IN] maximum sleep time, in seconds            *

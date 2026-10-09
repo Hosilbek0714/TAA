@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Cisco Meraki dashboard monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Cisco Meraki dashboard monitoring by TAA via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,15 +16,15 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 You must set {$MERAKI.TOKEN} and {$MERAKI.API.URL} macros.
 
-Create the token in the Meraki dashboard (see Meraki [documentation](https://developer.cisco.com/meraki/api-latest/#!authorization/authorization) for instructions). Set this token as {$MERAKI.TOKEN} macro value in Zabbix.
+Create the token in the Meraki dashboard (see Meraki [documentation](https://developer.cisco.com/meraki/api-latest/#!authorization/authorization) for instructions). Set this token as {$MERAKI.TOKEN} macro value in TAA.
 
-Set your Meraki dashboard URL as {$MERAKI.API.URL} macro value in Zabbix (e.g., api.meraki.com/api/v1).
+Set your Meraki dashboard URL as {$MERAKI.API.URL} macro value in TAA (e.g., api.meraki.com/api/v1).
 
 Set filters with macros if you want to override default filter parameters.
 
@@ -343,5 +343,5 @@ Set filters with macros if you want to override default filter parameters.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

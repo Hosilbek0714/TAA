@@ -3,7 +3,7 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Apache monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Apache monitoring by TAA via HTTP and doesn't require any external scripts.
 
 The template collects metrics by polling [`mod_status`](https://httpd.apache.org/docs/current/mod/mod_status.html) with HTTP agent remotely:
 
@@ -49,7 +49,7 @@ Scoreboard: ...
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -58,7 +58,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -119,7 +119,7 @@ This is an example configuration of the Apache web server:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Apache: Failed to fetch status page|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`nodata(/Apache by HTTP/apache.get_status,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
+|Apache: Failed to fetch status page|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Apache by HTTP/apache.get_status,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
 |Apache: Service is down||`last(/Apache by HTTP/net.tcp.service[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"])=0`|Average|**Manual close**: Yes|
 |Apache: Service response time is too high||`min(/Apache by HTTP/net.tcp.service.perf[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"],5m)>{$APACHE.RESPONSE_TIME.MAX.WARN}`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
 |Apache: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Apache by HTTP/apache.uptime)<10m`|Info|**Manual close**: Yes|
@@ -146,5 +146,5 @@ This is an example configuration of the Apache web server:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

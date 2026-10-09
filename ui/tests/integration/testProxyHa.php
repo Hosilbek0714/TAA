@@ -422,7 +422,7 @@ class testProxyHa extends CIntegrationTest {
 <host_groups>
 <host_group>
 	<uuid>6f6799aa69e844b4b3918f779f2abf08</uuid>
-	<name>Zabbix servers</name>
+	<name>TAA servers</name>
 </host_group>
 </host_groups>
 <hosts>
@@ -435,7 +435,7 @@ class testProxyHa extends CIntegrationTest {
 	</proxy_group>
 	<groups>
 	<group>
-		<name>Zabbix servers</name>
+		<name>TAA servers</name>
 	</group>
 	</groups>
 	<discovery_rules>
@@ -459,7 +459,7 @@ return JSON.stringify(hosts);</params>
 			<group_links>
 			<group_link>
 				<group>
-				<name>Zabbix servers</name>
+				<name>TAA servers</name>
 				</group>
 			</group_link>
 			</group_links>

@@ -388,7 +388,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = Zabbix;
+        		this.logger = TAA;
         	}
         	else {
         		this.logger = logger;
@@ -744,11 +744,11 @@ zabbix_export:
         
         1. To make this integration work, you will need the following from Jira:
           * Jira instance URL;
-          * Jira service desk id and request type id that the issues created by Zabbix will use;
+          * Jira service desk id and request type id that the issues created by TAA will use;
           * Jira username and password or API token. API token is strongly recommended and can be obtained at https://id.atlassian.com/manage/api-tokens.
-        2. In the Zabbix web interface, go to Administration → Macros section. Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the Zabbix frontend.
+        2. In the TAA web interface, go to Administration → Macros section. Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAA frontend.
         3. On this page replace the placeholder '<...>' values with the ones from the step #1.
-        4. In Zabbix, you need to have a Zabbix user and add Media with the Jira Service Management media type. Make sure this user has access to all hosts for which you would like problem issues to be created in Jira.
+        4. In TAA, you need to have a TAA user and add Media with the Jira Service Management media type. Make sure this user has access to all hosts for which you would like problem issues to be created in Jira.
       message_templates:
         - event_source: TRIGGERS
           operation_mode: PROBLEM

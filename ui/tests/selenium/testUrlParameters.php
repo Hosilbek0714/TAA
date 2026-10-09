@@ -42,7 +42,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => true,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -140,7 +140,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => true,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -214,7 +214,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => true,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -282,7 +282,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => true,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -356,7 +356,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => true,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -405,7 +405,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => true,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -456,7 +456,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmap.php?sysmapid=abc',
 						'text_not_present' => 'Network maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is not integer.'
 						]
 					],
@@ -464,7 +464,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmap.php?sysmapid=',
 						'text_not_present' => 'Network maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is not integer.'
 						]
 					],
@@ -472,7 +472,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmap.php?sysmapid=-1',
 						'text_not_present' => 'Network maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Incorrect value "-1" for "sysmapid" field.'
 						]
 					],
@@ -480,7 +480,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmap.php?sysmapid[]=1',
 						'text_not_present' => 'Network maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is not correct: invalid data type.'
 						]
 					],
@@ -488,7 +488,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmap.php',
 						'text_not_present' => 'Network maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is mandatory.'
 						]
 					]
@@ -514,7 +514,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'httpdetails.php?httptestid=abc',
 						'text_not_present' => 'Details of web scenario',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "httptestid" is not integer.'
 						]
 					],
@@ -522,7 +522,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'httpdetails.php?httptestid=',
 						'text_not_present' => 'Details of web scenario',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "httptestid" is not integer.'
 						]
 					],
@@ -530,7 +530,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'httpdetails.php?httptestid=-1',
 						'text_not_present' => 'Details of web scenario',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Incorrect value "-1" for "httptestid" field.'
 						]
 					],
@@ -538,7 +538,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'httpdetails.php?httptestid[]=1',
 						'text_not_present' => 'Details of web scenario',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "httptestid" is not correct: invalid data type.'
 						]
 					],
@@ -546,7 +546,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'httpdetails.php',
 						'text_not_present' => 'Details of web scenario',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "httptestid" is mandatory.'
 						]
 					]
@@ -574,7 +574,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Latest data',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "groupids" field.',
 							'Incorrect value for "hostids" field.'
 						]
@@ -584,7 +584,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Latest data',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "groupids" field.',
 							'Incorrect value for "hostids" field.'
 						]
@@ -594,7 +594,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Latest data',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "groupids" field.',
 							'Incorrect value for "hostids" field.'
 						]
@@ -608,7 +608,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Latest data',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for field "action": a character string is expected.'
 						]
 					]
@@ -654,7 +654,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'tr_events.php?triggerid[]=1&eventid[]=1',
 						'text_not_present' => 'Event details',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "triggerid" is not correct: invalid data type.',
 							'Field "eventid" is not correct: invalid data type.'
 						]
@@ -677,7 +677,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => false,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -685,7 +685,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=problem.view&triggerids%5B%5D=abc',
 						'text_not_present' => 'Problems',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: problem.view'
 							]
 					],
@@ -693,7 +693,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=problem.view&triggerids%5B%5D=',
 						'text_not_present' => 'Problems',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: problem.view'
 						]
 					],
@@ -701,7 +701,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=problem.view&triggerids%5B%5D=-1',
 						'text_not_present' => 'Problems',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: problem.view'
 						]
 					]
@@ -737,7 +737,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Graphs',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "filter_hostids" field.'
 						]
 					],
@@ -746,7 +746,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Graphs',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "filter_hostids" field.'
 						]
 					],
@@ -755,7 +755,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Graphs',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "filter_set" field.',
 							'Incorrect value "1" for "filter_hostids" field.',
 							'Incorrect value for "filter_show" field.'
@@ -777,21 +777,21 @@ class testUrlParameters extends CLegacyWebTest {
 					[
 						'url' => 'history.php?action=showgraph&itemids%5B%5D=',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "itemids" is not integer.'
 						]
 					],
 					[
 						'url' => 'history.php?action=showgraph&itemids=1',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "itemids" is not correct: an array is expected.'
 						]
 					],
 					[
 						'url' => 'history.php?action=showgraph&itemids%5B%5D=abc',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "itemids" is not integer.'
 						]
 					]
@@ -838,7 +838,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmaps.php?sysmapid=abc&severity_min=abc',
 						'text_not_present' => 'Maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is not integer.',
 							'Field "severity_min" is not integer.'
 						]
@@ -847,7 +847,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'sysmaps.php?sysmapid=&severity_min=',
 						'text_not_present' => 'Maps',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is not integer.',
 							'Field "severity_min" is not integer.'
 						]
@@ -855,14 +855,14 @@ class testUrlParameters extends CLegacyWebTest {
 					[
 						'url' => 'sysmaps.php?sysmapid[]=1&severity_min=0',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "sysmapid" is not correct: invalid data type.'
 						]
 					],
 					[
 						'url' => 'sysmaps.php?sysmapid=1&severity_min[]=0',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "severity_min" is not correct: invalid data type.'
 						]
 					],
@@ -871,7 +871,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'text_not_present' => 'Maps',
 						'fatal_error' => true,
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "sysmapid" field.',
 							'Controller: map.view'
 						]
@@ -902,7 +902,7 @@ class testUrlParameters extends CLegacyWebTest {
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => false,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -910,7 +910,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action[]=dashboard.list',
 						'text_not_present' => 'Dashboards',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for field "action": a character string is expected.'
 						]
 					],
@@ -918,14 +918,14 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action[]=dashboard.view',
 						'text_not_present' => 'Dashboards',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for field "action": a character string is expected.'
 						]
 					]
 				]
 			],
 			[
-				'title' => 'Fatal error, please report to the Zabbix team',
+				'title' => 'Fatal error, please report to the TAA team',
 				'check_server_name' => false,
 				'server_name_on_page' => false,
 				'test_cases' => [
@@ -933,7 +933,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=discovery.view&filter_druleids[]=abc',
 						'text_not_present' => 'Status of discovery',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: discovery.view'
 						]
 					],
@@ -941,7 +941,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=discovery.view&filter_druleids[]=-123',
 						'text_not_present' => 'Status of discovery',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: discovery.view'
 						]
 					],
@@ -949,7 +949,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=discovery.view&filter_druleids=123',
 						'text_not_present' => 'Status of discovery',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: discovery.view'
 						]
 					],
@@ -957,7 +957,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=discovery.view&filter_druleids=',
 						'text_not_present' => 'Status of discovery',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Controller: discovery.view'
 						]
 					],
@@ -965,7 +965,7 @@ class testUrlParameters extends CLegacyWebTest {
 						'url' => 'zabbix.php?action=discovery.view&filter_rst[]=1',
 						'text_not_present' => 'Status of discovery',
 						'text_present' => [
-							'Fatal error, please report to the Zabbix team',
+							'Fatal error, please report to the TAA team',
 							'Incorrect value for "filter_rst" field.',
 							'Controller: discovery.view'
 						]
@@ -1009,7 +1009,7 @@ class testUrlParameters extends CLegacyWebTest {
 					[
 						'url' => 'hostinventoriesoverview.php?filter_groups=1&filter_groupby[]=&filter_set[]=1',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "filter_set" is not correct: invalid data type.',
 							'Field "filter_groups" is not correct: an array is expected.',
 							'Field "filter_groupby" is not correct: invalid data type.'
@@ -1064,7 +1064,7 @@ class testUrlParameters extends CLegacyWebTest {
 					[
 						'url' => 'hostinventories.php?filter_groups=1&filter_set[]=1',
 						'text_present' => [
-							'Zabbix has received an incorrect request.',
+							'TAA has received an incorrect request.',
 							'Field "filter_set" is not correct: invalid data type.',
 							'Field "filter_groups" is not correct: an array is expected.'
 						]
@@ -1086,7 +1086,7 @@ class testUrlParameters extends CLegacyWebTest {
 		foreach ($test_cases as $test_case) {
 			$this->page->login()->open($test_case['url'], $server_name_on_page)->waitUntilReady();
 			if (array_key_exists('fatal_error', $test_case)) {
-				$this->zbxTestCheckTitle('Fatal error, please report to the Zabbix team', false);
+				$this->zbxTestCheckTitle('Fatal error, please report to the TAA team', false);
 			}
 			elseif (array_key_exists('access_denied', $test_case)) {
 				$this->zbxTestCheckTitle('Warning [refreshed every 30 sec.]', false);

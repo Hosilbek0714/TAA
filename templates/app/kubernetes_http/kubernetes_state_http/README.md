@@ -15,7 +15,7 @@ Also, see the Macros section for a list of macros used to set trigger values.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -24,11 +24,11 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-Install the [Zabbix Helm Chart](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) in your Kubernetes cluster.
+Install the [TAA Helm Chart](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) in your Kubernetes cluster.
 Internal service metrics are collected from kube-state-metrics endpoint.
 
 Template needs to use authorization via API token.
@@ -42,7 +42,7 @@ Get the generated service account token using the command:
 Then set it to the macro `{$KUBE.API.TOKEN}`.
 Set `{$KUBE.STATE.ENDPOINT.NAME}` with Kube state metrics endpoint name. See `kubectl -n monitoring get ep`. Default: `zabbix-kube-state-metrics`.
 
-*NOTE.* If you wish to monitor Controller Manager and Scheduler components, you might need to set the `--binding-address` option for them to the address where Zabbix proxy can reach them.
+*NOTE.* If you wish to monitor Controller Manager and Scheduler components, you might need to set the `--binding-address` option for them to the address where TAA proxy can reach them.
 For example, for clusters created with `kubeadm` it can be set in the following manifest files (changes will be applied immediately):
 
 - /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -102,7 +102,7 @@ You can also set up evaluation periods for replica mismatch triggers (Deployment
 
 `{$KUBE.REPLICA.MISMATCH.EVAL_PERIOD:regex:".*:default:.*"} = 15m`
 
-**Note** that different context macros with regular expressions matching the same string can be applied in an undefined order, and simple context macros (without regular expressions) have higher priority. Read the **Important notes** section in [`Zabbix documentation`](https://www.zabbix.com/documentation/7.4/manual/config/macros/user_macros_context) for details.
+**Note** that different context macros with regular expressions matching the same string can be applied in an undefined order, and simple context macros (without regular expressions) have higher priority. Read the **Important notes** section in [`TAA documentation`](https://www.zabbix.com/documentation/7.4/manual/config/macros/user_macros_context) for details.
 
 ### Macros used
 
@@ -553,5 +553,5 @@ You can also set up evaluation periods for replica mismatch triggers (Deployment
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

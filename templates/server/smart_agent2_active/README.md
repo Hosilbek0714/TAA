@@ -1,16 +1,16 @@
 
-# SMART by Zabbix agent 2 active
+# SMART by TAA agent 2 active
 
 ## Overview
 
-This template is designed for the effortless deployment of SMART monitoring by Zabbix via Zabbix agent 2 active and doesn't require any external scripts.
+This template is designed for the effortless deployment of SMART monitoring by TAA via TAA agent 2 active and doesn't require any external scripts.
 
-It collects metrics by Zabbix agent 2 version 5.0 and later with Smartmontools version 7.1 and later.
+It collects metrics by TAA agent 2 version 5.0 and later with Smartmontools version 7.1 and later.
 Disk discovery LLD rule finds all HDD, SSD, NVMe disks with S.M.A.R.T. enabled. Attribute discovery LLD rule have pre-defined Vendor Specific Attributes for each disk, and will be discovered if attribute is present.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,11 +19,11 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-1. Install Zabbix agent 2 and Smartmontools 7.1 or newer.
+1. Install TAA agent 2 and Smartmontools 7.1 or newer.
 
 2. Ensure the path to the `smartctl` executable is correctly specified. You can either provide the full path to the executable (e.g., `/usr/sbin/smartctl` on Linux or `C:\Program Files\smartctl\smartctl.exe` on Windows) in the configuration file or ensure that the folder containing the `smartctl` executable is added to the system's environment variables (`PATH`). This applies to both Linux and Windows systems.
 
@@ -35,7 +35,7 @@ Example for Windows:
 
 `Plugins.Smart.Path="C:\Program Files\smartctl\smartctl.exe"`
 
-3. Grant Zabbix agent 2 super/admin user privileges for the `smartctl` utility (not required for Windows). Example for Linux (add the line that grants execution of the `smartctl` utility without the password):
+3. Grant TAA agent 2 super/admin user privileges for the `smartctl` utility (not required for Windows). Example for Linux (add the line that grants execution of the `smartctl` utility without the password):
 
 - Run the `visudo` command to edit the `sudoers` file:
 
@@ -60,14 +60,14 @@ Plugin [parameters list](https://www.zabbix.com/documentation/7.4/manual/appendi
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Disk discovery|<p>Discovery SMART disks.</p>|Zabbix agent (active)|smart.disk.discovery|
+|Disk discovery|<p>Discovery SMART disks.</p>|TAA agent (active)|smart.disk.discovery|
 
 ### Item prototypes for Disk discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
 |[{#NAME}]: Smartctl error|<p>This metric will contain smartctl errors.</p>|Dependent item|smart.disk.error[{#NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.error`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
-|[{#NAME}]: Get disk attributes||Zabbix agent (active)|smart.disk.get[{#PATH},"{#RAIDTYPE}"]|
+|[{#NAME}]: Get disk attributes||TAA agent (active)|smart.disk.get[{#PATH},"{#RAIDTYPE}"]|
 |[{#NAME}]: Device model||Dependent item|smart.disk.model[{#NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.model_name`</p></li><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
 |[{#NAME}]: Serial number||Dependent item|smart.disk.sn[{#NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.serial_number`</p></li><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
 |[{#NAME}]: Self-test passed|<p>The disk is passed the SMART self-test or not.</p>|Dependent item|smart.disk.test[{#NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.self_test_passed`</p></li><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
@@ -91,23 +91,23 @@ Plugin [parameters list](https://www.zabbix.com/documentation/7.4/manual/appendi
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|SMART: [{#NAME}]: Disk has been replaced|<p>Device serial number has changed. Acknowledge to close the problem manually.</p>|`last(/SMART by Zabbix agent 2 active/smart.disk.sn[{#NAME}],#1)<>last(/SMART by Zabbix agent 2 active/smart.disk.sn[{#NAME}],#2) and length(last(/SMART by Zabbix agent 2 active/smart.disk.sn[{#NAME}]))>0`|Info|**Manual close**: Yes|
-|SMART: [{#NAME}]: Disk self-test is not passed||`last(/SMART by Zabbix agent 2 active/smart.disk.test[{#NAME}])="false"`|High||
-|SMART: [{#NAME}]: Average disk temperature is too high||`avg(/SMART by Zabbix agent 2 active/smart.disk.temperature[{#NAME}],5m)>{$SMART.TEMPERATURE.MAX.WARN}`|Warning|**Depends on**:<br><ul><li>SMART: [{#NAME}]: Average disk temperature is critical</li></ul>|
-|SMART: [{#NAME}]: Average disk temperature is critical||`avg(/SMART by Zabbix agent 2 active/smart.disk.temperature[{#NAME}],5m)>{$SMART.TEMPERATURE.MAX.CRIT}`|Average||
-|SMART: [{#NAME}]: NVMe disk percentage using is over 90% of estimated endurance||`last(/SMART by Zabbix agent 2 active/smart.disk.percentage_used[{#NAME}])>90`|Average||
-|SMART: [{#NAME}]: Command line did not parse|<p>Command line did not parse.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),1) = 1 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),1) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),1) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),1) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Device open failed|<p>Device open failed, device did not return an IDENTIFY DEVICE structure, or device is in a low-power mode.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),2) = 2 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),2) = 2 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),2) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),2) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Some command to the disk failed|<p>Some SMART or other ATA command to the disk failed,<br>or there was a checksum error in a SMART data structure.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),4) = 4 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),4) = 4 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),4) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),4) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Check returned "DISK FAILING"|<p>SMART status check returned "DISK FAILING".</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),8) = 8 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),8) = 8 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),8) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),8) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Some prefail Attributes <= threshold|<p>We found prefail Attributes <= threshold.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),16) = 16 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),16) = 16 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),16) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),16) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Some Attributes have been <= threshold|<p>SMART status check returned "DISK OK" but we found that some (usage<br>or prefail) Attributes have been <= threshold at some time in the past.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),32) = 32 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),32) = 32 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),32) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),32) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Error log contains records|<p>The device error log contains records of errors.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),64) = 64 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),64) = 64 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),64) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),64) )`|High|**Manual close**: Yes|
-|SMART: [{#NAME}]: Self-test log contains records|<p>The device self-test log contains records of errors. [ATA only]<br>Failed self-tests outdated by a newer successful extended self-test are ignored.</p>|`( count(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),128) = 128 ) or ( bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),128) = 128 and bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}]),128) > bitand(last(/SMART by Zabbix agent 2 active/smart.disk.es[{#NAME}],#2),128) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Disk has been replaced|<p>Device serial number has changed. Acknowledge to close the problem manually.</p>|`last(/SMART by TAA agent 2 active/smart.disk.sn[{#NAME}],#1)<>last(/SMART by TAA agent 2 active/smart.disk.sn[{#NAME}],#2) and length(last(/SMART by TAA agent 2 active/smart.disk.sn[{#NAME}]))>0`|Info|**Manual close**: Yes|
+|SMART: [{#NAME}]: Disk self-test is not passed||`last(/SMART by TAA agent 2 active/smart.disk.test[{#NAME}])="false"`|High||
+|SMART: [{#NAME}]: Average disk temperature is too high||`avg(/SMART by TAA agent 2 active/smart.disk.temperature[{#NAME}],5m)>{$SMART.TEMPERATURE.MAX.WARN}`|Warning|**Depends on**:<br><ul><li>SMART: [{#NAME}]: Average disk temperature is critical</li></ul>|
+|SMART: [{#NAME}]: Average disk temperature is critical||`avg(/SMART by TAA agent 2 active/smart.disk.temperature[{#NAME}],5m)>{$SMART.TEMPERATURE.MAX.CRIT}`|Average||
+|SMART: [{#NAME}]: NVMe disk percentage using is over 90% of estimated endurance||`last(/SMART by TAA agent 2 active/smart.disk.percentage_used[{#NAME}])>90`|Average||
+|SMART: [{#NAME}]: Command line did not parse|<p>Command line did not parse.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),1) = 1 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),1) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),1) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),1) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Device open failed|<p>Device open failed, device did not return an IDENTIFY DEVICE structure, or device is in a low-power mode.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),2) = 2 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),2) = 2 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),2) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),2) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Some command to the disk failed|<p>Some SMART or other ATA command to the disk failed,<br>or there was a checksum error in a SMART data structure.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),4) = 4 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),4) = 4 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),4) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),4) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Check returned "DISK FAILING"|<p>SMART status check returned "DISK FAILING".</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),8) = 8 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),8) = 8 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),8) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),8) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Some prefail Attributes <= threshold|<p>We found prefail Attributes <= threshold.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),16) = 16 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),16) = 16 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),16) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),16) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Some Attributes have been <= threshold|<p>SMART status check returned "DISK OK" but we found that some (usage<br>or prefail) Attributes have been <= threshold at some time in the past.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),32) = 32 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),32) = 32 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),32) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),32) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Error log contains records|<p>The device error log contains records of errors.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),64) = 64 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),64) = 64 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),64) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),64) )`|High|**Manual close**: Yes|
+|SMART: [{#NAME}]: Self-test log contains records|<p>The device self-test log contains records of errors. [ATA only]<br>Failed self-tests outdated by a newer successful extended self-test are ignored.</p>|`( count(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2) = 1 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),128) = 128 ) or ( bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),128) = 128 and bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}]),128) > bitand(last(/SMART by TAA agent 2 active/smart.disk.es[{#NAME}],#2),128) )`|High|**Manual close**: Yes|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

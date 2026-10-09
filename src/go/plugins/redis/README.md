@@ -1,6 +1,6 @@
 # Redis plugin
-Provides native Zabbix solution for monitoring Redis servers (in-memory data structure store). It can monitor several 
-Redis instances simultaneously, remotes or locals to the Zabbix Agent. Both TCP and Unix-socket connections are 
+Provides native TAA solution for monitoring Redis servers (in-memory data structure store). It can monitor several 
+Redis instances simultaneously, remotes or locals to the TAA Agent. Both TCP and Unix-socket connections are 
 supported. The plugin keeps connections in the opened state to reduce network congestion, latency, CPU and 
 memory usage. Best for use in conjunction with the official 
 [Redis template.](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/db/redis)
@@ -10,12 +10,12 @@ You can extend it or create your template for your specific needs.
 * Redis, version 3.0+
 
 ## Installation
-The plugin is supplied as a part of Zabbix Agent 2, and it does not require any special installation steps. Once 
-Zabbix Agent 2 installed, the plugin is ready to work. The only thing you need to do is to make sure a Redis 
+The plugin is supplied as a part of TAA Agent 2, and it does not require any special installation steps. Once 
+TAA Agent 2 installed, the plugin is ready to work. The only thing you need to do is to make sure a Redis 
 instance is available for connection.
 
 ## Configuration
-The Zabbix Agent's configuration file is used to configure plugins.
+The TAA Agent's configuration file is used to configure plugins.
 
 **Plugins.Redis.KeepAlive** — Sets a time for waiting before unused connections will be closed.  
 *Default value:* 300 sec.  
@@ -99,5 +99,5 @@ section — Section of information. The default section name is "default".
 **redis.slowlog.count[\<commonParams\>]** — Returns the number of slow log entries since Redis was started.
 
 ## Troubleshooting
-The plugin uses Zabbix agent's logs. You can increase debugging level of Zabbix Agent if you need more details about 
+The plugin uses TAA agent's logs. You can increase debugging level of TAA Agent if you need more details about 
 what is happening. 

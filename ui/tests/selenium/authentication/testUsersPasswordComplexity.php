@@ -1010,7 +1010,7 @@ class testUsersPasswordComplexity extends CWebTest {
 		if ($update === false && $own === false) {
 			$user_form->fill([
 				'Username' => $username,
-				'Groups' => ['Zabbix administrators']
+				'Groups' => ['TAA administrators']
 			]);
 		}
 
@@ -1054,7 +1054,7 @@ class testUsersPasswordComplexity extends CWebTest {
 		else {
 			if ($own || $userid === 1) {
 				// If user updates their own password they will be logged out, so check login screen.
-				$this->page->assertTitle('Zabbix');
+				$this->page->assertTitle('TAA');
 				$this->assertTrue($this->query('button:Sign in')->one()->isClickable());
 			}
 			else {
@@ -1066,7 +1066,7 @@ class testUsersPasswordComplexity extends CWebTest {
 
 			// Check success login with new password.
 			$this->page->userLogin($username, $data['Password']);
-			$this->assertTrue($this->query('xpath://a[@title='.zbx_dbstr(($userid === 1) ? 'Admin (Zabbix Administrator)'
+			$this->assertTrue($this->query('xpath://a[@title='.zbx_dbstr(($userid === 1) ? 'Admin (TAA Administrator)'
 					: $username).' and text()="User settings"]')->exists()
 			);
 

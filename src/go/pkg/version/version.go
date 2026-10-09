@@ -138,20 +138,20 @@ func TitleMessage() string {
 }
 
 // Display funksiyasi -V komandasi berilganda ekranga chiqariladi.
-// (Zabbix) yozuvi (TAA Agent 2) ga o'zgartirildi.
+// (TAA) yozuvi (TAA Agent 2) ga o'zgartirildi.
 func Display(additionalMessages []string) {
-	// (Zabbix) so'zi olib tashlandi, faqat TAA Agent 2 qoldi
+	// (TAA) so'zi olib tashlandi, faqat TAA Agent 2 qoldi
 	fmt.Printf("%s TAA Agent 2 %s\n", TitleMessage(), Long())
 
-	// Revision qatoridagi Zabbix so'zini ham olib tashlaymiz
+	// Revision qatoridagi TAA so'zini ham olib tashlaymiz
 	fmt.Printf(
 		"Revision %s %s, compilation time: %s %s, built with: %s\n",
 		Revision(), RevDate(), CompileDate(), CompileTime(), runtime.Version(),
 	)
 
 	for _, msg := range additionalMessages {
-		// Agar qo'shimcha xabarlarda Zabbix bo'lsa, ularni almashtiramiz
-		fmt.Println(strings.ReplaceAll(msg, "Zabbix", "TAA"))
+		// Agar qo'shimcha xabarlarda TAA bo'lsa, ularni almashtiramiz
+		fmt.Println(strings.ReplaceAll(msg, "TAA", "TAA"))
 	}
 
 	fmt.Println()

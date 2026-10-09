@@ -1,4 +1,4 @@
-# This is a configuration file for Zabbix Java Gateway.
+# This is a configuration file for TAA Java Gateway.
 # It is sourced by startup.sh and shutdown.sh scripts.
 
 ### Option: zabbix.listenIP
@@ -18,7 +18,7 @@
 
 ### Option: zabbix.pidFile
 #	Name of PID file.
-#	If omitted, Zabbix Java Gateway is started as a console application.
+#	If omitted, TAA Java Gateway is started as a console application.
 #
 # Mandatory: no
 # Default:
@@ -49,7 +49,7 @@ PID_FILE="/tmp/zabbix_java.pid"
 # Default:
 # PROPERTIES_FILE=
 
-# uncomment to enable remote monitoring of the standard JMX objects on the Zabbix Java Gateway itself
+# uncomment to enable remote monitoring of the standard JMX objects on the TAA Java Gateway itself
 #JAVA_OPTIONS="$JAVA_OPTIONS -Dcom.sun.management.jmxremote -Dcom.sun.management.jmxremote.port=12345
 #	-Dcom.sun.management.jmxremote.authenticate=false -Dcom.sun.management.jmxremote.ssl=false
 #	-Dcom.sun.management.jmxremote.registry.ssl=false"

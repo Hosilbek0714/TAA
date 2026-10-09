@@ -39,7 +39,7 @@ class testFormTemplateGroup extends testFormGroups {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Group name' => 'Zabbix servers'
+						'Group name' => 'TAA servers'
 					]
 				]
 			],

@@ -14,7 +14,7 @@
 **/
 
 /**
- * Zabbix log file helper.
+ * TAA log file helper.
  */
 class CLogHelper {
 

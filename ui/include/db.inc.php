@@ -18,7 +18,7 @@
  * Creates global database connection.
  *
  * @param string $error returns a message in case of an error
- * @param bool   $debug turns On or Off trace calls when making connections. Suggested debug mode Off during Zabbix setup
+ * @param bool   $debug turns On or Off trace calls when making connections. Suggested debug mode Off during TAA setup
  *
  * @return bool
  */

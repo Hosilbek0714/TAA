@@ -18,7 +18,7 @@ require_once 'vendor/autoload.php';
 require_once dirname(__FILE__).'/CTest.php';
 
 /**
- * Base class for Zabbix API tests.
+ * Base class for TAA API tests.
  */
 class CAPITest extends CTest {
 

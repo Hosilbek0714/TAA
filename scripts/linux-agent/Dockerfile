@@ -44,7 +44,7 @@ FROM alpine:3.19 AS runtime
 
 # OCI labellar — image metadatasi
 LABEL org.opencontainers.image.title="TAA Agent 2 (Linux)" \
-      org.opencontainers.image.description="TAA monitoring agent (Linux) — TAA-brandlangan Zabbix Agent 2 forki" \
+      org.opencontainers.image.description="TAA monitoring agent (Linux) — TAA-brandlangan TAA Agent 2 forki" \
       org.opencontainers.image.vendor="TAA" \
       org.opencontainers.image.source="https://taa.local" \
       org.opencontainers.image.licenses="GPL-2.0"

@@ -25,7 +25,7 @@ require_once __DIR__.'/../../include/CLegacyWebTest.php';
  */
 class testPageUsers extends CLegacyWebTest {
 	public $userAlias = 'Admin';
-	public $userName = 'Zabbix';
+	public $userName = 'TAA';
 	public $userSurname = 'Administrator';
 	public $userRole = 'Super admin role';
 
@@ -68,7 +68,7 @@ class testPageUsers extends CLegacyWebTest {
 
 		$form = $this->query('name:zbx_filter')->asForm()->waitUntilVisible()->one();
 		$this->assertEquals(['Username', 'Name', 'Last name', 'User roles', 'User groups'], $form->getLabels()->asText());
-		$form->fill(['User groups' => 'Zabbix administrators']);
+		$form->fill(['User groups' => 'TAA administrators']);
 		$form->submit();
 
 		$this->zbxTestTextNotPresent('guest');
@@ -162,7 +162,7 @@ class testPageUsers extends CLegacyWebTest {
 		$form->query('button:Reset')->waitUntilClickable()->one()->click();
 
 		$form->fill([
-			'User groups' => 'Zabbix administrators',
+			'User groups' => 'TAA administrators',
 			'Username' =>  $this->userAlias,
 			'Last name' => $this->userSurname,
 			'User roles' => $this->userRole

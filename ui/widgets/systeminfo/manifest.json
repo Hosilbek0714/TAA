@@ -5,8 +5,8 @@
 	"name": "System information",
 	"namespace": "SystemInfo",
 	"version": "1.0",
-	"author": "Zabbix",
-	"description": "Displays the current status and system statistics of the Zabbix server and its associated components.",
+	"author": "TAA",
+	"description": "Displays the current status and system statistics of the TAA server and its associated components.",
 	"url": "web_interface/frontend_sections/dashboards/widgets/system",
 	"widget": {
 		"refresh_rate": 900

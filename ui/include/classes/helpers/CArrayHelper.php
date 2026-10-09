@@ -244,10 +244,10 @@ class CArrayHelper {
 	 *
 	 * Example 2:
 	 * $data = array(
-	 *     array('host' => 'Zabbix server', 'name' => 'CPU load'),
-	 * 	   array('host' => 'Zabbix server', 'name' => 'Free memory'),
+	 *     array('host' => 'TAA server', 'name' => 'CPU load'),
+	 * 	   array('host' => 'TAA server', 'name' => 'Free memory'),
 	 * 	   array('host' => 'Linux server', 'name' => 'CPU load'),
-	 * 	   array('host' => 'Zabbix server', 'name' => 'CPU load')
+	 * 	   array('host' => 'TAA server', 'name' => 'CPU load')
 	 * );
 	 * var_dump(CArrayHelper::findDuplicate($data, 'name', 'host')); // returns array with index 3
 	 *

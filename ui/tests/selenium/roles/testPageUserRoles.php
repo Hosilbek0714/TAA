@@ -173,7 +173,7 @@ class testPageUserRoles extends CWebTest {
 			[
 				'Name' => 'Super admin role',
 				'#' => 'Users 6',
-				'Users' => 'Admin (Zabbix Administrator), filter-create, filter-delete, filter-update, LDAP user, test-timezone'
+				'Users' => 'Admin (TAA Administrator), filter-create, filter-delete, filter-update, LDAP user, test-timezone'
 			],
 			[
 				'Name' => 'UR1-executenow-on',

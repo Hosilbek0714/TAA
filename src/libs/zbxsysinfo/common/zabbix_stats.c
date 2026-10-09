@@ -63,11 +63,11 @@ static int	check_response(const char *response, AGENT_RESULT *result)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: sends Zabbix stats request and receives result data               *
+ * Purpose: sends TAA stats request and receives result data               *
  *                                                                            *
  * Parameters: json    - [IN] the request                                     *
- *             ip      - [IN] external Zabbix instance hostname               *
- *             port    - [IN] external Zabbix instance port                   *
+ *             ip      - [IN] external TAA instance hostname               *
+ *             port    - [IN] external TAA instance port                   *
  *             timeout - [IN] timeout value for comms                         *
  *             result  - [OUT] check result                                   *
  *                                                                            *
@@ -115,10 +115,10 @@ static void	get_remote_zabbix_stats(const struct zbx_json *json, const char *ip,
 
 /******************************************************************************
  *                                                                            *
- * Purpose: creates Zabbix stats request                                      *
+ * Purpose: creates TAA stats request                                      *
  *                                                                            *
- * Parameters: ip      - [IN] external Zabbix instance hostname               *
- *             port    - [IN] external Zabbix instance port                   *
+ * Parameters: ip      - [IN] external TAA instance hostname               *
+ *             port    - [IN] external TAA instance port                   *
  *             timeout - [IN] timeout value for comms                         *
  *             result  - [OUT] check result                                   *
  *                                                                            *
@@ -142,10 +142,10 @@ int	zbx_get_remote_zabbix_stats(const char *ip, unsigned short port, int timeout
 
 /******************************************************************************
  *                                                                            *
- * Purpose: creates Zabbix stats queue request                                *
+ * Purpose: creates TAA stats queue request                                *
  *                                                                            *
- * Parameters: ip      - [IN] external Zabbix instance hostname               *
- *             port    - [IN] external Zabbix instance port                   *
+ * Parameters: ip      - [IN] external TAA instance hostname               *
+ *             port    - [IN] external TAA instance port                   *
  *             from    - [IN] lower limit for delay                           *
  *             to      - [IN] upper limit for delay                           *
  *             timeout - [IN] timeout value for comms                         *

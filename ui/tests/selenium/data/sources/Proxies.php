@@ -255,7 +255,7 @@ class Proxies {
 		/**
 		 * Add proxies versions.
 		 * Supported version "60400" is hardcoded one time, so that no need to change it,
-		 * even if newer versions of Zabbix are released.
+		 * even if newer versions of TAA are released.
 		 */
 		DBexecute('UPDATE proxy_rtdata SET version=60400, compatibility=1 WHERE proxyid='.zbx_dbstr($active_proxyids['active_current']));
 		DBexecute('UPDATE proxy_rtdata SET version=60200, compatibility=2 WHERE proxyid='.zbx_dbstr($passive_proxyids['passive_outdated']));

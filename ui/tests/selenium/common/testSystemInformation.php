@@ -77,7 +77,7 @@ class testSystemInformation extends CWebTest {
 			]
 		];
 
-		// Update Zabbix frontend config to make sure that the address of the active node is shown correctly in tests.
+		// Update TAA frontend config to make sure that the address of the active node is shown correctly in tests.
 		$file_path = __DIR__.'/../../../conf/zabbix.conf.php';
 		$pattern = array('/[$]ZBX_SERVER/','/[$]ZBX_SERVER_PORT/');
 		$replace = array('// $ZBX_SERVER','// $ZBX_SERVER_PORT');
@@ -92,7 +92,7 @@ class testSystemInformation extends CWebTest {
 			);
 		}
 
-		// Get the time when config is updated - it is needed to know how long to wait until update of Zabbix server status.
+		// Get the time when config is updated - it is needed to know how long to wait until update of TAA server status.
 		self::$update_timestamp = time();
 	}
 
@@ -118,7 +118,7 @@ class testSystemInformation extends CWebTest {
 
 		if (!$dashboardid) {
 			$nodes_table = $this->query('xpath://table[@class="list-table sticky-header sticky-footer"]')->asTable()->one();
-			$server_address = $this->query('xpath://th[text()="Zabbix server is running"]/../td[2]')->one();
+			$server_address = $this->query('xpath://th[text()="TAA server is running"]/../td[2]')->one();
 		}
 		else {
 			$dashboard = CDashboardElement::find()->waitUntilReady()->one();
@@ -158,7 +158,7 @@ class testSystemInformation extends CWebTest {
 			$last_actual = $last_seen->getText();
 			$this->assertContains($last_actual, $last_expected, $last_actual.' not in ['.implode(', ', $last_expected).']');
 
-			// Check Zabbix server address and port for each record in the HA cluster nodes table.
+			// Check TAA server address and port for each record in the HA cluster nodes table.
 			if ($name === 'Active node') {
 				self::$skip_fields[] = $row->getColumn('Address');
 				$this->assertEquals($DB['SERVER'].':0', $row->getColumn('Address')->getText());
@@ -166,13 +166,13 @@ class testSystemInformation extends CWebTest {
 		}
 
 		/**
-		 * Check and hide the active Zabbix server address in widget that is working in System stats mode or in the part
+		 * Check and hide the active TAA server address in widget that is working in System stats mode or in the part
 		 * of the report that displays the overall system statistics.
 		 */
 		$this->assertEquals($DB['SERVER'].':0', $server_address->getText());
 		self::$skip_fields[] = $server_address;
 
-		// Hide the footer of the report as it contains Zabbix version.
+		// Hide the footer of the report as it contains TAA version.
 		if (!$dashboardid) {
 			self::$skip_fields[] = $this->query('xpath://footer')->one();
 		}
@@ -184,7 +184,7 @@ class testSystemInformation extends CWebTest {
 	}
 
 	/**
-	 * Function checks that Zabbix server status is updated after failover delay passes and frontend config is re-validated.
+	 * Function checks that TAA server status is updated after failover delay passes and frontend config is re-validated.
 	 *
 	 * @param integer $dashboardid	id of the dashboard that the widgets are located in.
 	 */
@@ -193,15 +193,15 @@ class testSystemInformation extends CWebTest {
 		$this->page->login()->open($url)->waitUntilReady();
 		$table = $this->query('xpath://table[@class="list-table sticky-header"]')->asTable()->waitUntilVisible()->one();
 
-		// Check that before failover delay passes frontend thinks that Zabbix server is running.
+		// Check that before failover delay passes frontend thinks that TAA server is running.
 		// TODO: should be changed to 'No' or uncommented after ZBXNEXT-8698
-//		$this->assertEquals('Yes', $table->findRow('Parameter', 'Zabbix server is running')->getColumn('Value')->getText());
+//		$this->assertEquals('Yes', $table->findRow('Parameter', 'TAA server is running')->getColumn('Value')->getText());
 
 		// Wait for failover delay to pass.
 		sleep(self::$update_timestamp + self::FAILOVER_DELAY - time());
 
-		// Check that after failover delay passes frontend re-validates Zabbix server status.
+		// Check that after failover delay passes frontend re-validates TAA server status.
 		$this->page->refresh();
-		$this->assertEquals('No', $table->findRow('Parameter', 'Zabbix server is running')->getColumn('Value')->getText());
+		$this->assertEquals('No', $table->findRow('Parameter', 'TAA server is running')->getColumn('Value')->getText());
 	}
 }

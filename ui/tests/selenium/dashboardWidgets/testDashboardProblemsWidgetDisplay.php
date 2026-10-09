@@ -263,7 +263,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 							'zi-alert-with-content' => [
 								[
 									'Time' => 'acknowledged',
-									'User' => 'Admin (Zabbix Administrator)',
+									'User' => 'Admin (TAA Administrator)',
 									'Message' => 'Acknowledged event'
 								]
 							],
@@ -272,7 +272,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 							'zi-bullet-right-with-content' => [
 								[
 									'Time' => 'acknowledged',
-									'User/Recipient' => 'Admin (Zabbix Administrator)',
+									'User/Recipient' => 'Admin (TAA Administrator)',
 									'Action' => '',
 									'Message/Command' => 'Acknowledged event',
 									'Status' => '',
@@ -308,7 +308,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 					],
 					'check_suppressed_icon' => [
 						'problem' => 'Trigger for widget text',
-						'text' => "Suppressed till: Indefinitely\nManually by: Admin (Zabbix Administrator)"
+						'text' => "Suppressed till: Indefinitely\nManually by: Admin (TAA Administrator)"
 					]
 				]
 			],
@@ -386,7 +386,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 						'Name' => 'Group, Excluded groups',
 						'Exclude host groups' => [
 							'Group for Problems Widgets',
-							'Zabbix servers',
+							'TAA servers',
 							'Group to check triggers filtering',
 							'Another group to check Overview',
 							'Group to check Overview',
@@ -436,7 +436,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 				[
 					'fields' => [
 						'Name' => 'Group, tags, show 1',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Show tags' => 1
 					],
 					'Tags' => [
@@ -468,7 +468,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 				[
 					'fields' => [
 						'Name' => 'Group, tags, show 2',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Show tags' => 2
 					],
 					'Tags' => [
@@ -504,7 +504,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 				[
 					'fields' => [
 						'Name' => 'Group, tags, show 3, shortened',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Show tags' => 3,
 						'Tag name' => 'Shortened',
 						'Show timeline' => false,
@@ -548,7 +548,7 @@ class testDashboardProblemsWidgetDisplay extends testWidgets {
 				[
 					'fields' => [
 						'Name' => 'Group, tags, show 3, shortened, tag priority',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Show tags' => 3,
 						'Tag name' => 'None',
 						'Show timeline' => false,

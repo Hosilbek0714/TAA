@@ -208,7 +208,7 @@ class testFormUpdateProblem extends CWebTest {
 					],
 					'message' => 'Acknowledged event',
 					'Unacknowledge' => true,
-					'history' => [" Admin (Zabbix Administrator)".
+					'history' => [" Admin (TAA Administrator)".
 							"\nAcknowledged event"
 					],
 					'hintboxes' => [
@@ -885,7 +885,7 @@ class testFormUpdateProblem extends CWebTest {
 
 		// Check suppressed icon and hint.
 		$this->checkIconAndHint($row, 'zi-eye-off', "Suppressed till: Indefinitely".
-				"\nManually by: Admin (Zabbix Administrator)"
+				"\nManually by: Admin (TAA Administrator)"
 		);
 
 		// Suppress the problem in DB: 'Trigger for icon test'.
@@ -911,7 +911,7 @@ class testFormUpdateProblem extends CWebTest {
 		$table->waitUntilReloaded();
 
 		// Check unsuppressed icon and hint.
-		$this->checkIconAndHint($row, 'zi-eye', 'Unsuppressed by: Admin (Zabbix Administrator)');
+		$this->checkIconAndHint($row, 'zi-eye', 'Unsuppressed by: Admin (TAA Administrator)');
 
 		// Unsuppress the problem in DB: 'Trigger for icon test'.
 		DBexecute('DELETE FROM event_suppress WHERE event_suppressid=10051');
@@ -965,7 +965,7 @@ class testFormUpdateProblem extends CWebTest {
 		// Check last two rows.
 		foreach ([0, 1] as $i)  {
 			$action_row = $table->getRow($i);
-			$this->assertEquals('Admin (Zabbix Administrator)', $action_row->getColumn($user)->getText());
+			$this->assertEquals('Admin (TAA Administrator)', $action_row->getColumn($user)->getText());
 			$query = ($i === 0)
 				? 'xpath:.//span[@title="Unsuppressed"]'
 				: 'xpath:.//*['.CXPathHelper::fromClass('zi-eye-off').']';

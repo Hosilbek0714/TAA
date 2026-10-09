@@ -151,7 +151,7 @@ static const char	*usage_message[] = {
 
 /* application HELP message */
 static const char	*help_message[] = {
-	"A Zabbix daemon for monitoring of various server parameters.",
+	"A TAA daemon for monitoring of various server parameters.",
 	"",
 	"Options:",
 	"  -c --config config-file        Path to the configuration file",
@@ -160,7 +160,7 @@ static const char	*help_message[] = {
 #else
 	"                                 (default: \"" DEFAULT_CONFIG_FILE "\")",
 #endif
-	"  -f --foreground                Run Zabbix agent in foreground",
+	"  -f --foreground                Run TAA agent in foreground",
 	"  -p --print                     Print known items and exit",
 	"  -t --test item-key             Test specified item and exit",
 	"  -T --test-config               Validate configuration file and exit",
@@ -168,17 +168,17 @@ static const char	*help_message[] = {
 	"  -m --multiple-agents           For -i -d -s -x functions service name will",
 	"                                 include Hostname parameter specified in",
 	"                                 configuration file",
-	"  -S --startup-type              Set startup type of the Zabbix Windows",
+	"  -S --startup-type              Set startup type of the TAA Windows",
 	"                                 agent service to be installed. Allowed values:",
 	"                                 " ZBX_SERVICE_STARTUP_AUTOMATIC " (default), " ZBX_SERVICE_STARTUP_DELAYED
 	", " ZBX_SERVICE_STARTUP_MANUAL ", " ZBX_SERVICE_STARTUP_DISABLED,
 	"Functions:",
 	"",
-	"  -i --install                   Install Zabbix agent as service",
-	"  -d --uninstall                 Uninstall Zabbix agent from service",
+	"  -i --install                   Install TAA agent as service",
+	"  -d --uninstall                 Uninstall TAA agent from service",
 
-	"  -s --start                     Start Zabbix agent service",
-	"  -x --stop                      Stop Zabbix agent service",
+	"  -s --start                     Start TAA agent service",
+	"  -x --stop                      Stop TAA agent service",
 #else
 	"  -R --runtime-control runtime-option   Perform administrative functions",
 	"",
@@ -465,7 +465,7 @@ static int	parse_commandline(int argc, char **argv, ZBX_TASK_EX *t)
 		case ZBX_TASK_SET_SERVICE_STARTUP_TYPE:
 			if (0 != (t->flags & ZBX_TASK_FLAG_FOREGROUND))
 			{
-				zbx_error("foreground option cannot be used with Zabbix agent services");
+				zbx_error("foreground option cannot be used with TAA agent services");
 				ret = FAIL;
 				goto out;
 			}
@@ -473,7 +473,7 @@ static int	parse_commandline(int argc, char **argv, ZBX_TASK_EX *t)
 		default:
 			if (0 != (t->flags & ZBX_TASK_FLAG_MULTIPLE_AGENTS))
 			{
-				zbx_error("multiple agents option can be used only with Zabbix agent services");
+				zbx_error("multiple agents option can be used only with TAA agent services");
 				ret = FAIL;
 				goto out;
 			}
@@ -602,7 +602,7 @@ cf_out:
 
 		if (0 == GetModuleFileNameEx(GetCurrentProcess(), NULL, szProcessName, ARRSIZE(szProcessName)))
 		{
-			zbx_error("failed to get Zabbix agent executable file path while initializing default config"
+			zbx_error("failed to get TAA agent executable file path while initializing default config"
 					" path");
 			goto skip;
 		}
@@ -611,7 +611,7 @@ cf_out:
 
 		if (NULL == (ptr = get_program_name(process_path)))
 		{
-			zbx_error("got unexpected Zabbix agent executable file path '%s' while initializing"
+			zbx_error("got unexpected TAA agent executable file path '%s' while initializing"
 					" default config path", ptr);
 			goto skip;
 		}
@@ -1271,7 +1271,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 #endif
 	if (0 != (flags & ZBX_TASK_FLAG_FOREGROUND))
 	{
-		printf("Starting Zabbix Agent [%s]. Zabbix %s (revision %s).\nPress Ctrl+C to exit.\n\n",
+		printf("Starting TAA Agent [%s]. TAA %s (revision %s).\nPress Ctrl+C to exit.\n\n",
 				zbx_config_hostnames, ZABBIX_VERSION, ZABBIX_REVISION);
 	}
 #ifndef _WINDOWS
@@ -1300,7 +1300,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 #	define TLS_FEATURE_STATUS	" NO"
 #endif
 
-	zabbix_log(LOG_LEVEL_INFORMATION, "Starting Zabbix Agent [%s]. Zabbix %s (revision %s).",
+	zabbix_log(LOG_LEVEL_INFORMATION, "Starting TAA Agent [%s]. TAA %s (revision %s).",
 			zbx_config_hostnames, ZABBIX_VERSION, ZABBIX_REVISION);
 
 	zabbix_log(LOG_LEVEL_INFORMATION, "**** Enabled features ****");
@@ -1448,7 +1448,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 
 	if (ZBX_IS_RUNNING())
 	{
-		/* Zabbix agent service should either be stopped by the user in ServiceCtrlHandler() or */
+		/* TAA agent service should either be stopped by the user in ServiceCtrlHandler() or */
 		/* crash. If some thread has terminated normally, it means something is terribly wrong. */
 
 		zabbix_log(LOG_LEVEL_CRIT, "One thread has terminated unexpectedly (code:%lu). Exiting ...", res);
@@ -1536,7 +1536,7 @@ void	zbx_free_service_resources(int ret)
 #ifndef _WINDOWS
 	zbx_unload_modules();
 #endif
-	zabbix_log(LOG_LEVEL_INFORMATION, "Zabbix Agent stopped. Zabbix %s (revision %s).",
+	zabbix_log(LOG_LEVEL_INFORMATION, "TAA Agent stopped. TAA %s (revision %s).",
 			ZABBIX_VERSION, ZABBIX_REVISION);
 
 	zbx_close_log();

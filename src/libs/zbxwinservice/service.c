@@ -76,13 +76,13 @@ static VOID WINAPI	ServiceCtrlHandler(DWORD ctrlCode)
 	switch (ctrlCode)
 	{
 		case SERVICE_CONTROL_STOP:
-			zabbix_log(LOG_LEVEL_INFORMATION, "Zabbix Agent received stop request.");
+			zabbix_log(LOG_LEVEL_INFORMATION, "TAA Agent received stop request.");
 			break;
 		case SERVICE_CONTROL_SHUTDOWN:
-			zabbix_log(LOG_LEVEL_INFORMATION, "Zabbix Agent received shutdown request.");
+			zabbix_log(LOG_LEVEL_INFORMATION, "TAA Agent received shutdown request.");
 			break;
 		default:
-			zabbix_log(LOG_LEVEL_DEBUG, "Zabbix Agent received request:%u.", ctrlCode);
+			zabbix_log(LOG_LEVEL_DEBUG, "TAA Agent received request:%u.", ctrlCode);
 			break;
 	}
 
@@ -163,7 +163,7 @@ void	zbx_service_start(int flags)
 	if (0 == ret)
 	{
 		if (ERROR_FAILED_SERVICE_CONTROLLER_CONNECT == GetLastError())
-			zbx_error("use foreground option to run Zabbix agent as console application");
+			zbx_error("use foreground option to run TAA agent as console application");
 		else
 			zbx_error("StartServiceCtrlDispatcher() failed: %s", zbx_strerror_from_system(GetLastError()));
 	}
@@ -314,10 +314,10 @@ static int	svc_delayed_autostart_config(SC_HANDLE service, unsigned int flags)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: creates and installs Zabbix agent Windows service                 *
+ * Purpose: creates and installs TAA agent Windows service                 *
  *                                                                            *
- * Parameters: path        - [IN] path to Zabbix agent 2 binary file          *
- *             config_file - [IN] path to Zabbix agent 2 config file          *
+ * Parameters: path        - [IN] path to TAA agent 2 binary file          *
+ *             config_file - [IN] path to TAA agent 2 config file          *
  *             flags       - [IN] flags defined by command line options       *
  *                                                                            *
  * Return value: SUCCEED - installed and mandatory configuration set          *

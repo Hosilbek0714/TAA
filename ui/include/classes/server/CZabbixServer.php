@@ -15,7 +15,7 @@
 
 
 /**
- * A class for interacting with the Zabbix server.
+ * A class for interacting with the TAA server.
  *
  * Class CZabbixServer
  */
@@ -62,14 +62,14 @@ class CZabbixServer {
 	const ERROR_CODE_TCP = 2;
 
 	/**
-	 * Zabbix server host name.
+	 * TAA server host name.
 	 *
 	 * @var string|null
 	 */
 	protected $host;
 
 	/**
-	 * Zabbix server port number.
+	 * TAA server port number.
 	 *
 	 * @var int|null
 	 */
@@ -97,7 +97,7 @@ class CZabbixServer {
 	protected $total_bytes_limit;
 
 	/**
-	 * Zabbix server socket resource.
+	 * TAA server socket resource.
 	 *
 	 * @var resource
 	 */
@@ -484,7 +484,7 @@ class CZabbixServer {
 		// Send the command.
 		$json = json_encode($params);
 		if (fwrite($this->socket, ZBX_TCP_HEADER.pack('V', strlen($json))."\x00\x00\x00\x00".$json) === false) {
-			$this->error = _s('Cannot send command, check connection with Zabbix server "%1$s".', $this->host);
+			$this->error = _s('Cannot send command, check connection with TAA server "%1$s".', $this->host);
 			return false;
 		}
 
@@ -497,7 +497,7 @@ class CZabbixServer {
 		while (true) {
 			if ((time() - $now) >= $this->timeout) {
 				$this->error = _s(
-					'Connection timeout of %1$s seconds exceeded when connecting to Zabbix server "%2$s".',
+					'Connection timeout of %1$s seconds exceeded when connecting to TAA server "%2$s".',
 					$this->timeout, $this->host
 				);
 				return false;
@@ -509,7 +509,7 @@ class CZabbixServer {
 
 				if ($expect == self::ZBX_TCP_EXPECT_HEADER) {
 					if (strncmp($response, ZBX_TCP_HEADER, min($response_len, ZBX_TCP_HEADER_LEN)) != 0) {
-						$this->error = _s('Incorrect response received from Zabbix server "%1$s".', $this->host);
+						$this->error = _s('Incorrect response received from TAA server "%1$s".', $this->host);
 						return false;
 					}
 
@@ -530,7 +530,7 @@ class CZabbixServer {
 
 					if ($this->total_bytes_limit != 0 && $expected_len >= $this->total_bytes_limit) {
 						$this->error = _s(
-							'Size of the response received from Zabbix server "%1$s" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php.',
+							'Size of the response received from TAA server "%1$s" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php.',
 							$this->host, $this->total_bytes_limit
 						);
 						return false;
@@ -543,7 +543,7 @@ class CZabbixServer {
 			}
 			else {
 				$this->error =
-					_s('Cannot read the response, check connection with the Zabbix server "%1$s".', $this->host);
+					_s('Cannot read the response, check connection with the TAA server "%1$s".', $this->host);
 				return false;
 			}
 		}
@@ -551,14 +551,14 @@ class CZabbixServer {
 		fclose($this->socket);
 
 		if ($expected_len > $response_len || $response_len > $expected_len) {
-			$this->error = _s('Incorrect response received from Zabbix server "%1$s".', $this->host);
+			$this->error = _s('Incorrect response received from TAA server "%1$s".', $this->host);
 			return false;
 		}
 
 		$response = json_decode(substr($response, ZBX_TCP_HEADER_LEN + ZBX_TCP_DATALEN_LEN), true);
 
 		if (!$response || !$this->normalizeResponse($response)) {
-			$this->error = _s('Incorrect response received from Zabbix server "%1$s".', $this->host);
+			$this->error = _s('Incorrect response received from TAA server "%1$s".', $this->host);
 
 			return false;
 		}
@@ -587,7 +587,7 @@ class CZabbixServer {
 		}
 
 		if ($this->host === null || $this->port === null) {
-			$this->error = _('Connection to Zabbix server failed. Incorrect configuration.');
+			$this->error = _('Connection to TAA server failed. Incorrect configuration.');
 
 			return false;
 		}
@@ -670,7 +670,7 @@ class CZabbixServer {
 			$this->error_code = self::ERROR_CODE_TCP;
 
 			if ($this->connectTCP()) {
-				$this->error = _('Unable to connect to the Zabbix server due to TLS settings. Some functions are unavailable.');
+				$this->error = _('Unable to connect to the TAA server due to TLS settings. Some functions are unavailable.');
 				$this->error_code = self::ERROR_CODE_TLS;
 			}
 
@@ -678,7 +678,7 @@ class CZabbixServer {
 		}
 
 		if ($capture_peer_cert && !$this->validatePeerCertificate($socket)) {
-			$this->error = _('Unable to connect to the Zabbix server due to TLS settings. Some functions are unavailable.');
+			$this->error = _('Unable to connect to the TAA server due to TLS settings. Some functions are unavailable.');
 			$this->error_code = self::ERROR_CODE_TLS;
 
 			return null;
@@ -692,26 +692,26 @@ class CZabbixServer {
 
 		switch ($error_msg) {
 			case 'Connection refused':
-				$descriptive_error_msg = _s("Connection to Zabbix server \"%1\$s\" refused. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Security environment (for example, SELinux) is blocking the connection;\n3. Zabbix server daemon not running;\n4. Firewall is blocking TCP connection.\n", $host_port);
+				$descriptive_error_msg = _s("Connection to TAA server \"%1\$s\" refused. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Security environment (for example, SELinux) is blocking the connection;\n3. TAA server daemon not running;\n4. Firewall is blocking TCP connection.\n", $host_port);
 				break;
 
 			case 'No route to host':
-				$descriptive_error_msg = _s("Zabbix server \"%1\$s\" cannot be reached. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Incorrect network configuration.\n", $host_port);
+				$descriptive_error_msg = _s("TAA server \"%1\$s\" cannot be reached. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Incorrect network configuration.\n", $host_port);
 				break;
 
 			case 'Connection timed out':
-				$descriptive_error_msg = _s("Connection to Zabbix server \"%1\$s\" timed out. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Firewall is blocking TCP connection.\n", $host_port);
+				$descriptive_error_msg = _s("Connection to TAA server \"%1\$s\" timed out. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Firewall is blocking TCP connection.\n", $host_port);
 				break;
 
 			default:
-				$descriptive_error_msg = _s("Connection to Zabbix server \"%1\$s\" failed. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Incorrect DNS server configuration.\n", $host_port);
+				$descriptive_error_msg = _s("Connection to TAA server \"%1\$s\" failed. Possible reasons:\n1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n2. Incorrect DNS server configuration.\n", $host_port);
 		}
 
 		return rtrim($descriptive_error_msg.$error_msg);
 	}
 
 	/**
-	 * Returns true if the response received from the Zabbix server is valid.
+	 * Returns true if the response received from the TAA server is valid.
 	 *
 	 * @param array $response
 	 *
@@ -732,7 +732,7 @@ class CZabbixServer {
 	}
 
 	/**
-	 * Constructs issuer string according to Zabbix rules for matching Issuer and Subject strings.
+	 * Constructs issuer string according to TAA rules for matching Issuer and Subject strings.
 	 *
 	 * @param array<string|string[]>  Parsed and structured issuer or subject field from openssl_x509_parse result.
 	 */

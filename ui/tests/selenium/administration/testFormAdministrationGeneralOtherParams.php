@@ -28,14 +28,14 @@ class testFormAdministrationGeneralOtherParams extends testFormAdministrationGen
 		'Frontend URL' => '',
 		'Group for discovered hosts' => 'Empty group',
 		'Default host inventory mode' => 'Disabled',
-		'User group for database down message' => 'Zabbix administrators',
+		'User group for database down message' => 'TAA administrators',
 		'Log unmatched SNMP traps' => true,
 		// Authorization.
 		'Login attempts' => 5,
 		'Login blocking interval' => '30s',
 		// Storage of secrets
 		'Vault provider' => 'HashiCorp Vault',
-		'Resolve secret vault macros by' => 'Zabbix server',
+		'Resolve secret vault macros by' => 'TAA server',
 		// Security.
 		'id:validate_uri_schemes' => true,
 		'id:uri_valid_schemes' => 'http,https,ftp,file,mailto,tel,ssh',
@@ -76,7 +76,7 @@ class testFormAdministrationGeneralOtherParams extends testFormAdministrationGen
 		'Login blocking interval' => '52s',
 		// Storage of secrets
 		'Vault provider' => 'CyberArk Vault',
-		'Resolve secret vault macros by' => 'Zabbix server and proxy',
+		'Resolve secret vault macros by' => 'TAA server and proxy',
 		// Security.
 		'id:validate_uri_schemes' => true,
 		'id:uri_valid_schemes' => 'custom_scheme',
@@ -129,9 +129,9 @@ class testFormAdministrationGeneralOtherParams extends testFormAdministrationGen
 
 		// Check X-Frame-Options hintbox.
 		$hints = [
-			'Resolve secret vault macros by' => 'Zabbix server: secrets are retrieved from Vault by '.
-					'Zabbix server and forwarded to proxies when needed.'."\n".
-					'Zabbix server and proxy: secrets are retrieved from Vault by both Zabbix server '.
+			'Resolve secret vault macros by' => 'TAA server: secrets are retrieved from Vault by '.
+					'TAA server and forwarded to proxies when needed.'."\n".
+					'TAA server and proxy: secrets are retrieved from Vault by both TAA server '.
 					'and proxies, allowing them to resolve macros independently.',
 			'Use X-Frame-Options HTTP header' => 'X-Frame-Options HTTP header supported values:'."\n".
 					'SAMEORIGIN or \'self\' - allows the page to be displayed only in a frame on the '.
@@ -189,7 +189,7 @@ class testFormAdministrationGeneralOtherParams extends testFormAdministrationGen
 						'Login blocking interval' => '30s',
 						// Storage of secrets.
 						'Vault provider' => 'CyberArk Vault',
-						'Resolve secret vault macros by' => 'Zabbix server and proxy',
+						'Resolve secret vault macros by' => 'TAA server and proxy',
 						// Security.
 						'id:validate_uri_schemes' => false,
 						'id:x_frame_header_enabled' => true,
@@ -371,7 +371,7 @@ class testFormAdministrationGeneralOtherParams extends testFormAdministrationGen
 						'Login blocking interval' => 'text',
 						// Storage of secrets.
 						'Vault provider' => 'CyberArk Vault',
-						'Resolve secret vault macros by' => 'Zabbix server and proxy'
+						'Resolve secret vault macros by' => 'TAA server and proxy'
 					],
 					'details' => [
 						'Incorrect value for field "login_attempts": value must be no less than "1".',

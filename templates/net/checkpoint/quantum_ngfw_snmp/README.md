@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Check Point Next Generation Firewall monitoring by Zabbix via SNMP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Check Point Next Generation Firewall monitoring by TAA via SNMP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -103,7 +103,7 @@ This template has been tested on:
 |ICMP ping|<p>Host accessibility by ICMP.</p><p>0 - ICMP ping fails.</p><p>1 - ICMP ping successful.</p>|Simple check|icmpping|
 |ICMP loss|<p>Percentage of lost packets.</p>|Simple check|icmppingloss|
 |ICMP response time|<p>ICMP ping response time (in seconds).</p>|Simple check|icmppingsec|
-|SNMP agent availability|<p>Availability of SNMP checks on the host. The value of this item corresponds to the availability icons in the host list.</p><p></p><p>Possible values:</p><p>0 - not available</p><p>1 - available</p><p>2 - unknown</p>|Zabbix internal|zabbix[host,snmp,available]|
+|SNMP agent availability|<p>Availability of SNMP checks on the host. The value of this item corresponds to the availability icons in the host list.</p><p></p><p>Possible values:</p><p>0 - not available</p><p>1 - available</p><p>2 - unknown</p>|TAA internal|zabbix[host,snmp,available]|
 |SNMP traps (fallback)|<p>Used to collect all SNMP traps unmatched by other `snmptrap` items.</p>|SNMP trap|snmptrap.fallback|
 |SNMP walk network interfaces|<p>Used for discovering interfaces from IF-MIB.</p>|SNMP agent|net.if.walk|
 |SNMP walk CPU|<p>Used for discovering CPU from CHECKPOINT-MIB.</p>|SNMP agent|system.cpu.walk|
@@ -347,5 +347,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

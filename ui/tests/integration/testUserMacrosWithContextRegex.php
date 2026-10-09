@@ -26,7 +26,7 @@ require_once dirname(__FILE__).'/../include/CAPITest.php';
  * > If the regex: prefix is used elsewhere as user macro context, like in a trigger expression,
  * > it will be treated as static context.
  *
- * > If more than one user macro with context exists, Zabbix will try to match the simple context macros first and then
+ * > If more than one user macro with context exists, TAA will try to match the simple context macros first and then
  * > context macros with regular expressions in an undefined order.
  * > If a macro with its context is not found on host, linked templates or globally, then the macro without context is
  * searched for.
@@ -44,16 +44,16 @@ require_once dirname(__FILE__).'/../include/CAPITest.php';
  *        last(/<host>/<trapper item key>)>{$TEST:regex:abc}
  * 4. Send a value to the trapper item, that would be higher then the value of the context macro
  * but lower than the value of the plain user macro, for example 17.
- * 5. Zabbix should treat the macro "{$TEST:regex:abc}" in trigger expression as a macro with static
+ * 5. TAA should treat the macro "{$TEST:regex:abc}" in trigger expression as a macro with static
  * context "regex:abc" which contains symbol "x" and which should be resolved to "15".
  * The problem event should start because the trigger expression becomes true.
  * 6. Send a value to the trapper item, that would be higher then the value of the plain user macro, for example 34.
  * 7. Make sure that the problem still exists.
  *
- * Test case X: Macros with regex context in Zabbix agent item keys.
+ * Test case X: Macros with regex context in TAA agent item keys.
  *
- * 1. Reuse the host with its macros from the trigger expression test. Add host interface for Zabbix agent.
- * 2. Create Zabbix agent item with key
+ * 1. Reuse the host with its macros from the trigger expression test. Add host interface for TAA agent.
+ * 2. Create TAA agent item with key
  *     system.run["echo {$TEST} {$TEST:regex:abc} {$TEST:regex:x} {$TEST:regex:y}",wait]
  * 3. Get item values an make sure the macros were expanded correctly.
  *
@@ -72,17 +72,17 @@ require_once dirname(__FILE__).'/../include/CAPITest.php';
  *        last(/<host>/<trapper item key>)>{$TEST:regex:abc}
  * 4. Send a value to the trapper item, that would be higher then the value of the context macro
  * but lower than the value of the plain user macro, for example 17.
- * 5. Zabbix should treat the macro "{$TEST:regex:abc}" in trigger expression as a macro with static
+ * 5. TAA should treat the macro "{$TEST:regex:abc}" in trigger expression as a macro with static
  * context "regex:abc" which contains symbol "x" and which should be resolved to "15". It should not match
  * the macro {$TEST:regex:y} => 33 in configuration since its static context "regex:abc" does not have the symbol "y".
  * The problem event should start because the trigger expression becomes true.
  * 6. Send a value to the trapper item, that would be higher then the value of the plain user macro, for example 34.
  * 7. Make sure that the problem still exists.
  *
- * Test case Y: Macros with regex context in Zabbix agent item keys.
+ * Test case Y: Macros with regex context in TAA agent item keys.
  *
- * 1. Reuse the host with its macros from the trigger expression test. Add host interface for Zabbix agent.
- * 2. Create Zabbix agent item with key
+ * 1. Reuse the host with its macros from the trigger expression test. Add host interface for TAA agent.
+ * 2. Create TAA agent item with key
  *     system.run["echo {$TEST} {$TEST:regex:abc} {$TEST:regex:x} {$TEST:regex:y}",wait]
  * 3. Get item values an make sure the macros were expanded correctly.
  *
@@ -153,7 +153,7 @@ class testUserMacrosWithContextRegex extends CIntegrationTest {
 					'dns' => '',
 					'port' => PHPUNIT_PORT_PREFIX.self::AGENT_PORT_SUFFIX
 				],
-				'groups' => [['groupid' => 4]], // Zabbix servers
+				'groups' => [['groupid' => 4]], // TAA servers
 				'templates' => [['templateid' => self::$templateId]],
 				'status' => HOST_STATUS_MONITORED
 			]

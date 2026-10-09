@@ -105,7 +105,7 @@ int	zbx_discovery_async_check_http(CURLM *curl_mhandle, const char *config_sourc
 			SVC_HTTPS == type ? "https://" : "http://", ip);
 
 	if (CURLE_OK != (err = curl_easy_setopt(http_ctx->easyhandle, opt = CURLOPT_USERAGENT,
-			"Zabbix " ZABBIX_VERSION)) ||
+			"TAA " ZABBIX_VERSION)) ||
 			CURLE_OK != (err = curl_easy_setopt(http_ctx->easyhandle, opt = CURLOPT_URL, url)) ||
 			CURLE_OK != (err = curl_easy_setopt(http_ctx->easyhandle, opt = CURLOPT_PORT, (long)port)) ||
 			CURLE_OK != (err = curl_easy_setopt(http_ctx->easyhandle, opt = CURLOPT_NOBODY, 1L)) ||

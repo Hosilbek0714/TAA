@@ -1956,7 +1956,7 @@ static void	log_regexp_runtime_error(const char *key, const char *err_msg, zbx_u
 		int *runtime_error_logging_allowed)
 {
 	/* Simple throttling. Log no more than one regexp runtime error per log*[] item check. */
-	/* Throttling is necessary to allow Zabbix agent monitor its own log file at DebugLevel <= 3. */
+	/* Throttling is necessary to allow TAA agent monitor its own log file at DebugLevel <= 3. */
 
 	if (0 == *runtime_error_logging_allowed)
 		return;
@@ -1997,7 +1997,7 @@ static int	zbx_read2(int fd, unsigned char flags, struct st_logfile *logfile, zb
 	zbx_uint64_t			processed_size;
 
 #define BUF_SIZE	(256 * ZBX_KIBIBYTE)	/* The longest encodings use 4 bytes for every character. To send */
-						/* up to 64 k characters to Zabbix server a 256 kB buffer might be */
+						/* up to 64 k characters to TAA server a 256 kB buffer might be */
 						/* required. */
 
 	/* Corner case: only one record is allowed to be analyzed per log*[] item check. */
@@ -2090,7 +2090,7 @@ static int	zbx_read2(int fd, unsigned char flags, struct st_logfile *logfile, zb
 
 					zabbix_log(LOG_LEVEL_WARNING, "Logfile contains a large record: \"%.64s\""
 							" (showing only the first 64 characters). Only the first 256 kB"
-							" will be analyzed, the rest will be ignored while Zabbix agent"
+							" will be analyzed, the rest will be ignored while TAA agent"
 							" is running.", value);
 
 					processed_size = (size_t)offset + (size_t)nbytes;
@@ -2365,7 +2365,7 @@ out:
 /****************************************************************************************
  *                                                                                      *
  * Purpose: Matches new records in logfile with regexp, transmit matching records       *
- *          to Zabbix server.                                                           *
+ *          to TAA server.                                                           *
  *                                                                                      *
  * Parameters:                                                                          *
  *     flags                - [IN] bit flags with item type: log, logrt, log.count      *
@@ -3958,7 +3958,7 @@ int	process_log_check(zbx_vector_addr_ptr_t *addrs, zbx_vector_ptr_t *agent2_res
 		goto out;
 	}
 
-	/* do not flood Zabbix server if file grows too fast */
+	/* do not flood TAA server if file grows too fast */
 	if (0 >= (delay = metric->nextcheck - (int)time(NULL)))
 		delay = 1;
 

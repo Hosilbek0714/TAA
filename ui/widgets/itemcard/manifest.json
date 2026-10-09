@@ -5,7 +5,7 @@
 	"name": "Item card",
 	"namespace": "ItemCard",
 	"version": "1.0",
-	"author": "Zabbix",
+	"author": "TAA",
 	"description": "Displays the most relevant information about an item.",
 	"url": "web_interface/frontend_sections/dashboards/widgets/item_card",
 	"widget": {

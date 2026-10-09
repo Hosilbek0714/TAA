@@ -19,8 +19,8 @@
 #include "zabbix_sender.h"
 
 /*
- * This is a simple Zabbix sender utility implemented with
- * Zabbix sender dynamic link library to illustrate the
+ * This is a simple TAA sender utility implemented with
+ * TAA sender dynamic link library to illustrate the
  * library usage.
  *
  * See zabbix_sender.h header file for API specifications.
@@ -78,7 +78,7 @@ int main(int argc, char *argv[])
 		printf("Simple zabbix_sender implementation with zabbix_sender library\n\n");
 		printf("usage: %s <server> <hostname> <key> <value>\n\n", argv[0]);
 		printf("Options:\n");
-		printf("  <server>    Hostname or IP address of Zabbix server\n");
+		printf("  <server>    Hostname or IP address of TAA server\n");
 		printf("  <hostname>  Host name\n");
 		printf("  <key>       Item key\n");
 		printf("  <value>     Item value\n");

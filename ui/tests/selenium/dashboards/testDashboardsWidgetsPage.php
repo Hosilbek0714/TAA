@@ -143,7 +143,7 @@ class testDashboardsWidgetsPage extends CWebTest {
 
 		// Expected table values.
 		$expected = [
-			'Zabbix servers'					=> 19,
+			'TAA servers'					=> 19,
 			'Inheritance test'					=> 1,
 			'Host group for suppression'		=> 1
 		];
@@ -243,7 +243,7 @@ class testDashboardsWidgetsPage extends CWebTest {
 		$groups = $form->getField('Host groups');
 
 		// Select a single group.
-		$groups->select('Zabbix servers');
+		$groups->select('TAA servers');
 
 		// Change the name of widget.
 		$form->getField('Name')->clear()->type('New widget name');
@@ -260,7 +260,7 @@ class testDashboardsWidgetsPage extends CWebTest {
 		$table = $dashboard->getWidget('New widget name')->getContent()->asTable();
 
 		// Check if only selected host group is shown.
-		$this->assertEquals(['Zabbix servers'], array_keys($table->index('Host group')));
+		$this->assertEquals(['TAA servers'], array_keys($table->index('Host group')));
 
 		$dashboard->cancelEditing();
 	}

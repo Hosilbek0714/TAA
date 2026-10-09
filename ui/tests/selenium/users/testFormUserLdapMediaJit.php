@@ -141,7 +141,7 @@ class testFormUserLdapMediaJit extends CWebTest {
 						'roleid' => 2, // Admin.
 						'user_groups' => [
 							[
-								'usrgrpid' => 7 //Zabbix administrators.
+								'usrgrpid' => 7 //TAA administrators.
 							]
 						]
 					]

@@ -342,7 +342,7 @@ abstract class CControllerPopupItemTest extends CController {
 	 *
 	 * @param array $input       Stored user input used to overwrite values retrieved from database.
 	 * @param bool  $for_server  Whether need to add to result additional properties used only for connection with
-	 *                           Zabbix server.
+	 *                           TAA server.
 	 *
 	 * @return array
 	 */
@@ -822,11 +822,11 @@ abstract class CControllerPopupItemTest extends CController {
 		foreach ($steps as &$step) {
 			/*
 			 * Values received from user input form may be transformed so we must remove redundant "\r" before
-			 * sending data to Zabbix server.
+			 * sending data to TAA server.
 			 */
 			$step['params'] = str_replace("\r\n", "\n", $step['params']);
 
-			// Resolve macros in parameter fields before send data to Zabbix server.
+			// Resolve macros in parameter fields before send data to TAA server.
 			foreach (['params', 'error_handler_params'] as $field) {
 				$matched_macros = CMacrosResolverGeneral::getMacroPositions($step[$field], $macros_types);
 

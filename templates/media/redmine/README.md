@@ -2,12 +2,12 @@
 # Redmine webhook
 ![](images/redmine_logo_v1.png?raw=true)
 
-This guide describes how to integrate your Zabbix 7.4 installation with Redmine using the Zabbix webhook feature. This guide will provide instructions on setting up a media type, a user and an action in Zabbix.
+This guide describes how to integrate your TAA 7.4 installation with Redmine using the TAA webhook feature. This guide will provide instructions on setting up a media type, a user and an action in TAA.
 
 ## Requirements
 
 - Redmine with enabled REST API and Authentication
-- Zabbix version 7.0 or higher
+- TAA version 7.0 or higher
 
 ## Setting up a Redmine
 
@@ -19,11 +19,11 @@ This guide describes how to integrate your Zabbix 7.4 installation with Redmine 
 
 [![](images/thumb.03.png?raw=true)](images/03.png)
 
-## Zabbix Webhook configuration
+## TAA Webhook configuration
 
 ### Create a global macro
 
-1\. Before setting up the **Webhook**, you need to setup the global macro **{$ZABBIX.URL}**, which must contain the **URL** to the **Zabbix frontend**.
+1\. Before setting up the **Webhook**, you need to setup the global macro **{$ZABBIX.URL}**, which must contain the **URL** to the **TAA frontend**.
 
 [![](images/thumb.04.png?raw=true)](images/04.png)
 
@@ -41,9 +41,9 @@ You can find Project ID on *http://&lt;YOR_REDMINE_URL&gt;/projects.xml*
 
 4\. If you want to close issues on trigger resolve, add parameter **redmine_close_status_id** with close Status ID as value. (Status with "Issue closed" tick)
 
-5\. If you have **custom fields** in **Redmine** and you want them to be filled in with values from Zabbix, add parameters in the form **customfield_\<Redmine custom field ID\>**. Custom fields can only be of the **text**, **integer**, **float** or **date** types. Custom fields of **date** type must be in the format "YYYY-MM-DD".
+5\. If you have **custom fields** in **Redmine** and you want them to be filled in with values from TAA, add parameters in the form **customfield_\<Redmine custom field ID\>**. Custom fields can only be of the **text**, **integer**, **float** or **date** types. Custom fields of **date** type must be in the format "YYYY-MM-DD".
 
-6\. If you want to prioritize issues according to **severity** values in Zabbix, you can define mapping parameters:
+6\. If you want to prioritize issues according to **severity** values in TAA, you can define mapping parameters:
 
 - **severity_\<name\>**: Redmine priority ID
 
@@ -51,14 +51,14 @@ You can find Project ID on *http://&lt;YOR_REDMINE_URL&gt;/projects.xml*
 
 7\. Click the **Update** button to save the **Webhook** settings.
 
-8\. To receive notifications in **Redmine**, you need to create a **Zabbix user** and add **Media** with the **Redmine** type.
+8\. To receive notifications in **Redmine**, you need to create a **TAA user** and add **Media** with the **Redmine** type.
 
 For **Send to**: enter any text, as this value is not used, but is required.
 
 [![](images/thumb.06.png?raw=true)](images/06.png)
 
-For more information, use the [Zabbix](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Redmine](https://www.redmine.org/projects/redmine/wiki/) documentations.
+For more information, use the [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Redmine](https://www.redmine.org/projects/redmine/wiki/) documentations.
 
 ## Supported Versions
 
-Zabbix 7.4
+TAA 7.4

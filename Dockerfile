@@ -92,7 +92,7 @@ RUN set -eux; \
 
 RUN sed -i 's/en_US/uz_UZ/' /usr/share/zabbix/include/defines.inc.php
 
-# TAA: interfeysdagi "Zabbix" nomini butunlay olib tashlash.
+# TAA: interfeysdagi eski brend nomini butunlay olib tashlash.
 # Barcha COPY'lardan keyin turishi shart - repo'dan ko'chirilgan fayllar ham
 # qayta ishlanadi. perl faqat shu qadam uchun o'rnatiladi va o'chiriladi.
 COPY docker/taa-rebrand-web.sh /tmp/taa-rebrand-web.sh

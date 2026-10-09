@@ -41,7 +41,7 @@ func init() {
 	}
 }
 
-// wmiFmtAdapter returns value adapted to the format of classic C Zabbix agent for compatibility reasons.
+// wmiFmtAdapter returns value adapted to the format of classic C TAA agent for compatibility reasons.
 // Boolean values should be converted to "True" and "False" strings starting with capital letter.
 func wmiFmtAdapter(value interface{}) interface{} {
 	switch v := value.(type) {

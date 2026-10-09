@@ -43,17 +43,17 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 					]
 				]
 			],
-			// #1 Create a Host availability widget with default values for Zabbix agent interface.
+			// #1 Create a Host availability widget with default values for TAA agent interface.
 			[
 				[
 					'fields' => [
 						'Type' => 'Host availability',
 						'Name' => 'Single interface widget - default',
-						'Interface type' => 'Zabbix agent (passive checks)'
+						'Interface type' => 'TAA agent (passive checks)'
 					]
 				]
 			],
-			// #2 Create a Host availability widget for Zabbix agent interface specifying every parameter.
+			// #2 Create a Host availability widget for TAA agent interface specifying every parameter.
 			[
 				[
 					'fields' => [
@@ -61,7 +61,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Name' => 'Include hosts in maintenance',
 						'Refresh interval' => '1 minute',
 						'Host groups' => ['Group for Host availability widget', 'Group in maintenance for Host availability widget'],
-						'Interface type' => 'Zabbix agent (passive checks)',
+						'Interface type' => 'TAA agent (passive checks)',
 						'Include hosts in maintenance' => true
 					],
 					'expected_values' => [
@@ -81,7 +81,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Name' => 'Dont include hosts in maintenance',
 						'Refresh interval' => '10 minutes',
 						'Host groups' => ['Group for Host availability widget', 'Group in maintenance for Host availability widget'],
-						'Interface type' => 'Zabbix agent (passive checks)',
+						'Interface type' => 'TAA agent (passive checks)',
 						'Include hosts in maintenance' => false
 					],
 					'expected_values' => [
@@ -156,7 +156,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Type' => 'Host availability',
 						'Name' => 'All interfaces selected',
 						'Layout' => 'Vertical',
-						'Interface type' => ['Zabbix agent (passive checks)', 'SNMP', 'JMX', 'IPMI']
+						'Interface type' => ['TAA agent (passive checks)', 'SNMP', 'JMX', 'IPMI']
 					],
 					'vertical_interfaces' => ['Agent (passive)', 'SNMP', 'JMX', 'IPMI']
 				]
@@ -247,7 +247,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 					]
 				]
 			],
-			// #10 HA widget that displays SNMP, JMX and SNMP interfaces for host group with only Zabbix agent interfaces.
+			// #10 HA widget that displays SNMP, JMX and SNMP interfaces for host group with only TAA agent interfaces.
 			[
 				[
 					'fields' => [
@@ -334,7 +334,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Name' => 'Should return zeros',
 						'Refresh interval' => '1 minute',
 						'Host groups' => ['Group in maintenance for Host availability widget'],
-						'Interface type' => 'Zabbix agent (passive checks)',
+						'Interface type' => 'TAA agent (passive checks)',
 						'Include hosts in maintenance' => false
 					],
 					'expected_values' => [
@@ -354,7 +354,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Name' => 'Return hosts in maintenance',
 						'Refresh interval' => '10 seconds',
 						'Host groups' => ['Group in maintenance for Host availability widget'],
-						'Interface type' => 'Zabbix agent (passive checks)',
+						'Interface type' => 'TAA agent (passive checks)',
 						'Include hosts in maintenance' => true
 					],
 					'expected_values' => [
@@ -392,7 +392,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Type' => 'Host availability',
 						'Name' => '',
 						'Refresh interval' => 'Default (15 minutes)',
-						'Interface type' => 'Zabbix agent (passive checks)'
+						'Interface type' => 'TAA agent (passive checks)'
 					]
 				]
 			],
@@ -403,7 +403,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Type' => 'Host availability',
 						'Name' => 'Show completely all hosts',
 						'Refresh interval' => 'No refresh',
-						'Interface type' => 'Zabbix agent (passive checks)',
+						'Interface type' => 'TAA agent (passive checks)',
 						'Include hosts in maintenance' => true
 					]
 				]
@@ -413,9 +413,9 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 				[
 					'fields' => [
 						'Type' => 'Host availability',
-						'Name' => 'Show completely all hosts for Zabbix agent and SNMP',
+						'Name' => 'Show completely all hosts for TAA agent and SNMP',
 						'Refresh interval' => '10 seconds',
-						'Interface type' => ['Zabbix agent (passive checks)', 'SNMP'],
+						'Interface type' => ['TAA agent (passive checks)', 'SNMP'],
 						'Include hosts in maintenance' => true
 					],
 					'vertical_interfaces' => ['Agent (passive)', 'SNMP']
@@ -426,9 +426,9 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 				[
 					'fields' => [
 						'Type' => 'Host availability',
-						'Name' => 'Show hosts for Zabbix agent, SNMP and JMX',
+						'Name' => 'Show hosts for TAA agent, SNMP and JMX',
 						'Refresh interval' => '2 minutes',
-						'Interface type' => ['Zabbix agent (passive checks)', 'SNMP', 'JMX']
+						'Interface type' => ['TAA agent (passive checks)', 'SNMP', 'JMX']
 					],
 					'vertical_interfaces' => ['Agent (passive)', 'SNMP', 'JMX']
 				]
@@ -440,7 +440,7 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 						'Type' => 'Host availability',
 						'Name' => 'Show completely all hosts for all interfaces',
 						'Refresh interval' => '2 minutes',
-						'Interface type' => ['Zabbix agent (passive checks)', 'SNMP', 'JMX', 'IPMI'],
+						'Interface type' => ['TAA agent (passive checks)', 'SNMP', 'JMX', 'IPMI'],
 						'Include hosts in maintenance' => true,
 						'Layout' => 'Vertical'
 					],
@@ -717,10 +717,10 @@ class testDashboardHostAvailabilityWidget extends testWidgets {
 		}
 		// Else get expected values from DB.
 		else {
-			if ($data['fields']['Interface type'] === 'Zabbix agent (active checks)') {
+			if ($data['fields']['Interface type'] === 'TAA agent (active checks)') {
 				$interface_type = 'Agent (active)';
 			}
-			elseif ($data['fields']['Interface type'] === 'Zabbix agent (passive checks)') {
+			elseif ($data['fields']['Interface type'] === 'TAA agent (passive checks)') {
 				$interface_type = 'Agent (passive)';
 			}
 			else {

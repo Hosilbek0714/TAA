@@ -457,7 +457,7 @@ $saml_tab = (new CFormGrid())
 		(new CLabel([
 			_('Media type mapping'),
 			makeHelpIcon(
-				_("Map user's SAML media attributes (e.g. email) to Zabbix user media for sending notifications.")
+				_("Map user's SAML media attributes (e.g. email) to TAA user media for sending notifications.")
 			)
 		]))
 			->addClass($saml_provisioning ? null : ZBX_STYLE_DISPLAY_NONE)
@@ -558,7 +558,7 @@ if ($data['is_http_auth_allowed']) {
 		->addItem([
 			new CLabel([_('Enable HTTP authentication'),
 				makeHelpIcon(
-					_('If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by Zabbix.')
+					_('If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAA.')
 				)
 			], 'http_auth_enabled'),
 			new CFormField(
@@ -574,7 +574,7 @@ if ($data['is_http_auth_allowed']) {
 					->setFocusableElementId('label-http-login-form')
 					->setValue($data['http_login_form'])
 					->addOptions(CSelect::createOptionsFromArray([
-						ZBX_AUTH_FORM_ZABBIX => _('Zabbix login form'),
+						ZBX_AUTH_FORM_ZABBIX => _('TAA login form'),
 						ZBX_AUTH_FORM_HTTP => _('HTTP login form')
 					]))
 					->setDisabled($data['http_auth_enabled'] != ZBX_AUTH_HTTP_ENABLED)

@@ -225,7 +225,7 @@ func exportDnsGet(params []string) (result any, err error) {
 	//               not coming from the DNS library
 	// 2) MsgHdr data: response_code and flags
 	// 3) Question, Answer section, Ns and Extra sections data, mostly untouched,
-	//    but formatted to make it more consistent with other Zabbix JSON returning items.
+	//    but formatted to make it more consistent with other TAA JSON returning items.
 
 	parsedFlagsSection := parseRespFlags(resp.MsgHdr)
 	parsedResponseCode := parseRespCode(resp.MsgHdr)

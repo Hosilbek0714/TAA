@@ -325,7 +325,7 @@ class testUserParametersReload extends CIntegrationTest {
 			$this->checkItemState($component.':'.self::ITEM_NAME_03, ITEM_STATE_NORMAL, 'usr.prm.var.3');
 			$this->checkItemState($component.':'.self::ITEM_NAME_04, ITEM_STATE_NOTSUPPORTED);
 			$this->checkItemState($component.':'.self::ITEM_NAME_05, ITEM_STATE_NOTSUPPORTED);
-			// Make sure that environment variables were unset by Zabbix agent processes
+			// Make sure that environment variables were unset by TAA agent processes
 			// so that they are not available to their child processes.
 			$this->checkItemState($component.':'.self::ITEM_NAME_ENV_TEST, ITEM_STATE_NORMAL, 'UsrParamEnv1= UsrParamEnv2=');
 			$this->assertTrue(@unlink(PHPUNIT_CONFIG_DIR.'/'.$component.'_usrprm_with_vars.conf'));

@@ -50,7 +50,7 @@ class CImportDataAdapterTest extends TestCase {
 				'uuid' => 'dc579cd7a1a34222933f24f52a68bcd8'
 			],
 			[
-				'name' => 'Zabbix servers',
+				'name' => 'TAA servers',
 				'uuid' => '6f6799aa69e844b4b3918f779f2abf08'
 			]
 		], $adapter->getHostGroups());
@@ -259,7 +259,7 @@ class CImportDataAdapterTest extends TestCase {
 						'name' => 'Template App FTP Service'
 					],
 					[
-						'name' => 'Template OS Linux by Zabbix agent'
+						'name' => 'Template OS Linux by TAA agent'
 					]
 				],
 				'macros' => [
@@ -397,7 +397,7 @@ class CImportDataAdapterTest extends TestCase {
 						'name' => 'Template App FTP Service'
 					],
 					[
-						'name' => 'Template OS Linux by Zabbix agent'
+						'name' => 'Template OS Linux by TAA agent'
 					]
 				],
 				'host' => 'export-template',
@@ -933,7 +933,7 @@ class CImportDataAdapterTest extends TestCase {
 							'group_links' => [
 								[
 									'group' => [
-										'name' => 'Zabbix servers'
+										'name' => 'TAA servers'
 									]
 								]
 							],
@@ -1167,7 +1167,7 @@ class CImportDataAdapterTest extends TestCase {
 							'group_links' => [
 								[
 									'group' => [
-										'name' => 'Zabbix servers'
+										'name' => 'TAA servers'
 									]
 								]
 							],
@@ -1395,7 +1395,7 @@ class CImportDataAdapterTest extends TestCase {
 						'urls' => [],
 						'elements' => [
 							[
-								'name' => 'Zabbix servers'
+								'name' => 'TAA servers'
 							]
 						],
 						'show_label' => (string) MAP_SHOW_LABEL_DEFAULT,
@@ -3043,7 +3043,7 @@ class CImportDataAdapterTest extends TestCase {
 				'host' => 'vendor test',
 				'name' => 'vendor test',
 				'description' => '',
-				'vendor_name' => 'Zabbix',
+				'vendor_name' => 'TAA',
 				'vendor_version' => '6.4-0',
 				'tags' => [],
 				'valuemaps' => [],

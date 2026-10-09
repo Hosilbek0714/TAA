@@ -14,7 +14,7 @@
 
 package zbxcomms
 
-// AddressSet interface provides address set for connections to Zabbix
+// AddressSet interface provides address set for connections to TAA
 // server/proxy.
 type AddressSet interface {
 	// Get returns current address as string <address>:<port>

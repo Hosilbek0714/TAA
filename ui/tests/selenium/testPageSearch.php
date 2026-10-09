@@ -366,8 +366,8 @@ class testPageSearch extends CWebTest {
 			],
 			[
 				[
-					'search_string' => 'Zabbix servers',
-					'host_groups' => [['Host group' => 'Zabbix servers']]
+					'search_string' => 'TAA servers',
+					'host_groups' => [['Host group' => 'TAA servers']]
 				]
 			],
 			[

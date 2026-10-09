@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Acronis Cyber Protect Cloud monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Acronis Cyber Protect Cloud monitoring by TAA via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,13 +16,13 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 This is a master template that needs to be assigned to a host, and it will automatically create MSP host prototype, which will monitor Acronis Cyber Protect Cloud metrics.
 
-Before using this template it is required to create a new MSP-level API client for Zabbix to use. To do that, sign into your Acronis Cyber Protect Cloud WEB interface, navigate to `Settings` -> `API clients` and create new API client.
+Before using this template it is required to create a new MSP-level API client for TAA to use. To do that, sign into your Acronis Cyber Protect Cloud WEB interface, navigate to `Settings` -> `API clients` and create new API client.
 You will be shown credentials for this API client. These credentials need to be entered in the following user macros of this template:
 
 * `{$ACRONIS.CPC.AUTH.CLIENT.ID}` - enter `Client ID` here;
@@ -61,11 +61,11 @@ This is all the configuration needed for this integration.
 
 ## Overview
 
-This template is designed for the effortless deployment of Acronis Cyber Protect Cloud MSP monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Acronis Cyber Protect Cloud MSP monitoring by TAA via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -74,7 +74,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -227,5 +227,5 @@ This is the default behaviour.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

@@ -1,7 +1,7 @@
 #!/bin/bash
 #
 # chkconfig: - 90 10
-# description:  Starts and stops Zabbix Server using chkconfig
+# description:  Starts and stops TAA Server using chkconfig
 #				Tested on Fedora Core 2 - 5
 #				Should work on all Fedora Core versions
 #
@@ -9,7 +9,7 @@
 # @author:	Alexander Hagenah <hagenah@topconcepts.com>
 # @created:	18.04.2006
 #
-# Modified for Zabbix 2.0.0
+# Modified for TAA 2.0.0
 # May 2012, Zabbix SIA
 #
 # Source function library.
@@ -18,7 +18,7 @@
 # Variables
 # Edit these to match your system settings
 
-	# Zabbix-Directory
+	# TAA-Directory
 	BASEDIR=/usr/local
 
 	# Binary File

@@ -684,7 +684,7 @@ class CFrontendSetup {
 			'required' => $this->default_lang,
 			'result' => $result ? self::CHECK_OK : self::CHECK_FATAL,
 			'error' => 'Locale for language "'.$this->default_lang.'" is not found on the web server. Tried to set: '.
-				implode(', ', $locale_variants).'. Unable to translate Zabbix interface.'
+				implode(', ', $locale_variants).'. Unable to translate TAA interface.'
 		];
 	}
 

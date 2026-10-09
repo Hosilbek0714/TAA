@@ -436,7 +436,7 @@ class testDiscoveryRules extends CIntegrationTest {
 			],
 			'operations' => [
 				/* OPERATION_TYPE_HOST_ADD is intentionally missing. It is expected to be run by */
-				/* Zabbix server, because OPERATION_TYPE_HOST_TAGS_ADD is present.               */
+				/* TAA server, because OPERATION_TYPE_HOST_TAGS_ADD is present.               */
 				[
 					'operationtype' => OPERATION_TYPE_HOST_TAGS_ADD,
 					'optag' => [

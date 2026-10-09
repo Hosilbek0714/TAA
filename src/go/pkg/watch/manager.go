@@ -71,7 +71,7 @@ type Subscriber struct {
 	Clientid uint64
 }
 
-// Client represents monitoring instance - Zabbix server or proxy
+// Client represents monitoring instance - TAA server or proxy
 type Client struct {
 	// the client ID
 	ID uint64

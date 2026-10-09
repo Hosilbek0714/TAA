@@ -13,7 +13,7 @@
             <template>vendor test</template>
             <name>vendor test</name>
             <vendor>
-                <name>Zabbix</name>
+                <name>TAA</name>
                 <version>6.4-0</version>
             </vendor>
             <groups>

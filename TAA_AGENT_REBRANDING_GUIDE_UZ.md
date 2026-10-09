@@ -31,7 +31,7 @@
 
 3) Rebrending ob’yektlari (nimalarni o‘zgartiramiz)
 - Nomlar va ko‘rinadigan matnlar: 
-  - Binar va servis ko‘rinadigan nomi: Zabbix → TAA. 
+  - Binar va servis ko‘rinadigan nomi: TAA → TAA. 
   - Paket nomi va tavsifi: zabbix-agent → taa-agent; zabbix-agent2 → taa-agent2. 
   - Systemd service DisplayName/Description: TAA Agent. 
   - Windows Service DisplayName/Description: TAA Agent, TAA Agent2. 
@@ -50,7 +50,7 @@
 - Operator hujjatlari: o‘rnatish, sozlash, ishlatish bo‘yicha yo‘riqnomalar to‘liq o‘zbekcha. 
 - Installer matnlari (Windows): Setup bosqichlari, xatolik/habarnomalar o‘zbekcha bo‘lishi mumkin. 
 - Konfiguratsiya fayllari: kommentariyalar o‘zbekcha bo‘lishi mumkin, ammo parametr kalitlari o‘zgarmaydi. 
-- UI terminlari: Server UI tomonda "Zabbix agent" atamalari o‘rniga "TAA Agent" ko‘rsatilishi kerak (server rebrending siyosati bilan mos). 
+- UI terminlari: Server UI tomonda "TAA agent" atamalari o‘rniga "TAA Agent" ko‘rsatilishi kerak (server rebrending siyosati bilan mos). 
 
 
 5) TAA logo va ikonkalarni almashtirish
@@ -136,7 +136,7 @@
 - Diagnostika: Unsupported elementlar sababi logda; ruxsat va yo‘l muammolarini tekshirish. 
 
 
-13) Migratsiya (Zabbix agent → TAA Agent)
+13) Migratsiya (TAA agent → TAA Agent)
 - Nomlash: eskining parallel ishlashi uchun vaqtinchalik strategiya; downtime minimal bo‘lsin. 
 - Konf ko‘chirish: Server/ServerActive, Hostname, TLS parametrlarini mos holda ko‘chiring. 
 - Sinov: avval dev/sinov muhitda, so‘ng bosqichma-bosqich produktsiyaga. 
@@ -169,7 +169,7 @@
 
 
 16) Nomlash va katalog siyosati (mos kelish jadvali)
-- Agent nomlari: Zabbix Agent → TAA Agent; Zabbix Agent2 → TAA Agent2. 
+- Agent nomlari: TAA Agent → TAA Agent; TAA Agent2 → TAA Agent2. 
 - Paket nomlari: zabbix-agent → taa-agent; zabbix-agent2 → taa-agent2. 
 - Linux kataloglari: 
   - /etc/zabbix → /etc/taa/agent 
@@ -177,8 +177,8 @@
   - /var/lib/zabbix → /var/lib/taa/agent 
   - /var/run/zabbix → /var/run/taa/agent 
 - Windows yo‘llari: 
-  - ProgramData\Zabbix → ProgramData\TAA\Agent 
-  - Service DisplayName: "Zabbix Agent" → "TAA Agent" 
+  - ProgramData\TAA → ProgramData\TAA\Agent 
+  - Service DisplayName: "TAA Agent" → "TAA Agent" 
 
 
 17) Hujjatlash va tarqatish

@@ -21,7 +21,7 @@ zabbix_export:
         - name: itop_class
           value: UserRequest
         - name: itop_comment
-          value: 'Created by Zabbix action {ACTION.NAME}'
+          value: 'Created by TAA action {ACTION.NAME}'
         - name: itop_id
           value: '{EVENT.TAGS.__zbx_itop_id}'
         - name: itop_log

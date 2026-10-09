@@ -52,7 +52,7 @@ static duk_ret_t	es_console_ctor(duk_context *ctx)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: Write message to centralized Zabbix log                           *
+ * Purpose: Write message to centralized TAA log                           *
  *                                                                            *
  ******************************************************************************/
 static duk_ret_t	es_log_message(duk_context *ctx, int level)

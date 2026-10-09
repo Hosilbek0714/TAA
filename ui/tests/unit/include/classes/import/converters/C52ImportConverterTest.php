@@ -31,7 +31,7 @@ class C52ImportConverterTest extends CImportConverterTest {
 							'template' => 'Template',
 							'items' => [
 								$calculated + ['params' => '100*last("vfs.fs.size[/,free]")/last("vfs.fs.size[/,total]")'],
-								$calculated + ['params' => 'avg("Zabbix Server:zabbix[wcache,values]",600)'],
+								$calculated + ['params' => 'avg("TAA Server:zabbix[wcache,values]",600)'],
 								$calculated + ['params' => 'last("net.if.in[eth0,bytes]")+last("net.if.out[eth0,bytes]")'],
 								$calculated + ['params' => '100*last("net.if.in[eth0,bytes]")/(last("net.if.in[eth0,bytes]")+last("net.if.out[eth0,bytes]"))'],
 								$calculated + ['params' => 'last("grpsum[\\"video\\",\\"net.if.out[eth0,bytes]\\",\\"last\\"]") / last("grpsum[\\"video\\",\\"nginx_stat.sh[active]\\",\\"last\\"]")'],
@@ -41,7 +41,7 @@ class C52ImportConverterTest extends CImportConverterTest {
 								$calculated + ['params' => 'last("vm.memory.used[hrStorageUsed.{#SNMPINDEX}]")/last("vm.memory.total[hrStorageSize.{#SNMPINDEX}]")*100'],
 								$calculated + ['params' => 'last("system.swap.size[,total]") - last("system.swap.size[,total]") / 100 * last("perf_counter_en[\\"\\Paging file(_Total)\\% Usage\\"]")'],
 								$calculated + ['params' => 'avg("zbxnext_6451:'."\n\r\n".'agent_numeric[wcache,values]",600)'],
-								$calculated + ['params' => 'abschange("trap1") + avg(trap1,1h,1d) + band(trap1,,12)=4 + count(trap1,10m) + count(trap1,10m,"error",eq) + count(trap1,10m,12) + count(trap1, 10m,12,gt) + count(trap1, #10,12,gt) + count(trap1, 10m,12,gt,1d) + count(trap1,10m,6/7,band) + count(trap1, 10m,,,1d) + count(trap1,10m,"56",eq) + count("Zabbix server:trap3",10m,error,eq) + date("trap1") + dayofmonth(trap1) + dayofweek(trap1) + delta(trap1,30s) + diff(trap1) + forecast(trap1,#10,,1h) + forecast(trap1,1h,,30m) + forecast(trap1,1h,1d,12h) + forecast(trap1,1h,,10m,exponential) + forecast(trap1,1h,,2h,polynomial3,max) + fuzzytime(trap1,40) + count(trap2,10m,56,eq)'],
+								$calculated + ['params' => 'abschange("trap1") + avg(trap1,1h,1d) + band(trap1,,12)=4 + count(trap1,10m) + count(trap1,10m,"error",eq) + count(trap1,10m,12) + count(trap1, 10m,12,gt) + count(trap1, #10,12,gt) + count(trap1, 10m,12,gt,1d) + count(trap1,10m,6/7,band) + count(trap1, 10m,,,1d) + count(trap1,10m,"56",eq) + count("TAA server:trap3",10m,error,eq) + date("trap1") + dayofmonth(trap1) + dayofweek(trap1) + delta(trap1,30s) + diff(trap1) + forecast(trap1,#10,,1h) + forecast(trap1,1h,,30m) + forecast(trap1,1h,1d,12h) + forecast(trap1,1h,,10m,exponential) + forecast(trap1,1h,,2h,polynomial3,max) + fuzzytime(trap1,40) + count(trap2,10m,56,eq)'],
 								$calculated + ['params' => 'band(trap1,,12)']
 							]
 						]
@@ -58,7 +58,7 @@ class C52ImportConverterTest extends CImportConverterTest {
 									'uuid' => '4b6197500eda44dda4f76faadd01614c'
 								],
 								$calculated + [
-									'params' => 'avg(/Zabbix Server/zabbix[wcache,values],600s)',
+									'params' => 'avg(/TAA Server/zabbix[wcache,values],600s)',
 									'uuid' => '4b6197500eda44dda4f76faadd01614c'
 								],
 								$calculated + [
@@ -98,7 +98,7 @@ class C52ImportConverterTest extends CImportConverterTest {
 									'uuid' => '4b6197500eda44dda4f76faadd01614c'
 								],
 								$calculated + [
-									'params' => 'abs(change(/'.'/trap1)) + avg(/'.'/trap1,1h:now-1d) + bitand(last(/'.'/trap1),12)=4 + count(/'.'/trap1,10m) + count(/'.'/trap1,10m,"eq","error") + count(/'.'/trap1,10m,,"12") + count(/'.'/trap1,10m,"gt","12") + count(/'.'/trap1,#10,"gt","12") + count(/'.'/trap1,10m:now-1d,"gt","12") + count(/'.'/trap1,10m,"bitand","6/7") + count(/'.'/trap1,10m:now-1d) + count(/'.'/trap1,10m,"eq","56") + count(/Zabbix server/trap3,10m,"eq","error") + date() + dayofmonth() + dayofweek() + (max(/'.'/trap1,30s)-min(/'.'/trap1,30s)) + (last(/'.'/trap1,#1)<>last(/'.'/trap1,#2)) + forecast(/'.'/trap1,#10,1h) + forecast(/'.'/trap1,1h,30m) + forecast(/'.'/trap1,1h:now-1d,12h) + forecast(/'.'/trap1,1h,10m,"exponential") + forecast(/'.'/trap1,1h,2h,"polynomial3","max") + fuzzytime(/'.'/trap1,40s) + count(/'.'/trap2,10m,"eq","56")',
+									'params' => 'abs(change(/'.'/trap1)) + avg(/'.'/trap1,1h:now-1d) + bitand(last(/'.'/trap1),12)=4 + count(/'.'/trap1,10m) + count(/'.'/trap1,10m,"eq","error") + count(/'.'/trap1,10m,,"12") + count(/'.'/trap1,10m,"gt","12") + count(/'.'/trap1,#10,"gt","12") + count(/'.'/trap1,10m:now-1d,"gt","12") + count(/'.'/trap1,10m,"bitand","6/7") + count(/'.'/trap1,10m:now-1d) + count(/'.'/trap1,10m,"eq","56") + count(/TAA server/trap3,10m,"eq","error") + date() + dayofmonth() + dayofweek() + (max(/'.'/trap1,30s)-min(/'.'/trap1,30s)) + (last(/'.'/trap1,#1)<>last(/'.'/trap1,#2)) + forecast(/'.'/trap1,#10,1h) + forecast(/'.'/trap1,1h,30m) + forecast(/'.'/trap1,1h:now-1d,12h) + forecast(/'.'/trap1,1h,10m,"exponential") + forecast(/'.'/trap1,1h,2h,"polynomial3","max") + fuzzytime(/'.'/trap1,40s) + count(/'.'/trap2,10m,"eq","56")',
 									'uuid' => '4b6197500eda44dda4f76faadd01614c'
 								],
 								$calculated + [
@@ -315,7 +315,7 @@ class C52ImportConverterTest extends CImportConverterTest {
 									'elementtype' => '0',
 									'elements' => [
 										[
-											'host' => 'Zabbix server'
+											'host' => 'TAA server'
 										]
 									],
 									'application' => 'MySQL'
@@ -325,8 +325,8 @@ class C52ImportConverterTest extends CImportConverterTest {
 									'elements' => [
 										[
 											'description' => 'trigger',
-											'expression' => '{Zabbix server:proc.num.last()} = 0',
-											'recovery_expression' => '{Zabbix server:proc.num.last()} <> 0'
+											'expression' => '{TAA server:proc.num.last()} = 0',
+											'recovery_expression' => '{TAA server:proc.num.last()} <> 0'
 										]
 									],
 									'application' => ''
@@ -338,8 +338,8 @@ class C52ImportConverterTest extends CImportConverterTest {
 										[
 											'trigger' => [
 												'description' => 'trigger',
-												'expression' => '{Zabbix server:proc.num.last()} = 0',
-												'recovery_expression' => '{Zabbix server:proc.num.last()} <> 0'
+												'expression' => '{TAA server:proc.num.last()} = 0',
+												'recovery_expression' => '{TAA server:proc.num.last()} <> 0'
 											]
 										]
 									]
@@ -357,7 +357,7 @@ class C52ImportConverterTest extends CImportConverterTest {
 									'elementtype' => '0',
 									'elements' => [
 										[
-											'host' => 'Zabbix server'
+											'host' => 'TAA server'
 										]
 									],
 									'evaltype' => '0',
@@ -374,8 +374,8 @@ class C52ImportConverterTest extends CImportConverterTest {
 									'elements' => [
 										[
 											'description' => 'trigger',
-											'expression' => 'last(/Zabbix server/proc.num) = 0',
-											'recovery_expression' => 'last(/Zabbix server/proc.num) <> 0'
+											'expression' => 'last(/TAA server/proc.num) = 0',
+											'recovery_expression' => 'last(/TAA server/proc.num) <> 0'
 										]
 									],
 									'evaltype' => '0'
@@ -387,8 +387,8 @@ class C52ImportConverterTest extends CImportConverterTest {
 										[
 											'trigger' => [
 												'description' => 'trigger',
-												'expression' => 'last(/Zabbix server/proc.num) = 0',
-												'recovery_expression' => 'last(/Zabbix server/proc.num) <> 0'
+												'expression' => 'last(/TAA server/proc.num) = 0',
+												'recovery_expression' => 'last(/TAA server/proc.num) <> 0'
 											]
 										]
 									]
@@ -468,17 +468,17 @@ class C52ImportConverterTest extends CImportConverterTest {
 			'Cisco Catalyst 3750V2-48TS SNMP' => 'Cisco Catalyst 3750V2-48TS SNMP',
 			'RabbitMQ cluster by HTTP' => 'RabbitMQ cluster by HTTP',
 			'Template APP Apache Kafka by JMX' => 'Apache Kafka by JMX',
-			'Template APP Systemd by Zabbix agent 2' => 'Systemd by Zabbix agent 2',
+			'Template APP Systemd by TAA agent 2' => 'Systemd by TAA agent 2',
 			'Template App Nginx Plus by HTTP' => 'Nginx Plus by HTTP',
 			'Template App PFSense SNMP' => 'PFSense SNMP',
-			'Template App Website certificate by Zabbix agent 2' => 'Website certificate by Zabbix agent 2',
+			'Template App Website certificate by TAA agent 2' => 'Website certificate by TAA agent 2',
 			'Template DB Apache Cassandra by JMX' => 'Apache Cassandra by JMX',
 			'Template DB MySQL by ODBC' => 'MySQL by ODBC',
 			'Template F5 Big-IP SNMP' => 'Template F5 Big-IP SNMP',
 			'Template Module Generic SNMP' => 'Generic SNMP',
 			'Template Module HOST-RESOURCES-MIB CPU SNMP' => 'HOST-RESOURCES-MIB CPU SNMP',
-			'Template Module Linux block devices by Zabbix agent' => 'Linux block devices by Zabbix agent',
-			'Template Module Zabbix agent' => 'Zabbix agent',
+			'Template Module Linux block devices by TAA agent' => 'Linux block devices by TAA agent',
+			'Template Module TAA agent' => 'TAA agent',
 			'Template Net Alcatel Timetra TiMOS SNMP' => 'Alcatel Timetra TiMOS SNMP',
 			'Template Net Dell Force S-Series SNMP' => 'Dell Force S-Series SNMP',
 			'Template Net Mikrotik SNMP' => 'Mikrotik SNMP',

@@ -60,7 +60,7 @@ class testPageHostPrototypesTemplate extends testPagePrototypes {
 				'ruleid' => self::$host_druleid,
 				'groupLinks' => [
 					[
-						'groupid' => 4 // Zabbix server
+						'groupid' => 4 // TAA server
 					]
 				],
 				'tags' => [
@@ -79,7 +79,7 @@ class testPageHostPrototypesTemplate extends testPagePrototypes {
 				'ruleid' => self::$host_druleid,
 				'groupLinks' => [
 					[
-						'groupid' => 4 // Zabbix server
+						'groupid' => 4 // TAA server
 					]
 				],
 				'status' => HOST_STATUS_NOT_MONITORED
@@ -89,7 +89,7 @@ class testPageHostPrototypesTemplate extends testPagePrototypes {
 				'ruleid' => self::$host_druleid,
 				'groupLinks' => [
 					[
-						'groupid' => 4 // Zabbix server
+						'groupid' => 4 // TAA server
 					]
 				],
 				'status' => HOST_STATUS_NOT_MONITORED,
@@ -100,7 +100,7 @@ class testPageHostPrototypesTemplate extends testPagePrototypes {
 				'ruleid' => self::$host_druleid,
 				'groupLinks' => [
 					[
-						'groupid' => 4 // Zabbix server
+						'groupid' => 4 // TAA server
 					]
 				],
 				'discover' => HOST_NO_DISCOVER,

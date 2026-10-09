@@ -3,13 +3,13 @@
 
 ## Overview
 
-This guide describes how to integrate Zabbix with MS Teams Workflow using the Zabbix webhook feature, providing instructions on setting up a media type, a user, and an action in Zabbix.
+This guide describes how to integrate TAA with MS Teams Workflow using the TAA webhook feature, providing instructions on setting up a media type, a user, and an action in TAA.
 
 This integration is supported only on **Teams** as part of Office 365. Note that the **Teams** free plan does not support the [MS Teams Workflow](https://support.microsoft.com/en-gb/office/browse-and-add-workflows-in-microsoft-teams-4998095c-8b72-4b0e-984c-f2ad39e6ba9a) feature.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Parameters
 
@@ -22,7 +22,7 @@ The configurable parameters are intended to be changed according to the webhook 
 |Name|Value|Description|
 |----|-----|-----------|
 |teams_endpoint|\<PLACE WEBHOOK URL HERE\>|MS Teams workflow-webhook URL.|
-|zabbix_url|\{$ZABBIX\.URL\}|Current Zabbix URL.|
+|zabbix_url|\{$ZABBIX\.URL\}|Current TAA URL.|
 
 ### Internal parameters
 
@@ -64,35 +64,35 @@ To set up a MS Teams Workflow webhook, follow these steps:
     * [![](images/th.3.png?raw=true)](images/3.png)
 
 5. Name your flow:
-    * Enter "Zabbix webhook" in the "Flow name" field.
+    * Enter "TAA webhook" in the "Flow name" field.
     * Select the appropriate user in the "Sign in" menu. This user will be used to create channel posts.
     * Click `Next`.
     * [![](images/th.4.png?raw=true)](images/4.png)
 
 6. Configure the flow:
-    * Select the appropriate Microsoft Teams team and Microsoft Teams channel where Zabbix events will be posted.
+    * Select the appropriate Microsoft Teams team and Microsoft Teams channel where TAA events will be posted.
     * Click `Create Flow`.
 
 7. Save the Workflow endpoint URL:
     * A message stating "Workflow added successfully" will appear.
-    * Copy the workflow endpoint URL and save it! It will be used in the Zabbix webhook later.
+    * Copy the workflow endpoint URL and save it! It will be used in the TAA webhook later.
 
 8. Verify the new Workflow:
     * You can now close this window and press the home button in the top-left corner of the workflow menu.
-    * On this page, the new workflow called "Zabbix webhook" should appear.
+    * On this page, the new workflow called "TAA webhook" should appear.
     * [![](images/th.5.png?raw=true)](images/5.png)
 
 9. View flow details:
-    * Click on the "Zabbix webhook". A window with detailed info about this flow will appear.
+    * Click on the "TAA webhook". A window with detailed info about this flow will appear.
     * [![](images/th.6.png?raw=true)](images/6.png)
 
 Note: If you want to remove the footer message "USERNAME used a Workflow to send this card. Get template", you need to make a copy of the created from the template workflow. To do this, after step 9 click on `Save as` button and save a new copy. Do not forget to copy endpoint URL from the new copied workflow instead of using the one from step 7.
 
-## Zabbix configuration
+## TAA configuration
 
 1. **Set up the global macro**:
-    - In the Zabbix web interface, go to the `Administration` → `Macros` section in the menu on the left-hand side.
-    - Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the Zabbix frontend. The URL should be either an IP address, a fully qualified domain name, or a localhost.
+    - In the TAA web interface, go to the `Administration` → `Macros` section in the menu on the left-hand side.
+    - Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or a localhost.
     - Specifying a protocol is mandatory, whereas the port is optional. Good examples: 
       - `http://zabbix.com`
       - `https://zabbix.lan/`
@@ -111,7 +111,7 @@ Note: If you want to remove the footer message "USERNAME used a Workflow to send
 3. **Configure the MS Teams Workflow media type**:
     - Open the newly added **MS Teams Workflow** media type and replace the placeholder `<PLACE WEBHOOK URL HERE>` with the **incoming webhook URL** created during step 7 of the MS Teams workflow setup.
 
-4. **Create a Zabbix user and add media**:
+4. **Create a TAA user and add media**:
     - In the `Users` → `Users` section, click the `Create user` button in the top-right corner. In the `User` tab, fill in all the required fields (marked with red asterisks).
     - In the `Media` tab, add a new media type and select **MS Teams Workflow** from the drop-down list. Although the `Send to` field is not used in MS Teams Workflow media, it cannot be empty. To comply with frontend requirements, fill in the field with any symbol.
     - Make sure the user has access to all the hosts for which you would like problem notifications to be sent to MS Teams. You can do so by selecting the appropriate user role in the `Permissions` tab.
@@ -122,10 +122,10 @@ Note: If you want to remove the footer message "USERNAME used a Workflow to send
 
 [![](images/th.8.png?raw=true)](images/8.png)
 
-For more information, see [Zabbix Documentation](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [MS Teams Workflow Documentation](https://support.microsoft.com/en-gb/office/browse-and-add-workflows-in-microsoft-teams-4998095c-8b72-4b0e-984c-f2ad39e6ba9a).
+For more information, see [TAA Documentation](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [MS Teams Workflow Documentation](https://support.microsoft.com/en-gb/office/browse-and-add-workflows-in-microsoft-teams-4998095c-8b72-4b0e-984c-f2ad39e6ba9a).
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

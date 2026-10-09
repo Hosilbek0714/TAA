@@ -5,7 +5,7 @@
 	"name": "Host availability",
 	"namespace": "HostAvail",
 	"version": "1.0",
-	"author": "Zabbix",
+	"author": "TAA",
 	"description": "Displays the host count by status (available/unavailable/unknown).",
 	"url": "web_interface/frontend_sections/dashboards/widgets/host_availability",
 	"widget": {

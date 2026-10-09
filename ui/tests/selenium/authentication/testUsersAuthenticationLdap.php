@@ -194,7 +194,7 @@ class testUsersAuthenticationLdap extends testFormAuthentication {
 			'Group configuration' => 'memberOf is a preferable way to configure groups because it is faster. '.
 					'Use groupOfNames if your LDAP server does not support memberOf or group filtering is required.',
 			'Reference attribute' => 'Use %{ref} in group filter to reference value of this user attribute.',
-			'Media type mapping' => "Map user's LDAP media attributes (e.g. email) to Zabbix user media for sending".
+			'Media type mapping' => "Map user's LDAP media attributes (e.g. email) to TAA user media for sending".
 					" notifications."
 		];
 
@@ -355,7 +355,7 @@ class testUsersAuthenticationLdap extends testFormAuthentication {
 						'Host' => PHPUNIT_LDAP_HOST,
 						'Base DN' => 'DC=zbx,DC=local',
 						'Search attribute' => 'sAMAccountName',
-						'Bind DN' => ' CN=Admin,OU=Users,OU=Zabbix,DC=zbx,DC=local',
+						'Bind DN' => ' CN=Admin,OU=Users,OU=TAA,DC=zbx,DC=local',
 						'Bind password' => PHPUNIT_LDAP_BIND_PASSWORD,
 						'Description' => 'Test description',
 						'Advanced configuration' => true,
@@ -406,7 +406,7 @@ class testUsersAuthenticationLdap extends testFormAuthentication {
 						'Bind password' => PHPUNIT_LDAP_BIND_PASSWORD,
 						'Configure JIT provisioning' => true,
 						'Group configuration' => 'groupOfNames',
-						'Group base DN' => 'ou=Groups,ou=Zabbix,dc=zbx,dc=local',
+						'Group base DN' => 'ou=Groups,ou=TAA,dc=zbx,dc=local',
 						'Group name attribute' => 'cn',
 						'Group member attribute' => 'memberUid',
 						'Reference attribute' => '%{ref}',
@@ -416,12 +416,12 @@ class testUsersAuthenticationLdap extends testFormAuthentication {
 					],
 					'User group mapping' => [
 						[
-							'LDAP group pattern' => 'Zabbix admins',
-							'User groups' => 'Zabbix administrators',
+							'LDAP group pattern' => 'TAA admins',
+							'User groups' => 'TAA administrators',
 							'User role' => 'Super admin role'
 						],
 						[
-							'LDAP group pattern' => 'Zabbix users',
+							'LDAP group pattern' => 'TAA users',
 							'User groups' => 'Guests',
 							'User role' => 'Guest role'
 						]
@@ -439,7 +439,7 @@ class testUsersAuthenticationLdap extends testFormAuthentication {
 					],
 					'check_provisioning' => [
 						'role' => 'Super admin role',
-						'groups' => 'Zabbix administratorsGuests',
+						'groups' => 'TAA administratorsGuests',
 						'medias' => 'mail'
 					]
 				]

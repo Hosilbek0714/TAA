@@ -305,16 +305,16 @@ zabbix_export:
                 fields.alias = params.event_id;
                 fields.description = params.alert_message;
                 fields.priority = priority;
-                fields.source = 'Zabbix';
+                fields.source = 'TAA';
         
                 if (params.event_source === '0') {
                     fields.details = {
-                        'Zabbix server': params.zbxurl,
+                        'TAA server': params.zbxurl,
                         Problem: params.zbxurl + 'tr_events.php?triggerid=' + params.trigger_id + '&eventid=' + params.event_id
                     };
                 }
                 else {
-                    fields.details = {'Zabbix server': params.zbxurl};
+                    fields.details = {'TAA server': params.zbxurl};
                 }
         
                 if (typeof params.opsgenie_teams === 'string') {
@@ -391,7 +391,7 @@ zabbix_export:
       description: |
         Please refer to https://docs.opsgenie.com/docs/alert-api and https://www.zabbix.com/documentation/7.4/manual/config/notifications/media/webhook#example_scripts.
           
-        Set global macro {$ZABBIX.URL} with your Zabbix server URL.
+        Set global macro {$ZABBIX.URL} with your TAA server URL.
         Add dedicated user with media type "Opsgenie".
         Change the values of the variables opsgenie_api (https://api.opsgenie.com/v2/alerts or https://api.eu.opsgenie.com/v2/alerts),
         opsgenie_web (for example, https://myzabbix.app.opsgenie.com), opsgenie_token.

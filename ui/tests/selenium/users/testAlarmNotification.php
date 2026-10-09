@@ -59,7 +59,7 @@ class testAlarmNotification extends CWebTest {
 		$response = CDataHelper::createHosts([
 			[
 				'host' => self::HOST_NAME,
-				'groups' => [['groupid' => 4]], // Zabbix server
+				'groups' => [['groupid' => 4]], // TAA server
 				'items' => [
 					[
 						'name' => 'Not classified',
@@ -107,7 +107,7 @@ class testAlarmNotification extends CWebTest {
 			],
 			[
 				'host' => 'Host for maintenance alarm',
-				'groups' => [['groupid' => 4]], // Zabbix server
+				'groups' => [['groupid' => 4]], // TAA server
 				'items' => [
 					[
 						'name' => 'Suppressed item',

@@ -28,7 +28,7 @@
 
 #ifdef HAVE_LIBXML2
 #	ifndef LIBXML_THREAD_ENABLED
-#		error Zabbix requires libxml2 library built with thread support.
+#		error TAA requires libxml2 library built with thread support.
 #	endif
 #endif
 

@@ -66,7 +66,7 @@ for svgfile in $elementdir/*.svg; do
 	svgfilemod=$(stat -c "%Y" "$svgfile")
 	for size in 24 48 64 96 128; do
 		# rackmountable device icons don't make much sense below size 64
-		[[ "$svgfile" =~ Rackmountable_.* || "$svgfile" =~ Zabbix_server_.* || "$svgfile" =~ UPS_rackmountable.* ]] && [ "$size" -lt "64" ] && continue
+		[[ "$svgfile" =~ Rackmountable_.* || "$svgfile" =~ TAA_server_.* || "$svgfile" =~ UPS_rackmountable.* ]] && [ "$size" -lt "64" ] && continue
 		svgtopng "$svgfile" "$size"
 	done
 	echo "[$[$elementfilesdone*100/$svgelementcount]%]"

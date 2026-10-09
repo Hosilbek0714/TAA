@@ -25,39 +25,39 @@ class CTriggerGeneralHelperTest extends TestCase {
 		return [
 			[
 				'func(/host/item)',
-				'host', 'Zabbix server',
-				'func(/Zabbix server/item)'
+				'host', 'TAA server',
+				'func(/TAA server/item)'
 			],
 			[
 				'5 + func(/host/item) <> 0 or {$MACRO: "context"} or {#MACRO} or {TRIGGER.VALUE} or'.
 					' func(/host/item) or func(/host2/item2)',
-				'host', 'Zabbix server',
-				'5 + func(/Zabbix server/item) <> 0 or {$MACRO: "context"} or {#MACRO} or {TRIGGER.VALUE} or'.
-					' func(/Zabbix server/item) or func(/host2/item2)'
+				'host', 'TAA server',
+				'5 + func(/TAA server/item) <> 0 or {$MACRO: "context"} or {#MACRO} or {TRIGGER.VALUE} or'.
+					' func(/TAA server/item) or func(/host2/item2)'
 			],
 			[
 				'5 + func(/host/item) <> 0 or {$MACRO: "context"} or'.
 					' {{#MACRO}.regsub("^([0-9]+)", "{#MACRO}: \1")} or {TRIGGER.VALUE} or'.
 					' func(/host/item) or func(/host2/item2)',
-				'host', 'Zabbix server',
-				'5 + func(/Zabbix server/item) <> 0 or {$MACRO: "context"} or'.
+				'host', 'TAA server',
+				'5 + func(/TAA server/item) <> 0 or {$MACRO: "context"} or'.
 					' {{#MACRO}.regsub("^([0-9]+)", "{#MACRO}: \1")} or {TRIGGER.VALUE} or'.
-					' func(/Zabbix server/item) or func(/host2/item2)'
+					' func(/TAA server/item) or func(/host2/item2)'
 			],
 			[
 				'func(/host/item) or {{#M}.regsub("func(/host/item)", "\1")}',
-				'host', 'Zabbix server',
-				'func(/Zabbix server/item) or {{#M}.regsub("func(/host/item)", "\1")}'
+				'host', 'TAA server',
+				'func(/TAA server/item) or {{#M}.regsub("func(/host/item)", "\1")}'
 			],
 			[
-				'5 + func(/Zabbix server/item) <> 0 or func(/Zabbix server/item) or func(/host2/item2)',
-				'Zabbix server', 'host',
+				'5 + func(/TAA server/item) <> 0 or func(/TAA server/item) or func(/host2/item2)',
+				'TAA server', 'host',
 				'5 + func(/host/item) <> 0 or func(/host/item) or func(/host2/item2)'
 			],
 			[
 				'min(func(/host/item), func(/host/item), "func(/host/item)") = "func(/host/item)"',
-				'host', 'Zabbix server',
-				'min(func(/Zabbix server/item), func(/Zabbix server/item), "func(/host/item)") = "func(/host/item)"'
+				'host', 'TAA server',
+				'min(func(/TAA server/item), func(/TAA server/item), "func(/host/item)") = "func(/host/item)"'
 			]
 		];
 	}

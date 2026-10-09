@@ -1,12 +1,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Zabbix 6.0\n"
+"Project-Id-Version: TAA 6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-19 13:48+0300\n"
 "PO-Revision-Date: 2025-05-12 08:11+0000\n"
 "Last-Translator: Tomáš Heřmánek <tomas.hermanek@initmax.cz>\n"
-"Language-Team: Zabbix <info@zabbix.com>\n"
+"Language-Team: TAA <info@zabbix.com>\n"
 "Language: cs\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -391,7 +391,7 @@ msgid "1 minute"
 msgstr "1 minuta"
 
 #: app/views/host.wizard.edit.php:861
-msgid "1. Install Java Gateway on the same machine running Zabbix server by following the instructions in"
+msgid "1. Install Java Gateway on the same machine running TAA server by following the instructions in"
 msgstr ""
 
 #: app/views/administration.queue.overview.php:48
@@ -1276,8 +1276,8 @@ msgid "Agent port"
 msgstr ""
 
 #: include/classes/data/CItemData.php:919
-msgid "Agent variant check. Returns 1 - for Zabbix agent; 2 - for Zabbix agent 2"
-msgstr "Kontrola varianty agenta. Vrací 1 - pro Zabbix agenta; 2 - pro Zabbix agenta  2"
+msgid "Agent variant check. Returns 1 - for TAA agent; 2 - for TAA agent 2"
+msgstr "Kontrola varianty agenta. Vrací 1 - pro TAA agenta; 2 - pro TAA agenta  2"
 
 #: app/views/host.wizard.edit.php:158 app/views/js/host.wizard.edit.js.php:1781
 msgid "Agent-based"
@@ -2846,8 +2846,8 @@ msgstr[2] "Nelze smazat SLA"
 
 #: include/classes/api/services/CUser.php:1287
 #, c-format
-msgid "Cannot delete Zabbix internal user \"%1$s\", try disabling that user."
-msgstr "Není možné smazat interního Zabbix uživatele \"%1$s\", zkuste ho vypnout."
+msgid "Cannot delete TAA internal user \"%1$s\", try disabling that user."
+msgstr "Není možné smazat interního TAA uživatele \"%1$s\", zkuste ho vypnout."
 
 #: app/controllers/CControllerActionDelete.php:87
 msgid "Cannot delete action"
@@ -4204,8 +4204,8 @@ msgstr "Nelze číst YAML: %1$s."
 
 #: include/classes/server/CZabbixServer.php:567
 #, c-format
-msgid "Cannot read the response, check connection with the Zabbix server \"%1$s\"."
-msgstr "Není možné číst odpověď, zkontrolujte spojení se Zabbix serverem \"%1$s\"."
+msgid "Cannot read the response, check connection with the TAA server \"%1$s\"."
+msgstr "Není možné číst odpověď, zkontrolujte spojení se TAA serverem \"%1$s\"."
 
 #: app/controllers/CControllerPopupMassupdateHost.php:363
 #, c-format
@@ -4236,8 +4236,8 @@ msgstr "Nepodařilo se uložit widget \"%1$s\"."
 
 #: include/classes/server/CZabbixServer.php:508
 #, c-format
-msgid "Cannot send command, check connection with Zabbix server \"%1$s\"."
-msgstr "Není možné poslat příkaz, zkontrolujte spojení se Zabbix serverem \"%1$s\"."
+msgid "Cannot send command, check connection with TAA server \"%1$s\"."
+msgstr "Není možné poslat příkaz, zkontrolujte spojení se TAA serverem \"%1$s\"."
 
 #: app/controllers/CControllerItemMassCheckNow.php:124
 #: app/controllers/CControllerItemMassCheckNow.php:140
@@ -4402,7 +4402,7 @@ msgstr "Nelze aktualizovat \"%1$s\" pro prototyp šablony spouštěče \"%2$s\".
 
 #: include/classes/api/helpers/CApiSettingsHelper.php:94
 #, c-format
-msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading Zabbix to remove this limitation."
+msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading TAA to remove this limitation."
 msgstr "Parametr \"%1$s\" nelze aktualizovat, protože je momentálně pouze pro čtení. Zvažte upgrade Zabbixu, abyste toto omezení odstranili."
 
 #: include/classes/api/services/CHost.php:2344
@@ -5216,11 +5216,11 @@ msgid "Communication"
 msgstr "Komunikace"
 
 #: app/views/host.wizard.edit.php:375
-msgid "Communication between Zabbix agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
+msgid "Communication between TAA agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:414
-msgid "Communication between Zabbix agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
+msgid "Communication between TAA agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
 msgstr ""
 
 #: include/items.inc.php:946
@@ -5513,8 +5513,8 @@ msgid "Confirms the problem is noticed (acknowledging user will be recorded). St
 msgstr "Potvrzení, že problém byl zaznamenán (uživatel provádějící potvrzení bude zaznamenán). Změna stavu spustí aktualizační operace."
 
 #: include/classes/setup/CSetupWizard.php:1059
-msgid "Congratulations! You have successfully installed Zabbix frontend."
-msgstr "Gratulace! Právě jste úspěšně nainstalovali Zabbix frontend."
+msgid "Congratulations! You have successfully installed TAA frontend."
+msgstr "Gratulace! Právě jste úspěšně nainstalovali TAA frontend."
 
 #: include/hosts.inc.php:1227 include/views/inventory.host.view.php:81
 #: include/views/js/monitoring.sysmaps.js.php:792
@@ -5539,49 +5539,49 @@ msgstr "Bezpečnost připojení"
 
 #: include/classes/server/CZabbixServer.php:521
 #, c-format
-msgid "Connection timeout of %1$s seconds exceeded when connecting to Zabbix server \"%2$s\"."
-msgstr "Časový limit připojení %1$s sekund vypršel při připojení k Zabbix serveru \"%2$s\"."
+msgid "Connection timeout of %1$s seconds exceeded when connecting to TAA server \"%2$s\"."
+msgstr "Časový limit připojení %1$s sekund vypršel při připojení k TAA serveru \"%2$s\"."
 
 #: include/classes/server/CZabbixServer.php:634
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" failed. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" failed. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect DNS server configuration.\n"
 msgstr ""
-"Připojení k Zabbix serveru \"%1$s\" se nezdařilo. Možné důvody:\n"
+"Připojení k TAA serveru \"%1$s\" se nezdařilo. Možné důvody:\n"
 "1. Nesprávné \"NodeAddress\" nebo \"ListenPort\" v \"zabbix_server.conf\" nebo přepsání IP/DNS serveru v \"zabbix.conf.php\";\n"
 "2. Nesprávná konfigurace DNS serverů.\n"
 
 #: include/classes/server/CZabbixServer.php:622
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" refused. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" refused. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Security environment (for example, SELinux) is blocking the connection;\n"
-"3. Zabbix server daemon not running;\n"
+"3. TAA server daemon not running;\n"
 "4. Firewall is blocking TCP connection.\n"
 msgstr ""
-"Připojení k serveru Zabbix \"%1$s\" bylo odmítnuto. Možné důvody:\n"
+"Připojení k serveru TAA \"%1$s\" bylo odmítnuto. Možné důvody:\n"
 "1. Nesprávné \"NodeAddress\" nebo \"ListenPort\" v \"zabbix_server.conf\" nebo přepsání IP/DNS serveru v \"zabbix.conf.php\";\n"
 "2. Bezpečnostní prostředí (například SELinux) blokuje spojení;\n"
-"3. Neběží démon serveru Zabbix;\n"
+"3. Neběží démon serveru TAA;\n"
 "4. Firewall blokuje TCP spojení.\n"
 
 #: include/classes/server/CZabbixServer.php:630
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" timed out. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" timed out. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Firewall is blocking TCP connection.\n"
 msgstr ""
-"Časový limit připojení k serveru Zabbix \"%1$s\" vypršel. Možné důvody:\n"
+"Časový limit připojení k serveru TAA \"%1$s\" vypršel. Možné důvody:\n"
 "1. Nesprávné \"NodeAddress\" nebo \"ListenPort\" v \"zabbix_server.conf\" nebo přepsání IP/DNS serveru v \"zabbix.conf.php\";\n"
 "2. Firewall blokuje TCP spojení.\n"
 
 #: include/classes/server/CZabbixServer.php:614
-msgid "Connection to Zabbix server failed. Incorrect configuration."
-msgstr "Připojení k serveru Zabbix se nezdařilo. Nesprávná konfigurace."
+msgid "Connection to TAA server failed. Incorrect configuration."
+msgstr "Připojení k serveru TAA se nezdařilo. Nesprávná konfigurace."
 
 #: include/classes/setup/CSetupWizard.php:647
 msgid "Connection will not be encrypted because it uses a socket file (on Unix) or shared memory (Windows)."
@@ -6438,15 +6438,15 @@ msgid "Data from %1$s. Generated in %2$s sec."
 msgstr "Údaje z %1$s. Vygenerované za %2$s sek."
 
 #: app/views/host.wizard.edit.php:168
-msgid "Data is collected by Zabbix agent, a lightweight software `component installed on your monitoring target."
+msgid "Data is collected by TAA agent, a lightweight software `component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:89
-msgid "Data is collected by Zabbix agent, a lightweight software component installed on your monitoring target."
+msgid "Data is collected by TAA agent, a lightweight software component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:90
-msgid "Data is collected by Zabbix server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
+msgid "Data is collected by TAA server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
 msgstr ""
 
 #: app/views/js/webscenario.step.edit.js.php:297
@@ -8338,7 +8338,7 @@ msgid "Enable HTTP authentication for all users."
 msgstr "Povolit HTTP autentizaci pro všechny uživatele."
 
 #: app/views/host.wizard.edit.php:811
-msgid "Enable IPMI checks on Zabbix server"
+msgid "Enable IPMI checks on TAA server"
 msgstr ""
 
 #: app/views/administration.authentication.edit.php:209
@@ -8647,7 +8647,7 @@ msgid "Enter a non-secret pre-shared key identity string. Avoid including sensit
 msgstr ""
 
 #: app/views/host.wizard.edit.php:609
-msgid "Enter the IP/DNS address and port of the Zabbix agent installed on your monitoring target."
+msgid "Enter the IP/DNS address and port of the TAA agent installed on your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:771
@@ -8720,8 +8720,8 @@ msgstr "Chybový text"
 #: app/partials/administration.system.info.php:148
 #: app/partials/administration.system.info.php:160
 #: app/partials/administration.system.info.php:173
-msgid "Error! Unable to start Zabbix server."
-msgstr "Chyba! Nelze spustit Zabbix server."
+msgid "Error! Unable to start TAA server."
+msgstr "Chyba! Nelze spustit TAA server."
 
 #: include/classes/screens/CScreenHttpTestDetails.php:111
 #: include/classes/screens/CScreenHttpTestDetails.php:182
@@ -9174,8 +9174,8 @@ msgid "Failure Audit"
 msgstr "Neúspěšný audit"
 
 #: app/views/system.warning.php:27 app/views/system.warning.php:52
-msgid "Fatal error, please report to the Zabbix team"
-msgstr "Fatální chyba, prosím reportuje ji Zabbix týmu"
+msgid "Fatal error, please report to the TAA team"
+msgstr "Fatální chyba, prosím reportuje ji TAA týmu"
 
 #: widgets/favgraphs/Widget.php:29
 msgid "Favorite graphs"
@@ -9632,12 +9632,12 @@ msgstr "Globální regulární výraz \"%1$s\" neexistuje."
 #: app/views/administration.script.edit.php:122
 #: app/views/popup.operation.edit.php:63
 #: include/classes/api/services/CScript.php:950
-msgid "Global script execution on Zabbix server is disabled by server configuration."
-msgstr "Globální spouštění skriptů na serveru Zabbix je zakázáno v konfiguraci serveru."
+msgid "Global script execution on TAA server is disabled by server configuration."
+msgstr "Globální spouštění skriptů na serveru TAA je zakázáno v konfiguraci serveru."
 
 #: app/partials/administration.system.info.php:138
-msgid "Global scripts on Zabbix server"
-msgstr "Globální skripty na Zabbix serveru"
+msgid "Global scripts on TAA server"
+msgstr "Globální skripty na TAA serveru"
 
 #: app/views/popup.proxy.edit.php:199
 msgid "Global timeouts"
@@ -11006,7 +11006,7 @@ msgid "Identification of the system. Returns string"
 msgstr "Identifikace systému. Vrací řetězec"
 
 #: app/views/administration.authentication.edit.php:153
-msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by Zabbix."
+msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAA."
 msgstr "Pokud je povolena HTTP autentizace, všichni uživatelé (i s přístupem do frontendu nastaveným na LDAP/interní) budou autorizování pomocí webového serveru, ne pomocí Zabbixu."
 
 #: include/classes/helpers/CServiceHelper.php:83
@@ -11187,7 +11187,7 @@ msgid "In range"
 msgstr "V rozsahu"
 
 #: app/views/host.wizard.edit.php:813
-msgid "In the Zabbix server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
+msgid "In the TAA server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
 msgstr ""
 
 #: include/classes/widgets/fields/CWidgetFieldMultiSelectSla.php:31
@@ -11548,7 +11548,7 @@ msgstr "Nesprávné aktuální heslo."
 #: include/classes/db/MysqlDbBackend.php:69
 #: include/classes/db/PostgresqlDbBackend.php:95
 #, c-format
-msgid "Incorrect default charset for Zabbix database: %1$s."
+msgid "Incorrect default charset for TAA database: %1$s."
 msgstr "Nesprávná výchozí znaková sada pro databázi Zabbixu: %1$s."
 
 #: include/classes/db/DB.php:696 include/classes/db/DB.php:863
@@ -11664,8 +11664,8 @@ msgstr "Neplatný regulární výraz \"%1$s\": \"%2$s\""
 #: include/classes/server/CZabbixServer.php:575
 #: include/classes/server/CZabbixServer.php:582
 #, c-format
-msgid "Incorrect response received from Zabbix server \"%1$s\"."
-msgstr "Neplatná odpověď přijatá od Zabbix serveru \"%1$s\"."
+msgid "Incorrect response received from TAA server \"%1$s\"."
+msgstr "Neplatná odpověď přijatá od TAA serveru \"%1$s\"."
 
 #: app/controllers/CControllerSlaCreateUpdate.php:34
 #: app/controllers/CControllerSlaCreateUpdate.php:84
@@ -12169,15 +12169,15 @@ msgid "Install"
 msgstr "Instalovat"
 
 #: app/views/host.wizard.edit.php:351 app/views/js/host.wizard.edit.js.php:1128
-msgid "Install Zabbix agent"
+msgid "Install TAA agent"
 msgstr ""
 
 #: app/views/host.wizard.edit.php:512 app/views/host.wizard.edit.php:535
-msgid "Install Zabbix agent 2 and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAA agent 2 and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:551 app/views/host.wizard.edit.php:574
-msgid "Install Zabbix agent and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAA agent and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: setup.php:163
@@ -13648,20 +13648,20 @@ msgid "List of Windows Registry values or keys located at given key. Returns JSO
 msgstr "Seznam hodnot registru Windows nebo klíčů umístěných na daném klíči. Vrátí JSON."
 
 #: include/classes/data/CItemData.php:2743
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
-msgstr "Seznam Zabbix proxy se jménem, režimem, šifrováním, kompresí, verzí, posledního kontaktu, počet hostů, počet itemů požadované hodnoty za sekundu (vps) a kompatibilita (aktuální/zastaralé/nepodporované). Vrátí JSON."
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
+msgstr "Seznam TAA proxy se jménem, režimem, šifrováním, kompresí, verzí, posledního kontaktu, počet hostů, počet itemů požadované hodnoty za sekundu (vps) a kompatibilita (aktuální/zastaralé/nepodporované). Vrátí JSON."
 
 #: include/classes/data/CItemData.php:2877
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
-msgstr "Seznam Zabbix proxy serverů s názvem, režimem, šifrováním, kompresí, verzí, naposledy viděno, počtem hostů, počtem itemů, požadovanými hodnotami za sekundu (vps), kompatibilitou (aktuální/zastaralé/nepodporované), časovými limity, názvem skupiny proxy, pokud proxy patří do skupiny, stav (neznámý/offline/online). Vrátí JSON."
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
+msgstr "Seznam TAA proxy serverů s názvem, režimem, šifrováním, kompresí, verzí, naposledy viděno, počtem hostů, počtem itemů, požadovanými hodnotami za sekundu (vps), kompatibilitou (aktuální/zastaralé/nepodporované), časovými limity, názvem skupiny proxy, pokud proxy patří do skupiny, stav (neznámý/offline/online). Vrátí JSON."
 
 #: include/classes/data/CItemData.php:2905
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
-msgstr "Seznam Zabbix proxy serverů s názvem, režimem, šifrováním, kompresí, verzí, naposledy viděným, počtem hostů, počtem itemů, požadovanými hodnotami za sekundu (vps), kompatibilitou (aktuální/zastaralé/nepodporované), časovými limity, názvem skupiny proxy, stavem (neznámý/offline/online). Vrátí JSON."
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
+msgstr "Seznam TAA proxy serverů s názvem, režimem, šifrováním, kompresí, verzí, naposledy viděným, počtem hostů, počtem itemů, požadovanými hodnotami za sekundu (vps), kompatibilitou (aktuální/zastaralé/nepodporované), časovými limity, názvem skupiny proxy, stavem (neznámý/offline/online). Vrátí JSON."
 
 #: include/classes/data/CItemData.php:2935
-msgid "List of Zabbix proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
-msgstr "Seznam konfiguračních dat skupin proxy Zabbix a dat v reálném čase. Konfigurační data zahrnují název skupiny proxy, zpoždění převzetí služeb při selhání a minimální počet online proxy požadovaných pro to, aby byla skupina online. Data v reálném čase zahrnují počet online proxy, procento online proxy a stav skupiny proxy (neznámý, offline, obnovující se, online, degradující). Tato položka nevrací bezskupinové proxy. Vrátí JSON."
+msgid "List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
+msgstr "Seznam konfiguračních dat skupin proxy TAA a dat v reálném čase. Konfigurační data zahrnují název skupiny proxy, zpoždění převzetí služeb při selhání a minimální počet online proxy požadovaných pro to, aby byla skupina online. Data v reálném čase zahrnují počet online proxy, procento online proxy a stav skupiny proxy (neznámý, offline, obnovující se, online, degradující). Tato položka nevrací bezskupinové proxy. Vrátí JSON."
 
 #: include/classes/data/CItemData.php:1559
 msgid "List of block devices and their type. Returns JSON"
@@ -14160,12 +14160,12 @@ msgid "Map update failed."
 msgstr "Aktualizace mapy selhala."
 
 #: app/views/popup.ldap.edit.php:259
-msgid "Map user's LDAP media attributes (e.g. email) to Zabbix user media for sending notifications."
-msgstr "Mapování atributů médií LDAP uživatele (např. e-mail) na uživatelská média Zabbix pro odesílání upozornění."
+msgid "Map user's LDAP media attributes (e.g. email) to TAA user media for sending notifications."
+msgstr "Mapování atributů médií LDAP uživatele (např. e-mail) na uživatelská média TAA pro odesílání upozornění."
 
 #: app/views/administration.authentication.edit.php:512
-msgid "Map user's SAML media attributes (e.g. email) to Zabbix user media for sending notifications."
-msgstr "Mapování atributů médií SAML uživatele (např. e-mail) na uživatelská média Zabbix pro odesílání upozornění."
+msgid "Map user's SAML media attributes (e.g. email) to TAA user media for sending notifications."
+msgstr "Mapování atributů médií SAML uživatele (např. e-mail) na uživatelská média TAA pro odesílání upozornění."
 
 #: include/classes/api/services/CDashboardGeneral.php:600
 #, c-format
@@ -16193,8 +16193,8 @@ msgid "Number of items (enabled/disabled/not supported)"
 msgstr "Počet položek (povolených/zakázaných/nepodporovaných)"
 
 #: include/classes/data/CItemData.php:2694
-msgid "Number of items in Zabbix database."
-msgstr "Počet položek v Zabbix databázi."
+msgid "Number of items in TAA database."
+msgstr "Počet položek v TAA databázi."
 
 #: include/classes/data/CItemData.php:2750
 msgid "Number of items in proxy history that are not yet sent to the server"
@@ -16206,8 +16206,8 @@ msgstr "Počet položek ve frontě, které jsou zpožděné od do sekund včetn�
 
 #: include/classes/data/CItemData.php:2615
 #: include/classes/data/CItemData.php:2778
-msgid "Number of items in the queue which are delayed in Zabbix server or proxy by \"from\" till \"to\" seconds, inclusive."
-msgstr "Počet položek v řadě, které jsou zpožděny Zabbix serverem nebo proxy pomocí \"od\" \"do\" vteřin, zahrnuje."
+msgid "Number of items in the queue which are delayed in TAA server or proxy by \"from\" till \"to\" seconds, inclusive."
+msgstr "Počet položek v řadě, které jsou zpožděny TAA serverem nebo proxy pomocí \"od\" \"do\" vteřin, zahrnuje."
 
 #: include/classes/data/CItemData.php:2687
 msgid "Number of monitored hosts"
@@ -16266,12 +16266,12 @@ msgid "Number of triggers (enabled/disabled [problem/ok])"
 msgstr "Počet spouštěčů (povolených/zakázaných [problémových/ok])"
 
 #: include/classes/data/CItemData.php:2799
-msgid "Number of triggers in Zabbix database."
-msgstr "Počet spouštěčů v Zabbix databázi."
+msgid "Number of triggers in TAA database."
+msgstr "Počet spouštěčů v TAA databázi."
 
 #: include/classes/data/CItemData.php:2701
-msgid "Number of unsupported items in Zabbix database."
-msgstr "Počet nepodporovaných položek v Zabbix databázi."
+msgid "Number of unsupported items in TAA database."
+msgstr "Počet nepodporovaných položek v TAA databázi."
 
 #: include/classes/data/CItemData.php:2659
 msgid "Number of unsupported items on the host."
@@ -16517,8 +16517,8 @@ msgid "Only Super admin users can update \"%1$s\" parameter."
 msgstr "Parametr \"%1$s\" mohou aktualizovat pouze uživatelé Superadmin."
 
 #: include/classes/api/services/CDRule.php:509
-msgid "Only Zabbix agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
-msgstr "Jen kontroly typu Zabbix agent, SNMPv1, SNMPv2 nebo SNMPv3 mohou být unikátní."
+msgid "Only TAA agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
+msgstr "Jen kontroly typu TAA agent, SNMPv1, SNMPv2 nebo SNMPv3 mohou být unikátní."
 
 #: include/classes/api/services/CMap.php:666
 #: include/classes/api/services/CMap.php:1120
@@ -17273,7 +17273,7 @@ msgid "Password (once again)"
 msgstr "Heslo (ověření)"
 
 #: app/views/administration.user.edit.php:205
-msgid "Password can only be changed for users using the internal Zabbix authentication."
+msgid "Password can only be changed for users using the internal TAA authentication."
 msgstr "Heslo lze změnit pouze pro uživatele používající interní autentizaci Zabbixu."
 
 #: app/views/administration.user.edit.php:195
@@ -18272,7 +18272,7 @@ msgid "Recipient already exists."
 msgstr "Příjemce již existuje."
 
 #: app/views/reports.actionlog.list.csv.php:39
-msgid "Recipient's Zabbix username"
+msgid "Recipient's TAA username"
 msgstr "Zabbixové uživatelské jméno příjemce"
 
 #: app/views/reports.actionlog.list.csv.php:40
@@ -18764,8 +18764,8 @@ msgid "Required host permissions"
 msgstr "Požadované oprávnění na hosta"
 
 #: include/classes/data/CItemData.php:2771
-msgid "Required performance of the Zabbix server, in new values per second expected."
-msgstr "Požadovaný výkon Zabbix serveru, očekávaná hodnota v nových údajích za sekundu."
+msgid "Required performance of the TAA server, in new values per second expected."
+msgstr "Požadovaný výkon TAA serveru, očekávaná hodnota v nových údajích za sekundu."
 
 #: app/partials/administration.system.info.php:101
 msgid "Required server performance, new values per second"
@@ -18978,13 +18978,13 @@ msgid "Returns ICMP ping response time in seconds. Example: 0.02"
 msgstr "Vráti ICMP ping čas v sekundách. Příklad: 0.02"
 
 #: include/classes/data/CItemData.php:2680
-msgid "Returns a JSON array describing the host network interfaces configured in Zabbix. Can be used for LLD."
-msgstr "Vrátí pole JSON popisující hostovská síťová rozhraní nakonfigurovaná v Zabbix. Lze použít pro LLD."
+msgid "Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD."
+msgstr "Vrátí pole JSON popisující hostovská síťová rozhraní nakonfigurovaná v TAA. Lze použít pro LLD."
 
 #: include/classes/data/CItemData.php:2623
 #: include/classes/data/CItemData.php:2785
-msgid "Returns a JSON object containing Zabbix server or proxy internal metrics."
-msgstr "Vrátí JSON objekt obsahující Zabbix server nebo interní metriky proxy."
+msgid "Returns a JSON object containing TAA server or proxy internal metrics."
+msgstr "Vrátí JSON objekt obsahující TAA server nebo interní metriky proxy."
 
 #: include/classes/data/CItemData.php:2673
 msgid "Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, active_agent, snmp, ipmi, jmx."
@@ -18995,8 +18995,8 @@ msgid "Returns current maintenance status of the host."
 msgstr "Vrátí aktuální stav odstávky pro hosta."
 
 #: include/classes/data/CItemData.php:2708
-msgid "Returns information associated with Zabbix Java gateway. Valid params are: ping, version."
-msgstr "Vrátí informace příslušné k Zabbix Java gateway. Platné parametry jsou: ping, version."
+msgid "Returns information associated with TAA Java gateway. Valid params are: ping, version."
+msgstr "Vrátí informace příslušné k TAA Java gateway. Platné parametry jsou: ping, version."
 
 #: include/classes/data/CItemData.php:1183
 msgid "Returns number of TCP sockets that match parameters. Returns integer"
@@ -19080,8 +19080,8 @@ msgstr "Pravidla"
 
 #: include/actions.inc.php:578
 #, c-format
-msgid "Run script \"%1$s\" on Zabbix server"
-msgstr "Spusťit skript \"%1$s\" na Zabbix serveru"
+msgid "Run script \"%1$s\" on TAA server"
+msgstr "Spusťit skript \"%1$s\" na TAA serveru"
 
 #: include/actions.inc.php:591
 #, c-format
@@ -20138,11 +20138,11 @@ msgid "Set this view as default"
 msgstr "Nastavit toto zobrazení jako výchozí"
 
 #: app/views/host.wizard.edit.php:493
-msgid "Set up Zabbix agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
+msgid "Set up TAA agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
 msgstr ""
 
 #: app/views/host.wizard.edit.php:477
-msgid "Set up Zabbix agent on your monitoring target by executing the following script [bash under root]:"
+msgid "Set up TAA agent on your monitoring target by executing the following script [bash under root]:"
 msgstr ""
 
 #: app/views/js/popup.itemtestedit.view.js.php:383 include/forms.inc.php:1599
@@ -20454,8 +20454,8 @@ msgid "Show value"
 msgstr "Ukázat hodnotu"
 
 #: app/views/administration.gui.edit.php:110
-msgid "Show warning if Zabbix server is down"
-msgstr "Zobrazit varování když je Zabbix server vypnutý"
+msgid "Show warning if TAA server is down"
+msgstr "Zobrazit varování když je TAA server vypnutý"
 
 #: include/views/configuration.graph.edit.php:126
 msgid "Show working time"
@@ -20603,11 +20603,11 @@ msgstr "Velikost"
 
 #: include/classes/server/CZabbixServer.php:554
 #, c-format
-msgid "Size of the response received from Zabbix server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
-msgstr "Velikost odpovědi přijaté od Zabbix serveru \"%1$s\" dosáhla povolené velikosti %2$s bytů. Tuto povolenou hodnotu můžete zvýšit nastavením ZBX_SOCKET_BYTES_LIMIT v include/defines.inc.php."
+msgid "Size of the response received from TAA server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
+msgstr "Velikost odpovědi přijaté od TAA serveru \"%1$s\" dosáhla povolené velikosti %2$s bytů. Tuto povolenou hodnotu můžete zvýšit nastavením ZBX_SOCKET_BYTES_LIMIT v include/defines.inc.php."
 
 #: app/views/host.wizard.edit.php:355
-msgid "Skip OS selection if you already have Zabbix agent installed."
+msgid "Skip OS selection if you already have TAA agent installed."
 msgstr ""
 
 #: include/locales.inc.php:61
@@ -20817,8 +20817,8 @@ msgid "Starting TLS failed."
 msgstr "Spuštění TLS selhalo."
 
 #: include/classes/data/CItemData.php:2631
-msgid "Startup time of Zabbix server, Unix timestamp."
-msgstr "Čas startu Zabbix serveru, Unix timestamp."
+msgid "Startup time of TAA server, Unix timestamp."
+msgstr "Čas startu TAA serveru, Unix timestamp."
 
 #: app/partials/configuration.filter.items.php:180
 #: app/partials/monitoring.latest.filter.php:187
@@ -20848,8 +20848,8 @@ msgid "Static link"
 msgstr "Statický odkaz"
 
 #: include/classes/data/CItemData.php:2841
-msgid "Statistics and availability of Zabbix write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
-msgstr "Statistiky a dostupnost mezipaměti pro zápis Zabbix. Cache - jedna z hodnot (typu: all, float, uint, str, log, text, nepodporováno), historie (typ: pfree, free, total, used, pussed), index (typ: pfree, free, total, used , pussed), trend (typ: pfree, free, total, used, pussed)."
+msgid "Statistics and availability of TAA write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
+msgstr "Statistiky a dostupnost mezipaměti pro zápis TAA. Cache - jedna z hodnot (typu: all, float, uint, str, log, text, nepodporováno), historie (typ: pfree, free, total, used, pussed), index (typ: pfree, free, total, used , pussed), trend (typ: pfree, free, total, used, pussed)."
 
 #: include/classes/data/CItemData.php:2848
 msgid "Statistics and availability of proxy memory buffer. Mode (modes: pfree, free, total, used, pused)."
@@ -21140,8 +21140,8 @@ msgid "Support"
 msgstr "Podpora"
 
 #: include/classes/setup/CSetupWizard.php:517
-msgid "Support for Oracle DB is deprecated since Zabbix 7.0 and will be removed in future versions."
-msgstr "Podpora pro Oracle DB je od Zabbix 7.0 zastaralá a v budoucích verzích bude odstraněna."
+msgid "Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgstr "Podpora pro Oracle DB je od TAA 7.0 zastaralá a v budoucích verzích bude odstraněna."
 
 #: include/classes/html/widgets/fields/CWidgetFieldLatLngView.php:37
 msgid "Supported formats:"
@@ -21218,7 +21218,7 @@ msgid "System default"
 msgstr "Výchozí nastavení"
 
 #: include/func.inc.php:1848
-msgid "System error occurred. Please contact Zabbix administrator."
+msgid "System error occurred. Please contact TAA administrator."
 msgstr "Nastala chyba systému. Kontaktujte prosím administrátora Zabbixu."
 
 #: include/classes/core/CJsonRpc.php:230
@@ -21786,7 +21786,7 @@ msgid "The %1$s is not discovered anymore and %2$s."
 msgstr "%1$s již není objeven a %2$s."
 
 #: app/views/host.wizard.edit.php:101
-msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in Zabbix."
+msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAA."
 msgstr ""
 
 #: app/views/oauth.edit.php:48
@@ -21799,8 +21799,8 @@ msgstr "URL šablona je použita k načtení a zobrazení vrstvy dlaždic na geo
 
 #: include/classes/db/DbBackend.php:130
 #, c-format
-msgid "The Zabbix database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
-msgstr "Verze databáze Zabbix neodpovídá aktuálním požadavkům. Verze vaší databáze: %1$s. Požadovaná verze: %2$s. Kontaktujte svého správce systému."
+msgid "The TAA database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
+msgstr "Verze databáze TAA neodpovídá aktuálním požadavkům. Verze vaší databáze: %1$s. Požadovaná verze: %2$s. Kontaktujte svého správce systému."
 
 #: include/classes/data/CItemData.php:2485
 msgid "The average time a read from the virtual disk takes, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier, \"instance\" - disk device instance"
@@ -21927,12 +21927,12 @@ msgstr "Klonovaná šablona patří do skupiny šablon, do které nemáte opráv
 
 #: app/views/host.wizard.edit.php:275
 #, c-format
-msgid "The template you selected (%1$s) must be linked to a host - an entity in Zabbix that represents your monitoring target."
+msgid "The template you selected (%1$s) must be linked to a host - an entity in TAA that represents your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:353
 #, c-format
-msgid "The template you selected (%1$s) requires Zabbix agent to be installed and running on your monitoring target."
+msgid "The template you selected (%1$s) requires TAA agent to be installed and running on your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:899
@@ -22026,7 +22026,7 @@ msgid "This field must contain at least one low-level discovery macro."
 msgstr ""
 
 #: app/controllers/CControllerMediatypeTestEdit.php:86
-msgid "This is the test message from Zabbix"
+msgid "This is the test message from TAA"
 msgstr "Toto je nová testovací zpráva ze Zabbixu"
 
 #: include/func.inc.php:2574
@@ -22240,7 +22240,7 @@ msgid "Time"
 msgstr "Čas"
 
 #: include/classes/data/CItemData.php:2729
-msgid "Time a particular Zabbix process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
+msgid "Time a particular TAA process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
 msgstr "Podíl doby konkrétního procesu či skupiny procesů Zabbixu (identifikovaná pomocí <type> a <mode>) čerpaný v <state> v procentech."
 
 #: app/views/js/mediatype.test.edit.js.php:91
@@ -23075,7 +23075,7 @@ msgstr "Nelze změnit oprávnění konfiguračního souboru na 0600."
 
 #: include/classes/server/CZabbixServer.php:673
 #: include/classes/server/CZabbixServer.php:681 jsrpc.php:86 jsrpc.php:101
-msgid "Unable to connect to the Zabbix server due to TLS settings. Some functions are unavailable."
+msgid "Unable to connect to the TAA server due to TLS settings. Some functions are unavailable."
 msgstr ""
 
 #: include/classes/core/CConfigFile.php:237
@@ -23086,8 +23086,8 @@ msgstr "Nelze vytvořit konfigurační soubor."
 #: include/classes/db/OracleDbBackend.php:36
 #: include/classes/db/PostgresqlDbBackend.php:61
 #, c-format
-msgid "Unable to determine current Zabbix database version: %1$s."
-msgstr "Nelze zjistit aktuální verzi databáze Zabbix: %1$s."
+msgid "Unable to determine current TAA database version: %1$s."
+msgstr "Nelze zjistit aktuální verzi databáze TAA: %1$s."
 
 #: include/classes/helpers/CAuthenticationHelper.php:88
 #: include/classes/helpers/CAuthenticationHelper.php:107
@@ -23630,8 +23630,8 @@ msgid "Uptime"
 msgstr "Doba spuštění"
 
 #: include/classes/data/CItemData.php:2806
-msgid "Uptime of Zabbix server process in seconds."
-msgstr "Doba provozu Zabbix server procesů v sekundách."
+msgid "Uptime of TAA server process in seconds."
+msgstr "Doba provozu TAA server procesů v sekundách."
 
 #: include/actions.inc.php:61
 msgid "Uptime/Downtime"
@@ -24773,12 +24773,12 @@ msgid "Version"
 msgstr "Verze"
 
 #: include/classes/data/CItemData.php:927
-msgid "Version of Zabbix agent. Returns string"
-msgstr "Verze Zabbix agenta. Vráti řetězec"
+msgid "Version of TAA agent. Returns string"
+msgstr "Verze TAA agenta. Vráti řetězec"
 
 #: include/classes/data/CItemData.php:2827
-msgid "Version of Zabbix server or proxy"
-msgstr "Verze serveru Zabbix nebo proxy"
+msgid "Version of TAA server or proxy"
+msgstr "Verze serveru TAA nebo proxy"
 
 #: widgets/hostavail/includes/WidgetForm.php:57
 #: widgets/problemsbysv/includes/WidgetForm.php:89
@@ -24863,8 +24863,8 @@ msgid "Warning message"
 msgstr "Varovná zpráva"
 
 #: app/partials/administration.system.info.php:198
-msgid "Warning! Support for Oracle DB is deprecated since Zabbix 7.0 and will be removed in future versions."
-msgstr "Varování! Podpora pro Oracle DB je od Zabbix 7.0 zastaralá a v budoucích verzích bude odstraněna."
+msgid "Warning! Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgstr "Varování! Podpora pro Oracle DB je od TAA 7.0 zastaralá a v budoucích verzích bude odstraněna."
 
 #: app/partials/administration.system.info.php:155
 msgid "Warning! Unable to retrieve database version."
@@ -25444,127 +25444,127 @@ msgid "Your progress will be discarded and you will exit the Host Wizard. Are yo
 msgstr ""
 
 #: include/page_header.php:122
-msgid "Zabbix"
-msgstr "Zabbix"
+msgid "TAA"
+msgstr "TAA"
 
 #: include/classes/helpers/CMenuHelper.php:434
-msgid "Zabbix Integrations"
-msgstr "Integrace Zabbix"
+msgid "TAA Integrations"
+msgstr "Integrace TAA"
 
 #: app/views/connector.edit.php:49
-msgid "Zabbix Streaming Protocol v1.0"
-msgstr "Protokol Zabbix Streaming v 1.0"
+msgid "TAA Streaming Protocol v1.0"
+msgstr "Protokol TAA Streaming v 1.0"
 
 #: include/classes/helpers/CMenuHelper.php:427
-msgid "Zabbix Technical Support"
-msgstr "Zabbix Technical Support"
+msgid "TAA Technical Support"
+msgstr "TAA Technical Support"
 
 #: app/views/administration.script.edit.php:114
 #: app/views/administration.timeouts.edit.php:44
 #: app/views/popup.proxy.edit.php:206 include/discovery.inc.php:56
 #: include/items.inc.php:86
-msgid "Zabbix agent"
-msgstr "Zabbix agent"
+msgid "TAA agent"
+msgstr "TAA agent"
 
 #: widgets/hostavail/includes/WidgetForm.php:47
-msgid "Zabbix agent (active checks)"
-msgstr "Agent Zabbix (aktivní kontroly)"
+msgid "TAA agent (active checks)"
+msgstr "Agent TAA (aktivní kontroly)"
 
 #: include/items.inc.php:87
-msgid "Zabbix agent (active)"
-msgstr "Zabbix agent (aktivní)"
+msgid "TAA agent (active)"
+msgstr "TAA agent (aktivní)"
 
 #: widgets/hostavail/includes/WidgetForm.php:48
-msgid "Zabbix agent (passive checks)"
-msgstr "Agent Zabbix (pasivní kontroly)"
+msgid "TAA agent (passive checks)"
+msgstr "Agent TAA (pasivní kontroly)"
 
 #: app/views/js/host.wizard.edit.js.php:91
-msgid "Zabbix agent initiates connections to Zabbix server or proxy to send data. Recommended for monitoring targets behind a firewall."
+msgid "TAA agent initiates connections to TAA server or proxy to send data. Recommended for monitoring targets behind a firewall."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:863
-msgid "Zabbix documentation"
+msgid "TAA documentation"
 msgstr ""
 
 #: app/partials/administration.system.info.php:45
-msgid "Zabbix frontend version"
-msgstr "Verze frontendu Zabbix"
+msgid "TAA frontend version"
+msgstr "Verze frontendu TAA"
 
 #: include/validate.inc.php:387
-msgid "Zabbix has received an incorrect request."
-msgstr "Zabbix přijal neplatný požadavek."
+msgid "TAA has received an incorrect request."
+msgstr "TAA přijal neplatný požadavek."
 
 #: include/items.inc.php:91
-msgid "Zabbix internal"
-msgstr "Zabbix vnitřní proměnné"
+msgid "TAA internal"
+msgstr "TAA vnitřní proměnné"
 
 #: include/perm.inc.php:48
-msgid "Zabbix internal authentication"
-msgstr "Zabbix interní autentizace"
+msgid "TAA internal authentication"
+msgstr "TAA interní autentizace"
 
 #: app/views/administration.authentication.edit.php:169
-msgid "Zabbix login form"
+msgid "TAA login form"
 msgstr "Přihlašovací formulář Zabbixu"
 
 #: app/views/administration.script.edit.php:115
-msgid "Zabbix proxy or server"
-msgstr "Zabbix proxy nebo server"
+msgid "TAA proxy or server"
+msgstr "TAA proxy nebo server"
 
 #: app/views/administration.script.edit.php:116
-msgid "Zabbix server"
-msgstr "Zabbix server"
+msgid "TAA server"
+msgstr "TAA server"
 
 #: include/classes/server/CZabbixServer.php:626
 #, c-format
 msgid ""
-"Zabbix server \"%1$s\" cannot be reached. Possible reasons:\n"
+"TAA server \"%1$s\" cannot be reached. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect network configuration.\n"
 msgstr ""
-"Zabbix server \"%1$s\" je nedostupný. Možné důvody:\n"
+"TAA server \"%1$s\" je nedostupný. Možné důvody:\n"
 "1. Nesprávné \"NodeAddress\" nebo \"ListenPort\" v \"zabbix_server.conf\" nebo přepsání IP/DNS serveru v \"zabbix.conf.php\";\n"
 "2. Nesprávná konfigurace sítě.\n"
 
 #: app/views/administration.script.edit.php:115
-msgid "Zabbix server (proxy)"
-msgstr "Zabbix server (proxy)"
+msgid "TAA server (proxy)"
+msgstr "TAA server (proxy)"
 
 #: app/views/administration.miscconfig.edit.php:112
-msgid "Zabbix server and proxy"
-msgstr "Zabbix server a proxy"
+msgid "TAA server and proxy"
+msgstr "TAA server a proxy"
 
 #: app/views/administration.miscconfig.edit.php:107
-msgid "Zabbix server and proxy: secrets are retrieved from Vault by both Zabbix server and proxies, allowing them to resolve macros independently."
-msgstr "Server Zabbix a proxy: Tajné informace (secrets) jsou získávány z Vaultu serverem Zabbix i proxy, což jim umožňuje nezávisle získávat makra."
+msgid "TAA server and proxy: secrets are retrieved from Vault by both TAA server and proxies, allowing them to resolve macros independently."
+msgstr "Server TAA a proxy: Tajné informace (secrets) jsou získávány z Vaultu serverem TAA i proxy, což jim umožňuje nezávisle získávat makra."
 
 #: jsrpc.php:91
-msgid "Zabbix server is not running: the information displayed may not be current."
-msgstr "Zabbix server není v provozu: zobrazované informace nemusí být aktuální."
+msgid "TAA server is not running: the information displayed may not be current."
+msgstr "TAA server není v provozu: zobrazované informace nemusí být aktuální."
 
 #: app/partials/administration.system.info.php:34
-msgid "Zabbix server is running"
-msgstr "Zabbix server běží"
+msgid "TAA server is running"
+msgstr "TAA server běží"
 
 #: include/classes/setup/CSetupWizard.php:711
 #: include/classes/setup/CSetupWizard.php:870
-msgid "Zabbix server name"
-msgstr "Zabbix server jméno"
+msgid "TAA server name"
+msgstr "TAA server jméno"
 
 #: app/views/js/host.wizard.edit.js.php:92
-msgid "Zabbix server or proxy initiates connections to Zabbix agent to request data. Recommended for networks without a firewall or with open firewall ports."
+msgid "TAA server or proxy initiates connections to TAA agent to request data. Recommended for networks without a firewall or with open firewall ports."
 msgstr ""
 
 #: app/partials/administration.system.info.php:40
-msgid "Zabbix server version"
-msgstr "Verze serveru Zabbix"
+msgid "TAA server version"
+msgstr "Verze serveru TAA"
 
 #: app/views/administration.miscconfig.edit.php:105
-msgid "Zabbix server: secrets are retrieved from Vault by Zabbix server and forwarded to proxies when needed."
-msgstr "Server Zabbix: Tajné informace (secrets) získává server Zabbix z trezoru (Vaultu) a v případě potřeby je předává proxy."
+msgid "TAA server: secrets are retrieved from Vault by TAA server and forwarded to proxies when needed."
+msgstr "Server TAA: Tajné informace (secrets) získává server TAA z trezoru (Vaultu) a v případě potřeby je předává proxy."
 
 #: include/items.inc.php:92
-msgid "Zabbix trapper"
-msgstr "Zabbix zachytávač"
+msgid "TAA trapper"
+msgstr "TAA zachytávač"
 
 #: include/classes/html/CFilter.php:258 include/classes/html/CTabFilter.php:324
 msgid "Zoom out"
@@ -26593,8 +26593,8 @@ msgid "fourth"
 msgstr "čtvrtý"
 
 #: app/controllers/CControllerPopupTriggerExpr.php:645
-msgid "fuzzytime() - Difference between item value (as timestamp) and Zabbix server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
-msgstr "fuzzytime() - Rozdíl mezi hodnotou položky (časovou značkou) a časovou značkou Zabbix serveru je menší nebo rovná T vteřinám (1 ano, 0 - ne)"
+msgid "fuzzytime() - Difference between item value (as timestamp) and TAA server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
+msgstr "fuzzytime() - Rozdíl mezi hodnotou položky (časovou značkou) a časovou značkou TAA serveru je menší nebo rovná T vteřinám (1 ano, 0 - ne)"
 
 #: include/classes/validators/CApiInputValidator.php:3317
 msgid "geographical coordinates (values of comma separated latitude and longitude) are expected"
@@ -26609,8 +26609,8 @@ msgid "global housekeeping settings"
 msgstr "globálně nastavené údržby"
 
 #: include/classes/api/services/CScript.php:726
-msgid "global script execution on Zabbix server is disabled by server configuration"
-msgstr "globální spouštění skriptů na serveru Zabbix je zakázáno v konfiguraci serveru"
+msgid "global script execution on TAA server is disabled by server configuration"
+msgstr "globální spouštění skriptů na serveru TAA je zakázáno v konfiguraci serveru"
 
 #: include/html.inc.php:795 include/html.inc.php:800 include/html.inc.php:805
 msgid "graph"

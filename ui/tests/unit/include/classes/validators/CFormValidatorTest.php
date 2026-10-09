@@ -841,8 +841,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'host' => ['string', 'required']
 				]],
-				['host' => 'Zabbix server', 'name' => 'Zabbix server'],
-				['host' => 'Zabbix server'],
+				['host' => 'TAA server', 'name' => 'TAA server'],
+				['host' => 'TAA server'],
 				CFormValidator::SUCCESS,
 				[]
 			],
@@ -850,8 +850,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'host' => ['string', 'required']
 				]],
-				['name' => 'Zabbix server'],
-				['name' => 'Zabbix server'],
+				['name' => 'TAA server'],
+				['name' => 'TAA server'],
 				CFormValidator::ERROR,
 				['/host' => [
 					['message' => 'Required field is missing.', 'level' => CFormValidator::ERROR_LEVEL_PRIMARY]
@@ -861,8 +861,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'host' => ['not_empty', 'string']
 				]],
-				['host' => 'Zabbix server'],
-				['host' => 'Zabbix server'],
+				['host' => 'TAA server'],
+				['host' => 'TAA server'],
 				CFormValidator::SUCCESS,
 				[]
 			],
@@ -1064,8 +1064,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'name' => ['string']
 				]],
-				['name' => 'Zabbix server'],
-				['name' => 'Zabbix server'],
+				['name' => 'TAA server'],
+				['name' => 'TAA server'],
 				CFormValidator::SUCCESS,
 				[]
 			],
@@ -1623,8 +1623,8 @@ class CFormValidatorTest extends TestCase {
 						]
 					]
 				]],
-				['value' => ['name' => 'Zabbix server']],
-				['value' => ['name' => 'Zabbix server']],
+				['value' => ['name' => 'TAA server']],
+				['value' => ['name' => 'TAA server']],
 				CFormValidator::SUCCESS,
 				[]
 			],

@@ -1,12 +1,12 @@
-# TAA Monitoring Platform (Zabbix Uzbek Localization & Rebranding Project)
+# TAA Monitoring Platform (TAA Uzbek Localization & Rebranding Project)
 
 ## Project Overview
 
-This project is a comprehensive effort to fully localize and rebrand the Zabbix monitoring platform into the **TAA** (Tizimshunoslik va Analitik Asboblar / System Analytics and Tools) monitoring platform with complete Uzbek language support. The original Zabbix is an enterprise-class, open-source distributed monitoring solution designed to monitor the performance and availability of network devices, servers, services, and other IT resources.
+This project is a comprehensive effort to fully localize and rebrand the TAA monitoring platform into the **TAA** (Tizimshunoslik va Analitik Asboblar / System Analytics and Tools) monitoring platform with complete Uzbek language support. The original TAA is an enterprise-class, open-source distributed monitoring solution designed to monitor the performance and availability of network devices, servers, services, and other IT resources.
 
 ### Purpose
 - **Complete Uzbek Translation**: Translate all user interface elements, messages, and documentation into Uzbek
-- **Full Rebranding**: Transform Zabbix into TAA with custom branding, logos, and icons
+- **Full Rebranding**: Transform TAA into TAA with custom branding, logos, and icons
 - **Cultural Adaptation**: Ensure the translation and branding is culturally appropriate for Uzbek-speaking users
 - **Custom Identity**: Create a unique monitoring platform identity for the Uzbek market
 - **Accessibility**: Make monitoring accessible to Uzbek-speaking IT professionals and organizations
@@ -46,7 +46,7 @@ taa-monitoring/ (formerly zabbix/)
 
 ## Features
 
-### Zabbix Core Features
+### TAA Core Features
 - **Resource Discovery**: Network entities, server resources, device monitoring
 - **Metric Acquisition**: Agent and agent-less monitoring from multiple sources
 - **Root Cause Analysis**: Real-time problem detection and correlation
@@ -59,7 +59,7 @@ taa-monitoring/ (formerly zabbix/)
 - ✅ **UI Language Support**: Uzbek language is registered in the system
 - 📝 **Translation Files**: `.po` and `.mo` files for Uzbek translations
 - 🎨 **Custom Branding**: Complete TAA visual identity with logos and icons
-- 🏷️ **Name Replacement**: All "Zabbix" references replaced with "TAA"
+- 🏷️ **Name Replacement**: All "TAA" references replaced with "TAA"
 - 🔧 **Build Integration**: Docker setup includes Uzbek locale and branding assets
 - 🌐 **Cultural Adaptation**: Proper date, time, and number formatting
 - 📚 **Documentation**: Comprehensive setup and build documentation
@@ -118,7 +118,7 @@ postgres:
     POSTGRES_DB: zabbix
 ```
 
-#### TAA Server (Zabbix Server Backend)
+#### TAA Server (TAA Server Backend)
 ```yaml
 taa-server:
   image: zabbix/zabbix-server-pgsql:alpine-7.0-latest
@@ -255,7 +255,7 @@ COPY ui/assets/styles /usr/share/zabbix/assets/styles
 COPY ui/assets/img /usr/share/zabbix/assets/img
 
 # ===== CRITICAL: REPLACE ORIGINAL ZABBIX ASSETS =====
-# Override original Zabbix branding files with TAA equivalents
+# Override original TAA branding files with TAA equivalents
 RUN cp /usr/share/zabbix/assets/img/taa-logo-main.svg /usr/share/zabbix/assets/img/zabbix_logo.svg
 RUN cp /usr/share/zabbix/assets/img/taa-logo-header.svg /usr/share/zabbix/assets/img/zabbix_logo_header.svg
 RUN cp /usr/share/zabbix/assets/img/taa-icon-32x32.png /usr/share/zabbix/assets/img/zabbix_icon.png
@@ -265,8 +265,8 @@ RUN chown -R nginx:nginx /usr/share/zabbix/assets/
 RUN chown -R nginx:nginx /usr/share/zabbix/locale/
 
 # Update index.php and other files to use TAA branding
-RUN find /usr/share/zabbix -name "*.php" -exec sed -i 's/Zabbix/TAA/g' {} \;
-RUN find /usr/share/zabbix -name "*.js" -exec sed -i 's/Zabbix/TAA/g' {} \;
+RUN find /usr/share/zabbix -name "*.php" -exec sed -i 's/TAA/TAA/g' {} \;
+RUN find /usr/share/zabbix -name "*.js" -exec sed -i 's/TAA/TAA/g' {} \;
 RUN find /usr/share/zabbix -name "*.css" -exec sed -i 's/zabbix_logo/taa-logo/g' {} \;
 ```
 
@@ -303,11 +303,11 @@ msgstr "Monitoring"
 Update translation files to include TAA branding:
 ```po
 #: branding
-msgid "Zabbix"
+msgid "TAA"
 msgstr "TAA"
 
 #: branding
-msgid "Zabbix monitoring"
+msgid "TAA monitoring"
 msgstr "TAA monitoring"
 
 #: branding
@@ -349,16 +349,16 @@ curl -s http://localhost:8098 | grep -i "TAA"
 - **Pluralization**: Set correct plural forms in .po file headers
 
 #### Example Translations
-| English/Zabbix | Uzbek/TAA | Context |
+| English/TAA | Uzbek/TAA | Context |
 |---------|-------|---------|
 | Dashboard | Boshqaruv paneli | Main interface |
 | Host | Xost | IT infrastructure |
 | Trigger | Trigger | Monitoring alerts |
 | Template | Shablon | Configuration |
 | Network | Tarmoq | Infrastructure |
-| Zabbix | TAA | Brand name |
-| Zabbix Server | TAA Server | System component |
-| Zabbix Agent | TAA Agent | Monitoring agent |
+| TAA | TAA | Brand name |
+| TAA Server | TAA Server | System component |
+| TAA Agent | TAA Agent | Monitoring agent |
 | Monitoring | Monitoring | Core function |
 | System Analytics | Tizim tahlili | Platform purpose |
 
@@ -422,12 +422,12 @@ echo "TAA assets prepared for Docker build"
 
 ## Frontend Asset Source Mapping & Build Process
 
-### Original Zabbix Asset Locations (What Gets Replaced)
-During the Docker build, TAA assets replace these original Zabbix locations:
+### Original TAA Asset Locations (What Gets Replaced)
+During the Docker build, TAA assets replace these original TAA locations:
 
 #### **Primary Logo Locations:**
 ```bash
-# Original Zabbix Assets → TAA Replacements
+# Original TAA Assets → TAA Replacements
 /usr/share/zabbix/assets/img/zabbix_logo.svg → taa-logo-header.svg
 /usr/share/zabbix/assets/img/zabbix_logo_header.svg → taa-logo-header.svg
 /usr/share/zabbix/assets/img/zabbix_logo_sidebar.svg → taa-logo-white.svg
@@ -575,8 +575,8 @@ CONTAINER_NAME="taa-web"
 echo "Checking logo deployment..."
 docker exec $CONTAINER_NAME ls -la /usr/share/zabbix/assets/img/ | grep -i taa
 
-# Verify original Zabbix assets are replaced
-echo "Verifying Zabbix asset replacement..."
+# Verify original TAA assets are replaced
+echo "Verifying TAA asset replacement..."
 docker exec $CONTAINER_NAME file /usr/share/zabbix/assets/img/zabbix_logo.svg
 
 # Check favicon
@@ -659,7 +659,7 @@ echo "TAA_ASSET_VERSION='$TAA_VERSION'" > ui/include/taa_version.php
 sed -i "s/taa-logo-main.svg/taa-logo-main.svg?v=$TAA_VERSION/g" ui/**/*.php
 ```
 
-This comprehensive mapping ensures that all TAA branding assets are properly integrated during the Docker build process, replacing all original Zabbix visual elements with TAA branding.
+This comprehensive mapping ensures that all TAA branding assets are properly integrated during the Docker build process, replacing all original TAA visual elements with TAA branding.
 
 ## Development Setup
 
@@ -791,7 +791,7 @@ grep -n "uz_UZ" ui/include/locales.inc.php
 ```
 
 ### Debug Mode
-Enable debug mode in Zabbix configuration:
+Enable debug mode in TAA configuration:
 ```php
 // In zabbix.conf.php
 $ZBX_CONFIG['debug'] = true;
@@ -825,20 +825,20 @@ $ZBX_CONFIG['debug'] = true;
 
 ## License
 
-This project maintains the same license as Zabbix: **AGPL-3.0-only**
+This project maintains the same license as TAA: **AGPL-3.0-only**
 
 See [COPYING](COPYING) for full license text.
 
 ## Resources
 
 ### Documentation
-- [Zabbix Official Documentation](https://www.zabbix.com/documentation/current/en/)
-- [Zabbix Installation Manual](https://www.zabbix.com/documentation/current/en/manual/installation)
+- [TAA Official Documentation](https://www.zabbix.com/documentation/current/en/)
+- [TAA Installation Manual](https://www.zabbix.com/documentation/current/en/manual/installation)
 - [gettext Documentation](https://www.gnu.org/software/gettext/manual/)
 
 ### Community
-- [Zabbix Community Forums](https://www.zabbix.com/forum/)
-- [Zabbix GitHub Repository](https://github.com/zabbix/zabbix)
+- [TAA Community Forums](https://www.zabbix.com/forum/)
+- [TAA GitHub Repository](https://github.com/zabbix/zabbix)
 - Uzbek Localization Team: [Contact Information]
 
 ### Tools
@@ -869,7 +869,7 @@ See [COPYING](COPYING) for full license text.
 - [ ] Performance optimization
 
 ### Long-term Goals (6+ months)
-- [ ] Official Zabbix inclusion
+- [ ] Official TAA inclusion
 - [ ] Maintenance and updates
 - [ ] Regional dialect support
 - [ ] Mobile app localization

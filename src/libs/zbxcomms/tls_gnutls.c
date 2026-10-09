@@ -48,7 +48,7 @@ static ZBX_THREAD_LOCAL gnutls_priority_t			ciphersuites_all	= NULL;
 
 /******************************************************************************
  *                                                                            *
- * Purpose: write a GnuTLS debug message into Zabbix log                      *
+ * Purpose: write a GnuTLS debug message into TAA log                      *
  *                                                                            *
  * Comments:                                                                  *
  *     This is a callback function, its arguments are defined in GnuTLS.      *
@@ -66,7 +66,7 @@ static void	zbx_gnutls_debug_cb(int level, const char *str)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: write a GnuTLS audit message into Zabbix log                      *
+ * Purpose: write a GnuTLS audit message into TAA log                      *
  *                                                                            *
  * Comments:                                                                  *
  *     This is a callback function, its arguments are defined in GnuTLS.      *
@@ -243,7 +243,7 @@ static int	zbx_psk_cb(gnutls_session_t session, const char *psk_identity, gnutls
 
 /******************************************************************************
  *                                                                            *
- * Purpose: write names of enabled GnuTLS ciphersuites into Zabbix log for    *
+ * Purpose: write names of enabled GnuTLS ciphersuites into TAA log for    *
  *          debugging                                                         *
  *                                                                            *
  * Parameters:                                                                *
@@ -621,7 +621,7 @@ static gnutls_x509_crt_t	zbx_get_peer_cert(const gnutls_session_t session, char 
 
 /******************************************************************************
  *                                                                            *
- * Purpose: write peer certificate information into Zabbix log for debugging  *
+ * Purpose: write peer certificate information into TAA log for debugging  *
  *                                                                            *
  * Parameters:                                                                *
  *     function_name - [IN] caller function name                              *
@@ -1365,14 +1365,14 @@ int	zbx_tls_connect(zbx_socket_t *s, unsigned int tls_connect, const char *tls_a
 			/* set our own debug callback function */
 			gnutls_global_set_log_function(zbx_gnutls_debug_cb);
 
-			/* for Zabbix LOG_LEVEL_TRACE, GnuTLS debug level 4 seems the best */
+			/* for TAA LOG_LEVEL_TRACE, GnuTLS debug level 4 seems the best */
 			/* (the highest GnuTLS debug level is 9) */
 			gnutls_global_set_log_level(4);
 		}
 		else
 			gnutls_global_set_log_level(0);		/* restore default log level */
 
-		/* set our own callback function to log issues into Zabbix log */
+		/* set our own callback function to log issues into TAA log */
 		gnutls_global_set_audit_log_function(zbx_gnutls_audit_cb);
 
 		gnutls_transport_set_int(s->tls_ctx->ctx, ZBX_SOCKET_TO_INT(s->socket));
@@ -1640,14 +1640,14 @@ int	zbx_tls_accept(zbx_socket_t *s, unsigned int tls_accept, char **error)
 		/* set our own debug callback function */
 		gnutls_global_set_log_function(zbx_gnutls_debug_cb);
 
-		/* for Zabbix LOG_LEVEL_TRACE, GnuTLS debug level 4 seems the best */
+		/* for TAA LOG_LEVEL_TRACE, GnuTLS debug level 4 seems the best */
 		/* (the highest GnuTLS debug level is 9) */
 		gnutls_global_set_log_level(4);
 	}
 	else
 		gnutls_global_set_log_level(0);		/* restore default log level */
 
-	/* set our own callback function to log issues into Zabbix log */
+	/* set our own callback function to log issues into TAA log */
 	gnutls_global_set_audit_log_function(zbx_gnutls_audit_cb);
 
 	gnutls_transport_set_int(s->tls_ctx->ctx, ZBX_SOCKET_TO_INT(s->socket));
@@ -2014,7 +2014,7 @@ int	zbx_tls_get_attr_cert(const zbx_socket_t *s, zbx_tls_conn_attr_t *attr)
  *     This function can be used only on server-side of TLS connection.       *
  *     GnuTLS makes it asymmetric - see documentation for                     *
  *     gnutls_psk_server_get_username() and gnutls_psk_client_get_hint()      *
- *     (the latter function is not used in Zabbix).                           *
+ *     (the latter function is not used in TAA).                           *
  *     Implementation for OpenSSL is server-side only, too.                   *
  *                                                                            *
  ******************************************************************************/
@@ -2036,7 +2036,7 @@ int	zbx_tls_get_attr_psk(const zbx_socket_t *s, zbx_tls_conn_attr_t *attr)
  *     This function can be used only on server-side of TLS connection.       *
  *     GnuTLS makes it asymmetric - see documentation for                     *
  *     gnutls_psk_server_get_username() and gnutls_psk_client_get_hint()      *
- *     (the latter function is not used in Zabbix).                           *
+ *     (the latter function is not used in TAA).                           *
  *     Implementation for OpenSSL is server-side only, too.                   *
  *                                                                            *
  ******************************************************************************/
@@ -2124,7 +2124,7 @@ int	zbx_tls_validate_attr(const zbx_tls_conn_attr_t *attr, const char *tls_issue
  *                                                                            *
  * Purpose: pass some TLS variables from one thread to other                  *
  *                                                                            *
- * Comments: used in Zabbix sender on MS Windows                              *
+ * Comments: used in TAA sender on MS Windows                              *
  *                                                                            *
  ******************************************************************************/
 void	zbx_tls_pass_vars(ZBX_THREAD_SENDVAL_TLS_ARGS *args)
@@ -2139,7 +2139,7 @@ void	zbx_tls_pass_vars(ZBX_THREAD_SENDVAL_TLS_ARGS *args)
  *                                                                            *
  * Purpose: pass some TLS variables from one thread to other                  *
  *                                                                            *
- * Comments: used in Zabbix sender on MS Windows                              *
+ * Comments: used in TAA sender on MS Windows                              *
  *                                                                            *
  ******************************************************************************/
 void	zbx_tls_take_vars(ZBX_THREAD_SENDVAL_TLS_ARGS *args)

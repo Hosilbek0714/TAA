@@ -1773,7 +1773,7 @@ class CMacrosResolverGeneral {
 			else {
 				/*
 				 * Collecting host IDs for items without interface. Macros for such items will resolve to either the
-				 * Zabbix agent, SNMP, JMX or IPMI interface of the host in this order of priority or to 'UNKNOWN' if
+				 * TAA agent, SNMP, JMX or IPMI interface of the host in this order of priority or to 'UNKNOWN' if
 				 * the host does not have any interface.
 				 */
 				$hostids[$db_item['hostid']][] = $itemid;
@@ -2863,10 +2863,10 @@ class CMacrosResolverGeneral {
 	 * Output:
 	 *     array (
 	 *         0 => array (
-	 *             '{USER.FULLNAME}' => 'Zabbix Administrator',
+	 *             '{USER.FULLNAME}' => 'TAA Administrator',
 	 *         ),
 	 *         1 => array (
-	 *             '{USER.NAME}' => 'Zabbix',
+	 *             '{USER.NAME}' => 'TAA',
 	 *             '{USER.SURNAME}' => 'Administrator',
 	 *         )
 	 *     )

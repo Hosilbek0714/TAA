@@ -344,7 +344,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = Zabbix;
+        		this.logger = TAA;
         	}
         	else {
         		this.logger = logger;
@@ -488,7 +488,7 @@ zabbix_export:
         	if (!response.id) {
         		const error_message = CParamValidator.isType(response.message, 'string') ? response.message : 'Unknown error';
         
-        		throw error_message + '. For more details check the Zabbix server log.';
+        		throw error_message + '. For more details check the TAA server log.';
         	}
         
         	return 'OK';
@@ -505,7 +505,7 @@ zabbix_export:
         	throw 'Sending failed: ' + error;
         }
       description: |
-        This media type integrates your Zabbix installation with your Discord server using the Zabbix webhook feature.
+        This media type integrates your TAA installation with your Discord server using the TAA webhook feature.
         
         Discord configuration:
         
@@ -514,11 +514,11 @@ zabbix_export:
         3. Click on the webhook that has been created and edit the details if needed.
         4. After setting up your Discord webhook press "Save Changes". Now you can copy Discord webhook URL now by pressing "Copy Webhook URL" or you can view it later.
         
-        Zabbix configuration:
+        TAA configuration:
         
         1. Before you can start using Discord webhook, set up the global macro "{$ZABBIX.URL}":
-        - In the Zabbix web interface, go to "Administration" → "Macros" section in the dropdown menu in the top left corner.
-        - Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the Zabbix frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
+        - In the TAA web interface, go to "Administration" → "Macros" section in the dropdown menu in the top left corner.
+        - Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
         - Specifying a protocol is mandatory, whereas the port is optional. Depending on the web server configuration you might also need to append "/zabbix" to the end of URL. Good examples: 
           - http://zabbix.com
           - https://zabbix.lan/zabbix
@@ -529,14 +529,14 @@ zabbix_export:
           - zabbix.com
           - http://zabbix/
         
-        2. Create a Zabbix user and add media:
+        2. Create a TAA user and add media:
         - If you want to create a new user, go to the "Users" → "Users" section, click the "Create user" button in the top right corner. In the "User" tab, fill in all required fields (marked with red asterisks). 
         - In the "Media" tab, add a new media and select "Discord" type from the drop-down list. The "Send to" field must contain the URL of the Discord webhook created before.
         - Make sure this user has access to all hosts for which you would like problem notifications to be sent to Discord.
         
         3. Great! You can now start using this media type in actions and receive alerts!
         
-        You can find the latest version of this media and additional information in the official Zabbix repository:
+        You can find the latest version of this media and additional information in the official TAA repository:
         https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/discord
       message_templates:
         - event_source: TRIGGERS

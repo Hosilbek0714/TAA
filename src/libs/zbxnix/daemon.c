@@ -41,7 +41,7 @@ static zbx_signal_redirect_f	signal_redirect_handler;
 #ifdef HAVE_SIGQUEUE
 /******************************************************************************
  *                                                                            *
- * Purpose: common SIGUSR1 handler for Zabbix processes                       *
+ * Purpose: common SIGUSR1 handler for TAA processes                       *
  *                                                                            *
  ******************************************************************************/
 static void	common_sigusr_handler(int flags)
@@ -164,7 +164,7 @@ void	zbx_signal_process_by_pid(int pid, int flags, char **out)
 	if (0 != pid && 0 == found)
 	{
 		zbx_strlog_alloc(LOG_LEVEL_DEBUG, out, &out_alloc, &out_offset,
-				"cannot redirect signal: process pid:%d is not a Zabbix child process", pid);
+				"cannot redirect signal: process pid:%d is not a TAA child process", pid);
 	}
 	else
 	{

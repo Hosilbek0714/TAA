@@ -60,12 +60,12 @@ class testPageScheduledReport extends CWebTest {
 		return [
 			[
 				[
-					'name' => 'Zabbix server'
+					'name' => 'TAA server'
 				]
 			],
 			[
 				[
-					'name' => 'Zabbix server health',
+					'name' => 'TAA server health',
 					'no_reports' => true
 				]
 			]
@@ -101,7 +101,7 @@ class testPageScheduledReport extends CWebTest {
 	public function testPageScheduledReport_Layout() {
 		$expired_report = [
 			'Name' => 'Report for filter - expired',
-			'Owner' => 'Admin (Zabbix Administrator)',
+			'Owner' => 'Admin (TAA Administrator)',
 			'Repeats' => 'Yearly',
 			'Period' => 'Previous year',
 			'Last sent' => 'Never',

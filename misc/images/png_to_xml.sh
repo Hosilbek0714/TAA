@@ -1,6 +1,6 @@
 #!/bin/bash
 
-# A script to generate Zabbix map XML from PNG images
+# A script to generate TAA map XML from PNG images
 # depends on base64
 
 echo "Generating XML"

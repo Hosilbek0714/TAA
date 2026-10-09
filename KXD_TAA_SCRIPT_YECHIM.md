@@ -262,7 +262,7 @@ snmp-server enable traps storm-control trap-rate 10
 snmp-server enable traps snmp linkdown linkup
 logging host 10.0.10.10
 ```
-DL‑160 da `snmptrapd` + Zabbix SNMP trapper (`StartSNMPTrapper=1`) qabul qiladi.
+DL‑160 da `snmptrapd` + TAA SNMP trapper (`StartSNMPTrapper=1`) qabul qiladi.
 
 ### 4.5. P5 yechimi — `show` natijalarini avtomatik chiqarish (TCL)
 3560G ichida tclsh ishlaydi. EEM applet har soatda DHCP binding ni TFTP orqali DL‑160 ga yuboradi:

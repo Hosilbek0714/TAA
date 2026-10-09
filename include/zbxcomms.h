@@ -392,7 +392,7 @@ int	zbx_telnet_execute(zbx_socket_t *s, const char *command, AGENT_RESULT *resul
 
 #if defined(_WINDOWS)
 
-/* Typical thread is long-running, if necessary, it initializes TLS for itself. Zabbix sender is an exception. If */
+/* Typical thread is long-running, if necessary, it initializes TLS for itself. TAA sender is an exception. If */
 /* data is sent from a file or in real time then sender's 'main' thread starts the 'send_value' thread for each   */
 /* 250 values to be sent. To avoid TLS initialization on every start of 'send_value' thread we initialize TLS in  */
 /* 'main' thread and use this structure for passing minimum TLS variables into 'send_value' thread. */

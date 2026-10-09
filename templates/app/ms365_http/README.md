@@ -9,7 +9,7 @@
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -225,12 +225,12 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Microsoft 365: Services: There are errors in requests to API|<p>Zabbix has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.services.errors))>0`|Average||
-|Microsoft 365: Teams: There are errors in requests to API|<p>Zabbix has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.teams.errors))>0`|Average||
-|Microsoft 365: Outlook: There are errors in requests to API|<p>Zabbix has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.outlook.errors))>0`|Average||
-|Microsoft 365: OneDrive: There are errors in requests to API|<p>Zabbix has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.onedrive.errors))>0`|Average||
-|Microsoft 365: SharePoint: There are errors in requests to API|<p>Zabbix has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.sharepoint.errors))>0`|Average||
-|Microsoft 365: Apps: There are errors in requests to API|<p>Zabbix has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.apps.errors))>0`|Average||
+|Microsoft 365: Services: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.services.errors))>0`|Average||
+|Microsoft 365: Teams: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.teams.errors))>0`|Average||
+|Microsoft 365: Outlook: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.outlook.errors))>0`|Average||
+|Microsoft 365: OneDrive: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.onedrive.errors))>0`|Average||
+|Microsoft 365: SharePoint: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.sharepoint.errors))>0`|Average||
+|Microsoft 365: Apps: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Microsoft 365 reports by HTTP/ms365.apps.errors))>0`|Average||
 
 ### LLD rule Microsoft cloud service discovery
 
@@ -255,5 +255,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

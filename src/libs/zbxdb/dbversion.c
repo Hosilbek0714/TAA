@@ -50,7 +50,7 @@ static int	ZBX_MARIADB_SFORK = OFF;
 /*********************************************************************************
  *                                                                               *
  * Purpose: determine if a vendor database(MySQL, MariaDB, PostgreSQL,           *
- *          ElasticDB) version satisfies Zabbix requirements                     *
+ *          ElasticDB) version satisfies TAA requirements                     *
  *                                                                               *
  * Parameters: database                - [IN] database name                      *
  *             current_version         - [IN] detected numeric version           *

@@ -44,7 +44,7 @@ char	zabbix_event_source[ZBX_SERVICE_NAME_LEN] = APPLICATION_NAME;
 #define JS_TIMEOUT_DEF_STR	ZBX_STR(JS_TIMEOUT_DEF)
 
 static const char	*help_message[] = {
-	"Execute script using Zabbix embedded scripting engine.",
+	"Execute script using TAA embedded scripting engine.",
 	"",
 	"General options:",
 	"  -s,--script script-file      Specify the filename of script to execute. Specify - for",

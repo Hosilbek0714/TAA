@@ -74,7 +74,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent'
+					'type' => 'TAA agent'
 				]
 			],
 			[
@@ -86,56 +86,56 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (float)'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Character'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Log'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Text'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix agent (active)'
+					'type' => 'TAA agent (active)'
 				]
 			],
 			[
@@ -187,20 +187,20 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix internal'
+					'type' => 'TAA internal'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix internal',
+					'type' => 'TAA internal',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'host' => 'Simple form test host',
-					'type' => 'Zabbix trapper'
+					'type' => 'TAA trapper'
 				]
 			],
 			[
@@ -289,7 +289,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent'
+					'type' => 'TAA agent'
 				]
 			],
 			[
@@ -307,56 +307,56 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Numeric (float)'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Character'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Log'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent',
+					'type' => 'TAA agent',
 					'value_type' => 'Text'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix agent (active)'
+					'type' => 'TAA agent (active)'
 				]
 			],
 			[
@@ -408,20 +408,20 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix internal'
+					'type' => 'TAA internal'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix internal',
+					'type' => 'TAA internal',
 					'value_type' => 'Numeric (unsigned)'
 				]
 			],
 			[
 				[
 					'template' => 'Inheritance test template',
-					'type' => 'Zabbix trapper'
+					'type' => 'TAA trapper'
 				]
 			],
 			[
@@ -615,13 +615,13 @@ class testFormItemPrototype extends CLegacyWebTest {
 		if (!isset($templateid)) {
 			$options = $type_field->getOptions()->asText();
 			$this->assertEquals($options, [
-				'Zabbix agent',
-				'Zabbix agent (active)',
+				'TAA agent',
+				'TAA agent (active)',
 				'Simple check',
 				'SNMP agent',
 				'SNMP trap',
-				'Zabbix internal',
-				'Zabbix trapper',
+				'TAA internal',
+				'TAA trapper',
 				'External check',
 				'Database monitor',
 				'HTTP agent',
@@ -882,11 +882,11 @@ class testFormItemPrototype extends CLegacyWebTest {
 		}
 
 		switch ($type) {
-			case 'Zabbix agent':
-			case 'Zabbix agent (active)':
+			case 'TAA agent':
+			case 'TAA agent (active)':
 			case 'Simple check':
 			case 'SNMP agent':
-			case 'Zabbix internal':
+			case 'TAA internal':
 			case 'External check':
 			case 'Database monitor':
 			case 'IPMI agent':
@@ -935,7 +935,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 		}
 
 		// Custom intervals field isn't visible for some item types.
-		if (in_array($type, ['SNMP trap', 'Zabbix trapper', 'Dependent item'])) {
+		if (in_array($type, ['SNMP trap', 'TAA trapper', 'Dependent item'])) {
 			$this->assertFalse($form->getField('Custom intervals')->isDisplayed());
 			$this->assertFalse($form->query("xpath://div[@id='js-item-flex-intervals-field']//button[@class='btn-link element-table-add']")
 					->one()->isDisplayed());
@@ -1042,7 +1042,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 			$this->assertFalse($form->getField('Value mapping')->isDisplayed());
 		}
 
-		if ($type == 'Zabbix trapper') {
+		if ($type == 'TAA trapper') {
 			$this->assertTrue($form->getField('Allowed hosts')->isDisplayed());
 			$this->assertEquals(255, $form->getField('Allowed hosts')->getAttribute('maxlength'));
 		}
@@ -1760,8 +1760,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix agent',
-					'name' => 'Zabbix agent',
+					'type' => 'TAA agent',
+					'name' => 'TAA agent',
 					'key' => 'item-zabbix-agent[{#KEY}]',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1771,8 +1771,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix agent (active)',
-					'name' => 'Zabbix agent (active) mqtt',
+					'type' => 'TAA agent (active)',
+					'name' => 'TAA agent (active) mqtt',
 					'key' => 'mqtt.get[{#KEY}]',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1782,8 +1782,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix agent (active)',
-					'name' => 'Zabbix agent (active)',
+					'type' => 'TAA agent (active)',
+					'name' => 'TAA agent (active)',
 					'key' => 'item-zabbix-agent-active[{#KEY}]',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1827,8 +1827,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix internal',
-					'name' => 'Zabbix internal',
+					'type' => 'TAA internal',
+					'name' => 'TAA internal',
 					'key' => 'item-zabbix-internal[{#KEY}]',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1838,8 +1838,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix trapper',
-					'name' => 'Zabbix trapper',
+					'type' => 'TAA trapper',
+					'name' => 'TAA trapper',
 					'key' => 'item-zabbix-trapper[{#KEY}]',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1849,8 +1849,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix trapper',
-					'name' => 'Zabbix trapper with macro in allowed hosts field',
+					'type' => 'TAA trapper',
+					'name' => 'TAA trapper with macro in allowed hosts field',
 					'key' => 'item-zabbix-trapper-macro[{#KEY}]',
 					'allowed_hosts' => '{$TEST}',
 					'dbCheck' => true,
@@ -1861,8 +1861,8 @@ class testFormItemPrototype extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'Zabbix trapper',
-					'name' => 'Zabbix trapper with macro and ip in allowed hosts field',
+					'type' => 'TAA trapper',
+					'name' => 'TAA trapper with macro and ip in allowed hosts field',
 					'key' => 'item-zabbix-trapper-macro-ip[{#KEY}]',
 					'allowed_hosts' => '{$MACRO},127.0.0.1',
 					'dbCheck' => true,
@@ -2244,7 +2244,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 		}
 
 		// Check hidden update and custom interval for mqtt.get key.
-		if (CTestArrayHelper::get($data, 'type') === 'Zabbix agent (active)'
+		if (CTestArrayHelper::get($data, 'type') === 'TAA agent (active)'
 				&& substr(CTestArrayHelper::get($data, 'key'), 0, 8) === 'mqtt.get') {
 			$this->zbxTestTextNotVisible('Update interval');
 			$this->zbxTestAssertNotVisibleId('js-item-delay-label');
@@ -2286,7 +2286,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 		}
 
 		switch ($type) {
-			case 'Zabbix agent':
+			case 'TAA agent':
 			case 'Simple check':
 			case 'SNMP agent':
 			case 'SNMP trap':
@@ -2359,7 +2359,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 			$this->zbxTestAssertElementPresentXpath("//z-select[@id='type']//li[text()='$type']");
 
 			switch ($type) {
-				case 'Zabbix agent':
+				case 'TAA agent':
 				case 'Simple check':
 				case 'SNMP agent':
 				case 'SNMP trap':
@@ -2370,7 +2370,7 @@ class testFormItemPrototype extends CLegacyWebTest {
 				case 'JMX agent':
 					$this->zbxTestAssertElementPresentXpath('//z-select[@id="interface-select"]//li[text()="'.$interfaceid.'"]');
 					break;
-				case 'Zabbix agent (active)':
+				case 'TAA agent (active)':
 					$this->zbxTestAssertNotVisibleId('interfaceid');
 					// Check hidden update and custom interval for mqtt.get key.
 					if (substr(CTestArrayHelper::get($data, 'key'), 0, 8) === 'mqtt.get') {

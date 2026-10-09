@@ -19,43 +19,43 @@ class C62ImportConverterTest extends CImportConverterTest {
 	public function importConverterDataProviderCalcItemFormula(): array {
 		$formulas = [
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="Zabbix servers"],0s))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"], 0m))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"], 0h ))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"], 0d ))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"],  0w ))',
-				'expected' => 'sum(last_foreach(/*/key?[group="Zabbix servers"]))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"]))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"]))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"]))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],0s))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"], 0m))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"], 0h ))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"], 0d ))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"],  0w ))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"]))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="Zabbix servers"], 15s))',
-				'expected' => 'sum(last_foreach(/*/key?[group="Zabbix servers"], 15s))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], 15s))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"], 15s))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="Zabbix servers"], {$MACRO}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="Zabbix servers"], {$MACRO}))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], {$MACRO}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"], {$MACRO}))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="Zabbix servers"], "{$MACRO: context}"))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"], 1h ))',
-				'expected' => 'sum(last_foreach(/*/key?[group="Zabbix servers"], "{$MACRO: context}"))'.
-					' or sum(last_foreach(/*/key?[group="Zabbix servers"], 1h ))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], "{$MACRO: context}"))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"], 1h ))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"], "{$MACRO: context}"))'.
+					' or sum(last_foreach(/*/key?[group="TAA servers"], 1h ))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="Zabbix servers"],{#LLD}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="Zabbix servers"],{#LLD}))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],{#LLD}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"],{#LLD}))',
 				'prototype' => true
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="Zabbix servers"],  {#LLD}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="Zabbix servers"],  {#LLD}))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],  {#LLD}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"],  {#LLD}))',
 				'prototype' => true
 			]
 		];

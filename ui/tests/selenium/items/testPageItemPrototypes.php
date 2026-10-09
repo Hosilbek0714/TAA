@@ -57,7 +57,7 @@ class testPageItemPrototypes extends testPagePrototypes {
 						'delay' => 0
 					]
 				],
-				'groups' => [['groupid' => 4]], // Zabbix server
+				'groups' => [['groupid' => 4]], // TAA server
 				'discoveryrules' => [
 					[
 						'name' => 'Drule for prototype check',
@@ -191,7 +191,7 @@ class testPageItemPrototypes extends testPagePrototypes {
 	}
 
 	/**
-	 * Check that empty values displayed in Trends and Interval columns. SNMP, Zabbix trappers has empty values in trends column.
+	 * Check that empty values displayed in Trends and Interval columns. SNMP, TAA trappers has empty values in trends column.
 	 * Dependent items has empty update interval column.
 	 *
 	 * @dataProvider getItemPrototypesNotDisplayedValuesData

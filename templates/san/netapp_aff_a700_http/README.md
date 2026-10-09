@@ -3,12 +3,12 @@
 
 ## Overview
 
-The template to monitor SAN NetApp AFF A700 cluster by Zabbix HTTP agent.    
+The template to monitor SAN NetApp AFF A700 cluster by TAA HTTP agent.    
 
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,11 +17,11 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-1\. Create a host for AFF A700 with cluster management IP as the Zabbix agent interface.
+1\. Create a host for AFF A700 with cluster management IP as the TAA agent interface.
 
 2\. Link the template to the host.
 
@@ -290,5 +290,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

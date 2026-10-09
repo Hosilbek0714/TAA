@@ -3,8 +3,8 @@
 
 ## Overview
 
-This template is designed to monitor `etcd` by Zabbix that works without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+This template is designed to monitor `etcd` by TAA that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
 The template `Etcd by HTTP` — collects metrics by help of the HTTP agent from `/metrics` endpoint.
 
@@ -17,7 +17,7 @@ Please upgrade your `etcd` instance, or use older `Etcd by HTTP` template versio
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -26,13 +26,13 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 1. Make sure that `etcd` allows the collection of metrics. You can test it by running: `curl -L http://localhost:2379/metrics`.
 
-2. Check if `etcd` is accessible from Zabbix proxy or Zabbix server depending on where you are planning to do the monitoring. To verify it, run `curl -L  http://<etcd_node_address>:2379/metrics`.
+2. Check if `etcd` is accessible from TAA proxy or TAA server depending on where you are planning to do the monitoring. To verify it, run `curl -L  http://<etcd_node_address>:2379/metrics`.
 
 3. Add the template to the `etcd` node. Set the hostname or IP address of the `etcd` host in the `{$ETCD.HOST}` macro. By default, the template uses a client's port.
 You can configure metrics endpoint location by adding `--listen-metrics-urls` flag.
@@ -114,7 +114,7 @@ Additional points to consider:
 |----|-----------|----------|--------|--------------------------------|
 |Etcd: Service is unavailable||`last(/Etcd by HTTP/net.tcp.service["{$ETCD.SCHEME}","{$ETCD.HOST}","{$ETCD.PORT}"])=0`|Average|**Manual close**: Yes|
 |Etcd: Node healthcheck failed|<p>See more details on https://etcd.io/docs/v3.5/op-guide/monitoring/#health-check.</p>|`last(/Etcd by HTTP/etcd.health)=0`|Average|**Depends on**:<br><ul><li>Etcd: Service is unavailable</li></ul>|
-|Etcd: Failed to fetch info data|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`nodata(/Etcd by HTTP/etcd.is.leader,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Etcd: Service is unavailable</li></ul>|
+|Etcd: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Etcd by HTTP/etcd.is.leader,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Etcd: Service is unavailable</li></ul>|
 |Etcd: Member has no leader|<p>If a member does not have a leader, it is totally unavailable.</p>|`last(/Etcd by HTTP/etcd.has.leader)=0`|Average||
 |Etcd: Instance has seen too many leader changes|<p>Rapid leadership changes impact the performance of `etcd` significantly. It also signals that the leader is unstable, perhaps due to network connectivity issues or excessive load hitting the `etcd cluster`.</p>|`(max(/Etcd by HTTP/etcd.leader.changes,15m)-min(/Etcd by HTTP/etcd.leader.changes,15m))>{$ETCD.LEADER.CHANGES.MAX.WARN}`|Warning||
 |Etcd: Too many proposal failures|<p>Normally related to two issues: temporary failures related to a leader election or longer downtime caused by a loss of quorum in the cluster.</p>|`min(/Etcd by HTTP/etcd.proposals.failed.rate,5m)>{$ETCD.PROPOSAL.FAIL.MAX.WARN}`|Warning||
@@ -162,5 +162,5 @@ Additional points to consider:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

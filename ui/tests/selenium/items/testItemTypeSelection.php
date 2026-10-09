@@ -78,7 +78,7 @@ class testItemTypeSelection extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Type' => 'Zabbix agent (active)',
+						'Type' => 'TAA agent (active)',
 						'Name' => 'Log',
 						'Key' => 'eventlog[name,{#KEY}]'
 					],

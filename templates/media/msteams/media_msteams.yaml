@@ -388,7 +388,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = Zabbix;
+        		this.logger = TAA;
         	}
         	else {
         		this.logger = logger;
@@ -487,7 +487,7 @@ zabbix_export:
         	CParamValidator.validate({teams_endpoint: {type: 'string'}, event_source: {type: 'string'}, alert_subject: {type: 'string'},
         		alert_message: {type: 'string'}, host_ip: {type: 'string', default: ''}, zabbix_url: {type: 'string', url: true},
         		use_default_message: {type: 'boolean', default: false}, event_nseverity: {type: 'integer', default: 7}}, this.params);
-        	var actionName = 'Zabbix Home';
+        	var actionName = 'TAA Home';
         	if (!CParamValidator.inArray(this.params.event_source, ['0','3','4'])
         		|| this.params.alert_message.startsWith("NOTE: Escalation canceled:")) {
         		this.params['use_default_message'] = true;
@@ -624,11 +624,11 @@ zabbix_export:
       description: |
         https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/msteams
         
-        1. Add official Zabbix webhook connector from MS Teams apps for the channel, where you want to receive notifications.
+        1. Add official TAA webhook connector from MS Teams apps for the channel, where you want to receive notifications.
         2. Create Incoming webhook for your channel.
-        3. In the Zabbix web interface go to Administration → Macros section. Setup the global macro "{$ZABBIX.URL}" which will contain the URL to the Zabbix frontend. 
+        3. In the TAA web interface go to Administration → Macros section. Setup the global macro "{$ZABBIX.URL}" which will contain the URL to the TAA frontend. 
         4. On this page replace placeholder <PLACE WEBHOOK URL HERE> with the incoming webhook URL, created during the webhook setup in MS Teams.
-        5. To receive Zabbix notifications in MS Teams, you need to create a Zabbix user and add Media with the MS Teams media type. Make sure this user has access to all hosts for which you would like problem notifications to be sent to MS Teams.
+        5. To receive TAA notifications in MS Teams, you need to create a TAA user and add Media with the MS Teams media type. Make sure this user has access to all hosts for which you would like problem notifications to be sent to MS Teams.
       message_templates:
         - event_source: TRIGGERS
           operation_mode: PROBLEM

@@ -42,7 +42,7 @@
 			<main>
 				<div class="<?= ZBX_STYLE_BROWSER_WARNING_CONTAINER ?>">
 					<h2 class="<?= ZBX_STYLE_RED ?>">You are using an outdated browser.</h2>
-					<p>Zabbix frontend is built on advanced, modern technologies and does not support old browsers. It is highly recommended that you choose and install a modern browser. It is free of charge and only takes a couple of minutes.</p>
+					<p>TAA frontend is built on advanced, modern technologies and does not support old browsers. It is highly recommended that you choose and install a modern browser. It is free of charge and only takes a couple of minutes.</p>
 					<p>New browsers usually come with support for new technologies, increasing web page speed, better privacy settings and so on. They also resolve security and functional issues.</p>
 					<ul>
 						<li>

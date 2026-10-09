@@ -43,12 +43,12 @@ class testItemTest extends CWebTest {
 	 */
 	public function getCommonTestButtonStateData() {
 		return [
-				['Type' => 'Zabbix agent'],
-				['Type' => 'Zabbix agent (active)'],
+				['Type' => 'TAA agent'],
+				['Type' => 'TAA agent (active)'],
 				['Type' => 'Simple check'],
 				['Type' => 'SNMP agent','SNMP OID' => '[IF-MIB::]ifInOctets.1'],
-				['Type' => 'Zabbix internal'],
-				['Type' => 'Zabbix trapper'],
+				['Type' => 'TAA internal'],
+				['Type' => 'TAA trapper'],
 				['Type' => 'External check'],
 				['Type' => 'Database monitor', 'SQL query' => 'query'],
 				['Type' => 'HTTP agent', 'URL' => 'https://www.zabbix.com'],
@@ -111,7 +111,7 @@ class testItemTest extends CWebTest {
 		// Create item.
 		$item_form->fill([
 			'Name' => $item_name,
-			'Type' => 'Zabbix agent',
+			'Type' => 'TAA agent',
 			'Key' => 'key[{#KEY}]'
 		]);
 		$this->saveFormAndCheckMessage($item_type.$success_text);
@@ -135,7 +135,7 @@ class testItemTest extends CWebTest {
 					$enabled = false;
 				}
 				else {
-					$enabled = (!in_array($type, ['Zabbix agent (active)', 'SNMP trap', 'Zabbix trapper', 'Dependent item']));
+					$enabled = (!in_array($type, ['TAA agent (active)', 'SNMP trap', 'TAA trapper', 'Dependent item']));
 				}
 
 				$this->checkTestButtonInPreprocessing($item_type, $enabled, $i);
@@ -192,7 +192,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'key.macro.in.preproc.steps'
 					],
 					'macros' => [
@@ -219,7 +219,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'macro.in.key.and.preproc.steps[{$DEFAULT_DELAY}]'
 					],
 					'macros' => [
@@ -250,7 +250,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.key'
 					]
 
@@ -332,7 +332,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix internal',
+						'Type' => 'TAA internal',
 						'Key' => 'test.zabbix.internal'
 					]
 				]
@@ -434,7 +434,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => ''
 					],
 					'inline_errors' => [
@@ -447,7 +447,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'key space'
 					],
 					'inline_errors' => [
@@ -460,7 +460,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.no.fist.param'
 					],
 					'preprocessing' => [
@@ -476,7 +476,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.no.second.param'
 					],
 					'preprocessing' => [
@@ -492,7 +492,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.no.params'
 					],
 					'preprocessing' => [
@@ -508,7 +508,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.no.custom.error'
 					],
 					'preprocessing' => [
@@ -529,7 +529,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'key.macro.preproc[param,{$A},{$1}]'
 					],
 					'macros' => [
@@ -552,7 +552,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.discard.unchanged.with.heartbeat'
 					],
 					'preprocessing' => [
@@ -564,7 +564,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.discard.unchanged.with.heartbeat'
 					],
 					'host_value' => false,
@@ -577,7 +577,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.interface.trailing.spaces'
 					],
 					'interface' => ['address' => '  127.0.0.1   ', 'port' => '   10050    ']
@@ -635,7 +635,7 @@ class testItemTest extends CWebTest {
 					'fields' => [
 						'Type' => 'Calculated',
 						'Key' => 'test.calculated',
-						'Formula' => 'avg(/Zabbix Server/zabbix[wcache,values],10m)'
+						'Formula' => 'avg(/TAA Server/zabbix[wcache,values],10m)'
 					]
 				]
 			],
@@ -643,7 +643,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.discard.unchanged'
 					],
 					'preprocessing' => [
@@ -655,7 +655,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.discard.unchanged'
 					],
 					'host_value' => false,
@@ -668,7 +668,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.simple.change'
 					],
 					'preprocessing' => [
@@ -680,7 +680,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.simple.change'
 					],
 					'host_value' => false,
@@ -693,7 +693,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.change.per.second'
 					],
 					'preprocessing' => [
@@ -705,7 +705,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'test.item.preproc.change.per.second'
 					],
 					'host_value' => false,
@@ -726,7 +726,7 @@ class testItemTest extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Key' => 'prototype.with.lld.macros[{#KEY1},{#KEY2}]'
 					],
 					'macros' => [
@@ -865,7 +865,7 @@ class testItemTest extends CWebTest {
 
 				// Check test item form fields depending on item type.
 				switch ($data['fields']['Type']) {
-					case 'Zabbix agent':
+					case 'TAA agent':
 					case 'IPMI agent':
 						if ($is_host) {
 							$fields_value = [
@@ -990,7 +990,7 @@ class testItemTest extends CWebTest {
 
 						break;
 
-					case 'Zabbix internal':
+					case 'TAA internal':
 					case 'External check':
 					case 'Database monitor':
 					case 'HTTP agent':
@@ -1059,9 +1059,9 @@ class testItemTest extends CWebTest {
 				}
 
 				if ($is_host || array_key_exists('interface', $data) || in_array($data['fields']['Type'],
-						['Zabbix internal', 'External check', 'Database monitor', 'HTTP agent', 'JMX agent',
+						['TAA internal', 'External check', 'Database monitor', 'HTTP agent', 'JMX agent',
 						'Calculated', 'Script', 'Browser'])) {
-					$details = 'Connection to Zabbix server "localhost:10051" refused. Possible reasons:';
+					$details = 'Connection to TAA server "localhost:10051" refused. Possible reasons:';
 				}
 				else {
 					$details = ($data['fields']['Type'] === 'SNMP agent')
@@ -1081,7 +1081,7 @@ class testItemTest extends CWebTest {
 				$test_form->getOverlayMessage()->close();
 
 				// Check empty interface fields.
-				if (in_array($data['fields']['Type'], ['Zabbix agent', 'SNMP agent', 'IPMI agent', 'Simple check'])) {
+				if (in_array($data['fields']['Type'], ['TAA agent', 'SNMP agent', 'IPMI agent', 'Simple check'])) {
 					if ($data['fields']['Type'] !== 'Simple check') {
 						$elements['port']->clear();
 						$button->click();

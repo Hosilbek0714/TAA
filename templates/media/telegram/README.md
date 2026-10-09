@@ -3,7 +3,7 @@
 
 ## Overview
 
-This guide describes how to integrate your Zabbix installation with Telegram messenger using the Telegram Bot API and Zabbix webhook feature, providing instructions on setting up a media type, user, and action in Zabbix.
+This guide describes how to integrate your TAA installation with Telegram messenger using the Telegram Bot API and TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
 
 ### Supported features:
 * Personal and group notifications (including topics in supergroups)
@@ -11,7 +11,7 @@ This guide describes how to integrate your Zabbix installation with Telegram mes
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Parameters
 
@@ -48,7 +48,7 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 ## Service setup
 
-1\. Register a new Telegram bot: send `/newbot` to `@BotFather` and follow the instructions. The token provided by `@BotFather` in the final step will be needed for configuring the Zabbix webhook.
+1\. Register a new Telegram bot: send `/newbot` to `@BotFather` and follow the instructions. The token provided by `@BotFather` in the final step will be needed for configuring the TAA webhook.
 
 [![](images/thumb.1.png?raw=true)](images/1.png)
 
@@ -81,9 +81,9 @@ Note:
 - The supergroup ID is a negative number prefixed with `-100`, for example: `-1001234567890`.
 - The public group or supergroup ID can also be specified in media type properties as a name prefixed by `@`, for example: `@MyGroupName`.
 
-3\. Depending on where you want to send notifications, copy and save the bot token, personal chat ID or group ID, and topic ID (if you want to send messages to a specific supergroup topic), as you will need these later to set up the media type in Zabbix.
+3\. Depending on where you want to send notifications, copy and save the bot token, personal chat ID or group ID, and topic ID (if you want to send messages to a specific supergroup topic), as you will need these later to set up the media type in TAA.
 
-## Zabbix configuration
+## TAA configuration
 
 1. Import the media type:
 - In the *Alerts* > *Media types* section, import the [`media_telegram.yaml`](media_telegram.yaml) file.
@@ -103,7 +103,7 @@ Note: Your Telegram-related actions should be separated from other notification 
 
 3. Click the *Enabled* checkbox to enable the media type and click the *Update* button to save the webhook settings.
 
-4. Create a Zabbix user and add media:
+4. Create a TAA user and add media:
   - To create a new user, go to the *Users* > *Users* section and click the *Create user* button in the top-right corner. In the *User* tab, fill in all the required fields (marked with red asterisks).
   - Make sure this user has access to all the hosts for which you would like problem notifications to be sent to **Telegram**.
   - In the *Media* tab, click *Add* and select **Telegram** from the *Type* drop-down list.
@@ -119,4 +119,4 @@ Note: Your Telegram-related actions should be separated from other notification 
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

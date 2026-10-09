@@ -191,7 +191,7 @@ class testAuditlogAction extends testAuditlogCommon {
 			'action.operations['.$operationid['operationid'].'].opmessage_grp[1]' => ['delete'],
 			'action.filter.conditions['.$conditiodid['conditionid'].']' => ['add'],
 			'action.operations['.$operationid['operationid'].'].opmessage_grp['.$op_group['opmessage_grpid'].']' => ['add'],
-			'action.name' => ['update', 'Updated action audit', 'Report problems to Zabbix administrators'],
+			'action.name' => ['update', 'Updated action audit', 'Report problems to TAA administrators'],
 			'action.esc_period' => ['update', '15m', '1h'],
 			'action.filter' => ['update'],
 			'action.filter.evaltype' => ['update', '2', '0'],

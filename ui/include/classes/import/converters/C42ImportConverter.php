@@ -84,7 +84,7 @@ class C42ImportConverter extends CConverter {
 	}
 
 	/**
-	 * Update imported data array to format used starting from Zabbix version 4.4.
+	 * Update imported data array to format used starting from TAA version 4.4.
 	 *
 	 * @param array $data
 	 *

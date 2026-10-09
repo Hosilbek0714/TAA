@@ -47,7 +47,7 @@ class testFormMapProperties extends CLegacyWebTest {
 		$this->zbxTestCheckTitle('Configuration of network maps');
 		$this->zbxTestCheckHeader('Network maps');
 
-		$this->zbxTestAssertElementText("//div[@id='userid']//span[@class='subfilter-enabled']", 'Admin (Zabbix Administrator)');
+		$this->zbxTestAssertElementText("//div[@id='userid']//span[@class='subfilter-enabled']", 'Admin (TAA Administrator)');
 		$this->zbxTestAssertElementValue('width', 800);
 		$this->zbxTestAssertElementValue('height', 600);
 		$this->zbxTestDropdownAssertSelected('backgroundid', 'No image');

@@ -8,7 +8,7 @@ This template is designed to monitor `Cisco Nexus 9000 Series Switches`.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,7 +17,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -83,7 +83,7 @@ This template has been tested on:
 |System object ID|<p>MIB: SNMPv2-MIB.</p><p>The vendor's authoritative identification of the network management subsystem contained in the entity. This value is allocated within the SMI enterprise's subtree (1.3.6.1.4.1) and provides an easy and unambiguous means for determining "what kind of box" is being managed.</p><p>For example, if the vendor "Flintstones, Inc." was assigned the subtree 1.3.6.1.4.1.4242, it could assign the identifier 1.3.6.1.4.1.4242.1.1 to its "Fred Router".</p>|SNMP agent|system.objectid<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
 |Operating system|<p>MIB: CISCO-IMAGE-MIB</p>|SNMP agent|system.sw.os<p>**Preprocessing**</p><ul><li><p>Regular expression: `CW_VERSION\$(.*?)\$ \1`</p></li><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 |Uptime (snmp)|<p>MIB: SNMP-FRAMEWORK-MIB::snmpEngineTime.</p><p>The number of seconds since the value of the `snmpEngineBoots` object has had a last change.</p><p>When incrementing this object's value would cause it to exceed its maximum, the `snmpEngineBoots` is incremented as if a re-initialization had occurred,</p><p>and this object's value consequently reverts to zero.</p>|SNMP agent|system.uptime|
-|SNMP agent availability||Zabbix internal|zabbix[host,snmp,available]|
+|SNMP agent availability||TAA internal|zabbix[host,snmp,available]|
 
 ### Triggers
 
@@ -270,5 +270,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

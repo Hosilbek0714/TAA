@@ -314,7 +314,7 @@ class testLldLinking extends CIntegrationTest {
 	}
 
 	/*
-	Test ensures that the Zabbix auto-registration process correctly handles template with LLD rule linking
+	Test ensures that the TAA auto-registration process correctly handles template with LLD rule linking
 	conflicts and re-registration behavior.
 
 	In the first scenario, two templates are linked to a host via auto-registration. Both templates contain the same

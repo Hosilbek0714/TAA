@@ -3,11 +3,11 @@
 
 ## Overview
 
-This guide describes how to integrate your Zabbix installation with Slack using the Zabbix webhook feature, providing instructions on setting up a media type, user and action in Zabbix.
+This guide describes how to integrate your TAA installation with Slack using the TAA webhook feature, providing instructions on setting up a media type, user and action in TAA.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Parameters
 
@@ -19,7 +19,7 @@ The configurable parameters are intended to be changed according to the webhook 
 
 |Name|Value|Description|
 |----|-----|-----------|
-|zabbix_url|\{$ZABBIX\.URL\}|Current Zabbix URL.|
+|zabbix_url|\{$ZABBIX\.URL\}|Current TAA URL.|
 |bot_token|\<PLACE YOUR TOKEN\>|Slack bot token.|
 |slack_mode|alarm|Slack mode. Could be "alarm" or "event" as a value.|
 
@@ -59,25 +59,25 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 5\. Press *Allow* and copy *Bot User OAuth Access Token*, which will be used to set up webhook.
 
-## Zabbix configuration
+## TAA configuration
 
 ### Create a global macro
 
-1\. Before setting up the webhook, you need to setup the global macro `{$ZABBIX.URL}`, which must contain the URL to the Zabbix frontend.
+1\. Before setting up the webhook, you need to setup the global macro `{$ZABBIX.URL}`, which must contain the URL to the TAA frontend.
 
-2\. In the Zabbix interface *Alerts* > *Media types* section, import the [`media_slack.yaml`](media_slack.yaml) file.
+2\. In the TAA interface *Alerts* > *Media types* section, import the [`media_slack.yaml`](media_slack.yaml) file.
 
 3\. Open the newly added **Slack** media type and set `bot_token` to the previously created token.
 
 * You can also choose between two notification modes:
 	- **alarm** (default)
-		- Recovery and update messages from Zabbix will update existed messages. To acknowledge an event, add a green checkmark reaction and leave a reply as a comment.
+		- Recovery and update messages from TAA will update existed messages. To acknowledge an event, add a green checkmark reaction and leave a reply as a comment.
 	- **event**
-		- Recovery and update messages from Zabbix will be posted as new messages.
+		- Recovery and update messages from TAA will be posted as new messages.
 
 4\. Click the *Update* button to save the webhook settings.
 
-5\. To receive notifications in Slack, you need to create a Zabbix user and add **Media** with the **Slack** media type.
+5\. To receive notifications in Slack, you need to create a TAA user and add **Media** with the **Slack** media type.
 
 The **Send to** field can contain several variants of values:
 
@@ -86,10 +86,10 @@ The **Send to** field can contain several variants of values:
 
 6\. Add your bot to the target channel.
 
-For more information, please see [Zabbix](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Slack API](https://api.slack.com) documentation.
+For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Slack API](https://api.slack.com) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

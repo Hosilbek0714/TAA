@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<project name="Zabbix backend" default="build" basedir="." xmlns:if="ant:if" xmlns:unless="ant:unless">
+<project name="TAA backend" default="build" basedir="." xmlns:if="ant:if" xmlns:unless="ant:unless">
 
 	<taskdef resource="net/sf/antcontrib/antlib.xml" />
 
@@ -20,7 +20,7 @@
 		</default>
 	</switch>
 
-	<!-- Zabbix various configuration parameters -->
+	<!-- TAA various configuration parameters -->
 	<target name="init-conf-options">
 		<property name="conf1" value="--enable-agent"/>
 		<property name="conf2" value="--enable-server ${with.db}"/>
@@ -30,7 +30,7 @@
 		<property name="conf7" value="${ZBX_BASE_FLAGS} ${with.db} --with-openipmi --with-gnutls"/>
 	</target>
 
-	<!-- Additional Zabbix configuration parameters -->
+	<!-- Additional TAA configuration parameters -->
 	<target name="init-conf-options-2">
 		<property name="conf8" value="--enable-agent2"/>
 		<property name="conf9" value="--enable-server --enable-agent --enable-proxy ${with.db} --with-ssh"/>
@@ -104,7 +104,7 @@
 	</target>
 
 	<macrodef name="make">
-		<!-- Build Zabbix with the specified command line arguments -->
+		<!-- Build TAA with the specified command line arguments -->
 		<attribute name="args"/>
 		<attribute name="cc" default="gcc"/>
 		<attribute name="target" default=""/>
@@ -159,20 +159,20 @@
 	</macrodef>
 
 	<target name="make-db-mysql" unless="${with.mysql}">
-		<!-- Build Zabbix with mysql database -->
+		<!-- Build TAA with mysql database -->
 		<sequential>
 			<make args="${ZBX_BASE_FLAGS} --with-mysql --with-openipmi --with-openssl --enable-ipv6 --with-libmodbus"/>
 		</sequential>
 	</target>
 
 	<target name="make-db-postgresql" unless="${with.postgresql}">
-		<!-- Build Zabbix with postgresql database -->
+		<!-- Build TAA with postgresql database -->
 		<sequential>
 			<make args="${ZBX_BASE_FLAGS} --with-postgresql --with-openipmi --with-openssl"/>
 		</sequential>
 	</target>
 
-	<!-- Build Zabbix with all supported databases  -->
+	<!-- Build TAA with all supported databases  -->
 	<target name="make-db" depends="make-db-mysql,make-db-postgresql"/>
 
 	<target name="clean-tests">
@@ -191,7 +191,7 @@
 	</target>
 
 	<macrodef name="make-tests">
-		<!-- Build Zabbix cmocka tests with the specified command line arguments -->
+		<!-- Build TAA cmocka tests with the specified command line arguments -->
 		<attribute name="conf"/>
 		<attribute name="conf-name"/>
 		<sequential>
@@ -213,7 +213,7 @@
 	</macrodef>
 
 	<target name="init-cmocka-test-conf-options">
-		<!-- Zabbix various configuration parameters for cmocka tests -->
+		<!-- TAA various configuration parameters for cmocka tests -->
 		<!-- Configuration option name must consist of prefix 'cmocka-', configuration order number
 			and configuration title: cmocka-<number>-<title> -->
 		<property name="cmocka-1-default" value="-q CFLAGS='${COMP_FLAGS}' ${ZBX_BASE_FLAGS} --enable-ipv6 --with-mysql --with-openipmi --with-openssl --with-iconv --with-libpcre2"/>
@@ -225,7 +225,7 @@
 	</target>
 
 	<target name="cmocka-tests" depends="init-cmocka-test-conf-options">
-		<!-- Build Zabbix with cmocka tests -->
+		<!-- Build TAA with cmocka tests -->
 		<delete dir="tests_results"/>
 		<mkdir dir="tests_results"/>
 		<exec executable="./bootstrap.sh" failonerror="on">
@@ -242,7 +242,7 @@
 	</target>
 
 	<target name="gen-test-coverage-report">
-		<!-- Generate Zabbix cmocka tests coverage report-->
+		<!-- Generate TAA cmocka tests coverage report-->
 		<delete dir="tests_results"/>
 		<mkdir dir="tests_results"/>
 		<mkdir dir="tests_results/html"/>
@@ -273,7 +273,7 @@
 	</target>
 
 	<target name="make-gcc" depends="init-conf-options,init-conf-options-2">
-		<!-- Build Zabbix with various configuration parameters -->
+		<!-- Build TAA with various configuration parameters -->
 		<propertyselector property="conf.list" delimiter="," match="conf(\d+)"/>
 		<sortlist property="conf.list" delimiter="," value="${conf.list}" override="true"/>
 		<for list="${conf.list}" param="name" delimiter=",">
@@ -286,7 +286,7 @@
 	<target name="build-dist" depends="make-gcc,make-db"/>
 
 	<target name="make-dist">
-		<!-- Create & build Zabbix distribution -->
+		<!-- Create & build TAA distribution -->
 		<exec executable="./bootstrap.sh" failonerror="on"/>
 		<exec executable="./configure" failonerror="on">
 			<arg line="--quiet"/>

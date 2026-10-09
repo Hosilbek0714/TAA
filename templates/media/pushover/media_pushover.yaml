@@ -43,7 +43,7 @@ zabbix_export:
         - name: url
           value: '{$ZABBIX.URL}'
         - name: url_title
-          value: Zabbix
+          value: TAA
         - name: user
           value: '{ALERT.SENDTO}'
       status: DISABLED
@@ -168,7 +168,7 @@ zabbix_export:
         Please refer to setup guide here: https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/pushover
         
         Set token parameter with to your Pushover application key.
-        When assigning Pushover media to the Zabbix user - add user key into send to field.
+        When assigning Pushover media to the TAA user - add user key into send to field.
       message_templates:
         - event_source: TRIGGERS
           operation_mode: PROBLEM

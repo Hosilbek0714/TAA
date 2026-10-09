@@ -172,8 +172,8 @@ static int	vfs_dev_rw(AGENT_REQUEST *request, AGENT_RESULT *result, int rw)
 
 	if (NULL == get_collector())
 	{
-		/* CPU statistics collector and (optionally) disk statistics collector is started only when Zabbix */
-		/* agentd is running as a daemon. When Zabbix agent or agentd is started with "-p" or "-t" parameter */
+		/* CPU statistics collector and (optionally) disk statistics collector is started only when TAA */
+		/* agentd is running as a daemon. When TAA agent or agentd is started with "-p" or "-t" parameter */
 		/* the collectors are not available and keys "vfs.dev.read", "vfs.dev.write" with some parameters */
 		/* (e.g. sps, ops) are not supported. */
 

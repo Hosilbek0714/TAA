@@ -3,13 +3,13 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Apache Zookeeper monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Apache Zookeeper monitoring by TAA via HTTP and doesn't require any external scripts.
 
 This template works with standalone and cluster instances. Metrics are collected from each Zookeeper node by requests to AdminServer.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -83,7 +83,7 @@ This template has been tested on:
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Zookeeper: Server mode has changed|<p>Zookeeper node state has changed. Acknowledge to close the problem manually.</p>|`last(/Zookeeper by HTTP/zookeeper.server_state,#1)<>last(/Zookeeper by HTTP/zookeeper.server_state,#2) and length(last(/Zookeeper by HTTP/zookeeper.server_state))>0`|Info|**Manual close**: Yes|
-|Zookeeper: Failed to fetch info data|<p>Zabbix has not received data for items for the last 10 minutes</p>|`nodata(/Zookeeper by HTTP/zookeeper.uptime,10m)=1`|Warning|**Manual close**: Yes|
+|Zookeeper: Failed to fetch info data|<p>TAA has not received data for items for the last 10 minutes</p>|`nodata(/Zookeeper by HTTP/zookeeper.uptime,10m)=1`|Warning|**Manual close**: Yes|
 |Zookeeper: Version has changed|<p>Zookeeper version has changed. Acknowledge to close the problem manually.</p>|`last(/Zookeeper by HTTP/zookeeper.version,#1)<>last(/Zookeeper by HTTP/zookeeper.version,#2) and length(last(/Zookeeper by HTTP/zookeeper.version))>0`|Info|**Manual close**: Yes|
 |Zookeeper: Too many file descriptors used|<p>Number of file descriptors used more than {$ZOOKEEPER.FILE_DESCRIPTORS.MAX.WARN}% of the available number of file descriptors.</p>|`min(/Zookeeper by HTTP/zookeeper.open_file_descriptor_count,5m) * 100 / last(/Zookeeper by HTTP/zookeeper.max_file_descriptor_count) > {$ZOOKEEPER.FILE_DESCRIPTORS.MAX.WARN}`|Warning||
 |Zookeeper: Too many queued requests|<p>Number of queued requests in the server. This goes up when the server receives more requests than it can process.</p>|`min(/Zookeeper by HTTP/zookeeper.outstanding_requests,5m)>{$ZOOKEEPER.OUTSTANDING_REQ.MAX.WARN}`|Average|**Manual close**: Yes|
@@ -134,5 +134,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

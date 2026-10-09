@@ -53,7 +53,7 @@ class testDashboardFavoriteMapsWidget extends CWebTest {
 		$hosts = CDataHelper::call('host.create', [
 			[
 				'host' => 'Map host',
-				'groups' => ['groupid' => 4] // Zabbix servers.
+				'groups' => ['groupid' => 4] // TAA servers.
 			]
 		]);
 

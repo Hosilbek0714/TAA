@@ -1,5 +1,5 @@
 <?php
-// Zabbix GUI configuration file.
+// TAA GUI configuration file.
 global $DB;
 
 $DB['TYPE']				= '{DBTYPE}';

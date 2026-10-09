@@ -794,7 +794,7 @@ int	zbx_check_cfg_feature_int(const char *parameter, int value, const char *feat
 {
 	if (0 != value)
 	{
-		zbx_error("\"%s\" configuration parameter cannot be used: Zabbix %s was compiled without %s",
+		zbx_error("\"%s\" configuration parameter cannot be used: TAA %s was compiled without %s",
 				parameter, program_type_str, feature);
 		return FAIL;
 	}
@@ -806,7 +806,7 @@ int	zbx_check_cfg_feature_str(const char *parameter, const char *value, const ch
 {
 	if (NULL != value)
 	{
-		zbx_error("\"%s\" configuration parameter cannot be used: Zabbix %s was compiled without %s",
+		zbx_error("\"%s\" configuration parameter cannot be used: TAA %s was compiled without %s",
 				parameter, program_type_str, feature);
 		return FAIL;
 	}

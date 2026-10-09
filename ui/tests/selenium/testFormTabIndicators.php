@@ -197,7 +197,7 @@ class testFormTabIndicators extends CWebTest {
 			// #2 Host prototype configuration form tab data.
 			[
 				[
-					// Zabbix server, Discovery rule => Block devices discovery
+					// TAA server, Discovery rule => Block devices discovery
 					'url' => 'host_prototypes.php?form=create&parent_discoveryid=57096&context=host',
 					'form' => 'name:hostPrototypeForm',
 					'tabs' => [
@@ -274,7 +274,7 @@ class testFormTabIndicators extends CWebTest {
 			// #4 Item prototype configuration form tab data.
 			[
 				[
-					// Zabbix server, Discovery rule => Block devices discovery
+					// TAA server, Discovery rule => Block devices discovery
 					'url' => 'zabbix.php?action=item.prototype.list&parent_discoveryid=57096&context=host',
 					'create_button' => 'Create item prototype',
 					'form' => 'name:itemForm',

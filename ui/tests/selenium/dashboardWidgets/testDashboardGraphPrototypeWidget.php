@@ -54,7 +54,7 @@ class testDashboardGraphPrototypeWidget extends testWidgets {
 							'values' => 'testFormGraphPrototype1',
 							'context' => [
 								'values' => 'Simple form test host',
-								'context' => 'Zabbix servers'
+								'context' => 'TAA servers'
 							]
 						]
 					]
@@ -71,7 +71,7 @@ class testDashboardGraphPrototypeWidget extends testWidgets {
 							'values' => 'testFormItemPrototype1',
 							'context' => [
 								'values' => 'Simple form test host',
-								'context' => 'Zabbix servers'
+								'context' => 'TAA servers'
 							]
 						]
 					],

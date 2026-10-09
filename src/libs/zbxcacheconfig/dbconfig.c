@@ -346,19 +346,19 @@ static zbx_dc_um_handle_t	*dc_um_handle = NULL;
  * ,------------------+-----------------------------------------------------, *
  * | type             | key                                                 | *
  * +------------------+-----------------------------------------------------+ *
- * | Zabbix internal  | zabbix[host,,items]                                 | *
- * | Zabbix internal  | zabbix[host,,items_unsupported]                     | *
- * | Zabbix internal  | zabbix[host,discovery,interfaces]                   | *
- * | Zabbix internal  | zabbix[host,,maintenance]                           | *
- * | Zabbix internal  | zabbix[proxy,discovery]                             | *
- * | Zabbix internal  | zabbix[proxy,<proxyname>,lastaccess]                | *
- * | Zabbix internal  | zabbix[proxy,<proxyname>,delay]                     | *
- * | Zabbix internal  | zabbix[proxy group,discovery]                       | *
- * | Zabbix internal  | zabbix[proxy group,<groupname>,state]               | *
- * | Zabbix internal  | zabbix[proxy group,<groupname>,available]           | *
- * | Zabbix internal  | zabbix[proxy group,<groupname>,pavailable]          | *
- * | Zabbix internal  | zabbix[proxy group,<groupname>,proxies]             | *
- * | Zabbix aggregate | *                                                   | *
+ * | TAA internal  | zabbix[host,,items]                                 | *
+ * | TAA internal  | zabbix[host,,items_unsupported]                     | *
+ * | TAA internal  | zabbix[host,discovery,interfaces]                   | *
+ * | TAA internal  | zabbix[host,,maintenance]                           | *
+ * | TAA internal  | zabbix[proxy,discovery]                             | *
+ * | TAA internal  | zabbix[proxy,<proxyname>,lastaccess]                | *
+ * | TAA internal  | zabbix[proxy,<proxyname>,delay]                     | *
+ * | TAA internal  | zabbix[proxy group,discovery]                       | *
+ * | TAA internal  | zabbix[proxy group,<groupname>,state]               | *
+ * | TAA internal  | zabbix[proxy group,<groupname>,available]           | *
+ * | TAA internal  | zabbix[proxy group,<groupname>,pavailable]          | *
+ * | TAA internal  | zabbix[proxy group,<groupname>,proxies]             | *
+ * | TAA aggregate | *                                                   | *
  * | Calculated       | *                                                   | *
  * '------------------+-----------------------------------------------------' *
  *                                                                            *
@@ -7300,7 +7300,7 @@ static void	DCsync_proxies(zbx_dbsync_t *sync, zbx_uint64_t revision, const zbx_
 		{
 			if (NULL != config_vault->token || NULL != config_vault->name)
 			{
-				zabbix_log(LOG_LEVEL_WARNING, "connection with Zabbix proxy \"%s\" should not be"
+				zabbix_log(LOG_LEVEL_WARNING, "connection with TAA proxy \"%s\" should not be"
 						" unencrypted when using Vault", proxy->name);
 			}
 		}
@@ -7710,7 +7710,7 @@ zbx_uint64_t	zbx_dc_sync_configuration(unsigned char mode, zbx_synced_new_config
 
 	FINISH_SYNC;
 
-	/* postpone configuration sync until macro secrets are received from Zabbix server */
+	/* postpone configuration sync until macro secrets are received from TAA server */
 	if (0 == (get_program_type_cb() & ZBX_PROGRAM_TYPE_SERVER) &&
 			ZBX_PROXY_SECRETS_PROVIDER_SERVER == config->config->proxy_secrets_provider &&
 			0 != config->kvs_paths.values_num &&
@@ -9144,11 +9144,11 @@ void	zbx_dc_config_delete_autoreg_host(const zbx_vector_str_t *autoreg_hosts)
 {
 	int	cached = 0, i;
 
-	/* hosts monitored by Zabbix proxy shouldn't be changed too frequently */
+	/* hosts monitored by TAA proxy shouldn't be changed too frequently */
 	if (0 == autoreg_hosts->values_num)
 		return;
 
-	/* hosts monitored by Zabbix proxy shouldn't be in cache */
+	/* hosts monitored by TAA proxy shouldn't be in cache */
 	RDLOCK_CACHE;
 	for (i = 0; i < autoreg_hosts->values_num; i++)
 	{
@@ -9157,7 +9157,7 @@ void	zbx_dc_config_delete_autoreg_host(const zbx_vector_str_t *autoreg_hosts)
 	}
 	UNLOCK_CACHE;
 
-	zabbix_log(LOG_LEVEL_DEBUG, "moved:%d hosts from Zabbix server to Zabbix proxy", cached);
+	zabbix_log(LOG_LEVEL_DEBUG, "moved:%d hosts from TAA server to TAA proxy", cached);
 
 	if (0 == cached)
 		return;
@@ -15950,7 +15950,7 @@ char	*zbx_dc_expand_user_macros_in_func_params(const char *params, zbx_uint64_t 
 /*********************************************************************************
  *                                                                               *
  * Parameters: hostid               - [IN]                                       *
- *             agents               - [OUT] Zabbix agent availability            *
+ *             agents               - [OUT] TAA agent availability            *
  *                                                                               *
  ********************************************************************************/
 void	zbx_get_host_interfaces_availability(zbx_uint64_t hostid, zbx_agent_availability_t *agents)

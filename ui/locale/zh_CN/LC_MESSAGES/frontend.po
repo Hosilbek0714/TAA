@@ -4,12 +4,12 @@
 # 20160923
 msgid ""
 msgstr ""
-"Project-Id-Version: Zabbix 6.0\n"
+"Project-Id-Version: TAA 6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-19 13:48+0300\n"
 "PO-Revision-Date: 2025-06-04 08:46+0000\n"
 "Last-Translator: NoYoWiFi <1284524409@qq.com>\n"
-"Language-Team: Zabbix <info@zabbix.com>\n"
+"Language-Team: TAA <info@zabbix.com>\n"
 "Language: zh_CN\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -360,8 +360,8 @@ msgid "1 minute"
 msgstr "1分"
 
 #: app/views/host.wizard.edit.php:861
-msgid "1. Install Java Gateway on the same machine running Zabbix server by following the instructions in"
-msgstr "1. 按照指南在运行Zabbix服务器的同一台机器上安装Java Gateway"
+msgid "1. Install Java Gateway on the same machine running TAA server by following the instructions in"
+msgstr "1. 按照指南在运行TAA服务器的同一台机器上安装Java Gateway"
 
 #: app/views/administration.queue.overview.php:48
 #: app/views/administration.queue.overview.proxy.php:48
@@ -1233,8 +1233,8 @@ msgid "Agent port"
 msgstr "Agent端口"
 
 #: include/classes/data/CItemData.php:919
-msgid "Agent variant check. Returns 1 - for Zabbix agent; 2 - for Zabbix agent 2"
-msgstr "Agent类型检查。返回1 - Zabbix agent；2 - Zabbix agent2"
+msgid "Agent variant check. Returns 1 - for TAA agent; 2 - for TAA agent 2"
+msgstr "Agent类型检查。返回1 - TAA agent；2 - TAA agent2"
 
 #: app/views/host.wizard.edit.php:158 app/views/js/host.wizard.edit.js.php:1781
 msgid "Agent-based"
@@ -2787,8 +2787,8 @@ msgstr[0] "无法删除 SLA"
 
 #: include/classes/api/services/CUser.php:1287
 #, c-format
-msgid "Cannot delete Zabbix internal user \"%1$s\", try disabling that user."
-msgstr "无法删除Zabbix内部用户 \"%1$s\", 试试停用这个用户."
+msgid "Cannot delete TAA internal user \"%1$s\", try disabling that user."
+msgstr "无法删除TAA内部用户 \"%1$s\", 试试停用这个用户."
 
 #: app/controllers/CControllerActionDelete.php:87
 msgid "Cannot delete action"
@@ -4017,8 +4017,8 @@ msgstr "无法读取YAML: %1$s。"
 
 #: include/classes/server/CZabbixServer.php:567
 #, c-format
-msgid "Cannot read the response, check connection with the Zabbix server \"%1$s\"."
-msgstr "无法获取响应, 检查与Zabbix服务器 \"%1$s\" 的连接."
+msgid "Cannot read the response, check connection with the TAA server \"%1$s\"."
+msgstr "无法获取响应, 检查与TAA服务器 \"%1$s\" 的连接."
 
 #: app/controllers/CControllerPopupMassupdateHost.php:363
 #, c-format
@@ -4047,8 +4047,8 @@ msgstr "无法保存小构件 \"%1$s\" 。"
 
 #: include/classes/server/CZabbixServer.php:508
 #, c-format
-msgid "Cannot send command, check connection with Zabbix server \"%1$s\"."
-msgstr "无法发送命令, 检查于Zabbix 服务器 \"%1$s\" 的连接."
+msgid "Cannot send command, check connection with TAA server \"%1$s\"."
+msgstr "无法发送命令, 检查于TAA 服务器 \"%1$s\" 的连接."
 
 #: app/controllers/CControllerItemMassCheckNow.php:124
 #: app/controllers/CControllerItemMassCheckNow.php:140
@@ -4211,8 +4211,8 @@ msgstr "无法对模板触发器原型 \"%2$s\" 更新 \"%1$s\"。"
 
 #: include/classes/api/helpers/CApiSettingsHelper.php:94
 #, c-format
-msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading Zabbix to remove this limitation."
-msgstr "无法更新'%1$s'参数，因为当前它是只读的。考虑升级Zabbix以解除此限制"
+msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading TAA to remove this limitation."
+msgstr "无法更新'%1$s'参数，因为当前它是只读的。考虑升级TAA以解除此限制"
 
 #: include/classes/api/services/CHost.php:2344
 #, c-format
@@ -5007,11 +5007,11 @@ msgid "Communication"
 msgstr "通讯"
 
 #: app/views/host.wizard.edit.php:375
-msgid "Communication between Zabbix agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
-msgstr "Zabbix agent与server/proxy之间的通信通过唯一的用户定义预共享密钥标识和与之关联的密钥进行加密保护"
+msgid "Communication between TAA agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
+msgstr "TAA agent与server/proxy之间的通信通过唯一的用户定义预共享密钥标识和与之关联的密钥进行加密保护"
 
 #: app/views/host.wizard.edit.php:414
-msgid "Communication between Zabbix agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
+msgid "Communication between TAA agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
 msgstr ""
 
 #: include/items.inc.php:946
@@ -5304,8 +5304,8 @@ msgid "Confirms the problem is noticed (acknowledging user will be recorded). St
 msgstr "确认发现问题（确认用户将被记录）。状态改变将触发动作更新相应操作。"
 
 #: include/classes/setup/CSetupWizard.php:1059
-msgid "Congratulations! You have successfully installed Zabbix frontend."
-msgstr "恩！Zabbix前端已经配置好了！千山万水第一步！加油吧，少年！"
+msgid "Congratulations! You have successfully installed TAA frontend."
+msgstr "恩！TAA前端已经配置好了！千山万水第一步！加油吧，少年！"
 
 #: include/hosts.inc.php:1227 include/views/inventory.host.view.php:81
 #: include/views/js/monitoring.sysmaps.js.php:792
@@ -5330,49 +5330,49 @@ msgstr "安全连接"
 
 #: include/classes/server/CZabbixServer.php:521
 #, c-format
-msgid "Connection timeout of %1$s seconds exceeded when connecting to Zabbix server \"%2$s\"."
-msgstr "连接到 Zabbix 服务器“%2$s”时超时,已超 %1$s 秒。"
+msgid "Connection timeout of %1$s seconds exceeded when connecting to TAA server \"%2$s\"."
+msgstr "连接到 TAA 服务器“%2$s”时超时,已超 %1$s 秒。"
 
 #: include/classes/server/CZabbixServer.php:634
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" failed. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" failed. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect DNS server configuration.\n"
 msgstr ""
-"与 Zabbix 服务器“%1$s”的连接失败。可能的原因：\n"
+"与 TAA 服务器“%1$s”的连接失败。可能的原因：\n"
 "1.“zabbix_server.conf”中的“NodeAddress”、“ListenPort”不正确或“zabbix.conf.php”中的服务器IP/DNS被覆盖；\n"
 "2. DNS 服务器配置不正确，地址解析不正确。\n"
 
 #: include/classes/server/CZabbixServer.php:622
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" refused. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" refused. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Security environment (for example, SELinux) is blocking the connection;\n"
-"3. Zabbix server daemon not running;\n"
+"3. TAA server daemon not running;\n"
 "4. Firewall is blocking TCP connection.\n"
 msgstr ""
-"与 Zabbix 服务器“%1$s”的连接被拒绝。可能的原因：\n"
+"与 TAA 服务器“%1$s”的连接被拒绝。可能的原因：\n"
 "1.“zabbix_server.conf”中的“NodeAddress”、“ListenPort”不正确或“zabbix.conf.php”中的服务器IP/DNS被覆盖；\n"
 "2、安全环境（例如SELinux）阻断连接；\n"
-"3. Zabbix server 守护进程没有运行；\n"
+"3. TAA server 守护进程没有运行；\n"
 "4. 防火墙阻断 TCP 连接。\n"
 
 #: include/classes/server/CZabbixServer.php:630
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" timed out. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" timed out. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Firewall is blocking TCP connection.\n"
 msgstr ""
-"与 Zabbix 服务器“%1$s”的连接超时。可能的原因：\n"
+"与 TAA 服务器“%1$s”的连接超时。可能的原因：\n"
 "1.“zabbix_server.conf”中的“NodeAddress”、“ListenPort”不正确或“zabbix.conf.php”中的服务器IP/DNS被覆盖；\n"
 "2. 防火墙阻断 TCP 连接。\n"
 
 #: include/classes/server/CZabbixServer.php:614
-msgid "Connection to Zabbix server failed. Incorrect configuration."
-msgstr "连接到 Zabbix 服务器失败。配置不正确。"
+msgid "Connection to TAA server failed. Incorrect configuration."
+msgstr "连接到 TAA 服务器失败。配置不正确。"
 
 #: include/classes/setup/CSetupWizard.php:647
 msgid "Connection will not be encrypted because it uses a socket file (on Unix) or shared memory (Windows)."
@@ -6215,16 +6215,16 @@ msgid "Data from %1$s. Generated in %2$s sec."
 msgstr "数据来自 %1$s. 产生于 %2$s 秒."
 
 #: app/views/host.wizard.edit.php:168
-msgid "Data is collected by Zabbix agent, a lightweight software `component installed on your monitoring target."
+msgid "Data is collected by TAA agent, a lightweight software `component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:89
-msgid "Data is collected by Zabbix agent, a lightweight software component installed on your monitoring target."
-msgstr "数据由安装在监控目标上的轻量级组件Zabbix agent收集"
+msgid "Data is collected by TAA agent, a lightweight software component installed on your monitoring target."
+msgstr "数据由安装在监控目标上的轻量级组件TAA agent收集"
 
 #: app/views/js/host.wizard.edit.js.php:90
-msgid "Data is collected by Zabbix server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
-msgstr "数据由Zabbix server或proxy使用标准协议(如SNMP、ICMP)或远程访问方法(如SSH)收集"
+msgid "Data is collected by TAA server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
+msgstr "数据由TAA server或proxy使用标准协议(如SNMP、ICMP)或远程访问方法(如SSH)收集"
 
 #: app/views/js/webscenario.step.edit.js.php:297
 msgid "Data is not properly encoded."
@@ -8103,8 +8103,8 @@ msgid "Enable HTTP authentication for all users."
 msgstr "所有用户使用HTTP认证方式"
 
 #: app/views/host.wizard.edit.php:811
-msgid "Enable IPMI checks on Zabbix server"
-msgstr "在Zabbix server上启用IPMI检查"
+msgid "Enable IPMI checks on TAA server"
+msgstr "在TAA server上启用IPMI检查"
 
 #: app/views/administration.authentication.edit.php:209
 #: app/views/administration.authentication.edit.php:281
@@ -8412,8 +8412,8 @@ msgid "Enter a non-secret pre-shared key identity string. Avoid including sensit
 msgstr "输入非机密的预共享密钥标识字符串，避免包含敏感数据"
 
 #: app/views/host.wizard.edit.php:609
-msgid "Enter the IP/DNS address and port of the Zabbix agent installed on your monitoring target."
-msgstr "输入安装在监控目标上的Zabbix agent的IP/DNS地址和端口"
+msgid "Enter the IP/DNS address and port of the TAA agent installed on your monitoring target."
+msgstr "输入安装在监控目标上的TAA agent的IP/DNS地址和端口"
 
 #: app/views/host.wizard.edit.php:771
 msgid "Enter the IP/DNS address and port of your IPMI-enabled monitoring target."
@@ -8485,8 +8485,8 @@ msgstr "错误信息"
 #: app/partials/administration.system.info.php:148
 #: app/partials/administration.system.info.php:160
 #: app/partials/administration.system.info.php:173
-msgid "Error! Unable to start Zabbix server."
-msgstr "错误！无法启动 Zabbix 服务器。"
+msgid "Error! Unable to start TAA server."
+msgstr "错误！无法启动 TAA 服务器。"
 
 #: include/classes/screens/CScreenHttpTestDetails.php:111
 #: include/classes/screens/CScreenHttpTestDetails.php:182
@@ -8931,7 +8931,7 @@ msgid "Failure Audit"
 msgstr "审计失败"
 
 #: app/views/system.warning.php:27 app/views/system.warning.php:52
-msgid "Fatal error, please report to the Zabbix team"
+msgid "Fatal error, please report to the TAA team"
 msgstr "呦吼~中奖了。你发现了一个致命的zabbix错误。来我们的社区把问题跟我们说下吧。我们很乐意帮你解决。"
 
 #: widgets/favgraphs/Widget.php:29
@@ -9389,12 +9389,12 @@ msgstr "找不到全局正则表达式 \"%1$s\" 。"
 #: app/views/administration.script.edit.php:122
 #: app/views/popup.operation.edit.php:63
 #: include/classes/api/services/CScript.php:950
-msgid "Global script execution on Zabbix server is disabled by server configuration."
-msgstr "Zabbix服务器上的全局脚本执行被服务器配置禁用。"
+msgid "Global script execution on TAA server is disabled by server configuration."
+msgstr "TAA服务器上的全局脚本执行被服务器配置禁用。"
 
 #: app/partials/administration.system.info.php:138
-msgid "Global scripts on Zabbix server"
-msgstr "Zabbix服务器上的全局脚本"
+msgid "Global scripts on TAA server"
+msgstr "TAA服务器上的全局脚本"
 
 #: app/views/popup.proxy.edit.php:199
 msgid "Global timeouts"
@@ -10741,7 +10741,7 @@ msgid "Identification of the system. Returns string"
 msgstr "识别系统。返回 字符串"
 
 #: app/views/administration.authentication.edit.php:153
-msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by Zabbix."
+msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAA."
 msgstr "如HTTP认证启用，所有用户(包括设置LDAP/内部方式通过前端访问)将通过web服务器认证，而不过zabbix"
 
 #: include/classes/helpers/CServiceHelper.php:83
@@ -10918,8 +10918,8 @@ msgid "In range"
 msgstr "区间值"
 
 #: app/views/host.wizard.edit.php:813
-msgid "In the Zabbix server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
-msgstr "在Zabbix server配置文件(zabbix_server.conf)中，将StartIPMIPollers参数设置为非零值"
+msgid "In the TAA server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
+msgstr "在TAA server配置文件(zabbix_server.conf)中，将StartIPMIPollers参数设置为非零值"
 
 #: include/classes/widgets/fields/CWidgetFieldMultiSelectSla.php:31
 msgid "Inaccessible SLA"
@@ -11279,8 +11279,8 @@ msgstr "当前密码不正确。"
 #: include/classes/db/MysqlDbBackend.php:69
 #: include/classes/db/PostgresqlDbBackend.php:95
 #, c-format
-msgid "Incorrect default charset for Zabbix database: %1$s."
-msgstr "Zabbix 数据库的默认字符集不正确：%1$s。"
+msgid "Incorrect default charset for TAA database: %1$s."
+msgstr "TAA 数据库的默认字符集不正确：%1$s。"
 
 #: include/classes/db/DB.php:696 include/classes/db/DB.php:863
 #, c-format
@@ -11395,7 +11395,7 @@ msgstr "不正确的正则表达式 \"%1$s\": \"%2$s\""
 #: include/classes/server/CZabbixServer.php:575
 #: include/classes/server/CZabbixServer.php:582
 #, c-format
-msgid "Incorrect response received from Zabbix server \"%1$s\"."
+msgid "Incorrect response received from TAA server \"%1$s\"."
 msgstr "收到了来自于zabbix服务器\"%1$s\"的错误应答."
 
 #: app/controllers/CControllerSlaCreateUpdate.php:34
@@ -11900,15 +11900,15 @@ msgid "Install"
 msgstr "安装"
 
 #: app/views/host.wizard.edit.php:351 app/views/js/host.wizard.edit.js.php:1128
-msgid "Install Zabbix agent"
-msgstr "安装Zabbix agent"
+msgid "Install TAA agent"
+msgstr "安装TAA agent"
 
 #: app/views/host.wizard.edit.php:512 app/views/host.wizard.edit.php:535
-msgid "Install Zabbix agent 2 and its plugins on your monitoring target by following the installation instructions below."
-msgstr "按照以下安装说明在监控目标上安装Zabbix agent 2及其插件"
+msgid "Install TAA agent 2 and its plugins on your monitoring target by following the installation instructions below."
+msgstr "按照以下安装说明在监控目标上安装TAA agent 2及其插件"
 
 #: app/views/host.wizard.edit.php:551 app/views/host.wizard.edit.php:574
-msgid "Install Zabbix agent and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAA agent and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: setup.php:163
@@ -13353,20 +13353,20 @@ msgid "List of Windows Registry values or keys located at given key. Returns JSO
 msgstr "位于给定键的 Windows 注册表值或键的列表。返回 JSON。"
 
 #: include/classes/data/CItemData.php:2743
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
-msgstr "Zabbix proxy列表，包括名称、模式、加密、压缩、版本、上次看到、主机数、监控项数、每秒所需值 (vps) 和兼容性（当前/过期/不支持）。返回 JSON。"
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
+msgstr "TAA proxy列表，包括名称、模式、加密、压缩、版本、上次看到、主机数、监控项数、每秒所需值 (vps) 和兼容性（当前/过期/不支持）。返回 JSON。"
 
 #: include/classes/data/CItemData.php:2877
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
-msgstr "Zabbix proxies列表，包括名称、模式、加密、压缩、版本、最后出现时间、主机数、监控项数、每秒所需值（vps）、兼容性（当前/过时/不支持）、超时、如果代理属于某个组则显示代理组名称、状态（未知/离线/在线）。返回JSON。"
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
+msgstr "TAA proxies列表，包括名称、模式、加密、压缩、版本、最后出现时间、主机数、监控项数、每秒所需值（vps）、兼容性（当前/过时/不支持）、超时、如果代理属于某个组则显示代理组名称、状态（未知/离线/在线）。返回JSON。"
 
 #: include/classes/data/CItemData.php:2905
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
-msgstr "Zabbix proxies列表，包括名称、模式、加密、压缩、版本、最后出现时间、主机数、监控项数、每秒所需值（vps）、兼容性（当前/过时/不支持）、超时、代理组名称、状态（未知/离线/在线）。返回JSON。"
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
+msgstr "TAA proxies列表，包括名称、模式、加密、压缩、版本、最后出现时间、主机数、监控项数、每秒所需值（vps）、兼容性（当前/过时/不支持）、超时、代理组名称、状态（未知/离线/在线）。返回JSON。"
 
 #: include/classes/data/CItemData.php:2935
-msgid "List of Zabbix proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
-msgstr "Zabbix proxy 组的配置数据和实时数据列表。配置数据包括 proxy 组名称、故障转移延迟以及组在线所需的最少在线 proxy 数量。实时数据包括在线 proxy 数量、在线 proxy 百分比以及 proxy 组的状态（未知、离线、恢复中、在线、降级）。此监控项不返回无组的 proxy 。返回 JSON 。"
+msgid "List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
+msgstr "TAA proxy 组的配置数据和实时数据列表。配置数据包括 proxy 组名称、故障转移延迟以及组在线所需的最少在线 proxy 数量。实时数据包括在线 proxy 数量、在线 proxy 百分比以及 proxy 组的状态（未知、离线、恢复中、在线、降级）。此监控项不返回无组的 proxy 。返回 JSON 。"
 
 #: include/classes/data/CItemData.php:1559
 msgid "List of block devices and their type. Returns JSON"
@@ -13863,12 +13863,12 @@ msgid "Map update failed."
 msgstr "拓扑图更新失败."
 
 #: app/views/popup.ldap.edit.php:259
-msgid "Map user's LDAP media attributes (e.g. email) to Zabbix user media for sending notifications."
-msgstr "将用户的 LDAP 媒介属性（例如电子邮件）映射到 Zabbix 用户媒介以便发送通知。"
+msgid "Map user's LDAP media attributes (e.g. email) to TAA user media for sending notifications."
+msgstr "将用户的 LDAP 媒介属性（例如电子邮件）映射到 TAA 用户媒介以便发送通知。"
 
 #: app/views/administration.authentication.edit.php:512
-msgid "Map user's SAML media attributes (e.g. email) to Zabbix user media for sending notifications."
-msgstr "将用户的 SAML 媒介属性（例如email）映射到 Zabbix 用户媒介以便发送通知。"
+msgid "Map user's SAML media attributes (e.g. email) to TAA user media for sending notifications."
+msgstr "将用户的 SAML 媒介属性（例如email）映射到 TAA 用户媒介以便发送通知。"
 
 #: include/classes/api/services/CDashboardGeneral.php:600
 #, c-format
@@ -15876,8 +15876,8 @@ msgid "Number of items (enabled/disabled/not supported)"
 msgstr "监控项数量（已启用/已禁用/不支持）"
 
 #: include/classes/data/CItemData.php:2694
-msgid "Number of items in Zabbix database."
-msgstr "Zabbix 数据库中的监控项数量"
+msgid "Number of items in TAA database."
+msgstr "TAA 数据库中的监控项数量"
 
 #: include/classes/data/CItemData.php:2750
 msgid "Number of items in proxy history that are not yet sent to the server"
@@ -15889,8 +15889,8 @@ msgstr "队列中延迟到秒（包含）的监控项数。"
 
 #: include/classes/data/CItemData.php:2615
 #: include/classes/data/CItemData.php:2778
-msgid "Number of items in the queue which are delayed in Zabbix server or proxy by \"from\" till \"to\" seconds, inclusive."
-msgstr "队列中在 Zabbix 服务器或proxy中延迟 \"from\" 到 \"to\" 秒的监控项数，包括在内。"
+msgid "Number of items in the queue which are delayed in TAA server or proxy by \"from\" till \"to\" seconds, inclusive."
+msgstr "队列中在 TAA 服务器或proxy中延迟 \"from\" 到 \"to\" 秒的监控项数，包括在内。"
 
 #: include/classes/data/CItemData.php:2687
 msgid "Number of monitored hosts"
@@ -15949,12 +15949,12 @@ msgid "Number of triggers (enabled/disabled [problem/ok])"
 msgstr "触发器数量（已启用/已禁用 [问题/正常]）"
 
 #: include/classes/data/CItemData.php:2799
-msgid "Number of triggers in Zabbix database."
-msgstr "Zabbix 数据库中的触发器数量"
+msgid "Number of triggers in TAA database."
+msgstr "TAA 数据库中的触发器数量"
 
 #: include/classes/data/CItemData.php:2701
-msgid "Number of unsupported items in Zabbix database."
-msgstr "Zabbix 数据库中不支持的监控项数量。"
+msgid "Number of unsupported items in TAA database."
+msgstr "TAA 数据库中不支持的监控项数量。"
 
 #: include/classes/data/CItemData.php:2659
 msgid "Number of unsupported items on the host."
@@ -16200,8 +16200,8 @@ msgid "Only Super admin users can update \"%1$s\" parameter."
 msgstr "只有超级管理员用户才能更新 \"%1$s\" 参数。"
 
 #: include/classes/api/services/CDRule.php:509
-msgid "Only Zabbix agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
-msgstr "仅Zabbix agent, SNMPv1,SNMPv2 和 SNMPv3检查是独立的."
+msgid "Only TAA agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
+msgstr "仅TAA agent, SNMPv1,SNMPv2 和 SNMPv3检查是独立的."
 
 #: include/classes/api/services/CMap.php:666
 #: include/classes/api/services/CMap.php:1120
@@ -16954,8 +16954,8 @@ msgid "Password (once again)"
 msgstr "密码 (再次确认)"
 
 #: app/views/administration.user.edit.php:205
-msgid "Password can only be changed for users using the internal Zabbix authentication."
-msgstr "仅限使用 Zabbix 自身身份验证的用户更改密码。"
+msgid "Password can only be changed for users using the internal TAA authentication."
+msgstr "仅限使用 TAA 自身身份验证的用户更改密码。"
 
 #: app/views/administration.user.edit.php:195
 msgid "Password is not mandatory for non internal authentication type."
@@ -17949,8 +17949,8 @@ msgid "Recipient already exists."
 msgstr "收件人已经存在。"
 
 #: app/views/reports.actionlog.list.csv.php:39
-msgid "Recipient's Zabbix username"
-msgstr "收件人的 Zabbix 用户名"
+msgid "Recipient's TAA username"
+msgstr "收件人的 TAA 用户名"
 
 #: app/views/reports.actionlog.list.csv.php:40
 msgid "Recipient's name"
@@ -18439,8 +18439,8 @@ msgid "Required host permissions"
 msgstr "要求的主机权限"
 
 #: include/classes/data/CItemData.php:2771
-msgid "Required performance of the Zabbix server, in new values per second expected."
-msgstr "Zabbix服务器所需求的性能,每秒钟处理的新值数."
+msgid "Required performance of the TAA server, in new values per second expected."
+msgstr "TAA服务器所需求的性能,每秒钟处理的新值数."
 
 #: app/partials/administration.system.info.php:101
 msgid "Required server performance, new values per second"
@@ -18653,13 +18653,13 @@ msgid "Returns ICMP ping response time in seconds. Example: 0.02"
 msgstr "返回ICMP ping的响应时间单位秒.例如：0.02"
 
 #: include/classes/data/CItemData.php:2680
-msgid "Returns a JSON array describing the host network interfaces configured in Zabbix. Can be used for LLD."
-msgstr "返回描述在 Zabbix 中配置的主机网络接口的 JSON 数组。可用于 LLD。"
+msgid "Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD."
+msgstr "返回描述在 TAA 中配置的主机网络接口的 JSON 数组。可用于 LLD。"
 
 #: include/classes/data/CItemData.php:2623
 #: include/classes/data/CItemData.php:2785
-msgid "Returns a JSON object containing Zabbix server or proxy internal metrics."
-msgstr "返回包含 Zabbix Server或Proxy的内部指标JSON对象。"
+msgid "Returns a JSON object containing TAA server or proxy internal metrics."
+msgstr "返回包含 TAA Server或Proxy的内部指标JSON对象。"
 
 #: include/classes/data/CItemData.php:2673
 msgid "Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, active_agent, snmp, ipmi, jmx."
@@ -18670,8 +18670,8 @@ msgid "Returns current maintenance status of the host."
 msgstr "返回主机当前的维护状态."
 
 #: include/classes/data/CItemData.php:2708
-msgid "Returns information associated with Zabbix Java gateway. Valid params are: ping, version."
-msgstr "返回与Zabbix Java应用网关相关联的信息。可用的参数有：ping,version."
+msgid "Returns information associated with TAA Java gateway. Valid params are: ping, version."
+msgstr "返回与TAA Java应用网关相关联的信息。可用的参数有：ping,version."
 
 #: include/classes/data/CItemData.php:1183
 msgid "Returns number of TCP sockets that match parameters. Returns integer"
@@ -18755,8 +18755,8 @@ msgstr "规则"
 
 #: include/actions.inc.php:578
 #, c-format
-msgid "Run script \"%1$s\" on Zabbix server"
-msgstr "在 Zabbix 服务器上运行脚本\"%1$s\""
+msgid "Run script \"%1$s\" on TAA server"
+msgstr "在 TAA 服务器上运行脚本\"%1$s\""
 
 #: include/actions.inc.php:591
 #, c-format
@@ -19797,12 +19797,12 @@ msgid "Set this view as default"
 msgstr "将此视图设置为默认视图"
 
 #: app/views/host.wizard.edit.php:493
-msgid "Set up Zabbix agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
-msgstr "通过执行以下PowerShell脚本[需管理员权限]在监控目标上设置Zabbix agent："
+msgid "Set up TAA agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
+msgstr "通过执行以下PowerShell脚本[需管理员权限]在监控目标上设置TAA agent："
 
 #: app/views/host.wizard.edit.php:477
-msgid "Set up Zabbix agent on your monitoring target by executing the following script [bash under root]:"
-msgstr "通过执行以下脚本[root权限下的bash]在监控目标上设置Zabbix agent："
+msgid "Set up TAA agent on your monitoring target by executing the following script [bash under root]:"
+msgstr "通过执行以下脚本[root权限下的bash]在监控目标上设置TAA agent："
 
 #: app/views/js/popup.itemtestedit.view.js.php:383 include/forms.inc.php:1599
 #: include/views/js/item.preprocessing.js.php:67
@@ -20113,8 +20113,8 @@ msgid "Show value"
 msgstr "查看值"
 
 #: app/views/administration.gui.edit.php:110
-msgid "Show warning if Zabbix server is down"
-msgstr "当Zabbix服务器停机时显示告警"
+msgid "Show warning if TAA server is down"
+msgstr "当TAA服务器停机时显示告警"
 
 #: include/views/configuration.graph.edit.php:126
 msgid "Show working time"
@@ -20262,12 +20262,12 @@ msgstr "大小"
 
 #: include/classes/server/CZabbixServer.php:554
 #, c-format
-msgid "Size of the response received from Zabbix server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
-msgstr "Zabbix服务器\"%1$s\" 收到响应的大小字节超过允许的大小%2$s 。这个值通过在Zinclude / defines.inc.php文件中定义的ZBX_SOCKET_BYTES_LIMIT 变量来增加."
+msgid "Size of the response received from TAA server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
+msgstr "TAA服务器\"%1$s\" 收到响应的大小字节超过允许的大小%2$s 。这个值通过在Zinclude / defines.inc.php文件中定义的ZBX_SOCKET_BYTES_LIMIT 变量来增加."
 
 #: app/views/host.wizard.edit.php:355
-msgid "Skip OS selection if you already have Zabbix agent installed."
-msgstr "如果已安装Zabbix agent，可跳过操作系统选择"
+msgid "Skip OS selection if you already have TAA agent installed."
+msgstr "如果已安装TAA agent，可跳过操作系统选择"
 
 #: include/locales.inc.php:61
 msgid "Slovak (sk_SK)"
@@ -20476,8 +20476,8 @@ msgid "Starting TLS failed."
 msgstr "启动 TLS 失败。"
 
 #: include/classes/data/CItemData.php:2631
-msgid "Startup time of Zabbix server, Unix timestamp."
-msgstr "Zabbix服务器的启动时间，Unix时间截."
+msgid "Startup time of TAA server, Unix timestamp."
+msgstr "TAA服务器的启动时间，Unix时间截."
 
 #: app/partials/configuration.filter.items.php:180
 #: app/partials/monitoring.latest.filter.php:187
@@ -20507,8 +20507,8 @@ msgid "Static link"
 msgstr "静态链接"
 
 #: include/classes/data/CItemData.php:2841
-msgid "Statistics and availability of Zabbix write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
-msgstr "Zabbix 写缓存的统计和可用性。缓存 - 值之一（模式：all、float、uint、str、log、text、不支持）、历史（模式：pfree、free、total、used、pused）、索引（模式：pfree、free、total、used , pused), 趋势 (模式: pfree, free, total, used, pused)。"
+msgid "Statistics and availability of TAA write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
+msgstr "TAA 写缓存的统计和可用性。缓存 - 值之一（模式：all、float、uint、str、log、text、不支持）、历史（模式：pfree、free、total、used、pused）、索引（模式：pfree、free、total、used , pused), 趋势 (模式: pfree, free, total, used, pused)。"
 
 #: include/classes/data/CItemData.php:2848
 msgid "Statistics and availability of proxy memory buffer. Mode (modes: pfree, free, total, used, pused)."
@@ -20799,8 +20799,8 @@ msgid "Support"
 msgstr "支持"
 
 #: include/classes/setup/CSetupWizard.php:517
-msgid "Support for Oracle DB is deprecated since Zabbix 7.0 and will be removed in future versions."
-msgstr "自 Zabbix 7.0 起已弃用对 Oracle DB 的支持，并将在未来版本中删除。"
+msgid "Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgstr "自 TAA 7.0 起已弃用对 Oracle DB 的支持，并将在未来版本中删除。"
 
 #: include/classes/html/widgets/fields/CWidgetFieldLatLngView.php:37
 msgid "Supported formats:"
@@ -20877,8 +20877,8 @@ msgid "System default"
 msgstr "系统默认"
 
 #: include/func.inc.php:1848
-msgid "System error occurred. Please contact Zabbix administrator."
-msgstr "发生系统错误。请联系 Zabbix 管理员。"
+msgid "System error occurred. Please contact TAA administrator."
+msgstr "发生系统错误。请联系 TAA 管理员。"
 
 #: include/classes/core/CJsonRpc.php:230
 msgid "System error."
@@ -21439,8 +21439,8 @@ msgid "The %1$s is not discovered anymore and %2$s."
 msgstr "该 %1$s 不再被发现并 %2$s"
 
 #: app/views/host.wizard.edit.php:101
-msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in Zabbix."
-msgstr "主机向导将帮助您在Zabbix中设置监控目标(设备、应用、服务等)"
+msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAA."
+msgstr "主机向导将帮助您在TAA中设置监控目标(设备、应用、服务等)"
 
 #: app/views/oauth.edit.php:48
 msgid "The URL must comply with the OAuth provider's policy."
@@ -21452,8 +21452,8 @@ msgstr "URL 模板用于加载和显示地图上的瓦片图层。"
 
 #: include/classes/db/DbBackend.php:130
 #, c-format
-msgid "The Zabbix database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
-msgstr "Zabbix 数据库版本不符合当前要求。您的数据库版本：%1$s。所需版本：%2$s。请联系您的系统管理员。"
+msgid "The TAA database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
+msgstr "TAA 数据库版本不符合当前要求。您的数据库版本：%1$s。所需版本：%2$s。请联系您的系统管理员。"
 
 #: include/classes/data/CItemData.php:2485
 msgid "The average time a read from the virtual disk takes, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier, \"instance\" - disk device instance"
@@ -21576,13 +21576,13 @@ msgstr "正在复制的模板属于您没有写入权限的模板组。不可写
 
 #: app/views/host.wizard.edit.php:275
 #, c-format
-msgid "The template you selected (%1$s) must be linked to a host - an entity in Zabbix that represents your monitoring target."
-msgstr "您选择的模板(%1$s)必须关联到主机——Zabbix中代表监控目标的实体"
+msgid "The template you selected (%1$s) must be linked to a host - an entity in TAA that represents your monitoring target."
+msgstr "您选择的模板(%1$s)必须关联到主机——TAA中代表监控目标的实体"
 
 #: app/views/host.wizard.edit.php:353
 #, c-format
-msgid "The template you selected (%1$s) requires Zabbix agent to be installed and running on your monitoring target."
-msgstr "您选择的模板(%1$s)要求在监控目标上安装并运行Zabbix agent"
+msgid "The template you selected (%1$s) requires TAA agent to be installed and running on your monitoring target."
+msgstr "您选择的模板(%1$s)要求在监控目标上安装并运行TAA agent"
 
 #: app/views/host.wizard.edit.php:899
 #, c-format
@@ -21673,8 +21673,8 @@ msgid "This field must contain at least one low-level discovery macro."
 msgstr "此字段必须包含至少一个低级发现宏"
 
 #: app/controllers/CControllerMediatypeTestEdit.php:86
-msgid "This is the test message from Zabbix"
-msgstr "来自 Zabbix 的测试消息"
+msgid "This is the test message from TAA"
+msgstr "来自 TAA 的测试消息"
 
 #: include/func.inc.php:2574
 msgid "This month"
@@ -21883,8 +21883,8 @@ msgid "Time"
 msgstr "时间"
 
 #: include/classes/data/CItemData.php:2729
-msgid "Time a particular Zabbix process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
-msgstr "特定 Zabbix 进程或一组进程（由 <type> 和 <mode> 标识）在 <state> 中花费的时间百分比。"
+msgid "Time a particular TAA process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
+msgstr "特定 TAA 进程或一组进程（由 <type> 和 <mode> 标识）在 <state> 中花费的时间百分比。"
 
 #: app/views/js/mediatype.test.edit.js.php:91
 #: app/views/js/popup.scriptexec.js.php:44
@@ -22704,8 +22704,8 @@ msgstr "无法将配置文件权限更改为 0600。"
 
 #: include/classes/server/CZabbixServer.php:673
 #: include/classes/server/CZabbixServer.php:681 jsrpc.php:86 jsrpc.php:101
-msgid "Unable to connect to the Zabbix server due to TLS settings. Some functions are unavailable."
-msgstr "由于TLS设置无法连接Zabbix服务器，部分功能不可用"
+msgid "Unable to connect to the TAA server due to TLS settings. Some functions are unavailable."
+msgstr "由于TLS设置无法连接TAA服务器，部分功能不可用"
 
 #: include/classes/core/CConfigFile.php:237
 msgid "Unable to create the configuration file."
@@ -22715,8 +22715,8 @@ msgstr "无法创建配置文件。"
 #: include/classes/db/OracleDbBackend.php:36
 #: include/classes/db/PostgresqlDbBackend.php:61
 #, c-format
-msgid "Unable to determine current Zabbix database version: %1$s."
-msgstr "无法确定当前 Zabbix 数据库版本：%1$s。"
+msgid "Unable to determine current TAA database version: %1$s."
+msgstr "无法确定当前 TAA 数据库版本：%1$s。"
 
 #: include/classes/helpers/CAuthenticationHelper.php:88
 #: include/classes/helpers/CAuthenticationHelper.php:107
@@ -23255,8 +23255,8 @@ msgid "Uptime"
 msgstr "在线时间"
 
 #: include/classes/data/CItemData.php:2806
-msgid "Uptime of Zabbix server process in seconds."
-msgstr "Zabbix服务器进程的在线时间单位秒."
+msgid "Uptime of TAA server process in seconds."
+msgstr "TAA服务器进程的在线时间单位秒."
 
 #: include/actions.inc.php:61
 msgid "Uptime/Downtime"
@@ -24388,12 +24388,12 @@ msgid "Version"
 msgstr "版本"
 
 #: include/classes/data/CItemData.php:927
-msgid "Version of Zabbix agent. Returns string"
+msgid "Version of TAA agent. Returns string"
 msgstr "zabbix客户端（agent）的版本。返回字符串"
 
 #: include/classes/data/CItemData.php:2827
-msgid "Version of Zabbix server or proxy"
-msgstr "Zabbix Server或Proxy的版本"
+msgid "Version of TAA server or proxy"
+msgstr "TAA Server或Proxy的版本"
 
 #: widgets/hostavail/includes/WidgetForm.php:57
 #: widgets/problemsbysv/includes/WidgetForm.php:89
@@ -24478,8 +24478,8 @@ msgid "Warning message"
 msgstr "告警信息"
 
 #: app/partials/administration.system.info.php:198
-msgid "Warning! Support for Oracle DB is deprecated since Zabbix 7.0 and will be removed in future versions."
-msgstr "警告！自 Zabbix 7.0 起已弃用对 Oracle DB 的支持，并将在未来版本中删除。"
+msgid "Warning! Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgstr "警告！自 TAA 7.0 起已弃用对 Oracle DB 的支持，并将在未来版本中删除。"
 
 #: app/partials/administration.system.info.php:155
 msgid "Warning! Unable to retrieve database version."
@@ -25053,127 +25053,127 @@ msgid "Your progress will be discarded and you will exit the Host Wizard. Are yo
 msgstr "当前进度将被丢弃并退出主机向导。确认要取消吗？"
 
 #: include/page_header.php:122
-msgid "Zabbix"
-msgstr "Zabbix"
+msgid "TAA"
+msgstr "TAA"
 
 #: include/classes/helpers/CMenuHelper.php:434
-msgid "Zabbix Integrations"
-msgstr "Zabbix 集成"
+msgid "TAA Integrations"
+msgstr "TAA 集成"
 
 #: app/views/connector.edit.php:49
-msgid "Zabbix Streaming Protocol v1.0"
-msgstr "Zabbix 流协议v1.0"
+msgid "TAA Streaming Protocol v1.0"
+msgstr "TAA 流协议v1.0"
 
 #: include/classes/helpers/CMenuHelper.php:427
-msgid "Zabbix Technical Support"
-msgstr "Zabbix 技术支持"
+msgid "TAA Technical Support"
+msgstr "TAA 技术支持"
 
 #: app/views/administration.script.edit.php:114
 #: app/views/administration.timeouts.edit.php:44
 #: app/views/popup.proxy.edit.php:206 include/discovery.inc.php:56
 #: include/items.inc.php:86
-msgid "Zabbix agent"
-msgstr "Zabbix 客户端"
+msgid "TAA agent"
+msgstr "TAA 客户端"
 
 #: widgets/hostavail/includes/WidgetForm.php:47
-msgid "Zabbix agent (active checks)"
-msgstr "Zabbix agent(主动检查)"
+msgid "TAA agent (active checks)"
+msgstr "TAA agent(主动检查)"
 
 #: include/items.inc.php:87
-msgid "Zabbix agent (active)"
-msgstr "Zabbix客户端(主动式)"
+msgid "TAA agent (active)"
+msgstr "TAA客户端(主动式)"
 
 #: widgets/hostavail/includes/WidgetForm.php:48
-msgid "Zabbix agent (passive checks)"
-msgstr "Zabbix agent(被动检查)"
+msgid "TAA agent (passive checks)"
+msgstr "TAA agent(被动检查)"
 
 #: app/views/js/host.wizard.edit.js.php:91
-msgid "Zabbix agent initiates connections to Zabbix server or proxy to send data. Recommended for monitoring targets behind a firewall."
-msgstr "Zabbix agent主动连接Zabbix server/proxy发送数据，推荐用于防火墙后的监控目标"
+msgid "TAA agent initiates connections to TAA server or proxy to send data. Recommended for monitoring targets behind a firewall."
+msgstr "TAA agent主动连接TAA server/proxy发送数据，推荐用于防火墙后的监控目标"
 
 #: app/views/host.wizard.edit.php:863
-msgid "Zabbix documentation"
-msgstr "Zabbix文档"
+msgid "TAA documentation"
+msgstr "TAA文档"
 
 #: app/partials/administration.system.info.php:45
-msgid "Zabbix frontend version"
+msgid "TAA frontend version"
 msgstr "zabbix前端版本"
 
 #: include/validate.inc.php:387
-msgid "Zabbix has received an incorrect request."
-msgstr "Zabbix已接收到一个错误的请求."
+msgid "TAA has received an incorrect request."
+msgstr "TAA已接收到一个错误的请求."
 
 #: include/items.inc.php:91
-msgid "Zabbix internal"
-msgstr "Zabbix内部"
+msgid "TAA internal"
+msgstr "TAA内部"
 
 #: include/perm.inc.php:48
-msgid "Zabbix internal authentication"
-msgstr "Zabbix内部认证"
+msgid "TAA internal authentication"
+msgstr "TAA内部认证"
 
 #: app/views/administration.authentication.edit.php:169
-msgid "Zabbix login form"
-msgstr "Zabbix 登录表单"
+msgid "TAA login form"
+msgstr "TAA 登录表单"
 
 #: app/views/administration.script.edit.php:115
-msgid "Zabbix proxy or server"
-msgstr "Zabbix proxy或server"
+msgid "TAA proxy or server"
+msgstr "TAA proxy或server"
 
 #: app/views/administration.script.edit.php:116
-msgid "Zabbix server"
+msgid "TAA server"
 msgstr "zabbix服务器"
 
 #: include/classes/server/CZabbixServer.php:626
 #, c-format
 msgid ""
-"Zabbix server \"%1$s\" cannot be reached. Possible reasons:\n"
+"TAA server \"%1$s\" cannot be reached. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect network configuration.\n"
 msgstr ""
-"无法访问 Zabbix 服务器“%1$s”。可能的原因：\n"
+"无法访问 TAA 服务器“%1$s”。可能的原因：\n"
 "1.“zabbix_server.conf”中的“NodeAddress”、“ListenPort”不正确或“zabbix.conf.php”中的服务器IP/DNS被覆盖；\n"
 "2.网络配置不正确。\n"
 
 #: app/views/administration.script.edit.php:115
-msgid "Zabbix server (proxy)"
-msgstr "Zabbix server (Proxy)"
+msgid "TAA server (proxy)"
+msgstr "TAA server (Proxy)"
 
 #: app/views/administration.miscconfig.edit.php:112
-msgid "Zabbix server and proxy"
-msgstr "Zabbix server和proxy"
+msgid "TAA server and proxy"
+msgstr "TAA server和proxy"
 
 #: app/views/administration.miscconfig.edit.php:107
-msgid "Zabbix server and proxy: secrets are retrieved from Vault by both Zabbix server and proxies, allowing them to resolve macros independently."
-msgstr "Zabbix server/proxy：密钥由server和proxy独立从Vault获取，可独立解析宏"
+msgid "TAA server and proxy: secrets are retrieved from Vault by both TAA server and proxies, allowing them to resolve macros independently."
+msgstr "TAA server/proxy：密钥由server和proxy独立从Vault获取，可独立解析宏"
 
 #: jsrpc.php:91
-msgid "Zabbix server is not running: the information displayed may not be current."
-msgstr "Zabbix server is not running: the information displayed may not be current."
+msgid "TAA server is not running: the information displayed may not be current."
+msgstr "TAA server is not running: the information displayed may not be current."
 
 #: app/partials/administration.system.info.php:34
-msgid "Zabbix server is running"
-msgstr "Zabbix服务器端运行中"
+msgid "TAA server is running"
+msgstr "TAA服务器端运行中"
 
 #: include/classes/setup/CSetupWizard.php:711
 #: include/classes/setup/CSetupWizard.php:870
-msgid "Zabbix server name"
-msgstr "Zabbix主机名称"
+msgid "TAA server name"
+msgstr "TAA主机名称"
 
 #: app/views/js/host.wizard.edit.js.php:92
-msgid "Zabbix server or proxy initiates connections to Zabbix agent to request data. Recommended for networks without a firewall or with open firewall ports."
-msgstr "Zabbix server/proxy主动连接agent请求数据，推荐用于无防火墙或开放防火墙端口的网络"
+msgid "TAA server or proxy initiates connections to TAA agent to request data. Recommended for networks without a firewall or with open firewall ports."
+msgstr "TAA server/proxy主动连接agent请求数据，推荐用于无防火墙或开放防火墙端口的网络"
 
 #: app/partials/administration.system.info.php:40
-msgid "Zabbix server version"
+msgid "TAA server version"
 msgstr "zabbix服务端版本"
 
 #: app/views/administration.miscconfig.edit.php:105
-msgid "Zabbix server: secrets are retrieved from Vault by Zabbix server and forwarded to proxies when needed."
-msgstr "Zabbix server：密钥由server从Vault获取并按需转发给proxy"
+msgid "TAA server: secrets are retrieved from Vault by TAA server and forwarded to proxies when needed."
+msgstr "TAA server：密钥由server从Vault获取并按需转发给proxy"
 
 #: include/items.inc.php:92
-msgid "Zabbix trapper"
-msgstr "Zabbix采集器"
+msgid "TAA trapper"
+msgstr "TAA采集器"
 
 #: include/classes/html/CFilter.php:258 include/classes/html/CTabFilter.php:324
 msgid "Zoom out"
@@ -26202,8 +26202,8 @@ msgid "fourth"
 msgstr "第四"
 
 #: app/controllers/CControllerPopupTriggerExpr.php:645
-msgid "fuzzytime() - Difference between item value (as timestamp) and Zabbix server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
-msgstr "fuzzytime() - 监控项值的时间戳和 Zabbix 服务器时间戳之间的差异小于或等于 T 秒（1 - true，0 - false）"
+msgid "fuzzytime() - Difference between item value (as timestamp) and TAA server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
+msgstr "fuzzytime() - 监控项值的时间戳和 TAA 服务器时间戳之间的差异小于或等于 T 秒（1 - true，0 - false）"
 
 #: include/classes/validators/CApiInputValidator.php:3317
 msgid "geographical coordinates (values of comma separated latitude and longitude) are expected"
@@ -26218,8 +26218,8 @@ msgid "global housekeeping settings"
 msgstr "全局管家设置"
 
 #: include/classes/api/services/CScript.php:726
-msgid "global script execution on Zabbix server is disabled by server configuration"
-msgstr "Zabbix服务器上的全局脚本执行被服务器配置禁用"
+msgid "global script execution on TAA server is disabled by server configuration"
+msgstr "TAA服务器上的全局脚本执行被服务器配置禁用"
 
 #: include/html.inc.php:795 include/html.inc.php:800 include/html.inc.php:805
 msgid "graph"

@@ -235,7 +235,7 @@ zbx_log_value_t;
 /* the error message for not supported items when reason is unknown */
 #define ZBX_NOTSUPPORTED_MSG	"Unknown error."
 
-/* Zabbix Agent non-critical error (agents older than 2.0) */
+/* TAA Agent non-critical error (agents older than 2.0) */
 #define ZBX_ERROR		"ZBX_ERROR"
 
 /* program type */

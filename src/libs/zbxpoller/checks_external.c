@@ -21,7 +21,7 @@
 
 /******************************************************************************
  *                                                                            *
- * Purpose: retrieves data from script executed on Zabbix server              *
+ * Purpose: retrieves data from script executed on TAA server              *
  *                                                                            *
  * Parameters:                                                                *
  *             item                    - [IN] item we are interested in       *

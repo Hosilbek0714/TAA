@@ -14,7 +14,7 @@
 
 
 /**
- * Extend Leaflet Map with functions necessary for Zabbix "Geomap" widget.
+ * Extend Leaflet Map with functions necessary for TAA "Geomap" widget.
  *
  * @type {L.Map}
  */

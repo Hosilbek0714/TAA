@@ -23,7 +23,7 @@
 
 /******************************************************************************
  *                                                                            *
- * Purpose: Zabbix destructor                                                 *
+ * Purpose: TAA destructor                                                 *
  *                                                                            *
  ******************************************************************************/
 static duk_ret_t	es_zabbix_dtor(duk_context *ctx)
@@ -35,7 +35,7 @@ static duk_ret_t	es_zabbix_dtor(duk_context *ctx)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: Zabbix constructor                                                *
+ * Purpose: TAA constructor                                                *
  *                                                                            *
  ******************************************************************************/
 static duk_ret_t	es_zabbix_ctor(duk_context *ctx)
@@ -195,7 +195,7 @@ static int	es_zabbix_create_object(duk_context *ctx)
 		return FAIL;
 
 	duk_new(ctx, 0);
-	duk_put_global_string(ctx, "Zabbix");
+	duk_put_global_string(ctx, "TAA");
 
 	return SUCCEED;
 }

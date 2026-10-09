@@ -161,7 +161,7 @@ zabbix_export:
         Please refer to setup guide here: https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/line
         
         Set bot_token parameter to your Line bot token.
-        When assigning Line media to the Zabbix user - add the ID of the target recipient. Use a userId, groupId, or roomId value.
+        When assigning Line media to the TAA user - add the ID of the target recipient. Use a userId, groupId, or roomId value.
       message_templates:
         - event_source: TRIGGERS
           operation_mode: PROBLEM

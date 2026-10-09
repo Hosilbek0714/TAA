@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of OpenStack monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of OpenStack monitoring by TAA via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,15 +19,15 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-This is a master template that needs to be assigned to a host, and it will discover all OpenStack services supported by Zabbix automatically.
+This is a master template that needs to be assigned to a host, and it will discover all OpenStack services supported by TAA automatically.
 
-Before using this template it is recommended to create a separate monitoring user on OpenStack that will have access to specific API resources. Zabbix uses OpenStack application credentials for authorization, as it is a more secure method than a username and password-based authentication.
+Before using this template it is recommended to create a separate monitoring user on OpenStack that will have access to specific API resources. TAA uses OpenStack application credentials for authorization, as it is a more secure method than a username and password-based authentication.
 
-Below are instructions and examples on how to set up a user on OpenStack that will be used by Zabbix. Examples use the OpenStack CLI (command-line interface) tool, but this can also be done from OpenStack Horizon (web interface).
+Below are instructions and examples on how to set up a user on OpenStack that will be used by TAA. Examples use the OpenStack CLI (command-line interface) tool, but this can also be done from OpenStack Horizon (web interface).
 
 > **If using the CLI tool, make sure you have the OpenStack RC file for your project with a user that has rights to create other users, roles, etc., and source it**, for example, `. zabbix-admin-openrc.sh`.
 >
@@ -68,11 +68,11 @@ Repeat User Password:
 2. When the monitoring user is created, it needs to be assigned a role. But first, a monitoring-specific role needs to be created:
 
 ```
-# openstack role create --description "A role for Zabbix monitoring user" monitoring
+# openstack role create --description "A role for TAA monitoring user" monitoring
 +-------------+-----------------------------------+
 | Field       | Value                             |
 +-------------+-----------------------------------+
-| description | A role for Zabbix monitoring user |
+| description | A role for TAA monitoring user |
 | domain_id   | None                              |
 | id          | 93577a7f13184cf7af76f7bdecf7f6ee  |
 | name        | monitoring                        |
@@ -98,11 +98,11 @@ Repeat User Password:
 
 5. Get the OpenStack RC file for the monitoring user in this project, source it, and generate application credentials:
 ```
-# openstack application credential create --description "Application credential for Zabbix monitoring" zabbix-app-cred
+# openstack application credential create --description "Application credential for TAA monitoring" zabbix-app-cred
   +--------------+----------------------------------------------------------------------------------------+
   | Field        | Value                                                                                  |
   +--------------+----------------------------------------------------------------------------------------+
-  | description  | Application credential for Zabbix monitoring                                           |
+  | description  | Application credential for TAA monitoring                                           |
   | expires_at   | None                                                                                   |
   | id           | c8087b91354249f3b157a50fc5ecfb3c                                                       |
   | name         | zabbix-app-cred                                                                        |
@@ -118,7 +118,7 @@ Repeat User Password:
 While creating the application credential, it is also possible to define __access rules__ using the `--access-rules` flag, which offers even more fine-grained access to various API endpoints.
 This is optional and up to the user to decide if such rules are needed.
 
-Once the application credential is created, the values of `id` and `secret` need to be set as user macro values in Zabbix:
+Once the application credential is created, the values of `id` and `secret` need to be set as user macro values in TAA:
 
 * value of `id` in `{$APP.CRED.ID}` user macro;
 * value of `secret` in `{$APP.CRED.SECRET}` user macro.
@@ -154,11 +154,11 @@ Access rights are set using policies. Each service has its own policy file, ther
 
 ## Overview
 
-This template is designed for the effortless deployment of OpenStack Nova monitoring by Zabbix via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of OpenStack Nova monitoring by TAA via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -169,7 +169,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -384,5 +384,5 @@ Note that a restart of OpenStack Nova services might be needed for these new cha
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

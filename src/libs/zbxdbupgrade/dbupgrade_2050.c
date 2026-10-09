@@ -28,7 +28,7 @@
 
 static int	DBpatch_2050000(void)
 {
-	const zbx_db_field_t	field = {"agent", "Zabbix", NULL, NULL, 255, ZBX_TYPE_CHAR, ZBX_NOTNULL, 0};
+	const zbx_db_field_t	field = {"agent", "TAA", NULL, NULL, 255, ZBX_TYPE_CHAR, ZBX_NOTNULL, 0};
 
 	return DBset_default("httptest", &field);
 }

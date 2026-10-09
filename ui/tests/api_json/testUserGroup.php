@@ -163,9 +163,9 @@ class testUserGroup extends CAPITest {
 			],
 			[
 				'group' => [
-					'name' => 'Zabbix administrators'
+					'name' => 'TAA administrators'
 				],
-				'expected_error' => 'User group "Zabbix administrators" already exists.'
+				'expected_error' => 'User group "TAA administrators" already exists.'
 			],
 			[
 				'group' => [
@@ -173,10 +173,10 @@ class testUserGroup extends CAPITest {
 						'name' => 'One user group with existing name'
 					],
 					[
-						'name' => 'Zabbix administrators'
+						'name' => 'TAA administrators'
 					]
 				],
-				'expected_error' => 'User group "Zabbix administrators" already exists.'
+				'expected_error' => 'User group "TAA administrators" already exists.'
 			],
 			[
 				'group' => [
@@ -305,9 +305,9 @@ class testUserGroup extends CAPITest {
 			[
 				'group' => [[
 					'usrgrpid' => '23',
-					'name' => 'Zabbix administrators'
+					'name' => 'TAA administrators'
 				]],
-				'expected_error' => 'User group "Zabbix administrators" already exists.'
+				'expected_error' => 'User group "TAA administrators" already exists.'
 			],
 			// Check Super Admin user in group.
 			[
@@ -482,7 +482,7 @@ class testUserGroup extends CAPITest {
 		}
 		else {
 			foreach ($groups as $group) {
-				if (array_key_exists('name', $group) && $group['name'] != 'Zabbix administrators'){
+				if (array_key_exists('name', $group) && $group['name'] != 'TAA administrators'){
 					$this->assertEquals(0,
 						CDBHelper::getCount('SELECT * FROM usrgrp WHERE name='.zbx_dbstr($group['name']))
 					);

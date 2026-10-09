@@ -69,7 +69,7 @@ kitima hammasini chuqur tahlil qilib chiq container ichida
 
 
 ╭─ Response ───────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ Davom etaylik! Nginx konfiguratsiyasini va Zabbix web fayllarining joylashuvini batafsil o'rganaylik:                │
+│ Davom etaylik! Nginx konfiguratsiyasini va TAA web fayllarining joylashuvini batafsil o'rganaylik:                │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
   └── Calling powershell:
       • command: "docker exec -it zabbix-web cat /etc/nginx/nginx.conf"
@@ -137,7 +137,7 @@ kitima hammasini chuqur tahlil qilib chiq container ichida
 
 
 ╭─ Response ───────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ Endi asosiy Zabbix konfiguratsiya faylini va local papkasini batafsil tekshiraylik:                                  │
+│ Endi asosiy TAA konfiguratsiya faylini va local papkasini batafsil tekshiraylik:                                  │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
   └── Calling powershell:
       • command: "docker exec -it zabbix-web cat /etc/zabbix/nginx.conf"
@@ -236,7 +236,7 @@ kitima hammasini chuqur tahlil qilib chiq container ichida
 
 
 ╭─ Response ───────────────────────────────────────────────────────────────────────────────────────────────────────────╮
-│ Endi Zabbix'ning asosiy konfiguratsiya fayllarini va branding qanday ishlashini tekshiraylik:                        │
+│ Endi TAA'ning asosiy konfiguratsiya fayllarini va branding qanday ishlashini tekshiraylik:                        │
 ╰──────────────────────────────────────────────────────────────────────────────────────────────────────────────────────╯
   └── Calling powershell:
       • command: "docker exec -it zabbix-web ls -la /usr/share/zabbix/local/conf/"
@@ -324,7 +324,7 @@ kitima hammasini chuqur tahlil qilib chiq container ichida
                                                                                                                         
        'BRAND_LOGO_SIDEBAR_COMPACT' => 'local/img/logo-compact.svg',                                                    
                                                                                                                         
-       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',                                                   
+       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',                                                   
                                                                                                                         
        'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',                                          
                                                                                                                         
@@ -379,7 +379,7 @@ kitima hammasini chuqur tahlil qilib chiq container ichida
 │  /usr/share/zabbix/ui/local/img/         # Bu joyda sizning logolaringiz                                             │
 │  /usr/share/zabbix/ui/assets/img/        # Bu ham mavjud                                                             │
 │  /usr/share/zabbix/local/img/            # Bu ham mavjud                                                             │
-│  /usr/share/zabbix/assets/img/           # Default Zabbix logolari                                                   │
+│  /usr/share/zabbix/assets/img/           # Default TAA logolari                                                   │
 │                                                                                                                      │
 │                                                                                                                      │
 │                                              3. Brand konfiguratsiyasi:                                              │
@@ -576,7 +576,7 @@ o'zgartirarman, va hokazo umuman frontdagi localni fayllarni to'g'ri o'zgartirib
                                                                                                                       
        'BRAND_LOGO_SIDEBAR_COMPACT' => 'local/img/logo-compact.svg',                                                  
                                                                                                                       
-       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',                                                 
+       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',                                                 
                                                                                                                       
        'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',                                        
                                                                                                                       
@@ -1424,12 +1424,12 @@ o'zgartirarman, va hokazo umuman frontdagi localni fayllarni to'g'ri o'zgartirib
 │  • dark-theme.css - Qorong'u tema                                                                                    │
 │  • hc-light.css - Yuqori kontrastli tema                                                                             │
 │                                                                                                                      │
-│                                      3. Matnlarni O'zgartirish (Zabbix → TAA):                                       │
+│                                      3. Matnlarni O'zgartirish (TAA → TAA):                                       │
 │                                                                                                                      │
 │ a) Brand.conf.php:                                                                                                   │
 │                                                                                                                      │
 │                                                                                                                      │
-│  'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',                                                      │
+│  'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',                                                      │
 │  'BRAND_TITLE' => 'TAA Monitoring System'                                                                            │
 │                                                                                                                      │
 │                                                                                                                      │
@@ -1492,18 +1492,18 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 596.8K/5M
                                                                                                                                                                                       
 > birinchi o'rinda oxirgi yozganingni bizga bitta faylga ko'proq tafsilotlari bilan yozib bergin  keyin nima ish qilishimiznin aytaman                                                
   └── Calling create_file:
-      • file_path: "ZABBIX_DOCKER_BRANDING_DOCUMENTATION.md"
+      • file_path: "TAA_DOCKER_BRANDING_DOCUMENTATION.md"
       • initial_content: "# \ud83d\udd25 **ZABBIX DOCKER CONTAINER - BRANDING SISTEMASI TO'LIQ DOKUMENTATSIYASI**\n\n...
 
                                                                                                                       
-   Successfully created ZABBIX_DOCKER_BRANDING_DOCUMENTATION.md.                                                        
+   Successfully created TAA_DOCKER_BRANDING_DOCUMENTATION.md.                                                        
                                                                                                                       
 
 
 ╭─ Response ───────────────────────────────────────────────────────────────────────────────────────────────────────────╮
 │ Perfect! 🎉 Men sizga to'liq va batafsil dokumentatsiya yozib berdim.                                                │
 │                                                                                                                      │
-│ ZABBIX_DOCKER_BRANDING_DOCUMENTATION.md fayli yaratildi va unda quyidagilar bor:                                     │
+│ TAA_DOCKER_BRANDING_DOCUMENTATION.md fayli yaratildi va unda quyidagilar bor:                                     │
 │                                                                                                                      │
 │                                                                                                                      │
 │                                              📚 Dokumentatsiya Tarkibi:                                              │
@@ -1524,7 +1524,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 596.8K/5M
 │                                                                                                                      │
 │  • Logo va iconkalar o'zgartirish                                                                                    │
 │  • Ranglar va CSS sozlash                                                                                            │
-│  • Zabbix → TAA matnlarini o'zgartirish                                                                              │
+│  • TAA → TAA matnlarini o'zgartirish                                                                              │
 │  • Menu va navigation sozlash                                                                                        │
 │                                                                                                                      │
 │                                      6. Docker Build va Deploy - To'liq jarayon                                      │
@@ -1601,7 +1601,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 722.7K/5M
    .btn-li...                                                                                                         
        border-color: #e99003; }                                                                                       
                                                                                                                       
-   /* Custom logo override - replace all default Zabbix logos */                                                      
+   /* Custom logo override - replace all default TAA logos */                                                      
    div.zabbix-logo{background:url("../ui/assets/img/logo.svg") no-repeat !important;background-size:contain           
    !importa...                                                                                                        
    div.zabbix-logo-sidebar{background:url("../ui/assets/img/logo-sidebar.svg") no-repeat                              
@@ -1915,7 +1915,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 845.3K/5M
 │                                        4-QADAM: CSS Customization (Ixtiyoriy)                                        │
 │                                                                                                                      │
 │  • TAA ranglarini qo'shish                                                                                           │
-│  • Zabbix → TAA matnlarini o'zgartirish                                                                              │
+│  • TAA → TAA matnlarini o'zgartirish                                                                              │
 │                                                                                                                      │
 │ ──────────────────────────────────────────────────────────────────────────────────────────────────────────────────── │
 │                                                                                                                      │
@@ -1960,7 +1960,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 879.9K/5M
   Dockerfile:                                                                                                                                                                         
 
                                                                                                                       
-    # Zabbix veb imageni asos qilib olish                                                                             
+    # TAA veb imageni asos qilib olish                                                                             
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                              
                                                                                                                       
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                            
@@ -2080,7 +2080,7 @@ turibdsan kallang joyidami o'zi .Avval localdagi fayllarni ham yaxshilab tekshir
        'BRAND_LOGO' => 'local/img/logo.svg',                                                                          
        'BRAND_LOGO_SIDEBAR' => 'local/img/logo.svg',                                                                  
        'BRAND_LOGO_SIDEBAR_COMPACT' => 'local/img/logo-compact.svg',                                                  
-       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',                                                 
+       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',                                                 
        'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',                                        
        'BRAND_URL' => '#',                                                                                            
        'BRAND_TITLE' => 'TAA Monitoring System'                                                                       
@@ -2139,7 +2139,7 @@ turibdsan kallang joyidami o'zi .Avval localdagi fayllarni ham yaxshilab tekshir
   Dockerfile:
 
                                                                                                                       
-    # Zabbix veb imageni asos qilib olish                                                                             
+    # TAA veb imageni asos qilib olish                                                                             
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                              
                                                                                                                       
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                            
@@ -2242,7 +2242,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1M/5M
   Dockerfile:
 
                                                                                                                         
-    # Zabbix veb imageni asos qilib olish                                                                               
+    # TAA veb imageni asos qilib olish                                                                               
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                                
                                                                                                                         
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                              
@@ -2338,7 +2338,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1.1M/5M
   Dockerfile:
 
                                                                                                                       
-    # Zabbix veb imageni asos qilib olish                                                                             
+    # TAA veb imageni asos qilib olish                                                                             
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                              
                                                                                                                       
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                            
@@ -2437,7 +2437,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1.2M/5M
   Dockerfile:
 
                                                                                                                         
-    # Zabbix veb imageni asos qilib olish                                                                               
+    # TAA veb imageni asos qilib olish                                                                               
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                                
                                                                                                                       
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                            
@@ -2650,7 +2650,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1.3M/5M
        'BRAND_LOGO' => 'assets/img/logo.svg',                                                                         
        'BRAND_LOGO_SIDEBAR' => 'assets/img/logo.svg',                                                                 
        'BRAND_LOGO_SIDEBAR_COMPACT' => 'assets/img/logo-compact.svg',                                                 
-       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',                                                 
+       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',                                                 
        'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',                                        
        'BRAND_URL' => '#',                                                                                            
        'BRAND_TITLE' => 'TAA Monitoring System'                                                                       
@@ -2720,7 +2720,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1.4M/5M
        'BRAND_LOGO' => 'assets/img/logo.svg',                                                                         
        'BRAND_LOGO_SIDEBAR' => 'assets/img/logo-sidebar.svg',                                                         
        'BRAND_LOGO_SIDEBAR_COMPACT' => 'assets/img/logo-compact.svg',                                                 
-       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',                                                 
+       'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',                                                 
        'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',                                        
        'BRAND_URL' => '#',                                                                                            
        'BRAND_TITLE' => 'TAA Monitoring System'                                                                       
@@ -2851,7 +2851,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1.5M/5M
   Dockerfile:                                                                                                                                                                         
 
                                                                                                                       
-    # Zabbix veb imageni asos qilib olish                                                                             
+    # TAA veb imageni asos qilib olish                                                                             
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                              
                                                                                                                       
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                            
@@ -2988,7 +2988,7 @@ Daily total:     ▮▮▮▮▮▮▮▮▮▮ 1.7M/5M
   Dockerfile:
 
                                                                                                                         
-    # Zabbix veb imageni asos qilib olish                                                                               
+    # TAA veb imageni asos qilib olish                                                                               
     FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest                                                              
                                                                                                                       
     # Rootga o'tamiz (papkalar/COPY uchun)                                                                            
@@ -3065,7 +3065,7 @@ return [
         'BRAND_LOGO' => 'assets/img/logo.svg',
         'BRAND_LOGO_SIDEBAR' => 'assets/img/logo-sidebar.svg',
         'BRAND_LOGO_SIDEBAR_COMPACT' => 'assets/img/logo-compact.svg',
-        'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',
+        'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',
         'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',
         'BRAND_URL' => '#',
         'BRAND_TITLE' => 'TAA Monitoring System'

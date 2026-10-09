@@ -168,7 +168,7 @@ sub flush_bulk_insert
 sub usage
 {
 	print "Usage: $0 [mysql|postgresql]\n";
-	print "The script generates Zabbix SQL data files for different database engines.\n";
+	print "The script generates TAA SQL data files for different database engines.\n";
 	exit;
 }
 

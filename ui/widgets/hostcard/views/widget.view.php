@@ -275,8 +275,8 @@ function makeSectionMonitoredBy(array $host): CDiv {
 	switch ($host['monitored_by']) {
 		case ZBX_MONITORED_BY_SERVER:
 			$monitored_by = [
-				new CIcon(ZBX_ICON_SERVER, _('Zabbix server')),
-				_('Zabbix server')
+				new CIcon(ZBX_ICON_SERVER, _('TAA server')),
+				_('TAA server')
 			];
 			break;
 

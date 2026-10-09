@@ -46,7 +46,7 @@ class testPageLowLevelDiscovery extends CWebTest {
 		CDataHelper::createHosts([
 			[
 				'host' => 'Host with LLD',
-				'groups' => [['groupid' => 4]], // Zabbix servers.
+				'groups' => [['groupid' => 4]], // TAA servers.
 				'discoveryrules' => [
 					[
 						'name' => 'Trapper LLD for filter',
@@ -81,8 +81,8 @@ class testPageLowLevelDiscovery extends CWebTest {
 
 		// Check all dropdowns.
 		$dropdowns = [
-				'Type' => ['Zabbix agent', 'Zabbix agent (active)', 'Simple check',
-						'SNMP agent', 'Zabbix internal','Zabbix trapper', 'External check',
+				'Type' => ['TAA agent', 'TAA agent (active)', 'Simple check',
+						'SNMP agent', 'TAA internal','TAA trapper', 'External check',
 						'Database monitor', 'HTTP agent', 'IPMI agent', 'SSH agent',
 						'TELNET agent', 'JMX agent', 'Dependent item', 'All'],
 				'State' => ['Normal', 'Not supported', 'All'],
@@ -96,7 +96,7 @@ class testPageLowLevelDiscovery extends CWebTest {
 					case 'SNMP agent':
 						$this->assertTrue($form->getField('SNMP OID')->isVisible());
 						break;
-					case 'Zabbix trapper':
+					case 'TAA trapper':
 						$this->assertFalse($form->getField('Update interval')->isVisible());
 						break;
 					case 'Normal':
@@ -314,7 +314,7 @@ class testPageLowLevelDiscovery extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Name' => 'Containers discovery'
 					],
 					'context' => 'template',
@@ -414,7 +414,7 @@ class testPageLowLevelDiscovery extends CWebTest {
 				[
 					'filter' => [
 						'Host groups' => [
-							'Zabbix servers'
+							'TAA servers'
 						],
 						'Name' => 'DiscoveryRule ZBX6663'
 					],
@@ -452,7 +452,7 @@ class testPageLowLevelDiscovery extends CWebTest {
 						'15th LLD 🙃^天!',
 						'16th LLD',
 						'17th LLD',
-						'Linux by Zabbix agent: Block devices discovery',
+						'Linux by TAA agent: Block devices discovery',
 						'DR1-agent',
 						'DR2-trap',
 						'I1-lvl1-agent-num: DR3-I1-dep-agent',
@@ -463,15 +463,15 @@ class testPageLowLevelDiscovery extends CWebTest {
 						'Eleventh LLD',
 						'fifth LLD',
 						'forth LLD',
-						'Zabbix server health: Zabbix stats cluster: High availability cluster node discovery',
+						'TAA server health: TAA stats cluster: High availability cluster node discovery',
 						'LLD for Discovered host tests',
 						'LLD for host group test',
 						'LLD number 8',
 						'LLD rule for item types',
 						'LLD 🙂🙃 !@#$%^&*()_+ 祝你今天过得愉快',
-						'Linux by Zabbix agent: Get filesystems: Mounted filesystem discovery',
+						'Linux by TAA agent: Get filesystems: Mounted filesystem discovery',
 						'Mūsu desmitais LLD',
-						'Linux by Zabbix agent: Network interface discovery',
+						'Linux by TAA agent: Network interface discovery',
 						'sevenths LLD',
 						'sixth LLD',
 						'Test of discovered host 1 template for unlink: Template1 discovery rule',
@@ -479,8 +479,8 @@ class testPageLowLevelDiscovery extends CWebTest {
 						'Test of discovered host Template: Template discovery rule',
 						'Trapper LLD for filter',
 						'Trīspadsmitais LLD',
-						'Zabbix server health: Zabbix proxies stats: Zabbix proxy discovery',
-						'Zabbix server health: Zabbix proxy groups stats: Zabbix proxy groups discovery',
+						'TAA server health: TAA proxies stats: TAA proxy discovery',
+						'TAA server health: TAA proxy groups stats: TAA proxy groups discovery',
 						'Četrpadsmitais LLD'
 					]
 				]
@@ -493,7 +493,7 @@ class testPageLowLevelDiscovery extends CWebTest {
 						'State' => 'Normal'
 					],
 					'expected' => [
-						'Linux by Zabbix agent: Block devices discovery'
+						'Linux by TAA agent: Block devices discovery'
 					]
 				]
 			],
@@ -559,11 +559,11 @@ class testPageLowLevelDiscovery extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Hosts' => 'Test item host',
 						'Name' => 'Test discovery rule',
 						'Key' => 'test',
-						'Type' => 'Zabbix agent',
+						'Type' => 'TAA agent',
 						'Update interval' => '0',
 						'State' => 'All',
 						'Status' => 'Enabled'

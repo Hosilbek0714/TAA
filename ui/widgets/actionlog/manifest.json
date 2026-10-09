@@ -5,7 +5,7 @@
 	"name": "Action log",
 	"namespace": "ActionLog",
 	"version": "1.0",
-	"author": "Zabbix",
+	"author": "TAA",
 	"description": "Displays records about executed action operations (notifications, remote commands).",
 	"url": "web_interface/frontend_sections/dashboards/widgets/action_log",
 	"widget": {

@@ -727,7 +727,7 @@ class testFormTrigger extends CLegacyWebTest {
 					'description' => 'MyTrigger_generalCheck',
 					'expression' => 'last(/'.self::HOST.'/Float,#1)<5',
 					'type' => true,
-					'comments' => 'Trigger status (expression) is recalculated every time Zabbix server receives new'.
+					'comments' => 'Trigger status (expression) is recalculated every time TAA server receives new'.
 							' value, if this value is part of this expression. If time based functions are used in the'.
 							' expression, it is recalculated every 30 seconds by a zabbix timer process.',
 					'url_name' => 'Trigger context menu name for trigger URL.',
@@ -763,10 +763,10 @@ class testFormTrigger extends CLegacyWebTest {
 				[
 					'expected' => TEST_BAD,
 					'description' => 'MyTrigger',
-					'expression' => 'last(/Zabbix host/Unsigned,#1)<0',
+					'expression' => 'last(/TAA host/Unsigned,#1)<0',
 					'error_msg' => 'Cannot add trigger',
 					'errors' => [
-						'Incorrect trigger expression. Host "Zabbix host" does not exist or you have no access to this host.'
+						'Incorrect trigger expression. Host "TAA host" does not exist or you have no access to this host.'
 					]
 				]
 			],
@@ -822,14 +822,14 @@ class testFormTrigger extends CLegacyWebTest {
 				[
 					'expected' => TEST_BAD,
 					'description' => 'MyTrigger',
-					'expression' => 'last(/Zabbix host/Float,#1)<0 or 8 and 9',
+					'expression' => 'last(/TAA host/Float,#1)<0 or 8 and 9',
 					'constructor' => [
 						'text' => ['A or (B and C)', 'Or', 'And', 'A', 'B', 'C'],
 						'elements' => ['expr_0_28', 'expr_33_33', 'expr_39_39'],
 						'elementError' => true,
 						'element_count' => 2,
 						'errors' => [
-							'last(/Zabbix host/Float,#1): Unknown host, no such host present in system'
+							'last(/TAA host/Float,#1): Unknown host, no such host present in system'
 						]
 					]
 				]

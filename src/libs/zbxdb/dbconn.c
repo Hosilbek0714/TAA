@@ -955,7 +955,7 @@ static int	dbconn_begin(zbx_dbconn_t *db)
 
 	if (db->txn_level > 0)
 	{
-		zabbix_log(LOG_LEVEL_CRIT, "ERROR: nested transaction detected. Please report it to Zabbix Team.");
+		zabbix_log(LOG_LEVEL_CRIT, "ERROR: nested transaction detected. Please report it to TAA Team.");
 		zbx_this_should_never_happen_backtrace();
 		assert(0);
 	}
@@ -995,7 +995,7 @@ static int	dbconn_commit(zbx_dbconn_t *db)
 	if (0 == db->txn_level)
 	{
 		zabbix_log(LOG_LEVEL_CRIT, "ERROR: commit without transaction."
-				" Please report it to Zabbix Team.");
+				" Please report it to TAA Team.");
 		zbx_this_should_never_happen_backtrace();
 		assert(0);
 	}
@@ -1034,7 +1034,7 @@ static int	dbconn_rollback(zbx_dbconn_t *db)
 	if (0 == db->txn_level)
 	{
 		zabbix_log(LOG_LEVEL_CRIT, "ERROR: rollback without transaction."
-				" Please report it to Zabbix Team.");
+				" Please report it to TAA Team.");
 		zbx_this_should_never_happen_backtrace();
 		assert(0);
 	}
@@ -1803,7 +1803,7 @@ int	zbx_db_get_row_num(zbx_db_result_t result)
 #if defined(HAVE_MYSQL) || defined(HAVE_POSTGRESQL)
 static void	warn_char_set(const char *db_name, const char *char_set)
 {
-	zabbix_log(LOG_LEVEL_WARNING, "Zabbix supports only \"" ZBX_SUPPORTED_DB_CHARACTER_SET "\" character set(s)."
+	zabbix_log(LOG_LEVEL_WARNING, "TAA supports only \"" ZBX_SUPPORTED_DB_CHARACTER_SET "\" character set(s)."
 			" Database \"%s\" has default character set \"%s\"", db_name, char_set);
 }
 
@@ -1868,7 +1868,7 @@ void	zbx_db_check_character_set(void)
 
 		if (SUCCEED != zbx_str_in_list(ZBX_SUPPORTED_DB_COLLATION, collation, ZBX_DB_STRLIST_DELIM))
 		{
-			zabbix_log(LOG_LEVEL_WARNING, "Zabbix supports only \"%s\" collation(s)."
+			zabbix_log(LOG_LEVEL_WARNING, "TAA supports only \"%s\" collation(s)."
 					" Database \"%s\" has default collation \"%s\"", ZBX_SUPPORTED_DB_COLLATION,
 					db_config->dbname, collation);
 		}
@@ -1897,7 +1897,7 @@ void	zbx_db_check_character_set(void)
 	}
 	else if (0 != strcmp("0", row[0]))
 	{
-		zabbix_log(LOG_LEVEL_WARNING, "character set name or collation name that is not supported by Zabbix"
+		zabbix_log(LOG_LEVEL_WARNING, "character set name or collation name that is not supported by TAA"
 				" found in %s column(s) of database \"%s\"", row[0], db_config->dbname);
 		zabbix_log(LOG_LEVEL_WARNING, "only character set(s) \"%s\" and corresponding collation(s) \"%s\""
 				" should be used in database", ZBX_SUPPORTED_DB_CHARACTER_SET,
@@ -1972,7 +1972,7 @@ void	zbx_db_check_character_set(void)
 	}
 	else if (0 != strcmp("0", row[0]))
 	{
-		zabbix_log(LOG_LEVEL_WARNING, "database has %s fields with unsupported character set. Zabbix supports"
+		zabbix_log(LOG_LEVEL_WARNING, "database has %s fields with unsupported character set. TAA supports"
 				" only \"%s\" character set", row[0], ZBX_SUPPORTED_DB_CHARACTER_SET);
 	}
 
@@ -1987,7 +1987,7 @@ void	zbx_db_check_character_set(void)
 	}
 	else if (0 != strcasecmp(row[0], ZBX_SUPPORTED_DB_CHARACTER_SET))
 	{
-		zabbix_log(LOG_LEVEL_WARNING, "client_encoding for database \"%s\" is \"%s\". Zabbix supports only"
+		zabbix_log(LOG_LEVEL_WARNING, "client_encoding for database \"%s\" is \"%s\". TAA supports only"
 				" \"%s\"", db_config->dbname, row[0], ZBX_SUPPORTED_DB_CHARACTER_SET);
 	}
 
@@ -2002,7 +2002,7 @@ void	zbx_db_check_character_set(void)
 	}
 	else if (0 != strcasecmp(row[0], ZBX_SUPPORTED_DB_CHARACTER_SET))
 	{
-		zabbix_log(LOG_LEVEL_WARNING, "server_encoding for database \"%s\" is \"%s\". Zabbix supports only"
+		zabbix_log(LOG_LEVEL_WARNING, "server_encoding for database \"%s\" is \"%s\". TAA supports only"
 				" \"%s\"", db_config->dbname, row[0], ZBX_SUPPORTED_DB_CHARACTER_SET);
 	}
 out:

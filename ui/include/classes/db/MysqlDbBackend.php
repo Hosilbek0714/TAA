@@ -27,7 +27,7 @@ class MysqlDbBackend extends DbBackend {
 		$table_exists = DBfetch(DBselect("SHOW TABLES LIKE 'dbversion'"));
 
 		if (!$table_exists) {
-			$this->setError(_s('Unable to determine current Zabbix database version: %1$s.',
+			$this->setError(_s('Unable to determine current TAA database version: %1$s.',
 				_s('the table "%1$s" was not found', 'dbversion')
 			));
 
@@ -61,7 +61,7 @@ class MysqlDbBackend extends DbBackend {
 		));
 
 		if ($row && !in_array(strtoupper($row['db_charset']), ZBX_DB_MYSQL_ALLOWED_CHARSETS)) {
-			$this->setWarning(_s('Incorrect default charset for Zabbix database: %1$s.',
+			$this->setWarning(_s('Incorrect default charset for TAA database: %1$s.',
 				_s('"%1$s" instead "%2$s"', $row['db_charset'], implode(', ', ZBX_DB_MYSQL_ALLOWED_CHARSETS))
 			));
 			return false;

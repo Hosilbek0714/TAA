@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Morningstar SunSaver MPPT monitoring by Zabbix via SNMP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Morningstar SunSaver MPPT monitoring by TAA via SNMP and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -74,7 +74,7 @@ Refer to the vendor documentation.
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Morningstar SunSaver MPPT: Status: Device has been restarted|<p>Uptime is less than 10 minutes.</p>|`(last(/Morningstar SunSaver MPPT by SNMP/status.hw.uptime)>0 and last(/Morningstar SunSaver MPPT by SNMP/status.hw.uptime)<10m) or (last(/Morningstar SunSaver MPPT by SNMP/status.hw.uptime)=0 and last(/Morningstar SunSaver MPPT by SNMP/status.net.uptime)<10m)`|Info|**Manual close**: Yes|
-|Morningstar SunSaver MPPT: Status: Failed to fetch data|<p>Zabbix has not received data for items for the last 5 minutes.</p>|`nodata(/Morningstar SunSaver MPPT by SNMP/status.net.uptime,5m)=1`|Warning|**Manual close**: Yes|
+|Morningstar SunSaver MPPT: Status: Failed to fetch data|<p>TAA has not received data for items for the last 5 minutes.</p>|`nodata(/Morningstar SunSaver MPPT by SNMP/status.net.uptime,5m)=1`|Warning|**Manual close**: Yes|
 |Morningstar SunSaver MPPT: Battery: Device charge in warning state||`last(/Morningstar SunSaver MPPT by SNMP/charge.state[chargeState.0])={$CHARGE.STATE.WARN}`|Warning|**Depends on**:<br><ul><li>Morningstar SunSaver MPPT: Battery: Device charge in critical state</li></ul>|
 |Morningstar SunSaver MPPT: Battery: Device charge in critical state||`last(/Morningstar SunSaver MPPT by SNMP/charge.state[chargeState.0])={$CHARGE.STATE.CRIT}`|High||
 |Morningstar SunSaver MPPT: Load: Device load in warning state||`last(/Morningstar SunSaver MPPT by SNMP/load.state[loadState.0])={$LOAD.STATE.WARN:"lvdWarning"}  or last(/Morningstar SunSaver MPPT by SNMP/load.state[loadState.0])={$LOAD.STATE.WARN:"override"}`|Warning|**Depends on**:<br><ul><li>Morningstar SunSaver MPPT: Load: Device load in critical state</li></ul>|
@@ -139,5 +139,5 @@ Refer to the vendor documentation.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

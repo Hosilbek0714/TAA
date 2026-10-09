@@ -195,7 +195,7 @@ zabbix_export:
                             key: 'notes',
                             value: [
                                 {
-                                    userName: 'Zabbix',
+                                    userName: 'TAA',
                                     createDate: date,
                                     text: note
                                 }

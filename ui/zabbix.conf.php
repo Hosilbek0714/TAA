@@ -1,5 +1,5 @@
 <?php
-// Zabbix GUI configuration file.
+// TAA GUI configuration file.
 global $DB, $HISTORY;
 
 $DB['TYPE']     = getenv('DB_SERVER_TYPE');
@@ -55,7 +55,7 @@ else {
 $DB['VAULT_CACHE']              = getenv('ZBX_VAULTCACHE') == 'true' ? true: false;
 
 // Use IEEE754 compatible value range for 64-bit Numeric (float) history values.
-// This option is enabled by default for new Zabbix installations.
+// This option is enabled by default for new TAA installations.
 // For upgraded installations, please read database upgrade notes before enabling this option.
 $DB['DOUBLE_IEEE754']           = getenv('DB_DOUBLE_IEEE754') == 'true' ? true: false;
 

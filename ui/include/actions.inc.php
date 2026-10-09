@@ -587,7 +587,7 @@ function getActionOperationDescriptions(array $operations, int $eventsource, arr
 
 				if ($eventsource == EVENT_SOURCE_SERVICE) {
 					$result[$i][] = [
-						bold(_s('Run script "%1$s" on Zabbix server', $scripts[$scriptid]['name'])),
+						bold(_s('Run script "%1$s" on TAA server', $scripts[$scriptid]['name'])),
 						BR()
 					];
 

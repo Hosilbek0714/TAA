@@ -1079,7 +1079,7 @@ int	process_eventslog6(zbx_vector_addr_ptr_t *addrs, zbx_vector_ptr_t *agent2_re
 			if (0 >= (delay = metric->nextcheck - (int)time(NULL)))
 					delay = 1;
 
-			/* do not flood Zabbix server if file grows too fast */
+			/* do not flood TAA server if file grows too fast */
 			if (s_count >= (rate * delay))
 				break;
 

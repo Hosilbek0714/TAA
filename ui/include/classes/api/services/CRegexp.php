@@ -213,8 +213,8 @@ class CRegexp extends CApiService {
 
 				/**
 				 * Set default value for expression delimiter.
-				 * Because Zabbix agent 2 cannot work with regular expression when delimiter is empty.
-				 * Bugfix for Zabbix agent 2 5.0.22 and less.
+				 * Because TAA agent 2 cannot work with regular expression when delimiter is empty.
+				 * Bugfix for TAA agent 2 5.0.22 and less.
 				 */
 				$expression += ['exp_delimiter' => ','];
 

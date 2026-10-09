@@ -30,7 +30,7 @@ class testFormHostGroup extends testFormGroups {
 	protected static $update_group = 'Group for Update test';
 
 	public function testFormHostGroup_Layout() {
-		$this->layout('Zabbix servers');
+		$this->layout('TAA servers');
 	}
 
 	public function testFormHostGroup_DiscoveredLayout() {
@@ -57,9 +57,9 @@ class testFormHostGroup extends testFormGroups {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Group name' => 'Zabbix servers'
+						'Group name' => 'TAA servers'
 					],
-					'error' => 'Host group "Zabbix servers" already exists.'
+					'error' => 'Host group "TAA servers" already exists.'
 				]
 			],
 			[
@@ -96,10 +96,10 @@ class testFormHostGroup extends testFormGroups {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Group name' => 'Zabbix servers',
+						'Group name' => 'TAA servers',
 						'Apply permissions and tag filters to all subgroups' => true
 					],
-					'error' => 'Host group "Zabbix servers" already exists.'
+					'error' => 'Host group "TAA servers" already exists.'
 				]
 			],
 			[

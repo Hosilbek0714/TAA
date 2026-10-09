@@ -1,12 +1,12 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: Zabbix 6.0\n"
+"Project-Id-Version: TAA 6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-19 13:48+0300\n"
 "PO-Revision-Date: 2024-10-03 04:06+0000\n"
 "Last-Translator: Felipe L. Ewald <felipe.idj@hotmail.com>\n"
-"Language-Team: Zabbix <info@zabbix.com>\n"
+"Language-Team: TAA <info@zabbix.com>\n"
 "Language: pt_BR\n"
 "MIME-Version: 1.0\n"
 "Content-Type: text/plain; charset=UTF-8\n"
@@ -374,7 +374,7 @@ msgid "1 minute"
 msgstr "1 minuto"
 
 #: app/views/host.wizard.edit.php:861
-msgid "1. Install Java Gateway on the same machine running Zabbix server by following the instructions in"
+msgid "1. Install Java Gateway on the same machine running TAA server by following the instructions in"
 msgstr ""
 
 #: app/views/administration.queue.overview.php:48
@@ -1254,8 +1254,8 @@ msgid "Agent port"
 msgstr ""
 
 #: include/classes/data/CItemData.php:919
-msgid "Agent variant check. Returns 1 - for Zabbix agent; 2 - for Zabbix agent 2"
-msgstr "Verificação da variante do agente. Retorna 1 - para o agente Zabbix; 2 - para o agente Zabbix 2"
+msgid "Agent variant check. Returns 1 - for TAA agent; 2 - for TAA agent 2"
+msgstr "Verificação da variante do agente. Retorna 1 - para o agente TAA; 2 - para o agente TAA 2"
 
 #: app/views/host.wizard.edit.php:158 app/views/js/host.wizard.edit.js.php:1781
 msgid "Agent-based"
@@ -2816,8 +2816,8 @@ msgstr[1] "Não é possível excluir SLAs"
 
 #: include/classes/api/services/CUser.php:1287
 #, c-format
-msgid "Cannot delete Zabbix internal user \"%1$s\", try disabling that user."
-msgstr "Não é possível excluir o usuário interno do Zabbix \"%1$s\", tente desabilitar esse usuário."
+msgid "Cannot delete TAA internal user \"%1$s\", try disabling that user."
+msgstr "Não é possível excluir o usuário interno do TAA \"%1$s\", tente desabilitar esse usuário."
 
 #: app/controllers/CControllerActionDelete.php:87
 msgid "Cannot delete action"
@@ -4110,8 +4110,8 @@ msgstr "Não é possível ler YAML: %1$s."
 
 #: include/classes/server/CZabbixServer.php:567
 #, c-format
-msgid "Cannot read the response, check connection with the Zabbix server \"%1$s\"."
-msgstr "Não é possível receber a resposta, verifique a comunicação com o servidor Zabbix \"%1$s\"."
+msgid "Cannot read the response, check connection with the TAA server \"%1$s\"."
+msgstr "Não é possível receber a resposta, verifique a comunicação com o servidor TAA \"%1$s\"."
 
 #: app/controllers/CControllerPopupMassupdateHost.php:363
 #, c-format
@@ -4141,8 +4141,8 @@ msgstr "Não é possível salvar o widget \"%1$s\"."
 
 #: include/classes/server/CZabbixServer.php:508
 #, c-format
-msgid "Cannot send command, check connection with Zabbix server \"%1$s\"."
-msgstr "Não é possível enviar o comando, verifique a comunicação com o servidor Zabbix \"%1$s\"."
+msgid "Cannot send command, check connection with TAA server \"%1$s\"."
+msgstr "Não é possível enviar o comando, verifique a comunicação com o servidor TAA \"%1$s\"."
 
 #: app/controllers/CControllerItemMassCheckNow.php:124
 #: app/controllers/CControllerItemMassCheckNow.php:140
@@ -4306,7 +4306,7 @@ msgstr "Não é possível atualizar \"%1$s\" para o protótipo de trigger de tem
 
 #: include/classes/api/helpers/CApiSettingsHelper.php:94
 #, c-format
-msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading Zabbix to remove this limitation."
+msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading TAA to remove this limitation."
 msgstr ""
 
 #: include/classes/api/services/CHost.php:2344
@@ -5111,11 +5111,11 @@ msgid "Communication"
 msgstr "Comunicação"
 
 #: app/views/host.wizard.edit.php:375
-msgid "Communication between Zabbix agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
+msgid "Communication between TAA agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:414
-msgid "Communication between Zabbix agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
+msgid "Communication between TAA agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
 msgstr ""
 
 #: include/items.inc.php:946
@@ -5408,8 +5408,8 @@ msgid "Confirms the problem is noticed (acknowledging user will be recorded). St
 msgstr "Confirma que o problema foi percebido (o reconhecimento do usuário será registrado). A mudança de status aciona a operação de atualização da ação."
 
 #: include/classes/setup/CSetupWizard.php:1059
-msgid "Congratulations! You have successfully installed Zabbix frontend."
-msgstr "Parabéns! Você instalou com sucesso a interface web do Zabbix."
+msgid "Congratulations! You have successfully installed TAA frontend."
+msgstr "Parabéns! Você instalou com sucesso a interface web do TAA."
 
 #: include/hosts.inc.php:1227 include/views/inventory.host.view.php:81
 #: include/views/js/monitoring.sysmaps.js.php:792
@@ -5434,49 +5434,49 @@ msgstr "Segurança de conexão"
 
 #: include/classes/server/CZabbixServer.php:521
 #, c-format
-msgid "Connection timeout of %1$s seconds exceeded when connecting to Zabbix server \"%2$s\"."
-msgstr "O tempo limite de %1$s segundos foi excedido enquanto se conectava ao servidor Zabbix \"%2$s\"."
+msgid "Connection timeout of %1$s seconds exceeded when connecting to TAA server \"%2$s\"."
+msgstr "O tempo limite de %1$s segundos foi excedido enquanto se conectava ao servidor TAA \"%2$s\"."
 
 #: include/classes/server/CZabbixServer.php:634
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" failed. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" failed. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect DNS server configuration.\n"
 msgstr ""
-"Falha na conexão com o servidor Zabbix \"%1$s\". Possíveis motivos:\n"
+"Falha na conexão com o servidor TAA \"%1$s\". Possíveis motivos:\n"
 "1. \"NodeAddress\" ou \"ListenPort\" incorretos em \"zabbix_server.conf\" ou substituição do IP/DNS do servidor em \"zabbix.conf.php\";\n"
 "2. Configuração incorreta do servidor DNS.\n"
 
 #: include/classes/server/CZabbixServer.php:622
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" refused. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" refused. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Security environment (for example, SELinux) is blocking the connection;\n"
-"3. Zabbix server daemon not running;\n"
+"3. TAA server daemon not running;\n"
 "4. Firewall is blocking TCP connection.\n"
 msgstr ""
-"A conexão com o servidor Zabbix \"%1$s\" foi recusada. Possíveis motivos:\n"
+"A conexão com o servidor TAA \"%1$s\" foi recusada. Possíveis motivos:\n"
 "1. \"NodeAddress\" ou \"ListenPort\" incorretos em \"zabbix_server.conf\" ou substituição do IP/DNS do servidor em \"zabbix.conf.php\";\n"
 "2. O ambiente de segurança (por exemplo, SELinux) está bloqueando a conexão;\n"
-"3. O daemon do servidor Zabbix não está sendo executado;\n"
+"3. O daemon do servidor TAA não está sendo executado;\n"
 "4. O firewall está bloqueando a conexão TCP.\n"
 
 #: include/classes/server/CZabbixServer.php:630
 #, c-format
 msgid ""
-"Connection to Zabbix server \"%1$s\" timed out. Possible reasons:\n"
+"Connection to TAA server \"%1$s\" timed out. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Firewall is blocking TCP connection.\n"
 msgstr ""
-"A conexão com o servidor Zabbix \"%1$s\" atingiu o tempo limite. Possíveis motivos:\n"
+"A conexão com o servidor TAA \"%1$s\" atingiu o tempo limite. Possíveis motivos:\n"
 "1. \"NodeAddress\" ou \"ListenPort\" incorretos em \"zabbix_server.conf\" ou substituição do IP/DNS do servidor em \"zabbix.conf.php\";\n"
 "2. O firewall está bloqueando a conexão TCP.\n"
 
 #: include/classes/server/CZabbixServer.php:614
-msgid "Connection to Zabbix server failed. Incorrect configuration."
-msgstr "Falha na conexão com o servidor Zabbix. Configuração incorreta."
+msgid "Connection to TAA server failed. Incorrect configuration."
+msgstr "Falha na conexão com o servidor TAA. Configuração incorreta."
 
 #: include/classes/setup/CSetupWizard.php:647
 msgid "Connection will not be encrypted because it uses a socket file (on Unix) or shared memory (Windows)."
@@ -6326,15 +6326,15 @@ msgid "Data from %1$s. Generated in %2$s sec."
 msgstr "Dado de %1$s. Gerado em %2$s segundos."
 
 #: app/views/host.wizard.edit.php:168
-msgid "Data is collected by Zabbix agent, a lightweight software `component installed on your monitoring target."
+msgid "Data is collected by TAA agent, a lightweight software `component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:89
-msgid "Data is collected by Zabbix agent, a lightweight software component installed on your monitoring target."
+msgid "Data is collected by TAA agent, a lightweight software component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:90
-msgid "Data is collected by Zabbix server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
+msgid "Data is collected by TAA server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
 msgstr ""
 
 #: app/views/js/webscenario.step.edit.js.php:297
@@ -8222,7 +8222,7 @@ msgid "Enable HTTP authentication for all users."
 msgstr "Habilite a autenticação HTTP para todos os usuários."
 
 #: app/views/host.wizard.edit.php:811
-msgid "Enable IPMI checks on Zabbix server"
+msgid "Enable IPMI checks on TAA server"
 msgstr ""
 
 #: app/views/administration.authentication.edit.php:209
@@ -8531,7 +8531,7 @@ msgid "Enter a non-secret pre-shared key identity string. Avoid including sensit
 msgstr ""
 
 #: app/views/host.wizard.edit.php:609
-msgid "Enter the IP/DNS address and port of the Zabbix agent installed on your monitoring target."
+msgid "Enter the IP/DNS address and port of the TAA agent installed on your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:771
@@ -8604,8 +8604,8 @@ msgstr ""
 #: app/partials/administration.system.info.php:148
 #: app/partials/administration.system.info.php:160
 #: app/partials/administration.system.info.php:173
-msgid "Error! Unable to start Zabbix server."
-msgstr "Erro! Não é possível iniciar o servidor Zabbix."
+msgid "Error! Unable to start TAA server."
+msgstr "Erro! Não é possível iniciar o servidor TAA."
 
 #: include/classes/screens/CScreenHttpTestDetails.php:111
 #: include/classes/screens/CScreenHttpTestDetails.php:182
@@ -9054,8 +9054,8 @@ msgid "Failure Audit"
 msgstr "Falha de Auditoria"
 
 #: app/views/system.warning.php:27 app/views/system.warning.php:52
-msgid "Fatal error, please report to the Zabbix team"
-msgstr "Erro fatal, favor reportar ao time Zabbix"
+msgid "Fatal error, please report to the TAA team"
+msgstr "Erro fatal, favor reportar ao time TAA"
 
 #: widgets/favgraphs/Widget.php:29
 msgid "Favorite graphs"
@@ -9512,12 +9512,12 @@ msgstr "A expressão regular \"%1$s\" não existe."
 #: app/views/administration.script.edit.php:122
 #: app/views/popup.operation.edit.php:63
 #: include/classes/api/services/CScript.php:950
-msgid "Global script execution on Zabbix server is disabled by server configuration."
-msgstr "A execução de script global no servidor Zabbix está desabilitada pela configuração do servidor."
+msgid "Global script execution on TAA server is disabled by server configuration."
+msgstr "A execução de script global no servidor TAA está desabilitada pela configuração do servidor."
 
 #: app/partials/administration.system.info.php:138
-msgid "Global scripts on Zabbix server"
-msgstr "Scripts globais no servidor Zabbix"
+msgid "Global scripts on TAA server"
+msgstr "Scripts globais no servidor TAA"
 
 #: app/views/popup.proxy.edit.php:199
 msgid "Global timeouts"
@@ -10875,8 +10875,8 @@ msgid "Identification of the system. Returns string"
 msgstr "Identificação do sistema. Retorna texto"
 
 #: app/views/administration.authentication.edit.php:153
-msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by Zabbix."
-msgstr "Se a autenticação HTTP estiver ativada, todos os usuários (mesmo com acesso front-end definido como LDAP/Interno) serão autenticados pelo servidor da Web, não pelo Zabbix."
+msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAA."
+msgstr "Se a autenticação HTTP estiver ativada, todos os usuários (mesmo com acesso front-end definido como LDAP/Interno) serão autenticados pelo servidor da Web, não pelo TAA."
 
 #: include/classes/helpers/CServiceHelper.php:83
 #, c-format
@@ -11054,7 +11054,7 @@ msgid "In range"
 msgstr "No Intervalo"
 
 #: app/views/host.wizard.edit.php:813
-msgid "In the Zabbix server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
+msgid "In the TAA server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
 msgstr ""
 
 #: include/classes/widgets/fields/CWidgetFieldMultiSelectSla.php:31
@@ -11415,8 +11415,8 @@ msgstr "Senha atual incorreta."
 #: include/classes/db/MysqlDbBackend.php:69
 #: include/classes/db/PostgresqlDbBackend.php:95
 #, c-format
-msgid "Incorrect default charset for Zabbix database: %1$s."
-msgstr "Conjunto de caracteres padrão incorreto para o banco de dados Zabbix: %1$s."
+msgid "Incorrect default charset for TAA database: %1$s."
+msgstr "Conjunto de caracteres padrão incorreto para o banco de dados TAA: %1$s."
 
 #: include/classes/db/DB.php:696 include/classes/db/DB.php:863
 #, c-format
@@ -11531,8 +11531,8 @@ msgstr "A expressão regular \"%1$s\": \"%2$s\" é inválida"
 #: include/classes/server/CZabbixServer.php:575
 #: include/classes/server/CZabbixServer.php:582
 #, c-format
-msgid "Incorrect response received from Zabbix server \"%1$s\"."
-msgstr "Foi recebida uma resposta inválida do servidor Zabbix \"%1$s\"."
+msgid "Incorrect response received from TAA server \"%1$s\"."
+msgstr "Foi recebida uma resposta inválida do servidor TAA \"%1$s\"."
 
 #: app/controllers/CControllerSlaCreateUpdate.php:34
 #: app/controllers/CControllerSlaCreateUpdate.php:84
@@ -12036,15 +12036,15 @@ msgid "Install"
 msgstr "Instalação"
 
 #: app/views/host.wizard.edit.php:351 app/views/js/host.wizard.edit.js.php:1128
-msgid "Install Zabbix agent"
+msgid "Install TAA agent"
 msgstr ""
 
 #: app/views/host.wizard.edit.php:512 app/views/host.wizard.edit.php:535
-msgid "Install Zabbix agent 2 and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAA agent 2 and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:551 app/views/host.wizard.edit.php:574
-msgid "Install Zabbix agent and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAA agent and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: setup.php:163
@@ -13503,20 +13503,20 @@ msgid "List of Windows Registry values or keys located at given key. Returns JSO
 msgstr "Lista de valores ou chaves do Registro do Windows localizados em uma determinada chave. Retorna JSON."
 
 #: include/classes/data/CItemData.php:2743
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
-msgstr "Lista de proxies do Zabbix com nome, modo, criptografia, compactação, versão, última visualização, contagem de hosts, contagem de itens, valores necessários por segundo (vps) e compatibilidade (atual/desatualizado/sem suporte). Retorna JSON."
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
+msgstr "Lista de proxies do TAA com nome, modo, criptografia, compactação, versão, última visualização, contagem de hosts, contagem de itens, valores necessários por segundo (vps) e compatibilidade (atual/desatualizado/sem suporte). Retorna JSON."
 
 #: include/classes/data/CItemData.php:2877
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
-msgstr "Lista de proxies Zabbix com nome, modo, criptografia, compressão, versão, último visto, contagem de hosts, contagem de itens, valores necessários por segundo (vps), compatibilidade (atual/desatualizado/não suportado), tempos limite, nome do grupo de proxy se o proxy pertencer a grupo, estado (desconhecido/offline/online). Retorna JSON."
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
+msgstr "Lista de proxies TAA com nome, modo, criptografia, compressão, versão, último visto, contagem de hosts, contagem de itens, valores necessários por segundo (vps), compatibilidade (atual/desatualizado/não suportado), tempos limite, nome do grupo de proxy se o proxy pertencer a grupo, estado (desconhecido/offline/online). Retorna JSON."
 
 #: include/classes/data/CItemData.php:2905
-msgid "List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
-msgstr "Lista de proxies Zabbix com nome, modo, criptografia, compactação, versão, último visto, contagem de hosts, contagem de itens, valores necessários por segundo (vps), compatibilidade (atual/desatualizado/sem suporte), tempos limite, nome do grupo de proxy, estado (desconhecido/desligado/ligado). Retorna JSON."
+msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
+msgstr "Lista de proxies TAA com nome, modo, criptografia, compactação, versão, último visto, contagem de hosts, contagem de itens, valores necessários por segundo (vps), compatibilidade (atual/desatualizado/sem suporte), tempos limite, nome do grupo de proxy, estado (desconhecido/desligado/ligado). Retorna JSON."
 
 #: include/classes/data/CItemData.php:2935
-msgid "List of Zabbix proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
-msgstr "Lista de dados de configuração de grupos de proxies Zabbix e dados em tempo real. Os dados de configuração incluem nome do grupo de proxies, período de failover e número mínimo de proxies online necessários para que o grupo fique online. Os dados em tempo real incluem número de proxies online, percentagem de proxies online e estado do grupo de proxies (desconhecido, offline, recuperando, online, degradando). Este item não retorna proxies sem grupo. Retorna JSON."
+msgid "List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
+msgstr "Lista de dados de configuração de grupos de proxies TAA e dados em tempo real. Os dados de configuração incluem nome do grupo de proxies, período de failover e número mínimo de proxies online necessários para que o grupo fique online. Os dados em tempo real incluem número de proxies online, percentagem de proxies online e estado do grupo de proxies (desconhecido, offline, recuperando, online, degradando). Este item não retorna proxies sem grupo. Retorna JSON."
 
 #: include/classes/data/CItemData.php:1559
 msgid "List of block devices and their type. Returns JSON"
@@ -14014,12 +14014,12 @@ msgid "Map update failed."
 msgstr "A atualização do mapa falhou."
 
 #: app/views/popup.ldap.edit.php:259
-msgid "Map user's LDAP media attributes (e.g. email) to Zabbix user media for sending notifications."
-msgstr "Mapeie os atributos de mídia LDAP do usuário (por exemplo, e-mail) para a mídia do usuário do Zabbix para enviar notificações."
+msgid "Map user's LDAP media attributes (e.g. email) to TAA user media for sending notifications."
+msgstr "Mapeie os atributos de mídia LDAP do usuário (por exemplo, e-mail) para a mídia do usuário do TAA para enviar notificações."
 
 #: app/views/administration.authentication.edit.php:512
-msgid "Map user's SAML media attributes (e.g. email) to Zabbix user media for sending notifications."
-msgstr "Mapeie os atributos de mídia SAML do usuário (por exemplo, e-mail) para a mídia do usuário do Zabbix para enviar notificações."
+msgid "Map user's SAML media attributes (e.g. email) to TAA user media for sending notifications."
+msgstr "Mapeie os atributos de mídia SAML do usuário (por exemplo, e-mail) para a mídia do usuário do TAA para enviar notificações."
 
 #: include/classes/api/services/CDashboardGeneral.php:600
 #, c-format
@@ -16037,8 +16037,8 @@ msgid "Number of items (enabled/disabled/not supported)"
 msgstr "Quantidade de itens (habilitados/desabilitados/não suportados)"
 
 #: include/classes/data/CItemData.php:2694
-msgid "Number of items in Zabbix database."
-msgstr "Número de itens no banco de dados do Zabbix."
+msgid "Number of items in TAA database."
+msgstr "Número de itens no banco de dados do TAA."
 
 #: include/classes/data/CItemData.php:2750
 msgid "Number of items in proxy history that are not yet sent to the server"
@@ -16050,8 +16050,8 @@ msgstr "Número de itens na fila que estão atrasados de a segundos, inclusive."
 
 #: include/classes/data/CItemData.php:2615
 #: include/classes/data/CItemData.php:2778
-msgid "Number of items in the queue which are delayed in Zabbix server or proxy by \"from\" till \"to\" seconds, inclusive."
-msgstr "Número de itens na fila que estão atrasados no servidor Zabbix ou no proxy por \"de\" até \"até\" segundos, inclusive."
+msgid "Number of items in the queue which are delayed in TAA server or proxy by \"from\" till \"to\" seconds, inclusive."
+msgstr "Número de itens na fila que estão atrasados no servidor TAA ou no proxy por \"de\" até \"até\" segundos, inclusive."
 
 #: include/classes/data/CItemData.php:2687
 msgid "Number of monitored hosts"
@@ -16110,12 +16110,12 @@ msgid "Number of triggers (enabled/disabled [problem/ok])"
 msgstr "Quantidade de triggers (habilitadas/desabilitadas [incidente/ok])"
 
 #: include/classes/data/CItemData.php:2799
-msgid "Number of triggers in Zabbix database."
-msgstr "Número de triggers no banco de dados Zabbix."
+msgid "Number of triggers in TAA database."
+msgstr "Número de triggers no banco de dados TAA."
 
 #: include/classes/data/CItemData.php:2701
-msgid "Number of unsupported items in Zabbix database."
-msgstr "Número de itens não suportados no banco de dados Zabbix."
+msgid "Number of unsupported items in TAA database."
+msgstr "Número de itens não suportados no banco de dados TAA."
 
 #: include/classes/data/CItemData.php:2659
 msgid "Number of unsupported items on the host."
@@ -16361,8 +16361,8 @@ msgid "Only Super admin users can update \"%1$s\" parameter."
 msgstr "Somente usuários Super administradores podem atualizar o parâmetro \"%1$s\"."
 
 #: include/classes/api/services/CDRule.php:509
-msgid "Only Zabbix agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
-msgstr "Apenas através de verificações com o agente Zabbix, SNMPv1, SNMPv2 e SNMPv3 pode ser feita a verificação de unicidade."
+msgid "Only TAA agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
+msgstr "Apenas através de verificações com o agente TAA, SNMPv1, SNMPv2 e SNMPv3 pode ser feita a verificação de unicidade."
 
 #: include/classes/api/services/CMap.php:666
 #: include/classes/api/services/CMap.php:1120
@@ -17116,8 +17116,8 @@ msgid "Password (once again)"
 msgstr "Senha (novamente)"
 
 #: app/views/administration.user.edit.php:205
-msgid "Password can only be changed for users using the internal Zabbix authentication."
-msgstr "A senha só pode ser alterada para usuários que usam a autenticação interna do Zabbix."
+msgid "Password can only be changed for users using the internal TAA authentication."
+msgstr "A senha só pode ser alterada para usuários que usam a autenticação interna do TAA."
 
 #: app/views/administration.user.edit.php:195
 msgid "Password is not mandatory for non internal authentication type."
@@ -18113,8 +18113,8 @@ msgid "Recipient already exists."
 msgstr "O destinatário já existe."
 
 #: app/views/reports.actionlog.list.csv.php:39
-msgid "Recipient's Zabbix username"
-msgstr "Nome de usuário do Zabbix do destinatário"
+msgid "Recipient's TAA username"
+msgstr "Nome de usuário do TAA do destinatário"
 
 #: app/views/reports.actionlog.list.csv.php:40
 msgid "Recipient's name"
@@ -18604,8 +18604,8 @@ msgid "Required host permissions"
 msgstr "Permissões de host necessárias"
 
 #: include/classes/data/CItemData.php:2771
-msgid "Required performance of the Zabbix server, in new values per second expected."
-msgstr "Performance requerida do servidor Zabbix, em novos valores por segundo."
+msgid "Required performance of the TAA server, in new values per second expected."
+msgstr "Performance requerida do servidor TAA, em novos valores por segundo."
 
 #: app/partials/administration.system.info.php:101
 msgid "Required server performance, new values per second"
@@ -18818,13 +18818,13 @@ msgid "Returns ICMP ping response time in seconds. Example: 0.02"
 msgstr "Tempo de resposta do ICMP ping. Exemplo: 0,02"
 
 #: include/classes/data/CItemData.php:2680
-msgid "Returns a JSON array describing the host network interfaces configured in Zabbix. Can be used for LLD."
-msgstr "Retorna um array JSON que descreve as interfaces de rede do host configuradas no Zabbix. Pode ser usado para LLD."
+msgid "Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD."
+msgstr "Retorna um array JSON que descreve as interfaces de rede do host configuradas no TAA. Pode ser usado para LLD."
 
 #: include/classes/data/CItemData.php:2623
 #: include/classes/data/CItemData.php:2785
-msgid "Returns a JSON object containing Zabbix server or proxy internal metrics."
-msgstr "Retorna um objeto JSON contendo as métricas internas do servidor Zabbix ou do proxy."
+msgid "Returns a JSON object containing TAA server or proxy internal metrics."
+msgstr "Retorna um objeto JSON contendo as métricas internas do servidor TAA ou do proxy."
 
 #: include/classes/data/CItemData.php:2673
 msgid "Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, active_agent, snmp, ipmi, jmx."
@@ -18835,8 +18835,8 @@ msgid "Returns current maintenance status of the host."
 msgstr "Retorna o status atual de manutenção do host."
 
 #: include/classes/data/CItemData.php:2708
-msgid "Returns information associated with Zabbix Java gateway. Valid params are: ping, version."
-msgstr "Retorna a informação associada ao gateway java do Zabbix. Os parâmetros válidos são: ping, version."
+msgid "Returns information associated with TAA Java gateway. Valid params are: ping, version."
+msgstr "Retorna a informação associada ao gateway java do TAA. Os parâmetros válidos são: ping, version."
 
 #: include/classes/data/CItemData.php:1183
 msgid "Returns number of TCP sockets that match parameters. Returns integer"
@@ -18920,8 +18920,8 @@ msgstr "Regras"
 
 #: include/actions.inc.php:578
 #, c-format
-msgid "Run script \"%1$s\" on Zabbix server"
-msgstr "Executar o script \"%1$s\" no servidor Zabbix"
+msgid "Run script \"%1$s\" on TAA server"
+msgstr "Executar o script \"%1$s\" no servidor TAA"
 
 #: include/actions.inc.php:591
 #, c-format
@@ -19970,11 +19970,11 @@ msgid "Set this view as default"
 msgstr "Definir essa exibição como padrão"
 
 #: app/views/host.wizard.edit.php:493
-msgid "Set up Zabbix agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
+msgid "Set up TAA agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
 msgstr ""
 
 #: app/views/host.wizard.edit.php:477
-msgid "Set up Zabbix agent on your monitoring target by executing the following script [bash under root]:"
+msgid "Set up TAA agent on your monitoring target by executing the following script [bash under root]:"
 msgstr ""
 
 #: app/views/js/popup.itemtestedit.view.js.php:383 include/forms.inc.php:1599
@@ -20286,8 +20286,8 @@ msgid "Show value"
 msgstr "Exibir valor"
 
 #: app/views/administration.gui.edit.php:110
-msgid "Show warning if Zabbix server is down"
-msgstr "Exibir um alerta se o servidor Zabbix estiver fora do ar"
+msgid "Show warning if TAA server is down"
+msgstr "Exibir um alerta se o servidor TAA estiver fora do ar"
 
 #: include/views/configuration.graph.edit.php:126
 msgid "Show working time"
@@ -20435,11 +20435,11 @@ msgstr "Tamanho"
 
 #: include/classes/server/CZabbixServer.php:554
 #, c-format
-msgid "Size of the response received from Zabbix server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
-msgstr "O tamanho da resposta recebida do servidor Zabbix \"%1$s\" excedeu o tamanho permitido de %2$s bytes. Este valor pode ser modificado modificando a constante ZBX_SOCKET_BYTES_LIMIT em include/defines.inc.php."
+msgid "Size of the response received from TAA server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
+msgstr "O tamanho da resposta recebida do servidor TAA \"%1$s\" excedeu o tamanho permitido de %2$s bytes. Este valor pode ser modificado modificando a constante ZBX_SOCKET_BYTES_LIMIT em include/defines.inc.php."
 
 #: app/views/host.wizard.edit.php:355
-msgid "Skip OS selection if you already have Zabbix agent installed."
+msgid "Skip OS selection if you already have TAA agent installed."
 msgstr ""
 
 #: include/locales.inc.php:61
@@ -20649,8 +20649,8 @@ msgid "Starting TLS failed."
 msgstr "Falha ao inicializar o TLS."
 
 #: include/classes/data/CItemData.php:2631
-msgid "Startup time of Zabbix server, Unix timestamp."
-msgstr "Horário de início do servidor Zabbix, padrão de hora do UNIX."
+msgid "Startup time of TAA server, Unix timestamp."
+msgstr "Horário de início do servidor TAA, padrão de hora do UNIX."
 
 #: app/partials/configuration.filter.items.php:180
 #: app/partials/monitoring.latest.filter.php:187
@@ -20680,8 +20680,8 @@ msgid "Static link"
 msgstr ""
 
 #: include/classes/data/CItemData.php:2841
-msgid "Statistics and availability of Zabbix write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
-msgstr "Estatísticas e disponibilidade do cache de gravação do Zabbix. Cache - um dos valores (modos: all, float, uint, str, log, text, sem suporte), histórico (modos: pfree, free, total, used, pused), índice (modos: pfree, free, total, used, pused), tendência (modos: pfree, free, total, used, pused)."
+msgid "Statistics and availability of TAA write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
+msgstr "Estatísticas e disponibilidade do cache de gravação do TAA. Cache - um dos valores (modos: all, float, uint, str, log, text, sem suporte), histórico (modos: pfree, free, total, used, pused), índice (modos: pfree, free, total, used, pused), tendência (modos: pfree, free, total, used, pused)."
 
 #: include/classes/data/CItemData.php:2848
 msgid "Statistics and availability of proxy memory buffer. Mode (modes: pfree, free, total, used, pused)."
@@ -20972,8 +20972,8 @@ msgid "Support"
 msgstr "Suporte"
 
 #: include/classes/setup/CSetupWizard.php:517
-msgid "Support for Oracle DB is deprecated since Zabbix 7.0 and will be removed in future versions."
-msgstr "O suporte para Oracle DB está obsoleto desde o Zabbix 7.0 e será removido em versões futuras."
+msgid "Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgstr "O suporte para Oracle DB está obsoleto desde o TAA 7.0 e será removido em versões futuras."
 
 #: include/classes/html/widgets/fields/CWidgetFieldLatLngView.php:37
 msgid "Supported formats:"
@@ -21050,8 +21050,8 @@ msgid "System default"
 msgstr "Padrão do sistema"
 
 #: include/func.inc.php:1848
-msgid "System error occurred. Please contact Zabbix administrator."
-msgstr "Ocorreu um erro no sistema. Por favor contate o administrador Zabbix."
+msgid "System error occurred. Please contact TAA administrator."
+msgstr "Ocorreu um erro no sistema. Por favor contate o administrador TAA."
 
 #: include/classes/core/CJsonRpc.php:230
 msgid "System error."
@@ -21615,7 +21615,7 @@ msgid "The %1$s is not discovered anymore and %2$s."
 msgstr "O %1$s não foi mais descoberto e %2$s."
 
 #: app/views/host.wizard.edit.php:101
-msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in Zabbix."
+msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAA."
 msgstr ""
 
 #: app/views/oauth.edit.php:48
@@ -21628,8 +21628,8 @@ msgstr "O modelo de URL é usado para carregar e exibir a camada de ladrilho em 
 
 #: include/classes/db/DbBackend.php:130
 #, c-format
-msgid "The Zabbix database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
-msgstr "A versão do banco de dados do Zabbix não corresponde aos requisitos atuais. Sua versão do banco de dados: %1$s. Versão necessária: %2$s. Entre em contato com o administrador do sistema."
+msgid "The TAA database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
+msgstr "A versão do banco de dados do TAA não corresponde aos requisitos atuais. Sua versão do banco de dados: %1$s. Versão necessária: %2$s. Entre em contato com o administrador do sistema."
 
 #: include/classes/data/CItemData.php:2485
 msgid "The average time a read from the virtual disk takes, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier, \"instance\" - disk device instance"
@@ -21754,12 +21754,12 @@ msgstr "O modelo que está sendo clonado pertence a um grupo de modelos para o q
 
 #: app/views/host.wizard.edit.php:275
 #, c-format
-msgid "The template you selected (%1$s) must be linked to a host - an entity in Zabbix that represents your monitoring target."
+msgid "The template you selected (%1$s) must be linked to a host - an entity in TAA that represents your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:353
 #, c-format
-msgid "The template you selected (%1$s) requires Zabbix agent to be installed and running on your monitoring target."
+msgid "The template you selected (%1$s) requires TAA agent to be installed and running on your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:899
@@ -21852,8 +21852,8 @@ msgid "This field must contain at least one low-level discovery macro."
 msgstr ""
 
 #: app/controllers/CControllerMediatypeTestEdit.php:86
-msgid "This is the test message from Zabbix"
-msgstr "Esta é a mensagem de teste do Zabbix"
+msgid "This is the test message from TAA"
+msgstr "Esta é a mensagem de teste do TAA"
 
 #: include/func.inc.php:2574
 msgid "This month"
@@ -22064,8 +22064,8 @@ msgid "Time"
 msgstr "Tempo"
 
 #: include/classes/data/CItemData.php:2729
-msgid "Time a particular Zabbix process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
-msgstr "Hora de um processo ou grupo de processos Zabbix em particular (identificado pelo <type> e <mode>) utilizado no estado <state> em percentual."
+msgid "Time a particular TAA process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
+msgstr "Hora de um processo ou grupo de processos TAA em particular (identificado pelo <type> e <mode>) utilizado no estado <state> em percentual."
 
 #: app/views/js/mediatype.test.edit.js.php:91
 #: app/views/js/popup.scriptexec.js.php:44
@@ -22892,7 +22892,7 @@ msgstr "Não é possível alterar as permissões do arquivo de configuração pa
 
 #: include/classes/server/CZabbixServer.php:673
 #: include/classes/server/CZabbixServer.php:681 jsrpc.php:86 jsrpc.php:101
-msgid "Unable to connect to the Zabbix server due to TLS settings. Some functions are unavailable."
+msgid "Unable to connect to the TAA server due to TLS settings. Some functions are unavailable."
 msgstr ""
 
 #: include/classes/core/CConfigFile.php:237
@@ -22903,8 +22903,8 @@ msgstr "Não é possível criar o arquivo de configuração."
 #: include/classes/db/OracleDbBackend.php:36
 #: include/classes/db/PostgresqlDbBackend.php:61
 #, c-format
-msgid "Unable to determine current Zabbix database version: %1$s."
-msgstr "Não é possível determinar a versão atual do banco de dados do Zabbix: %1$s."
+msgid "Unable to determine current TAA database version: %1$s."
+msgstr "Não é possível determinar a versão atual do banco de dados do TAA: %1$s."
 
 #: include/classes/helpers/CAuthenticationHelper.php:88
 #: include/classes/helpers/CAuthenticationHelper.php:107
@@ -23445,8 +23445,8 @@ msgid "Uptime"
 msgstr "Tempo de Atividade"
 
 #: include/classes/data/CItemData.php:2806
-msgid "Uptime of Zabbix server process in seconds."
-msgstr "Tempo em execução em segudos do processo do Zabbix."
+msgid "Uptime of TAA server process in seconds."
+msgstr "Tempo em execução em segudos do processo do TAA."
 
 #: include/actions.inc.php:61
 msgid "Uptime/Downtime"
@@ -24583,12 +24583,12 @@ msgid "Version"
 msgstr "Versão"
 
 #: include/classes/data/CItemData.php:927
-msgid "Version of Zabbix agent. Returns string"
-msgstr "Versão do agente Zabbix. Retorna: texto"
+msgid "Version of TAA agent. Returns string"
+msgstr "Versão do agente TAA. Retorna: texto"
 
 #: include/classes/data/CItemData.php:2827
-msgid "Version of Zabbix server or proxy"
-msgstr "Versão do servidor ou proxy Zabbix"
+msgid "Version of TAA server or proxy"
+msgstr "Versão do servidor ou proxy TAA"
 
 #: widgets/hostavail/includes/WidgetForm.php:57
 #: widgets/problemsbysv/includes/WidgetForm.php:89
@@ -24673,8 +24673,8 @@ msgid "Warning message"
 msgstr "Mensagem de advertência"
 
 #: app/partials/administration.system.info.php:198
-msgid "Warning! Support for Oracle DB is deprecated since Zabbix 7.0 and will be removed in future versions."
-msgstr "Aviso! O suporte para Oracle DB está obsoleto desde o Zabbix 7.0 e será removido em versões futuras."
+msgid "Warning! Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgstr "Aviso! O suporte para Oracle DB está obsoleto desde o TAA 7.0 e será removido em versões futuras."
 
 #: app/partials/administration.system.info.php:155
 msgid "Warning! Unable to retrieve database version."
@@ -25251,127 +25251,127 @@ msgid "Your progress will be discarded and you will exit the Host Wizard. Are yo
 msgstr ""
 
 #: include/page_header.php:122
-msgid "Zabbix"
-msgstr "Zabbix"
+msgid "TAA"
+msgstr "TAA"
 
 #: include/classes/helpers/CMenuHelper.php:434
-msgid "Zabbix Integrations"
-msgstr "Integrações do Zabbix"
+msgid "TAA Integrations"
+msgstr "Integrações do TAA"
 
 #: app/views/connector.edit.php:49
-msgid "Zabbix Streaming Protocol v1.0"
-msgstr "Protocolo de streaming do Zabbix v1.0"
+msgid "TAA Streaming Protocol v1.0"
+msgstr "Protocolo de streaming do TAA v1.0"
 
 #: include/classes/helpers/CMenuHelper.php:427
-msgid "Zabbix Technical Support"
-msgstr "Suporte técnico Zabbix"
+msgid "TAA Technical Support"
+msgstr "Suporte técnico TAA"
 
 #: app/views/administration.script.edit.php:114
 #: app/views/administration.timeouts.edit.php:44
 #: app/views/popup.proxy.edit.php:206 include/discovery.inc.php:56
 #: include/items.inc.php:86
-msgid "Zabbix agent"
-msgstr "Agente Zabbix"
+msgid "TAA agent"
+msgstr "Agente TAA"
 
 #: widgets/hostavail/includes/WidgetForm.php:47
-msgid "Zabbix agent (active checks)"
+msgid "TAA agent (active checks)"
 msgstr "Agente zabbix (active checks)"
 
 #: include/items.inc.php:87
-msgid "Zabbix agent (active)"
-msgstr "Agente Zabbix (ativo)"
+msgid "TAA agent (active)"
+msgstr "Agente TAA (ativo)"
 
 #: widgets/hostavail/includes/WidgetForm.php:48
-msgid "Zabbix agent (passive checks)"
+msgid "TAA agent (passive checks)"
 msgstr "Agente zabbix (passive checks)"
 
 #: app/views/js/host.wizard.edit.js.php:91
-msgid "Zabbix agent initiates connections to Zabbix server or proxy to send data. Recommended for monitoring targets behind a firewall."
+msgid "TAA agent initiates connections to TAA server or proxy to send data. Recommended for monitoring targets behind a firewall."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:863
-msgid "Zabbix documentation"
+msgid "TAA documentation"
 msgstr ""
 
 #: app/partials/administration.system.info.php:45
-msgid "Zabbix frontend version"
-msgstr "Versão front-end do Zabbix"
+msgid "TAA frontend version"
+msgstr "Versão front-end do TAA"
 
 #: include/validate.inc.php:387
-msgid "Zabbix has received an incorrect request."
-msgstr "Zabbix recebeu uma solicitação incorreta."
+msgid "TAA has received an incorrect request."
+msgstr "TAA recebeu uma solicitação incorreta."
 
 #: include/items.inc.php:91
-msgid "Zabbix internal"
-msgstr "Zabbix interno"
+msgid "TAA internal"
+msgstr "TAA interno"
 
 #: include/perm.inc.php:48
-msgid "Zabbix internal authentication"
-msgstr "Zabbix autenticação interna"
+msgid "TAA internal authentication"
+msgstr "TAA autenticação interna"
 
 #: app/views/administration.authentication.edit.php:169
-msgid "Zabbix login form"
-msgstr "Formulário de login do Zabbix"
+msgid "TAA login form"
+msgstr "Formulário de login do TAA"
 
 #: app/views/administration.script.edit.php:115
-msgid "Zabbix proxy or server"
+msgid "TAA proxy or server"
 msgstr "Proxy ou servidor zabbix"
 
 #: app/views/administration.script.edit.php:116
-msgid "Zabbix server"
-msgstr "Servidor Zabbix"
+msgid "TAA server"
+msgstr "Servidor TAA"
 
 #: include/classes/server/CZabbixServer.php:626
 #, c-format
 msgid ""
-"Zabbix server \"%1$s\" cannot be reached. Possible reasons:\n"
+"TAA server \"%1$s\" cannot be reached. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect network configuration.\n"
 msgstr ""
-"O servidor Zabbix \"%1$s\" não pode ser acessado. Possíveis motivos:\n"
+"O servidor TAA \"%1$s\" não pode ser acessado. Possíveis motivos:\n"
 "1. \"NodeAddress\" ou \"ListenPort\" incorretos no arquivo \"zabbix_server.conf\" ou substituição do IP/DNS do servidor no arquivo \"zabbix.conf.php\";\n"
 "2. Configuração incorreta da rede.\n"
 
 #: app/views/administration.script.edit.php:115
-msgid "Zabbix server (proxy)"
-msgstr "Servidor Zabbix (proxy)"
+msgid "TAA server (proxy)"
+msgstr "Servidor TAA (proxy)"
 
 #: app/views/administration.miscconfig.edit.php:112
-msgid "Zabbix server and proxy"
+msgid "TAA server and proxy"
 msgstr ""
 
 #: app/views/administration.miscconfig.edit.php:107
-msgid "Zabbix server and proxy: secrets are retrieved from Vault by both Zabbix server and proxies, allowing them to resolve macros independently."
+msgid "TAA server and proxy: secrets are retrieved from Vault by both TAA server and proxies, allowing them to resolve macros independently."
 msgstr ""
 
 #: jsrpc.php:91
-msgid "Zabbix server is not running: the information displayed may not be current."
-msgstr "O servidor Zabbix não está rodando: a informação apresentada pode não ser atual."
+msgid "TAA server is not running: the information displayed may not be current."
+msgstr "O servidor TAA não está rodando: a informação apresentada pode não ser atual."
 
 #: app/partials/administration.system.info.php:34
-msgid "Zabbix server is running"
-msgstr "Zabbix está rodando"
+msgid "TAA server is running"
+msgstr "TAA está rodando"
 
 #: include/classes/setup/CSetupWizard.php:711
 #: include/classes/setup/CSetupWizard.php:870
-msgid "Zabbix server name"
-msgstr "Nome do servidor Zabbix"
+msgid "TAA server name"
+msgstr "Nome do servidor TAA"
 
 #: app/views/js/host.wizard.edit.js.php:92
-msgid "Zabbix server or proxy initiates connections to Zabbix agent to request data. Recommended for networks without a firewall or with open firewall ports."
+msgid "TAA server or proxy initiates connections to TAA agent to request data. Recommended for networks without a firewall or with open firewall ports."
 msgstr ""
 
 #: app/partials/administration.system.info.php:40
-msgid "Zabbix server version"
-msgstr "Versão do servidor Zabbix"
+msgid "TAA server version"
+msgstr "Versão do servidor TAA"
 
 #: app/views/administration.miscconfig.edit.php:105
-msgid "Zabbix server: secrets are retrieved from Vault by Zabbix server and forwarded to proxies when needed."
+msgid "TAA server: secrets are retrieved from Vault by TAA server and forwarded to proxies when needed."
 msgstr ""
 
 #: include/items.inc.php:92
-msgid "Zabbix trapper"
-msgstr "Zabbix trapper"
+msgid "TAA trapper"
+msgstr "TAA trapper"
 
 #: include/classes/html/CFilter.php:258 include/classes/html/CTabFilter.php:324
 msgid "Zoom out"
@@ -26400,8 +26400,8 @@ msgid "fourth"
 msgstr "quarto"
 
 #: app/controllers/CControllerPopupTriggerExpr.php:645
-msgid "fuzzytime() - Difference between item value (as timestamp) and Zabbix server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
-msgstr "fuzzytime() - A diferença entre o valor do item (como registro de data e hora) e o registro de data e hora do servidor Zabbix é menor ou igual a T segundos (1 - verdadeiro, 0 - falso)"
+msgid "fuzzytime() - Difference between item value (as timestamp) and TAA server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
+msgstr "fuzzytime() - A diferença entre o valor do item (como registro de data e hora) e o registro de data e hora do servidor TAA é menor ou igual a T segundos (1 - verdadeiro, 0 - falso)"
 
 #: include/classes/validators/CApiInputValidator.php:3317
 msgid "geographical coordinates (values of comma separated latitude and longitude) are expected"
@@ -26416,8 +26416,8 @@ msgid "global housekeeping settings"
 msgstr "configurações globais de limpeza de dados"
 
 #: include/classes/api/services/CScript.php:726
-msgid "global script execution on Zabbix server is disabled by server configuration"
-msgstr "a execução de script global no servidor Zabbix está desabilitada pela configuração do servidor"
+msgid "global script execution on TAA server is disabled by server configuration"
+msgstr "a execução de script global no servidor TAA está desabilitada pela configuração do servidor"
 
 #: include/html.inc.php:795 include/html.inc.php:800 include/html.inc.php:805
 msgid "graph"

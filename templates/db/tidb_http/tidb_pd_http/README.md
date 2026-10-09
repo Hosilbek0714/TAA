@@ -3,8 +3,8 @@
 
 ## Overview
 
-The template to monitor PD server of TiDB cluster by Zabbix that works without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+The template to monitor PD server of TiDB cluster by TAA that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
 Template `TiDB PD by HTTP` — collects metrics by HTTP agent from PD /metrics endpoint and from monitoring API.
 See https://docs.pingcap.com/tidb/stable/tidb-monitoring-api.
@@ -12,7 +12,7 @@ See https://docs.pingcap.com/tidb/stable/tidb-monitoring-api.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -21,7 +21,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -172,5 +172,5 @@ Also, see the Macros section for a list of macros used to set trigger values.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

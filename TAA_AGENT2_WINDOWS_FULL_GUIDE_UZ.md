@@ -265,10 +265,10 @@ Muhim: `Host name` agent configdagi `Hostname=PC-BUH-01` bilan aynan bir xil bo'
 
 Host yaratilgandan keyin `Templates` qismida Windows agent template ulang.
 
-Tavsiya qilinadigan template nomlari Zabbix/TAA versiyasiga qarab farq qilishi mumkin:
+Tavsiya qilinadigan template nomlari TAA/TAA versiyasiga qarab farq qilishi mumkin:
 
-- `Windows by Zabbix agent`;
-- `Windows by Zabbix agent active`;
+- `Windows by TAA agent`;
+- `Windows by TAA agent active`;
 - TAA rebrending qilingan bo'lsa, `Windows by TAA agent` yoki shunga o'xshash nom.
 
 Qaysi rejim tanlanadi:
@@ -301,7 +301,7 @@ service.info
 Kutilgan holat:
 
 - `agent.ping` qiymati `1`;
-- `agent.version` qiymati TAA/Zabbix Agent 2 versiyasini ko'rsatadi;
+- `agent.version` qiymati TAA/TAA Agent 2 versiyasini ko'rsatadi;
 - CPU/RAM/disk metrikalari bir necha daqiqa ichida paydo bo'ladi;
 - host availability yashil bo'ladi.
 

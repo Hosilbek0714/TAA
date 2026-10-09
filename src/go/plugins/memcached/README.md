@@ -1,6 +1,6 @@
 # Memcached plugin
-Provides native Zabbix solution for monitoring Memcached servers (distributed memory object caching system). 
-It can monitor several Memcached instances simultaneously, remotes or locals to the Zabbix Agent. 
+Provides native TAA solution for monitoring Memcached servers (distributed memory object caching system). 
+It can monitor several Memcached instances simultaneously, remotes or locals to the TAA Agent. 
 Both TCP and Unix-socket connections are supported. The plugin keeps connections in the opened state to reduce network 
 congestion, latency, CPU and memory usage. Best for use in conjunction with the official 
 [Memcached template.](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/memcached)
@@ -10,12 +10,12 @@ You can extend it or create your template for your specific needs.
 * Memcached, version 1.4+
 
 ## Installation
-The plugin is supplied as a part of Zabbix Agent 2, and it does not require any special installation steps. Once 
-Zabbix Agent 2 installed, the plugin is ready to work. The only thing you need to do is to make sure a Memcached 
+The plugin is supplied as a part of TAA Agent 2, and it does not require any special installation steps. Once 
+TAA Agent 2 installed, the plugin is ready to work. The only thing you need to do is to make sure a Memcached 
 instance is available for connection.
 
 ## Configuration
-The Zabbix Agent's configuration file is used to configure plugins.
+The TAA Agent's configuration file is used to configure plugins.
 
 **Plugins.Memcached.KeepAlive** — Sets a time for waiting before unused connections will be closed.  
 *Default value:* 300 sec.  
@@ -86,5 +86,5 @@ serialized to JSON.
 type — One of supported stat types: items, sizes, slabs and settings. Empty by default (returns general statistics).  
 
 ## Troubleshooting
-The plugin uses Zabbix agent's logs. You can increase debugging level of Zabbix Agent if you need more details about 
+The plugin uses TAA agent's logs. You can increase debugging level of TAA Agent if you need more details about 
 what is happening. 

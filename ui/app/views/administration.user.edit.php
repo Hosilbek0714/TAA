@@ -181,7 +181,7 @@ else {
 	}
 
 	$hint = !$change_password_enabled
-		? $hint = makeErrorIcon(_('Password can only be changed for users using the internal Zabbix authentication.'))
+		? $hint = makeErrorIcon(_('Password can only be changed for users using the internal TAA authentication.'))
 		: null;
 
 	$user_form_list->addRow(_('Password'), [

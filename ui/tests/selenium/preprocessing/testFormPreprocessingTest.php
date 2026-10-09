@@ -540,10 +540,10 @@ class testFormPreprocessingTest extends CWebTest {
 				$form->query('id:eol')->asSegmentedRadio()->waitUntilPresent()->one()->fill('CRLF');
 				$dialog->query('button:Test')->one()->waitUntilVisible()->click();
 
-				// Check Zabbix server down message.
+				// Check TAA server down message.
 				$message = $form->getOverlayMessage();
 				$this->assertTrue($message->isBad());
-				$this->assertTrue($message->hasLine('Connection to Zabbix server "localhost:10051" refused. Possible reasons:'));
+				$this->assertTrue($message->hasLine('Connection to TAA server "localhost:10051" refused. Possible reasons:'));
 				$dialog->close();
 				break;
 

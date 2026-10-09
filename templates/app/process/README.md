@@ -1,15 +1,15 @@
 
-# OS processes by Zabbix agent
+# OS processes by TAA agent
 
 ## Overview
 
-This template is designed to monitor processes by Zabbix that work without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+This template is designed to monitor processes by TAA that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 For example, by specifying "zabbix" as macro value, you can monitor all zabbix processes.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,11 +19,11 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-Install and setup [Zabbix agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
+Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
 
 Custom processes set in macros:
 
@@ -41,7 +41,7 @@ Custom processes set in macros:
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get process summary|<p>The summary of data metrics for all processes.</p>|Zabbix agent|proc.get[,,,summary]|
+|Get process summary|<p>The summary of data metrics for all processes.</p>|TAA agent|proc.get[,,,summary]|
 
 ### LLD rule Processes discovery
 
@@ -67,11 +67,11 @@ Custom processes set in macros:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|OS: Process [{#NAME}]: Process is not running||`last(/OS processes by Zabbix agent/custom.proc.num[{#NAME}])=0`|High|**Manual close**: Yes|
+|OS: Process [{#NAME}]: Process is not running||`last(/OS processes by TAA agent/custom.proc.num[{#NAME}])=0`|High|**Manual close**: Yes|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

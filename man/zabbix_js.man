@@ -33,9 +33,9 @@
 .
 .  hy \\n(HY
 ..
-.TH ZABBIX_JS 1 "2022\-01\-06" Zabbix
+.TH ZABBIX_JS 1 "2022\-01\-06" TAA
 .SH NAME
-zabbix_js \- Zabbix JS utility
+zabbix_js \- TAA JS utility
 .SH SYNOPSIS
 .B zabbix_js \-s
 .I script\-file

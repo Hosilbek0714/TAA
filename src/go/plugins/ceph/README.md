@@ -1,6 +1,6 @@
 # Ceph plugin
-Provides native Zabbix solution for monitoring Ceph clusters (distributed storage system). It can monitor several
-Ceph instances simultaneously, remote or local to the Zabbix Agent.
+Provides native TAA solution for monitoring Ceph clusters (distributed storage system). It can monitor several
+Ceph instances simultaneously, remote or local to the TAA Agent.
 Best for use in conjunction with the official
 [Ceph template.](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/ceph_agent2)
 You can extend it or create your template for your specific needs.
@@ -31,7 +31,7 @@ You can extend it or create your template for your specific needs.
     `pg dumg` command, hence the capability boost.
 
 ## Configuration
-The Zabbix agent 2 configuration file is used to configure plugins.
+The TAA agent 2 configuration file is used to configure plugins.
 
 **Plugins.Ceph.InsecureSkipVerify** — InsecureSkipVerify controls whether an http client verifies the
 server's certificate chain and host name. If InsecureSkipVerify is true, TLS accepts any certificate presented by
@@ -339,7 +339,7 @@ Uses data provided by "status" command.
 ```
 
 ## Troubleshooting
-The plugin uses Zabbix agent's logs. You can increase debugging level of Zabbix Agent if you need more details about
+The plugin uses TAA agent's logs. You can increase debugging level of TAA Agent if you need more details about
 what is happening.
 
 If you get the error "x509: cannot validate certificate for x.x.x.x because it doesn't contain any IP SANs",

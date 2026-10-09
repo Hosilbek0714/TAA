@@ -5,7 +5,7 @@
 	"name": "Graph",
 	"namespace": "SvgGraph",
 	"version": "1.0",
-	"author": "Zabbix",
+	"author": "TAA",
 	"description": "Displays data of up to 50 items as line, points, staircase, or bar charts.",
 	"url": "web_interface/frontend_sections/dashboards/widgets/graph",
 	"widget": {

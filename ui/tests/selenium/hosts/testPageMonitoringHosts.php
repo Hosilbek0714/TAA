@@ -251,7 +251,7 @@ class testPageMonitoringHosts extends CWebTest {
 				[
 					'filter' => [
 						'Status' => 'Disabled',
-						'Host groups' => ['Zabbix server']
+						'Host groups' => ['TAA server']
 					],
 					'expected' => [
 						'No data found'
@@ -279,7 +279,7 @@ class testPageMonitoringHosts extends CWebTest {
 					'filter' => [
 						'Name' => 'for',
 						'Host groups' => [
-							'Zabbix servers'
+							'TAA servers'
 						],
 						'IP' => '127.0.5.1'
 					],

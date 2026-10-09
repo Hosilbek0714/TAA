@@ -94,7 +94,7 @@ static void	db_register_host(const char *host, const char *ip, unsigned short po
 
 	now = time(NULL);
 
-	/* update before changing database in case Zabbix proxy also changed database and then deleted from cache */
+	/* update before changing database in case TAA proxy also changed database and then deleted from cache */
 	zbx_dc_config_update_autoreg_host(host, p_ip, p_dns, port, host_metadata, flag, now);
 
 	autoreg_update_host_func_cb(NULL, host, p_ip, p_dns, port, connection_type, host_metadata, (unsigned short)flag,

@@ -609,7 +609,7 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => ['Group to check triggers filtering', 'Zabbix servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
 						'Name' => 'Inheritance trigger',
 						'Severity' => 'Not classified',
 						'State' => 'Unknown',
@@ -634,7 +634,7 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					]
 				]
 			],
@@ -733,7 +733,7 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => ['Group to check triggers filtering', 'Zabbix servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
 						'Severity' => 'Average',
 						'Name' => 'tag'
 					],
@@ -761,7 +761,7 @@ class testPageTriggers extends CLegacyWebTest {
 						'Hosts' => [
 							[
 								'values' => ['Host for trigger tags filtering'],
-								'context' => 'Zabbix servers'
+								'context' => 'TAA servers'
 							],
 							[
 								'values' => ['Host for triggers filtering'],
@@ -785,11 +785,11 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => ['Group to check triggers filtering', 'Zabbix servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
 						'Hosts' => [
 							[
 								'values' => ['Host for trigger tags filtering'],
-								'context' => 'Zabbix servers'
+								'context' => 'TAA servers'
 							],
 							[
 								'values' => ['Host for triggers filtering'],

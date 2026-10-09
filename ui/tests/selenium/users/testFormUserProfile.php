@@ -140,10 +140,10 @@ class testFormUserProfile extends CLegacyWebTest {
 
 		switch ($data['expected']) {
 			case TEST_GOOD:
-				$this->page->assertTitle('Zabbix');
+				$this->page->assertTitle('TAA');
 				$this->assertTrue($this->query('button:Sign in')->one()->isClickable());
 				$this->page->userLogin('Admin', $data['password1']);
-				$this->assertTrue($this->query('xpath://a[@title="Admin (Zabbix Administrator)" and text()='.
+				$this->assertTrue($this->query('xpath://a[@title="Admin (TAA Administrator)" and text()='.
 						'"User settings"]')->exists()
 				);
 				self::$old_password = $data['password1'];

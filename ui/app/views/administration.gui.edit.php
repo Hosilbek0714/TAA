@@ -102,7 +102,7 @@ $gui_tab = (new CFormList())
 			->setAriaRequired()
 			->setWidth(ZBX_TEXTAREA_NUMERIC_STANDARD_WIDTH)
 	)
-	->addRow(_('Show warning if Zabbix server is down'),
+	->addRow(_('Show warning if TAA server is down'),
 		(new CCheckBox('server_check_interval', SERVER_CHECK_INTERVAL))
 			->setUncheckedValue('0')
 			->setChecked($data['server_check_interval'] == SERVER_CHECK_INTERVAL)

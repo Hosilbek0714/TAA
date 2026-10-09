@@ -1,8 +1,8 @@
 #! /bin/sh
 # Copyright (c) 07/2004 A.Tophofen, Germany
-# Modified for Zabbix 1.1alpha7 and SuSE Linux 9.2
+# Modified for TAA 1.1alpha7 and SuSE Linux 9.2
 # April 2005, A. Kiepe, Switzerland
-# Modified for Zabbix 2.0.0
+# Modified for TAA 2.0.0
 # May 2012, Zabbix SIA
 #
 # init.d/zabbix_agentd

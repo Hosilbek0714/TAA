@@ -48,9 +48,9 @@ class testHostGroup extends CAPITest {
 			// Check for duplicated host groups names.
 			[
 				'hostgroup' => [
-					'name' => 'Zabbix servers'
+					'name' => 'TAA servers'
 				],
-				'expected_error' => 'Host group "Zabbix servers" already exists.'
+				'expected_error' => 'Host group "TAA servers" already exists.'
 			],
 			[
 				'hostgroup' => [
@@ -58,10 +58,10 @@ class testHostGroup extends CAPITest {
 						'name' => 'One host group with existing name'
 					],
 					[
-						'name' => 'Zabbix servers'
+						'name' => 'TAA servers'
 					]
 				],
-				'expected_error' => 'Host group "Zabbix servers" already exists.'
+				'expected_error' => 'Host group "TAA servers" already exists.'
 			],
 			[
 				'hostgroup' => [
@@ -211,10 +211,10 @@ class testHostGroup extends CAPITest {
 				'hostgroup' => [
 					[
 					'groupid' => '50005',
-					'name' => 'Zabbix servers'
+					'name' => 'TAA servers'
 					]
 				],
-				'expected_error' => 'Host group "Zabbix servers" already exists.'
+				'expected_error' => 'Host group "TAA servers" already exists.'
 			],
 			[
 				'hostgroup' => [
@@ -292,7 +292,7 @@ class testHostGroup extends CAPITest {
 		}
 		else {
 			foreach ($hostgroups as $hostgroup) {
-				if (array_key_exists('name', $hostgroup) && $hostgroup['name'] !== 'Zabbix servers'){
+				if (array_key_exists('name', $hostgroup) && $hostgroup['name'] !== 'TAA servers'){
 					$this->assertEquals(0,
 						CDBHelper::getCount('SELECT * FROM hstgrp WHERE name='.zbx_dbstr($hostgroup['name']))
 					);

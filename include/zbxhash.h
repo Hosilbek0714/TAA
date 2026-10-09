@@ -15,7 +15,7 @@
 #ifndef ZABBIX_ZBXHASH_H
 #define ZABBIX_ZBXHASH_H
 
-/* ------------ md5.h file included with Zabbix modifications ------------ */
+/* ------------ md5.h file included with TAA modifications ------------ */
 /*
 ** Copyright (C) 1999, 2002 Aladdin Enterprises.  All rights reserved.
 **

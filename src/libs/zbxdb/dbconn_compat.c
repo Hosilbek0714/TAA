@@ -472,7 +472,7 @@ int	zbx_db_lock_ids(const char *table_name, const char *field_name, zbx_vector_u
 
 /*********************************************************************************
  *                                                                               *
- * Purpose: verify that Zabbix can work with DB extension                        *
+ * Purpose: verify that TAA can work with DB extension                        *
  *                                                                               *
  *********************************************************************************/
 int	zbx_db_check_extension(struct zbx_db_version_info_t *info, int allow_unsupported)

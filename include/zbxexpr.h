@@ -148,7 +148,7 @@ zbx_token_func_macro_t;
 /* data used by simple (host:key) macros */
 typedef struct
 {
-	/* host name, supporting simple macros as a host name, for example Zabbix server or {HOST.HOST} */
+	/* host name, supporting simple macros as a host name, for example TAA server or {HOST.HOST} */
 	zbx_strloc_t	host;
 	/* key + parameters, supporting {ITEM.KEYn} macro, for example system.uname or {ITEM.KEY1}  */
 	zbx_strloc_t	key;

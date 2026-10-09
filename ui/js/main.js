@@ -768,7 +768,7 @@ var hintBox = {
 };
 
 /**
- * Perform JSON-RPC Zabbix API call.
+ * Perform JSON-RPC TAA API call.
  *
  * @param {string} method
  * @param {object} params

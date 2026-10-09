@@ -148,7 +148,7 @@ class testFormHost extends CWebTest {
 			]
 		];
 
-		$groups = [['groupid' => 4]]; // Zabbix servers.
+		$groups = [['groupid' => 4]]; // TAA servers.
 		$proxies = CDataHelper::call('proxy.create', [
 			[
 				'name' => 'Test Host Proxy',
@@ -374,7 +374,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Available host',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'inline_errors' => [
 						'Host name' => 'This object already exists.'
@@ -387,7 +387,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty template',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'inline_errors' => [
 						'Host name' => 'This object already exists.'
@@ -400,7 +400,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Existing visible name',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Visible name' => 'ЗАББИКС Сервер'
 					],
 					'inline_errors' => [
@@ -414,7 +414,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => '@#$%^&*()_+',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'inline_errors' => [
 						'Host name' => 'Incorrect characters used for host name.'
@@ -427,7 +427,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => '😀',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'inline_errors' => [
 						'Host name' => 'Incorrect characters used for host name.'
@@ -440,7 +440,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty ip address',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -460,7 +460,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty dns',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -481,7 +481,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty IP and filled in DNS',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -502,7 +502,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty dns and filled in IP',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -522,7 +522,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty port',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -542,7 +542,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Invalid ip',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -562,7 +562,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Invalid ip',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -582,7 +582,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Invalid port',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -602,7 +602,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Invalid port',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -622,7 +622,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Invalid port',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -642,7 +642,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Invalid snmp community',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -662,7 +662,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Too low max repetition count',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -682,7 +682,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty proxy multiselect',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Monitored by' => 'Proxy',
 						'xpath:.//div[@id="proxyid"]/..' => ''
 					],
@@ -697,7 +697,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_BAD,
 					'host_fields' => [
 						'Host name' => 'Empty proxy multiselect',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Monitored by' => 'Proxy group',
 						'xpath:.//div[@id="proxy_groupid"]/..' => ''
 					],
@@ -731,7 +731,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_GOOD,
 					'host_fields' => [
 						'Host name' => 'Host without interfaces',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					]
 				]
 			],
@@ -741,7 +741,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_GOOD,
 					'host_fields' => [
 						'Host name' => 'Host with utf8mb4 visible name',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Visible name' => '😀',
 						'Description' => '😀🙃😀'
 					]
@@ -753,7 +753,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_GOOD,
 					'host_fields' => [
 						'Host name' => 'Host with default values of all interfaces',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -782,7 +782,7 @@ class testFormHost extends CWebTest {
 					'default_values' => true,
 					'host_fields' => [
 						'Host name' => 'Host with default second agent interface',
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'interfaces' => [
 						[
@@ -807,7 +807,7 @@ class testFormHost extends CWebTest {
 					'expected' => TEST_GOOD,
 					'host_fields' => [
 						'Host name' => 'Host with different versions of SNMP interface',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Monitored by' => 'Proxy group',
 						'xpath:.//div[@id="proxy_groupid"]/..' => 'Group without proxies'
 					],
@@ -866,7 +866,7 @@ class testFormHost extends CWebTest {
 					'host_fields' => [
 						'Host name' => 'Host with all interfaces',
 						'Visible name' => 'Host with all interfaces visible name',
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Description' => 'Added description for host with all interfaces',
 						'id:monitored_by' => 'Proxy',
 						'xpath:.//div[@id="proxyid"]/..' => 'Test Host Proxy',
@@ -1683,7 +1683,7 @@ class testFormHost extends CWebTest {
 			'host_fields' => [
 				'Host name' => 'testFormHost_Update',
 				'Visible name' => self::HOST_UPDATE_VISIBLE_NAME,
-				'Host groups' => 'Zabbix servers',
+				'Host groups' => 'TAA servers',
 				'Description' => 'Created host via API to test update functionality in host form and interfaces',
 				'Monitored by' => 'Proxy',
 				'xpath:.//div[@id="proxyid"]/..' => 'Test Host Proxy',

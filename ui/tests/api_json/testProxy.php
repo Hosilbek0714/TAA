@@ -892,7 +892,7 @@ class testProxy extends CAPITest {
 				'expected_error' => null
 			],
 
-			// Filter by Zabbix version.
+			// Filter by TAA version.
 			'Test proxy.get: filter by "version"' => [
 				'request' => [
 					'output' => ['name', 'version'],

@@ -208,7 +208,7 @@ static void	rm_report_clean(zbx_rm_report_t *report)
  * Parameters: session - [IN]                                                 *
  *                                                                            *
  * Comments: The session is deleted from the database to ensure that it is    *
- *           impossible to authenticate a user with it in Zabbix frontend.    *
+ *           impossible to authenticate a user with it in TAA frontend.    *
  *                                                                            *
  ******************************************************************************/
 static void	rm_session_close(zbx_rm_session_t *session)

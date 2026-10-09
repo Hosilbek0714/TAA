@@ -31,7 +31,7 @@ abstract class ScimApiService extends CApiService {
 	public const SCIM_PATCH_SCHEMA = 'urn:ietf:params:scim:api:messages:2.0:PatchOp';
 
 	/**
-	 * Returns array with information that is or is not supported by Zabbix SCIM model.
+	 * Returns array with information that is or is not supported by TAA SCIM model.
 	 *
 	 * @return array
 	 */

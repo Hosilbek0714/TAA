@@ -42,7 +42,7 @@ class testFormItemHttpAgent extends CLegacyWebTest {
 		$result = CDataHelper::createHosts([
 			[
 				'host' => 'Host with HTTP items',
-				'groups' => ['groupid' => 4], // Zabbix servers.
+				'groups' => ['groupid' => 4], // TAA servers.
 				'items' => [
 					[
 						'name' => 'Http agent item form',

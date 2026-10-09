@@ -101,7 +101,7 @@ class CShellExec {
 			foreach (explode(PHP_EOL, $data) as $line) {
 				$errors = [
 					'/cannot initialize runtime control service/',
-					'/Zabbix Server stopped/',
+					'/TAA Server stopped/',
 					'/\[Z3001\] connection to database .* failed:/'
 				];
 				foreach ($errors as $error) {
@@ -140,7 +140,7 @@ class CShellExec {
 						$events[] = 'error';
 					}
 				}
-				$ready = '/Zabbix Agent2 hostname:/';
+				$ready = '/TAA Agent2 hostname:/';
 				if (1 == preg_match($ready, $line)) {
 					$events[] = 'ready';
 				}

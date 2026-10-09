@@ -610,7 +610,7 @@ class CPage {
 	 * @param string $alias     Username on login screen
 	 * @param string $password  Password on login screen
 	 * @param int $scenario  	Scenario TEST_BAD means that passed credentials are invalid, TEST_GOOD - user successfully logged in
-	 * @param string $url		Direct link to certain Zabbix page
+	 * @param string $url		Direct link to certain TAA page
 	 *
 	 * @return $this
 	 */

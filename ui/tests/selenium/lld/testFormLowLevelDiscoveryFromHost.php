@@ -311,7 +311,7 @@ class testFormLowLevelDiscoveryFromHost extends testLowLevelDiscovery {
 		$form = $this->query('id:host-discovery-form')->asForm()->waitUntilVisible()->one();
 
 		$interfaces = [
-			'Zabbix agent' => '127.0.0.1:10050',
+			'TAA agent' => '127.0.0.1:10050',
 			'SNMP agent' => '127.0.0.2:161',
 			'IPMI agent' => '127.0.0.4:12345',
 			'JMX agent' => 'text.jmx.com:12345'

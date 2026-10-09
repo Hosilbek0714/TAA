@@ -29,7 +29,7 @@ class CopyWidgetsDashboards {
 		$hosts = CDataHelper::createHosts([
 			[
 				'host' => 'Host with widgets items',
-				'groups' => ['groupid' => 4], // Zabbix servers.
+				'groups' => ['groupid' => 4], // TAA servers.
 				'items' => [
 					[
 						'name' => 'Widget item',
@@ -2127,7 +2127,7 @@ class CopyWidgetsDashboards {
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_GROUP,
 										'name' => 'groupids.0',
-										'value' => 4 // Zabbix servers.
+										'value' => 4 // TAA servers.
 									],
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_STR,
@@ -2227,7 +2227,7 @@ class CopyWidgetsDashboards {
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_GROUP,
 										'name' => 'groupids.0',
-										'value' => 4 // Zabbix servers.
+										'value' => 4 // TAA servers.
 									],
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_HOST,

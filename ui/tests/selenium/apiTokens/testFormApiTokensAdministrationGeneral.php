@@ -196,7 +196,7 @@ class testFormApiTokensAdministrationGeneral extends testFormApiTokens {
 						'Set expiration date and time' => false,
 						'Enabled' => true
 					],
-					'full_name' => 'Admin (Zabbix Administrator)'
+					'full_name' => 'Admin (TAA Administrator)'
 				]
 			],
 			// API token with expiry date in the past.
@@ -211,7 +211,7 @@ class testFormApiTokensAdministrationGeneral extends testFormApiTokens {
 						'Enabled' => true
 					],
 					'already_expired' => true,
-					'full_name' => 'Admin (Zabbix Administrator)'
+					'full_name' => 'Admin (TAA Administrator)'
 				]
 			],
 			// API token with expiry date in the future.
@@ -225,7 +225,7 @@ class testFormApiTokensAdministrationGeneral extends testFormApiTokens {
 						'Expires at' => '2038-01-01 00:00:00',
 						'Enabled' => true
 					],
-					'full_name' => 'Admin (Zabbix Administrator)'
+					'full_name' => 'Admin (TAA Administrator)'
 				]
 			],
 			// Disabled API token.
@@ -238,7 +238,7 @@ class testFormApiTokensAdministrationGeneral extends testFormApiTokens {
 						'Set expiration date and time' => false,
 						'Enabled' => false
 					],
-					'full_name' => 'Admin (Zabbix Administrator)'
+					'full_name' => 'Admin (TAA Administrator)'
 				]
 			],
 			// API token for a different user.
@@ -321,7 +321,7 @@ class testFormApiTokensAdministrationGeneral extends testFormApiTokens {
 		$data = [
 			'fields' => [
 				'Name' => 'Token for cancel or simple update',
-				'User' => 'Admin (Zabbix Administrator)',
+				'User' => 'Admin (TAA Administrator)',
 				'Description' => 'Token for testing cancelling',
 				'Set expiration date and time' => true,
 				'Expires at' => '2026-12-31 23:59:59',

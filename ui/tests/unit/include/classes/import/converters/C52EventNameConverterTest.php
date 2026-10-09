@@ -48,16 +48,16 @@ class C52EventNameConverterTest extends TestCase {
 			[
 				'String containing expression macro '.
 				'{{?100*'.
-					'{Zabbix Server:system.cpu.load.trendavg(1M,now/M)}'.
+					'{TAA Server:system.cpu.load.trendavg(1M,now/M)}'.
 					'/'.
-					'{Zabbix Server:system.cpu.load.trendavg(1M,now/M-1M)}'.
+					'{TAA Server:system.cpu.load.trendavg(1M,now/M-1M)}'.
 				'}.fmtnum(0)}'.
 				'%',
 
 				'String containing expression macro {{?100*'.
-					'trendavg(/Zabbix Server/system.cpu.load,1M:now/M)'.
+					'trendavg(/TAA Server/system.cpu.load,1M:now/M)'.
 					'/'.
-					'trendavg(/Zabbix Server/system.cpu.load,1M:now/M-1M)'.
+					'trendavg(/TAA Server/system.cpu.load,1M:now/M-1M)'.
 				'}.fmtnum(0)}%'
 			],
 			[

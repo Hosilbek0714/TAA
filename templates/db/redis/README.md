@@ -1,13 +1,13 @@
 
-# Redis by Zabbix agent 2
+# Redis by TAA agent 2
 
 ## Overview
 
-This template is designed for the effortless deployment of Redis monitoring by Zabbix via Zabbix agent 2 and doesn't require any external scripts.
+This template is designed for the effortless deployment of Redis monitoring by TAA via TAA agent 2 and doesn't require any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -48,10 +48,10 @@ Test availability: `zabbix_get -s 127.0.0.1 -k redis.ping[tcp://127.0.0.1:6379]`
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get info||Zabbix agent|redis.info["{$REDIS.CONN.URI}"]|
-|Get config||Zabbix agent|redis.config["{$REDIS.CONN.URI}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
-|Ping||Zabbix agent|redis.ping["{$REDIS.CONN.URI}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Slowlog entries per second||Zabbix agent|redis.slowlog.count["{$REDIS.CONN.URI}"]<p>**Preprocessing**</p><ul><li>Change per second</li></ul>|
+|Get info||TAA agent|redis.info["{$REDIS.CONN.URI}"]|
+|Get config||TAA agent|redis.config["{$REDIS.CONN.URI}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
+|Ping||TAA agent|redis.ping["{$REDIS.CONN.URI}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Slowlog entries per second||TAA agent|redis.slowlog.count["{$REDIS.CONN.URI}"]<p>**Preprocessing**</p><ul><li>Change per second</li></ul>|
 |Get Clients info||Dependent item|redis.clients.info_raw<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Clients`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Get CPU info||Dependent item|redis.cpu.info_raw<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.CPU`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Get Keyspace info||Dependent item|redis.keyspace.info_raw<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Keyspace`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
@@ -125,19 +125,19 @@ Test availability: `zabbix_get -s 127.0.0.1 -k redis.ping[tcp://127.0.0.1:6379]`
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Redis: Failed to fetch info data|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`nodata(/Redis by Zabbix agent 2/redis.info["{$REDIS.CONN.URI}"],30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Redis: Service is down</li></ul>|
-|Redis: Configuration has changed|<p>Redis configuration has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by Zabbix agent 2/redis.config["{$REDIS.CONN.URI}"],#1)<>last(/Redis by Zabbix agent 2/redis.config["{$REDIS.CONN.URI}"],#2) and length(last(/Redis by Zabbix agent 2/redis.config["{$REDIS.CONN.URI}"]))>0`|Info|**Manual close**: Yes|
-|Redis: Service is down||`last(/Redis by Zabbix agent 2/redis.ping["{$REDIS.CONN.URI}"])=0`|Average|**Manual close**: Yes|
-|Redis: Too many entries in the slowlog||`min(/Redis by Zabbix agent 2/redis.slowlog.count["{$REDIS.CONN.URI}"],5m)>{$REDIS.SLOWLOG.COUNT.MAX.WARN}`|Info||
-|Redis: Total number of connected clients is too high|<p>When the number of clients reaches the value of the "maxclients" parameter, new connections will be rejected.<br><br>https://redis.io/topics/clients#maximum-number-of-clients</p>|`min(/Redis by Zabbix agent 2/redis.clients.connected,5m)/last(/Redis by Zabbix agent 2/redis.config.maxclients)*100>{$REDIS.CLIENTS.PRC.MAX.WARN}`|Warning||
-|Redis: Memory fragmentation ratio is too high|<p>This ratio is an indication of memory mapping efficiency:<br>  - Value over 1.0 indicate that memory fragmentation is very likely. Consider restarting the Redis server so the operating system can recover fragmented memory, especially with a ratio over 1.5.<br>  - Value under 1.0 indicate that Redis likely has insufficient memory available. Consider optimizing memory usage or adding more RAM.<br><br>Note: If your peak memory usage is much higher than your current memory usage, the memory fragmentation ratio may be unreliable.<br><br>https://redis.io/topics/memory-optimization</p>|`min(/Redis by Zabbix agent 2/redis.memory.fragmentation_ratio,15m)>{$REDIS.MEM.FRAG_RATIO.MAX.WARN}`|Warning||
-|Redis: Last AOF write operation failed|<p>Detailed information about persistence: https://redis.io/topics/persistence</p>|`last(/Redis by Zabbix agent 2/redis.persistence.aof_last_write_status)=0`|Warning||
-|Redis: Last RDB save operation failed|<p>Detailed information about persistence: https://redis.io/topics/persistence</p>|`last(/Redis by Zabbix agent 2/redis.persistence.rdb_last_bgsave_status)=0`|Warning||
-|Redis: Number of slaves has changed|<p>Redis number of slaves has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by Zabbix agent 2/redis.replication.connected_slaves,#1)<>last(/Redis by Zabbix agent 2/redis.replication.connected_slaves,#2)`|Info|**Manual close**: Yes|
-|Redis: Replication role has changed|<p>Redis replication role has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by Zabbix agent 2/redis.replication.role,#1)<>last(/Redis by Zabbix agent 2/redis.replication.role,#2) and length(last(/Redis by Zabbix agent 2/redis.replication.role))>0`|Warning|**Manual close**: Yes|
-|Redis: Version has changed|<p>The Redis version has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by Zabbix agent 2/redis.server.redis_version,#1)<>last(/Redis by Zabbix agent 2/redis.server.redis_version,#2) and length(last(/Redis by Zabbix agent 2/redis.server.redis_version))>0`|Info|**Manual close**: Yes|
-|Redis: Host has been restarted|<p>The host uptime is less than 10 minutes.</p>|`last(/Redis by Zabbix agent 2/redis.server.uptime)<10m`|Info|**Manual close**: Yes|
-|Redis: Connections are rejected|<p>The number of connections has reached the value of "maxclients".<br><br>https://redis.io/topics/clients</p>|`last(/Redis by Zabbix agent 2/redis.stats.rejected_connections)>0`|High||
+|Redis: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Redis by TAA agent 2/redis.info["{$REDIS.CONN.URI}"],30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Redis: Service is down</li></ul>|
+|Redis: Configuration has changed|<p>Redis configuration has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by TAA agent 2/redis.config["{$REDIS.CONN.URI}"],#1)<>last(/Redis by TAA agent 2/redis.config["{$REDIS.CONN.URI}"],#2) and length(last(/Redis by TAA agent 2/redis.config["{$REDIS.CONN.URI}"]))>0`|Info|**Manual close**: Yes|
+|Redis: Service is down||`last(/Redis by TAA agent 2/redis.ping["{$REDIS.CONN.URI}"])=0`|Average|**Manual close**: Yes|
+|Redis: Too many entries in the slowlog||`min(/Redis by TAA agent 2/redis.slowlog.count["{$REDIS.CONN.URI}"],5m)>{$REDIS.SLOWLOG.COUNT.MAX.WARN}`|Info||
+|Redis: Total number of connected clients is too high|<p>When the number of clients reaches the value of the "maxclients" parameter, new connections will be rejected.<br><br>https://redis.io/topics/clients#maximum-number-of-clients</p>|`min(/Redis by TAA agent 2/redis.clients.connected,5m)/last(/Redis by TAA agent 2/redis.config.maxclients)*100>{$REDIS.CLIENTS.PRC.MAX.WARN}`|Warning||
+|Redis: Memory fragmentation ratio is too high|<p>This ratio is an indication of memory mapping efficiency:<br>  - Value over 1.0 indicate that memory fragmentation is very likely. Consider restarting the Redis server so the operating system can recover fragmented memory, especially with a ratio over 1.5.<br>  - Value under 1.0 indicate that Redis likely has insufficient memory available. Consider optimizing memory usage or adding more RAM.<br><br>Note: If your peak memory usage is much higher than your current memory usage, the memory fragmentation ratio may be unreliable.<br><br>https://redis.io/topics/memory-optimization</p>|`min(/Redis by TAA agent 2/redis.memory.fragmentation_ratio,15m)>{$REDIS.MEM.FRAG_RATIO.MAX.WARN}`|Warning||
+|Redis: Last AOF write operation failed|<p>Detailed information about persistence: https://redis.io/topics/persistence</p>|`last(/Redis by TAA agent 2/redis.persistence.aof_last_write_status)=0`|Warning||
+|Redis: Last RDB save operation failed|<p>Detailed information about persistence: https://redis.io/topics/persistence</p>|`last(/Redis by TAA agent 2/redis.persistence.rdb_last_bgsave_status)=0`|Warning||
+|Redis: Number of slaves has changed|<p>Redis number of slaves has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by TAA agent 2/redis.replication.connected_slaves,#1)<>last(/Redis by TAA agent 2/redis.replication.connected_slaves,#2)`|Info|**Manual close**: Yes|
+|Redis: Replication role has changed|<p>Redis replication role has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by TAA agent 2/redis.replication.role,#1)<>last(/Redis by TAA agent 2/redis.replication.role,#2) and length(last(/Redis by TAA agent 2/redis.replication.role))>0`|Warning|**Manual close**: Yes|
+|Redis: Version has changed|<p>The Redis version has changed. Acknowledge to close the problem manually.</p>|`last(/Redis by TAA agent 2/redis.server.redis_version,#1)<>last(/Redis by TAA agent 2/redis.server.redis_version,#2) and length(last(/Redis by TAA agent 2/redis.server.redis_version))>0`|Info|**Manual close**: Yes|
+|Redis: Host has been restarted|<p>The host uptime is less than 10 minutes.</p>|`last(/Redis by TAA agent 2/redis.server.uptime)<10m`|Info|**Manual close**: Yes|
+|Redis: Connections are rejected|<p>The number of connections has reached the value of "maxclients".<br><br>https://redis.io/topics/clients</p>|`last(/Redis by TAA agent 2/redis.stats.rejected_connections)>0`|High||
 
 ### LLD rule Keyspace discovery
 
@@ -195,7 +195,7 @@ Test availability: `zabbix_get -s 127.0.0.1 -k redis.ping[tcp://127.0.0.1:6379]`
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Redis: Replication lag with master is too high||`min(/Redis by Zabbix agent 2/redis.replication.master_last_io_seconds_ago[{#SINGLETON}],5m)>{$REDIS.REPL.LAG.MAX.WARN}`|Warning||
+|Redis: Replication lag with master is too high||`min(/Redis by TAA agent 2/redis.replication.master_last_io_seconds_ago[{#SINGLETON}],5m)>{$REDIS.REPL.LAG.MAX.WARN}`|Warning||
 
 ### LLD rule Replication metrics discovery
 
@@ -213,22 +213,22 @@ Test availability: `zabbix_get -s 127.0.0.1 -k redis.ping[tcp://127.0.0.1:6379]`
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Process metrics discovery|<p>Collect metrics by Zabbix agent if it exists</p>|Zabbix agent|proc.num["{$REDIS.LLD.PROCESS_NAME}"]<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
+|Process metrics discovery|<p>Collect metrics by TAA agent if it exists</p>|TAA agent|proc.num["{$REDIS.LLD.PROCESS_NAME}"]<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
 
 ### Item prototypes for Process metrics discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Number of running processes||Zabbix agent|proc.num["{$REDIS.PROCESS_NAME}{#SINGLETON}"]|
-|Memory usage (rss)|<p>Resident set size memory used by process in bytes.</p>|Zabbix agent|proc.mem["{$REDIS.PROCESS_NAME}{#SINGLETON}",,,,rss]|
-|Memory usage (vsize)|<p>Virtual memory size used by process in bytes.</p>|Zabbix agent|proc.mem["{$REDIS.PROCESS_NAME}{#SINGLETON}",,,,vsize]|
-|CPU utilization|<p>Process CPU utilization percentage.</p>|Zabbix agent|proc.cpu.util["{$REDIS.PROCESS_NAME}{#SINGLETON}"]|
+|Number of running processes||TAA agent|proc.num["{$REDIS.PROCESS_NAME}{#SINGLETON}"]|
+|Memory usage (rss)|<p>Resident set size memory used by process in bytes.</p>|TAA agent|proc.mem["{$REDIS.PROCESS_NAME}{#SINGLETON}",,,,rss]|
+|Memory usage (vsize)|<p>Virtual memory size used by process in bytes.</p>|TAA agent|proc.mem["{$REDIS.PROCESS_NAME}{#SINGLETON}",,,,vsize]|
+|CPU utilization|<p>Process CPU utilization percentage.</p>|TAA agent|proc.cpu.util["{$REDIS.PROCESS_NAME}{#SINGLETON}"]|
 
 ### Trigger prototypes for Process metrics discovery
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Redis: Process is not running||`last(/Redis by Zabbix agent 2/proc.num["{$REDIS.PROCESS_NAME}{#SINGLETON}"])=0`|High||
+|Redis: Process is not running||`last(/Redis by TAA agent 2/proc.num["{$REDIS.PROCESS_NAME}{#SINGLETON}"])=0`|High||
 
 ### LLD rule Version 4+ metrics discovery
 
@@ -266,7 +266,7 @@ Test availability: `zabbix_get -s 127.0.0.1 -k redis.ping[tcp://127.0.0.1:6379]`
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Redis: Memory usage is too high||`last(/Redis by Zabbix agent 2/redis.memory.used_memory)/min(/Redis by Zabbix agent 2/redis.memory.maxmemory[{#SINGLETON}],5m)*100>{$REDIS.MEM.PUSED.MAX.WARN}`|Warning||
+|Redis: Memory usage is too high||`last(/Redis by TAA agent 2/redis.memory.used_memory)/min(/Redis by TAA agent 2/redis.memory.maxmemory[{#SINGLETON}],5m)*100>{$REDIS.MEM.PUSED.MAX.WARN}`|Warning||
 
 ### LLD rule Version 5+ metrics discovery
 
@@ -300,5 +300,5 @@ Test availability: `zabbix_get -s 127.0.0.1 -k redis.ping[tcp://127.0.0.1:6379]`
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

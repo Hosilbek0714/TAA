@@ -65,7 +65,7 @@ class testDataDisplayInGraphs extends CWebTest {
 					]
 				],
 				'groups' => [
-					'groupid' => 4 // Host group "Zabbix servers".
+					'groupid' => 4 // Host group "TAA servers".
 				],
 				'status' => HOST_STATUS_MONITORED,
 				'items' => [

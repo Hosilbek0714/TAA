@@ -409,7 +409,7 @@ class testScimUser extends CAPIScimTest {
 					]
 				]
 			],
-			'Get User by userName which does not exist in Zabbix yet' => [
+			'Get User by userName which does not exist in TAA yet' => [
 				'user' => ['userName' => 'michael.scott@office.com'],
 				'expected_result' => [
 					'schemas' => ['urn:ietf:params:scim:schemas:core:2.0:User'],
@@ -417,7 +417,7 @@ class testScimUser extends CAPIScimTest {
 					'Resources' => []
 				]
 			],
-			'Get User by userName which exist in Zabbix and has the same userdirectoryid' => [
+			'Get User by userName which exist in TAA and has the same userdirectoryid' => [
 				'user' => ['userName' => 'saml_user_active'],
 				'expected_result' => [
 					'schemas' => ['urn:ietf:params:scim:schemas:core:2.0:User'],
@@ -427,7 +427,7 @@ class testScimUser extends CAPIScimTest {
 					'name' => ['givenName' => '', 'familyName' => '']
 				]
 			],
-			'Get User by userName which exist in Zabbix, has the same userdirectoryid, is in disabled group' => [
+			'Get User by userName which exist in TAA, has the same userdirectoryid, is in disabled group' => [
 				'user' => ['userName' => 'saml_user_inactive'],
 				'expected_result' => [
 					'schemas' => ['urn:ietf:params:scim:schemas:core:2.0:User'],
@@ -435,7 +435,7 @@ class testScimUser extends CAPIScimTest {
 					'Resources' => []
 				]
 			],
-			'Get User by userid which exist in Zabbix and has the same userdirectoryid' => [
+			'Get User by userid which exist in TAA and has the same userdirectoryid' => [
 				'user' => ['id' => 'saml_user_active'],
 				'expected_result' => [
 					'schemas' => ['urn:ietf:params:scim:schemas:core:2.0:User'],

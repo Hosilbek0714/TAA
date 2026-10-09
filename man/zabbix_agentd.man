@@ -33,9 +33,9 @@
 .
 .  hy \\n(HY
 ..
-.TH ZABBIX_AGENTD 8 "2022\-01\-06" Zabbix
+.TH ZABBIX_AGENTD 8 "2022\-01\-06" TAA
 .SH NAME
-zabbix_agentd \- Zabbix agent daemon
+zabbix_agentd \- TAA agent daemon
 .SH SYNOPSIS
 .B zabbix_agentd
 .RB [ \-c
@@ -73,7 +73,7 @@ is a daemon for monitoring various server parameters.
 .IP "\fB\-c\fR, \fB\-\-config\fR \fIconfig\-file\fR"
 Use the alternate \fIconfig\-file\fR instead of the default one.
 .IP "\fB\-f\fR, \fB\-\-foreground\fR"
-Run Zabbix agent in foreground.
+Run TAA agent in foreground.
 .IP "\fB\-R\fR, \fB\-\-runtime\-control\fR \fIruntime\-option\fR"
 Perform administrative functions according to \fIruntime\-option\fR.
 .SS
@@ -120,7 +120,7 @@ For each item either generic defaults are used, or specific defaults for testing
 These defaults are listed in square brackets as item key parameters.
 Returned values are enclosed in square brackets and prefixed with the type of the returned value, separated by a pipe character.
 For user parameters type is always \fBt\fR, as the agent can not determine all possible return values.
-Items, displayed as working, are not guaranteed to work from the Zabbix server or zabbix_get when querying a running agent daemon as permissions or environment may be different.
+Items, displayed as working, are not guaranteed to work from the TAA server or zabbix_get when querying a running agent daemon as permissions or environment may be different.
 Returned value types are:
 .RS 4
 .TP 4
@@ -163,7 +163,7 @@ Output version information and exit.
 .SH FILES
 .TP
 .I /usr/local/etc/zabbix_agentd.conf
-Default location of Zabbix agent configuration file (if not modified during compile time).
+Default location of TAA agent configuration file (if not modified during compile time).
 .SH "SEE ALSO"
 .UR https://www.zabbix.com/manuals
 Documentation

@@ -3,16 +3,16 @@
 
 ## Overview
 
-This template is developed to monitor the FastCGI Process Manager (PHP-FPM) by Zabbix that work without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+This template is developed to monitor the FastCGI Process Manager (PHP-FPM) by TAA that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
-The template `PHP-FPM by Zabbix agent` - collects metrics by polling PHP-FPM status-page with HTTP agent remotely.
+The template `PHP-FPM by TAA agent` - collects metrics by polling PHP-FPM status-page with HTTP agent remotely.
 
 Note that this solution supports HTTPS and redirects.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -22,7 +22,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -168,7 +168,7 @@ If you use another web server port or scheme for the location of the PHP-FPM sta
 |----|-----------|----------|--------|--------------------------------|
 |PHP-FPM: Service is down||`last(/PHP-FPM by HTTP/php-fpm.ping)=0 or nodata(/PHP-FPM by HTTP/php-fpm.ping,3m)=1`|High|**Manual close**: Yes|
 |PHP-FPM: Version has changed|<p>The PHP-FPM version has changed. Acknowledge to close the problem manually.</p>|`last(/PHP-FPM by HTTP/php-fpm.version,#1)<>last(/PHP-FPM by HTTP/php-fpm.version,#2) and length(last(/PHP-FPM by HTTP/php-fpm.version))>0`|Info|**Manual close**: Yes|
-|PHP-FPM: Failed to fetch info data|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`nodata(/PHP-FPM by HTTP/php-fpm.uptime,30m)=1`|Info|**Manual close**: Yes<br>**Depends on**:<br><ul><li>PHP-FPM: Service is down</li></ul>|
+|PHP-FPM: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/PHP-FPM by HTTP/php-fpm.uptime,30m)=1`|Info|**Manual close**: Yes<br>**Depends on**:<br><ul><li>PHP-FPM: Service is down</li></ul>|
 |PHP-FPM: Pool has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/PHP-FPM by HTTP/php-fpm.uptime)<10m`|Info|**Manual close**: Yes|
 |PHP-FPM: Manager changed|<p>The PHP-FPM manager has changed. Acknowledge to close the problem manually.</p>|`last(/PHP-FPM by HTTP/php-fpm.process_manager,#1)<>last(/PHP-FPM by HTTP/php-fpm.process_manager,#2)`|Info|**Manual close**: Yes|
 |PHP-FPM: Detected slow requests|<p>The PHP-FPM has detected a slow request. <br>The slow request means that it took more time to execute than expected (defined in the configuration of your pool).</p>|`min(/PHP-FPM by HTTP/php-fpm.slow_requests,#3)>0`|Warning||
@@ -178,5 +178,5 @@ If you use another web server port or scheme for the location of the PHP-FPM sta
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

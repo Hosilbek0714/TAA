@@ -1,8 +1,8 @@
 # iLert Alerting Integration
 
 
-This guide describes how to integrate your Zabbix >= 4.4 installation with iLert using the Zabbix webhook feature.
-This guide will provide instructions on setting up a media type, a user and an action in Zabbix.
+This guide describes how to integrate your TAA >= 4.4 installation with iLert using the TAA webhook feature.
+This guide will provide instructions on setting up a media type, a user and an action in TAA.
 ​
 
 ## In iLert
@@ -12,20 +12,20 @@ This guide will provide instructions on setting up a media type, a user and an a
 
 [![](images/tn_1.png?raw=true)](images/1.png)
 
-2\. Set a name (e.g. "Zabbix") and select your desired escalation policy. Select "Zabbix" as the **Integration Type** and click **Save**.
+2\. Set a name (e.g. "TAA") and select your desired escalation policy. Select "TAA" as the **Integration Type** and click **Save**.
 
 [![](images/tn_2.png?raw=true)](images/2.png)
 
-3\. On the next page, an **API key** is generated. You will need it when setting up the iLert media type in Zabbix.
+3\. On the next page, an **API key** is generated. You will need it when setting up the iLert media type in TAA.
 
 [![](images/tn_3.png?raw=true)](images/3.png)
 ​
 
-## In Zabbix
+## In TAA
 
 
-The configuration consists of a _media type_ in Zabbix which will invoke a webhook to send alerts to iLert through the iLert Event API.
-To utilize the media type, we will create a Zabbix user to represent iLert. We will then create an alert action to notify the user via this media type whenever a problem is detected.
+The configuration consists of a _media type_ in TAA which will invoke a webhook to send alerts to iLert through the iLert Event API.
+To utilize the media type, we will create a TAA user to represent iLert. We will then create an alert action to notify the user via this media type whenever a problem is detected.
 
 > Note: only trigger events are currently supported
 ​
@@ -37,7 +37,7 @@ To utilize the media type, we will create a Zabbix user to represent iLert. We w
 
 2\. Under Administration, go to the **General** page and choose the **Macros** from drop-down list.
 
-3\. Add the macro {\$ZABBIX.URL} with your Zabbix frontend URL (for example http://192.168.7.123:8081)
+3\. Add the macro {\$ZABBIX.URL} with your TAA frontend URL (for example http://192.168.7.123:8081)
 
 [![](images/tn_4.png?raw=true)](images/4.png)
 
@@ -68,7 +68,7 @@ To utilize the media type, we will create a Zabbix user to represent iLert. We w
 
 [![](images/tn_7.png?raw=true)](images/7.png)
 
-3\. Fill in the details of this new user, and call it "iLert User". The default settings for iLert User should suffice as this user will not be logging into Zabbix.
+3\. Fill in the details of this new user, and call it "iLert User". The default settings for iLert User should suffice as this user will not be logging into TAA.
 
 4\. Click the **Select** button next to **Groups**.
 
@@ -91,10 +91,10 @@ To utilize the media type, we will create a Zabbix user to represent iLert. We w
 
 8\. Use the iLert User in any Actions of your choice. The text from "Action Operations" will be sent to "iLert Alert" when a problem happens.
 ​
-For more information use the [Zabbix](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [iLert](https://docs.ilert.com/integrations/zabbix/native) documentations.
+For more information use the [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [iLert](https://docs.ilert.com/integrations/zabbix/native) documentations.
 ​
 
 ## Supported Versions
 
 ​
-Zabbix >=7.0, iLert API v1.
+TAA >=7.0, iLert API v1.

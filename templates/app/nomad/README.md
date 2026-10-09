@@ -3,13 +3,13 @@
 
 ## Overview
 
-This template is designed to monitor HashiCorp Nomad by Zabbix.
+This template is designed to monitor HashiCorp Nomad by TAA.
 It works without any external scripts.
 Currently the template supports Nomad servers and clients discovery.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -76,8 +76,8 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HashiCorp Nomad: Client nodes API connection has failed|<p>Client nodes API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad by HTTP/nomad.client.nodes.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
-|HashiCorp Nomad: Server-related API connection has failed|<p>Server-related API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad by HTTP/nomad.server.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad: Client nodes API connection has failed|<p>Client nodes API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad by HTTP/nomad.client.nodes.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad: Server-related API connection has failed|<p>Server-related API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad by HTTP/nomad.server.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
 
 ### LLD rule Clients discovery
 
@@ -95,12 +95,12 @@ This template has been tested on:
 
 ## Overview
 
-This template is designed to monitor HashiCorp Nomad clients by Zabbix.
+This template is designed to monitor HashiCorp Nomad clients by TAA.
 It works without any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -109,7 +109,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -135,7 +135,7 @@ This template has been tested on:
 * [HashiCorp Nomad metrics API reference](https://developer.hashicorp.com/nomad/api-docs/metrics)
 * [HashiCorp Nomad nodes API reference](https://developer.hashicorp.com/nomad/api-docs/nodes)
 * [HashiCorp Nomad allocations API reference](https://developer.hashicorp.com/nomad/api-docs/allocations)
-* [Zabbix user macros with context](https://www.zabbix.com/documentation/7.4/manual/config/macros/user_macros_context)
+* [TAA user macros with context](https://www.zabbix.com/documentation/7.4/manual/config/macros/user_macros_context)
 
 ### Macros used
 
@@ -213,16 +213,16 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HashiCorp Nomad Client: Monitoring API connection has failed|<p>Monitoring API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad Client by HTTP/nomad.client.data.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
-|HashiCorp Nomad Client: Service [rpc] is down|<p>Cannot establish the connection to [rpc] service port {$NOMAD.CLIENT.RPC.PORT}.<br>Check the Nomad state and network connectivity between Nomad and Zabbix.</p>|`last(/HashiCorp Nomad Client by HTTP/net.tcp.service[tcp,,{$NOMAD.CLIENT.RPC.PORT}]) = 0`|Average|**Manual close**: Yes|
-|HashiCorp Nomad Client: Service [serf] is down|<p>Cannot establish the connection to [serf] service port {$NOMAD.CLIENT.SERF.PORT}.<br>Check the Nomad state and network connectivity between Nomad and Zabbix.</p>|`last(/HashiCorp Nomad Client by HTTP/net.tcp.service[tcp,,{$NOMAD.CLIENT.SERF.PORT}]) = 0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad Client: Monitoring API connection has failed|<p>Monitoring API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad Client by HTTP/nomad.client.data.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad Client: Service [rpc] is down|<p>Cannot establish the connection to [rpc] service port {$NOMAD.CLIENT.RPC.PORT}.<br>Check the Nomad state and network connectivity between Nomad and TAA.</p>|`last(/HashiCorp Nomad Client by HTTP/net.tcp.service[tcp,,{$NOMAD.CLIENT.RPC.PORT}]) = 0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad Client: Service [serf] is down|<p>Cannot establish the connection to [serf] service port {$NOMAD.CLIENT.SERF.PORT}.<br>Check the Nomad state and network connectivity between Nomad and TAA.</p>|`last(/HashiCorp Nomad Client by HTTP/net.tcp.service[tcp,,{$NOMAD.CLIENT.SERF.PORT}]) = 0`|Average|**Manual close**: Yes|
 |HashiCorp Nomad Client: OOM killed allocations found|<p>OOM killed allocations found.</p>|`last(/HashiCorp Nomad Client by HTTP/nomad.client.allocations.oom_killed) > 0`|Warning|**Manual close**: Yes|
 |HashiCorp Nomad Client: High CPU utilization|<p>CPU utilization is too high. The system might be slow to respond.</p>|`min(/HashiCorp Nomad Client by HTTP/nomad.client.cpu.total, 10m) >= {$NOMAD.CPU.UTIL.MIN}`|Average||
 |HashiCorp Nomad Client: High memory utilization|<p>RAM utilization is too high. The system might be slow to respond.</p>|`(min(/HashiCorp Nomad Client by HTTP/nomad.client.memory.available, 10m) / last(/HashiCorp Nomad Client by HTTP/nomad.client.memory.total))*100 <= {$NOMAD.RAM.AVAIL.MIN}`|Average||
 |HashiCorp Nomad Client: The host has been restarted|<p>The host uptime is less than 10 minutes.</p>|`last(/HashiCorp Nomad Client by HTTP/nomad.client.uptime) < 10m`|Warning|**Manual close**: Yes|
 |HashiCorp Nomad Client: Nomad client version has changed|<p>Nomad client version has changed.</p>|`change(/HashiCorp Nomad Client by HTTP/nomad.client.version)<>0`|Info|**Manual close**: Yes|
-|HashiCorp Nomad Client: Nodes API connection has failed|<p>Nodes API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad Client by HTTP/nomad.client.node.info.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HashiCorp Nomad Client: Monitoring API connection has failed</li></ul>|
-|HashiCorp Nomad Client: Allocations API connection has failed|<p>Allocations API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad Client by HTTP/nomad.client.job.allocs.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HashiCorp Nomad Client: Monitoring API connection has failed</li></ul>|
+|HashiCorp Nomad Client: Nodes API connection has failed|<p>Nodes API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad Client by HTTP/nomad.client.node.info.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HashiCorp Nomad Client: Monitoring API connection has failed</li></ul>|
+|HashiCorp Nomad Client: Allocations API connection has failed|<p>Allocations API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad Client by HTTP/nomad.client.job.allocs.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HashiCorp Nomad Client: Monitoring API connection has failed</li></ul>|
 
 ### LLD rule Drivers discovery
 
@@ -295,12 +295,12 @@ This template has been tested on:
 
 ## Overview
 
-This template is designed to monitor HashiCorp Nomad servers by Zabbix.
+This template is designed to monitor HashiCorp Nomad servers by TAA.
 It works without any external scripts.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -309,7 +309,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -330,7 +330,7 @@ This template has been tested on:
 * [HashiCorp Nomad metrics API reference](https://developer.hashicorp.com/nomad/api-docs/metrics)
 * [HashiCorp Nomad agent API reference](https://developer.hashicorp.com/nomad/api-docs/agent#query-self)
 * [HashiCorp Nomad cluster failure tolerance reference](https://developer.hashicorp.com/nomad/docs/concepts/consensus#deployment-table)
-* [Zabbix user macros with context](https://www.zabbix.com/documentation/7.4/manual/config/macros/user_macros_context)
+* [TAA user macros with context](https://www.zabbix.com/documentation/7.4/manual/config/macros/user_macros_context)
 
 ### Macros used
 
@@ -485,15 +485,15 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HashiCorp Nomad Server: Monitoring API connection has failed|<p>Monitoring API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad Server by HTTP/nomad.server.data.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
-|HashiCorp Nomad Server: Internal stats API connection has failed|<p>Internal stats API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and Zabbix.</p>|`find(/HashiCorp Nomad Server by HTTP/nomad.server.stats.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HashiCorp Nomad Server: Monitoring API connection has failed</li></ul>|
+|HashiCorp Nomad Server: Monitoring API connection has failed|<p>Monitoring API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad Server by HTTP/nomad.server.data.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad Server: Internal stats API connection has failed|<p>Internal stats API connection has failed.<br>Ensure that Nomad API URL and the necessary permissions have been defined correctly, check the service state and network connectivity between Nomad and TAA.</p>|`find(/HashiCorp Nomad Server by HTTP/nomad.server.stats.api.response,,"like","{$NOMAD.API.RESPONSE.SUCCESS}")=0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HashiCorp Nomad Server: Monitoring API connection has failed</li></ul>|
 |HashiCorp Nomad Server: Nomad server version has changed|<p>Nomad server version has changed.</p>|`change(/HashiCorp Nomad Server by HTTP/nomad.server.version)<>0`|Info|**Manual close**: Yes|
 |HashiCorp Nomad Server: Cluster role has changed|<p>Cluster role has changed.</p>|`change(/HashiCorp Nomad Server by HTTP/nomad.server.raft.cluster_role) <> 0`|Info|**Manual close**: Yes|
 |HashiCorp Nomad Server: Current number of open files is too high|<p>Heavy file descriptor usage (i.e., near the process file descriptor limit) indicates a potential file descriptor exhaustion issue.</p>|`min(/HashiCorp Nomad Server by HTTP/nomad.server.process_open_fds,5m)/last(/HashiCorp Nomad Server by HTTP/nomad.server.process_max_fds)*100>{$NOMAD.OPEN.FDS.MAX}`|Warning||
 |HashiCorp Nomad Server: Dead jobs found|<p>Jobs with the `Dead` state discovered.<br>Check the {$NOMAD.SERVER.API.SCHEME}://{HOST.IP}:{$NOMAD.SERVER.API.PORT}/v1/jobs URL for the details.</p>|`last(/HashiCorp Nomad Server by HTTP/nomad.server.job_status.dead) > 0 and nodata(/HashiCorp Nomad Server by HTTP/nomad.server.job_status.dead,5m) = 0`|Warning|**Manual close**: Yes|
 |HashiCorp Nomad Server: Leader last contact timeout exceeded|<p>The nomad.raft.leader.lastContact metric is a general indicator of Raft latency which can be used to observe how Raft timing is performing and guide infrastructure provisioning.<br>If this number trends upwards, look at CPU, disk IOPs, and network latency. nomad.raft.leader.lastContact should not get too close to the leader lease timeout of 500ms.</p>|`min(/HashiCorp Nomad Server by HTTP/nomad.server.raft.leader.lastContact,5m) >= {$NOMAD.SERVER.LEADER.LATENCY} and nodata(/HashiCorp Nomad Server by HTTP/nomad.server.raft.leader.lastContact,5m) = 0`|Warning||
-|HashiCorp Nomad Server: Service [rpc] is down|<p>Cannot establish the connection to [rpc] service port {$NOMAD.SERVER.RPC.PORT}.<br>Check the Nomad state and network connectivity between Nomad and Zabbix.</p>|`last(/HashiCorp Nomad Server by HTTP/net.tcp.service[tcp,,{$NOMAD.SERVER.RPC.PORT}]) = 0`|Average|**Manual close**: Yes|
-|HashiCorp Nomad Server: Service [serf] is down|<p>Cannot establish the connection to [serf] service port {$NOMAD.SERVER.SERF.PORT}.<br>Check the Nomad state and network connectivity between Nomad and Zabbix.</p>|`last(/HashiCorp Nomad Server by HTTP/net.tcp.service[tcp,,{$NOMAD.SERVER.SERF.PORT}]) = 0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad Server: Service [rpc] is down|<p>Cannot establish the connection to [rpc] service port {$NOMAD.SERVER.RPC.PORT}.<br>Check the Nomad state and network connectivity between Nomad and TAA.</p>|`last(/HashiCorp Nomad Server by HTTP/net.tcp.service[tcp,,{$NOMAD.SERVER.RPC.PORT}]) = 0`|Average|**Manual close**: Yes|
+|HashiCorp Nomad Server: Service [serf] is down|<p>Cannot establish the connection to [serf] service port {$NOMAD.SERVER.SERF.PORT}.<br>Check the Nomad state and network connectivity between Nomad and TAA.</p>|`last(/HashiCorp Nomad Server by HTTP/net.tcp.service[tcp,,{$NOMAD.SERVER.SERF.PORT}]) = 0`|Average|**Manual close**: Yes|
 |HashiCorp Nomad Server: Autopilot is unhealthy|<p>The autopilot is in unhealthy state. The successful failover probability is extremely low.</p>|`last(/HashiCorp Nomad Server by HTTP/nomad.server.autopilot.state) = 0 and nodata(/HashiCorp Nomad Server by HTTP/nomad.server.autopilot.state,5m) = 0`|Average|**Manual close**: Yes|
 |HashiCorp Nomad Server: Autopilot redundancy is low|<p>The autopilot redundancy is low.<br>Cluster crash risk is high due to one more server failure.</p>|`last(/HashiCorp Nomad Server by HTTP/nomad.server.autopilot.failure_tolerance) < {$NOMAD.REDUNDANCY.MIN} and nodata(/HashiCorp Nomad Server by HTTP/nomad.server.autopilot.failure_tolerance,5m) = 0`|Warning|**Manual close**: Yes|
 
@@ -501,5 +501,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

@@ -220,7 +220,7 @@ static void	hk_history_enable_compression(int age)
 			if (NULL == res)
 			{
 				zabbix_log(LOG_LEVEL_WARNING, "Table \"%s\" is not a hypertable. Execute TimescaleDB"
-						" configuration step as described in Zabbix documentation to upgrade"
+						" configuration step as described in TAA documentation to upgrade"
 						" schema.", table->name);
 				continue;
 			}

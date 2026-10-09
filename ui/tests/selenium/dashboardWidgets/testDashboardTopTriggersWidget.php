@@ -453,7 +453,7 @@ class testDashboardTopTriggersWidget extends testWidgets {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Refresh interval' => '10 seconds'
 					]
 				]
@@ -463,7 +463,7 @@ class testDashboardTopTriggersWidget extends testWidgets {
 					'expected' => TEST_GOOD,
 					'fields' => [
 						'Host groups' => [
-							'Zabbix servers',
+							'TAA servers',
 							'First Group for TOP triggers check'
 						],
 						'Refresh interval' => '30 seconds'
@@ -561,7 +561,7 @@ class testDashboardTopTriggersWidget extends testWidgets {
 						'Name' => STRING_255,
 						'Show header' => false,
 						'Host groups' => [
-							'Zabbix servers',
+							'TAA servers',
 							'First Group for TOP triggers check'
 						],
 						'Hosts' => [

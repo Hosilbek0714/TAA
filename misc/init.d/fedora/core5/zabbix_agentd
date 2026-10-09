@@ -5,11 +5,11 @@
 # Starts the zabbix_agentd daemon
 #
 # chkconfig: - 95 5
-# description: Zabbix Monitoring Agent
+# description: TAA Monitoring Agent
 # processname: zabbix_agentd
 # pidfile: /tmp/zabbix_agentd.pid
 
-# Modified for Zabbix 2.0.0
+# Modified for TAA 2.0.0
 # May 2012, Zabbix SIA
 
 # Source function library.
@@ -17,7 +17,7 @@
 . /etc/init.d/functions
 
 RETVAL=0
-prog="Zabbix Agent"
+prog="TAA Agent"
 ZABBIX_BIN="/usr/local/sbin/zabbix_agentd"
 
 if [ ! -x ${ZABBIX_BIN} ] ; then

@@ -18,7 +18,7 @@
 #define ZBX_STR2(str)	#str
 #define ZBX_STR(str)	ZBX_STR2(str)
 
-#define APPLICATION_NAME	"Zabbix Agent"
+#define APPLICATION_NAME	"TAA Agent"
 #define ZABBIX_REVDATE		"4 June 2025"
 #define ZABBIX_VERSION_MAJOR	7
 #define ZABBIX_VERSION_MINOR	4

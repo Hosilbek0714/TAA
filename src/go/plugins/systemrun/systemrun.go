@@ -82,7 +82,7 @@ func (p *Plugin) Export(_ string, params []string, ctx plugin.ContextProvider) (
 		p.Debugf("Executing command:'%s'", params[0])
 	}
 
-	// Needed so the executor is initialized once, this should be done in configure, but then Zabbix agent 2
+	// Needed so the executor is initialized once, this should be done in configure, but then TAA agent 2
 	// will not start if there are issues with finding cmd.exe on windows, and that will break backwards compatibility.
 	if p.executor == nil {
 		var err error

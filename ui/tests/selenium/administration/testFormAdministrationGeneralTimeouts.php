@@ -24,7 +24,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 	public $form_selector = 'id:timeouts-form';
 	public $config_link = 'zabbix.php?action=timeouts.edit';
 	public $default_values = [
-		'Zabbix agent' => '3s',
+		'TAA agent' => '3s',
 		'Simple check' => '3s',
 		'SNMP agent' => '3s',
 		'External check' => '3s',
@@ -43,7 +43,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 	];
 
 	public $custom_values = [
-		'Zabbix agent' => '123s',
+		'TAA agent' => '123s',
 		'Simple check' => '123s',
 		'SNMP agent' => '123s',
 		'External check' => '123s',
@@ -85,7 +85,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 	 */
 	public function testFormAdministrationGeneralTimeouts_Layout() {
 		$maxlengths = [
-			'Zabbix agent' => 255,
+			'TAA agent' => 255,
 			'Simple check' => 255,
 			'SNMP agent' => 255,
 			'External check' => 255,
@@ -149,7 +149,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 			[
 				[
 					'fields' => [
-						'Zabbix agent' => '15s'
+						'TAA agent' => '15s'
 					],
 					'db' => [
 						'timeout_zabbix_agent' => '15s'
@@ -325,7 +325,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 			[
 				[
 					'fields' => [
-						'Zabbix agent' => '33s',
+						'TAA agent' => '33s',
 						'Simple check' => '33s',
 						'SNMP agent' => '33s',
 						'External check' => '33s',
@@ -375,7 +375,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 			[
 				[
 					'fields' => [
-						'Zabbix agent' => '22s',
+						'TAA agent' => '22s',
 						'Simple check' => '22s',
 						'SNMP agent' => '22s',
 						'External check' => '22s',
@@ -416,7 +416,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 			[
 				[
 					'fields' => [
-						'Zabbix agent' => '33',
+						'TAA agent' => '33',
 						'Simple check' => '33',
 						'SNMP agent' => '33',
 						'External check' => '33',
@@ -457,7 +457,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 			[
 				[
 					'fields' => [
-						'Zabbix agent' => '{$MACROS}',
+						'TAA agent' => '{$MACROS}',
 						'Simple check' => '{$MACROS}',
 						'SNMP agent' => '{$MACROS}',
 						'External check' => '{$MACROS}',
@@ -486,7 +486,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 			[
 				[
 					'fields' => [
-						'Zabbix agent' => '10m',
+						'TAA agent' => '10m',
 						'Simple check' => '10m',
 						'SNMP agent' => '10m',
 						'External check' => '10m',
@@ -526,7 +526,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '0s'
+						'TAA agent' => '0s'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": value must be one of 1-600.'
 				]
@@ -536,7 +536,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '601s'
+						'TAA agent' => '601s'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": value must be one of 1-600.'
 				]
@@ -770,7 +770,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '',
+						'TAA agent' => '',
 						'Simple check' => '',
 						'SNMP agent' => '',
 						'External check' => '',
@@ -812,7 +812,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => 'test'
+						'TAA agent' => 'test'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": a time unit is expected.'
 				]
@@ -1044,7 +1044,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '1d'
+						'TAA agent' => '1d'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": value must be one of 1-600.'
 				]
@@ -1054,7 +1054,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '1w'
+						'TAA agent' => '1w'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": value must be one of 1-600.'
 				]
@@ -1064,7 +1064,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '1M'
+						'TAA agent' => '1M'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": a time unit is expected.'
 				]
@@ -1344,7 +1344,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '123456789123456789'
+						'TAA agent' => '123456789123456789'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": a number is too large.'
 				]
@@ -1444,7 +1444,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '{HOST.HOST}'
+						'TAA agent' => '{HOST.HOST}'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": a time unit is expected.'
 				]
@@ -1454,7 +1454,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Zabbix agent' => '{#LDD_MACROS}'
+						'TAA agent' => '{#LDD_MACROS}'
 					],
 					'details' => 'Invalid parameter "/timeout_zabbix_agent": a time unit is expected.'
 				]
@@ -1710,7 +1710,7 @@ class testFormAdministrationGeneralTimeouts extends testFormAdministrationGenera
 				[
 					'trim' => true,
 					'fields' => [
-						'Zabbix agent' => '   15s   ',
+						'TAA agent' => '   15s   ',
 						'Simple check' => '   15s   ',
 						'SNMP agent' => '   15s   ',
 						'External check' => '   15s   ',

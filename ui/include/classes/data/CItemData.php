@@ -1045,7 +1045,7 @@ final class CItemData {
 				]
 			],
 			'agent.variant' => [
-				'description' => _('Agent variant check. Returns 1 - for Zabbix agent; 2 - for Zabbix agent 2'),
+				'description' => _('Agent variant check. Returns 1 - for TAA agent; 2 - for TAA agent 2'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_ZABBIX => 'config/items/itemtypes/zabbix_agent#agent.variant',
@@ -1053,7 +1053,7 @@ final class CItemData {
 				]
 			],
 			'agent.version' => [
-				'description' => _('Version of Zabbix agent. Returns string'),
+				'description' => _('Version of TAA agent. Returns string'),
 				'value_type' => ITEM_VALUE_TYPE_STR,
 				'documentation_link' => [
 					ITEM_TYPE_ZABBIX => 'config/items/itemtypes/zabbix_agent#agent.version',
@@ -2763,7 +2763,7 @@ final class CItemData {
 				]
 			],
 			'zabbix.stats[<ip>,<port>,queue,<from>,<to>]' => [
-				'description' => _('Number of items in the queue which are delayed in Zabbix server or proxy by "from" till "to" seconds, inclusive.'),
+				'description' => _('Number of items in the queue which are delayed in TAA server or proxy by "from" till "to" seconds, inclusive.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_ZABBIX => 'config/items/itemtypes/zabbix_agent#zabbix.stats.two',
@@ -2771,7 +2771,7 @@ final class CItemData {
 				]
 			],
 			'zabbix.stats[<ip>,<port>]' => [
-				'description' => _('Returns a JSON object containing Zabbix server or proxy internal metrics.'),
+				'description' => _('Returns a JSON object containing TAA server or proxy internal metrics.'),
 				'value_type' => ITEM_VALUE_TYPE_TEXT,
 				'documentation_link' => [
 					ITEM_TYPE_ZABBIX => 'config/items/itemtypes/zabbix_agent#zabbix.stats',
@@ -2779,7 +2779,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[boottime]' => [
-				'description' => _('Startup time of Zabbix server, Unix timestamp.'),
+				'description' => _('Startup time of TAA server, Unix timestamp.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#boottime'
@@ -2828,7 +2828,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[host,discovery,interfaces]' => [
-				'description' => _('Returns a JSON array describing the host network interfaces configured in Zabbix. Can be used for LLD.'),
+				'description' => _('Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD.'),
 				'value_type' => ITEM_VALUE_TYPE_TEXT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#discovery.interfaces'
@@ -2842,21 +2842,21 @@ final class CItemData {
 				]
 			],
 			'zabbix[items]' => [
-				'description' => _('Number of items in Zabbix database.'),
+				'description' => _('Number of items in TAA database.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#items'
 				]
 			],
 			'zabbix[items_unsupported]' => [
-				'description' => _('Number of unsupported items in Zabbix database.'),
+				'description' => _('Number of unsupported items in TAA database.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#items.unsupported'
 				]
 			],
 			'zabbix[java,,<param>]' => [
-				'description' => _('Returns information associated with Zabbix Java gateway. Valid params are: ping, version.'),
+				'description' => _('Returns information associated with TAA Java gateway. Valid params are: ping, version.'),
 				'value_type' => null,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#java'
@@ -2884,7 +2884,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[process,<type>,<mode>,<state>]' => [
-				'description' => _('Time a particular Zabbix process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage.'),
+				'description' => _('Time a particular TAA process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage.'),
 				'value_type' => ITEM_VALUE_TYPE_FLOAT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#process'
@@ -2898,7 +2898,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[proxy,discovery]' => [
-				'description' => _('List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON.'),
+				'description' => _('List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON.'),
 				'value_type' => ITEM_VALUE_TYPE_TEXT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#proxy.discovery'
@@ -2926,7 +2926,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[proxy group,<name>,proxies]' => [
-				'description' => _('List of Zabbix proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON.'),
+				'description' => _('List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON.'),
 				'value_type' => ITEM_VALUE_TYPE_TEXT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#proxy.group.c'
@@ -2940,7 +2940,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[proxy group,discovery]' => [
-				'description' => _('List of Zabbix proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON.'),
+				'description' => _('List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON.'),
 				'value_type' => ITEM_VALUE_TYPE_TEXT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#proxy.group.e'
@@ -2961,21 +2961,21 @@ final class CItemData {
 				]
 			],
 			'zabbix[requiredperformance]' => [
-				'description' => _('Required performance of the Zabbix server, in new values per second expected.'),
+				'description' => _('Required performance of the TAA server, in new values per second expected.'),
 				'value_type' => ITEM_VALUE_TYPE_FLOAT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#required.performance'
 				]
 			],
 			'zabbix[stats,<ip>,<port>,queue,<from>,<to>]' => [
-				'description' => _('Number of items in the queue which are delayed in Zabbix server or proxy by "from" till "to" seconds, inclusive.'),
+				'description' => _('Number of items in the queue which are delayed in TAA server or proxy by "from" till "to" seconds, inclusive.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#stats.queue'
 				]
 			],
 			'zabbix[stats,<ip>,<port>]' => [
-				'description' => _('Returns a JSON object containing Zabbix server or proxy internal metrics.'),
+				'description' => _('Returns a JSON object containing TAA server or proxy internal metrics.'),
 				'value_type' => ITEM_VALUE_TYPE_TEXT,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#stats'
@@ -2989,14 +2989,14 @@ final class CItemData {
 				]
 			],
 			'zabbix[triggers]' => [
-				'description' => _('Number of triggers in Zabbix database.'),
+				'description' => _('Number of triggers in TAA database.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#triggers'
 				]
 			],
 			'zabbix[uptime]' => [
-				'description' => _('Uptime of Zabbix server process in seconds.'),
+				'description' => _('Uptime of TAA server process in seconds.'),
 				'value_type' => ITEM_VALUE_TYPE_UINT64,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#uptime'
@@ -3017,7 +3017,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[version]' => [
-				'description' => _('Version of Zabbix server or proxy'),
+				'description' => _('Version of TAA server or proxy'),
 				'value_type' => null,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#version'
@@ -3031,7 +3031,7 @@ final class CItemData {
 				]
 			],
 			'zabbix[wcache,<cache>,<mode>]' => [
-				'description' => _('Statistics and availability of Zabbix write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused).'),
+				'description' => _('Statistics and availability of TAA write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused).'),
 				'value_type' => null,
 				'documentation_link' => [
 					ITEM_TYPE_INTERNAL => 'config/items/itemtypes/internal#wcache'

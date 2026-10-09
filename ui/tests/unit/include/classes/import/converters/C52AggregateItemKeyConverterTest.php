@@ -128,8 +128,8 @@ class C52AggregateItemKeyConverterTest extends TestCase {
 				'sum(last_foreach(/*/vfs.fs.size[/,total]?[group="MySQL Servers"]))'
 			],
 			[
-				'grpsum[ "Zabbix servers" , trap1 , last, 30s ]',
-				'sum(last_foreach(/*/trap1?[group="Zabbix servers"]))'
+				'grpsum[ "TAA servers" , trap1 , last, 30s ]',
+				'sum(last_foreach(/*/trap1?[group="TAA servers"]))'
 			],
 			[
 				'grpsum["My, group","trap1",last,]',

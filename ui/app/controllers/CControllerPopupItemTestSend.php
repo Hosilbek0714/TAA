@@ -44,7 +44,7 @@ class CControllerPopupItemTestSend extends CControllerPopupItemTest {
 	private const NOT_SUPPORTED_STATE = 1;
 
 	/**
-	 * Time suffixes supported by Zabbix server.
+	 * Time suffixes supported by TAA server.
 	 *
 	 * @var array
 	 */

@@ -267,7 +267,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'tag_options' => [
 						'type' => 'Or',
@@ -448,7 +448,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'tag_options' => [
 						'type' => 'Or',
@@ -468,7 +468,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'expected' => [
 						'Scenario for Delete',
@@ -500,7 +500,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Hosts' => 'Host ZBX6663'
 					],
 					'expected' => [
@@ -514,7 +514,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Hosts' => [
 							'Host ZBX6663',
 							'Simple form test host'
@@ -556,7 +556,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Hosts' => [
 							'Simple form test host'
 						]
@@ -590,7 +590,7 @@ class testPageMonitoringWeb extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers'
+						'Host groups' => 'TAA servers'
 					],
 					'tag_options' => [
 						'type' => 'And/Or',

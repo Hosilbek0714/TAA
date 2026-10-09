@@ -47,7 +47,7 @@ class Actions {
 				'type' => ZBX_SCRIPT_TYPE_CUSTOM_SCRIPT,
 				'scope' => ZBX_SCRIPT_SCOPE_ACTION,
 				'command' => '/sbin/shutdown -r',
-				'groupid' => 4, // Zabbix servers.
+				'groupid' => 4, // TAA servers.
 				'description' => 'This command reboots server.'
 			]
 		]);
@@ -148,12 +148,12 @@ class Actions {
 						[
 							'conditiontype' => ZBX_CONDITION_TYPE_TEMPLATE,
 							'operator' => CONDITION_OPERATOR_NOT_EQUAL,
-							'value' => 10081 // Windows by Zabbix agent.
+							'value' => 10081 // Windows by TAA agent.
 						],
 						[
 							'conditiontype' => ZBX_CONDITION_TYPE_TEMPLATE,
 							'operator' => CONDITION_OPERATOR_EQUAL,
-							'value' => 10001 // Linux by Zabbix agent.
+							'value' => 10001 // Linux by TAA agent.
 						],
 						[
 							'conditiontype' => ZBX_CONDITION_TYPE_TIME_PERIOD,
@@ -223,7 +223,7 @@ class Actions {
 						[
 							'conditiontype' => ZBX_CONDITION_TYPE_HOST_GROUP,
 							'operator' => CONDITION_OPERATOR_NOT_EQUAL,
-							'value' => 4 // Zabbix servers.
+							'value' => 4 // TAA servers.
 						],
 						[
 							'conditiontype' => ZBX_CONDITION_TYPE_HOST_GROUP,
@@ -330,7 +330,7 @@ class Actions {
 					],
 					[
 						'operationtype' => OPERATION_TYPE_TEMPLATE_ADD,
-						'optemplate' => [['templateid' => 10001]] // Linux by Zabbix agent.
+						'optemplate' => [['templateid' => 10001]] // Linux by TAA agent.
 					]
 				]
 			],

@@ -36,7 +36,7 @@ class testTimeoutsTemplates extends testTimeoutsDisplay {
 				'groups' => ['groupid' => 1], // Templates.
 				'discoveryrules' => [
 					[
-						'name' => 'Zabbix agent drule',
+						'name' => 'TAA agent drule',
 						'key_' => 'zabbix_agent_drule',
 						'type' => ITEM_TYPE_ZABBIX,
 						'delay' => 5

@@ -22,7 +22,7 @@ import (
 func (pc *PluginOptions) setCustomQueriesPathDefault() {
 	if pc.CustomQueriesEnabled && pc.CustomQueriesPath == "" {
 		pc.CustomQueriesPath = fmt.Sprintf(
-			"%s\\Zabbix Agent 2\\Custom Queries\\Mysql", os.Getenv("ProgramFiles"),
+			"%s\\TAA Agent 2\\Custom Queries\\Mysql", os.Getenv("ProgramFiles"),
 		)
 	}
 }

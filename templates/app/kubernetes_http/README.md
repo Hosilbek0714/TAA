@@ -1,11 +1,11 @@
-# User guide to setting up Zabbix monitoring of the Kubernetes
+# User guide to setting up TAA monitoring of the Kubernetes
 
-A template set for monitoring your Kubernetes cluster via Zabbix 7.0 and higher. Zabbix provides a powerful automated solution for monitoring the Kubernetes cluster components.
-You need to deploy [Zabbix Helm Chart](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) with Zabbix Proxy and Zabbix agents to monitor the cluster.
+A template set for monitoring your Kubernetes cluster via TAA 7.0 and higher. TAA provides a powerful automated solution for monitoring the Kubernetes cluster components.
+You need to deploy [TAA Helm Chart](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) with TAA Proxy and TAA agents to monitor the cluster.
 
 ## Pre-requisites and installation
 
-Zabbix is an open-source product that can be installed on a majority of Unix-like distributions at no cost  - see [full list of supported distributions](https://www.zabbix.com/download). Alternatively, Zabbix is available on certain [cloud services](https://www.zabbix.com/cloud_images).
+TAA is an open-source product that can be installed on a majority of Unix-like distributions at no cost  - see [full list of supported distributions](https://www.zabbix.com/download). Alternatively, TAA is available on certain [cloud services](https://www.zabbix.com/cloud_images).
 
 Templates for Kubernetes monitoring
 
@@ -22,17 +22,17 @@ Templates are of two types:
 
 1. Cluster node monitoring
 
-    [Kubernetes nodes by HTTP](kubernetes_nodes_http) template discovers cluster nodes, creates hosts in Zabbix based on prototypes and assigns the "Linux by Zabbix agent" template to them. The template collects basic node metrics via the Kubernetes API.
+    [Kubernetes nodes by HTTP](kubernetes_nodes_http) template discovers cluster nodes, creates hosts in TAA based on prototypes and assigns the "Linux by TAA agent" template to them. The template collects basic node metrics via the Kubernetes API.
 
 2. Main cluster components monitoring
 
-    [Kubernetes cluster state by HTTP](kubernetes_state_http) discovers cluster components and control plane nodes, creates Zabbix hosts and assigns the required templates to them.
+    [Kubernetes cluster state by HTTP](kubernetes_state_http) discovers cluster components and control plane nodes, creates TAA hosts and assigns the required templates to them.
 
-## Zabbix set up
+## TAA set up
 
-* Install Zabbix Helm chart according to the [instructions](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster).
-* Import all templates into Zabbix.
-* Get the token automatically created when you install Zabbix Helm Chart.
+* Install TAA Helm chart according to the [instructions](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster).
+* Import all templates into TAA.
+* Get the token automatically created when you install TAA Helm Chart.
 
 ```bash
 kubectl get secret zabbix-service-account -n monitoring -o jsonpath={.data.token} | base64 -d

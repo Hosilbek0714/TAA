@@ -183,7 +183,7 @@ return [
     'BRAND_LOGO' => 'local/img/logo.svg',                    // ❌ Nginx blokaydi
     'BRAND_LOGO_SIDEBAR' => 'local/img/logo.svg',            // ❌ Nginx blokaydi  
     'BRAND_LOGO_SIDEBAR_COMPACT' => 'local/img/logo-compact.svg', // ❌ Nginx blokaydi
-    'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',
+    'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',
     'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',
     'BRAND_URL' => '#',
     'BRAND_TITLE' => 'TAA Monitoring System'
@@ -230,7 +230,7 @@ return [
     'BRAND_LOGO' => 'assets/img/logo.svg',                    // ✅ local/ dan assets/ ga
     'BRAND_LOGO_SIDEBAR' => 'assets/img/logo.svg',
     'BRAND_LOGO_SIDEBAR_COMPACT' => 'assets/img/logo-compact.svg',
-    'BRAND_FOOTER' => 'TAA Monitoring System - Powered by Zabbix',
+    'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',
     'BRAND_HELP_URL' => 'https://taa.uz/documentation/',      // ✅ O'z URL
     'BRAND_URL' => 'https://taa.uz',                          // ✅ O'z URL  
     'BRAND_TITLE' => 'TAA Monitoring System'

@@ -44,7 +44,7 @@ const (
 )
 
 var (
-	serviceName = "Zabbix Agent 2"
+	serviceName = "TAA Agent 2"
 
 	svcInstallFlag       bool
 	svcUninstallFlag     bool
@@ -82,7 +82,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "install",
 				Shorthand:   "i",
-				Description: "Install Zabbix agent 2 as service",
+				Description: "Install TAA agent 2 as service",
 			},
 			Default: false,
 			Dest:    &svcInstallFlag,
@@ -91,7 +91,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "uninstall",
 				Shorthand:   "d",
-				Description: "Uninstall Zabbix agent 2 from service",
+				Description: "Uninstall TAA agent 2 from service",
 			},
 			Default: false,
 			Dest:    &svcUninstallFlag,
@@ -100,7 +100,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "start",
 				Shorthand:   "s",
-				Description: "Start Zabbix agent 2 service",
+				Description: "Start TAA agent 2 service",
 			},
 			Default: false,
 			Dest:    &svcStartFlag,
@@ -109,7 +109,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "stop",
 				Shorthand:   "x",
-				Description: "Stop Zabbix agent 2 service",
+				Description: "Stop TAA agent 2 service",
 			},
 			Default: false,
 			Dest:    &svcStopFlag,
@@ -119,7 +119,7 @@ func osDependentFlags() zbxflag.Flags {
 				Name:      "startup-type",
 				Shorthand: "S",
 				Description: fmt.Sprintf(
-					"Set startup type of the Zabbix Windows agent service to be installed."+
+					"Set startup type of the TAA Windows agent service to be installed."+
 						" Allowed values: %s (default), %s, %s, %s",
 					startTypeAutomatic,
 					startTypeDelayed,
@@ -414,7 +414,7 @@ func svcStartTypeFlagParse() (uint32, bool, error) {
 func svcInstall(conf string) error {
 	exepath, err := getAgentPath()
 	if err != nil {
-		return fmt.Errorf("failed to get Zabbix Agent 2 executable path: %s", err.Error())
+		return fmt.Errorf("failed to get TAA Agent 2 executable path: %s", err.Error())
 	}
 
 	m, err := mgr.Connect()
@@ -616,7 +616,7 @@ func sendServiceStop() {
 
 func runService() {
 	if err := svc.Run(serviceName, &winService{}); err != nil {
-		panic(errs.Wrap(err, "use foreground option to run Zabbix agent as console application"))
+		panic(errs.Wrap(err, "use foreground option to run TAA agent as console application"))
 	}
 }
 

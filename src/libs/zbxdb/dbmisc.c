@@ -745,7 +745,7 @@ int	zbx_db_config_validate_features(zbx_db_config_t *config, unsigned char progr
 	if (NULL != config->db_tls_connect && 0 == strcmp(config->db_tls_connect,
 			ZBX_DB_TLS_CONNECT_VERIFY_CA_TXT))
 	{
-		zbx_error("\"DBTLSConnect\" configuration parameter value '%s' cannot be used: Zabbix %s was compiled"
+		zbx_error("\"DBTLSConnect\" configuration parameter value '%s' cannot be used: TAA %s was compiled"
 			" without PostgreSQL or MySQL library version that support this value",
 			ZBX_DB_TLS_CONNECT_VERIFY_CA_TXT, get_program_type_string(program_type));
 		err |= 1;
@@ -900,7 +900,7 @@ int	zbx_dbconn_check_extension(zbx_dbconn_t *db, struct zbx_db_version_info_t *i
 	if (0 != zbx_strcmp_null(info->extension, ZBX_DB_EXTENSION_TIMESCALEDB))
 		goto out;
 
-	/* at this point we know the TimescaleDB extension is enabled in Zabbix */
+	/* at this point we know the TimescaleDB extension is enabled in TAA */
 
 	zbx_tsdb_info_extract(info);
 

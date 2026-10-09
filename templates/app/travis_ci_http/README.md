@@ -3,13 +3,13 @@
 
 ## Overview
 
-The template to monitor Travis CI by Zabbix that work without any external scripts.
-Most of the metrics are collected in one go, thanks to Zabbix bulk data collection.
+The template to monitor Travis CI by TAA that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAA bulk data collection.
 
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -56,7 +56,7 @@ You must set {$TRAVIS.API.TOKEN} and {$TRAVIS.API.URL} macros.
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Travis CI: Service is unavailable|<p>Travis API is unavailable. Please check if the correct macros are set.</p>|`last(/Travis CI by HTTP/travis.get_health)=0`|High|**Manual close**: Yes|
-|Travis CI: Failed to fetch home page|<p>Zabbix has not received any data for items for the last 30 minutes.</p>|`nodata(/Travis CI by HTTP/travis.get_health,30m)=1`|Warning|**Manual close**: Yes|
+|Travis CI: Failed to fetch home page|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Travis CI by HTTP/travis.get_health,30m)=1`|Warning|**Manual close**: Yes|
 
 ### LLD rule Repos metrics discovery
 
@@ -93,5 +93,5 @@ You must set {$TRAVIS.API.TOKEN} and {$TRAVIS.API.URL} macros.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

@@ -26,7 +26,7 @@ class CYamlImportReader extends CImportReader {
 	 * Known issues:
 	 *   - Error messages coming from Symfony YAML are not translatable;
 	 *   - Symfony parser incorrectly interprets YAML as JSON;
-	 *   - Symfony parser recognizes patterns (like dates) in unquoted strings which are not supported by Zabbix;
+	 *   - Symfony parser recognizes patterns (like dates) in unquoted strings which are not supported by TAA;
 	 *   - Symfony parser support only one YAML document per file.
 	 *
 	 * @param string $string

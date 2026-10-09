@@ -418,7 +418,7 @@ function userAgents() {
 			'Mozilla/5.0 (iPod Touch; CPU iPhone OS 12_2 like Mac OS X) AppleWebKit/605.1.15 (KHTML, like Gecko) Version/13.0 Mobile/15E148 Safari/604.1' => 'Safari 13 (iPod Touch)'
 		],
 		_('Others') => [
-			ZBX_DEFAULT_AGENT => 'Zabbix',
+			ZBX_DEFAULT_AGENT => 'TAA',
 			'Lynx/2.8.8rel.2 libwww-FM/2.14 SSL-MM/1.4.1' => 'Lynx 2.8.8rel.2',
 			'Links (2.8; Linux 3.13.0-36-generic x86_64; GNU C 4.8.2; text)' => 'Links 2.8',
 			'Mozilla/5.0 (compatible; Googlebot/2.1; +http://www.google.com/bot.html)' => 'Googlebot 2.1'

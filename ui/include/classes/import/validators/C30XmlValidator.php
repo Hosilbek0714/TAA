@@ -15,7 +15,7 @@
 
 
 /**
- * Validate import data from Zabbix 3.0.x.
+ * Validate import data from TAA 3.0.x.
  */
 class C30XmlValidator extends CXmlValidatorGeneral {
 

@@ -99,7 +99,7 @@ class testFormApiTokens extends CWebTest {
 	public function checkTokensRegenerateFormLayout($source) {
 		$values = [
 			'Name:' => 'Token for cancel or simple update',
-			'User:' => 'Admin (Zabbix Administrator)',
+			'User:' => 'Admin (TAA Administrator)',
 			'Description:' => 'Token for testing cancelling',
 			'Expires at:' => '2026-12-31 23:59:59'
 		];

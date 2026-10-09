@@ -59,7 +59,7 @@ class testDashboardsTemplatedDashboardForm extends CWebTest {
 	public static function prepareTemplateDashboardsData() {
 		$hosts = CDataHelper::call('host.create', [
 			'host' => 'Empty host for template',
-			'groups' => [['groupid' => 4]] //Zabbix servers.
+			'groups' => [['groupid' => 4]] //TAA servers.
 		]);
 		self::$hostid_for_template = $hosts['hostids'][0];
 
@@ -1370,8 +1370,8 @@ class testDashboardsTemplatedDashboardForm extends CWebTest {
 							'field' => 'Interface type',
 							'type' => 'checkbox_list',
 							'checkboxes' => [
-								'Zabbix agent (active checks)' => false,
-								'Zabbix agent (passive checks)' => false,
+								'TAA agent (active checks)' => false,
+								'TAA agent (passive checks)' => false,
 								'SNMP' => false,
 								'JMX' => false,
 								'IPMI' => false]
@@ -2716,7 +2716,7 @@ class testDashboardsTemplatedDashboardForm extends CWebTest {
 						'Name' => 'Action log with all fields specified',
 						'Refresh interval' => '10 minutes',
 						'Recipients' => ['Admin', 'guest'],
-						'Actions' => 'Report problems to Zabbix administrators',
+						'Actions' => 'Report problems to TAA administrators',
 						'Media types' => ['Email', 'SMS'],
 						'Status' => ['In progress', 'Sent/Executed', 'Failed'],
 						'Search string' => 'Action log',
@@ -2724,7 +2724,7 @@ class testDashboardsTemplatedDashboardForm extends CWebTest {
 						'Show lines' => 100
 					],
 					'swap_expected' => [
-						'Recipients' => ['Admin (Zabbix Administrator)', 'guest']
+						'Recipients' => ['Admin (TAA Administrator)', 'guest']
 					]
 				]
 			],
@@ -3402,8 +3402,8 @@ class testDashboardsTemplatedDashboardForm extends CWebTest {
 						'Name' => 'Host availability with all possible parameters',
 						'Refresh interval' => '10 minutes',
 						'Interface type' => [
-							'Zabbix agent (active checks)',
-							'Zabbix agent (passive checks)',
+							'TAA agent (active checks)',
+							'TAA agent (passive checks)',
 							'SNMP',
 							'JMX',
 							'IPMI'
@@ -4504,7 +4504,7 @@ class testDashboardsTemplatedDashboardForm extends CWebTest {
 
 		// Remove zabbix version due to unstable screenshot which depends on column width with different version length.
 		CElementQuery::getDriver()->executeScript("arguments[0].textContent = '';",
-				[$this->query('xpath://th[text()="Zabbix frontend version"]/following-sibling::td[1]',)->one()]
+				[$this->query('xpath://th[text()="TAA frontend version"]/following-sibling::td[1]',)->one()]
 		);
 
 		$skip_selectors = [

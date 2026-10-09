@@ -643,7 +643,7 @@
                 </item>
                 <item>
                     <uuid>aaaff64eee7e47589a6b6a329a1060a3</uuid>
-                    <name>Zabbix trapper1</name>
+                    <name>TAA trapper1</name>
                     <type>TRAP</type>
                     <key>trap</key>
                     <delay>0</delay>
@@ -671,7 +671,7 @@
                 </item>
                 <item>
                     <uuid>2a562bcf814343afb9c5cc4e9619e307</uuid>
-                    <name>Zabbix internal1</name>
+                    <name>TAA internal1</name>
                     <type>INTERNAL</type>
                     <key>zabbix[boottime]</key>
                 </item>

@@ -27,7 +27,7 @@ require_once __DIR__.'/../common/testMultiselectDialogs.php';
 class testMultiselectsErrorsHostsTemplates extends testMultiselectDialogs {
 
 	const HOST = 'Template inheritance test host';
-	const TEMPLATE = 'AIX by Zabbix agent';
+	const TEMPLATE = 'AIX by TAA agent';
 
 	public static function prepareProxyData() {
 		CDataHelper::call('proxy.create',
@@ -118,7 +118,7 @@ class testMultiselectsErrorsHostsTemplates extends testMultiselectDialogs {
 						['Value mapping' => ['title' => 'Value mapping']]
 					],
 					'filled_multiselects' => [
-						['Value mapping' => 'Zabbix agent ping status']
+						['Value mapping' => 'TAA agent ping status']
 					]
 				]
 			],
@@ -181,13 +181,13 @@ class testMultiselectsErrorsHostsTemplates extends testMultiselectDialogs {
 			);
 
 			$common_fields = ($data['object'] === 'Hosts')
-				? [['Host groups' => 'Zabbix servers'], ['Hosts' => 'ЗАББИКС Сервер']]
-				: [['Template groups' => 'Templates'], ['Templates' => 'Zabbix agent']];
+				? [['Host groups' => 'TAA servers'], ['Hosts' => 'ЗАББИКС Сервер']]
+				: [['Template groups' => 'Templates'], ['Templates' => 'TAA agent']];
 		}
 		else {
 			$common_fields = ($data['object'] === 'Hosts')
-				? [['Host groups' => 'Zabbix servers'], ['Templates' => 'Zabbix agent']]
-				: [['Template groups' => 'Templates'], ['Linked templates' => 'Zabbix agent']];
+				? [['Host groups' => 'TAA servers'], ['Templates' => 'TAA agent']]
+				: [['Template groups' => 'Templates'], ['Linked templates' => 'TAA agent']];
 		}
 
 		$filter_form = $this->query('name:zbx_filter')->asForm()->one();

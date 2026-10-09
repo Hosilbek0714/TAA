@@ -39,7 +39,7 @@ class testPageHosts extends CLegacyWebTest {
 	}
 
 	public $HostName = 'ЗАББИКС Сервер';
-	public $HostGroup = 'Zabbix servers';
+	public $HostGroup = 'TAA servers';
 	public $HostIp = '127.0.0.1';
 	public $HostPort = '10050';
 
@@ -371,7 +371,7 @@ class testPageHosts extends CLegacyWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => 'Zabbix servers',
+						'Host groups' => 'TAA servers',
 						'Monitored by' => 'Proxy'
 					],
 					'expected' => [

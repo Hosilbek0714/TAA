@@ -377,7 +377,7 @@ class testDashboardGraphWidget extends testWidgets {
 					'Data set' => [
 						[
 							'xpath:.//z-color-picker[@color-field-name="ds[0][color]"]' => '',
-							'host' => 'Zabbix*',
+							'host' => 'TAA*',
 							'item' => 'Agent ping'
 						]
 					],
@@ -389,7 +389,7 @@ class testDashboardGraphWidget extends testWidgets {
 					'Data set' => [
 						[
 							'xpath:.//z-color-picker[@color-field-name="ds[0][color]"]' => '00000!',
-							'host' => 'Zabbix*',
+							'host' => 'TAA*',
 							'item' => 'Agent ping'
 						]
 					],
@@ -401,7 +401,7 @@ class testDashboardGraphWidget extends testWidgets {
 					'Data set' => [
 						[
 							'xpath:.//z-color-picker[@color-field-name="ds[0][color]"]' => '00000 ',
-							'host' => 'Zabbix*',
+							'host' => 'TAA*',
 							'item' => 'Agent ping'
 						]
 					],
@@ -1474,29 +1474,29 @@ class testDashboardGraphWidget extends testWidgets {
 					],
 					'Data set' => [
 						[
-							'host' => 'Zabbix,Server',
+							'host' => 'TAA,Server',
 							'item' => 'Agent, Ping',
 							'Aggregation function' => 'min',
 							'Aggregate' => 'Data set',
 							'Data set label' => '祝你今天過得愉快'
 						],
 						[
-							'host' => ',Zabbix Server',
+							'host' => ',TAA Server',
 							'item' => ',Agentp ping',
 							'Draw' => 'Bar',
 							'Aggregation function' => 'max',
 							'Data set label' => 'Bar ping'
 						],
 						[
-							'host' => ',Zabbix, Server,',
-							'item' => 'Zabbix configuration cache, % used',
+							'host' => ',TAA, Server,',
+							'item' => 'TAA configuration cache, % used',
 							'Aggregation function' => 'count',
 							'Aggregation interval' => '24h'
 						]
 					],
 					'Overrides' => [
 						[
-							'host' => 'Zabbix,Server',
+							'host' => 'TAA,Server',
 							'item' => 'Agent,Ping',
 							'options' => [
 								['Draw', 'Bar'],
@@ -1504,7 +1504,7 @@ class testDashboardGraphWidget extends testWidgets {
 							]
 						],
 						[
-							'host' => ',Zabbix Server',
+							'host' => ',TAA Server',
 							'item' => ', Agent ping',
 							'options' => [
 								['Draw', 'Bar'],
@@ -1512,7 +1512,7 @@ class testDashboardGraphWidget extends testWidgets {
 							]
 						],
 						[
-							'host' => ',,Zabbix Server,,',
+							'host' => ',,TAA Server,,',
 							'item' => ', Agent, ping,',
 							'options' => [
 								['Draw', 'Bar']
@@ -1533,7 +1533,7 @@ class testDashboardGraphWidget extends testWidgets {
 						'Refresh interval' => '10 seconds'
 					],
 					'Data set' => [
-						'host' => ['Zabbix*', 'one', 'two'],
+						'host' => ['TAA*', 'one', 'two'],
 						'item' => ['Agent*', 'one', 'two'],
 						'Draw' => 'Bar',
 						'Y-axis' => 'Right',
@@ -1804,7 +1804,7 @@ class testDashboardGraphWidget extends testWidgets {
 						'Refresh interval' => '10 seconds'
 					],
 					'Data set' => [
-						'host' => ['Zabbix*', 'update', 'two'],
+						'host' => ['TAA*', 'update', 'two'],
 						'item' => ['Agent*', 'update', 'two'],
 						'Draw' => 'Points',
 						'Y-axis' => 'Right'
@@ -1897,34 +1897,34 @@ class testDashboardGraphWidget extends testWidgets {
 				[
 					'Data set' => [
 						[
-							'host' => 'Zabbix,Server',
+							'host' => 'TAA,Server',
 							'item' => 'Agent, Ping',
 							'Aggregation function' => 'min',
 							'Aggregate' => 'Data set'
 						],
 						[
-							'host' => ',Zabbix Server',
+							'host' => ',TAA Server',
 							'item' => ',Agentp ping',
 							'Draw' => 'Bar',
 							'Aggregation function' => 'max'
 						],
 						[
-							'host' => ',Zabbix, Server,',
-							'item' => 'Zabbix configuration cache, % used',
+							'host' => ',TAA, Server,',
+							'item' => 'TAA configuration cache, % used',
 							'Aggregation function' => 'count',
 							'Aggregation interval' => '24h'
 						]
 					],
 					'Overrides' => [
 						[
-							'host' => 'Zabbix,Server',
+							'host' => 'TAA,Server',
 							'item' => 'Agent,Ping',
 							'options' => [
 								['Point size', '5']
 							]
 						],
 						[
-							'host' => ',Zabbix Server',
+							'host' => ',TAA Server',
 							'item' => ', Agent ping',
 							'options' => [
 								['Point size', '5'],
@@ -1932,7 +1932,7 @@ class testDashboardGraphWidget extends testWidgets {
 							]
 						],
 						[
-							'host' => ',,Zabbix Server,,',
+							'host' => ',,TAA Server,,',
 							'item' => ', Agent, ping,',
 							'options' => [
 								['Draw', 'Bar']
@@ -2355,7 +2355,7 @@ class testDashboardGraphWidget extends testWidgets {
 						'Name' => 'Add new graph widget and cancel dashboard update'
 					],
 					'Data set' => [
-						'host' => 'Zabbix*, new widget',
+						'host' => 'TAA*, new widget',
 						'item' => 'Agent*, new widget'
 					]
 				]

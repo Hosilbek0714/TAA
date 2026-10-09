@@ -25,7 +25,7 @@ HTTP request body for queries.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -34,7 +34,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -45,7 +45,7 @@ the following steps:
 
 1. Log into your administrator account in Oracle Cloud Console.
 
-2. Create a new user that will be used by Zabbix for monitoring.
+2. Create a new user that will be used by TAA for monitoring.
 
 3. Create a new security policy and assign a previously created user to it.
 
@@ -82,7 +82,7 @@ press `API keys` and then, `Add API key` (if generating a new key pair, do not f
 
     > Save this information somewhere or keep this window open. This information will be required in later steps.
 
-7. In Zabbix, create a new host and assign this template to it (Oracle Cloud by HTTP).
+7. In TAA, create a new host and assign this template to it (Oracle Cloud by HTTP).
 
 8. Open the `Macros` section of the host you created and set the following user macro values according to the
 OCI configuration file (from step #6):
@@ -109,7 +109,7 @@ To do so, you can use the OCI [API Reference and Endpoints](https://docs.public.
   
    * [Monitoring API](https://docs.public.oneportal.content.oci.oraclecloud.com/en-us/iaas/api/#/en/monitoring/20180401/).
         
-10. When the API endpoints are identified, you need to set them in Zabbix as user macros to the host that the
+10. When the API endpoints are identified, you need to set them in TAA as user macros to the host that the
 template is attached to (similarly to step #8):
 
     * `{$OCI.API.CORE.HOST}` - Core Services API endpoint, for example, `iaas.eu-stockholm-1.oraclecloud.com`;
@@ -122,7 +122,7 @@ template is attached to (similarly to step #8):
                             
     > IMPORTANT! API Endpoint URLs need to be entered without the HTTP scheme (`https://`).
                             
-11. Once you've completed adding the host to Zabbix, and it will automatically discover services and monitor them.
+11. Once you've completed adding the host to TAA, and it will automatically discover services and monitor them.
 
 ## Optional setup
 
@@ -142,7 +142,7 @@ already being collected by scripts.
 1. In Oracle Cloud Console, add a free-form tag to a resource, for example, a compute instance.
 The tag key will be `location_group` and the tag value will be `eu-north-1`.
 
-2. Open the Oracle Cloud by HTTP template in Zabbix and go to "Discovery rules".
+2. Open the Oracle Cloud by HTTP template in TAA and go to "Discovery rules".
 Find "Compute instances discovery" and open it.
 
 3. Under "LLD macros", add a new macro that will represent this location group tag, for example:
@@ -267,7 +267,7 @@ the HTTP request body for queries.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -276,7 +276,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -392,7 +392,7 @@ HTTP request body for queries.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -401,7 +401,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -464,7 +464,7 @@ the HTTP request body for queries.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -473,7 +473,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -577,7 +577,7 @@ HTTP request body for queries.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -586,7 +586,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -648,7 +648,7 @@ HTTP request body for queries.
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -657,7 +657,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -718,7 +718,7 @@ For communication with OCI, this template utilizes script items which execute HT
 
 ## Requirements
 
-Zabbix version: 7.4 and higher.
+TAA version: 7.4 and higher.
 
 ## Tested versions
 
@@ -727,7 +727,7 @@ This template has been tested on:
 
 ## Configuration
 
-> Zabbix should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -792,5 +792,5 @@ LLD filter values and trigger threshold values can be changed with respective us
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`ZABBIX forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

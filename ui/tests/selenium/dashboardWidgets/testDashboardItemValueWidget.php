@@ -2208,7 +2208,7 @@ class testDashboardItemValueWidget extends testWidgets {
 					'numeric' => false,
 					'any_type_of_information' => true,
 					'fields' => [
-						'Item' => 'Zabbix proxies stats',
+						'Item' => 'TAA proxies stats',
 						'Name' => 'Type of information - text & aggregation function - first',
 						'Advanced configuration' => true,
 						'Aggregation function' => 'first'

@@ -74,7 +74,7 @@ class testDashboardsViewMode extends CLegacyWebTest {
 		$no_data_widgets = [
 			'No data found' => 'Top hosts by CPU utilization',
 			'No data found' => 'Current problems',
-			'No permissions to referred object or it does not exist!' => 'Zabbix server',
+			'No permissions to referred object or it does not exist!' => 'TAA server',
 			'No permissions to referred object or it does not exist!' => 'Server performance'
 		];
 		$system_rows = $dashboard->getWidget('System information')->getContent()->asTable()->getRows()->count();

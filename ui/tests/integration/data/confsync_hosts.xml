@@ -726,7 +726,7 @@
                     <interface_ref>if1</interface_ref>
                 </item>
                 <item>
-                    <name>Zabbix trapper</name>
+                    <name>TAA trapper</name>
                     <type>TRAP</type>
                     <key>trap</key>
                     <delay>0</delay>
@@ -740,7 +740,7 @@
                     <interface_ref>if1</interface_ref>
                 </item>
                 <item>
-                    <name>Zabbix internal</name>
+                    <name>TAA internal</name>
                     <type>INTERNAL</type>
                     <key>zabbix[boottime]</key>
                 </item>

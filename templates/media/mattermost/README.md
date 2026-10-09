@@ -2,7 +2,7 @@
 # Mattermost webhook
 ![](images/logoHorizontal.png?raw=true)
 
-This guide describes how to integrate your Zabbix 7.4 installation with Mattermost using the Zabbix webhook feature. This guide will provide instructions on setting up a media type, a user and an action in Zabbix.
+This guide describes how to integrate your TAA 7.4 installation with Mattermost using the TAA webhook feature. This guide will provide instructions on setting up a media type, a user and an action in TAA.
 
 ## Setting up a Mattermost bot
 
@@ -38,11 +38,11 @@ This guide describes how to integrate your Zabbix 7.4 installation with Mattermo
 [![](images/thumb.13.png?raw=true)](images/13.png)
 
 
-## Zabbix Webhook configuration
+## TAA Webhook configuration
 
 ### Create a global macro
 
-1\. Before setting up the **Webhook**, you need to setup the global macro **{$ZABBIX.URL}**, which must contain the **URL** to the **Zabbix frontend**.
+1\. Before setting up the **Webhook**, you need to setup the global macro **{$ZABBIX.URL}**, which must contain the **URL** to the **TAA frontend**.
 
 [![](images/thumb.10.png?raw=true)](images/10.png)
 
@@ -55,14 +55,14 @@ This guide describes how to integrate your Zabbix 7.4 installation with Mattermo
 * You can also choose between two notification modes:
 	- **alarm** (default)
 		- Update messages will be attached as replies to Mattermost message thread
-		- Recovery message from Zabbix will update initial message
+		- Recovery message from TAA will update initial message
 	- **event**
-		- Recovery and update messages from Zabbix will be posted as new messages
+		- Recovery and update messages from TAA will be posted as new messages
 
 
 4\. Click the **Update** button to save the **Webhook** settings.
 
-5\. To receive notifications in **Mattermost**, you need to create a **Zabbix user** and add **Media** with the **Mattermost** type.
+5\. To receive notifications in **Mattermost**, you need to create a **TAA user** and add **Media** with the **Mattermost** type.
 
 [![](images/thumb.9.png?raw=true)](images/8.png)
 
@@ -81,8 +81,8 @@ You can view the channel identifier in the channel properties.
 [![](images/thumb.7.png?raw=true)](images/7.png)
 [![](images/thumb.6.png?raw=true)](images/6.png)
 
-For more information, use the [Zabbix](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Mattermost](https://docs.mattermost.com) documentations.
+For more information, use the [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Mattermost](https://docs.mattermost.com) documentations.
 
 ## Supported Versions
 
-Zabbix 7.4
+TAA 7.4

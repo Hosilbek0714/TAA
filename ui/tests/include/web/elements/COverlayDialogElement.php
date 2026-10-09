@@ -60,7 +60,7 @@ class COverlayDialogElement extends CElement {
 	/**
 	 * Set context (host / hostgroup) of overlay dialog.
 	 *
-	 * This code should be different from older versions of Zabbix (< 5.0).
+	 * This code should be different from older versions of TAA (< 5.0).
 	 *
 	 * @param array    $context
 	 * @param integer  $mode    multiselect fill mode, or null if default

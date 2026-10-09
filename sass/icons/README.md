@@ -1,4 +1,4 @@
-# Zabbix UI icon set
+# TAA UI icon set
 
 [![](images/sprites.png)](images/sprites.png)
 
@@ -12,7 +12,7 @@ Having a sprite file is not a terrible idea in general, but it has its set of pr
 
 ## Icon font
 
-To mitigate the problems of the sprite files it was decided to create an icon font that could be used across the Zabbix Frontend.<br><br>
+To mitigate the problems of the sprite files it was decided to create an icon font that could be used across the TAA Frontend.<br><br>
 [![](images/icons.png)](images/icons.png)
 
 ## Build process

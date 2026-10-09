@@ -26,7 +26,7 @@ use Facebook\WebDriver\WebDriverBy;
 class testFormTemplate extends CLegacyWebTest {
 	public $template = 'Form test template';
 	public $template_edit_name = 'Template-layout-test-001';
-	public $template_clone = 'Linux by Zabbix agent';
+	public $template_clone = 'Linux by TAA agent';
 	public $template_full_delete = 'Inheritance test template';
 
 	/**

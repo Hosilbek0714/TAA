@@ -53,14 +53,14 @@ class testFormScheduledReport extends CWebTest {
 	 */
 	private $default_values = [
 		'fields' => [
-			'Owner' => 'Admin (Zabbix Administrator)',
+			'Owner' => 'Admin (TAA Administrator)',
 			'Period' => 'Previous day',
 			'Cycle' => 'Daily',
 			'Enabled' => true
 		],
 		'Start time' => '00:00',
 		'Subscriptions' => [
-			'Recipient' => 'Admin (Zabbix Administrator)',
+			'Recipient' => 'Admin (TAA Administrator)',
 			'Generate report by' => 'Current user',
 			'Status' => 'Include'
 		]
@@ -83,7 +83,7 @@ class testFormScheduledReport extends CWebTest {
 		$form = $overlay->query('id:scheduledreport-form')->waitUntilVisible()->asForm()->one();
 		$this->assertFalse($form->query('button:Test')->one(false)->isValid());
 
-		$this->checkFormLayout($form, 'Zabbix server health');
+		$this->checkFormLayout($form, 'TAA server health');
 	}
 
 	/**
@@ -466,7 +466,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Admin (Zabbix Administrator)'
+								'Recipient' => 'Admin (TAA Administrator)'
 							]
 						]
 					],
@@ -527,7 +527,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Admin (Zabbix Administrator)'
+								'Recipient' => 'Admin (TAA Administrator)'
 							]
 						],
 						[
@@ -573,7 +573,7 @@ class testFormScheduledReport extends CWebTest {
 					'fields' => [
 						'Owner' => 'admin-zabbix',
 						'Name' => 'Fill all fields',
-						'Dashboard' => 'Zabbix server health',
+						'Dashboard' => 'TAA server health',
 						'Period' => 'Previous week',
 						'Cycle' => 'Weekly',
 						'Repeat on' => ['Tuesday', 'Thursday', 'Sunday'],
@@ -838,7 +838,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Admin (Zabbix Administrator)'
+								'Recipient' => 'Admin (TAA Administrator)'
 							]
 						],
 						[
@@ -850,7 +850,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Zabbix administrators'
+								'Recipient' => 'TAA administrators'
 							]
 						]
 					],
@@ -869,13 +869,13 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Admin (Zabbix Administrator)'
+								'Recipient' => 'Admin (TAA Administrator)'
 							]
 						],
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Zabbix administrators'
+								'Recipient' => 'TAA administrators'
 							]
 						]
 					],
@@ -901,7 +901,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Zabbix administrators'
+								'Recipient' => 'TAA administrators'
 							]
 						]
 					],
@@ -929,7 +929,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Admin (Zabbix Administrator)'
+								'Recipient' => 'Admin (TAA Administrator)'
 							]
 						],
 						[
@@ -989,7 +989,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Zabbix administrators'
+								'Recipient' => 'TAA administrators'
 							]
 						],
 						[
@@ -1081,7 +1081,7 @@ class testFormScheduledReport extends CWebTest {
 						[
 							'action' => USER_ACTION_REMOVE,
 							'fields' => [
-								'Recipient' => 'Admin (Zabbix Administrator)'
+								'Recipient' => 'Admin (TAA Administrator)'
 							]
 						],
 						[
@@ -1208,7 +1208,7 @@ class testFormScheduledReport extends CWebTest {
 				[
 					'action' => USER_ACTION_REMOVE,
 					'fields' => [
-						'Recipient' => 'Admin (Zabbix Administrator)'
+						'Recipient' => 'Admin (TAA Administrator)'
 					]
 				],
 				[
@@ -1539,7 +1539,7 @@ class testFormScheduledReport extends CWebTest {
 				$row = $table->findRow('Recipient', $user);
 
 				$report_by = (CTestArrayHelper::get($subscriber, 'fields.Generate report by', 'Current user') === 'Current user')
-						? 'Admin (Zabbix Administrator)'
+						? 'Admin (TAA Administrator)'
 						: 'Recipient';
 				$this->assertEquals($report_by, $row->getColumn('Generate report by')->getText());
 

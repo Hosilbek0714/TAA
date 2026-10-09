@@ -223,7 +223,7 @@ ZBX_THREAD_LOCAL char				info_buf[256];
  ******************************************************************************/
 static void	zbx_openssl_info_cb(const SSL *ssl, int where, int ret)
 {
-	/* There was an idea of using SSL_CB_LOOP and SSL_state_string_long() to write state changes into Zabbix log */
+	/* There was an idea of using SSL_CB_LOOP and SSL_state_string_long() to write state changes into TAA log */
 	/* if logging level is LOG_LEVEL_TRACE. Unfortunately if OpenSSL for security is compiled without SSLv3 */
 	/* (i.e. OPENSSL_NO_SSL3 is defined) then SSL_state_string_long() does not provide descriptions of many */
 	/* states anymore. The idea was dropped but the code is here for debugging hard problems. */
@@ -527,7 +527,7 @@ fail:
 
 /******************************************************************************
  *                                                                            *
- * Purpose: write names of enabled OpenSSL ciphersuites into Zabbix log for   *
+ * Purpose: write names of enabled OpenSSL ciphersuites into TAA log for   *
  *          debugging                                                         *
  *                                                                            *
  * Parameters:                                                                *
@@ -627,7 +627,7 @@ out:
 
 /******************************************************************************
  *                                                                            *
- * Purpose: write peer certificate information into Zabbix log for debugging  *
+ * Purpose: write peer certificate information into TAA log for debugging  *
  *                                                                            *
  * Parameters:                                                                *
  *     function_name - [IN] caller function name                              *
@@ -2343,7 +2343,7 @@ int	zbx_tls_get_attr_cert(const zbx_socket_t *s, zbx_tls_conn_attr_t *attr)
  *     This function can be used only on server-side of TLS connection.       *
  *     GnuTLS makes it asymmetric - see documentation for                     *
  *     gnutls_psk_server_get_username() and gnutls_psk_client_get_hint()      *
- *     (the latter function is not used in Zabbix).                           *
+ *     (the latter function is not used in TAA).                           *
  *     Implementation for OpenSSL is server-side only, too.                   *
  *                                                                            *
  ******************************************************************************/
@@ -2372,7 +2372,7 @@ int	zbx_tls_get_attr_psk(const zbx_socket_t *s, zbx_tls_conn_attr_t *attr)
  *     This function can be used only on server-side of TLS connection.       *
  *     GnuTLS makes it asymmetric - see documentation for                     *
  *     gnutls_psk_server_get_username() and gnutls_psk_client_get_hint()      *
- *     (the latter function is not used in Zabbix).                           *
+ *     (the latter function is not used in TAA).                           *
  *     Implementation for OpenSSL is server-side only, too.                   *
  *                                                                            *
  ******************************************************************************/
@@ -2463,7 +2463,7 @@ int	zbx_tls_validate_attr(const zbx_tls_conn_attr_t *attr, const char *tls_issue
  *                                                                            *
  * Purpose: pass some TLS variables from one thread to other                  *
  *                                                                            *
- * Comments: used in Zabbix sender on MS Windows                              *
+ * Comments: used in TAA sender on MS Windows                              *
  *                                                                            *
  ******************************************************************************/
 void	zbx_tls_pass_vars(ZBX_THREAD_SENDVAL_TLS_ARGS *args)
@@ -2482,7 +2482,7 @@ void	zbx_tls_pass_vars(ZBX_THREAD_SENDVAL_TLS_ARGS *args)
  *                                                                            *
  * Purpose: pass some TLS variables from one thread to other                  *
  *                                                                            *
- * Comments: used in Zabbix sender on MS Windows                              *
+ * Comments: used in TAA sender on MS Windows                              *
  *                                                                            *
  ******************************************************************************/
 void	zbx_tls_take_vars(ZBX_THREAD_SENDVAL_TLS_ARGS *args)

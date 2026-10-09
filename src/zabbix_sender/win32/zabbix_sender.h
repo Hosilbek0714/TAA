@@ -23,7 +23,7 @@
 
 typedef struct
 {
-	/* host name, must match the name of target host in Zabbix */
+	/* host name, must match the name of target host in TAA */
 	char	*host;
 	/* the item key */
 	char	*key;
@@ -45,7 +45,7 @@ zabbix_sender_info_t;
 
 /******************************************************************************
  *                                                                            *
- * Purpose: send values to Zabbix server/proxy                                *
+ * Purpose: send values to TAA server/proxy                                *
  *                                                                            *
  * Parameters: address   - [IN] zabbix server/proxy address                   *
  *             port      - [IN] zabbix server/proxy trapper port              *

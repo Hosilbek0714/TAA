@@ -40,7 +40,7 @@ class Maps {
 			],
 			[
 				'host' => 'Host for map for form testing',
-				'groups' => ['groupid' => 4], // Zabbix servers.
+				'groups' => ['groupid' => 4], // TAA servers.
 				'items' => [
 					[
 						'name' => 'Trap',
@@ -53,11 +53,11 @@ class Maps {
 			// Hosts for Map Properties test.
 			[
 				'host' => 'Host_1',
-				'groups' => ['groupid' => 4] // Zabbix servers.
+				'groups' => ['groupid' => 4] // TAA servers.
 			],
 			[
 				'host' => 'Host_2',
-				'groups' => ['groupid' => 4] // Zabbix servers.
+				'groups' => ['groupid' => 4] // TAA servers.
 			]
 		]);
 
@@ -102,7 +102,7 @@ class Maps {
 						'x' => 401,
 						'y' => 101,
 						'elements' => [['sysmapid' => 1]],
-						'urls' => [['name' => 'Zabbix home', 'url' => 'http://www.zabbix.com']],
+						'urls' => [['name' => 'TAA home', 'url' => 'http://www.zabbix.com']],
 						'zindex' => 1
 					],
 					// Trigger (Crypto-router symbol big).
@@ -125,7 +125,7 @@ class Maps {
 						'label' => 'Host group element (Linux servers)',
 						'x' => 301,
 						'y' => 351,
-						'elements' => [['groupid' => 4]], // Zabbix servers.
+						'elements' => [['groupid' => 4]], // TAA servers.
 						'zindex' => 3
 					],
 					// Host (Disk array symbol).
@@ -133,7 +133,7 @@ class Maps {
 						'selementid' => 5,
 						'elementtype' => SYSMAP_ELEMENT_TYPE_HOST,
 						'iconid_off' => 19,
-						'label' => 'Host element (Zabbix Server)',
+						'label' => 'Host element (TAA Server)',
 						'x' => 501,
 						'y' => 301,
 						'elements' => [['hostid' => $result['hostids']['Host for map with links']]],
@@ -188,7 +188,7 @@ class Maps {
 						'selementid2' => 2,
 						'drawtype' => 2,
 						'color' => '00CC00',
-						'label' => 'CPU load: {?last(/Zabbix Server/system.cpu.load[])}'
+						'label' => 'CPU load: {?last(/TAA Server/system.cpu.load[])}'
 					],
 					[
 						'selementid1' => 1,

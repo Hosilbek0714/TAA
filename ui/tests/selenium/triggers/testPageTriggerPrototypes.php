@@ -48,7 +48,7 @@ class testPageTriggerPrototypes extends testPagePrototypes {
 						]
 					]
 				],
-				'groups' => [['groupid' => 4]], // Zabbix server
+				'groups' => [['groupid' => 4]], // TAA server
 				'discoveryrules' => [
 					[
 						'name' => 'Drule for prototype check',

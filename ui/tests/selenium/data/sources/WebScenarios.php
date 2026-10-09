@@ -158,7 +158,7 @@ class WebScenarios {
 								'value' => '+=_-)(*&^%$#@_tsop'
 							]
 						],
-						'required' => 'Zabbix',
+						'required' => 'TAA',
 						'retrieve_mode' => 2,
 						'status_codes' => '200,301,404',
 						'timeout' => '2m',
