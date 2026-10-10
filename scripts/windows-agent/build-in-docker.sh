@@ -39,13 +39,41 @@ docker run --rm \
 			--disable-shared --enable-static --disable-pcre2grep-libz --disable-pcre2grep-libbz2
 		make -s -j"$(nproc)" >/dev/null && make -s install >/dev/null
 
+		echo "== 1b/3 libiconv (Windows, statik) - plugins/vfs/file uchun"
+		cd /tmp
+		curl -fsSL https://ftp.gnu.org/pub/gnu/libiconv/libiconv-1.17.tar.gz | tar -xz
+		cd libiconv-1.17
+		./configure -q --host=x86_64-w64-mingw32 --prefix=/opt/mingw \
+			--enable-static --disable-shared --disable-nls >/dev/null
+		make -s -j"$(nproc)" >/dev/null 2>&1 && make -s install >/dev/null 2>&1
+
+		# zbxlib -lDbghelp -lWevtapi so"raydi, MinGW fayllari kichik harfli
+		ML=/usr/x86_64-w64-mingw32/lib
+		ln -sf "$ML/libdbghelp.a" /opt/mingw/lib/libDbghelp.a
+		ln -sf "$ML/libwevtapi.a" /opt/mingw/lib/libWevtapi.a
+
 		echo "== 2/3 C obyektlar (build/mingw/output)"
 		mkdir /build && tar -xf /work/src.tar -C /build && cd /build
 		mkdir -p build/mingw/output
+
+		# Kod Windows sarlavhalarini katta harf bilan chaqiradi (Wspiapi.h,
+		# Psapi.h ...), MinGW fayllari esa kichik harfli. Linux harflarni
+		# farqlaydi - har biri uchun kichik harfli faylga o"rovchi yaratamiz.
+		MINGW_INC=/usr/x86_64-w64-mingw32/include
+		mkdir -p /tmp/wininc
+		grep -rhoE "#[[:space:]]*include[[:space:]]*[<\"][^>\"]*[A-Z][^>\"]*[.]h[>\"]" include src \
+			| sed -E "s/.*[<\"](.*)[>\"]/\1/" | sort -u | while read h; do
+			l=$(echo "$h" | tr A-Z a-z)
+			if [ ! -f "$MINGW_INC/$h" ] && [ -f "$MINGW_INC/$l" ]; then
+				mkdir -p "/tmp/wininc/$(dirname "$h")"
+				echo "#include <$l>" > "/tmp/wininc/$h"
+			fi
+		done
+
 		CFLAGS="-O2 -D_WINDOWS -D_CONSOLE -DUNICODE -D_UNICODE -D_WIN32_WINNT=0x0600 \
 			-DHAVE_IPV6 -DHAVE_PCRE2_H -DPCRE2_STATIC -DPCRE2_CODE_UNIT_WIDTH=8 \
 			-Iinclude -Iinclude/common -Ibuild/win32/include -Ibuild/win32/include/common \
-			-Ibuild/mingw -I/opt/mingw/include"
+			-Ibuild/mingw -I/opt/mingw/include -I/tmp/wininc"
 		while read obj src; do
 			$CC $CFLAGS -c "$src" -o "build/mingw/output/$obj.o"
 		done <<EOF
@@ -101,11 +129,16 @@ EOF
 
 		echo "== 3/3 Go agent (taa_agent2.exe)"
 		cd src/go
+		VPKG=golang.zabbix.com/agent2/pkg/version
 		CGO_ENABLED=1 GOOS=windows GOARCH=amd64 CC=$CC \
-			CGO_CFLAGS="-I/opt/mingw/include -DPCRE2_STATIC" \
+			CGO_CFLAGS="-I/build/build/win32/include -I/build/build/win32/include/common \
+				-I/opt/mingw/include -I/tmp/wininc -D_WINDOWS -DUNICODE -D_UNICODE \
+				-D_WIN32_WINNT=0x0600 -DPCRE2_STATIC -DPCRE2_CODE_UNIT_WIDTH=8" \
 			CGO_LDFLAGS="-L/opt/mingw/lib" \
 			go build -tags pcre2 \
-				-ldflags "-s -w -X main.applicationName=taa_agent2" \
+				-ldflags "-s -w -X main.applicationName=taa_agent2 \
+					-X $VPKG.compileDate=$(date +%Y-%m-%d) -X $VPKG.compileTime=$(date +%H:%M:%S) \
+					-X $VPKG.compileOs=windows -X $VPKG.compileArch=amd64" \
 				-o /work/taa_agent2.exe ./cmd/zabbix_agent2
 		ls -la /work/taa_agent2.exe
 	'

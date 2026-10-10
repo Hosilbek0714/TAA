@@ -57,7 +57,9 @@ typedef uint32_t		zbx_uint32_t;
 
 #	define strcasecmp	lstrcmpiA
 
-#	if defined(__INT_MAX__) && __INT_MAX__ == 2147483647
+#	if defined(__MINGW32__)
+	/* MinGW ssize_t ni o'zi e'lon qiladi */
+#	elif defined(__INT_MAX__) && __INT_MAX__ == 2147483647
 typedef int	ssize_t;
 #	else
 typedef long	ssize_t;
