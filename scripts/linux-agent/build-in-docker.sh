@@ -43,7 +43,7 @@ docker run --rm \
 		done
 		./bootstrap.sh
 		./configure --enable-agent2 --with-openssl --with-libpcre2 >/dev/null
-		make -j"$(nproc)"
+		make -j"$(nproc)" AGENT2_CONFIG_FILE=/etc/taa/agent/taa_agent2.conf
 		install -m 0755 src/go/bin/zabbix_agent2 /work/taa_agent2
 		/work/taa_agent2 -V | head -2
 	'

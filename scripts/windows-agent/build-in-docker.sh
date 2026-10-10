@@ -104,7 +104,9 @@ EOF
 		CGO_ENABLED=1 GOOS=windows GOARCH=amd64 CC=$CC \
 			CGO_CFLAGS="-I/opt/mingw/include -DPCRE2_STATIC" \
 			CGO_LDFLAGS="-L/opt/mingw/lib" \
-			go build -tags pcre2 -ldflags "-s -w" -o /work/taa_agent2.exe ./cmd/zabbix_agent2
+			go build -tags pcre2 \
+				-ldflags "-s -w -X main.applicationName=taa_agent2" \
+				-o /work/taa_agent2.exe ./cmd/zabbix_agent2
 		ls -la /work/taa_agent2.exe
 	'
 

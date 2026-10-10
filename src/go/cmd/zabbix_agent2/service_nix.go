@@ -22,7 +22,7 @@ import (
 	"golang.zabbix.com/sdk/zbxflag"
 )
 
-const usageMessageExampleConfPath = `/etc/zabbix/zabbix_agent2.conf`
+const usageMessageExampleConfPath = `/etc/taa/agent/taa_agent2.conf`
 
 func osDependentFlags() zbxflag.Flags { return zbxflag.Flags{} }
 
