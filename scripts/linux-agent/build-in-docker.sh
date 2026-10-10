@@ -20,7 +20,7 @@ OUT="$ROOT/scripts/linux-agent/dist"
 mkdir -p "$OUT"
 
 # Manba kod git'dan LF qator oxirlari bilan olinadi (Windows'da ham to'g'ri)
-git -C "$ROOT" -c core.autocrlf=false archive --format=tar -o "$OUT/src.tar" HEAD
+git -C "$ROOT" -c core.autocrlf=false -c core.eol=lf archive --format=tar -o "$OUT/src.tar" HEAD
 
 docker run --rm \
 	-v "$OUT:/work" \

@@ -20,7 +20,7 @@ ROOT=$(cd "$(dirname "$0")/../.." && { pwd -W 2>/dev/null || pwd; })
 OUT="$ROOT/scripts/windows-agent/dist"
 mkdir -p "$OUT"
 
-git -C "$ROOT" -c core.autocrlf=false archive --format=tar -o "$OUT/src.tar" HEAD
+git -C "$ROOT" -c core.autocrlf=false -c core.eol=lf archive --format=tar -o "$OUT/src.tar" HEAD
 
 docker run --rm \
 	-v "$OUT:/work" \
