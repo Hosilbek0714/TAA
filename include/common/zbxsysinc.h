@@ -21,9 +21,12 @@
 #include <sys/stat.h>
 #include <sys/types.h>
 #include <errno.h>
-#include <pcre2.h>
 #include <fcntl.h>
-#include <io.h>
+#if defined(_WINDOWS)
+/* Windows (MinGW) agent build uchun; Linux'da bu sarlavhalar yo'q */
+#	include <pcre2.h>
+#	include <io.h>
+#endif
 
 #ifndef O_RDONLY
 #  define O_RDONLY 0
