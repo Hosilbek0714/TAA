@@ -196,19 +196,19 @@ AC_HEADER_RESOLV
 
 dnl ISO C Standard Library
 dnl
-AC_CHECK_HEADERS([assert.h ctype.h dirent.h dlfcn.h errno.h float.h          \
-                  inttypes.h limits.h math.h signal.h stdarg.h stddef.h      \
-                  stdint.h stdio.h stdlib.h string.h time.h                  \
+AC_CHECK_HEADERS([assert.h ctype.h dirent.h dlfcn.h errno.h float.h
+                  inttypes.h limits.h math.h signal.h stdarg.h stddef.h
+                  stdint.h stdio.h stdlib.h string.h time.h
 ])
 
 dnl POSIX C Standard Library
 dnl
-AC_CHECK_HEADERS([sys/ipc.h sys/resource.h sys/sem.h sys/shm.h sys/socket.h  \
-                  sys/stat.h sys/statfs.h sys/statvfs.h sys/time.h           \
-                  sys/times.h sys/types.h sys/un.h sys/utsname.h sys/wait.h  \
-                  arpa/inet.h fcntl.h grp.h netdb.h netinet/in.h poll.h      \
-                  pthread.h pwd.h strings.h syslog.h termios.h unistd.h      \
-                  utmpx.h libgen.h                                           \
+AC_CHECK_HEADERS([sys/ipc.h sys/resource.h sys/sem.h sys/shm.h sys/socket.h
+                  sys/stat.h sys/statfs.h sys/statvfs.h sys/time.h
+                  sys/times.h sys/types.h sys/un.h sys/utsname.h sys/wait.h
+                  arpa/inet.h fcntl.h grp.h netdb.h netinet/in.h poll.h
+                  pthread.h pwd.h strings.h syslog.h termios.h unistd.h
+                  utmpx.h libgen.h
 ])
 
 dnl X/Open and SUS
@@ -232,8 +232,8 @@ dnl BSDs
 dnl XXX: sys/param.h is needed by duktape; shipped everywhere _except_ Linux.
 dnl      sys/vfs.h is a Solaris thing that's spread to BSDs and Linux as part
 dnl      of the ZFS compat layer.
-AC_CHECK_HEADERS([sys/disk.h sys/dkstat.h sys/ioctl.h sys/param.h            \
-                  sys/sched.h sys/vfs.h sys/vmmeter.h arpa/nameser.h kvm.h   \
+AC_CHECK_HEADERS([sys/disk.h sys/dkstat.h sys/ioctl.h sys/param.h
+                  sys/sched.h sys/vfs.h sys/vmmeter.h arpa/nameser.h kvm.h
 ])
 
 dnl HP-UX
@@ -254,8 +254,8 @@ dnl      BSD libc's have merged into stdlib.h.
 AC_CHECK_HEADERS([sys/dk.h sys/loadavg.h sys/mnttab.h sys/sysmacros.h zone.h])
 
 dnl Windows
-AC_CHECK_HEADERS([Winber.h Winldap.h conio.h pdh.h psapi.h windows.h         \
-                  winsock2.h ws2tcpip.h                                      \
+AC_CHECK_HEADERS([Winber.h Winldap.h conio.h pdh.h psapi.h windows.h
+                  winsock2.h ws2tcpip.h
 ])
 
 dnl 3rd-Party Libraries
@@ -1098,12 +1098,12 @@ AC_FUNC_MMAP
 dnl AC_FUNC_REALLOC
 AC_FUNC_STRTOD
 
-AC_CHECK_FUNCS([alarm atexit clock_gettime dup2 fesetround floor getcwd       \
-                getenv gethostname getmntent getmntinfo getpagesize           \
-                gettimeofday hstrerror inet_ntoa localtime_r malloc_trim      \
-                memchr memmove memset mkdir modf munmap pow pstat_getdynamic  \
-                realpath round select setenv sigqueue socket sqrt strcasecmp  \
-                strchr strcspn strdup strerror strpbrk strrchr strstr strtol  \
+AC_CHECK_FUNCS([alarm atexit clock_gettime dup2 fesetround floor getcwd
+                getenv gethostname getmntent getmntinfo getpagesize
+                gettimeofday hstrerror inet_ntoa localtime_r malloc_trim
+                memchr memmove memset mkdir modf munmap pow pstat_getdynamic
+                realpath round select setenv sigqueue socket sqrt strcasecmp
+                strchr strcspn strdup strerror strpbrk strrchr strstr strtol
                 strtoul sysinfo tzset uname unsetenv])
 
 dnl *****************************************************************
