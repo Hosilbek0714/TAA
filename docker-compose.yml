@@ -77,6 +77,9 @@ services:
   # Ikkinchi TAA Agent - Boshqa server yoki resurs uchun
   taa-agent-2:
     image: taa/agent2:custom
+    build:
+      context: .
+      dockerfile: docker/taa-agent.Dockerfile
     container_name: taa-agent-2
     environment:
       ZBX_HOSTNAME: "Ikkinchi Server"
