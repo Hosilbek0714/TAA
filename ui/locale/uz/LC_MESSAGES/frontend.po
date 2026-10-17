@@ -52,7 +52,7 @@ msgstr "%1$d moslik %2$s uchun topildi"
 
 #, c-format
 msgid "%1$d of %1$d+ hosts are shown"
-msgstr "%1$d dan %1$d+ xost ko'rsatilmoqda"
+msgstr "%1$d dan %1$d+ host ko'rsatilmoqda"
 
 #, c-format
 msgid "%1$d of %1$d+ items are shown"
@@ -243,7 +243,7 @@ msgid "(Only super admins can create groups)"
 msgstr "(Faoliyatni faqat super administratorlar yaratishi mumkin)"
 
 msgid "(created by host discovery)"
-msgstr "(xostni aniqlash orqali yaratilgan)"
+msgstr "(hostni aniqlash orqali yaratilgan)"
 
 msgid "(legacy) to retrieve a single value synchronously, optionally combined with other values"
 msgstr "(eski usul) bitta qiymatni sinxron ravishda olish, kerakli bo'lsa boshqa qiymatlar bilan birgalikda"
@@ -252,7 +252,7 @@ msgid "(legacy) to retrieve a subtree in JSON"
 msgstr "(eski usul) JSON formatida qism daraxtini olish"
 
 msgid "(linked by host discovery)"
-msgstr "(xostni aniqlash orqali bog'langan)"
+msgstr "(hostni aniqlash orqali bog'langan)"
 
 msgid "(no proxy)"
 msgstr "(proksi yo'q)"
@@ -322,7 +322,7 @@ msgid "API access"
 msgstr "API kirish"
 
 msgid "API hostname"
-msgstr "API xost nomi"
+msgstr "API host nomi"
 
 msgid "API methods"
 msgstr "API metodlari"
@@ -510,19 +510,19 @@ msgid "Add child services"
 msgstr "Bolalar xizmatlarini qo'shish"
 
 msgid "Add from host"
-msgstr "Xostdan qo'shish"
+msgstr "Hostdan qo'shish"
 
 msgid "Add from template"
 msgstr "Shablondan qo'shish"
 
 msgid "Add host"
-msgstr "Xost qo'shish"
+msgstr "Host qo'shish"
 
 msgid "Add host tags"
-msgstr "Xost teglarini qo'shish"
+msgstr "Host teglarini qo'shish"
 
 msgid "Add host trigger"
-msgstr "Xost trigerini qo'shish"
+msgstr "Host trigerini qo'shish"
 
 msgid "Add item"
 msgstr "Element qo'shish"
@@ -567,10 +567,10 @@ msgid "Add to favorites"
 msgstr "Tanlanganlarga qo'shish"
 
 msgid "Add to host group"
-msgstr "Xost guruhiga qo'shing"
+msgstr "Host guruhiga qo'shing"
 
 msgid "Add to host groups"
-msgstr "Xost guruhlarga qo'shing"
+msgstr "Host guruhlarga qo'shing"
 
 msgid "Add user"
 msgstr "Foydalanuvchi qo'shish"
@@ -707,7 +707,7 @@ msgid "All groups"
 msgstr "Barcha guruhlar"
 
 msgid "All hosts"
-msgstr "Barcha xostlar"
+msgstr "Barcha hostlar"
 
 msgid "All links should have \"Name\" and \"URL\" specified"
 msgstr "Barcha havolalar \"Nomi\" va \"URL\" ko'rsatilgan bo'lishi kerak"
@@ -740,7 +740,7 @@ msgid "Allow redirect"
 msgstr "Yo'naltirishga ruxsat berish"
 
 msgid "Allowed hosts"
-msgstr "Ruxsat berilgan xostlar"
+msgstr "Ruxsat berilgan hostlar"
 
 msgid "Allowed methods"
 msgstr "Ruxsat berilgan metodlar"
@@ -755,11 +755,11 @@ msgid "Amount of guest physical memory that is swapped out to the swap space, \"
 msgstr "Mehmonning jismoniy xotirasi swap maydoniga almashtirilgan miqdori, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinasining global noyob identifikatori"
 
 msgid "Amount of host physical memory consumed for backing up guest physical memory pages, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier"
-msgstr "Xostning jismoniy xotirasining mehmon jismoniy xotira sahifalarini zaxiralash uchun sarflangan miqdori, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinasining global noyob identifikatori"
+msgstr "Hostning jismoniy xotirasining mehmon jismoniy xotira sahifalarini zaxiralash uchun sarflangan miqdori, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinasining global noyob identifikatori"
 
 #, c-format
 msgid "An LLD rule with key \"%1$s\" already exists on the host \"%2$s\"."
-msgstr "Xostda \"%1$s\" kalitiga ega LLD qoidasi allaqachon mavjud \"%2$s\"."
+msgstr "Hostda \"%1$s\" kalitiga ega LLD qoidasi allaqachon mavjud \"%2$s\"."
 
 #, c-format
 msgid "An LLD rule with key \"%1$s\" already exists on the template \"%2$s\"."
@@ -767,7 +767,7 @@ msgstr "Shablonda \"%1$s\" kalitiga ega LLD qoidasi allaqachon mavjud \"%2$s\"."
 
 #, c-format
 msgid "An item prototype with key \"%1$s\" already exists on the host \"%2$s\"."
-msgstr "Xostda \"%1$s\" kalitiga ega element prototipi allaqachon mavjud \"%2$s\"."
+msgstr "Hostda \"%1$s\" kalitiga ega element prototipi allaqachon mavjud \"%2$s\"."
 
 #, c-format
 msgid "An item prototype with key \"%1$s\" already exists on the template \"%2$s\"."
@@ -775,7 +775,7 @@ msgstr "Shablonda \"%1$s\" kalitiga ega element prototipi allaqachon mavjud \"%2
 
 #, c-format
 msgid "An item with key \"%1$s\" already exists on the host \"%2$s\"."
-msgstr "Xostda \"%1$s\" kalitiga ega element allaqachon mavjud \"%2$s\"."
+msgstr "Hostda \"%1$s\" kalitiga ega element allaqachon mavjud \"%2$s\"."
 
 #, c-format
 msgid "An item with key \"%1$s\" already exists on the template \"%2$s\"."
@@ -809,7 +809,7 @@ msgid "Any character string included"
 msgstr "Har qanday belgi qatori kiritilgan"
 
 msgid "Any existing host entities not present in the import file will be deleted. Click OK to proceed."
-msgstr "Import faylida mavjud bo'lmagan barcha mavjud xost ob'ektlari o'chiriladi. Davom etish uchun OK tugmasini bosing."
+msgstr "Import faylida mavjud bo'lmagan barcha mavjud host ob'ektlari o'chiriladi. Davom etish uchun OK tugmasini bosing."
 
 msgid "Any existing template entities not present in the import file will be deleted. Click OK to proceed."
 msgstr "Import faylida mavjud bo'lmagan barcha mavjud shablon ob'ektlari o'chiriladi. Davom etish uchun OK tugmasini bosing."
@@ -925,7 +925,7 @@ msgid "At least one day of the week or day of the month must be specified."
 msgstr "Kamida bir hafta kuni yoki oy kuni ko'rsatilishi kerak."
 
 msgid "At least one host group or host must be selected."
-msgstr "Kamida bir xost guruhini yoki xostni tanlash kerak."
+msgstr "Kamida bir host guruhini yoki hostni tanlash kerak."
 
 msgid "At least one of MySQL or PostgreSQL should be supported."
 msgstr "Kamida MySQL yoki PostgreSQL qo'llab-quvvatlanishi kerak."
@@ -1200,7 +1200,7 @@ msgid "Bulgarian (bg_BG)"
 msgstr "Bolgarcha (bg_BG)"
 
 msgid "By host"
-msgstr "Xost bo'yicha"
+msgstr "Host bo'yicha"
 
 msgid "By me"
 msgstr "Men tomonidan"
@@ -1296,7 +1296,7 @@ msgid "Cannot add graph prototype"
 msgstr "Grafik prototipini qo'shish mumkin emas"
 
 msgid "Cannot add host"
-msgstr "Xostni qo'shish mumkin emas"
+msgstr "Hostni qo'shish mumkin emas"
 
 msgid "Cannot add host group"
 msgstr "Host guruhini qo'shib bo'lmaydi"
@@ -1611,44 +1611,44 @@ msgstr[1] "Grafik prototiplarini o'chirib bo'lmaydi"
 
 msgid "Cannot delete host"
 msgid_plural "Cannot delete hosts"
-msgstr[0] "Xostni o'chirib bo'lmaydi"
-msgstr[1] "Xostlarni o'chirib bo'lmaydi"
+msgstr[0] "Hostni o'chirib bo'lmaydi"
+msgstr[1] "Hostlarni o'chirib bo'lmaydi"
 
 #, c-format
 msgid "Cannot delete host \"%1$s\": %2$s."
-msgstr "Xostni \"%1$s\" o'chirib bo'lmaydi: %2$s."
+msgstr "Hostni \"%1$s\" o'chirib bo'lmaydi: %2$s."
 
 #, c-format
 msgid "Cannot delete host %1$s because maintenance \"%2$s\" must contain at least one host or host group."
 msgid_plural "Cannot delete hosts %1$s because maintenance \"%2$s\" must contain at least one host or host group."
-msgstr[0] "Xostni %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir xost yoki xost guruhini o'z ichiga olishi kerak."
-msgstr[1] "Xostlarni %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir xost yoki xost guruhini o'z ichiga olishi kerak."
+msgstr[0] "Hostni %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir host yoki host guruhini o'z ichiga olishi kerak."
+msgstr[1] "Hostlarni %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir host yoki host guruhini o'z ichiga olishi kerak."
 
 msgid "Cannot delete host group"
 msgid_plural "Cannot delete host groups"
-msgstr[0] "Xost guruhini o'chirib bo'lmaydi"
-msgstr[1] "Xost guruhlarini o'chirib bo'lmaydi"
+msgstr[0] "Host guruhini o'chirib bo'lmaydi"
+msgstr[1] "Host guruhlarini o'chirib bo'lmaydi"
 
 #, c-format
 msgid "Cannot delete host group \"%1$s\": %2$s."
-msgstr "Xost guruhini \"%1$s\" o'chirib bo'lmaydi: %2$s."
+msgstr "Host guruhini \"%1$s\" o'chirib bo'lmaydi: %2$s."
 
 #, c-format
 msgid "Cannot delete host group %1$s because maintenance \"%2$s\" must contain at least one host or host group."
 msgid_plural "Cannot delete host groups %1$s because maintenance \"%2$s\" must contain at least one host or host group."
-msgstr[0] "Xost guruhini %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir xost yoki xost guruhini o'z ichiga olishi kerak."
-msgstr[1] "Xost guruhlarini %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir xost yoki xost guruhini o'z ichiga olishi kerak."
+msgstr[0] "Host guruhini %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir host yoki host guruhini o'z ichiga olishi kerak."
+msgstr[1] "Host guruhlarini %1$s o'chirib bo'lmaydi, chunki texnik xizmat \"%2$s\" kamida bir host yoki host guruhini o'z ichiga olishi kerak."
 
 msgid "Cannot delete host groups"
-msgstr "Xost guruhlarini o'chirib bo'lmaydi"
+msgstr "Host guruhlarini o'chirib bo'lmaydi"
 
 msgid "Cannot delete host prototype"
 msgid_plural "Cannot delete host prototypes"
-msgstr[0] "Xost prototipini o'chirib bo'lmaydi"
-msgstr[1] "Xost prototiplarini o'chirib bo'lmaydi"
+msgstr[0] "Host prototipini o'chirib bo'lmaydi"
+msgstr[1] "Host prototiplarini o'chirib bo'lmaydi"
 
 msgid "Cannot delete host prototypes"
-msgstr "Xost prototiplarini o'chirib bo'lmaydi"
+msgstr "Host prototiplarini o'chirib bo'lmaydi"
 
 msgid "Cannot delete icon map"
 msgstr "Ikonka xaritasini o'chirib bo'lmaydi"
@@ -1658,7 +1658,7 @@ msgstr "Rasmni o'chirib bo'lmaydi"
 
 #, c-format
 msgid "Cannot delete interface for discovered host \"%1$s\"."
-msgstr "Kashf etilgan xost uchun interfeysni \"%1$s\" o'chirib bo'lmaydi."
+msgstr "Kashf etilgan host uchun interfeysni \"%1$s\" o'chirib bo'lmaydi."
 
 msgid "Cannot delete inventory."
 msgstr "Inventarni o'chirib bo'lmaydi"
@@ -1856,8 +1856,8 @@ msgstr[1] "Voqealar bog'lanishlari o'chirilmaydi"
 
 msgid "Cannot disable host"
 msgid_plural "Cannot disable hosts"
-msgstr[0] "Xostni o'chirish mumkin emas"
-msgstr[1] "Xostlar o'chirilmaydi"
+msgstr[0] "Hostni o'chirish mumkin emas"
+msgstr[1] "Hostlar o'chirilmaydi"
 
 msgid "Cannot disable item"
 msgid_plural "Cannot disable items"
@@ -1927,8 +1927,8 @@ msgstr[1] "Voqealar bog'lanishini yoqib bo'lmadi"
 
 msgid "Cannot enable host"
 msgid_plural "Cannot enable hosts"
-msgstr[0] "Xostni yoqib bo'lmadi"
-msgstr[1] "Xostlarni yoqib bo'lmadi"
+msgstr[0] "Hostni yoqib bo'lmadi"
+msgstr[1] "Hostlarni yoqib bo'lmadi"
 
 msgid "Cannot enable item"
 msgid_plural "Cannot enable items"
@@ -1997,7 +1997,7 @@ msgstr "Map \"%2$s\"da ishlatilgan \"%1$s\" guruh topilmadi"
 
 #, c-format
 msgid "Cannot find host \"%1$s\" used in dashboard \"%2$s\"."
-msgstr "Dashboard \"%2$s\"da ishlatilgan \"%1$s\" xost topilmadi"
+msgstr "Dashboard \"%2$s\"da ishlatilgan \"%1$s\" host topilmadi"
 
 #, c-format
 msgid "Cannot find host \"%1$s\" used in map \"%2$s\"."
@@ -2202,7 +2202,7 @@ msgstr " \"%2$s\" shabloni orqali \"%1$s\" kaliti bo'yicha element prototipi \"%
 
 #, c-format
 msgid "Cannot inherit item prototype with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because an item with the same key already exists."
-msgstr "Element prototipini \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan element allaqachon mavjud."
+msgstr "Element prototipini \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan element allaqachon mavjud."
 
 #, c-format
 msgid "Cannot inherit item prototype with key \"%1$s\" of template \"%2$s\" to template \"%3$s\", because a discovered item with the same key already exists."
@@ -2222,7 +2222,7 @@ msgstr "Element prototipini \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" 
 
 #, c-format
 msgid "Cannot inherit item prototypes with key \"%1$s\" of both \"%2$s\" and \"%3$s\" templates, because the key must be unique on host \"%4$s\"."
-msgstr "Element prototiplarini \"%1$s\" kaliti bilan \"%2$s\" va \"%3$s\" shablonlaridan miras olish mumkin emas, chunki kalit \"%4$s\" xostida yagona bo'lishi kerak."
+msgstr "Element prototiplarini \"%1$s\" kaliti bilan \"%2$s\" va \"%3$s\" shablonlaridan miras olish mumkin emas, chunki kalit \"%4$s\" hostida yagona bo'lishi kerak."
 
 #, c-format
 msgid "Cannot inherit item prototypes with key \"%1$s\" of both \"%2$s\" and \"%3$s\" templates, because the key must be unique on template \"%4$s\"."
@@ -2230,7 +2230,7 @@ msgstr "Element prototiplarini \"%1$s\" kaliti bilan \"%2$s\" va \"%3$s\" shablo
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" and item with key \"%3$s\" of template \"%4$s\" to host \"%5$s\", because they would populate the same inventory field \"%6$s\"."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan va \"%3$s\" kaliti bilan \"%4$s\" shablonidan \"%5$s\" xostiga miras olish mumkin emas, chunki ular bir xil inventar maydonini \"%6$s\" to'ldiradi."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan va \"%3$s\" kaliti bilan \"%4$s\" shablonidan \"%5$s\" hostiga miras olish mumkin emas, chunki ular bir xil inventar maydonini \"%6$s\" to'ldiradi."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" and item with key \"%3$s\" of template \"%4$s\" to template \"%5$s\", because they would populate the same inventory field \"%6$s\"."
@@ -2238,27 +2238,27 @@ msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan va \"%3$s\" kaliti 
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because a discovered item with the same key already exists."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan aniqlangan element allaqachon mavjud."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan aniqlangan element allaqachon mavjud."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because a host interface of type \"%4$s\" is required."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki \"%4$s\" turidagi xost interfeysi talab qilinadi."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki \"%4$s\" turidagi host interfeysi talab qilinadi."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because an LLD rule with the same key already exists."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan LLD qoidasini allaqachon bor."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan LLD qoidasini allaqachon bor."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because an item prototype with the same key already exists."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan element prototipi allaqachon mavjud."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan element prototipi allaqachon mavjud."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because an item with the same key is already inherited from template \"%4$s\"."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan element \"%4$s\" shablonidan allaqachon meros qilib olingan."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki shu kalitga ega bo'lgan element \"%4$s\" shablonidan allaqachon meros qilib olingan."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to host \"%3$s\", because its inventory field \"%4$s\" is already populated by the item with key \"%5$s\"."
-msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" xostiga miras olish mumkin emas, chunki uning inventar maydoni \"%4$s\" allaqachon \"%5$s\" kalitiga ega bo'lgan element tomonidan to'ldirilgan."
+msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" hostiga miras olish mumkin emas, chunki uning inventar maydoni \"%4$s\" allaqachon \"%5$s\" kalitiga ega bo'lgan element tomonidan to'ldirilgan."
 
 #, c-format
 msgid "Cannot inherit item with key \"%1$s\" of template \"%2$s\" to template \"%3$s\", because a discovered item with the same key already exists."
@@ -2282,7 +2282,7 @@ msgstr "Elementni \"%1$s\" kaliti bilan \"%2$s\" shablonidan \"%3$s\" shabloniga
 
 #, c-format
 msgid "Cannot inherit items with key \"%1$s\" of both \"%2$s\" and \"%3$s\" templates, because the key must be unique on host \"%4$s\"."
-msgstr "Elementlarni \"%1$s\" kaliti bilan \"%2$s\" va \"%3$s\" shablonlaridan miras olish mumkin emas, chunki kalit \"%4$s\" xostida yagona bo'lishi kerak."
+msgstr "Elementlarni \"%1$s\" kaliti bilan \"%2$s\" va \"%3$s\" shablonlaridan miras olish mumkin emas, chunki kalit \"%4$s\" hostida yagona bo'lishi kerak."
 
 #, c-format
 msgid "Cannot inherit items with key \"%1$s\" of both \"%2$s\" and \"%3$s\" templates, because the key must be unique on template \"%4$s\"."
@@ -2296,7 +2296,7 @@ msgstr "Shablonni ulash mumkin emas."
 
 #, c-format
 msgid "Cannot link template \"%1$s\" to host \"%2$s\", because it would be linked twice through template \"%3$s\"."
-msgstr "Shablonni \"%1$s\" \"%2$s\" xostiga ulash mumkin emas, chunki u \"%3$s\" shabloni orqali ikki marta ulashadi."
+msgstr "Shablonni \"%1$s\" \"%2$s\" hostiga ulash mumkin emas, chunki u \"%3$s\" shabloni orqali ikki marta ulashadi."
 
 #, c-format
 msgid "Cannot link template \"%1$s\" to host \"%2$s\", because its parent template \"%3$s\" would be linked twice."
@@ -3278,13 +3278,13 @@ msgid "Connections"
 msgstr "Ulanishlar"
 
 msgid "Connections from host"
-msgstr "Xostdan ulanishlar"
+msgstr "Hostdan ulanishlar"
 
 msgid "Connections from proxy"
 msgstr "Proxydan ulanishlar"
 
 msgid "Connections to host"
-msgstr "Xostga ulanishlar"
+msgstr "Hostga ulanishlar"
 
 msgid "Connections to proxy"
 msgstr "Proxydan ulanishlar"
@@ -3456,7 +3456,7 @@ msgid "Create discovery rule"
 msgstr "Kashfiyot qoidasini yaratish"
 
 msgid "Create discovery rule (select host first)"
-msgstr "Kashfiyot qoidasini yaratish (avval xostni tanlang)"
+msgstr "Kashfiyot qoidasini yaratish (avval hostni tanlang)"
 
 msgid "Create discovery rule (select template first)"
 msgstr "Kashfiyot qoidasini yaratish (avval shablonni tanlang)"
@@ -3471,7 +3471,7 @@ msgid "Create graph"
 msgstr "Graf yaratish"
 
 msgid "Create graph (select host first)"
-msgstr "Graf yaratish (avval xostni tanlang)"
+msgstr "Graf yaratish (avval hostni tanlang)"
 
 msgid "Create graph (select template first)"
 msgstr "Graf yaratish (avval shablonni tanlang)"
@@ -3480,25 +3480,25 @@ msgid "Create graph prototype"
 msgstr "Graf prototipini yaratish"
 
 msgid "Create host"
-msgstr "Xost yaratish"
+msgstr "Host yaratish"
 
 msgid "Create host group"
-msgstr "Xost guruhi yaratish"
+msgstr "Host guruhi yaratish"
 
 msgid "Create host prototype"
-msgstr "Xost prototipini yaratish"
+msgstr "Host prototipini yaratish"
 
 msgid "Create hosts from selected prototype as disabled?"
-msgstr "Tanlangan prototipdan xostlarni o'chirilgan holda yaratilsinmi?"
+msgstr "Tanlangan prototipdan hostlarni o'chirilgan holda yaratilsinmi?"
 
 msgid "Create hosts from selected prototype as enabled?"
-msgstr "Tanlangan prototipdan xostlarni yoqilgan holda yaratilsinmi?"
+msgstr "Tanlangan prototipdan hostlarni yoqilgan holda yaratilsinmi?"
 
 msgid "Create hosts from selected prototypes as disabled?"
-msgstr "Tanlangan prototiplardan xostlarni o'chirilgan holda yaratilsinmi?"
+msgstr "Tanlangan prototiplardan hostlarni o'chirilgan holda yaratilsinmi?"
 
 msgid "Create hosts from selected prototypes as enabled?"
-msgstr "Tanlangan prototiplardan xostlarni yoqilgan holda yaratilsinmi?"
+msgstr "Tanlangan prototiplardan hostlarni yoqilgan holda yaratilsinmi?"
 
 msgid "Create icon"
 msgstr "Ikonka yaratish"
@@ -3510,7 +3510,7 @@ msgid "Create item"
 msgstr "Element yaratish"
 
 msgid "Create item (select host first)"
-msgstr "Element yaratish (avval xostni tanlang)"
+msgstr "Element yaratish (avval hostni tanlang)"
 
 msgid "Create item (select template first)"
 msgstr "Element yaratish (avval shablonni tanlang)"
@@ -3570,7 +3570,7 @@ msgid "Create trigger"
 msgstr "Trigger yaratish"
 
 msgid "Create trigger (select host first)"
-msgstr "Trigger yaratish (avval xostni tanlang)"
+msgstr "Trigger yaratish (avval hostni tanlang)"
 
 msgid "Create trigger (select template first)"
 msgstr "Trigger yaratish (avval shablonni tanlang)"
@@ -3603,7 +3603,7 @@ msgid "Create web scenario"
 msgstr "Veb-sxema yaratish"
 
 msgid "Create web scenario (select host first)"
-msgstr "Veb-sxema yaratish (avval xostni tanlang)"
+msgstr "Veb-sxema yaratish (avval hostni tanlang)"
 
 msgid "Create web scenario (select template first)"
 msgstr "Veb-sxema yaratish (avval shablonni tanlang)"
@@ -3627,7 +3627,7 @@ msgid "Current"
 msgstr "Hozirgi"
 
 msgid "Current host"
-msgstr "Hozirgi xost"
+msgstr "Hozirgi host"
 
 msgid "Current password"
 msgstr "Hozirgi parol"
@@ -3823,10 +3823,10 @@ msgid "Database history tables use primary key"
 msgstr "Ma'lumotlar bazasining tarix jadvalari asosiy kalitdan foydalanadi"
 
 msgid "Database host"
-msgstr "Ma'lumotlar bazasi xost"
+msgstr "Ma'lumotlar bazasi host"
 
 msgid "Database host verification"
-msgstr "Ma'lumotlar bazasi xostini tasdiqlash"
+msgstr "Ma'lumotlar bazasi hostini tasdiqlash"
 
 msgid "Database monitor"
 msgstr "Ma'lumotlar bazasi monitoringi"
@@ -3939,7 +3939,7 @@ msgid "Default authentication"
 msgstr "Standart autentifikatsiya"
 
 msgid "Default host inventory mode"
-msgstr "Standart xost inventarizatsiya rejimi"
+msgstr "Standart host inventarizatsiya rejimi"
 
 msgid "Default input string"
 msgstr "Standart kirish matni"
@@ -3984,13 +3984,13 @@ msgid "Delete and clear"
 msgstr "O'chirish va tozalash"
 
 msgid "Delete and clear selected template? (Warning: all linked hosts will be cleared!)"
-msgstr "Tanlangan shablonni o'chirish va tozalash? (Ogohlantirish: barcha bog'langan xostlar tozalanadi!)"
+msgstr "Tanlangan shablonni o'chirish va tozalash? (Ogohlantirish: barcha bog'langan hostlar tozalanadi!)"
 
 msgid "Delete and clear selected templates? (Warning: all linked hosts will be cleared!)"
-msgstr "Tanlangan shablonlarni o'chirish va tozalash? (Ogohlantirish: barcha bog'langan xostlar tozalanadi!)"
+msgstr "Tanlangan shablonlarni o'chirish va tozalash? (Ogohlantirish: barcha bog'langan hostlar tozalanadi!)"
 
 msgid "Delete and clear template? (Warning: all linked hosts will be cleared!)"
-msgstr "Shablonni o'chirish va tozalash? (Ogohlantirish: barcha bog'langan xostlar tozalanadi!)"
+msgstr "Shablonni o'chirish va tozalash? (Ogohlantirish: barcha bog'langan hostlar tozalanadi!)"
 
 msgid "Delete current action?"
 msgstr "Joriy amali o'chirilishi kerakmi?"
@@ -4104,22 +4104,22 @@ msgid "Delete selected groups?"
 msgstr "Tanlangan guruhlarni o'chirilsinmi?"
 
 msgid "Delete selected host group?"
-msgstr "Tanlangan xost guruhini o'chirilsinmi?"
+msgstr "Tanlangan host guruhini o'chirilsinmi?"
 
 msgid "Delete selected host groups?"
-msgstr "Tanlangan xost guruhlarini o'chirilsinmi?"
+msgstr "Tanlangan host guruhlarini o'chirilsinmi?"
 
 msgid "Delete selected host prototype?"
-msgstr "Tanlangan xost prototipini o'chirilsinmi?"
+msgstr "Tanlangan host prototipini o'chirilsinmi?"
 
 msgid "Delete selected host prototypes?"
-msgstr "Tanlangan xost prototiplarini o'chirilsinmi?"
+msgstr "Tanlangan host prototiplarini o'chirilsinmi?"
 
 msgid "Delete selected host?"
-msgstr "Tanlangan xostni o'chirilsinmi?"
+msgstr "Tanlangan hostni o'chirilsinmi?"
 
 msgid "Delete selected hosts?"
-msgstr "Tanlangan xostlarni o'chirilsinmi?"
+msgstr "Tanlangan hostlarni o'chirilsinmi?"
 
 msgid "Delete selected image?"
 msgstr "Tanlangan tasvirni o'chirilsinmi?"
@@ -4257,13 +4257,13 @@ msgid "Deleted"
 msgstr "O'chirildi"
 
 msgid "Deleted host"
-msgstr "Xost o'chirildi"
+msgstr "Host o'chirildi"
 
 msgid "Deleted host group"
-msgstr "Xost guruhi o'chirildi"
+msgstr "Host guruhi o'chirildi"
 
 msgid "Deleted host group(s)"
-msgstr "Xost guruhi(lari) o'chirildi"
+msgstr "Host guruhi(lari) o'chirildi"
 
 msgid "Deleted trigger"
 msgstr "Trigger o'chirildi"
@@ -4372,22 +4372,22 @@ msgid "Disable debug mode in selected groups?"
 msgstr "Tanlangan guruhlardagi nosozliklarni tuzatish rejimi o'chirilsinmi?"
 
 msgid "Disable host"
-msgstr "Xostni o'chirish"
+msgstr "Hostni o'chirish"
 
 msgid "Disable host?"
-msgstr "Xost o'chirilsinmi?"
+msgstr "Host o'chirilsinmi?"
 
 msgid "Disable hosts"
-msgstr "Xostlarni o'chirish"
+msgstr "Hostlarni o'chirish"
 
 msgid "Disable hosts in the selected host groups?"
-msgstr "Tanlangan xost guruhlaridagi xostlar o'chirilsinmi?"
+msgstr "Tanlangan host guruhlaridagi hostlar o'chirilsinmi?"
 
 msgid "Disable hosts monitored by selected proxies?"
-msgstr "Tanlangan proksi-serverlar tomonidan kuzatilayotgan xostlar o'chirilsinmi?"
+msgstr "Tanlangan proksi-serverlar tomonidan kuzatilayotgan hostlar o'chirilsinmi?"
 
 msgid "Disable hosts monitored by selected proxy?"
-msgstr "Tanlangan proksi-server tomonidan kuzatilayotgan xostlar o'chirilsinmi?"
+msgstr "Tanlangan proksi-server tomonidan kuzatilayotgan hostlar o'chirilsinmi?"
 
 msgid "Disable lost resources"
 msgstr "Yo'qolgan resurslarni o'chirish"
@@ -4435,10 +4435,10 @@ msgid "Disable selected groups?"
 msgstr "Tanlangan guruhlar o'chirilsinmi?"
 
 msgid "Disable selected host?"
-msgstr "Tanlangan xost o'chirilsinmi?"
+msgstr "Tanlangan host o'chirilsinmi?"
 
 msgid "Disable selected hosts?"
-msgstr "Tanlangan xostlar o'chirilsinmi?"
+msgstr "Tanlangan hostlar o'chirilsinmi?"
 
 msgid "Disable selected item?"
 msgstr "Tanlangan element o'chirilsinmi?"
@@ -5548,7 +5548,7 @@ msgid "Get value and test"
 msgstr "Qiymatni olish va sinovdan o'tkazish"
 
 msgid "Get value from host"
-msgstr "Xostdan qiymat olish"
+msgstr "Hostdan qiymat olish"
 
 msgid "Given expression is not a macro"
 msgstr "Berilgan ifoda makro emas"
@@ -5633,7 +5633,7 @@ msgstr "Grafik \"%1$s\" \"%2$s\"da allaqachon mavjud."
 
 #, c-format
 msgid "Graph \"%1$s\" already exists on the host \"%2$s\"."
-msgstr "Grafik \"%1$s\" xost \"%2$s\"da allaqachon mavjud."
+msgstr "Grafik \"%1$s\" host \"%2$s\"da allaqachon mavjud."
 
 #, c-format
 msgid "Graph \"%1$s\" already exists on the template \"%2$s\"."
@@ -5641,7 +5641,7 @@ msgstr "Grafik \"%1$s\" shablon \"%2$s\"da allaqachon mavjud."
 
 #, c-format
 msgid "Graph \"%1$s\" with templated items cannot contain items from other hosts."
-msgstr "Shablonli elementlarga ega bo'lgan grafik \"%1$s\" boshqa xostlardan elementlar o'z ichiga olmaydi."
+msgstr "Shablonli elementlarga ega bo'lgan grafik \"%1$s\" boshqa hostlardan elementlar o'z ichiga olmaydi."
 
 msgid "Graph (classic)"
 msgstr "Grafik (klassik)"
@@ -5664,7 +5664,7 @@ msgstr "Grafik prototipi"
 
 #, c-format
 msgid "Graph prototype \"%1$s\" already exists on the LLD rule with key \"%2$s\" of the host \"%3$s\"."
-msgstr "Grafik prototipi \"%1$s\" LLD qoidasi bo'yicha \"%2$s\" kaliti va \"%3$s\" xostida allaqachon mavjud."
+msgstr "Grafik prototipi \"%1$s\" LLD qoidasi bo'yicha \"%2$s\" kaliti va \"%3$s\" hostida allaqachon mavjud."
 
 #, c-format
 msgid "Graph prototype \"%1$s\" already exists on the LLD rule with key \"%2$s\" of the template \"%3$s\"."
@@ -5680,7 +5680,7 @@ msgstr "Grafik prototipi \"%1$s\"da kamida bitta element prototipi bo'lishi kera
 
 #, c-format
 msgid "Graph prototype \"%1$s\" with templated items cannot contain items from other hosts."
-msgstr "Shablonli elementlarga ega bo'lgan grafik prototipi \"%1$s\" boshqa xostlardan elementlar o'z ichiga olmaydi."
+msgstr "Shablonli elementlarga ega bo'lgan grafik prototipi \"%1$s\" boshqa hostlardan elementlar o'z ichiga olmaydi."
 
 msgid "Graph prototype added"
 msgstr "Grafik prototipi qo'shildi"
@@ -5727,7 +5727,7 @@ msgstr "Guruh"
 
 #, c-format
 msgid "Group \"%1$s\" cannot be deleted, because it is used by a host prototype."
-msgstr "Guruh \"%1$s\" o'chirilmaydi, chunki u xost prototipi tomonidan foydalaniladi."
+msgstr "Guruh \"%1$s\" o'chirilmaydi, chunki u host prototipi tomonidan foydalaniladi."
 
 #, c-format
 msgid "Group \"%1$s\" cannot be deleted, because it is used in a correlation condition."
@@ -5739,7 +5739,7 @@ msgstr "Guruh \"%1$s\" mavjud emas."
 
 #, c-format
 msgid "Group \"%1$s\" for host \"%2$s\" does not exist."
-msgstr "Xost \"%2$s\" uchun guruh \"%1$s\" mavjud emas."
+msgstr "Host \"%2$s\" uchun guruh \"%1$s\" mavjud emas."
 
 msgid "Group base DN"
 msgstr "Guruh asosiy DN"
@@ -5754,7 +5754,7 @@ msgid "Group filter"
 msgstr "Guruh filtr"
 
 msgid "Group for discovered hosts"
-msgstr "Kashf etilgan xostlar uchun guruh"
+msgstr "Kashf etilgan hostlar uchun guruh"
 
 msgid "Group member attribute"
 msgstr "Guruh a'zosining atributi"
@@ -5767,7 +5767,7 @@ msgstr "Guruh nomi atributi"
 
 #, c-format
 msgid "Group prototype cannot be based on a discovered host group \"%1$s\"."
-msgstr "Guruh prototipi kashf etilgan xost guruhiga \"%1$s\" asoslanmagan bo'lishi kerak."
+msgstr "Guruh prototipi kashf etilgan host guruhiga \"%1$s\" asoslanmagan bo'lishi kerak."
 
 msgid "Group prototypes"
 msgstr "Guruh prototiplari"
@@ -5932,271 +5932,271 @@ msgstr "Gorizontal pozitsiya"
 
 msgid "Host"
 msgid_plural "Hosts"
-msgstr[0] "Xost"
-msgstr[1] "Xostlar"
+msgstr[0] "Host"
+msgstr[1] "Hostlar"
 
 msgctxt "compact table header"
 msgid "Host"
-msgstr "Xost"
+msgstr "Host"
 
 #, c-format
 msgid "Host \"%1$s\" already exists."
-msgstr "Xost \"%1$s\" allaqachon mavjud."
+msgstr "Host \"%1$s\" allaqachon mavjud."
 
 #, c-format
 msgid "Host \"%1$s\" cannot be without host group."
-msgstr "Xost \"%1$s\" xost guruhi bo'lmasdan bo'lmaydi."
+msgstr "Host \"%1$s\" host guruhi bo'lmasdan bo'lmaydi."
 
 #, c-format
 msgid "Host \"%1$s\" is monitored by proxy \"%2$s\"."
-msgstr "Xost \"%1$s\" \"%2$s\" proksisi tomonidan kuzatiladi."
+msgstr "Host \"%1$s\" \"%2$s\" proksisi tomonidan kuzatiladi."
 
 #, c-format
 msgid "Host \"%1$s\" is monitored by proxy group \"%2$s\"."
-msgstr "Xost \"%1$s\" \"%2$s\" proksi guruhi tomonidan kuzatiladi."
+msgstr "Host \"%1$s\" \"%2$s\" proksi guruhi tomonidan kuzatiladi."
 
 msgid "Host IP"
-msgstr "Xost IP manzili"
+msgstr "Host IP manzili"
 
 msgid "Host access"
-msgstr "Xostga kirish"
+msgstr "Hostga kirish"
 
 msgid "Host added"
-msgstr "Xost qo'shildi"
+msgstr "Host qo'shildi"
 
 msgid "Host address"
-msgstr "Xost manzili"
+msgstr "Host manzili"
 
 msgid "Host availability"
-msgstr "Xostning mavjudligi"
+msgstr "Hostning mavjudligi"
 
 msgid "Host cannot have more than one default interface of the same type."
-msgstr "Xostda bir xil turdagi bir nechta standart interfeys bo'lishi mumkin emas."
+msgstr "Hostda bir xil turdagi bir nechta standart interfeys bo'lishi mumkin emas."
 
 msgid "Host card"
-msgstr "Xost kartasi"
+msgstr "Host kartasi"
 
 msgid "Host count"
-msgstr "Xostlar soni"
+msgstr "Hostlar soni"
 
 msgid "Host dashboards"
-msgstr "Xostlar boshqaruv paneli"
+msgstr "Hostlar boshqaruv paneli"
 
 msgid "Host deleted"
 msgid_plural "Hosts deleted"
-msgstr[0] "Xost o'chirildi"
-msgstr[1] "Xostlar o'chirildi"
+msgstr[0] "Host o'chirildi"
+msgstr[1] "Hostlar o'chirildi"
 
 msgid "Host disabled"
 msgid_plural "Hosts disabled"
-msgstr[0] "Xost o'chirildi"
-msgstr[1] "Xostlar o'chirildi"
+msgstr[0] "Host o'chirildi"
+msgstr[1] "Hostlar o'chirildi"
 
 msgid "Host edit"
-msgstr "Xostni tahrirlash"
+msgstr "Hostni tahrirlash"
 
 msgid "Host enabled"
 msgid_plural "Hosts enabled"
-msgstr[0] "Xost yoqilgan"
-msgstr[1] "Xostlar yoqilgan"
+msgstr[0] "Host yoqilgan"
+msgstr[1] "Hostlar yoqilgan"
 
 msgid "Host graphs"
-msgstr "Xost grafiklari"
+msgstr "Host grafiklari"
 
 msgid "Host group"
-msgstr "Xost guruhi"
+msgstr "Host guruhi"
 
 msgctxt "compact table header"
 msgid "Host group"
-msgstr "Xost guruhi"
+msgstr "Host guruhi"
 
 #, c-format
 msgid "Host group \"%1$s\" already exists."
-msgstr "\"%1$s\" nomli xost guruhi allaqachon mavjud."
+msgstr "\"%1$s\" nomli host guruhi allaqachon mavjud."
 
 #, c-format
 msgid "Host group \"%1$s\" cannot be deleted, because it is used in a global script."
-msgstr "\"%1$s\" nomli xost guruhini o'chirish mumkin emas, chunki u global skriptlarda ishlatilmoqda."
+msgstr "\"%1$s\" nomli host guruhini o'chirish mumkin emas, chunki u global skriptlarda ishlatilmoqda."
 
 #, c-format
 msgid "Host group \"%1$s\" is group for discovered hosts and cannot be deleted."
-msgstr "\"%1$s\" nomli xost guruhi aniqlangan xostlar guruhi hisoblanadi va o'chirib bo'lmaydi."
+msgstr "\"%1$s\" nomli host guruhi aniqlangan hostlar guruhi hisoblanadi va o'chirib bo'lmaydi."
 
 msgid "Host group added"
-msgstr "Xost guruhi qo'shildi"
+msgstr "Host guruhi qo'shildi"
 
 msgid "Host group deleted"
 msgid_plural "Host groups deleted"
-msgstr[0] "Xost guruhi o'chirildi"
-msgstr[1] "Xost guruhlari o'chirildi"
+msgstr[0] "Host guruhi o'chirildi"
+msgstr[1] "Host guruhlari o'chirildi"
 
 msgid "Host group edit"
-msgstr "Xost guruhini tahrirlash"
+msgstr "Host guruhini tahrirlash"
 
 msgid "Host group elements"
-msgstr "Xost guruhi elementlari"
+msgstr "Host guruhi elementlari"
 
 msgid "Host group is not selected."
-msgstr "Xost guruhi tanlanmagan."
+msgstr "Host guruhi tanlanmagan."
 
 msgid "Host group label type"
-msgstr "Xost guruhi yorlig'i turi"
+msgstr "Host guruhi yorlig'i turi"
 
 msgid "Host group updated"
-msgstr "Xost guruhi yangilandi"
+msgstr "Host guruhi yangilandi"
 
 #, c-format
 msgid "Host group with ID \"%1$s\" is not available."
-msgstr "\"%1$s\" identifikatorli xost guruhi mavjud emas."
+msgstr "\"%1$s\" identifikatorli host guruhi mavjud emas."
 
 msgid "Host groups"
-msgstr "Xost guruhlari"
+msgstr "Host guruhlari"
 
 msgid "Host interface"
-msgstr "Xost interfeysi"
+msgstr "Host interfeysi"
 
 msgid "Host inventory"
-msgstr "Xost inventarizatsiyasi"
+msgstr "Host inventarizatsiyasi"
 
 msgid "Host inventory overview"
-msgstr "Xost inventarizatsiyasi sharhi"
+msgstr "Host inventarizatsiyasi sharhi"
 
 msgid "Host is not selected."
-msgstr "Xost tanlanmagan."
+msgstr "Host tanlanmagan."
 
 msgid "Host label type"
-msgstr "Xost yorlig'i turi"
+msgstr "Host yorlig'i turi"
 
 msgid "Host limit"
-msgstr "Xost limiti"
+msgstr "Host limiti"
 
 msgid "Host location"
-msgstr "Xost joylashuvi"
+msgstr "Host joylashuvi"
 
 msgid "Host macros"
-msgstr "Xost makroslari"
+msgstr "Host makroslari"
 
 msgid "Host metadata"
-msgstr "Xost metadata"
+msgstr "Host metadata"
 
 msgid "Host name"
-msgstr "Xost nomi"
+msgstr "Host nomi"
 
 msgid "Host navigator"
-msgstr "Xost navigatori"
+msgstr "Host navigatori"
 
 msgid "Host networks"
-msgstr "Xost tarmoqlari"
+msgstr "Host tarmoqlari"
 
 msgid "Host ordering"
-msgstr "Xost tartiblanishi"
+msgstr "Host tartiblanishi"
 
 msgid "Host patterns"
-msgstr "Xost andozalari"
+msgstr "Host andozalari"
 
 msgid "Host permissions"
-msgstr "Xost ruxsatlari"
+msgstr "Host ruxsatlari"
 
 msgid "Host prototype"
-msgstr "Xost prototipi"
+msgstr "Host prototipi"
 
 msgid "Host prototype added"
-msgstr "Xost prototipi qo'shildi"
+msgstr "Host prototipi qo'shildi"
 
 msgid "Host prototype deleted"
 msgid_plural "Host prototypes deleted"
-msgstr[0] "Xost prototipi o'chirildi"
-msgstr[1] "Xost prototiplari o'chirildi"
+msgstr[0] "Host prototipi o'chirildi"
+msgstr[1] "Host prototiplari o'chirildi"
 
 msgid "Host prototype macros"
-msgstr "Xost prototipi makroslari"
+msgstr "Host prototipi makroslari"
 
 msgid "Host prototype updated"
 msgid_plural "Host prototypes updated"
-msgstr[0] "Xost prototipi yangilandi"
-msgstr[1] "Xost prototiplari yangilandi"
+msgstr[0] "Host prototipi yangilandi"
+msgstr[1] "Host prototiplari yangilandi"
 
 #, c-format
 msgid "Host prototype with host name \"%1$s\" already exists in discovery rule \"%2$s\" of host \"%3$s\"."
-msgstr "\"%3$s\" xostidagi \"%2$s\" aniqlash qoidasida \"%1$s\" nomli xost prototipi allaqachon mavjud."
+msgstr "\"%3$s\" hostidagi \"%2$s\" aniqlash qoidasida \"%1$s\" nomli host prototipi allaqachon mavjud."
 
 #, c-format
 msgid "Host prototype with host name \"%1$s\" already exists in discovery rule \"%2$s\" of template \"%3$s\"."
-msgstr "\"%3$s\" shablonidagi \"%2$s\" aniqlash qoidasida \"%1$s\" nomli xost prototipi allaqachon mavjud."
+msgstr "\"%3$s\" shablonidagi \"%2$s\" aniqlash qoidasida \"%1$s\" nomli host prototipi allaqachon mavjud."
 
 #, c-format
 msgid "Host prototype with host name \"%1$s\" already exists in discovery rule \"%2$s\"."
-msgstr "\"%2$s\" aniqlash qoidasida \"%1$s\" nomli xost prototipi allaqachon mavjud."
+msgstr "\"%2$s\" aniqlash qoidasida \"%1$s\" nomli host prototipi allaqachon mavjud."
 
 #, c-format
 msgid "Host prototype with visible name \"%1$s\" already exists in discovery rule \"%2$s\" of host \"%3$s\"."
-msgstr "\"%3$s\" xostidagi \"%2$s\" aniqlash qoidasida \"%1$s\" ko'rinadigan nomli xost prototipi allaqachon mavjud."
+msgstr "\"%3$s\" hostidagi \"%2$s\" aniqlash qoidasida \"%1$s\" ko'rinadigan nomli host prototipi allaqachon mavjud."
 
 #, c-format
 msgid "Host prototype with visible name \"%1$s\" already exists in discovery rule \"%2$s\" of template \"%3$s\"."
-msgstr "\"%3$s\" shablonidagi \"%2$s\" aniqlash qoidasida \"%1$s\" ko'rinadigan nomli xost prototipi allaqachon mavjud."
+msgstr "\"%3$s\" shablonidagi \"%2$s\" aniqlash qoidasida \"%1$s\" ko'rinadigan nomli host prototipi allaqachon mavjud."
 
 #, c-format
 msgid "Host prototype with visible name \"%1$s\" already exists in discovery rule \"%2$s\"."
-msgstr "\"%2$s\" aniqlash qoidasida \"%1$s\" ko'rinadigan nomli xost prototipi allaqachon mavjud."
+msgstr "\"%2$s\" aniqlash qoidasida \"%1$s\" ko'rinadigan nomli host prototipi allaqachon mavjud."
 
 msgid "Host prototypes"
-msgstr "Xost prototiplari"
+msgstr "Host prototiplari"
 
 msgid "Host router"
-msgstr "Xost routeri"
+msgstr "Host routeri"
 
 msgid "Host status"
-msgstr "Xost holati"
+msgstr "Host holati"
 
 msgid "Host subnet mask"
-msgstr "Xost tarmoq niqobi"
+msgstr "Host tarmoq niqobi"
 
 msgid "Host tag"
-msgstr "Xost teg"
+msgstr "Host teg"
 
 msgid "Host tag value"
-msgstr "Xost teg qiymati"
+msgstr "Host teg qiymati"
 
 msgid "Host tags"
-msgstr "Xost teglari"
+msgstr "Host teglari"
 
 msgid "Host time"
-msgstr "Xost vaqti"
+msgstr "Host vaqti"
 
 msgid "Host update failed."
-msgstr "Xostni yangilash muvaffaqiyatsiz tugadi."
+msgstr "Hostni yangilash muvaffaqiyatsiz tugadi."
 
 msgid "Host updated"
 msgid_plural "Hosts updated"
-msgstr[0] "Xost yangilandi"
-msgstr[1] "Xostlar yangilandi"
+msgstr[0] "Host yangilandi"
+msgstr[1] "Hostlar yangilandi"
 
 #, c-format
 msgid "Host with ID \"%1$s\" is not available."
-msgstr "\"%1$s\" identifikatorli xost mavjud emas."
+msgstr "\"%1$s\" identifikatorli host mavjud emas."
 
 #, c-format
 msgid "Host with host name \"%1$s\" already exists."
-msgstr "\"%1$s\" nomli xost allaqachon mavjud."
+msgstr "\"%1$s\" nomli host allaqachon mavjud."
 
 #, c-format
 msgid "Host with the same name \"%1$s\" already exists."
-msgstr "Xuddi shu \"%1$s\" nomli xost allaqachon mavjud."
+msgstr "Xuddi shu \"%1$s\" nomli host allaqachon mavjud."
 
 #, c-format
 msgid "Host with the same visible name \"%1$s\" already exists."
-msgstr "\"%1$s\" ko'rinadigan nomli xost allaqachon mavjud."
+msgstr "\"%1$s\" ko'rinadigan nomli host allaqachon mavjud."
 
 #, c-format
 msgid "Host with visible name \"%1$s\" already exists."
-msgstr "\"%1$s\" ko'rinadigan nomli xost allaqachon mavjud."
+msgstr "\"%1$s\" ko'rinadigan nomli host allaqachon mavjud."
 
 msgid "Hosts"
-msgstr "Xostlar"
+msgstr "Hostlar"
 
 msgid "Hosts location"
-msgstr "Xostlar joylashuvi"
+msgstr "Hostlar joylashuvi"
 
 msgid "Hour"
 msgstr "Soat"
@@ -6239,7 +6239,7 @@ msgid "IP address"
 msgstr "IP manzil"
 
 msgid "IP and DNS cannot be empty for host interface."
-msgstr "Xost interfeysi uchun IP va DNS bo'sh bo'lishi mumkin emas."
+msgstr "Host interfeysi uchun IP va DNS bo'sh bo'lishi mumkin emas."
 
 msgid "IP range"
 msgstr "IP diapazoni"
@@ -6468,7 +6468,7 @@ msgid "Inaccessible group"
 msgstr "Kirish mumkin bo'lmagan guruh"
 
 msgid "Inaccessible host"
-msgstr "Kirish mumkin bo'lmagan xost"
+msgstr "Kirish mumkin bo'lmagan host"
 
 msgid "Inaccessible item"
 msgstr "Kirish mumkin bo'lmagan element"
@@ -7051,7 +7051,7 @@ msgstr "Inventar"
 
 #, c-format
 msgid "Inventory disabled for host \"%1$s\"."
-msgstr "\"%1$s\" xost uchun inventar o'chirib qo'yilgan."
+msgstr "\"%1$s\" host uchun inventar o'chirib qo'yilgan."
 
 msgid "Inventory field"
 msgstr "Inventar maydoni"
@@ -7063,7 +7063,7 @@ msgid "Inventory mode"
 msgstr "Inventar rejimi"
 
 msgid "Invoke \"Execute now\" on read-only hosts"
-msgstr "Faqat o'qish huquqiga ega xostlarda \"Hozir bajarish\"ni ishga tushirish"
+msgstr "Faqat o'qish huquqiga ega hostlarda \"Hozir bajarish\"ni ishga tushirish"
 
 msgid "Is online?"
 msgstr "Onlayndami?"
@@ -7526,13 +7526,13 @@ msgid "List of Windows Registry values or keys located at given key. Returns JSO
 msgstr "Berilgan kalitdagi Windows Registry qiymatlari yoki kalitlarining ro'yxati. JSON qaytaradi."
 
 msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
-msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, xostlar soni, elementlar soni, zarur qiymatlar soni (vps) va moslik (hozirgi/eski/qollab-quvvatlanmaydi) bilan ro'yxati. JSON qaytaradi."
+msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps) va moslik (hozirgi/eski/qollab-quvvatlanmaydi) bilan ro'yxati. JSON qaytaradi."
 
 msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
-msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, xostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, agar proxy guruhga tegishli bo'lsa, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
+msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, agar proxy guruhga tegishli bo'lsa, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
 
 msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
-msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, xostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
+msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
 
 msgid "List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
 msgstr "TAA proxy guruhlari konfiguratsiya ma'lumotlari va real vaqt ma'lumotlari ro'yxati. Konfiguratsiya ma'lumotlari proxy guruhi nomi, failover kechikish va guruhni onlayn qilish uchun kerakli minimal onlayn proxylar sonini o'z ichiga oladi. Real vaqt ma'lumotlari onlayn proxylar soni, onlayn proxylar foizi va proxy guruhi holati (noaniq, offline, tiklanayotgan, onlayn, kamayayotgan). Ushbu element guruhga tegishli bo'lmagan proxylarni qaytarmaydi. JSON qaytaradi."
@@ -7784,7 +7784,7 @@ msgid "Manual event action"
 msgstr "Qo'lda voqea harakati"
 
 msgid "Manual host action"
-msgstr "Qo'lda xost harakati"
+msgstr "Qo'lda host harakati"
 
 msgid "Manual input"
 msgstr "Qo'lda kiritish"
@@ -8212,7 +8212,7 @@ msgstr "Grafik prototipi \"%1$s\" uchun elementlar yo'q."
 
 #, c-format
 msgid "Missing key \"%1$s\" for host \"%2$s\"."
-msgstr "Hozirgi xost \"%2$s\" uchun \"%1$s\" kaliti yo'q."
+msgstr "Hozirgi host \"%2$s\" uchun \"%1$s\" kaliti yo'q."
 
 msgid "Mixed"
 msgstr "Aralash"
@@ -8281,7 +8281,7 @@ msgid "Monitored by proxy"
 msgstr "Proxy tomonidan nazorat qilinadi"
 
 msgid "Monitored host"
-msgstr "Nazorat qilinayotgan xost"
+msgstr "Nazorat qilinayotgan host"
 
 msgid "Monitoring"
 msgstr "Monitoring"
@@ -8470,7 +8470,7 @@ msgid "New event correlation"
 msgstr "Yangi voqea korrelyatsiyasi"
 
 msgid "New event host group"
-msgstr "Yangi voqea xost guruhi"
+msgstr "Yangi voqea host guruhi"
 
 msgid "New event tag name"
 msgstr "Yangi voqea yorliq nomi"
@@ -8482,10 +8482,10 @@ msgid "New excluded downtime"
 msgstr "Yangi chiqarilgan to'xtash vaqti"
 
 msgid "New host"
-msgstr "Yangi xost"
+msgstr "Yangi host"
 
 msgid "New host group"
-msgstr "Yangi xost guruhi"
+msgstr "Yangi host guruhi"
 
 msgid "New item"
 msgstr "Yangi element"
@@ -8625,14 +8625,14 @@ msgid "No graphs added."
 msgstr "Grafiklar qo'shilmagan."
 
 msgid "No host IDs given."
-msgstr "Xost IDlari kiritilmagan."
+msgstr "Host IDlari kiritilmagan."
 
 msgid "No host selected."
-msgstr "Xost tanlanmagan."
+msgstr "Host tanlanmagan."
 
 #, c-format
 msgid "No host with host ID \"%1$s\"."
-msgstr "Xost ID \"%1$s\" bo'lgan xost topilmadi."
+msgstr "Host ID \"%1$s\" bo'lgan host topilmadi."
 
 #, c-format
 msgid "No icon for map element \"\"%1$s\"."
@@ -8775,7 +8775,7 @@ msgstr "Qo'llab-quvvatlanmaydi"
 
 #, c-format
 msgid "Note that %1$s or %2$s will be regarded as hostnames if used without single quotes."
-msgstr "%1$s yoki %2$s ni bitta qo'shtirnoqsiz ishlatganingizda ularni xost nomi sifatida qabul qilishni unutmaslik kerak."
+msgstr "%1$s yoki %2$s ni bitta qo'shtirnoqsiz ishlatganingizda ularni host nomi sifatida qabul qilishni unutmaslik kerak."
 
 msgid "Notes"
 msgstr "Esdaliklar"
@@ -8814,10 +8814,10 @@ msgid "Number of currently open file descriptors. Returns integer"
 msgstr "Hozirda ochiq bo'lgan fayl deskriptorlari soni. Butun sonni qaytaradi"
 
 msgid "Number of enabled items on the host."
-msgstr "Xostdagi yoqilgan elementlar soni."
+msgstr "Hostdagi yoqilgan elementlar soni."
 
 msgid "Number of hosts (enabled/disabled)"
-msgstr "Xostlar soni (yoqilgan/yoqilmagan)"
+msgstr "Hostlar soni (yoqilgan/yoqilmagan)"
 
 msgid "Number of items (enabled/disabled/not supported)"
 msgstr "Elementlar soni (yoqilgan/yopiq/qo'llab-quvvatlanmaydi)"
@@ -8835,7 +8835,7 @@ msgid "Number of items in the queue which are delayed in TAA server or proxy by 
 msgstr "TAA serveri yoki proksisida \"dan\" \"gacha\" sekundgacha kechiktirilgan elementlar soni."
 
 msgid "Number of monitored hosts"
-msgstr "Kuzatilgan xostlar soni"
+msgstr "Kuzatilgan hostlar soni"
 
 msgid "Number of online proxies. Returns integer."
 msgstr "Onlayn proksilarning soni. Butun sonni qaytaradi."
@@ -8880,7 +8880,7 @@ msgid "Number of unsupported items in TAA database."
 msgstr "TAA ma'lumotlar bazasida qo'llab-quvvatlanmaydigan elementlar soni."
 
 msgid "Number of unsupported items on the host."
-msgstr "Xostdagi qo'llab-quvvatlanmaydigan elementlar soni."
+msgstr "Hostdagi qo'llab-quvvatlanmaydigan elementlar soni."
 
 msgid "Number of users (online)"
 msgstr "Foydalanuvchilar soni (onlayn)"
@@ -9018,7 +9018,7 @@ msgid "Only disabled group can be set for deprovisioned users."
 msgstr "Faqat o'chirilgan guruhni deprovisionlangan foydalanuvchilar uchun belgilash mumkin."
 
 msgid "Only items assigned to enabled hosts are counted"
-msgstr "Faollashtirilgan xostlarga tayinlangan elementlar hisoblanadi"
+msgstr "Faollashtirilgan hostlarga tayinlangan elementlar hisoblanadi"
 
 msgid "Only one check can be unique."
 msgstr "Faqat bitta tekshiruv noyob bo'lishi mumkin."
@@ -9045,7 +9045,7 @@ msgid "Only super admins can set report owner."
 msgstr "Faqat super administratorlar hisobot egasini belgilashlari mumkin."
 
 msgid "Only triggers assigned to enabled hosts and depending on enabled items are counted"
-msgstr "Faqat faollashtirilgan xostlarga tayinlangan va faollashtirilgan elementlarga bog'liq triggerlar hisoblanadi"
+msgstr "Faqat faollashtirilgan hostlarga tayinlangan va faollashtirilgan elementlarga bog'liq triggerlar hisoblanadi"
 
 msgid "Open URL"
 msgstr "URL manzilini ochish"
@@ -9541,13 +9541,13 @@ msgid "Polish (pl_PL)"
 msgstr "Polsha (pl_PL)"
 
 msgid "Populates host inventory field"
-msgstr "Xost inventarizatsiya maydonini to'ldiradi"
+msgstr "Host inventarizatsiya maydonini to'ldiradi"
 
 msgid "Port"
 msgstr "Port"
 
 msgid "Port cannot be empty for host interface."
-msgstr "Xost interfeysi uchun port bo'sh bo'lishi mumkin emas."
+msgstr "Host interfeysi uchun port bo'sh bo'lishi mumkin emas."
 
 msgid "Port range"
 msgstr "Port oralig'i"
@@ -9677,7 +9677,7 @@ msgid "Problem expression"
 msgstr "Muammo ifodasi"
 
 msgid "Problem hosts"
-msgstr "Muammo xostlari"
+msgstr "Muammo hostlari"
 
 msgid "Problem is not suppressed"
 msgstr "Muammo bosib o'tilmagan"
@@ -9783,7 +9783,7 @@ msgstr "Proksi \"%1$s\" allaqachon mavjud."
 
 #, c-format
 msgid "Proxy \"%1$s\" for host \"%2$s\" does not exist."
-msgstr "Proksi \"%1$s\" xost \"%2$s\" uchun mavjud emas."
+msgstr "Proksi \"%1$s\" host \"%2$s\" uchun mavjud emas."
 
 #, c-format
 msgid "Proxy \"%1$s\" is used by action \"%2$s\"."
@@ -9816,7 +9816,7 @@ msgstr "Proksi guruhi \"%1$s\" allaqachon mavjud."
 
 #, c-format
 msgid "Proxy group \"%1$s\" for host \"%2$s\" does not exist."
-msgstr "Xost \"%2$s\" uchun \"%1$s\" proksi guruhi mavjud emas."
+msgstr "Host \"%2$s\" uchun \"%1$s\" proksi guruhi mavjud emas."
 
 #, c-format
 msgid "Proxy group \"%1$s\" is used by proxy \"%2$s\"."
@@ -10080,16 +10080,16 @@ msgid "Remove from favorites"
 msgstr "Sevimlilardan olib tashlash"
 
 msgid "Remove from host group"
-msgstr "Xost guruhidan olib tashlash"
+msgstr "Host guruhidan olib tashlash"
 
 msgid "Remove from host groups"
-msgstr "Xost guruhlaridan olib tashlash"
+msgstr "Host guruhlaridan olib tashlash"
 
 msgid "Remove host"
-msgstr "Xostni olib tashlash"
+msgstr "Hostni olib tashlash"
 
 msgid "Remove host tags"
-msgstr "Xost teglari olib tashlansin"
+msgstr "Host teglari olib tashlansin"
 
 #, c-format
 msgctxt "screen reader"
@@ -10175,7 +10175,7 @@ msgid "Required"
 msgstr "Majburiy"
 
 msgid "Required host permissions"
-msgstr "Zarur xost ruxsatlari"
+msgstr "Zarur host ruxsatlari"
 
 msgid "Required performance of the TAA server, in new values per second expected."
 msgstr "TAA serverining zarur unumdorligi, soniyasiga kutilayotgan yangi qiymatlar soni."
@@ -10302,16 +10302,16 @@ msgid "Returns ICMP ping response time in seconds. Example: 0.02"
 msgstr "ICMP ping javob vaqtini soniyalarda qaytaradi. Misol: 0.02"
 
 msgid "Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD."
-msgstr "TAAda sozlangan xost tarmoq interfeyslarini ta'riflovchi JSON massivini qaytaradi. LLD uchun ishlatilishi mumkin."
+msgstr "TAAda sozlangan host tarmoq interfeyslarini ta'riflovchi JSON massivini qaytaradi. LLD uchun ishlatilishi mumkin."
 
 msgid "Returns a JSON object containing TAA server or proxy internal metrics."
 msgstr "TAA serveri yoki proksi ichki metrikalarini o'z ichiga olgan JSON obyektini qaytaradi."
 
 msgid "Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, active_agent, snmp, ipmi, jmx."
-msgstr "Xostdagi muayyan turdagi tekshiruvlarning mavjudligini qaytaradi. Bu element qiymati xost ro'yxatidagi mavjudlik belgilariga mos keladi. Yaroqli turlar: agent, active_agent, snmp, ipmi, jmx."
+msgstr "Hostdagi muayyan turdagi tekshiruvlarning mavjudligini qaytaradi. Bu element qiymati host ro'yxatidagi mavjudlik belgilariga mos keladi. Yaroqli turlar: agent, active_agent, snmp, ipmi, jmx."
 
 msgid "Returns current maintenance status of the host."
-msgstr "Xostning hozirgi texnik xizmat holatini qaytaradi."
+msgstr "Hostning hozirgi texnik xizmat holatini qaytaradi."
 
 msgid "Returns information associated with TAA Java gateway. Valid params are: ping, version."
 msgstr "TAA Java gateway bilan bog'liq ma'lumotlarni qaytaradi. Yaroqli parametrlar: ping, version."
@@ -10370,7 +10370,7 @@ msgstr "TAA serverida \"%1$s\" skriptini ishga tushirish"
 
 #, c-format
 msgid "Run script \"%1$s\" on current host"
-msgstr "Joriy xostda \"%1$s\" skriptini ishga tushirish"
+msgstr "Joriy hostda \"%1$s\" skriptini ishga tushirish"
 
 #, c-format
 msgid "Run script \"%1$s\" on deleted object(s)"
@@ -10378,14 +10378,14 @@ msgstr "O'chirilgan obyekt(lar)da \"%1$s\" skriptini ishga tushirish"
 
 #, c-format
 msgid "Run script \"%1$s\" on host groups"
-msgstr "Xost guruhlarida \"%1$s\" skriptini ishga tushirish"
+msgstr "Host guruhlarida \"%1$s\" skriptini ishga tushirish"
 
 #, c-format
 msgid "Run script \"%1$s\" on hosts"
-msgstr "Xostlarda \"%1$s\" skriptini ishga tushirish"
+msgstr "Hostlarda \"%1$s\" skriptini ishga tushirish"
 
 msgid "Run specified command on the host. Returns text result of the command; 1 - with mode as nowait (regardless of command result)"
-msgstr "Xostda ko'rsatilgan buyruqni ishga tushiradi. Buyruqning matnli natijasini qaytaradi; 1 - nowait rejimida (natijadan qat'i nazar)"
+msgstr "Hostda ko'rsatilgan buyruqni ishga tushiradi. Buyruqning matnli natijasini qaytaradi; 1 - nowait rejimida (natijadan qat'i nazar)"
 
 msgid "Russian (ru_RU)"
 msgstr "Rus tili (ru_RU)"
@@ -10576,7 +10576,7 @@ msgid "SSL key password"
 msgstr "SSL kalit paroli"
 
 msgid "SSL verify host"
-msgstr "SSL orqali xostni tekshirish"
+msgstr "SSL orqali hostni tekshirish"
 
 msgid "SSL verify peer"
 msgstr "SSL orqali qarama-qarshi tomonni tekshirish"
@@ -10981,7 +10981,7 @@ msgid "Set expiration date and time"
 msgstr "Amal qilish muddati va vaqtini o'rnatish"
 
 msgid "Set host inventory mode"
-msgstr "Xost inventarizatsiya rejimini o'rnatish"
+msgstr "Host inventarizatsiya rejimini o'rnatish"
 
 msgid "Set new value"
 msgstr "Yangi qiymatni o'rnatish"
@@ -11076,7 +11076,7 @@ msgid "Show header"
 msgstr "Sarlavhani ko'rsatish"
 
 msgid "Show hosts in maintenance"
-msgstr "Texnik xizmatdagi xostlarni ko'rsatish"
+msgstr "Texnik xizmatdagi hostlarni ko'rsatish"
 
 msgid "Show labels"
 msgstr "Yopishmalarni ko'rsatish"
@@ -11319,7 +11319,7 @@ msgid "Specified script does not exist or you do not have rights on it for actio
 msgstr "Ko'rsatilgan skript mavjud emas yoki sizda ushbu amallarni bajarish uchun huquq yo'q."
 
 msgid "Specify host to see the graphs."
-msgstr "Grafiklarni ko'rish uchun xostni ko'rsating."
+msgstr "Grafiklarni ko'rish uchun hostni ko'rsating."
 
 msgid "Specify some filter condition to see the values."
 msgstr "Qiymatlarni ko'rish uchun ba'zi filtr shartlarini ko'rsating."
@@ -11594,7 +11594,7 @@ msgid "System error."
 msgstr "Tizim xatosi."
 
 msgid "System host name. Returns string"
-msgstr "Tizimning xost nomi. Matnni qaytaradi"
+msgstr "Tizimning host nomi. Matnni qaytaradi"
 
 msgid "System information"
 msgstr "Tizim haqida ma'lumot"
@@ -11708,7 +11708,7 @@ msgstr "Shablon \"%1$s\" shablon guruhi bo'lmasdan mavjud bo'la olmaydi."
 
 #, c-format
 msgid "Template \"%1$s\" for host \"%2$s\" does not exist."
-msgstr "Xost \"%2$s\" uchun \"%1$s\" shabloni mavjud emas."
+msgstr "Host \"%2$s\" uchun \"%1$s\" shabloni mavjud emas."
 
 msgid "Template added"
 msgstr "Shablon qo'shildi"
@@ -11783,7 +11783,7 @@ msgstr "Shablon qiymati"
 
 #, c-format
 msgid "Template with host name \"%1$s\" already exists."
-msgstr "Xost nomi \"%1$s\" bo'lgan shablon allaqachon mavjud."
+msgstr "Host nomi \"%1$s\" bo'lgan shablon allaqachon mavjud."
 
 #, c-format
 msgid "Template with the same name \"%1$s\" already exists."
@@ -11802,10 +11802,10 @@ msgstr "Shablonlar"
 
 #, c-format
 msgid "Templates \"%1$s\" unlinked from hosts \"%2$s\"."
-msgstr "Shablonlar \"%1$s\" xostlardan \"%2$s\" aloqasi uzildi."
+msgstr "Shablonlar \"%1$s\" hostlardan \"%2$s\" aloqasi uzildi."
 
 msgid "Templates linked by host discovery cannot be unlinked."
-msgstr "Xostni kashf qilish orqali bog'langan shablonlar aloqasi uzilmaydi."
+msgstr "Hostni kashf qilish orqali bog'langan shablonlar aloqasi uzilmaydi."
 
 msgid "Test"
 msgstr "Test"
@@ -11887,16 +11887,16 @@ msgid "The average time a write to the virtual disk takes, \"url\" - VMware serv
 msgstr "Virtual diskka yozishning o'rtacha vaqti, \"url\" - VMware xizmati URL manzili, \"uuid\" - VMware virtual mashinasining global yagona identifikatori, \"instance\" - disk qurilmasi instansiyasi"
 
 msgid "The cloned host contains user defined macros with type \"Secret text\". The value and type of these macros were reset."
-msgstr "Kloni olingan xostda foydalanuvchi tomonidan belgilangan \"Secret text\" turidagi makroslar mavjud. Ushbu makroslarning qiymati va turi tiklandi."
+msgstr "Kloni olingan hostda foydalanuvchi tomonidan belgilangan \"Secret text\" turidagi makroslar mavjud. Ushbu makroslarning qiymati va turi tiklandi."
 
 msgid "The cloned host prototype contains user defined macros with type \"Secret text\". The value and type of these macros were reset."
-msgstr "Kloni olingan xost prototipida foydalanuvchi tomonidan belgilangan \"Secret text\" turidagi makroslar mavjud. Ushbu makroslarning qiymati va turi tiklandi."
+msgstr "Kloni olingan host prototipida foydalanuvchi tomonidan belgilangan \"Secret text\" turidagi makroslar mavjud. Ushbu makroslarning qiymati va turi tiklandi."
 
 msgid "The cloned template contains user defined macros with type \"Secret text\". The value and type of these macros were reset."
 msgstr "Kloni olingan shablon foydalanuvchi tomonidan belgilangan \"Secret text\" turidagi makroslar mavjud. Ushbu makroslarning qiymati va turi tiklandi."
 
 msgid "The field \"monitored_by\" must be specified when changing proxy or proxy group for host monitoring."
-msgstr "Xostni monitoring qilish uchun proksi yoki proksi guruhi o'zgartirilganda \"monitored_by\" maydoni ko'rsatilishi kerak."
+msgstr "Hostni monitoring qilish uchun proksi yoki proksi guruhi o'zgartirilganda \"monitored_by\" maydoni ko'rsatilishi kerak."
 
 msgid "The following placeholders are supported:"
 msgstr "Quyidagi o'rnini bosuvchi belgilar qo'llab-quvvatlanadi:"
@@ -11909,21 +11909,21 @@ msgid "The graph is not discovered anymore and will be deleted the next time dis
 msgstr "Grafik endi kashf etilmayapti va kelgusi kashf qilish qoidasi qayta ishlanganda o'chiriladi."
 
 msgid "The host being cloned belongs to a host group you don't have write permissions to. Non-writable group has been removed from the new host."
-msgstr "Kloni olingan xost sizda yozish huquqi bo'lmagan xost guruhiga tegishli. Yozish mumkin bo'lmagan guruh yangi xostdan olib tashlandi."
+msgstr "Kloni olingan host sizda yozish huquqi bo'lmagan host guruhiga tegishli. Yozish mumkin bo'lmagan guruh yangi hostdan olib tashlandi."
 
 #, c-format
 msgid "The host group is not discovered anymore and will be deleted in %1$s (on %2$s at %3$s)."
-msgstr "Xost guruhi endi kashf etilmayapti va %1$s ichida ( %2$s da %3$s da) o'chiriladi."
+msgstr "Host guruhi endi kashf etilmayapti va %1$s ichida ( %2$s da %3$s da) o'chiriladi."
 
 msgid "The host group is not discovered anymore and will be deleted the next time discovery rule is processed."
-msgstr "Xost guruhi endi kashf etilmayapti va kelgusi kashf qilish qoidasi qayta ishlanganda o'chiriladi."
+msgstr "Host guruhi endi kashf etilmayapti va kelgusi kashf qilish qoidasi qayta ishlanganda o'chiriladi."
 
 #, c-format
 msgid "The host is not discovered anymore and will be deleted in %1$s (on %2$s at %3$s)."
-msgstr "Xost endi kashf etilmayapti va %1$s ichida ( %2$s da %3$s da) o'chiriladi."
+msgstr "Host endi kashf etilmayapti va %1$s ichida ( %2$s da %3$s da) o'chiriladi."
 
 msgid "The host is not discovered anymore and will be deleted the next time discovery rule is processed."
-msgstr "Xost endi kashf etilmayapti va kelgusi kashf qilish qoidasi qayta ishlanganda o'chiriladi."
+msgstr "Host endi kashf etilmayapti va kelgusi kashf qilish qoidasi qayta ishlanganda o'chiriladi."
 
 #, c-format
 msgid "The image is used in icon map %1$s."
@@ -12653,10 +12653,10 @@ msgid "Unknown error"
 msgstr "Noma'lum xato"
 
 msgid "Unknown host item, no such item in selected host"
-msgstr "Noma'lum xost elementi, tanlangan xostda bunday element mavjud emas"
+msgstr "Noma'lum host elementi, tanlangan hostda bunday element mavjud emas"
 
 msgid "Unknown host, no such host present in system"
-msgstr "Noma'lum xost, tizimda bunday xost mavjud emas"
+msgstr "Noma'lum host, tizimda bunday host mavjud emas"
 
 msgid "Unknown interface type."
 msgstr "Noma'lum interfeys turi."
@@ -13285,7 +13285,7 @@ msgid "VMware virtual machine guest memory usage, \"url\" - VMware service URL, 
 msgstr "VMware virtual mashinasi mehmon xotira (guest memory) ishlatilishi, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinaning yagona global identifikatori"
 
 msgid "VMware virtual machine host memory usage, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier"
-msgstr "VMware virtual mashinasi joylashgan xost (host) xotira ishlatilishi, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinaning yagona global identifikatori"
+msgstr "VMware virtual mashinasi joylashgan host (host) xotira ishlatilishi, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinaning yagona global identifikatori"
 
 msgid "VMware virtual machine hypervisor maintenance status, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier. Returns 0 - not in maintenance; 1 - in maintenance"
 msgstr "VMware virtual mashinasi joylashgan gipervizorning texnik holat holati, \"url\" - VMware xizmatining URL manzili, \"uuid\" - VMware virtual mashinaning yagona global identifikatori. 0 - texnik xizmatda emas; 1 - texnik xizmatda"
@@ -13532,7 +13532,7 @@ msgid "Visible name"
 msgstr "Ko'rinadigan nom"
 
 msgid "Visible name cannot be empty if host name is missing."
-msgstr "Agar xost nomi mavjud bo'lmasa, ko'rinadigan nom bo'sh bo'lishi mumkin emas"
+msgstr "Agar host nomi mavjud bo'lmasa, ko'rinadigan nom bo'sh bo'lishi mumkin emas"
 
 msgid "W"
 msgstr "Ch"
@@ -13583,7 +13583,7 @@ msgstr "Veb ssenariy"
 
 #, c-format
 msgid "Web scenario \"%1$s\" already exists on host \"%2$s\"."
-msgstr "Veb ssenariy \"%1$s\" allaqachon \"%2$s\" xostida mavjud."
+msgstr "Veb ssenariy \"%1$s\" allaqachon \"%2$s\" hostida mavjud."
 
 #, c-format
 msgid "Web scenario \"%1$s\" already exists."
@@ -13719,7 +13719,7 @@ msgstr "%2$s manzilida joylashgan modul uchun noto'g'ri %1$s.php klass nomi."
 
 #, c-format
 msgid "Wrong fields for host \"%1$s\"."
-msgstr "\"%1$s\" xosti uchun noto'g'ri maydonlar."
+msgstr "\"%1$s\" hosti uchun noto'g'ri maydonlar."
 
 msgid "Wrong fields for map link."
 msgstr "Xarita havolasi uchun noto'g'ri maydonlar."
@@ -13851,7 +13851,7 @@ msgid "You are not logged in"
 msgstr "Siz tizimga kirgansiz"
 
 msgid "You cannot switch hosts for current selection."
-msgstr "Hozirgi tanlov uchun xostlarni almashtiraolmaysiz."
+msgstr "Hozirgi tanlov uchun hostlarni almashtiraolmaysiz."
 
 msgid "You cannot switch templates for current selection."
 msgstr "Hozirgi tanlov uchun shablonlarni almashtiraolmaysiz."
@@ -14005,7 +14005,7 @@ msgstr "maxsus belgi"
 
 #, c-format
 msgid "a string of space-separated hostnames; adding %1$s to the list allows the page to be displayed in a frame on the same origin as the page itself"
-msgstr "bo'shliq bilan ajratilgan xost nomlari satri; %1$s ni ro'yxatga qo'shish sahifani o'zi bilan bir xil kelib chiqish manzilida ramkada ko'rsatishga imkon beradi"
+msgstr "bo'shliq bilan ajratilgan host nomlari satri; %1$s ni ro'yxatga qo'shish sahifani o'zi bilan bir xil kelib chiqish manzilida ramkada ko'rsatishga imkon beradi"
 
 msgid "a string, number or null value is expected"
 msgstr "simvol satri, raqam yoki null qiymat kutilyapti"
@@ -14044,11 +14044,11 @@ msgstr "harakat \"%1$s\" bu kashfiyot qoidalarini ishlatadi"
 
 #, c-format
 msgid "action \"%1$s\" uses this host"
-msgstr "harakat \"%1$s\" bu xostni ishlatadi"
+msgstr "harakat \"%1$s\" bu hostni ishlatadi"
 
 #, c-format
 msgid "action \"%1$s\" uses this host group"
-msgstr "harakat \"%1$s\" bu xost guruhini ishlatadi"
+msgstr "harakat \"%1$s\" bu host guruhini ishlatadi"
 
 #, c-format
 msgid "action \"%1$s\" uses this service"
@@ -14228,16 +14228,16 @@ msgid "can be used to add \"@2x\" to the URL to load retina tiles."
 msgstr "\"@2x\" ni URLga qo'shish orqali retina plitalarini yuklash uchun ishlatilishi mumkin."
 
 msgid "cannot be a value map ID from another host or template"
-msgstr "boshqa xost yoki shablondan qiymat xaritasi IDsi bo'lishi mumkin emas"
+msgstr "boshqa host yoki shablondan qiymat xaritasi IDsi bo'lishi mumkin emas"
 
 msgid "cannot be an item ID from another host or template"
-msgstr "boshqa xost yoki shablondan element IDsi bo'lishi mumkin emas"
+msgstr "boshqa host yoki shablondan element IDsi bo'lishi mumkin emas"
 
 msgid "cannot be an item prototype ID from another LLD rule"
 msgstr "boshqa LLD qoidalaridan element prototipi IDsi bo'lishi mumkin emas"
 
 msgid "cannot be an item/item prototype ID from another host or template"
-msgstr "boshqa xost yoki shablondan element/element prototipi IDsi bo'lishi mumkin emas"
+msgstr "boshqa host yoki shablondan element/element prototipi IDsi bo'lishi mumkin emas"
 
 msgid "cannot be changed"
 msgstr "o'zgartirilishi mumkin emas"
@@ -14265,7 +14265,7 @@ msgid "cannot be specified the value of parameter \"%1$s\""
 msgstr "parametrning \"%1$s\" qiymati ko'rsatilishi mumkin emas"
 
 msgid "cannot be the host interface ID from another host"
-msgstr "boshqa xostdan host interfeysi IDsi bo'lishi mumkin emas"
+msgstr "boshqa hostdan host interfeysi IDsi bo'lishi mumkin emas"
 
 msgid "cannot be unlinked"
 msgstr "bog'lanmagan bo'lishi mumkin emas"
@@ -14280,7 +14280,7 @@ msgid "cannot delete inherited item prototype"
 msgstr "meros bo'lib olingan element prototipini o'chirish mumkin emas"
 
 msgid "cannot delete templated host prototype"
-msgstr "shablonli xost prototipini o'chirish mumkin emas"
+msgstr "shablonli host prototipini o'chirish mumkin emas"
 
 msgid "cannot have more than one default interface of the same type"
 msgstr "bir xil turdagi bir nechta standart interfeysi bo'lishi mumkin emas"

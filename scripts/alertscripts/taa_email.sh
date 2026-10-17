@@ -12,7 +12,7 @@
 #   $3 = body      ({ALERT.MESSAGE})
 #
 # Majburiy environment o'zgaruvchilari:
-#   SMTP_HOST   — SMTP server xosti (masalan: smtp.gmail.com)
+#   SMTP_HOST   — SMTP server hosti (masalan: smtp.gmail.com)
 #   SMTP_PORT   — SMTP port (587 — STARTTLS, 465 — SMTPS)
 #   SMTP_USER   — SMTP autentifikatsiya foydalanuvchisi
 #   SMTP_PASS   — SMTP autentifikatsiya paroli (sekret!)
