@@ -98,6 +98,12 @@ RUN set -eux; \
     fi; \
   done
 
+# TAA dizayn tizimi (ui/assets/styles/taa): ranglar + umumiy komponentlar.
+# Faqat yorug' (blue) va qora mavzu; yuqori kontrastli mavzular o'zgarmaydi.
+RUN cd /usr/share/zabbix/assets/styles \
+ && cat taa/tokens-light.css taa/components.css >> blue-theme.css \
+ && cat taa/tokens-dark.css taa/components.css >> dark-theme.css
+
 RUN sed -i 's/en_US/uz_UZ/' /usr/share/zabbix/include/defines.inc.php
 
 # TAA: interfeysdagi eski brend nomini butunlay olib tashlash.
