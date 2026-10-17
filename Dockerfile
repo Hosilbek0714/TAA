@@ -92,6 +92,8 @@ RUN set -eux; \
         echo 'div.zabbix-logo-sidebar{background:url("assets/img/logo-sidebar.svg") no-repeat !important;background-size:contain !important;width:91px !important;height:24px !important;}'; \
         echo 'div.zabbix-logo-sidebar-compact{background:url("assets/img/logo-compact.svg") no-repeat !important;background-size:contain !important;width:24px !important;height:24px !important;}'; \
         echo '.signin-logo .zabbix-logo {background:url("assets/img/logo.svg") no-repeat center !important;background-size:contain !important;width:200px !important;min-height:60px !important;}'; \
+        echo '.sidebar .logo img.zabbix-logo-sidebar{width:100px !important;height:38px !important;object-fit:contain;}'; \
+        echo '.sidebar .logo img.zabbix-logo-sidebar-compact{width:24px !important;height:24px !important;object-fit:contain;}'; \
       } >> "$css"; \
     fi; \
   done
