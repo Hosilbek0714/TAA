@@ -245,3 +245,115 @@ input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:fo
 	border-radius: 14px;
 	box-shadow: var(--taa-shadow-lg);
 }
+
+/* =====================================================================
+   Hover effektlari
+   Vidjet va kartochkalarda transform ishlatilmaydi - u boshqaruv
+   panelida sudrab ko'chirish va o'lcham o'zgartirishni buzadi.
+   ===================================================================== */
+
+/* Silliq o'tishlar */
+.btn, button, .btn-alt, .btn-link, .btn-icon,
+.list-table tbody td,
+.filter-container, .table-forms-container, .list-table,
+.dashboard-grid-widget-contents, .dashboard-grid-widget-header,
+.dashboard-grid-iterator-contents, .dashboard-grid-iterator-header,
+input[type="text"], input[type="password"], input[type="search"], input[type="number"],
+textarea, select, .multiselect, .z-select > button.focusable,
+.radio-list-control label {
+	transition: background-color 0.18s ease, border-color 0.18s ease, color 0.18s ease,
+		box-shadow 0.18s ease, transform 0.12s ease;
+}
+
+/* Tugmalar: to'qroq rang, 1px ko'tarilish, soya */
+.btn:hover:not([disabled]), button:hover:not([disabled]):not(.btn-icon):not(.btn-link) {
+	transform: translateY(-1px);
+	box-shadow: 0 4px 12px var(--taa-primary-ring);
+}
+.btn:active:not([disabled]), button:active:not([disabled]) {
+	transform: translateY(0);
+	box-shadow: none;
+}
+.btn-alt:hover:not([disabled]) {
+	border-color: var(--taa-primary-hover);
+	color: var(--taa-primary-hover);
+}
+.btn-link:hover {
+	color: var(--taa-primary-hover);
+	border-color: var(--taa-primary-hover);
+}
+
+/* Ikonka tugmalari: yumshoq fon */
+.btn-icon:hover:not([disabled]), .btn-icon:focus:not([disabled]) {
+	background-color: var(--taa-primary-soft);
+	color: var(--taa-primary);
+	border-radius: 6px;
+}
+.sidebar .btn-icon:hover, .sidebar .btn-icon:focus {
+	background-color: var(--taa-sidebar-hover);
+	color: #ffffff;
+}
+
+/* Kartochkalar: soya kuchayadi, chegara ko'karadi */
+.filter-container:hover, .table-forms-container:hover, .list-table:hover {
+	box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 10px 24px rgba(15, 23, 42, 0.10);
+}
+.dashboard-grid-widget:hover .dashboard-grid-widget-header,
+.dashboard-grid-widget:hover .dashboard-grid-widget-contents,
+.dashboard-grid-iterator:hover .dashboard-grid-iterator-header,
+.dashboard-grid-iterator:hover .dashboard-grid-iterator-contents {
+	border-color: var(--taa-primary-ring);
+}
+.dashboard-grid-widget:hover .dashboard-grid-widget-contents,
+.dashboard-grid-iterator:hover .dashboard-grid-iterator-contents {
+	box-shadow: 0 2px 4px rgba(15, 23, 42, 0.06), 0 12px 28px rgba(15, 23, 42, 0.12);
+}
+
+/* Jadval qatorlari: fon + chap tomonda ko'k chiziq */
+.list-table tbody tr:hover > td {
+	background-color: var(--taa-row-hover);
+}
+.list-table tbody tr:hover > td:first-child {
+	box-shadow: inset 3px 0 0 var(--taa-primary);
+}
+
+/* Kiritish maydonlari: chegara to'qlashadi */
+input[type="text"]:hover:not([readonly]):not([disabled]),
+input[type="password"]:hover:not([readonly]):not([disabled]),
+input[type="search"]:hover:not([readonly]):not([disabled]),
+input[type="number"]:hover:not([readonly]):not([disabled]),
+textarea:hover:not([readonly]):not([disabled]),
+select:hover:not([disabled]),
+.multiselect:hover, .z-select > button.focusable:hover {
+	border-color: var(--taa-primary);
+}
+
+/* Segment tugmalar va tablar */
+.radio-list-control input[type=radio] + label:hover {
+	background-color: var(--taa-primary-soft);
+	color: var(--taa-primary);
+}
+.radio-list-control input[type=radio]:checked + label:hover {
+	background-color: var(--taa-primary-hover);
+	color: #ffffff;
+}
+.ui-tabs-nav .ui-tabs-anchor:not(.btn):hover,
+.ui-tabs-nav .ui-tabs-anchor:not(.btn):focus {
+	background-color: var(--taa-primary-soft);
+	color: var(--taa-primary);
+}
+.dashboard-navigation-tabs .sortable li div:hover {
+	background: var(--taa-primary-soft);
+	border-color: var(--taa-primary-ring);
+}
+
+/* Yo'l (breadcrumb) havolalari */
+.header-navigation > ul li > a:hover {
+	background-color: var(--taa-primary-soft);
+	border-bottom-color: transparent;
+}
+
+/* Animatsiyani yoqtirmaydigan foydalanuvchilar uchun */
+@media (prefers-reduced-motion: reduce) {
+	.btn:hover, button:hover { transform: none; }
+}
