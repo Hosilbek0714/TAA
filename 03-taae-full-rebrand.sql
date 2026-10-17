@@ -169,4 +169,8 @@ UPDATE item_rtname SET name_resolved_upper = upper(name_resolved)
 	WHERE name_resolved_upper <> upper(name_resolved);
 ALTER TABLE httptest ALTER COLUMN agent SET DEFAULT 'TAAE';
 
+-- Geomap vidjeti olib tashlangan: dashboard'lardagi nusxalari va modul yozuvi
+DELETE FROM widget WHERE type = 'geomap';
+DELETE FROM module WHERE id = 'geomap';
+
 COMMIT;

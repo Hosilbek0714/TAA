@@ -1040,7 +1040,6 @@ function getAdministrationGeneralSubmenu(): array {
 				$iconmap_url        => _('Icon mapping'),
 				$regex_url          => _('Regular expressions'),
 				$trigdisplay_url    => _('Trigger displaying options'),
-				$geomap_url			=> _('Geographical maps'),
 				$modules_url        => _('Modules'),
 				$connectors_url     => _('Connectors'),
 				$miscconfig_url     => _('Other')

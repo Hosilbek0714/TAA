@@ -52,6 +52,16 @@ if grep -q "hc-light\|hc-dark" include/classes/core/ZBase.php; then
 	exit 1
 fi
 
+# Geomap vidjeti va "Geografik xaritalar" sozlamalar sahifasi olib tashlanadi
+rm -rf widgets/geomap
+perl -0pi -e "s/\s*\(new CMenuItem\(_\('Geographical maps'\)\)\)\s*->setAction\('geomaps\.edit'\),//" include/classes/helpers/CMenuHelper.php
+perl -i -ne 'print unless /^\s*\$geomap_url\s*=>/' include/html.inc.php
+if [ -d widgets/geomap ] || grep -q "geomaps\.edit" include/classes/helpers/CMenuHelper.php \
+	|| grep -q '^\s*\$geomap_url\s*=>' include/html.inc.php; then
+	echo "XATO: geomap qoldiqlari qoldi" >&2
+	exit 1
+fi
+
 # Sessiya cookie nomi: zbx_session -> taae_session
 sed -i "s/define('ZBX_SESSION_NAME', 'zbx_session')/define('ZBX_SESSION_NAME', 'taae_session')/" include/defines.inc.php
 
