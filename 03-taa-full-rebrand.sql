@@ -89,4 +89,9 @@ UPDATE users SET surname = replace(surname, 'Zabbix', 'TAA') WHERE surname LIKE 
 UPDATE regexps SET name = replace(name, 'Zabbix', 'TAA') WHERE name LIKE '%Zabbix%';
 UPDATE services SET name = replace(name, 'Zabbix', 'TAA') WHERE name LIKE '%Zabbix%';
 
+-- Yuqori kontrastli mavzular interfeysdan olib tashlangan (faqat blue/dark)
+UPDATE users SET theme = 'default' WHERE theme IN ('hc-light', 'hc-dark');
+UPDATE config SET default_theme = 'blue-theme' WHERE default_theme IN ('hc-light', 'hc-dark');
+DELETE FROM graph_theme WHERE theme IN ('hc-light', 'hc-dark');
+
 COMMIT;

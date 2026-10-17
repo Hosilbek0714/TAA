@@ -43,6 +43,15 @@ find assets/styles -name '*.css' -print0 2>/dev/null \
 find widgets modules -name manifest.json -print0 2>/dev/null \
 	| xargs -0 -r perl -pi -e 's/"author":\s*"Zabbix[^"]*"/"author": "TAA"/g'
 
+# Yuqori kontrastli mavzular olib tashlanadi (faqat yorug' va qora qoladi)
+perl -i -ne "print unless /High-contrast (light|dark)/" include/classes/core/ZBase.php
+perl -pi -e "s/.dark-theme., .hc-dark. =>/'dark-theme' =>/" include/classes/core/ZBase.php
+rm -f assets/styles/hc-light.css assets/styles/hc-dark.css
+if grep -q "hc-light\|hc-dark" include/classes/core/ZBase.php; then
+	echo "XATO: ZBase.php da yuqori kontrastli mavzular qoldi" >&2
+	exit 1
+fi
+
 # Sessiya cookie nomi: zbx_session -> taa_session
 sed -i "s/define('ZBX_SESSION_NAME', 'zbx_session')/define('ZBX_SESSION_NAME', 'taa_session')/" include/defines.inc.php
 

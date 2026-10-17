@@ -81,9 +81,7 @@ COPY sass/icons/dist/zabbix-icons.woff2 sass/icons/dist/zabbix-icons.woff \
 # CSS oxiriga override — CSS ichidagi base64 logo'ni bosib ketish va yangi logoni qo'yish
 RUN set -eux; \
   for css in /usr/share/zabbix/assets/styles/blue-theme.css \
-             /usr/share/zabbix/assets/styles/dark-theme.css \
-             /usr/share/zabbix/assets/styles/hc-light.css \
-             /usr/share/zabbix/assets/styles/hc-dark.css; do \
+             /usr/share/zabbix/assets/styles/dark-theme.css; do \
     if [ -f "$css" ]; then \
       { \
         echo ''; \
@@ -99,7 +97,8 @@ RUN set -eux; \
   done
 
 # TAA dizayn tizimi (ui/assets/styles/taa): ranglar + umumiy komponentlar.
-# Faqat yorug' (blue) va qora mavzu; yuqori kontrastli mavzular o'zgarmaydi.
+# Faqat yorug' (blue) va qora mavzu bor; yuqori kontrastli mavzular
+# taa-rebrand-web.sh da olib tashlanadi.
 RUN cd /usr/share/zabbix/assets/styles \
  && cat taa/tokens-light.css taa/components.css >> blue-theme.css \
  && cat taa/tokens-dark.css taa/components.css >> dark-theme.css
