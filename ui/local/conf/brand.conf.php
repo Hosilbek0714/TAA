@@ -1,8 +1,8 @@
 <?php
 return [
-	'BRAND_LOGO' => '/assets/img/logo.svg',
-	'BRAND_LOGO_SIDEBAR' => '/assets/img/logo-sidebar.svg',
-	'BRAND_LOGO_SIDEBAR_COMPACT' => '/assets/img/logo-compact.svg',
+	'BRAND_LOGO' => '/assets/img/taae-logo.svg',
+	'BRAND_LOGO_SIDEBAR' => '/assets/img/taae-logo-sidebar.svg',
+	'BRAND_LOGO_SIDEBAR_COMPACT' => '/assets/img/taae-logo-compact.svg',
 	'BRAND_FOOTER' => 'TAA monitoring tizimi',
 	'BRAND_HELP_URL' => 'https://taa.uz/hujjatlar/',
 	'BRAND_URL' => '#',

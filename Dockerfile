@@ -65,6 +65,11 @@ COPY ui/local/img/logo.svg /usr/share/zabbix/assets/img/logo.svg
 COPY ui/local/img/logo-compact.svg /usr/share/zabbix/assets/img/logo-compact.svg
 COPY ui/local/img/logo-sidebar.svg /usr/share/zabbix/assets/img/logo-sidebar.svg
 COPY ui/local/img/favicon.ico /usr/share/zabbix/favicon.ico
+# Yangi nomlar: brauzer keshidagi eski logotip ko'rinmasligi uchun
+# (nginx rasmlarni 14 kunga keshlaydi). brand.conf.php shu nomlarni ishlatadi.
+COPY ui/local/img/logo.svg /usr/share/zabbix/assets/img/taae-logo.svg
+COPY ui/local/img/logo-sidebar.svg /usr/share/zabbix/assets/img/taae-logo-sidebar.svg
+COPY ui/local/img/logo-compact.svg /usr/share/zabbix/assets/img/taae-logo-compact.svg
 
 # Local papkaga ham copy qilish (backup uchun)
 COPY ui/local/img/logo.svg /usr/share/zabbix/ui/local/img/logo.svg

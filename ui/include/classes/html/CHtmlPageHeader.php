@@ -135,13 +135,13 @@ class CHtmlPageHeader {
 		}
 
 		echo <<<HTML
-				<link rel="icon" href="favicon.ico?v=taa">
-				<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon.ico?v=taa">
-				<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon.ico?v=taa">
-				<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon.ico?v=taa">
-				<link rel="apple-touch-icon-precomposed" sizes="180x180" href="favicon.ico?v=taa">
-				<link rel="icon" sizes="192x192" href="favicon.ico?v=taa">
-				<meta name="msapplication-TileImage" content="favicon.ico?v=taa">
+				<link rel="icon" href="favicon.ico?v=taae">
+				<link rel="apple-touch-icon-precomposed" sizes="76x76" href="favicon.ico?v=taae">
+				<link rel="apple-touch-icon-precomposed" sizes="120x120" href="favicon.ico?v=taae">
+				<link rel="apple-touch-icon-precomposed" sizes="152x152" href="favicon.ico?v=taae">
+				<link rel="apple-touch-icon-precomposed" sizes="180x180" href="favicon.ico?v=taae">
+				<link rel="icon" sizes="192x192" href="favicon.ico?v=taae">
+				<meta name="msapplication-TileImage" content="favicon.ico?v=taae">
 				<meta name="msapplication-TileColor" content="#d40000">
 				<meta name="msapplication-config" content="none"/>
 		HTML;
