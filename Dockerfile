@@ -71,6 +71,12 @@ COPY ui/local/img/logo.svg /usr/share/zabbix/ui/local/img/logo.svg
 COPY ui/local/img/logo-compact.svg /usr/share/zabbix/ui/local/img/logo-compact.svg
 COPY ui/local/img/logo-sidebar.svg /usr/share/zabbix/ui/local/img/logo-sidebar.svg
 COPY ui/assets/styles/ /usr/share/zabbix/assets/styles/
+# Ikonka shrifti stil fayllari bilan bir versiyadan bo'lishi shart: image'dagi
+# 7.0.31 shriftida kodlar boshqacha (masalan \ea5b qidiruv emas, "chiqish"),
+# shuning uchun ikonkalar almashib ketadi.
+COPY sass/icons/dist/zabbix-icons.woff2 sass/icons/dist/zabbix-icons.woff \
+     sass/icons/dist/zabbix-icons.ttf sass/icons/dist/zabbix-icons.svg \
+     /usr/share/zabbix/assets/fonts/
 
 # CSS oxiriga override — CSS ichidagi base64 logo'ni bosib ketish va yangi logoni qo'yish
 RUN set -eux; \
