@@ -107,7 +107,7 @@ services:
       context: .
     container_name: taa-web
     environment:
-      ZBX_SERVER_NAME: "TAA Monitor Tizimi"
+      ZBX_SERVER_NAME: "TAA monitoring tizimi"
       ZBX_DEFAULT_LANG: "uz_UZ"
       ZBX_SERVER_HOST: taa-server
       DB_SERVER_HOST: taa-db

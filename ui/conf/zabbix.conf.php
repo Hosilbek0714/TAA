@@ -14,6 +14,6 @@ $DB['SCHEMA'] = '';
 
 $ZBX_SERVER      = 'taa-server';
 $ZBX_SERVER_PORT = '10051';
-$ZBX_SERVER_NAME = 'TAA Monitoring';
+$ZBX_SERVER_NAME = 'TAA monitoring tizimi';
 
 $IMAGE_FORMAT_DEFAULT = IMAGE_FORMAT_PNG;

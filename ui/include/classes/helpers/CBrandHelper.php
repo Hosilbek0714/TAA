@@ -114,7 +114,7 @@ class CBrandHelper {
 			[
 				$with_version ? 'TAA '.ZABBIX_VERSION.'. ' : null,
 				COPYR(), ' '.ZABBIX_COPYRIGHT_FROM, NDASH(), ZABBIX_COPYRIGHT_TO.', ',
-				(new CLink('TAA Monitor Tizimi', 'https://taa.uz'))
+				(new CLink('TAA monitoring tizimi', 'https://taa.uz'))
 					->addClass(ZBX_STYLE_GREY)
 					->addClass(ZBX_STYLE_LINK_ALT)
 					->setTarget('_blank')

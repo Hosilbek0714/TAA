@@ -15541,10 +15541,10 @@ msgid "TAA server port"
 msgstr "TAA server porti"
 
 msgid "Powered by TAA"
-msgstr "TAA Monitor Tizimi"
+msgstr "TAA monitoring tizimi"
 
 msgid "TAA Monitoring System"
-msgstr "TAA Monitor Tizimi"
+msgstr "TAA monitoring tizimi"
 
 msgid "Monitoring System"
 msgstr "Monitor Tizimi"
