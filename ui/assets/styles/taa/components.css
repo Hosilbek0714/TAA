@@ -353,7 +353,41 @@ select:hover:not([disabled]),
 	border-bottom-color: transparent;
 }
 
+/* Yon menyu: aniq ko'rinadigan hover */
+.menu-main a, .menu-user a {
+	transition: background-color 0.18s ease, color 0.18s ease, transform 0.18s ease,
+		box-shadow 0.18s ease;
+}
+.menu-main a::before, .menu-user a::before {
+	transition: color 0.18s ease;
+}
+.menu-main > li:not(.is-selected) > a:hover,
+.menu-main > li:not(.is-selected) > a:focus-visible,
+.menu-user > li:not(.is-selected) > a:hover,
+.menu-user > li:not(.is-selected) > a:focus-visible {
+	background: rgba(255, 255, 255, 0.12);
+	color: #ffffff;
+	transform: translateX(3px);
+}
+.menu-main > li:not(.is-selected) > a:hover::before,
+.menu-user > li:not(.is-selected) > a:hover::before {
+	color: #8bb8ff;
+}
+.menu-main .submenu > li:not(.is-selected) > a:hover,
+.menu-main .submenu > li:not(.is-selected) > a:focus-visible,
+.menu-user .submenu > li:not(.is-selected) > a:hover,
+.menu-user .submenu > li:not(.is-selected) > a:focus-visible {
+	background: rgba(255, 255, 255, 0.10);
+	color: #ffffff;
+	transform: translateX(3px);
+}
+.menu-main > li.is-selected > a:hover,
+.menu-user > li.is-selected > a:hover {
+	background: var(--taa-primary-hover);
+}
+
 /* Animatsiyani yoqtirmaydigan foydalanuvchilar uchun */
 @media (prefers-reduced-motion: reduce) {
-	.btn:hover, button:hover { transform: none; }
+	.btn:hover, button:hover,
+	.menu-main a:hover, .menu-user a:hover { transform: none; }
 }
