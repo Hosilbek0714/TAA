@@ -1,0 +1,247 @@
+
+/* =====================================================================
+   TAA dizayn tizimi - komponentlar (yorug' va qora mavzu uchun umumiy).
+   Faqat --taa-* o'zgaruvchilaridan foydalanadi; ranglar tokens-*.css da.
+   Mavzu faylining OXIRIGA qo'shiladi, shuning uchun bir xil selektorli
+   asl qoidalardan ustun turadi.
+   ===================================================================== */
+
+/* ---------- Asos: shrift, fon, matn ---------- */
+body,
+button, .btn, .btn-alt, .btn-link, .btn-grey, .btn-icon,
+input, select, textarea, .z-select, .multiselect {
+	font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
+}
+body {
+	background: var(--taa-bg);
+	color: var(--taa-text);
+}
+.wrapper {
+	background: var(--taa-bg);
+}
+a {
+	color: var(--taa-primary);
+}
+a:hover {
+	color: var(--taa-primary-hover);
+	border-bottom-color: transparent;
+}
+
+/* ---------- Yon menyu ---------- */
+.sidebar {
+	background: linear-gradient(180deg, var(--taa-sidebar-top) 0%, var(--taa-sidebar-bottom) 100%);
+	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.04);
+}
+.sidebar .logo img.taa-logo-sidebar {
+	background: #ffffff;
+	border-radius: 8px;
+	padding: 3px 6px;
+	box-sizing: border-box;
+}
+.sidebar .server-name {
+	color: var(--taa-sidebar-muted);
+	font-size: 11px;
+	letter-spacing: 0.05em;
+	text-transform: uppercase;
+}
+.form-search .search {
+	background: rgba(255, 255, 255, 0.07);
+	border: 1px solid rgba(255, 255, 255, 0.12);
+	border-radius: 8px;
+	color: #ffffff;
+}
+.form-search .search:focus {
+	border-color: var(--taa-primary);
+	box-shadow: 0 0 0 3px var(--taa-primary-ring);
+}
+
+.menu-main a,
+.menu-user a {
+	color: var(--taa-sidebar-text);
+	border-left: 0;
+	margin: 2px 10px;
+	border-radius: 10px;
+}
+.menu-main > li > a:hover, .menu-main > li > a:focus,
+.menu-user a:hover, .menu-user a:focus {
+	background: var(--taa-sidebar-hover);
+	color: #ffffff;
+}
+.menu-main > li.is-expanded > a, .menu-main > li.is-expanded > a:focus {
+	background: var(--taa-sidebar-hover);
+	color: #ffffff;
+}
+.menu-main > li.is-selected > a,
+.menu-user > li.is-selected > a {
+	background: var(--taa-primary);
+	color: #ffffff;
+	box-shadow: 0 4px 12px rgba(20, 111, 252, 0.35);
+}
+.menu-main .submenu,
+.menu-user .submenu {
+	background: transparent;
+}
+.menu-main .submenu a,
+.menu-user .submenu a {
+	background: transparent;
+	color: var(--taa-sidebar-muted);
+	margin: 1px 10px 1px 22px;
+	border-radius: 8px;
+}
+.menu-main .submenu a:hover, .menu-main .submenu a:focus,
+.menu-user .submenu a:hover, .menu-user .submenu a:focus {
+	background: var(--taa-sidebar-hover);
+	color: #ffffff;
+}
+.menu-main .submenu > li.is-selected > a,
+.menu-main .submenu > li.is-selected > a:hover,
+.menu-main .submenu > li.is-selected > a:focus,
+.menu-user .submenu > li.is-selected > a {
+	background: var(--taa-sidebar-sub-active);
+	color: #ffffff;
+}
+.menu-main .submenu .submenu li.is-selected a,
+.menu-user .submenu .submenu li.is-selected a {
+	background-color: var(--taa-sidebar-sub-active);
+}
+
+/* ---------- Sahifa sarlavhasi ---------- */
+header {
+	background-color: var(--taa-surface);
+	border-bottom: 1px solid var(--taa-border);
+}
+.header-title {
+	padding-top: 14px;
+	padding-bottom: 10px;
+}
+.header-navigation > ul li > span.selected,
+.header-navigation > ul li > a {
+	border-radius: 6px;
+}
+.header-navigation > ul li > span.selected {
+	background-color: var(--taa-primary-soft);
+	color: var(--taa-primary);
+}
+.header-title h1 {
+	font-size: 22px;
+	font-weight: 600;
+	letter-spacing: -0.01em;
+	color: var(--taa-text);
+}
+
+/* ---------- Kartochkalar: filtr, jadval, formalar ---------- */
+.filter-container,
+.table-forms-container,
+.browser-warning-container {
+	background: var(--taa-surface);
+	border: 1px solid var(--taa-border);
+	border-radius: 12px;
+	box-shadow: var(--taa-shadow);
+}
+.filter-container {
+	margin-bottom: 14px;
+}
+
+.list-table {
+	background: var(--taa-surface);
+	border: 1px solid var(--taa-border);
+	border-radius: 12px;
+	box-shadow: var(--taa-shadow);
+	overflow: hidden;
+}
+.list-table thead th {
+	background: var(--taa-surface-2);
+	color: var(--taa-muted);
+	font-size: 11px;
+	font-weight: 600;
+	letter-spacing: 0.03em;
+	text-transform: uppercase;
+	border-bottom-color: var(--taa-border);
+}
+.list-table td,
+.list-table th {
+	border-color: var(--taa-border);
+}
+.list-table tbody tr:hover > td {
+	background-color: var(--taa-row-hover);
+}
+
+/* ---------- Boshqaruv paneli vidjetlari ---------- */
+.dashboard-grid-widget-header,
+.dashboard-grid-iterator-header {
+	background: var(--taa-surface);
+	border-color: var(--taa-border);
+	border-radius: 12px 12px 0 0;
+}
+.dashboard-grid-widget-header h4,
+.dashboard-grid-iterator-header h4 {
+	font-weight: 600;
+	color: var(--taa-text);
+}
+.dashboard-grid-widget-contents,
+.dashboard-grid-iterator-contents {
+	background: var(--taa-surface);
+	border-color: var(--taa-border);
+	border-radius: 0 0 12px 12px;
+	box-shadow: var(--taa-shadow);
+}
+
+/* ---------- Tugmalar ---------- */
+.btn-debug, .btn-overlay-close, .btn-link, .btn-grey-icon, .btn-icon, .btn-grey, .btn-alt, .btn, button {
+	border-radius: 8px;
+}
+.btn, button {
+	background-color: var(--taa-primary);
+	border-color: var(--taa-primary);
+	color: #ffffff;
+}
+.btn:hover, button:hover,
+.btn:focus, button:focus {
+	background-color: var(--taa-primary-hover);
+	border-color: var(--taa-primary-hover);
+}
+.btn-alt {
+	color: var(--taa-primary);
+	border-color: var(--taa-primary);
+	background-color: transparent;
+}
+.btn-alt:hover, .btn-alt:focus {
+	color: var(--taa-primary);
+	background-color: var(--taa-primary-soft);
+}
+
+/* ---------- Kiritish maydonlari ---------- */
+input[type="text"], input[type="password"], input[type="search"], input[type="number"],
+input[type="email"], input[type="time"], input[type="url"], input[type="tel"],
+textarea, select, .multiselect, .z-select > button.focusable {
+	border-radius: 8px;
+	border-color: var(--taa-border-strong);
+	background-color: var(--taa-input-bg);
+	color: var(--taa-text);
+}
+input[type="text"]:focus, input[type="password"]:focus, input[type="search"]:focus,
+input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus,
+.multiselect.active, .z-select > button.focusable:focus {
+	border-color: var(--taa-primary);
+	box-shadow: 0 0 0 3px var(--taa-primary-ring);
+}
+
+/* Segment tugmalar (Har qanday / Yoqilgan / O'chirilgan) */
+.radio-list-control input[type=radio]:checked + label {
+	background-color: var(--taa-primary);
+	border-color: var(--taa-primary);
+}
+.radio-list-control li:first-child label {
+	border-radius: 8px 0 0 8px;
+}
+.radio-list-control li:last-child label {
+	border-radius: 0 8px 8px 0;
+}
+
+/* ---------- Muloqot oynalari ---------- */
+.overlay-dialogue {
+	background-color: var(--taa-surface);
+	border: 1px solid var(--taa-border);
+	border-radius: 14px;
+	box-shadow: var(--taa-shadow-lg);
+}
