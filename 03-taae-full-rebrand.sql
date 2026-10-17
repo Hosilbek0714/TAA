@@ -173,4 +173,9 @@ ALTER TABLE httptest ALTER COLUMN agent SET DEFAULT 'TAAE';
 DELETE FROM widget WHERE type = 'geomap';
 DELETE FROM module WHERE id = 'geomap';
 
+-- TAAE palitrasi: jiddiylik ranglari (asl ranglar o'rniga, sayt dizayniga mos)
+UPDATE config SET severity_color_0 = '94A3B8', severity_color_1 = '60A5FA',
+	severity_color_2 = 'FBBF24', severity_color_3 = 'FB923C',
+	severity_color_4 = 'F87171', severity_color_5 = 'E11D48';
+
 COMMIT;
