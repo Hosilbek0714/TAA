@@ -894,7 +894,7 @@ class testPageReportsTopTriggers extends CWebTest {
 			[
 				[
 					'tags' => [
-						['name' => 'TAA', 'operator' => 'Exists']
+						['name' => 'TAAE', 'operator' => 'Exists']
 					],
 					'expected' => []
 				]

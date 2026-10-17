@@ -195,7 +195,7 @@ class testAutoregistration extends CIntegrationTest {
 			],
 			'operations' => [
 				/* OPERATION_TYPE_HOST_ADD is intentionally missing. It is expected to be run by */
-				/* TAA server, because OPERATION_TYPE_HOST_TAGS_ADD is present.               */
+				/* TAAE server, because OPERATION_TYPE_HOST_TAGS_ADD is present.               */
 				[
 					'operationtype' => OPERATION_TYPE_HOST_TAGS_ADD,
 					'optag' => [
@@ -253,7 +253,7 @@ class testAutoregistration extends CIntegrationTest {
 			],
 			'operations' => [
 				/* OPERATION_TYPE_HOST_ADD is intentionally missing. It is expected to be run by */
-				/* TAA server, because OPERATION_TYPE_HOST_TAGS_ADD is present.               */
+				/* TAAE server, because OPERATION_TYPE_HOST_TAGS_ADD is present.               */
 				[
 					'operationtype' => OPERATION_TYPE_HOST_TAGS_ADD,
 					'optag' => [

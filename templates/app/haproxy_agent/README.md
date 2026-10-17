@@ -1,18 +1,18 @@
 
-# HAProxy by TAA agent
+# HAProxy by TAAE agent
 
 ## Overview
 
-The template to monitor HAProxy by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor HAProxy by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
-The template collects metrics by polling the HAProxy stats page with TAA agent.
+The template collects metrics by polling the HAProxy stats page with TAAE agent.
 
 Note, that this template doesn't support authentication and redirects (limitations of `web.page.get`).
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -21,7 +21,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -64,22 +64,22 @@ frontend stats
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get stats|<p>HAProxy Statistics Report in CSV format</p>|TAA agent|web.page.get["{$HAPROXY.STATS.SCHEME}://{$HAPROXY.STATS.HOST}:{$HAPROXY.STATS.PORT}/{$HAPROXY.STATS.PATH};csv"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `# ([\s\S]*) \1`</p></li><li><p>CSV to JSON</p></li></ul>|
+|Get stats|<p>HAProxy Statistics Report in CSV format</p>|TAAE agent|web.page.get["{$HAPROXY.STATS.SCHEME}://{$HAPROXY.STATS.HOST}:{$HAPROXY.STATS.PORT}/{$HAPROXY.STATS.PATH};csv"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `# ([\s\S]*) \1`</p></li><li><p>CSV to JSON</p></li></ul>|
 |Get nodes|<p>Array for LLD rules.</p>|Dependent item|haproxy.get.nodes<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
-|Get stats page|<p>HAProxy Statistics Report HTML</p>|TAA agent|web.page.get["{$HAPROXY.STATS.SCHEME}://{$HAPROXY.STATS.HOST}:{$HAPROXY.STATS.PORT}/{$HAPROXY.STATS.PATH}"]|
+|Get stats page|<p>HAProxy Statistics Report HTML</p>|TAAE agent|web.page.get["{$HAPROXY.STATS.SCHEME}://{$HAPROXY.STATS.HOST}:{$HAPROXY.STATS.PORT}/{$HAPROXY.STATS.PATH}"]|
 |Version||Dependent item|haproxy.version<p>**Preprocessing**</p><ul><li><p>Regular expression: `HAProxy version ([^,]*), \1`</p><p>⛔️Custom on fail: Set error to: `HAProxy version is not found`</p></li><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 |Uptime||Dependent item|haproxy.uptime<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
-|Service status||TAA agent|net.tcp.service["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Service response time||TAA agent|net.tcp.service.perf["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"]|
+|Service status||TAAE agent|net.tcp.service["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Service response time||TAAE agent|net.tcp.service.perf["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"]|
 
 ### Triggers
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HAProxy: Version has changed|<p>HAProxy version has changed. Acknowledge to close the problem manually.</p>|`last(/HAProxy by TAA agent/haproxy.version,#1)<>last(/HAProxy by TAA agent/haproxy.version,#2) and length(last(/HAProxy by TAA agent/haproxy.version))>0`|Info|**Manual close**: Yes|
-|HAProxy: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/HAProxy by TAA agent/haproxy.uptime)<10m`|Info|**Manual close**: Yes|
-|HAProxy: Service is down||`last(/HAProxy by TAA agent/net.tcp.service["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"])=0`|Average|**Manual close**: Yes|
-|HAProxy: Service response time is too high||`min(/HAProxy by TAA agent/net.tcp.service.perf["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"],5m)>{$HAPROXY.RESPONSE_TIME.MAX.WARN}`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HAProxy: Service is down</li></ul>|
+|HAProxy: Version has changed|<p>HAProxy version has changed. Acknowledge to close the problem manually.</p>|`last(/HAProxy by TAAE agent/haproxy.version,#1)<>last(/HAProxy by TAAE agent/haproxy.version,#2) and length(last(/HAProxy by TAAE agent/haproxy.version))>0`|Info|**Manual close**: Yes|
+|HAProxy: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/HAProxy by TAAE agent/haproxy.uptime)<10m`|Info|**Manual close**: Yes|
+|HAProxy: Service is down||`last(/HAProxy by TAAE agent/net.tcp.service["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"])=0`|Average|**Manual close**: Yes|
+|HAProxy: Service response time is too high||`min(/HAProxy by TAAE agent/net.tcp.service.perf["{$HAPROXY.STATS.SCHEME}","{$HAPROXY.STATS.HOST}","{$HAPROXY.STATS.PORT}"],5m)>{$HAPROXY.RESPONSE_TIME.MAX.WARN}`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>HAProxy: Service is down</li></ul>|
 
 ### LLD rule Backend discovery
 
@@ -117,11 +117,11 @@ frontend stats
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HAProxy: backend {#PXNAME}: Server is DOWN|<p>Backend is not available.</p>|`count(/HAProxy by TAA agent/haproxy.backend.status[{#PXNAME},{#SVNAME}],#5,"eq","DOWN")=5`|Average||
-|HAProxy: backend {#PXNAME}: Average response time is high|<p>Average backend response time (in ms) for the last 1,024 requests is more than {$HAPROXY.BACK_RTIME.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.backend.rtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_RTIME.MAX.WARN}`|Warning||
-|HAProxy: backend {#PXNAME}: Number of responses with error is high|<p>Number of requests on backend, whose responses yielded an error, is more than {$HAPROXY.BACK_ERESP.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.backend.eresp.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_ERESP.MAX.WARN}`|Warning||
-|HAProxy: backend {#PXNAME}: Current number of requests unassigned in queue is high|<p>Current number of requests on backend unassigned in queue is more than {$HAPROXY.BACK_QCUR.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.backend.qcur[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_QCUR.MAX.WARN}`|Warning||
-|HAProxy: backend {#PXNAME}: Average time spent in queue is high|<p>Average time spent in queue (in ms) for the last 1,024 requests is more than {$HAPROXY.BACK_QTIME.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.backend.qtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_QTIME.MAX.WARN}`|Warning||
+|HAProxy: backend {#PXNAME}: Server is DOWN|<p>Backend is not available.</p>|`count(/HAProxy by TAAE agent/haproxy.backend.status[{#PXNAME},{#SVNAME}],#5,"eq","DOWN")=5`|Average||
+|HAProxy: backend {#PXNAME}: Average response time is high|<p>Average backend response time (in ms) for the last 1,024 requests is more than {$HAPROXY.BACK_RTIME.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.backend.rtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_RTIME.MAX.WARN}`|Warning||
+|HAProxy: backend {#PXNAME}: Number of responses with error is high|<p>Number of requests on backend, whose responses yielded an error, is more than {$HAPROXY.BACK_ERESP.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.backend.eresp.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_ERESP.MAX.WARN}`|Warning||
+|HAProxy: backend {#PXNAME}: Current number of requests unassigned in queue is high|<p>Current number of requests on backend unassigned in queue is more than {$HAPROXY.BACK_QCUR.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.backend.qcur[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_QCUR.MAX.WARN}`|Warning||
+|HAProxy: backend {#PXNAME}: Average time spent in queue is high|<p>Average time spent in queue (in ms) for the last 1,024 requests is more than {$HAPROXY.BACK_QTIME.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.backend.qtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.BACK_QTIME.MAX.WARN}`|Warning||
 
 ### LLD rule Frontend discovery
 
@@ -154,9 +154,9 @@ frontend stats
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HAProxy: frontend {#PXNAME}: Session utilization is high|<p>Alerting on this metric is essential to ensure your server has sufficient capacity to handle all concurrent sessions. Unlike requests, upon reaching the session limit HAProxy will deny additional clients until resource consumption drops. Furthermore, if you find your session usage percentage to be hovering above 80%, it could be time to either modify HAProxy's configuration to allow more sessions, or migrate your HAProxy server to a bigger box.</p>|`min(/HAProxy by TAA agent/haproxy.frontend.sutil[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.FRONT_SUTIL.MAX.WARN}`|Warning||
-|HAProxy: frontend {#PXNAME}: Number of request errors is high|<p>Number of request errors is more than {$HAPROXY.FRONT_EREQ.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.frontend.ereq.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.FRONT_EREQ.MAX.WARN}`|Warning||
-|HAProxy: frontend {#PXNAME}: Number of requests denied is high|<p>Number of requests denied due to security concerns (ACL-restricted) is more than {$HAPROXY.FRONT_DREQ.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.frontend.dreq.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.FRONT_DREQ.MAX.WARN}`|Warning||
+|HAProxy: frontend {#PXNAME}: Session utilization is high|<p>Alerting on this metric is essential to ensure your server has sufficient capacity to handle all concurrent sessions. Unlike requests, upon reaching the session limit HAProxy will deny additional clients until resource consumption drops. Furthermore, if you find your session usage percentage to be hovering above 80%, it could be time to either modify HAProxy's configuration to allow more sessions, or migrate your HAProxy server to a bigger box.</p>|`min(/HAProxy by TAAE agent/haproxy.frontend.sutil[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.FRONT_SUTIL.MAX.WARN}`|Warning||
+|HAProxy: frontend {#PXNAME}: Number of request errors is high|<p>Number of request errors is more than {$HAPROXY.FRONT_EREQ.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.frontend.ereq.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.FRONT_EREQ.MAX.WARN}`|Warning||
+|HAProxy: frontend {#PXNAME}: Number of requests denied is high|<p>Number of requests denied due to security concerns (ACL-restricted) is more than {$HAPROXY.FRONT_DREQ.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.frontend.dreq.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.FRONT_DREQ.MAX.WARN}`|Warning||
 
 ### LLD rule Server discovery
 
@@ -197,16 +197,16 @@ frontend stats
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HAProxy: {#PXNAME} {#SVNAME}: Server is DOWN|<p>Server is not available.</p>|`count(/HAProxy by TAA agent/haproxy.server.status[{#PXNAME},{#SVNAME}],#5,"eq","DOWN")=5`|Warning||
-|HAProxy: {#PXNAME} {#SVNAME}: Average response time is high|<p>Average server response time (in ms) for the last 1,024 requests is more than {$HAPROXY.SERVER_RTIME.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.server.rtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_RTIME.MAX.WARN}`|Warning||
-|HAProxy: {#PXNAME} {#SVNAME}: Number of responses with error is high|<p>Number of requests on server, whose responses yielded an error, is more than {$HAPROXY.SERVER_ERESP.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.server.eresp.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_ERESP.MAX.WARN}`|Warning||
-|HAProxy: {#PXNAME} {#SVNAME}: Current number of requests unassigned in queue is high|<p>Current number of requests unassigned in queue is more than {$HAPROXY.SERVER_QCUR.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.server.qcur[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_QCUR.MAX.WARN}`|Warning||
-|HAProxy: {#PXNAME} {#SVNAME}: Average time spent in queue is high|<p>Average time spent in queue (in ms) for the last 1,024 requests is more than {$HAPROXY.SERVER_QTIME.MAX.WARN}.</p>|`min(/HAProxy by TAA agent/haproxy.server.qtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_QTIME.MAX.WARN}`|Warning||
-|HAProxy: {#PXNAME} {#SVNAME}: Health check error|<p>Please check the server for faults.</p>|`find(/HAProxy by TAA agent/haproxy.server.check_status[{#PXNAME},{#SVNAME}],#3,"regexp","(?:L[4-7]OK\|^$)")=0`|Warning|**Depends on**:<br><ul><li>HAProxy: {#PXNAME} {#SVNAME}: Server is DOWN</li></ul>|
+|HAProxy: {#PXNAME} {#SVNAME}: Server is DOWN|<p>Server is not available.</p>|`count(/HAProxy by TAAE agent/haproxy.server.status[{#PXNAME},{#SVNAME}],#5,"eq","DOWN")=5`|Warning||
+|HAProxy: {#PXNAME} {#SVNAME}: Average response time is high|<p>Average server response time (in ms) for the last 1,024 requests is more than {$HAPROXY.SERVER_RTIME.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.server.rtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_RTIME.MAX.WARN}`|Warning||
+|HAProxy: {#PXNAME} {#SVNAME}: Number of responses with error is high|<p>Number of requests on server, whose responses yielded an error, is more than {$HAPROXY.SERVER_ERESP.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.server.eresp.rate[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_ERESP.MAX.WARN}`|Warning||
+|HAProxy: {#PXNAME} {#SVNAME}: Current number of requests unassigned in queue is high|<p>Current number of requests unassigned in queue is more than {$HAPROXY.SERVER_QCUR.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.server.qcur[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_QCUR.MAX.WARN}`|Warning||
+|HAProxy: {#PXNAME} {#SVNAME}: Average time spent in queue is high|<p>Average time spent in queue (in ms) for the last 1,024 requests is more than {$HAPROXY.SERVER_QTIME.MAX.WARN}.</p>|`min(/HAProxy by TAAE agent/haproxy.server.qtime[{#PXNAME},{#SVNAME}],5m)>{$HAPROXY.SERVER_QTIME.MAX.WARN}`|Warning||
+|HAProxy: {#PXNAME} {#SVNAME}: Health check error|<p>Please check the server for faults.</p>|`find(/HAProxy by TAAE agent/haproxy.server.check_status[{#PXNAME},{#SVNAME}],#3,"regexp","(?:L[4-7]OK\|^$)")=0`|Warning|**Depends on**:<br><ul><li>HAProxy: {#PXNAME} {#SVNAME}: Server is DOWN</li></ul>|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

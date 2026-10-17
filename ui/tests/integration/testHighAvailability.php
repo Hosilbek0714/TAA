@@ -75,7 +75,7 @@ class testHighAvailability extends CIntegrationTest {
 	}
 
 	/**
-	 * Launching TAA server in stand-alone mode
+	 * Launching TAAE server in stand-alone mode
 	 *
 	 * @required-components server_ha1
 	 */
@@ -235,7 +235,7 @@ class testHighAvailability extends CIntegrationTest {
 		];
 
 		self::prepareComponentConfiguration(self::COMPONENT_SERVER, $newConfig);
-		$this->startComponent(self::COMPONENT_SERVER, 'TAA Server stopped', true);
+		$this->startComponent(self::COMPONENT_SERVER, 'TAAE Server stopped', true);
 		$this->assertTrue(true); // Ignore warning for risky test, checks are performed in nested funcs and exceptions can be thrown
 	}
 

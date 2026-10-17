@@ -45,7 +45,7 @@ class testPageMaps extends CWebTest {
 	const SYSMAP_NAME_WITH_SYMBOLS = 'Name with 3/4-byte symbols: 🤖 ⃠ Ω⌚Ԏ﨧';
 	const SYSMAP_TO_DELETE = 'Sysmap for deletion';
 	const SYSMAP_FIRST_A = 'A map to check alphabetical sorting';
-	const SYSMAP_FIRST_Z = 'TAA sysmap for checking alphabetical sorting';
+	const SYSMAP_FIRST_Z = 'TAAE sysmap for checking alphabetical sorting';
 	const SYSMAP_LOW_WIDTH = 'Map with lowest width';
 	const SYSMAP_HIGH_WIDTH = 'Map with highest width';
 	const SYSMAP_LOW_HEIGHT = 'Map with lowest height';

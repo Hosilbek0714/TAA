@@ -141,7 +141,7 @@ const char	*zbx_dservice_type_string(zbx_dservice_type_t service)
 		case SVC_TCP:
 			return "TCP";
 		case SVC_AGENT:
-			return "TAA agent";
+			return "TAAE agent";
 		case SVC_SNMPv1:
 			return "SNMPv1 agent";
 		case SVC_SNMPv2c:

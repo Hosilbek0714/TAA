@@ -3,14 +3,14 @@
 
 ## Overview
 
-This template is developed to monitor the messaging broker RabbitMQ cluster by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+This template is developed to monitor the messaging broker RabbitMQ cluster by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 The template collects metrics by polling RabbitMQ management plugin with HTTP agent remotely.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -84,7 +84,7 @@ rabbitmqctl set_user_tags zbx_monitor monitoring
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ cluster: Failed to fetch overview data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ cluster by HTTP/rabbitmq.get_overview,30m)=1`|Warning|**Manual close**: Yes|
+|RabbitMQ cluster: Failed to fetch overview data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ cluster by HTTP/rabbitmq.get_overview,30m)=1`|Warning|**Manual close**: Yes|
 
 ### LLD rule Health Check 3.8.10+ discovery
 
@@ -136,14 +136,14 @@ rabbitmqctl set_user_tags zbx_monitor monitoring
 
 ## Overview
 
-This template is developed to monitor the messaging broker RabbitMQ node by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+This template is developed to monitor the messaging broker RabbitMQ node by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 The template collects metrics by polling RabbitMQ management plugin with HTTP agent remotely.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -152,7 +152,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -215,7 +215,7 @@ rabbitmqctl set_user_tags zbx_monitor monitoring
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |RabbitMQ node: Service is down||`last(/RabbitMQ node by HTTP/net.tcp.service["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"])=0`|Average|**Manual close**: Yes|
-|RabbitMQ node: Failed to fetch nodes data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ node by HTTP/rabbitmq.get_nodes,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
+|RabbitMQ node: Failed to fetch nodes data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ node by HTTP/rabbitmq.get_nodes,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
 |RabbitMQ node: Version has changed|<p>RabbitMQ version has changed. Acknowledge to close the problem manually.</p>|`last(/RabbitMQ node by HTTP/rabbitmq.node.overview.rabbitmq_version,#1)<>last(/RabbitMQ node by HTTP/rabbitmq.node.overview.rabbitmq_version,#2) and length(last(/RabbitMQ node by HTTP/rabbitmq.node.overview.rabbitmq_version))>0`|Info|**Manual close**: Yes|
 |RabbitMQ node: Number of network partitions is too high|<p>For more details see [Detecting Network Partitions](https://www.rabbitmq.com/partitions.html#detecting).</p>|`min(/RabbitMQ node by HTTP/rabbitmq.node.partitions,5m)>0`|Warning||
 |RabbitMQ node: Node is not running|<p>RabbitMQ node is not running.</p>|`max(/RabbitMQ node by HTTP/rabbitmq.node.running,5m)=0`|Average|**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
@@ -308,5 +308,5 @@ rabbitmqctl set_user_tags zbx_monitor monitoring
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

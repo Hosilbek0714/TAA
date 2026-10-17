@@ -3,13 +3,13 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Palo Alto PA-440 monitoring by TAA via XML API and doesn't require any external scripts.
+This template is designed for the effortless deployment of Palo Alto PA-440 monitoring by TAAE via XML API and doesn't require any external scripts.
 
 For more details about PAN-OS API, refer to the [official documentation](https://docs.paloaltonetworks.com/pan-os/11-1/pan-os-panorama-api).
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -363,5 +363,5 @@ Set the host macros:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

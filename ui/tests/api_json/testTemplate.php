@@ -35,7 +35,7 @@ class testTemplate extends CAPITest {
 			[
 				'host' => 'api_vendor_test',
 				'groups' => ['groupid' => 1],
-				'vendor_name' => 'TAA',
+				'vendor_name' => 'TAAE',
 				'vendor_version' => '6.4-0'
 			]
 		];
@@ -137,32 +137,32 @@ class testTemplate extends CAPITest {
 				],
 				'expected_error' => 'Template with visible name "test-template-09" already exists.'
 			],
-			// The next two test cases depends on the existing host "TAA server".
+			// The next two test cases depends on the existing host "TAAE server".
 			[
 				'request' => [
 					[
-						'host' => 'TAA server',
+						'host' => 'TAAE server',
 						'groups' => ['groupid' => 1]
 					]
 				],
-				'expected_error' => 'Host with host name "TAA server" already exists.'
+				'expected_error' => 'Host with host name "TAAE server" already exists.'
 			],
 			[
 				'request' => [
 					[
 						'host' => 'test-template-11',
-						'name' => 'TAA server',
+						'name' => 'TAAE server',
 						'groups' => ['groupid' => 1]
 					]
 				],
-				'expected_error' => 'Host with visible name "TAA server" already exists.'
+				'expected_error' => 'Host with visible name "TAAE server" already exists.'
 			],
 			[
 				'request' => [
 					[
 						'host' => 'test-template-12',
 						'groups' => ['groupid' => 1],
-						'templates' => ['templateid' => 10047 /* "TAA server health" */]
+						'templates' => ['templateid' => 10047 /* "TAAE server health" */]
 					]
 				]
 			],
@@ -181,7 +181,7 @@ class testTemplate extends CAPITest {
 					[
 						'host' => 'test-template-14',
 						'groups' => ['groupid' => 1],
-						'templates' => ['templateid' => 10047 /* "TAA server health" */]
+						'templates' => ['templateid' => 10047 /* "TAAE server health" */]
 					]
 				],
 				'expected_error' => 'Invalid parameter "/1/groups/1": object does not exist, or you have no permissions to it.',
@@ -192,7 +192,7 @@ class testTemplate extends CAPITest {
 					[
 						'host' => 'vendor-template-error',
 						'groups' => ['groupid' => 1],
-						'vendor_name' => 'TAA'
+						'vendor_name' => 'TAAE'
 					]
 				],
 				'expected_error' => 'Invalid parameter "/1": both vendor_name and vendor_version should be either present or empty.'
@@ -235,7 +235,7 @@ class testTemplate extends CAPITest {
 				'request' => [
 					[
 						'templateid' => 'api_vendor_test',
-						'vendor_name' => 'TAA',
+						'vendor_name' => 'TAAE',
 						'vendor_version' => '6.4-0'
 					]
 				]

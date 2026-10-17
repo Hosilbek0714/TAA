@@ -6,7 +6,7 @@ cd `dirname $0`
 if [ -n "$PID_FILE" -a -f "$PID_FILE" ]; then
 	PID=`cat "$PID_FILE"`
 	if ps -p "$PID" > /dev/null 2>&1; then
-		echo "TAA Java Gateway is already running"
+		echo "TAAE Java Gateway is already running"
 		exit 1
 	fi
 	rm -f "$PID_FILE"
@@ -55,7 +55,7 @@ if [ -n "$PID_FILE" ]; then
 
 	touch "$PID_FILE"
 	if [ $? -ne 0 ]; then
-		echo "TAA Java Gateway did not start: cannot create PID file"
+		echo "TAAE Java Gateway did not start: cannot create PID file"
 		exit 1
 	fi
 
@@ -71,7 +71,7 @@ if [ -n "$PID_FILE" ]; then
 	PID=`cat "$PID_FILE"`
 	ps -p "$PID" > /dev/null 2>&1
 	if [ $? -ne 0 ]; then
-		echo "TAA Java Gateway did not start"
+		echo "TAAE Java Gateway did not start"
 		rm -f "$PID_FILE"
 		exit 1
 	fi

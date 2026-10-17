@@ -98,7 +98,7 @@ function stepWelcome(): CTemplateTag {
 					(new CDiv([
 						new CTag('h1', true, _('Welcome to the Host Wizard')),
 						new CTag('p', true,
-							_('The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAA.')
+							_('The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAAE.')
 						),
 						new CTag('p', true, _('You can always access Host Wizard from Data collection > Hosts.'))
 					]))
@@ -165,9 +165,9 @@ function stepSelectTemplate($old_template_count): array {
 								new CLabel([
 									_('Data collection'),
 									helpHint([
-										[bold(_('Agent-based')), ' - ', _('Data is collected by TAA agent, a lightweight software `component installed on your monitoring target.')],
+										[bold(_('Agent-based')), ' - ', _('Data is collected by TAAE agent, a lightweight software `component installed on your monitoring target.')],
 										BR(),
-										[bold(_('Agentless')), ' - ', _('Data is collected by TAA server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH).')]
+										[bold(_('Agentless')), ' - ', _('Data is collected by TAAE server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH).')]
 									])
 								]),
 								(new CRadioButtonList('data_collection'))
@@ -180,9 +180,9 @@ function stepSelectTemplate($old_template_count): array {
 								new CLabel([
 									_('Agent mode'),
 									helpHint([
-										[bold(_('Active')), ' - ', _('TAA agent initiates connections to TAA server or proxy to send data. Recommended for monitoring targets behind a firewall.')],
+										[bold(_('Active')), ' - ', _('TAAE agent initiates connections to TAAE server or proxy to send data. Recommended for monitoring targets behind a firewall.')],
 										BR(),
-										[bold(_('Passive')), ' - ', _('TAA server or proxy initiates connections to TAA agent to request data. Recommended for networks without a firewall or with open firewall ports.')]
+										[bold(_('Passive')), ' - ', _('TAAE server or proxy initiates connections to TAAE agent to request data. Recommended for networks without a firewall or with open firewall ports.')]
 									])
 								]),
 								(new CRadioButtonList('agent_mode'))
@@ -298,7 +298,7 @@ function stepCreateHost($form): CTemplateTag {
 					(new CDiv([
 						new CTag('h1', true, _('Create or select a host')),
 						new CTag('p', true,
-							_s('The template you selected (%1$s) must be linked to a host - an entity in TAA that represents your monitoring target.', '#{template_name}')
+							_s('The template you selected (%1$s) must be linked to a host - an entity in TAAE that represents your monitoring target.', '#{template_name}')
 						),
 						new CTag('p', true,
 							_('Hosts are organized into host groups for easier management and access control.')
@@ -387,11 +387,11 @@ function stepInstallAgent($agent_script_data): array {
 				(new CSection())
 					->addItem(
 						(new CDiv([
-							new CTag('h1', true, _('Install TAA agent')),
+							new CTag('h1', true, _('Install TAAE agent')),
 							new CTag('p', true,
-								_s('The template you selected (%1$s) requires TAA agent to be installed and running on your monitoring target.', '#{template_name}')
+								_s('The template you selected (%1$s) requires TAAE agent to be installed and running on your monitoring target.', '#{template_name}')
 							),
-							new CTag('p', true, _('Skip OS selection if you already have TAA agent installed.'))
+							new CTag('p', true, _('Skip OS selection if you already have TAAE agent installed.'))
 						]))
 							->addClass(ZBX_STYLE_GRID_COLUMN_FIRST)
 							->addClass(ZBX_STYLE_FORMATED_TEXT)
@@ -411,7 +411,7 @@ function stepInstallAgent($agent_script_data): array {
 									(new CDiv([
 										(new CDiv(
 											new CTag('p', true,
-												_('Communication between TAA agent and server/proxy is secured with the pre-shared key (PSK) encryption method.')
+												_('Communication between TAAE agent and server/proxy is secured with the pre-shared key (PSK) encryption method.')
 											)
 										))->addClass(ZBX_STYLE_FORMATED_TEXT),
 										(new CDiv(
@@ -513,7 +513,7 @@ function stepInstallAgent($agent_script_data): array {
 			(new CListItem())
 				->addItem(
 					(new CTag('h6', true,
-						_('Set up TAA agent on your monitoring target by executing the following script [bash under root]:')
+						_('Set up TAAE agent on your monitoring target by executing the following script [bash under root]:')
 					))->addClass(ZBX_STYLE_ORDERED_LIST_COUNTER)
 				)
 				->addItem(
@@ -529,7 +529,7 @@ function stepInstallAgent($agent_script_data): array {
 			(new CListItem())
 				->addItem(
 					(new CTag('h6', true,
-						_('Set up TAA agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:')
+						_('Set up TAAE agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:')
 					))->addClass(ZBX_STYLE_ORDERED_LIST_COUNTER)
 				)
 				->addItem(
@@ -548,7 +548,7 @@ function stepInstallAgent($agent_script_data): array {
 			(new CListItem())
 				->addItem(
 					(new CTag('h6', true,
-						_('Install TAA agent and its plugins on your monitoring target by following the installation instructions below.')
+						_('Install TAAE agent and its plugins on your monitoring target by following the installation instructions below.')
 					))->addClass(ZBX_STYLE_ORDERED_LIST_COUNTER)
 				)
 				->addItem(
@@ -571,7 +571,7 @@ function stepInstallAgent($agent_script_data): array {
 			(new CListItem())
 				->addItem(
 					(new CTag('h6', true,
-						_('Install TAA agent and its plugins on your monitoring target by following the installation instructions below.')
+						_('Install TAAE agent and its plugins on your monitoring target by following the installation instructions below.')
 					))->addClass(ZBX_STYLE_ORDERED_LIST_COUNTER)
 				)
 				->addItem(
@@ -645,7 +645,7 @@ function stepAddHostInterface(): array {
 							))->setAriaRequired()
 						]),
 						(new CDiv(
-							_('Enter the IP/DNS address and port of the TAA agent installed on your monitoring target.')
+							_('Enter the IP/DNS address and port of the TAAE agent installed on your monitoring target.')
 						))
 							->addClass(ZBX_STYLE_FORM_FIELDS_HINT)
 							->addClass(ZBX_STYLE_GRID_COLUMN_FULL)
@@ -847,9 +847,9 @@ function stepAddHostInterface(): array {
 				)
 				->addItem(
 					(new CDiv([
-						new CTag('h4', true, _('Enable IPMI checks on TAA server')),
+						new CTag('h4', true, _('Enable IPMI checks on TAAE server')),
 						new CTag('p', true,
-							_('In the TAA server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value.')
+							_('In the TAAE server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value.')
 						),
 						new CTag('p', true, [
 							_('For more details, see'),
@@ -897,9 +897,9 @@ function stepAddHostInterface(): array {
 					(new CDiv([
 						new CTag('h4', true, _('Enable remote JMX monitoring')),
 						new CTag('p', true, [
-							_('1. Install Java Gateway on the same machine running TAA server by following the instructions in'),
+							_('1. Install Java Gateway on the same machine running TAAE server by following the instructions in'),
 							' ',
-							(new CLink(_('TAA documentation'), CDocHelper::getUrl(CDocHelper::ITEM_TYPES_JMX_AGENT)))
+							(new CLink(_('TAAE documentation'), CDocHelper::getUrl(CDocHelper::ITEM_TYPES_JMX_AGENT)))
 								->setTarget('_blank')
 						]),
 						new CTag('p', true,

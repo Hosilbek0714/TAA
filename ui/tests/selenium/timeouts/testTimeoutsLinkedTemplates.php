@@ -44,14 +44,14 @@ class testTimeoutsLinkedTemplates extends testTimeoutsDisplay {
 				'groups' => ['groupid' => 1], // Templates.
 				'items' => [
 					[
-						'name' => 'TAA agent',
+						'name' => 'TAAE agent',
 						'key_' => 'zabbix_agent',
 						'type' => ITEM_TYPE_ZABBIX,
 						'value_type' => ITEM_VALUE_TYPE_UINT64,
 						'delay' => 5
 					],
 					[
-						'name' => 'TAA agent (active)',
+						'name' => 'TAAE agent (active)',
 						'key_' => 'zabbix_agent_active',
 						'type' => ITEM_TYPE_ZABBIX_ACTIVE,
 						'value_type' => ITEM_VALUE_TYPE_UINT64,
@@ -124,13 +124,13 @@ class testTimeoutsLinkedTemplates extends testTimeoutsDisplay {
 				],
 				'discoveryrules' => [
 					[
-						'name' => 'TAA agent',
+						'name' => 'TAAE agent',
 						'key_' => 'zabbix_agent_drule',
 						'type' => ITEM_TYPE_ZABBIX,
 						'delay' => 5
 					],
 					[
-						'name' => 'TAA agent (active)',
+						'name' => 'TAAE agent (active)',
 						'key_' => 'zabbix_agent_drule_active',
 						'type' => ITEM_TYPE_ZABBIX_ACTIVE,
 						'delay' => 5
@@ -199,7 +199,7 @@ class testTimeoutsLinkedTemplates extends testTimeoutsDisplay {
 
 		CDataHelper::call('itemprototype.create', [
 			[
-				'name' => 'TAA agent',
+				'name' => 'TAAE agent',
 				'key_' => 'zabbix_agent_[{#KEY}]',
 				'hostid' => $linked_template,
 				'ruleid' => $template_druleids['Template for linking:zabbix_agent_drule'],
@@ -208,7 +208,7 @@ class testTimeoutsLinkedTemplates extends testTimeoutsDisplay {
 				'delay' => 5
 			],
 			[
-				'name' => 'TAA agent (active)',
+				'name' => 'TAAE agent (active)',
 				'key_' => 'zabbix_agent_active_[{#KEY}]',
 				'hostid' => $linked_template,
 				'ruleid' => $template_druleids['Template for linking:zabbix_agent_drule'],
@@ -303,7 +303,7 @@ class testTimeoutsLinkedTemplates extends testTimeoutsDisplay {
 				'host' => 'Host for linked timeout check with proxy',
 				'groups' => [
 					[
-						'groupid' => 4 // TAA servers
+						'groupid' => 4 // TAAE servers
 					]
 				],
 				'interfaces' => [
@@ -338,7 +338,7 @@ class testTimeoutsLinkedTemplates extends testTimeoutsDisplay {
 				'host' => 'Host for linked timeout check',
 				'groups' => [
 					[
-						'groupid' => 4 // TAA servers
+						'groupid' => 4 // TAAE servers
 					]
 				],
 				'interfaces' => [

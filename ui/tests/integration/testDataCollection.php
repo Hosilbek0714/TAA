@@ -157,7 +157,7 @@ class testDataCollection extends CIntegrationTest {
 	 */
 	public function testDataCollection_checkHostAvailability() {
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER,
-			'temporarily disabling TAA agent checks on host "agent": interface unavailable'
+			'temporarily disabling TAAE agent checks on host "agent": interface unavailable'
 		);
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER, 'update interface set');
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER, 'commit;');
@@ -188,8 +188,8 @@ class testDataCollection extends CIntegrationTest {
 	 */
 	public function testDataCollection_checkAgentData() {
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER, [
-			'enabling TAA agent checks on host "agent": interface became available',
-			'resuming TAA agent checks on host "agent": connection restored'
+			'enabling TAAE agent checks on host "agent": interface became available',
+			'resuming TAAE agent checks on host "agent": connection restored'
 		]);
 
 		$passive_data = $this->call('history.get', [
@@ -314,8 +314,8 @@ class testDataCollection extends CIntegrationTest {
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER, 'sending configuration data to proxy "proxy"');
 		self::waitForLogLineToBePresent(self::COMPONENT_PROXY, 'received configuration data from server');
 		self::waitForLogLineToBePresent(self::COMPONENT_PROXY, [
-			'enabling TAA agent checks on host "proxy_agent": interface became available',
-			'resuming TAA agent checks on host "proxy_agent": connection restored'
+			'enabling TAAE agent checks on host "proxy_agent": interface became available',
+			'resuming TAAE agent checks on host "proxy_agent": connection restored'
 		]);
 
 		$passive_data = $this->call('history.get', [

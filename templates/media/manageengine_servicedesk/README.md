@@ -1,6 +1,6 @@
 # ManageEngine ServiceDesk webhook
 
-This guide describes how to integrate TAA 7.4 installation with ManageEngine ServiceDesk (both on-premise and on-demand) using the TAA webhook feature. This guide provides instructions on setting up a media type, a user and an action in TAA.<br>
+This guide describes how to integrate TAAE 7.4 installation with ManageEngine ServiceDesk (both on-premise and on-demand) using the TAAE webhook feature. This guide provides instructions on setting up a media type, a user and an action in TAAE.<br>
 Please note that recovery and update operations are supported only for trigger-based events.
 
 ## Setting up ManageEngine ServiceDesk
@@ -10,13 +10,13 @@ At first, create a user for API or use an existing one.
 1\. Go to *Admin -> Technicians*.<br>
 2\. Click the *Add New Technician* link, enter the Technician details and provide login permission.<br>
 3\. Click *Generate link* under the API key details block. Select a time frame for the key to expire using the Calendar icon, or simply retain the same key perpetually.<br>
-4\. Save TECHNICIAN_KEY for use in TAA later.<br>
+4\. Save TECHNICIAN_KEY for use in TAAE later.<br>
 
 ### Setting up the on-demand installation
 1\. Go to [Zoho Developer Console](https://api-console.zoho.com/).<br>
 2\. Choose *Self Client* from the list of client types, and click *Create Now*.<br>
 3\. Click OK in the pop up to enable a self client for your account.<br>
-4\. Now, your *Client ID* and *Client secret* are displayed under the *Client Secret* tab. Save them for use in TAA later.<br>
+4\. Now, your *Client ID* and *Client secret* are displayed under the *Client Secret* tab. Save them for use in TAAE later.<br>
 5\. Click the *Generate Code* tab and enter the ***SDPOnDemand.requests.ALL*** scope.<br>
 6\. Select the *Time Duration* for which the grant token is valid. Please note that after this time, the grant token expires.<br>
 7\. Enter a description and click *Generate*.<br>
@@ -41,9 +41,9 @@ Use your domain-specific Zoho accounts URL when you make the request.<br>
 
 10\. If the request is successful, you will receive the following output:<br>
 ```{ “access_token”: “1000.2370ff1fd75e968ae780cd8d14841e82.03518d2d1dab9c6c4cf74ae82b89defa”, “refresh_token”: “1000.2afabf2f5a396325e88f715c6de34d12.edce6130ca3832a14e5f80d005a5324d”, “token_type”: “Bearer”, “expires_in”: 3600 }```<br>
-Save the *refresh_token* for using in TAA later.
+Save the *refresh_token* for using in TAAE later.
 
-## Setting up the webhook in TAA
+## Setting up the webhook in TAAE
 1\. In the *Administration > Media types* section, import [media_manageengine_servicedesk.yaml](media_manageengine_servicedesk.yaml).
 
 2\. Open the newly added **ManageEngine ServiceDesk** media type and replace all *&lt;PLACEHOLDERS&gt;* with your values.<br>
@@ -59,9 +59,9 @@ The following parameters are required for on-demand ServiceDesk:<br>
 **sd_url** - the URL of your instance.<br>
 **sd_on_demand_url_auth** - your domain-specific Zoho accounts URL for refreshing access token.<br>
 **sd_on_demand_client_id**, **sd_on_demand_client_secret**, **sd_on_demand_refresh_token** - created earlier authentication details.<br>
-**field_ref:requester** - requester's displaying name. You can remove this parameter or use any name. *"TAA"*, for example. <br>
+**field_ref:requester** - requester's displaying name. You can remove this parameter or use any name. *"TAAE"*, for example. <br>
 
-3\. Create a **TAA user** and add **Media** with the **ManageEngine ServiceDesk** media type.
+3\. Create a **TAAE user** and add **Media** with the **ManageEngine ServiceDesk** media type.
 Though a "Send to" field is not used in ManageEngine ServiceDesk webhook, it cannot be empty. To comply with frontend requirements, you can put any symbol there.
 Make sure this user has access to all hosts, for which you would like problem notifications to be converted into ManageEngine ServiceDesk tasks.
 
@@ -69,7 +69,7 @@ Make sure this user has access to all hosts, for which you would like problem no
 You can add any data to ServiceDesk or user-defined fields.<br>
 Please see the [On-demand](https://www.manageengine.com/products/service-desk/sdpod-v3-api/SDPOD-V3-API.html#add-request) and [On-premise](
 https://ui.servicedeskplus.com/APIDocs3/index.html#add-request) API specification for details about fields.<br>
-Most of fields should be filled as single-line string, other should be an object with *name* property. TAA can fill both, but not *"date"* fields.<br>
+Most of fields should be filled as single-line string, other should be an object with *name* property. TAAE can fill both, but not *"date"* fields.<br>
 Supported field types: Single-line, Multi-line, Numeric, Pick List, Email, Phone, Currency, Decimal, Percent, Web URL, Radio Button, Decision Box. All of them should be passed as string.<br>
 
 Fields should be in format **field_string:fieldname**, where:<br>
@@ -83,7 +83,7 @@ Examples:<br>
 `udf_field_string:udf_char1`
 
 
-For more information see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [ManageEngine ServiceDesk](https://www.manageengine.com/products/service-desk/support.html) documentations.
+For more information see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [ManageEngine ServiceDesk](https://www.manageengine.com/products/service-desk/support.html) documentations.
 
 ## Supported versions
-TAA 7.4 and higher
+TAAE 7.4 and higher

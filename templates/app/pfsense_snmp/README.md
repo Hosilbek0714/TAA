@@ -7,7 +7,7 @@ Template for monitoring pfSense by SNMP
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,13 +16,13 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-1. Import template into TAA
+1. Import template into TAAE
 2. Enable SNMP daemon at Services in pfSense web interface https://docs.netgate.com/pfsense/en/latest/services/snmp.html
-3. Setup firewall rule to get access from TAA proxy or TAA server by SNMP https://docs.netgate.com/pfsense/en/latest/firewall/index.html#managing-firewall-rules
+3. Setup firewall rule to get access from TAAE proxy or TAAE server by SNMP https://docs.netgate.com/pfsense/en/latest/firewall/index.html#managing-firewall-rules
 4. Link template to the host
 
 
@@ -52,7 +52,7 @@ This template has been tested on:
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|SNMP agent availability|<p>Availability of SNMP checks on the host. The value of this item corresponds to availability icons in the host list.</p><p>Possible values:</p><p>0 - not available</p><p>1 - available</p><p>2 - unknown</p>|TAA internal|zabbix[host,snmp,available]|
+|SNMP agent availability|<p>Availability of SNMP checks on the host. The value of this item corresponds to availability icons in the host list.</p><p>Possible values:</p><p>0 - not available</p><p>1 - available</p><p>2 - unknown</p>|TAAE internal|zabbix[host,snmp,available]|
 |Packet filter running status|<p>MIB: BEGEMOT-PF-MIB</p><p>True if packet filter is currently enabled.</p>|SNMP agent|pfsense.pf.status|
 |States table current|<p>MIB: BEGEMOT-PF-MIB</p><p>Number of entries in the state table.</p>|SNMP agent|pfsense.state.table.count|
 |States table limit|<p>MIB: BEGEMOT-PF-MIB</p><p>Maximum number of 'keep state' rules in the ruleset.</p>|SNMP agent|pfsense.state.table.limit|
@@ -135,5 +135,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

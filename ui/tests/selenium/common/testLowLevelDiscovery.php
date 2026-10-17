@@ -79,8 +79,8 @@ class testLowLevelDiscovery extends CWebTest {
 		$fields = [
 			// Discovery rule.
 			'Name' => ['maxlength' => 255],
-			'Type' => ['value' => 'TAA agent', 'options' => ['TAA agent', 'TAA agent (active)', 'Simple check',
-				'SNMP agent', 'TAA internal', 'TAA trapper', 'External check', 'Database monitor', 'HTTP agent',
+			'Type' => ['value' => 'TAAE agent', 'options' => ['TAAE agent', 'TAAE agent (active)', 'Simple check',
+				'SNMP agent', 'TAAE internal', 'TAAE trapper', 'External check', 'Database monitor', 'HTTP agent',
 				'IPMI agent', 'SSH agent', 'TELNET agent', 'JMX agent', 'Dependent item', 'Script', 'Browser', 'Nested']
 			],
 			'Key' => ['maxlength' => 2048],
@@ -273,14 +273,14 @@ class testLowLevelDiscovery extends CWebTest {
 			// #0.
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'fields' => ['Host interface', 'Update interval', 'Custom intervals', 'Timeout']
 				]
 			],
 			// #1.
 			[
 				[
-					'type' => 'TAA agent (active)',
+					'type' => 'TAAE agent (active)',
 					'fields' => ['Update interval', 'Custom intervals', 'Timeout']
 				]
 			],
@@ -301,14 +301,14 @@ class testLowLevelDiscovery extends CWebTest {
 			// #4.
 			[
 				[
-					'type' => 'TAA internal',
+					'type' => 'TAAE internal',
 					'fields' => ['Update interval', 'Custom intervals']
 				]
 			],
 			// #5.
 			[
 				[
-					'type' => 'TAA trapper',
+					'type' => 'TAAE trapper',
 					'fields' => ['Allowed hosts']
 				]
 			],
@@ -455,7 +455,7 @@ class testLowLevelDiscovery extends CWebTest {
 					$hint->query('xpath:.//button[@title="Close"]')->waitUntilClickable()->one()->click();
 				}
 
-			case 'TAA agent';
+			case 'TAAE agent';
 			case 'JMX agent':
 			case 'IPMI agent':
 				if (static::$context === 'host') {
@@ -646,7 +646,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => '',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => '',
 						'Update interval' => '',
 						'id:custom_timeout' => 'Override',
@@ -667,7 +667,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Update interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'Update interval' => '1M'
 					],
@@ -681,7 +681,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Macro in key',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => '{$MACRO}'
 					],
 					'error_details' => 'Invalid parameter "/1/key_": incorrect syntax near "{$MACRO}".'
@@ -693,7 +693,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => '🙂 in key',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => '🙂🙃み け め 𒁥'
 					],
 					'error_details' => 'Invalid parameter "/1/key_": incorrect syntax near "🙂🙃み け め 𒁥".'
@@ -705,7 +705,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Update interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'Update interval' => '{#LLD}'
 					],
@@ -719,7 +719,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Update intervals validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'Update interval' => 0
 					],
@@ -732,7 +732,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Update intervals validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'Update interval' => 86401
 					],
@@ -745,7 +745,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Scheduling',
 						'id:delay_flex_0_schedule' => 1
@@ -759,7 +759,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Scheduling',
 						'id:delay_flex_0_schedule' => 'qd1-5h9-18'
@@ -773,7 +773,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Scheduling',
 						'id:delay_flex_0_schedule' => 'wd1-8h9-18'
@@ -787,7 +787,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Scheduling',
 						'id:delay_flex_0_schedule' => 'wd1-5h9-25'
@@ -801,7 +801,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Flexible',
 						'id:delay_flex_0_delay' => '4w',
@@ -816,7 +816,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Flexible',
 						'id:delay_flex_0_delay' => '60s',
@@ -831,7 +831,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Scheduling interval validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:delay_flex_0_type' => 'Flexible',
 						'id:delay_flex_0_delay' => '1M',
@@ -846,7 +846,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Timeout validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:custom_timeout' => 'Override',
 						'id:timeout' => 0
@@ -860,7 +860,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Timeout validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:custom_timeout' => 'Override',
 						'id:timeout' => 601
@@ -874,7 +874,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Timeout validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:custom_timeout' => 'Override',
 						'id:timeout' => 9999999999
@@ -888,7 +888,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Timeout validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:custom_timeout' => 'Override',
 						'id:timeout' => 'text'
@@ -903,7 +903,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation 1',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test1',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => ''
@@ -917,7 +917,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation 2',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test2',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => '1M'
@@ -931,7 +931,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => '{#LLD}'
@@ -945,7 +945,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => 1
@@ -959,7 +959,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => 3599
@@ -973,7 +973,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => 788400001
@@ -987,7 +987,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => 999999999999
@@ -1001,7 +1001,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1016,7 +1016,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1031,7 +1031,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1046,7 +1046,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1061,7 +1061,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1076,7 +1076,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1091,7 +1091,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'Never',
 						'id:enabled_lifetime_type' => 'After',
@@ -1106,7 +1106,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Lifetime fields validation',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'test',
 						'id:lifetime_type' => 'After',
 						'id:lifetime' => '1h',
@@ -1137,7 +1137,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Name' => 'Trapper',
-						'Type' => 'TAA trapper',
+						'Type' => 'TAAE trapper',
 						'Key' => 'test[1]',
 						'Allowed hosts' => '::ffff:127.0.0.1'
 					],
@@ -1435,7 +1435,7 @@ class testLowLevelDiscovery extends CWebTest {
 				[
 					'fields' => [
 						'Name' => 'Simple LLD',
-						'Type' => 'TAA agent',
+						'Type' => 'TAAE agent',
 						'Key' => 'agent'
 					]
 				]
@@ -1445,7 +1445,7 @@ class testLowLevelDiscovery extends CWebTest {
 				[
 					'fields' => [
 						'Name' => 'Simple active LLD',
-						'Type' => 'TAA agent (active)',
+						'Type' => 'TAAE agent (active)',
 						'Key' => 'active.agent[]',
 						'Update interval' => 1,
 						'id:delay_flex_0_type' => 'Flexible',
@@ -1550,7 +1550,7 @@ class testLowLevelDiscovery extends CWebTest {
 				[
 					'fields' => [
 						'Name' => 'Internal',
-						'Type' => 'TAA internal',
+						'Type' => 'TAAE internal',
 						'Key' => 'zabbix[triggers]'
 					]
 				]
@@ -1560,7 +1560,7 @@ class testLowLevelDiscovery extends CWebTest {
 				[
 					'fields' => [
 						'Name' => 'Trapper',
-						'Type' => 'TAA trapper',
+						'Type' => 'TAAE trapper',
 						'Key' => 'test[1]',
 						'Allowed hosts' => '     127.0.0.2,::/0,0.0.0.0/0,mysqlserver1, zabbix.example.com, {HOST.HOST},'.
 								'192.168.1-10.1-255, ::1,2001:db8::/32, {$MACRO},::ffff, ::         '
@@ -1882,7 +1882,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Macro with empty path',
 						'Key' => 'macro-with-empty-path',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{#MACRO}', 'JSONPath' => '']
@@ -1897,7 +1897,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Macro without #',
 						'Key' => 'macro-without-hash',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{MACRO}', 'JSONPath' => '$.path']
@@ -1912,7 +1912,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Macro with cyrillic symbols',
 						'Key' => 'macro-with-cyrillic-symbols',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{#МАКРО}', 'JSONPath' => '$.path']
@@ -1927,7 +1927,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Macro with special symbols',
 						'Key' => 'macro-with-with-special-symbols',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{#MACRO!@$%^&*()_+|?}', 'JSONPath' => '$.path']
@@ -1942,7 +1942,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'LLD with empty macro',
 						'Key' => 'lld-with-empty-macro',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '', 'JSONPath' => '$.path']
@@ -1957,7 +1957,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'LLD with context macro',
 						'Key' => 'lld-with-context-macro',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{$MACRO:A}', 'JSONPath' => '$.path']
@@ -1972,7 +1972,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'LLD with two equal macros',
 						'Key' => 'lld-with-two-equal-macros',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{#MACRO}', 'JSONPath' => '$.path.a'],
@@ -1987,7 +1987,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'LLD with valid macro and path',
 						'Key' => 'lld-with-valid-macro-and-path',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'LLD macros' => [
 						['LLD macro' => '{#MACRO1}', 'JSONPath' => '$.path.a'],
@@ -2002,7 +2002,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with macro does not match',
 						'Key' => 'macro-doesnt-match-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'filters' => [
@@ -2017,7 +2017,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with macro exists',
 						'Key' => 'macro-exists',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'filters' => [
@@ -2032,7 +2032,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with two macros And/Or',
 						'Key' => 'two-macros-and-or-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'And/Or',
@@ -2049,7 +2049,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with two macros And',
 						'Key' => 'two-macros-and-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'And',
@@ -2066,7 +2066,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with two macros Or',
 						'Key' => 'two-macros-or-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Or',
@@ -2083,7 +2083,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with three macros Custom expression',
 						'Key' => 'three-macros-custom-expression-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2103,7 +2103,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with wrong macro',
 						'Key' => 'macro-wrong-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'filters' => [
@@ -2120,7 +2120,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with empty formula',
 						'Key' => 'macro-empty-formula-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2140,7 +2140,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with extra argument',
 						'Key' => 'macro-extra-argument-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2160,7 +2160,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with missing argument',
 						'Key' => 'macro-missing-argument-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2182,7 +2182,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Rule with wrong formula',
 						'Key' => 'macro-wrong-formula-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2202,7 +2202,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Check case sensitive of operator in formula',
 						'Key' => 'macro-not-in-formula-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2222,7 +2222,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Check case sensitive of first operator in formula',
 						'Key' => 'macro-wrong-operator-key',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',
@@ -2242,7 +2242,7 @@ class testLowLevelDiscovery extends CWebTest {
 					'fields' => [
 						'Name' => 'Test create with only NOT in formula',
 						'Key' => 'macro-not-formula',
-						'Type' => 'TAA agent'
+						'Type' => 'TAAE agent'
 					],
 					'Filters' => [
 						'calculation' => 'Custom expression',

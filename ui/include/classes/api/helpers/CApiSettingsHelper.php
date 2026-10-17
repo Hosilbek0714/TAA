@@ -91,7 +91,7 @@ class CApiSettingsHelper {
 
 		if ($undeclared_db_settings) {
 			throw new APIException(ZBX_API_ERROR_PARAMETERS,
-				_s('Cannot update "%1$s" parameter because currently it is read-only. Consider upgrading TAA to remove this limitation.',
+				_s('Cannot update "%1$s" parameter because currently it is read-only. Consider upgrading TAAE to remove this limitation.',
 					key($undeclared_db_settings)
 				)
 			);

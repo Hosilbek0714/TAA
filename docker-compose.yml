@@ -1,35 +1,35 @@
 services:
-  taa-db:
+  taae-db:
     image: postgres:15
-    container_name: taa-db
+    container_name: taae-db
     environment:
-      POSTGRES_USER: taa
-      POSTGRES_PASSWORD: taa_password
-      POSTGRES_DB: taa
+      POSTGRES_USER: taae
+      POSTGRES_PASSWORD: taae_password
+      POSTGRES_DB: taae
     ports:
       - "5433:5432"
     volumes:
-      - taa-db-data:/var/lib/postgresql/data
-      - ./taa_database_backup_utf8.sql:/docker-entrypoint-initdb.d/01-restore.sql
-      - ./02-rebrand-taa.sql:/docker-entrypoint-initdb.d/02-rebrand-taa.sql
-      - ./03-taa-full-rebrand.sql:/docker-entrypoint-initdb.d/03-taa-full-rebrand.sql
+      - taae-db-data:/var/lib/postgresql/data
+      - ./taae_database_backup_utf8.sql:/docker-entrypoint-initdb.d/01-restore.sql
+      - ./02-rebrand-taae.sql:/docker-entrypoint-initdb.d/02-rebrand-taae.sql
+      - ./03-taae-full-rebrand.sql:/docker-entrypoint-initdb.d/03-taae-full-rebrand.sql
     networks:
-      - taa-network
+      - taae-network
     restart: unless-stopped
 
-  taa-server:
-    image: taa/server:custom
+  taae-server:
+    image: taae/server:custom
     build:
       context: .
-      dockerfile: docker/taa-server.Dockerfile
-    container_name: taa-server
+      dockerfile: docker/taae-server.Dockerfile
+    container_name: taae-server
     env_file:
       - .env
     environment:
-      DB_SERVER_HOST: taa-db
-      POSTGRES_USER: taa
-      POSTGRES_PASSWORD: taa_password
-      POSTGRES_DB: taa
+      DB_SERVER_HOST: taae-db
+      POSTGRES_USER: taae
+      POSTGRES_PASSWORD: taae_password
+      POSTGRES_DB: taae
       ZBX_STARTPOLLERS: "5"
       ZBX_STARTPOLLERSUNREACHABLE: "1"
       ZBX_STARTTRAPPERS: "5"
@@ -38,24 +38,24 @@ services:
     ports:
       - "10051:10051"
     volumes:
-      - taa-audit:/var/lib/taa
-      - taa-logs:/var/log/taa
+      - taae-audit:/var/lib/taae
+      - taae-logs:/var/log/taae
     depends_on:
-      - taa-db
+      - taae-db
     networks:
-      - taa-network
+      - taae-network
     restart: unless-stopped
 
-  # TAA Agent2 - Monitoring agent
-  taa-agent:
-    image: taa/agent2:custom
+  # TAAE Agent2 - Monitoring agent
+  taae-agent:
+    image: taae/agent2:custom
     build:
       context: .
-      dockerfile: docker/taa-agent.Dockerfile
-    container_name: taa-agent
+      dockerfile: docker/taae-agent.Dockerfile
+    container_name: taae-agent
     environment:
-      ZBX_HOSTNAME: "TAA serveri"
-      ZBX_SERVER_HOST: "taa-server"
+      ZBX_HOSTNAME: "TAAE serveri"
+      ZBX_SERVER_HOST: "taae-server"
       ZBX_SERVER_PORT: "10051"
       ZBX_PASSIVE_ALLOW: "true"
       ZBX_ACTIVE_ALLOW: "true"
@@ -68,22 +68,22 @@ services:
     volumes:
       - /var/run/docker.sock:/var/run/docker.sock:ro
     depends_on:
-      - taa-server
+      - taae-server
     networks:
-      - taa-network
+      - taae-network
     privileged: true
     restart: unless-stopped
 
-  # Ikkinchi TAA Agent - Boshqa server yoki resurs uchun
-  taa-agent-2:
-    image: taa/agent2:custom
+  # Ikkinchi TAAE Agent - Boshqa server yoki resurs uchun
+  taae-agent-2:
+    image: taae/agent2:custom
     build:
       context: .
-      dockerfile: docker/taa-agent.Dockerfile
-    container_name: taa-agent-2
+      dockerfile: docker/taae-agent.Dockerfile
+    container_name: taae-agent-2
     environment:
       ZBX_HOSTNAME: "Ikkinchi Server"
-      ZBX_SERVER_HOST: "taa-server"
+      ZBX_SERVER_HOST: "taae-server"
       ZBX_SERVER_PORT: "10051"
       ZBX_PASSIVE_ALLOW: "true"
       ZBX_ACTIVE_ALLOW: "true"
@@ -96,24 +96,24 @@ services:
           cpus: '0.5'
           memory: 256M
     depends_on:
-      - taa-agent
+      - taae-agent
     networks:
-      - taa-network
+      - taae-network
     restart: unless-stopped
 
-  taa-web:
-    image: taa-web:custom
+  taae-web:
+    image: taae-web:custom
     build:
       context: .
-    container_name: taa-web
+    container_name: taae-web
     environment:
-      ZBX_SERVER_NAME: "TAA monitoring tizimi"
+      ZBX_SERVER_NAME: "TAAE monitoring tizimi"
       ZBX_DEFAULT_LANG: "uz_UZ"
-      ZBX_SERVER_HOST: taa-server
-      DB_SERVER_HOST: taa-db
-      POSTGRES_USER: taa
-      POSTGRES_PASSWORD: taa_password
-      POSTGRES_DB: taa
+      ZBX_SERVER_HOST: taae-server
+      DB_SERVER_HOST: taae-db
+      POSTGRES_USER: taae
+      POSTGRES_PASSWORD: taae_password
+      POSTGRES_DB: taae
       # PHP-FPM uchun:
       PHP_FPM_PM: "dynamic"
       PHP_FPM_PM_MAX_CHILDREN: "50"
@@ -121,7 +121,7 @@ services:
       PHP_FPM_PM_MIN_SPARE_SERVERS: "5"
       PHP_FPM_PM_MAX_SPARE_SERVERS: "35"
       PHP_FPM_PM_MAX_REQUESTS: "0"
-      # TAA uchun:
+      # TAAE uchun:
       ZBX_MAXEXECUTIONTIME: "300"
       ZBX_MEMORYLIMIT: "128M"
       ZBX_POSTMAXSIZE: "16M"
@@ -133,22 +133,22 @@ services:
     ports:
       - "8098:8080"
     depends_on:
-      - taa-server
-      - taa-db
-      - taa-agent
+      - taae-server
+      - taae-db
+      - taae-agent
     # PHP fayllar bu yerda ULANMAYDI (volume) - ular Dockerfile'da COPY qilinib,
     # rebrending skriptidan o'tadi. Volume ularni asl nusxa bilan bosib qo'yardi.
     volumes:
       - ./ui/local/img/favicon.ico:/usr/share/zabbix/favicon.ico:ro
     networks:
-      - taa-network
+      - taae-network
     restart: unless-stopped
 
 volumes:
-  taa-db-data:
-  taa-audit:
-  taa-logs:
+  taae-db-data:
+  taae-audit:
+  taae-logs:
 
 networks:
-  taa-network:
+  taae-network:
     driver: bridge

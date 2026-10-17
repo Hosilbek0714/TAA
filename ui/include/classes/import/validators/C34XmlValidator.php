@@ -15,7 +15,7 @@
 
 
 /**
- * Validate import data from TAA 3.4.x.
+ * Validate import data from TAAE 3.4.x.
  */
 class C34XmlValidator extends CXmlValidatorGeneral {
 

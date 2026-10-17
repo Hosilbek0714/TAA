@@ -1,9 +1,9 @@
 #!/bin/sh
 # =============================================================================
-# TAA Agent 2 (Linux) ni manba koddan Docker ichida yig'ish.
+# TAAE Agent 2 (Linux) ni manba koddan Docker ichida yig'ish.
 #
 # Kompyuterda Go, C kompilyator yoki autotools o'rnatish shart emas - faqat
-# Docker kerak. Natija: scripts/linux-agent/dist/taa_agent2 (amd64)
+# Docker kerak. Natija: scripts/linux-agent/dist/taae_agent2 (amd64)
 #
 # Ishlatish (repo ildizida):
 #   sh scripts/linux-agent/build-in-docker.sh
@@ -43,10 +43,10 @@ docker run --rm \
 		done
 		./bootstrap.sh
 		./configure --enable-agent2 --with-openssl --with-libpcre2 >/dev/null
-		make -j"$(nproc)" AGENT2_CONFIG_FILE=/etc/taa/agent/taa_agent2.conf
-		install -m 0755 src/go/bin/zabbix_agent2 /work/taa_agent2
-		/work/taa_agent2 -V | head -2
+		make -j"$(nproc)" AGENT2_CONFIG_FILE=/etc/taae/agent/taae_agent2.conf
+		install -m 0755 src/go/bin/zabbix_agent2 /work/taae_agent2
+		/work/taae_agent2 -V | head -2
 	'
 
 rm -f "$OUT/src.tar"
-echo "Tayyor: $OUT/taa_agent2"
+echo "Tayyor: $OUT/taae_agent2"

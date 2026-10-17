@@ -35,15 +35,15 @@ zabbix_export:
         - name: github_url
           value: 'https://api.github.com'
         - name: github_user_agent
-          value: TAA/7.4
+          value: TAAE/7.4
         - name: github_zabbix_event_priority_label_prefix
-          value: 'TAA Event Priority: '
+          value: 'TAAE Event Priority: '
         - name: github_zabbix_event_source_label_prefix
-          value: 'TAA Event Source: '
+          value: 'TAAE Event Source: '
         - name: github_zabbix_event_status_label_prefix
-          value: 'TAA Event Status: '
+          value: 'TAAE Event Status: '
         - name: github_zabbix_generic_label
-          value: 'TAA GitHub Webhook'
+          value: 'TAAE GitHub Webhook'
         - name: trigger_id
           value: '{TRIGGER.ID}'
         - name: zabbix_url
@@ -360,7 +360,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = TAA;
+        		this.logger = TAAE;
         	}
         	else {
         		this.logger = logger;
@@ -461,10 +461,10 @@ zabbix_export:
         		github_token: {type: 'string'},
         		github_url: {type: 'string', url: true},
         		github_user_agent: {type: 'string'},
-        		github_zabbix_event_priority_label_prefix: {type: 'string', default: 'TAA Event Priority: '},
-        		github_zabbix_event_source_label_prefix: {type: 'string', default: 'TAA Event Source: '},
-        		github_zabbix_event_status_label_prefix: {type: 'string', default: 'TAA Event Status: '},
-        		github_zabbix_generic_label: {type: 'string', default: 'TAA GitHub Webhook'},
+        		github_zabbix_event_priority_label_prefix: {type: 'string', default: 'TAAE Event Priority: '},
+        		github_zabbix_event_source_label_prefix: {type: 'string', default: 'TAAE Event Source: '},
+        		github_zabbix_event_status_label_prefix: {type: 'string', default: 'TAAE Event Status: '},
+        		github_zabbix_generic_label: {type: 'string', default: 'TAAE GitHub Webhook'},
         		zabbix_url: {type: 'string', url: true}
         	}, this.params);
         
@@ -624,7 +624,7 @@ zabbix_export:
       event_menu_url: '{EVENT.TAGS.__zbx_github_link}'
       event_menu_name: 'Github: Issue {EVENT.TAGS.__zbx_github_issue_number}'
       description: |
-        This media type integrates your TAA installation with GitHub using the TAA webhook feature.
+        This media type integrates your TAAE installation with GitHub using the TAAE webhook feature.
         
         GitHub configuration:
         
@@ -656,11 +656,11 @@ zabbix_export:
         
         2. Copy and save the created token somewhere, as it will be shown only once for security reasons.
         
-        TAA configuration:
+        TAAE configuration:
         
         1. Before you can start using Zammad webhook, set up the global macro "{$ZABBIX.URL}":
-        - In the TAA web interface, go to "Administration" → "Macros" section in the dropdown menu in the top left corner.
-        - Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
+        - In the TAAE web interface, go to "Administration" → "Macros" section in the dropdown menu in the top left corner.
+        - Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAAE frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
         - Specifying a protocol is mandatory, whereas the port is optional. Depending on the web server configuration you might also need to append "/zabbix" to the end of URL. Good examples:
           - http://zabbix.com
           - https://zabbix.lan/zabbix
@@ -674,21 +674,21 @@ zabbix_export:
         2. Set the "github_token" webhook parameter value to the access token that you created previously.
         
         You can also adjust the issue labels created by the webhook in the following parameters:
-        - github_zabbix_event_priority_label_prefix - the prefix for the issue label that displays the TAA event priority in the supported event sources. It is set to "TAA Event Priority: " by default.
-        - github_zabbix_event_source_label_prefix - the prefix for the issue label that displays the TAA event source. It is set to "TAA Event Source: " by default.
-        - github_zabbix_event_status_label_prefix - the prefix for the issue label that displays the TAA event status. It is set to "TAA Event Status: " by default.
-        - github_zabbix_generic_label - the label that is added to all issues created by the webhook. It is set to "TAA GitHub Webhook" by default.
+        - github_zabbix_event_priority_label_prefix - the prefix for the issue label that displays the TAAE event priority in the supported event sources. It is set to "TAAE Event Priority: " by default.
+        - github_zabbix_event_source_label_prefix - the prefix for the issue label that displays the TAAE event source. It is set to "TAAE Event Source: " by default.
+        - github_zabbix_event_status_label_prefix - the prefix for the issue label that displays the TAAE event status. It is set to "TAAE Event Status: " by default.
+        - github_zabbix_generic_label - the label that is added to all issues created by the webhook. It is set to "TAAE GitHub Webhook" by default.
         
         Note that the webhook will reuse the labels with the same name that already exist in the repository (including the color, so it can changed from the default value for new labels in GitHub, if needed). Also, the labels are replaced when the issue is updated, so any user-added labels will be removed.
         
-        4. Create a TAA user and add media:
+        4. Create a TAAE user and add media:
         - If you want to create a new user, go to the "Users" → "Users" section, click the "Create user" button in the top right corner. In the "User" tab, fill in all required fields (marked with red asterisks).
         - In the "Media" tab, add a new media and select "Zammad" type from the drop-down list. In field "Send to" specify the full repo name (owner/project name) e.g. johndoe/example-project.
         - Make sure this user has access to all hosts for which you would like problem notifications to be sent to GitHub.
         
         5. Great! You can now start using this media type in actions and create GitHub issues!
         
-        You can find the latest version of this media and additional information in the official TAA repository:
+        You can find the latest version of this media and additional information in the official TAAE repository:
         https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/github
       message_templates:
         - event_source: TRIGGERS

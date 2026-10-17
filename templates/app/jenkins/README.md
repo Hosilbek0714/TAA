@@ -3,12 +3,12 @@
 
 ## Overview
 
-The template to monitor Apache Jenkins by TAA that work without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor Apache Jenkins by TAAE that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,7 +17,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -203,5 +203,5 @@ Don't forget to change macros {$JENKINS.URL}.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

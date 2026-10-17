@@ -1,5 +1,5 @@
 # =============================================================================
-# phpIPAM qo'shimcha qatlam — TAA asosiy stackiga aralashtirilmaydi.
+# phpIPAM qo'shimcha qatlam — TAAE asosiy stackiga aralashtirilmaydi.
 # -----------------------------------------------------------------------------
 # Foydalanish (asosiy compose bilan birga ishga tushirish):
 #   docker compose \
@@ -19,7 +19,7 @@
 services:
 
   # ---------------------------------------------------------------------------
-  # MariaDB — phpIPAM uchun ma'lumotlar bazasi (TAA Postgres'iga tegmaydi)
+  # MariaDB — phpIPAM uchun ma'lumotlar bazasi (TAAE Postgres'iga tegmaydi)
   # ---------------------------------------------------------------------------
   phpipam-mariadb:
     image: mariadb:10
@@ -38,7 +38,7 @@ services:
     volumes:
       - phpipam-db:/var/lib/mysql
     networks:
-      - taa-network
+      - taae-network
     healthcheck:
       test: ["CMD", "mysqladmin", "ping", "-h", "localhost", "-p${PHPIPAM_DB_ROOT_PASS}"]
       interval: 10s
@@ -68,7 +68,7 @@ services:
     volumes:
       - phpipam-logo:/phpipam/css/images/logo
     networks:
-      - taa-network
+      - taae-network
 
   # ---------------------------------------------------------------------------
   # phpIPAM cron — ichki vazifalar (scan, status update) har 1 daqiqada
@@ -88,14 +88,14 @@ services:
       IPAM_DATABASE_NAME: "phpipam"
       SCAN_INTERVAL: "1m"
     networks:
-      - taa-network
+      - taae-network
 
 # -----------------------------------------------------------------------------
-# Tarmoq: asosiy docker-compose.yml dagi "taa-network" ga ulanamiz.
+# Tarmoq: asosiy docker-compose.yml dagi "taae-network" ga ulanamiz.
 # external: true — bu compose tarmoq yaratmaydi, mavjudini topib ulanadi.
 # -----------------------------------------------------------------------------
 networks:
-  taa-network:
+  taae-network:
     external: true
 
 # -----------------------------------------------------------------------------

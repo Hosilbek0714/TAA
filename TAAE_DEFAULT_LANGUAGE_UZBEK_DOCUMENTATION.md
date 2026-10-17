@@ -2,7 +2,7 @@
 
 ## 📋 OVERVIEW
 
-Bu dokumentatsiya TAA monitoring sistemasining default tilini Uzbek ga o'tkazish jarayonini batafsil tushuntiradi. Dokumentatsiya Docker container ichidagi va local filesystem'dagi barcha komponentlarni chuqur tahlil qiladi.
+Bu dokumentatsiya TAAE monitoring sistemasining default tilini Uzbek ga o'tkazish jarayonini batafsil tushuntiradi. Dokumentatsiya Docker container ichidagi va local filesystem'dagi barcha komponentlarni chuqur tahlil qiladi.
 
 ## 🔍 CONTAINER VA LOCAL ARXITEKTURA TAHLILI
 
@@ -237,7 +237,7 @@ docker exec -it zabbix-web grep "ZBX_DEFAULT_LANG" /usr/share/zabbix/include/def
 
 #### Step 3.1: Admin Panel Setup
 ```
-1. Login to TAA Web Interface
+1. Login to TAAE Web Interface
 2. Navigate to: Administration → General → GUI
 3. Set "Default language" to "Uzbek (uz_UZ)"
 4. Click "Update"
@@ -245,7 +245,7 @@ docker exec -it zabbix-web grep "ZBX_DEFAULT_LANG" /usr/share/zabbix/include/def
 
 #### Step 3.2: Direct Database Update (Advanced)
 ```sql
--- Connect to TAA database
+-- Connect to TAAE database
 UPDATE config SET default_lang = 'uz_UZ' WHERE configid = 1;
 ```
 
@@ -277,8 +277,8 @@ after system-level configuration is complete.
 nano ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 
 # Key entries to verify:
-msgid "TAA"
-msgstr "TAA"
+msgid "TAAE"
+msgstr "TAAE"
 
 msgid "Dashboard"
 msgstr "Boshqaruv paneli"
@@ -463,7 +463,7 @@ curl -H "Accept-Language: uz-UZ" http://localhost:8098/
 
 ### Update Procedures
 ```bash
-# When updating TAA version:
+# When updating TAAE version:
 1. Backup current locale files
 2. Check for new translation keys
 3. Update .po files as needed
@@ -476,13 +476,13 @@ curl -H "Accept-Language: uz-UZ" http://localhost:8098/
 ## 📞 SUPPORT AND RESOURCES
 
 ### Official Documentation
-- TAA Localization Guide
+- TAAE Localization Guide
 - GNU Gettext Manual
 - Docker Compose Documentation
 
 ### Community Resources
-- TAA Uzbek Translation Team
-- Docker Hub TAA Images
+- TAAE Uzbek Translation Team
+- Docker Hub TAAE Images
 - GitHub Issues and Discussions
 
 ### Development Tools
@@ -495,4 +495,4 @@ curl -H "Accept-Language: uz-UZ" http://localhost:8098/
 
 *Dokumentatsiya versiyasi: 2.0*  
 *Yaratilgan sana: 2025-01-27*  
-*Mualliflar: TAA → TAA Rebranding Team*
+*Mualliflar: TAAE → TAAE Rebranding Team*

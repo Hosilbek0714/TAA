@@ -1,14 +1,14 @@
 
-# Website certificate by TAA agent 2 active
+# Website certificate by TAAE agent 2 active
 
 ## Overview
 
-This template is for monitoring a TLS/SSL certificate of a website via TAA agent 2, and it works without any external scripts.
-TAA agent 2 requests the certificate via the `web.certificate.get` key through the WebCertificate plugin and returns a JSON with certificate attributes.
+This template is for monitoring a TLS/SSL certificate of a website via TAAE agent 2, and it works without any external scripts.
+TAAE agent 2 requests the certificate via the `web.certificate.get` key through the WebCertificate plugin and returns a JSON with certificate attributes.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,7 +17,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -25,11 +25,11 @@ This template has been tested on:
 
 2\. Test availability: `zabbix_get -s <zabbix_agent_addr> -k web.certificate.get[<website_DNS_name>]`
 
-3\. Create a host with a TAA agent interface.
+3\. Create a host with a TAAE agent interface.
 
 4\. Link the template to the host.
 
-5\. Customize the values of the macros `{$CERT.WEBSITE.HOSTNAME}`, `{$CERT.WEBSITE.IP}`, and `{$CERT.WEBSITE.PORT}`. `{$CERT.WEBSITE.HOSTNAME}` is a required parameter in the TAA agent 2 `web.certificate.get` key, so it must have at least one value set. Other macros may be set as needed (details below). Note that multiple values can be specified, separated by commas. The corresponding values in other macros are processed in the order they are listed (see the table below for examples):
+5\. Customize the values of the macros `{$CERT.WEBSITE.HOSTNAME}`, `{$CERT.WEBSITE.IP}`, and `{$CERT.WEBSITE.PORT}`. `{$CERT.WEBSITE.HOSTNAME}` is a required parameter in the TAAE agent 2 `web.certificate.get` key, so it must have at least one value set. Other macros may be set as needed (details below). Note that multiple values can be specified, separated by commas. The corresponding values in other macros are processed in the order they are listed (see the table below for examples):
 
 |    Macro               |         Value                  |
 |------------------------|--------------------------------|
@@ -43,7 +43,7 @@ As shown in the example above, the following websites will be discovered:
 - Website with the host name `hostname_02` - will also be used for SNI verification; the address `ip_02` will be used for connection, and the port will default to 443 (because it is set to an empty string).
 - Website the with host name `hostname_03` - the host name itself will be used for connection (because the address is not set and treated as an empty string); the port is `port_03`.
 
-For additional details, please refer to official documentation about the TAA agent 2 `web.certificate.get` key:
+For additional details, please refer to official documentation about the TAAE agent 2 `web.certificate.get` key:
 https://www.zabbix.com/documentation/7.4/manual/config/items/itemtypes/zabbix_agent/zabbix_agent2#web.certificate.get
 
 ### Macros used
@@ -66,8 +66,8 @@ https://www.zabbix.com/documentation/7.4/manual/config/items/itemtypes/zabbix_ag
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Certificate: Error parse parameters|<p>Some entries in the macro `{$CERT.WEBSITE.HOSTNAME}` are incorrect and ignored.</p>|`jsonpath(last(/Website certificate by TAA agent 2 active/cert.get.data),"$.error.code", 0) = 1`|Warning|**Manual close**: Yes|
-|Certificate: Error parse parameters|<p>Some entries in the macro `{$CERT.WEBSITE.HOSTNAME}` are incorrect.<br>Please edit the macros to avoid data loss.</p>|`jsonpath(last(/Website certificate by TAA agent 2 active/cert.get.data),"$.error.code", 0) = 2`|High|**Manual close**: Yes|
+|Certificate: Error parse parameters|<p>Some entries in the macro `{$CERT.WEBSITE.HOSTNAME}` are incorrect and ignored.</p>|`jsonpath(last(/Website certificate by TAAE agent 2 active/cert.get.data),"$.error.code", 0) = 1`|Warning|**Manual close**: Yes|
+|Certificate: Error parse parameters|<p>Some entries in the macro `{$CERT.WEBSITE.HOSTNAME}` are incorrect.<br>Please edit the macros to avoid data loss.</p>|`jsonpath(last(/Website certificate by TAAE agent 2 active/cert.get.data),"$.error.code", 0) = 2`|High|**Manual close**: Yes|
 
 ### LLD rule Website discovery
 
@@ -79,7 +79,7 @@ https://www.zabbix.com/documentation/7.4/manual/config/items/itemtypes/zabbix_ag
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|[{#CERT.WEBSITE.ITEMNAME}]: Get|<p>Returns a JSON with the attributes of a certificate of the requested site.</p>|TAA agent (active)|web.certificate.get[{#CERT.WEBSITE.HOSTNAME},{#CERT.WEBSITE.PORT},{#CERT.WEBSITE.IP}]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
+|[{#CERT.WEBSITE.ITEMNAME}]: Get|<p>Returns a JSON with the attributes of a certificate of the requested site.</p>|TAAE agent (active)|web.certificate.get[{#CERT.WEBSITE.HOSTNAME},{#CERT.WEBSITE.PORT},{#CERT.WEBSITE.IP}]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
 |[{#CERT.WEBSITE.ITEMNAME}]: Validation result|<p>The certificate validation result. Possible values: valid/invalid/valid-but-self-signed</p>|Dependent item|cert.validation[{#CERT.WEBSITE.ITEMNAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.result.value`</p></li></ul>|
 |[{#CERT.WEBSITE.ITEMNAME}]: Last validation status|<p>Message from the latest certificate check.</p>|Dependent item|cert.message[{#CERT.WEBSITE.ITEMNAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.result.message`</p></li></ul>|
 |[{#CERT.WEBSITE.ITEMNAME}]: Version|<p>The version of the encoded certificate.</p>|Dependent item|cert.version[{#CERT.WEBSITE.ITEMNAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.x509.version`</p></li></ul>|
@@ -97,13 +97,13 @@ https://www.zabbix.com/documentation/7.4/manual/config/items/itemtypes/zabbix_ag
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Cert [{#CERT.WEBSITE.ITEMNAME}]: SSL certificate is invalid|<p>The SSL certificate has expired or it is issued for another domain.</p>|`find(/Website certificate by TAA agent 2 active/cert.validation[{#CERT.WEBSITE.ITEMNAME}],,"like","invalid")=1`|High||
-|Cert [{#CERT.WEBSITE.ITEMNAME}]: SSL certificate expires soon|<p>The SSL certificate should be updated or it will become untrusted.</p>|`(last(/Website certificate by TAA agent 2 active/cert.not_after[{#CERT.WEBSITE.ITEMNAME}]) - now()) / 86400 < {$CERT.EXPIRY.WARN}`|Warning|**Depends on**:<br><ul><li>Cert [{#CERT.WEBSITE.ITEMNAME}]: SSL certificate is invalid</li></ul>|
-|Cert [{#CERT.WEBSITE.ITEMNAME}]: Fingerprint has changed|<p>The SSL certificate fingerprint has changed. If you did not update the certificate, it may mean your certificate has been hacked. Acknowledge to close the problem manually.<br>There could be multiple valid certificates on some installations. In this case, the trigger will have a false positive. You can ignore it or disable the trigger.</p>|`last(/Website certificate by TAA agent 2 active/cert.sha1_fingerprint[{#CERT.WEBSITE.ITEMNAME}]) <> last(/Website certificate by TAA agent 2 active/cert.sha1_fingerprint[{#CERT.WEBSITE.ITEMNAME}],#2)`|Info|**Manual close**: Yes|
+|Cert [{#CERT.WEBSITE.ITEMNAME}]: SSL certificate is invalid|<p>The SSL certificate has expired or it is issued for another domain.</p>|`find(/Website certificate by TAAE agent 2 active/cert.validation[{#CERT.WEBSITE.ITEMNAME}],,"like","invalid")=1`|High||
+|Cert [{#CERT.WEBSITE.ITEMNAME}]: SSL certificate expires soon|<p>The SSL certificate should be updated or it will become untrusted.</p>|`(last(/Website certificate by TAAE agent 2 active/cert.not_after[{#CERT.WEBSITE.ITEMNAME}]) - now()) / 86400 < {$CERT.EXPIRY.WARN}`|Warning|**Depends on**:<br><ul><li>Cert [{#CERT.WEBSITE.ITEMNAME}]: SSL certificate is invalid</li></ul>|
+|Cert [{#CERT.WEBSITE.ITEMNAME}]: Fingerprint has changed|<p>The SSL certificate fingerprint has changed. If you did not update the certificate, it may mean your certificate has been hacked. Acknowledge to close the problem manually.<br>There could be multiple valid certificates on some installations. In this case, the trigger will have a false positive. You can ignore it or disable the trigger.</p>|`last(/Website certificate by TAAE agent 2 active/cert.sha1_fingerprint[{#CERT.WEBSITE.ITEMNAME}]) <> last(/Website certificate by TAAE agent 2 active/cert.sha1_fingerprint[{#CERT.WEBSITE.ITEMNAME}],#2)`|Info|**Manual close**: Yes|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

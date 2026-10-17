@@ -183,10 +183,10 @@ return [
     'BRAND_LOGO' => 'local/img/logo.svg',                    // ❌ Nginx blokaydi
     'BRAND_LOGO_SIDEBAR' => 'local/img/logo.svg',            // ❌ Nginx blokaydi  
     'BRAND_LOGO_SIDEBAR_COMPACT' => 'local/img/logo-compact.svg', // ❌ Nginx blokaydi
-    'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',
+    'BRAND_FOOTER' => 'TAAE Monitoring System - Powered by TAAE',
     'BRAND_HELP_URL' => 'https://www.zabbix.com/documentation/current/en/',
     'BRAND_URL' => '#',
-    'BRAND_TITLE' => 'TAA Monitoring System'
+    'BRAND_TITLE' => 'TAAE Monitoring System'
 ];
 ```
 
@@ -230,10 +230,10 @@ return [
     'BRAND_LOGO' => 'assets/img/logo.svg',                    // ✅ local/ dan assets/ ga
     'BRAND_LOGO_SIDEBAR' => 'assets/img/logo.svg',
     'BRAND_LOGO_SIDEBAR_COMPACT' => 'assets/img/logo-compact.svg',
-    'BRAND_FOOTER' => 'TAA Monitoring System - Powered by TAA',
-    'BRAND_HELP_URL' => 'https://taa.uz/documentation/',      // ✅ O'z URL
-    'BRAND_URL' => 'https://taa.uz',                          // ✅ O'z URL  
-    'BRAND_TITLE' => 'TAA Monitoring System'
+    'BRAND_FOOTER' => 'TAAE Monitoring System - Powered by TAAE',
+    'BRAND_HELP_URL' => 'https://taae.uz/documentation/',      // ✅ O'z URL
+    'BRAND_URL' => 'https://taae.uz',                          // ✅ O'z URL  
+    'BRAND_TITLE' => 'TAAE Monitoring System'
 ];
 ```
 
@@ -346,24 +346,24 @@ ui/assets/img/logo.png             # PNG backup (agar SVG ishlamasa)
 ```css
 /* blue-theme.css ga qo'shish */
 
-/* TAA Corporate ranglar */
+/* TAAE Corporate ranglar */
 :root {
-  --taa-primary: #41eaf0;      /* TAA asosiy rang */
-  --taa-secondary: #8cf0f5;    /* TAA ikkinchi rang */
-  --taa-accent: #ffc72c;       /* TAA accent rang */
-  --taa-success: #28a745;      /* Muvaffaqiyat rangi */
-  --taa-danger: #dc3545;       /* Xato rangi */
+  --taae-primary: #41eaf0;      /* TAAE asosiy rang */
+  --taae-secondary: #8cf0f5;    /* TAAE ikkinchi rang */
+  --taae-accent: #ffc72c;       /* TAAE accent rang */
+  --taae-success: #28a745;      /* Muvaffaqiyat rangi */
+  --taae-danger: #dc3545;       /* Xato rangi */
 }
 
 /* Sidebar ranglarni o'zgartirish */
 .sidebar {
-  background-color: var(--taa-primary) !important;
+  background-color: var(--taae-primary) !important;
 }
 
 /* Header ranglar */
 .sidebar-header {
-  background-color: var(--taa-secondary) !important;
-  border-bottom: 1px solid var(--taa-accent);
+  background-color: var(--taae-secondary) !important;
+  border-bottom: 1px solid var(--taae-accent);
 }
 
 /* Menu item ranglar */
@@ -372,23 +372,23 @@ ui/assets/img/logo.png             # PNG backup (agar SVG ishlamasa)
 }
 
 .menu-main .menu-item:hover {
-  background-color: var(--taa-accent) !important;
-  color: var(--taa-primary) !important;
+  background-color: var(--taae-accent) !important;
+  color: var(--taae-primary) !important;
 }
 
 /* Button ranglar */
 .btn-primary {
-  background-color: var(--taa-primary) !important;
-  border-color: var(--taa-primary) !important;
+  background-color: var(--taae-primary) !important;
+  border-color: var(--taae-primary) !important;
 }
 
 .btn-primary:hover {
-  background-color: var(--taa-secondary) !important;
-  border-color: var(--taa-secondary) !important;
+  background-color: var(--taae-secondary) !important;
+  border-color: var(--taae-secondary) !important;
 }
 ```
 
-### **3. MATNLARNI O'ZGARTIRISH (ZABBIX → TAA):**
+### **3. MATNLARNI O'ZGARTIRISH (ZABBIX → TAAE):**
 
 #### **3.1. Brand Title va Footer:**
 
@@ -396,10 +396,10 @@ ui/assets/img/logo.png             # PNG backup (agar SVG ishlamasa)
 // ui/local/conf/brand.conf.php
 return [
     'BRAND_LOGO' => 'assets/img/logo.svg',
-    'BRAND_FOOTER' => 'TAA Monitoring System - Monitoring Infrastructure va Applications',
-    'BRAND_TITLE' => 'TAA Monitoring Dashboard',
-    'BRAND_HELP_URL' => 'https://taa.uz/help/',
-    'BRAND_URL' => 'https://taa.uz'
+    'BRAND_FOOTER' => 'TAAE Monitoring System - Monitoring Infrastructure va Applications',
+    'BRAND_TITLE' => 'TAAE Monitoring Dashboard',
+    'BRAND_HELP_URL' => 'https://taae.uz/help/',
+    'BRAND_URL' => 'https://taae.uz'
 ];
 ```
 
@@ -430,7 +430,7 @@ $login_form = (new CForm())
                 (new CSubmitButton(_('Sign in')))
                     ->addClass('btn btn-primary btn-block')
             ]))->addClass('form-group'),
-            (new CDiv('TAA Monitoring System v2.0'))
+            (new CDiv('TAAE Monitoring System v2.0'))
                 ->addClass('text-center text-muted small')
         ]))->addClass('signin-container')
     ]);
@@ -442,14 +442,14 @@ $login_form = (new CForm())
 // HTML head title'ni o'zgartirish uchun:
 // /usr/share/zabbix/include/defines.inc.php da qo'shish:
 
-define('TAA_SYSTEM_NAME', 'TAA Monitoring');
-define('TAA_PAGE_TITLE_SEPARATOR', ' | ');
+define('TAAE_SYSTEM_NAME', 'TAAE Monitoring');
+define('TAAE_PAGE_TITLE_SEPARATOR', ' | ');
 
 // /usr/share/zabbix/app/partials/layout.htmlpage.header.php da:
 if (isset($ZBX_SERVER_NAME) && $ZBX_SERVER_NAME !== '') {
     $page_title = $page_title !== '' 
-        ? TAA_SYSTEM_NAME . TAA_PAGE_TITLE_SEPARATOR . $page_title 
-        : TAA_SYSTEM_NAME;
+        ? TAAE_SYSTEM_NAME . TAAE_PAGE_TITLE_SEPARATOR . $page_title 
+        : TAAE_SYSTEM_NAME;
 }
 ```
 
@@ -464,15 +464,15 @@ Custom menu items yaratish uchun:
 <?php
 return [
     'monitoring' => [
-        'label' => 'TAA Monitoring',
+        'label' => 'TAAE Monitoring',
         'icon' => 'icon-monitoring'
     ],
     'configuration' => [
-        'label' => 'TAA Configuration', 
+        'label' => 'TAAE Configuration', 
         'icon' => 'icon-configuration'
     ],
     'administration' => [
-        'label' => 'TAA Administration',
+        'label' => 'TAAE Administration',
         'icon' => 'icon-administration'  
     ]
 ];
@@ -484,14 +484,14 @@ return [
 // CBrandHelper.php da getFooterContent() o'zgartirish:
 public static function getFooterContent($with_version) {
     $footer = [
-        $with_version ? 'TAA Monitoring System v2.0. ' : null,
-        'Copyright © 2024 TAA. ',
-        (new CLink('TAA Official Website', 'https://taa.uz/'))
+        $with_version ? 'TAAE Monitoring System v2.0. ' : null,
+        'Copyright © 2024 TAAE. ',
+        (new CLink('TAAE Official Website', 'https://taae.uz/'))
             ->addClass(ZBX_STYLE_GREY)
             ->addClass(ZBX_STYLE_LINK_ALT)
             ->setTarget('_blank'),
         ' | ',
-        (new CLink('Support', 'https://taa.uz/support/'))
+        (new CLink('Support', 'https://taae.uz/support/'))
             ->addClass(ZBX_STYLE_GREY) 
             ->addClass(ZBX_STYLE_LINK_ALT)
             ->setTarget('_blank')
@@ -565,7 +565,7 @@ console.log('Logo URL:', document.querySelector('.zabbix-logo img')?.src);
 # docker-compose.prod.yml
 environment:
   - PHP_TZ=Asia/Tashkent
-  - ZBX_SERVER_NAME=TAA Monitoring Production
+  - ZBX_SERVER_NAME=TAAE Monitoring Production
   - DB_SERVER_HOST=postgres-prod
   - ZBX_DENY_GUI_ACCESS=false
   - ZBX_GUI_ACCESS_IP_RANGE=['192.168.1.0/24','10.0.0.0/8']
@@ -576,10 +576,10 @@ environment:
 # nginx-ssl.conf
 server {
     listen 443 ssl http2;
-    server_name monitoring.taa.uz;
+    server_name monitoring.taae.uz;
     
-    ssl_certificate /etc/ssl/certs/taa.crt;
-    ssl_certificate_key /etc/ssl/private/taa.key;
+    ssl_certificate /etc/ssl/certs/taae.crt;
+    ssl_certificate_key /etc/ssl/private/taae.key;
     
     location / {
         proxy_pass http://zabbix-web:8080;

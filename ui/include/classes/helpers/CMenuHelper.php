@@ -424,14 +424,14 @@ class CMenuHelper {
 					(new CMenuItem(_('Support')))
 						->setIcon(ZBX_ICON_SUPPORT)
 						->setUrl(new CUrl(getSupportUrl($lang)))
-						->setTitle(_('TAA Technical Support'))
+						->setTitle(_('TAAE Technical Support'))
 						->setTarget('_blank')
 				)
 				->add(
 					(new CMenuItem(_('Integrations')))
 						->setIcon(ZBX_ICON_INTEGRATIONS)
 						->setUrl(new CUrl(getIntegrationsUrl($lang)))
-						->setTitle(_('TAA Integrations'))
+						->setTitle(_('TAAE Integrations'))
 						->setTarget('_blank')
 				);
 		}

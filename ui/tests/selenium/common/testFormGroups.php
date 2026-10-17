@@ -567,13 +567,13 @@ class testFormGroups extends CWebTest {
 				'name' => 'Europe/Latvia'
 			],
 			[
-				'name' => 'Europe/Latvia/Riga/TAA'
+				'name' => 'Europe/Latvia/Riga/TAAE'
 			],
 			[
 				'name' => 'Europe/Test'
 			],
 			[
-				'name' => 'Europe/Test/TAA'
+				'name' => 'Europe/Test/TAAE'
 			],
 			// Groups to check inherited permissions when creating a parent or subgroup.
 			[
@@ -596,13 +596,13 @@ class testFormGroups extends CWebTest {
 				'name' => 'Europe/Latvia'
 			],
 			[
-				'name' => 'Europe/Latvia/Riga/TAA'
+				'name' => 'Europe/Latvia/Riga/TAAE'
 			],
 			[
 				'name' => 'Europe/Test'
 			],
 			[
-				'name' => 'Europe/Test/TAA'
+				'name' => 'Europe/Test/TAAE'
 			],
 			[
 				'name' => 'Streets'
@@ -721,7 +721,7 @@ class testFormGroups extends CWebTest {
 					],
 					'groups_after' => [
 						[
-							'groups' => ['Europe/Test', 'Europe/Test/TAA'],
+							'groups' => ['Europe/Test', 'Europe/Test/TAAE'],
 							'Permissions' => 'Read-write'
 						],
 						[
@@ -737,7 +737,7 @@ class testFormGroups extends CWebTest {
 						['Host groups' => 'Cities/Cesis', 'Tags' => 'city: Cesis'],
 						['Host groups' => 'Europe', 'Tags' => 'world'],
 						['Host groups' => 'Europe/Test', 'Tags' => 'country: test'],
-						['Host groups' => 'Europe/Test/TAA', 'Tags' => 'country: test'],
+						['Host groups' => 'Europe/Test/TAAE', 'Tags' => 'country: test'],
 						['Host groups' => 'Streets', 'Tags' => 'street']
 					]
 				]
@@ -750,7 +750,7 @@ class testFormGroups extends CWebTest {
 					'create' => 'Streets/Dzelzavas',
 					'groups_before' => [
 						[
-							'groups' => ['Europe/Test', 'Europe/Test/TAA'],
+							'groups' => ['Europe/Test', 'Europe/Test/TAAE'],
 							'Permissions' => 'Read-write'
 						],
 						[
@@ -774,8 +774,8 @@ class testFormGroups extends CWebTest {
 							'Permissions' => 'Read'
 						],
 						[
-							'groups' => ['Europe', 'Europe/Latvia', 'Europe/Latvia/Riga/TAA',
-								'Europe/Test', 'Europe/Test/TAA', 'Streets', 'Streets/Dzelzavas'],
+							'groups' => ['Europe', 'Europe/Latvia', 'Europe/Latvia/Riga/TAAE',
+								'Europe/Test', 'Europe/Test/TAAE', 'Streets', 'Streets/Dzelzavas'],
 							'Permissions' => 'Deny'
 						]
 					],
@@ -783,9 +783,9 @@ class testFormGroups extends CWebTest {
 						['Host groups' => 'Cities/Cesis', 'Tags' => 'city: Cesis'],
 						['Host groups' => 'Europe', 'Tags' => 'world'],
 						['Host groups' => 'Europe/Latvia', 'Tags' => 'world'],
-						['Host groups' => 'Europe/Latvia/Riga/TAA', 'Tags' => 'world'],
+						['Host groups' => 'Europe/Latvia/Riga/TAAE', 'Tags' => 'world'],
 						['Host groups' => 'Europe/Test', 'Tags' => 'world'],
-						['Host groups' => 'Europe/Test/TAA', 'Tags' => 'world'],
+						['Host groups' => 'Europe/Test/TAAE', 'Tags' => 'world'],
 						['Host groups' => 'Streets', 'Tags' => 'street'],
 						['Host groups' => 'Streets/Dzelzavas', 'Tags' => 'street']
 					]

@@ -23,7 +23,7 @@ zabbix_export:
         - name: 'field:hostname'
           value: '{HOST.NAME}'
         - name: 'field:monitoring_tool'
-          value: TAA
+          value: TAAE
         - name: 'field:operational_data'
           value: '{EVENT.OPDATA}'
         - name: 'field:severity'

@@ -60,12 +60,12 @@ class testPageScheduledReport extends CWebTest {
 		return [
 			[
 				[
-					'name' => 'TAA server'
+					'name' => 'TAAE server'
 				]
 			],
 			[
 				[
-					'name' => 'TAA server health',
+					'name' => 'TAAE server health',
 					'no_reports' => true
 				]
 			]
@@ -101,7 +101,7 @@ class testPageScheduledReport extends CWebTest {
 	public function testPageScheduledReport_Layout() {
 		$expired_report = [
 			'Name' => 'Report for filter - expired',
-			'Owner' => 'Admin (TAA Administrator)',
+			'Owner' => 'Admin (TAAE Administrator)',
 			'Repeats' => 'Yearly',
 			'Period' => 'Previous year',
 			'Last sent' => 'Never',

@@ -221,7 +221,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -240,7 +240,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -259,7 +259,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -278,7 +278,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -297,7 +297,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'Trends' => [
 							'radio' => ['id' => 'trends_mode', 'value' => 'Store up to'],
@@ -316,7 +316,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'Trends' => [
 							'radio' => ['id' => 'trends_mode', 'value' => 'Store up to'],
@@ -335,7 +335,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'Trends' => [
 							'radio' => ['id' => 'trends_mode', 'value' => 'Store up to'],
@@ -354,7 +354,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'Trends' => [
 							'radio' => ['id' => 'trends_mode', 'value' => 'Store up to'],
@@ -373,8 +373,8 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA trapper'],
-						'Allowed hosts' => ['id' => 'trapper_hosts', 'value' => 'TAA server']
+						'Type' => ['id' => 'type', 'value' => 'TAAE trapper'],
+						'Allowed hosts' => ['id' => 'trapper_hosts', 'value' => 'TAAE server']
 					],
 					'details' => 'Invalid parameter "/1/trapper_hosts": incorrect address starting from "server".'
 				]
@@ -388,7 +388,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Update interval' => ['Delay' => '']
 					],
 					'details' => 'Invalid parameter "/1/delay": cannot be empty.'
@@ -403,7 +403,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Update interval' => ['Delay' => '0']
 					],
 					'details' => 'Invalid parameter "/1/delay": cannot be equal to zero without custom intervals.'
@@ -418,7 +418,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Update interval' => ['Delay' => '86401']
 					],
 					'details' => 'Invalid parameter "/1/delay": value must be one of 0-86400.'
@@ -433,7 +433,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Update interval' => [
 							'Delay' => '1d',
 							'Custom intervals' => [
@@ -457,7 +457,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Update interval' => [
 							'Delay' => '1s',
 							'Custom intervals' => [
@@ -481,7 +481,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Update interval' => [
 							'Delay' => '24h',
 							'Custom intervals' => [
@@ -726,7 +726,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent (active)'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent (active)'],
 						'Type of information' => ['id' => 'value_type', 'value' => 'Numeric (float)'],
 						'Units' => ['id' => 'units', 'value' => '$'],
 						'Update interval' => [
@@ -765,7 +765,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -786,7 +786,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -807,7 +807,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -828,7 +828,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -849,7 +849,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'History' => [
 							'radio' => ['id' => 'history_mode', 'value' => 'Store up to'],
@@ -889,7 +889,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA internal'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE internal'],
 						'Type of information' => ['id' => 'value_type', 'value' => 'Text'],
 						'Update interval' => [
 							'Delay' => '1d',
@@ -918,7 +918,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA trapper'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE trapper'],
 						'Type of information' => ['id' => 'value_type', 'value' => 'Numeric (unsigned)'],
 						'Allowed hosts' => ['id' => 'trapper_hosts', 'value' => '127.0.0.1']
 					]
@@ -932,7 +932,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA trapper'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE trapper'],
 						'Allowed hosts' => ['id' => 'trapper_hosts', 'value' => '{HOST.HOST}']
 					]
 				]
@@ -945,7 +945,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA trapper'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE trapper'],
 						'Allowed hosts' => [
 							'id' => 'trapper_hosts',
 							'value' => '192.168.1.0/24, 192.168.3.1-255, 192.168.1-10.1-255, ::1,2001:db8::/32, zabbix.domain'
@@ -1025,7 +1025,7 @@ class testMassUpdateItems extends CWebTest{
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051']
 					]
 				]

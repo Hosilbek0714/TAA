@@ -3,7 +3,7 @@
 
 ## Overview
 
-This guide describes how to integrate your TAA installation with ((OTRS)) Community Edition using the TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
+This guide describes how to integrate your TAAE installation with ((OTRS)) Community Edition using the TAAE webhook feature, providing instructions on setting up a media type, user, and action in TAAE.
 
 ## Supported versions
 
@@ -11,7 +11,7 @@ This guide describes how to integrate your TAA installation with ((OTRS)) Commun
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Parameters
 
@@ -23,7 +23,7 @@ The configurable parameters are intended to be changed according to the webhook 
 
 |Name|Value|Description|
 |----|-----|-----------|
-|zabbix_url|\{$ZABBIX\.URL\}|Current TAA URL.|
+|zabbix_url|\{$ZABBIX\.URL\}|Current TAAE URL.|
 |otrs_closed_state_id|0|((OTRS)) CE state ID for closed tasks. Possible values: 0 - Disable tickets closing; >0 - State ID from the State Management page.|
 |otrs_auth_password|\<PUT YOUR USER PASSWORD\>|Agent password.|
 |otrs_auth_user|\<PUT YOUR USER NAME\>|Agent username.|
@@ -85,11 +85,11 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 [![](images/thumb.14.png?raw=true)](images/14.png)
 [![](images/thumb.15.png?raw=true)](images/15.png)
 
-## TAA configuration
+## TAAE configuration
 
 1. Before you can start using the **((OTRS)) CE** webhook, you need to set the global macro `{$ZABBIX.URL}`:
-  - In the TAA web interface, go to *Administration* > *Macros* in the top-left dropdown menu.
-  - Set the global macro `{$ZABBIX.URL}` to the URL of the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
+  - In the TAAE web interface, go to *Administration* > *Macros* in the top-left dropdown menu.
+  - Set the global macro `{$ZABBIX.URL}` to the URL of the TAAE frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
   - Specifying a protocol is mandatory, whereas the port is optional. Depending on the web server configuration, you might also need to append `/zabbix` to the end of URL. Good examples:
     - `http://zabbix.com`
     - `https://zabbix.lan/zabbix`
@@ -114,14 +114,14 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 [![](images/thumb.17.png?raw=true)](images/17.png)
 
-4. If you want to prioritize issues according to the severity values in TAA, you can define mapping parameters (create them as additional webhook parameters):
+4. If you want to prioritize issues according to the severity values in TAAE, you can define mapping parameters (create them as additional webhook parameters):
   - `severity_<name>` - the **((OTRS)) CE** priority ID (`<name>` in the parameter name can be one of the following values: `not_classified`, `information`, `warning`, `average`, `high`, `disaster`)
 
 [![](images/thumb.18.png?raw=true)](images/18.png)
 
-5. If you have **dynamic fields** in **((OTRS)) CE** and want them to be filled with values from TAA, add webhook parameters in the format `dynamicfield_<((OTRS)) CE dynamic field name>`, similarly to the previous step. Dynamic fields can only be of the types **text**, **textarea**, **checkbox**, or **date**.
+5. If you have **dynamic fields** in **((OTRS)) CE** and want them to be filled with values from TAAE, add webhook parameters in the format `dynamicfield_<((OTRS)) CE dynamic field name>`, similarly to the previous step. Dynamic fields can only be of the types **text**, **textarea**, **checkbox**, or **date**.
 
-6. If you want the webhook to close tickets related to **resolved** problems in TAA, you can change the following parameter value:
+6. If you want the webhook to close tickets related to **resolved** problems in TAAE, you can change the following parameter value:
 
 - `otrs_closed_state_id` - **((OTRS)) CE** state ID for closed tasks (possible values: 0 - Disable tickets closing, >0 - State ID from the State Management page).
 
@@ -131,7 +131,7 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 8. Click the *Enabled* checkbox to enable the mediatype and click the *Update* button to save the webhook settings.
 
-9. Create a TAA user and add media:
+9. Create a TAAE user and add media:
   - To create a new user,  go to the *Users* > *Users* section and click the *Create user* button in the top-right corner. In the *User* tab, fill in all the required fields (marked with red asterisks).
   - In the *Media* tab, click *Add* and select **OTRS CE** from the *Type* drop-down list. Though the *Send to* field is not used in the **((OTRS)) CE** webhook, it cannot be left empty. To comply with frontend requirements, enter any symbol in the field.
   - Make sure this user has access to all the hosts for which you would like problem notifications to be sent to **((OTRS)) CE**.
@@ -140,10 +140,10 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 10. Done! You can now start using this media type in actions and create tickets.
 
-For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [((OTRS)) CE](https://otrscommunityedition.com/doc/) documentation.
+For more information, please see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [((OTRS)) CE](https://otrscommunityedition.com/doc/) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

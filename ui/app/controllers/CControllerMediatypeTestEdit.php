@@ -78,7 +78,7 @@ class CControllerMediatypeTestEdit extends CController {
 			'mediatypeid' => $this->getInput('mediatypeid'),
 			'sendto' => '',
 			'subject' => _('Test subject'),
-			'message' => _('This is the test message from TAA'),
+			'message' => _('This is the test message from TAAE'),
 			'parameters' => $mediatype[0]['parameters'],
 			'type' => $mediatype[0]['type'],
 			'enabled' => ($mediatype[0]['status'] == MEDIA_STATUS_ACTIVE),

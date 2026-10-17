@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TAA IP inventarini Catalyst 3560G dan yig'uvchi skript.
+"""TAAE IP inventarini Catalyst 3560G dan yig'uvchi skript.
 
 Vazifasi:
     Catalyst 3560G kommutatordan quyidagi buyruqlarni o'qiydi:
@@ -11,9 +11,9 @@ Vazifasi:
 
 Foydalanish:
     ip_inventory.py --switch 10.0.99.2 --backend sqlite \
-                    --db /var/lib/taa/ipam.db
+                    --db /var/lib/taae/ipam.db
     ip_inventory.py --switch 10.0.99.2 --backend postgres \
-                    --db "host=10.0.10.10 dbname=taa_ipam user=taa"
+                    --db "host=10.0.10.10 dbname=taae_ipam user=taae"
     ip_inventory.py --switch 10.0.99.2 --purge-days 30
 
 Muhit o'zgaruvchilari:
@@ -80,7 +80,7 @@ except ImportError as exc:  # pragma: no cover
 def parse_args() -> argparse.Namespace:
     """CLI argumentlarni o'qiydi."""
     parser = argparse.ArgumentParser(
-        description="TAA: Catalyst 3560G dan IP/MAC inventarini yig'ish.",
+        description="TAAE: Catalyst 3560G dan IP/MAC inventarini yig'ish.",
     )
     parser.add_argument(
         "--switch",
@@ -97,7 +97,7 @@ def parse_args() -> argparse.Namespace:
         "--db",
         default=None,
         help=(
-            "SQLite uchun fayl yo'li (default: /var/lib/taa/ipam.db) "
+            "SQLite uchun fayl yo'li (default: /var/lib/taae/ipam.db) "
             "yoki PostgreSQL DSN (IPAM_DSN env qo'llaniladi, agar berilmasa)"
         ),
     )
@@ -390,7 +390,7 @@ def main() -> int:
     )
 
     if args.backend == "sqlite":
-        db_path = args.db or "/var/lib/taa/ipam.db"
+        db_path = args.db or "/var/lib/taae/ipam.db"
         upserts, purged = upsert_sqlite(
             db_path=db_path,
             switch_ip=args.switch,

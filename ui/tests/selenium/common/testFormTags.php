@@ -261,7 +261,7 @@ class testFormTags extends CWebTest {
 			case 'item':
 			case 'item prototype':
 				$sql = 'SELECT * FROM items ORDER BY itemid';
-				$fields = ['Name' => $data['name'], 'Key' => 'itemtag_'.microtime(true).'[{#KEY}]', 'Type' => 'TAA trapper'];
+				$fields = ['Name' => $data['name'], 'Key' => 'itemtag_'.microtime(true).'[{#KEY}]', 'Type' => 'TAAE trapper'];
 				break;
 
 			case 'web scenario':
@@ -284,7 +284,7 @@ class testFormTags extends CWebTest {
 			case 'template':
 				$sql = 'SELECT * FROM hosts ORDER BY hostid';
 				$group_field = ($object === 'template') ? 'Template groups' : 'Host groups';
-				$group_name = ($object === 'template') ? 'Templates' : 'TAA servers';
+				$group_name = ($object === 'template') ? 'Templates' : 'TAAE servers';
 				$fields = [ucfirst($object).' name' => $data['name'], $group_field => $group_name];
 		}
 
@@ -300,7 +300,7 @@ class testFormTags extends CWebTest {
 				$form = $this->query('name:hostPrototypeForm')->waitUntilPresent()->asForm(['normalized' => true])->one();
 				$data['name'] = $data['name'].' {#KEY}';
 				$form->fill(['Host name' => $data['name']]);
-				$form->fill(['Host groups' => 'TAA servers']);
+				$form->fill(['Host groups' => 'TAAE servers']);
 				break;
 
 			case 'web scenario':

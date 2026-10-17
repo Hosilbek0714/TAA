@@ -1,5 +1,5 @@
--- Disable host "TAA Server"
-UPDATE hosts SET status=1 WHERE host='TAA server';
+-- Disable host "TAAE Server"
+UPDATE hosts SET status=1 WHERE host='TAAE server';
 -- clear changelog table
 TRUNCATE TABLE changelog;
 

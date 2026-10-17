@@ -51,7 +51,7 @@ jQuery(function($) {
 		},
 
 		/**
-		 * Sends ajax request to get TAA server availability and message to show if server is not available.
+		 * Sends ajax request to get TAAE server availability and message to show if server is not available.
 		 */
 		check: function() {
 			new RPC.Call({

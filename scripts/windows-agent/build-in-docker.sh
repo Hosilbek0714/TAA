@@ -1,9 +1,9 @@
 #!/bin/sh
 # =============================================================================
-# TAA Agent 2 (Windows x64) ni manba koddan Docker ichida yig'ish (MinGW).
+# TAAE Agent 2 (Windows x64) ni manba koddan Docker ichida yig'ish (MinGW).
 #
 # Kompyuterda faqat Docker kerak. Natija:
-#   scripts/windows-agent/dist/taa_agent2.exe
+#   scripts/windows-agent/dist/taae_agent2.exe
 #
 # Ishlatish (repo ildizida):
 #   sh scripts/windows-agent/build-in-docker.sh
@@ -127,7 +127,7 @@ zbxhash src/libs/zbxhash/zbxhash.c
 zbxregexp src/libs/zbxregexp/zbxregexp.c
 EOF
 
-		echo "== 3/3 Go agent (taa_agent2.exe)"
+		echo "== 3/3 Go agent (taae_agent2.exe)"
 		cd src/go
 		VPKG=golang.zabbix.com/agent2/pkg/version
 		CGO_ENABLED=1 GOOS=windows GOARCH=amd64 CC=$CC \
@@ -136,12 +136,12 @@ EOF
 				-D_WIN32_WINNT=0x0600 -DPCRE2_STATIC -DPCRE2_CODE_UNIT_WIDTH=8" \
 			CGO_LDFLAGS="-L/opt/mingw/lib" \
 			go build -tags pcre2 \
-				-ldflags "-s -w -X main.applicationName=taa_agent2 \
+				-ldflags "-s -w -X main.applicationName=taae_agent2 \
 					-X $VPKG.compileDate=$(date +%Y-%m-%d) -X $VPKG.compileTime=$(date +%H:%M:%S) \
 					-X $VPKG.compileOs=windows -X $VPKG.compileArch=amd64" \
-				-o /work/taa_agent2.exe ./cmd/zabbix_agent2
-		ls -la /work/taa_agent2.exe
+				-o /work/taae_agent2.exe ./cmd/zabbix_agent2
+		ls -la /work/taae_agent2.exe
 	'
 
 rm -f "$OUT/src.tar"
-echo "Tayyor: $OUT/taa_agent2.exe"
+echo "Tayyor: $OUT/taae_agent2.exe"

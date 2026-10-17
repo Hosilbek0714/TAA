@@ -51,7 +51,7 @@ int	zbx_agent_handle_response(char *buffer, size_t read_bytes, ssize_t received_
 
 	if (0 == received_len)
 	{
-		SET_MSG_RESULT(result, zbx_dsprintf(NULL, "Received empty response from TAA Agent at [%s]."
+		SET_MSG_RESULT(result, zbx_dsprintf(NULL, "Received empty response from TAAE Agent at [%s]."
 				" Assuming that agent dropped connection because of access permissions.",
 				addr));
 		return NETWORK_ERROR;
@@ -140,13 +140,13 @@ int	zbx_agent_handle_response(char *buffer, size_t read_bytes, ssize_t received_
 		if (sizeof(ZBX_NOTSUPPORTED) < read_bytes)
 			SET_MSG_RESULT(result, zbx_dsprintf(NULL, "%s", buffer + sizeof(ZBX_NOTSUPPORTED)));
 		else
-			SET_MSG_RESULT(result, zbx_strdup(NULL, "Not supported by TAA Agent"));
+			SET_MSG_RESULT(result, zbx_strdup(NULL, "Not supported by TAAE Agent"));
 
 		return NOTSUPPORTED;
 	}
 	else if (0 == strcmp(buffer, ZBX_ERROR))
 	{
-		SET_MSG_RESULT(result, zbx_strdup(NULL, "TAA Agent non-critical error"));
+		SET_MSG_RESULT(result, zbx_strdup(NULL, "TAAE Agent non-critical error"));
 		return AGENT_ERROR;
 	}
 	else

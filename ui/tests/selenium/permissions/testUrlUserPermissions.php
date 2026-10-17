@@ -27,7 +27,7 @@ class testUrlUserPermissions extends CLegacyWebTest {
 				'username' => 'test-admin',
 				'passwd' => 'zabbix12345',
 				'roleid' => USER_TYPE_ZABBIX_ADMIN,
-				'usrgrps' => [['usrgrpid' => 7]] // TAA administrators.
+				'usrgrps' => [['usrgrpid' => 7]] // TAAE administrators.
 			]
 		]);
 	}

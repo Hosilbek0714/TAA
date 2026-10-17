@@ -929,11 +929,11 @@ int	zbx_db_check_version_and_upgrade(zbx_ha_mode_t ha_mode)
 		if (SUCCEED != DBcreate_dbversion_table())
 			goto out;
 #else
-		zabbix_log(LOG_LEVEL_CRIT, "The %s does not match TAA database."
+		zabbix_log(LOG_LEVEL_CRIT, "The %s does not match TAAE database."
 				" Current database version (mandatory/optional): UNKNOWN."
 				" Required mandatory version: %08d.",
 				get_program_type_string(DBget_program_type_cb()), required);
-		zabbix_log(LOG_LEVEL_CRIT, "TAA does not support SQLite3 database upgrade.");
+		zabbix_log(LOG_LEVEL_CRIT, "TAAE does not support SQLite3 database upgrade.");
 
 		ret = NOTSUPPORTED;
 		goto out;
@@ -963,14 +963,14 @@ int	zbx_db_check_version_and_upgrade(zbx_ha_mode_t ha_mode)
 	if (required != db_mandatory)
 #endif
 	{
-		zabbix_log(LOG_LEVEL_CRIT, "The %s does not match TAA database."
+		zabbix_log(LOG_LEVEL_CRIT, "The %s does not match TAAE database."
 				" Current database version (mandatory/optional): %08d/%08d."
 				" Required mandatory version: %08d.",
 				get_program_type_string(DBget_program_type_cb()), db_mandatory, db_optional,
 				required);
 #ifdef HAVE_SQLITE3
 		if (required > db_mandatory)
-			zabbix_log(LOG_LEVEL_WARNING, "TAA does not support SQLite3 database upgrade.");
+			zabbix_log(LOG_LEVEL_WARNING, "TAAE does not support SQLite3 database upgrade.");
 		else
 			ret = NOTSUPPORTED;
 #endif
@@ -996,7 +996,7 @@ int	zbx_db_check_version_and_upgrade(zbx_ha_mode_t ha_mode)
 		if (ZBX_HA_MODE_CLUSTER == ha_mode)
 		{
 			zabbix_log(LOG_LEVEL_CRIT, "cannot perform database upgrade in HA mode: all nodes need to be"
-					" stopped and TAA server started in standalone mode for the time of"
+					" stopped and TAAE server started in standalone mode for the time of"
 					" upgrade.");
 			ret = FAIL;
 		}

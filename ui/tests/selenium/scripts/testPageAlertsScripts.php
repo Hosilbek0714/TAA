@@ -118,7 +118,7 @@ class testPageAlertsScripts extends CWebTest {
 						'Execute on' => 'Server (proxy)',
 						'Commands' => '/sbin/zabbix_server --runtime-control config_cache_reload',
 						'User group' => 'All',
-						'Host group' => 'TAA servers',
+						'Host group' => 'TAAE servers',
 						'Host access' => 'Read'
 					],
 					[
@@ -129,7 +129,7 @@ class testPageAlertsScripts extends CWebTest {
 						'Type' => 'Script',
 						'Execute on' => 'Server (proxy)',
 						'Commands' => 'sudo /usr/bin/nmap -O {HOST.CONN}',
-						'User group' => 'TAA administrators',
+						'User group' => 'TAAE administrators',
 						'Host group' => 'All',
 						'Host access' => 'Read'
 					],
@@ -166,7 +166,7 @@ class testPageAlertsScripts extends CWebTest {
 						'Execute on' => 'Server (proxy)',
 						'Commands' => '/sbin/shutdown -r',
 						'User group' => 'All',
-						'Host group' => 'TAA servers',
+						'Host group' => 'TAAE servers',
 						'Host access' => 'Read'
 					],
 					[

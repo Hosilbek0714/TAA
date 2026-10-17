@@ -511,7 +511,7 @@ class testAgentJsonProtocol extends CIntegrationTest {
 	}
 
 	/**
-	 * Test TAA Get functionality
+	 * Test TAAE Get functionality
 	 *
 	 * @required-components agent, agent_3.0, agent2
 	 */

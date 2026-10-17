@@ -1,8 +1,8 @@
-# ZABBIX → TAA REBRANDING DOKUMENTATSIYASI
+# ZABBIX → TAAE REBRANDING DOKUMENTATSIYASI
 
 ## 📋 OVERVIEW
 
-Bu dokumentatsiya TAA monitoring sistemasini TAA (Telecom Analytics & Automation) brendiga o'tkazish jarayonini batafsil tushuntiradi. Rebrand jarayoni barcha frontend komponentlar, backend constants, localization fayllar va container konfiguratsiyalarini qamrab oladi.
+Bu dokumentatsiya TAAE monitoring sistemasini TAAE (Telecom Analytics & Automation) brendiga o'tkazish jarayonini batafsil tushuntiradi. Rebrand jarayoni barcha frontend komponentlar, backend constants, localization fayllar va container konfiguratsiyalarini qamrab oladi.
 
 ## 🔍 CONTAINER ARXITEKTURA TAHLILI
 
@@ -13,7 +13,7 @@ Bu dokumentatsiya TAA monitoring sistemasini TAA (Telecom Analytics & Automation
 - **Assets yo'li:** `/usr/share/zabbix/assets/`
 - **PHP handler:** FastCGI orqali
 
-### TAA Web Struktura
+### TAAE Web Struktura
 ```
 /usr/share/zabbix/
 ├── include/           # PHP backend constants
@@ -33,7 +33,7 @@ Bu dokumentatsiya TAA monitoring sistemasini TAA (Telecom Analytics & Automation
 **Maqsad:** UI elements, page titles, CSS classes yangilash
 
 ### Phase 3: Localization
-**Maqsad:** Barcha tillardagi "TAA" ni "TAA" ga almashtirish
+**Maqsad:** Barcha tillardagi "TAAE" ni "TAAE" ga almashtirish
 
 ### Phase 4: Assets & Branding
 **Maqsad:** Logo, favicon, branding elements yangilash
@@ -56,16 +56,16 @@ define('ZABBIX_EXPORT_VERSION', '7.4');
 define('ZABBIX_DB_VERSION', 7030048);
 define('ZABBIX_COPYRIGHT_FROM', '2001');
 define('ZABBIX_COPYRIGHT_TO', '2025');
-define('ZBX_DEFAULT_AGENT', 'TAA');
+define('ZBX_DEFAULT_AGENT', 'TAAE');
 
 // YANGI ⬇️
-define('TAA_VERSION', '7.4.0rc2');
-define('TAA_API_VERSION', '7.4.0');
-define('TAA_EXPORT_VERSION', '7.4');
-define('TAA_DB_VERSION', 7030048);
-define('TAA_COPYRIGHT_FROM', '2001');
-define('TAA_COPYRIGHT_TO', '2025');
-define('ZBX_DEFAULT_AGENT', 'TAA');
+define('TAAE_VERSION', '7.4.0rc2');
+define('TAAE_API_VERSION', '7.4.0');
+define('TAAE_EXPORT_VERSION', '7.4');
+define('TAAE_DB_VERSION', 7030048);
+define('TAAE_COPYRIGHT_FROM', '2001');
+define('TAAE_COPYRIGHT_TO', '2025');
+define('ZBX_DEFAULT_AGENT', 'TAAE');
 ```
 
 ### 1.2 CSS Style Constants
@@ -77,9 +77,9 @@ define('ZBX_STYLE_ZABBIX_LOGO_SIDEBAR', 'zabbix-logo-sidebar');
 define('ZBX_STYLE_ZABBIX_LOGO_SIDEBAR_COMPACT', 'zabbix-logo-sidebar-compact');
 
 // YANGI ⬇️
-define('ZBX_STYLE_TAA_LOGO', 'taa-logo');
-define('ZBX_STYLE_TAA_LOGO_SIDEBAR', 'taa-logo-sidebar');
-define('ZBX_STYLE_TAA_LOGO_SIDEBAR_COMPACT', 'taa-logo-sidebar-compact');
+define('ZBX_STYLE_TAAE_LOGO', 'taae-logo');
+define('ZBX_STYLE_TAAE_LOGO_SIDEBAR', 'taae-logo-sidebar');
+define('ZBX_STYLE_TAAE_LOGO_SIDEBAR_COMPACT', 'taae-logo-sidebar-compact');
 ```
 
 ---
@@ -91,10 +91,10 @@ define('ZBX_STYLE_TAA_LOGO_SIDEBAR_COMPACT', 'taa-logo-sidebar-compact');
 **111-qator:**
 ```php
 // ESKI ⬇️
-$page_title .= isset($page['title']) ? $page['title'] : _('TAA');
+$page_title .= isset($page['title']) ? $page['title'] : _('TAAE');
 
 // YANGI ⬇️
-$page_title .= isset($page['title']) ? $page['title'] : _('TAA');
+$page_title .= isset($page['title']) ? $page['title'] : _('TAAE');
 ```
 
 ### 2.2 CSS Classes O'zgartirish
@@ -112,9 +112,9 @@ $page_title .= isset($page['title']) ? $page['title'] : _('TAA');
 .zabbix-logo-sidebar-compact { }
 
 /* YANGI CLASS'LAR ⬇️ */
-.taa-logo { }
-.taa-logo-sidebar { }
-.taa-logo-sidebar-compact { }
+.taae-logo { }
+.taae-logo-sidebar { }
+.taae-logo-sidebar-compact { }
 ```
 
 ### 2.3 HTML Template O'zgartirish
@@ -127,9 +127,9 @@ $page_title .= isset($page['title']) ? $page['title'] : _('TAA');
 <div class="zabbix-logo-sidebar-compact"></div>
 
 <!-- YANGI ⬇️ -->
-<div class="taa-logo"></div>
-<div class="taa-logo-sidebar"></div>
-<div class="taa-logo-sidebar-compact"></div>
+<div class="taae-logo"></div>
+<div class="taae-logo-sidebar"></div>
+<div class="taae-logo-sidebar-compact"></div>
 ```
 
 ---
@@ -152,12 +152,12 @@ Docker ichida qo'llab-quvvatlanadigan tillar:
 
 ```po
 # ESKI ⬇️
-msgid "TAA"
-msgstr "TAA"
+msgid "TAAE"
+msgstr "TAAE"
 
 # YANGI ⬇️
-msgid "TAA"
-msgstr "TAA"
+msgid "TAAE"
+msgstr "TAAE"
 ```
 
 ### 3.3 MO Fayl Regenerate
@@ -185,11 +185,11 @@ msgfmt frontend.po -o frontend.mo
 ```html
 <!-- ESKI ⬇️ -->
 <meta name="Author" content="Zabbix SIA" />
-<meta name="application-name" content="TAA" />
+<meta name="application-name" content="TAAE" />
 
 <!-- YANGI ⬇️ -->
-<meta name="Author" content="TAA Team" />
-<meta name="application-name" content="TAA" />
+<meta name="Author" content="TAAE Team" />
+<meta name="application-name" content="TAAE" />
 ```
 
 ---
@@ -221,7 +221,7 @@ COPY ui/assets/ /usr/share/zabbix/assets/
 COPY ui/locale/ /usr/share/zabbix/locale/
 
 # Update CSS for logo
-RUN sed -i 's/zabbix-logo/taa-logo/g' /usr/share/zabbix/assets/styles/*.css
+RUN sed -i 's/zabbix-logo/taae-logo/g' /usr/share/zabbix/assets/styles/*.css
 ```
 
 ---
@@ -232,7 +232,7 @@ RUN sed -i 's/zabbix-logo/taa-logo/g' /usr/share/zabbix/assets/styles/*.css
 
 ```bash
 # Backup yaratish
-git checkout -b zabbix-to-taa-rebranding
+git checkout -b zabbix-to-taae-rebranding
 git add .
 git commit -m "Backup before rebranding"
 ```
@@ -240,13 +240,13 @@ git commit -m "Backup before rebranding"
 ### Step 2: Backend Constants
 
 1. `ui/include/defines.inc.php` ochish
-2. ZABBIX_* constants'larni TAA_* ga o'zgartirish
+2. ZABBIX_* constants'larni TAAE_* ga o'zgartirish
 3. ZBX_STYLE_ZABBIX_LOGO'larni yangilash
 
 ### Step 3: Page Titles
 
 1. `ui/include/page_header.php` ochish
-2. `_('TAA')` ni `_('TAA')` ga o'zgartirish
+2. `_('TAAE')` ni `_('TAAE')` ga o'zgartirish
 
 ### Step 4: CSS va Assets
 
@@ -275,7 +275,7 @@ curl -I http://localhost:8098
 ### Step 7: Verification
 
 **Tekshirish ro'yxati:**
-- [ ] Page title "TAA" ko'rsatadi
+- [ ] Page title "TAAE" ko'rsatadi
 - [ ] Logo'lar to'g'ri chiqadi
 - [ ] CSS class'lar yangilangan
 - [ ] Error'lar yo'q
@@ -360,7 +360,7 @@ Rebranding jarayonida muammolar yuzaga kelsa:
 
 2. **File changes verify:**
    ```bash
-   docker exec -it zabbix-web grep -r "TAA" /usr/share/zabbix/include/
+   docker exec -it zabbix-web grep -r "TAAE" /usr/share/zabbix/include/
    ```
 
 3. **Rollback procedure:**

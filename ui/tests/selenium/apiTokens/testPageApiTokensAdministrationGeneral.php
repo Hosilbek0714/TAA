@@ -104,30 +104,30 @@ class testPageApiTokensAdministrationGeneral extends testPageApiTokens {
 		$token_data = [
 			[
 				'Name' => 'Admin: aktīvs токен - 頑張って',
-				'User' => 'Admin (TAA Administrator)',
+				'User' => 'Admin (TAAE Administrator)',
 				'Expires at' => 'Never',
 				'Created at' => '2021-01-01 00:00:01',
-				'Created by user' => 'Admin (TAA Administrator)',
+				'Created by user' => 'Admin (TAAE Administrator)',
 				'Last accessed at' => '2021-01-01 00:00:04',
 				'Status' => 'Disabled'
 
 			],
 			[
 				'Name' => 'Admin: expired token for admin',
-				'User' => 'Admin (TAA Administrator)',
+				'User' => 'Admin (TAAE Administrator)',
 				'Expires at' => '2021-01-01 00:06:00',
 				'Created at' => '2021-01-01 00:00:01',
-				'Created by user' => 'Admin (TAA Administrator)',
+				'Created by user' => 'Admin (TAAE Administrator)',
 				'Last accessed at' => '2021-01-01 00:00:03',
 				'Status' => 'Enabled'
 
 			],
 			[
 				'Name' => 'Admin: future token for admin',
-				'User' => 'Admin (TAA Administrator)',
+				'User' => 'Admin (TAAE Administrator)',
 				'Expires at' => '2026-12-31 23:59:59',
 				'Created at' => '2021-01-01 00:00:01',
-				'Created by user' => 'Admin (TAA Administrator)',
+				'Created by user' => 'Admin (TAAE Administrator)',
 				'Last accessed at' => '2021-01-01 00:00:02',
 				'Status' => 'Enabled'
 
@@ -137,7 +137,7 @@ class testPageApiTokensAdministrationGeneral extends testPageApiTokens {
 				'User' => 'filter-create',
 				'Expires at' => date('Y-m-d H:i:s', self::$timestamp),
 				'Created at' => '2021-01-01 00:00:01',
-				'Created by user' => 'Admin (TAA Administrator)',
+				'Created by user' => 'Admin (TAAE Administrator)',
 				'Last accessed at' => '2021-01-01 00:00:05',
 				'Status' => 'Disabled'
 
@@ -174,7 +174,7 @@ class testPageApiTokensAdministrationGeneral extends testPageApiTokens {
 			],
 			[
 				'Name' => 'filter-create: token for Admin',
-				'User' => 'Admin (TAA Administrator)',
+				'User' => 'Admin (TAAE Administrator)',
 				'Expires at' => date('Y-m-d H:i:s', self::$timestamp),
 				'Created at' => '2021-01-01 00:00:01',
 				'Created by user' => 'filter-create',
@@ -456,10 +456,10 @@ class testPageApiTokensAdministrationGeneral extends testPageApiTokens {
 				[
 					'sort_field' => 'User',
 					'expected' => [
-						'Admin (TAA Administrator)',
-						'Admin (TAA Administrator)',
-						'Admin (TAA Administrator)',
-						'Admin (TAA Administrator)',
+						'Admin (TAAE Administrator)',
+						'Admin (TAAE Administrator)',
+						'Admin (TAAE Administrator)',
+						'Admin (TAAE Administrator)',
 						'filter-create',
 						'filter-create',
 						'filter-create',
@@ -486,10 +486,10 @@ class testPageApiTokensAdministrationGeneral extends testPageApiTokens {
 				[
 					'sort_field' => 'Created by user',
 					'expected' => [
-						'Admin (TAA Administrator)',
-						'Admin (TAA Administrator)',
-						'Admin (TAA Administrator)',
-						'Admin (TAA Administrator)',
+						'Admin (TAAE Administrator)',
+						'Admin (TAAE Administrator)',
+						'Admin (TAAE Administrator)',
+						'Admin (TAAE Administrator)',
 						'filter-create',
 						'filter-create',
 						'filter-create',

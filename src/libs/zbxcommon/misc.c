@@ -100,7 +100,7 @@ void	*zbx_calloc2(const char *filename, int line, void *old, size_t nmemb, size_
 	{
 		zabbix_log(LOG_LEVEL_CRIT,
 				"[file:%s,line:%d] zbx_calloc: allocating already allocated memory. "
-				"Please report this to TAA developers.",
+				"Please report this to TAAE developers.",
 				filename, line);
 	}
 
@@ -109,7 +109,7 @@ void	*zbx_calloc2(const char *filename, int line, void *old, size_t nmemb, size_
 		zabbix_log(LOG_LEVEL_DEBUG,
 				"[file:%s,line:%d] zbx_calloc: "
 				"allocating " ZBX_FS_SIZE_T " memory objects of size " ZBX_FS_SIZE_T ". "
-				"Please report this to TAA developers.",
+				"Please report this to TAAE developers.",
 				filename, line, (zbx_fs_size_t)nmemb, (zbx_fs_size_t)size);
 	}
 	nmemb = MAX(nmemb, 1);
@@ -142,7 +142,7 @@ void	*zbx_malloc2(const char *filename, int line, void *old, size_t size)
 	{
 		zabbix_log(LOG_LEVEL_CRIT,
 				"[file:%s,line:%d] zbx_malloc: allocating already allocated memory. "
-				"Please report this to TAA developers.",
+				"Please report this to TAAE developers.",
 				filename, line);
 	}
 
@@ -151,7 +151,7 @@ void	*zbx_malloc2(const char *filename, int line, void *old, size_t size)
 		zabbix_log(LOG_LEVEL_DEBUG,
 				"[file:%s,line:%d] zbx_malloc: "
 				"allocating memory object of size " ZBX_FS_SIZE_T " bytes. "
-				"Please report this to TAA developers.",
+				"Please report this to TAAE developers.",
 				filename, line, (zbx_fs_size_t)size);
 	}
 	size = MAX(size, 1);
@@ -185,7 +185,7 @@ void	*zbx_realloc2(const char *filename, int line, void *old, size_t size)
 		zabbix_log(LOG_LEVEL_DEBUG,
 				"[file:%s,line:%d] zbx_realloc: "
 				"allocating memory object of size " ZBX_FS_SIZE_T " bytes. "
-				"Please report this to TAA developers.",
+				"Please report this to TAAE developers.",
 				filename, line, (zbx_fs_size_t)size);
 	}
 	size = MAX(size, 1);
@@ -253,7 +253,7 @@ static const char	copyright_message[] =
  ******************************************************************************/
 void	zbx_print_version(const char *title_message)
 {
-	printf("%s (TAA) %s\n", title_message, ZABBIX_VERSION);
+	printf("%s (TAAE) %s\n", title_message, ZABBIX_VERSION);
 	printf("Revision %s %s, compilation time: %s %s\n\n", ZABBIX_REVISION, ZABBIX_REVDATE, __DATE__, __TIME__);
 	puts(copyright_message);
 }

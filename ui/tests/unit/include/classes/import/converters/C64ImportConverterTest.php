@@ -406,35 +406,35 @@ class C64ImportConverterTest extends CImportConverterTest {
 	public function importConverterDataProviderCalcItemFormula(): array {
 		$formulas = [
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],0s))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"],0s))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], 15s))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"], 15s))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], {$MACRO}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"], {$MACRO}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], "{$MACRO: context}"))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"], 1h ))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"], "{$MACRO: context}"))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"], 1h ))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],{#LLD}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"],{#LLD}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => true
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],  {#LLD}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"],  {#LLD}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => true
 			]
 		];

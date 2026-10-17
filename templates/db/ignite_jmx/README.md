@@ -8,7 +8,7 @@ This template is based on the original template developed by Igor Akkuratov, Sen
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,7 +17,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -67,7 +67,7 @@ This template works with standalone and cluster instances. Metrics are collected
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Ignite: [{#JMXIGNITEINSTANCENAME}]: Instance has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Ignite by JMX/jmx["{#JMXOBJ}",UpTime])<10m`|Info|**Manual close**: Yes|
-|Ignite: [{#JMXIGNITEINSTANCENAME}]: Failed to fetch info data|<p>TAA has not received data for items for the last 10 minutes.</p>|`nodata(/Ignite by JMX/jmx["{#JMXOBJ}",UpTime],10m)=1`|Warning|**Manual close**: Yes|
+|Ignite: [{#JMXIGNITEINSTANCENAME}]: Failed to fetch info data|<p>TAAE has not received data for items for the last 10 minutes.</p>|`nodata(/Ignite by JMX/jmx["{#JMXOBJ}",UpTime],10m)=1`|Warning|**Manual close**: Yes|
 |Ignite: [{#JMXIGNITEINSTANCENAME}]: Version has changed|<p>[{#JMXIGNITEINSTANCENAME}] version has changed. Acknowledge to close the problem manually.</p>|`last(/Ignite by JMX/jmx["{#JMXOBJ}",FullVersion],#1)<>last(/Ignite by JMX/jmx["{#JMXOBJ}",FullVersion],#2) and length(last(/Ignite by JMX/jmx["{#JMXOBJ}",FullVersion]))>0`|Info|**Manual close**: Yes|
 
 ### LLD rule Cluster metrics
@@ -294,5 +294,5 @@ This template works with standalone and cluster instances. Metrics are collected
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

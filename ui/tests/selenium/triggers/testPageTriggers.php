@@ -609,7 +609,7 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Name' => 'Inheritance trigger',
 						'Severity' => 'Not classified',
 						'State' => 'Unknown',
@@ -634,7 +634,7 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => 'TAA servers'
+						'Host groups' => 'TAAE servers'
 					]
 				]
 			],
@@ -733,7 +733,7 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Severity' => 'Average',
 						'Name' => 'tag'
 					],
@@ -761,7 +761,7 @@ class testPageTriggers extends CLegacyWebTest {
 						'Hosts' => [
 							[
 								'values' => ['Host for trigger tags filtering'],
-								'context' => 'TAA servers'
+								'context' => 'TAAE servers'
 							],
 							[
 								'values' => ['Host for triggers filtering'],
@@ -785,11 +785,11 @@ class testPageTriggers extends CLegacyWebTest {
 			[
 				[
 					'filter_options' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Hosts' => [
 							[
 								'values' => ['Host for trigger tags filtering'],
-								'context' => 'TAA servers'
+								'context' => 'TAAE servers'
 							],
 							[
 								'values' => ['Host for triggers filtering'],

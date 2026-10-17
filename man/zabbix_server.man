@@ -33,9 +33,9 @@
 .
 .  hy \\n(HY
 ..
-.TH ZABBIX_SERVER 8 "2022\-01\-06" TAA
+.TH ZABBIX_SERVER 8 "2022\-01\-06" TAAE
 .SH NAME
-zabbix_server \- TAA server daemon
+zabbix_server \- TAAE server daemon
 .SH SYNOPSIS
 .B zabbix_server
 .RB [ \-c
@@ -57,12 +57,12 @@ zabbix_server \- TAA server daemon
 .B zabbix_server \-V
 .SH DESCRIPTION
 .B zabbix_server
-is the core daemon of TAA software.
+is the core daemon of TAAE software.
 .SH OPTIONS
 .IP "\fB\-c\fR, \fB\-\-config\fR \fIconfig\-file\fR"
 Use the alternate \fIconfig\-file\fR instead of the default one.
 .IP "\fB\-f\fR, \fB\-\-foreground\fR"
-Run TAA server in foreground.
+Run TAAE server in foreground.
 .IP "\fB\-R\fR, \fB\-\-runtime\-control\fR \fIruntime\-option\fR"
 Perform administrative functions according to \fIruntime\-option\fR.
 .SS
@@ -198,7 +198,7 @@ Output version information and exit.
 .SH FILES
 .TP
 .I /usr/local/etc/zabbix_server.conf
-Default location of TAA server configuration file (if not modified during compile time).
+Default location of TAAE server configuration file (if not modified during compile time).
 .SH "SEE ALSO"
 .UR https://www.zabbix.com/manuals
 Documentation

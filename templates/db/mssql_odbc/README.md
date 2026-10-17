@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of MSSQL monitoring by TAA via ODBC and doesn't require any external scripts.
+This template is designed for the effortless deployment of MSSQL monitoring by TAAE via ODBC and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -44,7 +44,7 @@ For more information, see MSSQL documentation:
 
 2. Set the username and password in the host macros `{$MSSQL.USER}` and `{$MSSQL.PASSWORD}`.
 
-3. Do not forget to install Microsoft ODBC driver on TAA server or TAA proxy and specify data source name in macro `{$MSSQL.DSN}`.
+3. Do not forget to install Microsoft ODBC driver on TAAE server or TAAE proxy and specify data source name in macro `{$MSSQL.DSN}`.
 
 See Microsoft documentation for instructions: https://docs.microsoft.com/en-us/sql/connect/odbc/linux-mac/installing-the-microsoft-odbc-driver-for-sql-server?view=sql-server-ver16.
 
@@ -204,7 +204,7 @@ Note: You can use the context macros `{$MSSQL.BACKUP_FULL.USED}`, `{$MSSQL.BACKU
 |MSSQL: Service is unavailable|<p>The TCP port of the MSSQL Server service is currently unavailable.</p>|`last(/MSSQL by ODBC/net.tcp.service[tcp,{$MSSQL.HOST},{$MSSQL.PORT}])=0`|Disaster||
 |MSSQL: Version has changed|<p>MSSQL version has changed. Acknowledge to close the problem manually.</p>|`last(/MSSQL by ODBC/mssql.version,#1)<>last(/MSSQL by ODBC/mssql.version,#2) and length(last(/MSSQL by ODBC/mssql.version))>0`|Info|**Manual close**: Yes|
 |MSSQL: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MSSQL by ODBC/mssql.uptime)<10m`|Info|**Manual close**: Yes|
-|MSSQL: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/MSSQL by ODBC/mssql.uptime,30m)=1`|Info|**Depends on**:<br><ul><li>MSSQL: Service is unavailable</li></ul>|
+|MSSQL: Failed to fetch info data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/MSSQL by ODBC/mssql.uptime,30m)=1`|Info|**Depends on**:<br><ul><li>MSSQL: Service is unavailable</li></ul>|
 |MSSQL: Too frequently using pointers|<p>Rows with VARCHAR columns can experience expansion when VARCHAR values are updated with a longer string. In the case where the row cannot fit in the existing page, the row migrates, and access to the row will traverse a pointer. This only happens on heaps (tables without clustered indexes). In cases where clustered indexes cannot be used, drop non-clustered indexes, build a clustered index to reorg pages and rows, drop the clustered index, then recreate non-clustered indexes.</p>|`last(/MSSQL by ODBC/mssql.forwarded_records_sec.rate) * 100 > 10 * last(/MSSQL by ODBC/mssql.batch_requests_sec.rate)`|Warning||
 |MSSQL: Number of work files created per second is high|<p>Too many work files created per second to store temporary results for hash joins and hash aggregates.</p>|`min(/MSSQL by ODBC/mssql.workfiles_created_sec.rate,5m)>{$MSSQL.WORK_FILES.MAX}`|Average||
 |MSSQL: Number of work tables created per second is high|<p>Too many work tables created per second to store temporary results for query spool, LOB variables, XML variables, and cursors.</p>|`min(/MSSQL by ODBC/mssql.worktables_created_sec.rate,5m)>{$MSSQL.WORK_TABLES.MAX}`|Average||
@@ -452,5 +452,5 @@ Note: You can use the context macros `{$MSSQL.BACKUP_FULL.USED}`, `{$MSSQL.BACKU
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

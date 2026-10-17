@@ -251,7 +251,7 @@ class testPageMonitoringHosts extends CWebTest {
 				[
 					'filter' => [
 						'Status' => 'Disabled',
-						'Host groups' => ['TAA server']
+						'Host groups' => ['TAAE server']
 					],
 					'expected' => [
 						'No data found'
@@ -279,7 +279,7 @@ class testPageMonitoringHosts extends CWebTest {
 					'filter' => [
 						'Name' => 'for',
 						'Host groups' => [
-							'TAA servers'
+							'TAAE servers'
 						],
 						'IP' => '127.0.5.1'
 					],

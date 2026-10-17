@@ -1,12 +1,12 @@
 #!/bin/sh
 #
-# TAA daemon start/stop script.
+# TAAE daemon start/stop script.
 #
 # Copyright (C) 2001-2025 Zabbix SIA
 
 NAME=zabbix_server
 DAEMON=/usr/local/sbin/${NAME}
-DESC="TAA server daemon"
+DESC="TAAE server daemon"
 PID=/tmp/$NAME.pid
 
 test -f $DAEMON || exit 0

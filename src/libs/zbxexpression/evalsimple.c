@@ -204,7 +204,7 @@ static void	variant_convert_to_double(zbx_variant_t *var)
  * Return value: depending on variant type:                                   *
  *    DBL - the variant value                                                 *
  *    STR - if variant value contains valid float64 string (with supported    *
- *          TAA suffixes) the converted value is returned. Otherwise       *
+ *          TAAE suffixes) the converted value is returned. Otherwise       *
  *          ZBX_INFINITY is returned.                                         *
  *    other types - ZBX_INFINITY                                              *
  *                                                                            *
@@ -1000,7 +1000,7 @@ int	zbx_evaluate(double *value, const char *expression, char *error, size_t max_
 				zabbix_log(LOG_LEVEL_WARNING, "%s() internal error: " ZBX_UNKNOWN_STR " index:%d"
 						" expression:'%s'", __func__, unknown_idx, expression);
 				zbx_snprintf(error, max_error_len, "Internal error: " ZBX_UNKNOWN_STR " index %d."
-						" Please report this to TAA developers.", unknown_idx);
+						" Please report this to TAAE developers.", unknown_idx);
 			}
 			else if (unknown_msgs->values_num > unknown_idx)
 			{

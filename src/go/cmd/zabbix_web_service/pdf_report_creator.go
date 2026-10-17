@@ -351,7 +351,7 @@ func runCDP(
 					return errs.Wrapf(
 						err,
 						"timeout (%ds) reached while formatting dashboard as PDF, "+
-							"it is configurable in TAA web service config file "+
+							"it is configurable in TAAE web service config file "+
 							"('Timeout' option)",
 						options.Timeout,
 					)
@@ -444,27 +444,27 @@ func handleCriticalNetErr(errStr string) error {
 	case netErrCertCommonNameInvalid:
 		return errs.New(
 			"Invalid certificate common name detected while loading dashboard. Fix TLS configuration or " +
-				"configure TAA web service to ignore TLS certificate errors when accessing " +
+				"configure TAAE web service to ignore TLS certificate errors when accessing " +
 				"frontend URL.",
 		)
 	case netErrCertDateInvalid:
 		return errs.New(
 			"Invalid certificate date detected while loading dashboard " +
 				"(certificate's validity period has expired or is not yet valid). " +
-				"configure TAA web service to ignore TLS certificate errors when accessing " +
+				"configure TAAE web service to ignore TLS certificate errors when accessing " +
 				"frontend URL.",
 		)
 	case netErrCertWeakSignatureAlg:
 		return errs.New(
 			"Weak certificate signature algorithm detected while loading dashboard. " +
-				"Fix TLS configuration or configure TAA web service to ignore " +
+				"Fix TLS configuration or configure TAAE web service to ignore " +
 				"TLS certificate errors when accessing frontend URL.",
 		)
 
 	case netErrCertAuthorityInvalid:
 		return errs.New(
 			"Invalid certificate authority detected while loading dashboard. Fix TLS configuration or " +
-				"configure TAA web service to ignore TLS certificate errors when accessing " +
+				"configure TAAE web service to ignore TLS certificate errors when accessing " +
 				"frontend URL.",
 		)
 	case "":

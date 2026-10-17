@@ -3,7 +3,7 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of AWS monitoring by TAA via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of AWS monitoring by TAAE via HTTP and doesn't require any external scripts.
 - Currently, the template supports the discovery of EC2 and RDS instances, ECS clusters, ELB, Lambda and S3 buckets.
 
 ## Included Monitoring Templates
@@ -20,7 +20,7 @@ This template is designed for the effortless deployment of AWS monitoring by TAA
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -29,14 +29,14 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-Before using the template, you need to create an IAM policy for the TAA role in your AWS account with the necessary permissions.
+Before using the template, you need to create an IAM policy for the TAAE role in your AWS account with the necessary permissions.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect metrics.
 
 ```json
 {
@@ -204,7 +204,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 To gather Request metrics, enable [Requests metrics](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudwatch-monitoring.html) on your Amazon S3 buckets from the AWS console.
 
@@ -309,8 +309,8 @@ Additional information about the metrics and used API methods:
 
 ## Overview
 
-The template to monitor AWS EC2 and attached AWS EBS volumes by HTTP via TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor AWS EC2 and attached AWS EBS volumes by HTTP via TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 *NOTE*
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -324,7 +324,7 @@ Additional information about metrics and used API methods:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -333,16 +333,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template get AWS EC2 and attached AWS EBS volumes metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy with the necessary permissions for the TAA role in your AWS account.
+Before using the template, you need to create an IAM policy with the necessary permissions for the TAAE role in your AWS account.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect Amazon EC2 metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect Amazon EC2 metrics.
 
 ```json
 {
@@ -464,7 +464,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 For more information, see the [EC2 policies](https://docs.aws.amazon.com/AWSEC2/latest/UserGuide/security-iam.html) on the AWS website.
 
@@ -610,8 +610,8 @@ Also, see the Macros section for a list of macros used for LLD filters.
 
 ## Overview
 
-The template to monitor AWS RDS instance by HTTP via TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor AWS RDS instance by HTTP via TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 *NOTE*
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -625,7 +625,7 @@ Additional information about metrics and used API methods:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -634,16 +634,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template get AWS RDS instance metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy with the necessary permissions for the TAA role in your AWS account.
+Before using the template, you need to create an IAM policy with the necessary permissions for the TAAE role in your AWS account.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect Amazon RDS metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect Amazon RDS metrics.
 
 ```json
 {
@@ -768,7 +768,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the macros: `{$AWS.AUTH_TYPE}`, `{$AWS.REGION}`, `{$AWS.RDS.INSTANCE.ID}`.
 
@@ -966,8 +966,8 @@ Also, see the Macros section for a list of macros used for LLD filters.
 
 ## Overview
 
-The template to monitor AWS S3 bucket by HTTP via TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor AWS S3 bucket by HTTP via TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 *NOTE*
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -979,7 +979,7 @@ Additional information about metrics and used API methods:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -988,16 +988,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template gets AWS S3 metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy for the TAA role in your AWS account with the necessary permissions.
+Before using the template, you need to create an IAM policy for the TAAE role in your AWS account with the necessary permissions.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect Amazon S3 metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect Amazon S3 metrics.
 
 ```json
 {
@@ -1119,7 +1119,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 To gather Request metrics, [enable Requests metrics](https://docs.aws.amazon.com/AmazonS3/latest/userguide/cloudwatch-monitoring.html) on your Amazon S3 buckets from the AWS console.
 
@@ -1224,8 +1224,8 @@ Also, see the Macros section for a list of macros used for LLD filters.
 
 ## Overview
 
-The template to monitor AWS ECS Serverless Cluster by HTTP via TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor AWS ECS Serverless Cluster by HTTP via TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 *NOTE*
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -1237,7 +1237,7 @@ Additional information about the metrics and used API methods:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1246,16 +1246,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template gets AWS ECS metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy for the TAA role in your AWS account with the necessary permissions.
+Before using the template, you need to create an IAM policy for the TAAE role in your AWS account with the necessary permissions.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect Amazon ECS metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect Amazon ECS metrics.
 
 ```json
 {
@@ -1376,7 +1376,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the following macros `{$AWS.AUTH_TYPE}`, `{$AWS.REGION}`, `{$AWS.ECS.CLUSTER.NAME}`.
 
@@ -1495,8 +1495,8 @@ Refer to the Macros section for a list of macros used for LLD filters.
 
 ## Overview
 
-The template to monitor AWS ECS Cluster by HTTP via TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor AWS ECS Cluster by HTTP via TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 *NOTE*
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -1508,7 +1508,7 @@ Additional information about the metrics and used API methods:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1517,16 +1517,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template gets AWS ECS metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy for the TAA role in your AWS account with the necessary permissions.
+Before using the template, you need to create an IAM policy for the TAAE role in your AWS account with the necessary permissions.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect Amazon ECS metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect Amazon ECS metrics.
 
 ```json
 {
@@ -1648,7 +1648,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the following macros `{$AWS.AUTH_TYPE}`, `{$AWS.REGION}`, `{$AWS.ECS.CLUSTER.NAME}`.
 
@@ -1763,8 +1763,8 @@ Refer to the Macros section for a list of macros used for LLD filters.
 
 *Please scroll down for AWS ELB Network Load Balancer by HTTP.*
 
-The template is designed to monitor AWS ELB Application Load Balancer by HTTP via TAA, and it works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template is designed to monitor AWS ELB Application Load Balancer by HTTP via TAAE, and it works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -1777,7 +1777,7 @@ Additional information about metrics and API methods used in the template:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1786,16 +1786,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template gets AWS ELB Application Load Balancer metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy with the necessary permissions for the TAA role in your AWS account. For more information, visit the [ELB policies page](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html) on the AWS website.
+Before using the template, you need to create an IAM policy with the necessary permissions for the TAAE role in your AWS account. For more information, visit the [ELB policies page](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html) on the AWS website.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect AWS ELB Application Load Balancer metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect AWS ELB Application Load Balancer metrics.
 
 ```json
 {
@@ -1917,7 +1917,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the macros: `{$AWS.AUTH_TYPE}`, `{$AWS.REGION}`, and `{$AWS.ELB.ARN}`.
 
@@ -2045,8 +2045,8 @@ See the section below for a list of macros used for LLD filters.
 
 ## Overview
 
-The template is designed to monitor AWS ELB Network Load Balancer by HTTP via TAA, and it works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template is designed to monitor AWS ELB Network Load Balancer by HTTP via TAAE, and it works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 This template uses the GetMetricData CloudWatch API calls to list and retrieve metrics.
 For more information, please refer to the [CloudWatch pricing](https://aws.amazon.com/cloudwatch/pricing/) page.
@@ -2059,7 +2059,7 @@ Additional information about metrics and API methods used in the template:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -2068,16 +2068,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template gets AWS ELB Network Load Balancer metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy with the necessary permissions for the TAA role in your AWS account. For more information, visit the [ELB policies page](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html) on the AWS website.
+Before using the template, you need to create an IAM policy with the necessary permissions for the TAAE role in your AWS account. For more information, visit the [ELB policies page](https://docs.aws.amazon.com/elasticloadbalancing/latest/userguide/elb-api-permissions.html) on the AWS website.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect AWS ELB Network Load Balancer metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect AWS ELB Network Load Balancer metrics.
 
 ```json
 {
@@ -2199,7 +2199,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the macros: `{$AWS.AUTH_TYPE}`, `{$AWS.REGION}`, and `{$AWS.ELB.ARN}`.
 
@@ -2333,7 +2333,7 @@ Additional information about metrics and API methods used in the template:
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -2342,16 +2342,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 The template gets AWS Lambda metrics and uses the script item to make HTTP requests to the CloudWatch API.
 
-Before using the template, you need to create an IAM policy with the necessary permissions for the TAA role in your AWS account. For more information, visit the [Lambda permissions page](https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html) on the AWS website.
+Before using the template, you need to create an IAM policy with the necessary permissions for the TAAE role in your AWS account. For more information, visit the [Lambda permissions page](https://docs.aws.amazon.com/lambda/latest/dg/lambda-permissions.html) on the AWS website.
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect AWS Lambda metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect AWS Lambda metrics.
 
 ```json
 {
@@ -2469,7 +2469,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the macros: `{$AWS.AUTH_TYPE}`, `{$AWS.REGION}`, and `{$AWS.LAMBDA.ARN}`.
 
@@ -2547,8 +2547,8 @@ See the section below for a list of macros used for LLD filters.
 
 ## Overview
 
-The template to monitor AWS Cost Explorer by HTTP via TAA, which works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor AWS Cost Explorer by HTTP via TAAE, which works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 *NOTE*
 This template uses the Cost Explorer API calls to list and retrieve metrics.
 For more information, please refer to the [Cost Explorer pricing](https://aws.amazon.com/aws-cost-management/aws-cost-explorer/pricing/) page.
@@ -2556,7 +2556,7 @@ For more information, please refer to the [Cost Explorer pricing](https://aws.am
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -2565,16 +2565,16 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-Before using the template, you need to create an IAM policy for the TAA role in your AWS account with the necessary permissions.
+Before using the template, you need to create an IAM policy for the TAAE role in your AWS account with the necessary permissions.
 
 * [IAM policies for AWS Cost Management](https://docs.aws.amazon.com/cost-management/latest/userguide/billing-permissions-ref.html)
 
 ### Required Permissions
-Add the following required permissions to your TAA IAM policy in order to collect metrics.
+Add the following required permissions to your TAAE IAM policy in order to collect metrics.
 
 ```json
 {
@@ -2692,7 +2692,7 @@ Next, add a principal to the trust relationships of the role you are using:
 }
 ```
 
-**Note**: Using role-based authorization is only possible when you use a TAA server or proxy inside AWS.
+**Note**: Using role-based authorization is only possible when you use a TAAE server or proxy inside AWS.
 
 Set the macros: `{$AWS.AUTH_TYPE}`. Possible values: `access_key`, `assume_role`, `role_base`.
 
@@ -2767,5 +2767,5 @@ Additional information about metrics and used API methods:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

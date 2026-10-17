@@ -31,9 +31,9 @@ services:
       context: .
     container_name: zabbix-web
     environment:
-      ZBX_SERVER_NAME: "TAA Monitor Tizimi"
+      ZBX_SERVER_NAME: "TAAE Monitor Tizimi"
       ZBX_DEFAULT_LANG: "uz_UZ"
-      ZBX_SERVER_HOST: TAA-server
+      ZBX_SERVER_HOST: TAAE-server
       DB_SERVER_HOST: postgres
       POSTGRES_USER: zabbix
       POSTGRES_PASSWORD: zabbix_password
@@ -45,7 +45,7 @@ services:
       PHP_FPM_PM_MIN_SPARE_SERVERS: "5"
       PHP_FPM_PM_MAX_SPARE_SERVERS: "35"
       PHP_FPM_PM_MAX_REQUESTS: "0"
-      # TAA uchun:
+      # TAAE uchun:
       ZBX_MAXEXECUTIONTIME: "300"
       ZBX_MEMORYLIMIT: "128M"
       ZBX_POSTMAXSIZE: "16M"

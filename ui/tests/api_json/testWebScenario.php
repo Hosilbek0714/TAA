@@ -609,7 +609,7 @@ class testWebScenario extends CAPITest {
 					'httptestid' => $httptest['httptestid'],
 					'delay' => '60',
 					'status' => '0',
-					'agent' => 'TAA',
+					'agent' => 'TAAE',
 					'hostid' => '50009',
 					'templateid' => '0',
 					'http_proxy' => '',

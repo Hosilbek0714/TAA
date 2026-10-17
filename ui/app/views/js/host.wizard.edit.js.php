@@ -41,10 +41,10 @@ window.host_wizard_edit = new class {
 	#view_templates;
 
 	#filter_hints = {
-		'data_collection_1': <?= json_encode(_('Data is collected by TAA agent, a lightweight software component installed on your monitoring target.')) ?>,
-		'data_collection_2': <?= json_encode(_('Data is collected by TAA server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH).')) ?>,
-		'agent_mode_1': <?= json_encode(_('TAA agent initiates connections to TAA server or proxy to send data. Recommended for monitoring targets behind a firewall.')) ?>,
-		'agent_mode_2': <?= json_encode(_('TAA server or proxy initiates connections to TAA agent to request data. Recommended for networks without a firewall or with open firewall ports.')) ?>
+		'data_collection_1': <?= json_encode(_('Data is collected by TAAE agent, a lightweight software component installed on your monitoring target.')) ?>,
+		'data_collection_2': <?= json_encode(_('Data is collected by TAAE server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH).')) ?>,
+		'agent_mode_1': <?= json_encode(_('TAAE agent initiates connections to TAAE server or proxy to send data. Recommended for monitoring targets behind a firewall.')) ?>,
+		'agent_mode_2': <?= json_encode(_('TAAE server or proxy initiates connections to TAAE agent to request data. Recommended for networks without a firewall or with open firewall ports.')) ?>
 	}
 
 	#interface_names_long_titles = {
@@ -1097,7 +1097,7 @@ window.host_wizard_edit = new class {
 				steps: [this.STEP_CREATE_HOST]
 			},
 			{
-				label: <?= json_encode(_('Install TAA agent')) ?>,
+				label: <?= json_encode(_('Install TAAE agent')) ?>,
 				visible: template_loaded && this.#data.install_agent_required,
 				steps: [this.STEP_INSTALL_AGENT]
 			},

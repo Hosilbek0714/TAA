@@ -5,11 +5,11 @@
 # Starts the zabbix_server daemon
 #
 # chkconfig: - 95 5
-# description: TAA Monitoring Server
+# description: TAAE Monitoring Server
 # processname: zabbix_server
 # pidfile: /tmp/zabbix_server.pid
 
-# Modified for TAA 2.0.0
+# Modified for TAAE 2.0.0
 # May 2012, Zabbix SIA
 
 # Source function library.
@@ -17,7 +17,7 @@
 . /etc/init.d/functions
 
 RETVAL=0
-prog="TAA Server"
+prog="TAAE Server"
 ZABBIX_BIN="/usr/local/sbin/zabbix_server"
 
 if [ ! -x ${ZABBIX_BIN} ] ; then

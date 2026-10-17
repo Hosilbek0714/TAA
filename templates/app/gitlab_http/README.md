@@ -3,8 +3,8 @@
 
 ## Overview
 
-This template is designed to monitor GitLab by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+This template is designed to monitor GitLab by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 The template `GitLab by HTTP` — collects metrics by an HTTP agent from the GitLab `/-/metrics` endpoint.
 See https://docs.gitlab.com/ee/administration/monitoring/prometheus/gitlab_metrics.html.
@@ -12,7 +12,7 @@ See https://docs.gitlab.com/ee/administration/monitoring/prometheus/gitlab_metri
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -21,7 +21,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -107,7 +107,7 @@ Also, see the Macros section for a list of [macros used](#Macros-used) to set tr
 |GitLab: Too many Redis queues client exceptions|<p>"Too many  Redis client exceptions during the requests to  Redis instance queues."</p>|`min(/GitLab by HTTP/gitlab.redis.client_exceptions.queues.rate,5m)>{$GITLAB.REDIS.FAIL.MAX.WARN}`|Warning||
 |GitLab: Too many Redis cache client exceptions|<p>"Too many  Redis client exceptions during the requests to  Redis instance cache."</p>|`min(/GitLab by HTTP/gitlab.redis.client_exceptions.cache.rate,5m)>{$GITLAB.REDIS.FAIL.MAX.WARN}`|Warning||
 |GitLab: Too many Redis shared_state client exceptions|<p>"Too many  Redis client exceptions during the requests to  Redis instance shared_state."</p>|`min(/GitLab by HTTP/gitlab.redis.client_exceptions.shared_state.rate,5m)>{$GITLAB.REDIS.FAIL.MAX.WARN}`|Warning||
-|GitLab: Failed to fetch info data|<p>TAA has not received a metrics data for the last 30 minutes</p>|`nodata(/GitLab by HTTP/gitlab.ruby.threads_running,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>GitLab: Liveness check was failed</li></ul>|
+|GitLab: Failed to fetch info data|<p>TAAE has not received a metrics data for the last 30 minutes</p>|`nodata(/GitLab by HTTP/gitlab.ruby.threads_running,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>GitLab: Liveness check was failed</li></ul>|
 |GitLab: Current number of open files is too high||`min(/GitLab by HTTP/gitlab.ruby.file_descriptors.max,5m)/last(/GitLab by HTTP/gitlab.ruby.process_max_fds)*100>{$GITLAB.OPEN.FDS.MAX.WARN}`|Warning||
 |GitLab: Too many HTTP requests failures|<p>"Too many requests failed on GitLab instance with 5xx HTTP code"</p>|`min(/GitLab by HTTP/gitlab.http.requests.5xx.rate,5m)>{$GITLAB.HTTP.FAIL.MAX.WARN}`|Warning||
 
@@ -164,5 +164,5 @@ Also, see the Macros section for a list of [macros used](#Macros-used) to set tr
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

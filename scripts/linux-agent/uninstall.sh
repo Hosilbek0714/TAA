@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# TAA Agent 2 — Linux o'chirish skripti
+# TAAE Agent 2 — Linux o'chirish skripti
 # -----------------------------------------------------------------------------
 # install.sh natijasini bekor qiladi:
 #   - servisni to'xtatadi va o'chiradi
@@ -10,7 +10,7 @@
 #
 # Foydalanish:
 #   sudo ./uninstall.sh
-#   sudo ./uninstall.sh --purge-user   # taa-agent foydalanuvchini ham olib tashlash
+#   sudo ./uninstall.sh --purge-user   # taae-agent foydalanuvchini ham olib tashlash
 # =============================================================================
 
 set -euo pipefail
@@ -28,10 +28,10 @@ while [[ $# -gt 0 ]]; do
     esac
 done
 
-TAA_USER="taa-agent"
-TAA_GROUP="taa-agent"
-BIN_DST="/usr/sbin/taa_agent2"
-UNIT_DST="/etc/systemd/system/taa-agent2.service"
+TAAE_USER="taae-agent"
+TAAE_GROUP="taae-agent"
+BIN_DST="/usr/sbin/taae_agent2"
+UNIT_DST="/etc/systemd/system/taae-agent2.service"
 
 log()  { printf '[uninstall.sh] %s\n' "$*"; }
 warn() { printf '[uninstall.sh][OGOH] %s\n' "$*" >&2; }
@@ -43,13 +43,13 @@ if [[ "$(id -u)" -ne 0 ]]; then
 fi
 
 # --- Servisni to'xtatish va o'chirish (idempotent) ---
-if systemctl list-unit-files 2>/dev/null | grep -q '^taa-agent2\.service'; then
-    log "taa-agent2 servisi to'xtatilmoqda..."
-    systemctl stop taa-agent2 2>/dev/null || true
-    log "taa-agent2 servisi avtoboshlash ro'yxatidan olib tashlanmoqda..."
-    systemctl disable taa-agent2 2>/dev/null || true
+if systemctl list-unit-files 2>/dev/null | grep -q '^taae-agent2\.service'; then
+    log "taae-agent2 servisi to'xtatilmoqda..."
+    systemctl stop taae-agent2 2>/dev/null || true
+    log "taae-agent2 servisi avtoboshlash ro'yxatidan olib tashlanmoqda..."
+    systemctl disable taae-agent2 2>/dev/null || true
 else
-    log "taa-agent2 servisi topilmadi — o'tkazib yuborildi"
+    log "taae-agent2 servisi topilmadi — o'tkazib yuborildi"
 fi
 
 # --- Unit faylini o'chirish ---
@@ -70,21 +70,21 @@ else
 fi
 
 # --- Config va data papkalariga tegmaslik ---
-warn "/etc/taa/agent/, /var/log/taa/agent/, /var/lib/taa/agent/ va /var/run/taa/agent/ olib tashlanmadi."
+warn "/etc/taae/agent/, /var/log/taae/agent/, /var/lib/taae/agent/ va /var/run/taae/agent/ olib tashlanmadi."
 warn "To'liq tozalash uchun ularni qo'lda o'chiring (ehtiyot bo'ling — backup oling!)"
 
 # --- Foydalanuvchini olib tashlash (faqat so'ralganda) ---
 if [[ "${PURGE_USER}" == "1" ]]; then
-    if id -u "${TAA_USER}" >/dev/null 2>&1; then
-        log "Foydalanuvchi olib tashlanmoqda: ${TAA_USER}"
-        userdel "${TAA_USER}" 2>/dev/null || warn "userdel xato berdi (foydalanuvchi band bo'lishi mumkin)"
+    if id -u "${TAAE_USER}" >/dev/null 2>&1; then
+        log "Foydalanuvchi olib tashlanmoqda: ${TAAE_USER}"
+        userdel "${TAAE_USER}" 2>/dev/null || warn "userdel xato berdi (foydalanuvchi band bo'lishi mumkin)"
     fi
-    if getent group "${TAA_GROUP}" >/dev/null 2>&1; then
-        log "Guruh olib tashlanmoqda: ${TAA_GROUP}"
-        groupdel "${TAA_GROUP}" 2>/dev/null || warn "groupdel xato berdi"
+    if getent group "${TAAE_GROUP}" >/dev/null 2>&1; then
+        log "Guruh olib tashlanmoqda: ${TAAE_GROUP}"
+        groupdel "${TAAE_GROUP}" 2>/dev/null || warn "groupdel xato berdi"
     fi
 else
-    log "Foydalanuvchi ${TAA_USER} qoldirildi (--purge-user bilan o'chirish mumkin)."
+    log "Foydalanuvchi ${TAAE_USER} qoldirildi (--purge-user bilan o'chirish mumkin)."
 fi
 
 log "Uninstall tugadi."

@@ -1,17 +1,17 @@
 
-# RabbitMQ cluster by TAA agent
+# RabbitMQ cluster by TAAE agent
 
 ## Overview
 
-This template is developed to monitor the messaging broker RabbitMQ by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+This template is developed to monitor the messaging broker RabbitMQ by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
-The template `RabbitMQ Cluster` — collects metrics by polling [RabbitMQ management plugin](https://www.rabbitmq.com/management.html) with TAA agent.
+The template `RabbitMQ Cluster` — collects metrics by polling [RabbitMQ management plugin](https://www.rabbitmq.com/management.html) with TAAE agent.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -20,7 +20,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -44,7 +44,7 @@ In the case of a single-node installation, you can assign the `cluster` template
 
 If you use another API endpoint, then don't forget to change `{$RABBITMQ.API.CLUSTER_HOST}` macro.
 
-Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
+Install and setup [TAAE agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
 
 
 ### Macros used
@@ -63,8 +63,8 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get overview|<p>The HTTP API endpoint that returns cluster-wide metrics.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/overview"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
-|Get exchanges|<p>The HTTP API endpoint that returns exchanges metrics.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/exchanges"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
+|Get overview|<p>The HTTP API endpoint that returns cluster-wide metrics.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/overview"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
+|Get exchanges|<p>The HTTP API endpoint that returns exchanges metrics.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/exchanges"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
 |Connections total|<p>The total number of connections.</p>|Dependent item|rabbitmq.overview.object_totals.connections<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.object_totals.connections`</p></li></ul>|
 |Channels total|<p>The total number of channels.</p>|Dependent item|rabbitmq.overview.object_totals.channels<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.object_totals.channels`</p></li></ul>|
 |Queues total|<p>The total number of queues.</p>|Dependent item|rabbitmq.overview.object_totals.queues<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.object_totals.queues`</p></li></ul>|
@@ -94,7 +94,7 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ cluster: Failed to fetch overview data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ cluster by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/overview"],30m)=1`|Warning|**Manual close**: Yes|
+|RabbitMQ cluster: Failed to fetch overview data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ cluster by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/overview"],30m)=1`|Warning|**Manual close**: Yes|
 
 ### LLD rule Health Check 3.8.10+ discovery
 
@@ -106,13 +106,13 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Healthcheck: alarms in effect in the cluster{#SINGLETON}|<p>It responds with a status code `200 OK` if there are no alarms in effect in the cluster.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/health/checks/alarms{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
+|Healthcheck: alarms in effect in the cluster{#SINGLETON}|<p>It responds with a status code `200 OK` if there are no alarms in effect in the cluster.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/health/checks/alarms{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
 
 ### Trigger prototypes for Health Check 3.8.10+ discovery
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ cluster: There are active alarms in the cluster|<p>This is the default API endpoint path: http://{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ cluster by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/health/checks/alarms{#SINGLETON}"])=0`|Average||
+|RabbitMQ cluster: There are active alarms in the cluster|<p>This is the default API endpoint path: http://{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ cluster by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.CLUSTER_HOST}:{$RABBITMQ.API.PORT}/api/health/checks/alarms{#SINGLETON}"])=0`|Average||
 
 ### LLD rule Exchanges discovery
 
@@ -142,22 +142,22 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 |Exchange [{#VHOST}][{#EXCHANGE}][{#TYPE}]: Messages redelivered|<p>The count of subset of messages in the `deliver_get`, which had the `redelivered` flag set.</p>|Dependent item|rabbitmq.exchange.messages.redeliver["{#VHOST}/{#EXCHANGE}/{#TYPE}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.message_stats.redeliver`</p><p>⛔️Custom on fail: Set value to: `0`</p></li></ul>|
 |Exchange {#VHOST}/{#EXCHANGE}/{#TYPE}: Messages redelivered per second|<p>The rate of subset of messages (per second) in the `deliver_get`, which had the `redelivered` flag set.</p>|Dependent item|rabbitmq.exchange.messages.redeliver.rate["{#VHOST}/{#EXCHANGE}/{#TYPE}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.message_stats.redeliver_details.rate`</p><p>⛔️Custom on fail: Set value to: `0`</p></li></ul>|
 
-# RabbitMQ node by TAA agent
+# RabbitMQ node by TAAE agent
 
 ## Overview
 
-This template is developed to monitor RabbitMQ by TAA that works without any external scripts.
+This template is developed to monitor RabbitMQ by TAAE that works without any external scripts.
 
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
-  The template `RabbitMQ Node` — (TAA version >= 4.2) collects metrics by polling [RabbitMQ management plugin](https://www.rabbitmq.com/management.html) with TAA agent.
+  The template `RabbitMQ Node` — (TAAE version >= 4.2) collects metrics by polling [RabbitMQ management plugin](https://www.rabbitmq.com/management.html) with TAAE agent.
 
-  It also uses TAA agent to collect RabbitMQ Linux process statistics, such as CPU usage, memory usage, and whether the process is running or not.
+  It also uses TAAE agent to collect RabbitMQ Linux process statistics, such as CPU usage, memory usage, and whether the process is running or not.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -166,7 +166,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -186,7 +186,7 @@ A login name and password are also supported in macros functions:
 - {$RABBITMQ.API.PASSWORD}
 
 If you use another API endpoint, then don't forget to change `{$RABBITMQ.API.HOST}` macro.
-Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
+Install and setup [TAAE agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
 
 
 ### Macros used
@@ -210,10 +210,10 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Service ping||TAA agent|net.tcp.service["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Get node overview|<p>The HTTP API endpoint that returns cluster-wide metrics.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/overview"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
-|Get nodes|<p>The HTTP API endpoint that returns metrics of the nodes.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/nodes/{$RABBITMQ.CLUSTER.NAME}@{HOST.NAME}?memory=true"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
-|Get queues|<p>The HTTP API endpoint that returns metrics of the queues metrics.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/queues"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
+|Service ping||TAAE agent|net.tcp.service["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Get node overview|<p>The HTTP API endpoint that returns cluster-wide metrics.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/overview"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
+|Get nodes|<p>The HTTP API endpoint that returns metrics of the nodes.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/nodes/{$RABBITMQ.CLUSTER.NAME}@{HOST.NAME}?memory=true"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
+|Get queues|<p>The HTTP API endpoint that returns metrics of the queues metrics.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/queues"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li></ul>|
 |Management plugin version|<p>The version of the management plugin in use.</p>|Dependent item|rabbitmq.node.overview.management_version<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.management_version`</p></li><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 |RabbitMQ version|<p>The version of the RabbitMQ on the node, which processed this request.</p>|Dependent item|rabbitmq.node.overview.rabbitmq_version<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.rabbitmq_version`</p></li><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 |Used file descriptors|<p>The descriptors of the used file.</p>|Dependent item|rabbitmq.node.fd_used<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.fd_used`</p></li></ul>|
@@ -229,18 +229,18 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 |Memory alarm|<p>It checks whether the host has a memory alarm or not.</p>|Dependent item|rabbitmq.node.mem_alarm<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.mem_alarm`</p></li><li>Boolean to decimal</li></ul>|
 |Disk free alarm|<p>It checks whether the node has a disk alarm or not.</p>|Dependent item|rabbitmq.node.disk_free_alarm<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.disk_free_alarm`</p></li><li>Boolean to decimal</li></ul>|
 |Uptime|<p>Uptime expressed in milliseconds.</p>|Dependent item|rabbitmq.node.uptime<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.uptime`</p></li><li><p>Custom multiplier: `0.001`</p></li></ul>|
-|Get processes summary|<p>The aggregated data of summary metrics for all processes.</p>|TAA agent|proc.get[{$RABBITMQ.PROCESS.NAME.PARAMETER},,,summary]|
-|Service response time||TAA agent|net.tcp.service.perf["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"]|
+|Get processes summary|<p>The aggregated data of summary metrics for all processes.</p>|TAAE agent|proc.get[{$RABBITMQ.PROCESS.NAME.PARAMETER},,,summary]|
+|Service response time||TAAE agent|net.tcp.service.perf["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"]|
 
 ### Triggers
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ node: Version has changed|<p>RabbitMQ version has changed. Acknowledge to close the problem manually.</p>|`last(/RabbitMQ node by TAA agent/rabbitmq.node.overview.rabbitmq_version,#1)<>last(/RabbitMQ node by TAA agent/rabbitmq.node.overview.rabbitmq_version,#2) and length(last(/RabbitMQ node by TAA agent/rabbitmq.node.overview.rabbitmq_version))>0`|Info|**Manual close**: Yes|
-|RabbitMQ node: Number of network partitions is too high|<p>For more details see [Detecting Network Partitions](https://www.rabbitmq.com/partitions.html#detecting).</p>|`min(/RabbitMQ node by TAA agent/rabbitmq.node.partitions,5m)>0`|Warning||
-|RabbitMQ node: Memory alarm|<p>For more details see [Memory Alarms](https://www.rabbitmq.com/memory.html).</p>|`last(/RabbitMQ node by TAA agent/rabbitmq.node.mem_alarm)=1`|Average||
-|RabbitMQ node: Free disk space alarm|<p>For more details see [Free Disk Space Alarms](https://www.rabbitmq.com/disk-alarms.html).</p>|`last(/RabbitMQ node by TAA agent/rabbitmq.node.disk_free_alarm)=1`|Average||
-|RabbitMQ node: Host has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/RabbitMQ node by TAA agent/rabbitmq.node.uptime)<10m`|Info|**Manual close**: Yes|
+|RabbitMQ node: Version has changed|<p>RabbitMQ version has changed. Acknowledge to close the problem manually.</p>|`last(/RabbitMQ node by TAAE agent/rabbitmq.node.overview.rabbitmq_version,#1)<>last(/RabbitMQ node by TAAE agent/rabbitmq.node.overview.rabbitmq_version,#2) and length(last(/RabbitMQ node by TAAE agent/rabbitmq.node.overview.rabbitmq_version))>0`|Info|**Manual close**: Yes|
+|RabbitMQ node: Number of network partitions is too high|<p>For more details see [Detecting Network Partitions](https://www.rabbitmq.com/partitions.html#detecting).</p>|`min(/RabbitMQ node by TAAE agent/rabbitmq.node.partitions,5m)>0`|Warning||
+|RabbitMQ node: Memory alarm|<p>For more details see [Memory Alarms](https://www.rabbitmq.com/memory.html).</p>|`last(/RabbitMQ node by TAAE agent/rabbitmq.node.mem_alarm)=1`|Average||
+|RabbitMQ node: Free disk space alarm|<p>For more details see [Free Disk Space Alarms](https://www.rabbitmq.com/disk-alarms.html).</p>|`last(/RabbitMQ node by TAAE agent/rabbitmq.node.disk_free_alarm)=1`|Average||
+|RabbitMQ node: Host has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/RabbitMQ node by TAAE agent/rabbitmq.node.uptime)<10m`|Info|**Manual close**: Yes|
 
 ### LLD rule RabbitMQ process discovery
 
@@ -257,17 +257,17 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 |Memory usage (rss)|<p>The summary of resident set size memory used by a process {#RABBITMQ.NAME} expressed in bytes.</p>|Dependent item|rabbitmq.proc.rss[{#RABBITMQ.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.rss`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Memory usage (vsize)|<p>The summary of virtual memory used by a process {#RABBITMQ.NAME} expressed in bytes.</p>|Dependent item|rabbitmq.proc.vmem[{#RABBITMQ.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.vsize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Memory usage, %|<p>The percentage of real memory used by a process {#RABBITMQ.NAME}.</p>|Dependent item|rabbitmq.proc.pmem[{#RABBITMQ.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.pmem`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
-|CPU utilization|<p>The percentage of the CPU utilization by a process {#RABBITMQ.NAME}.</p>|TAA agent|proc.cpu.util[{#RABBITMQ.NAME}]|
+|CPU utilization|<p>The percentage of the CPU utilization by a process {#RABBITMQ.NAME}.</p>|TAAE agent|proc.cpu.util[{#RABBITMQ.NAME}]|
 
 ### Trigger prototypes for RabbitMQ process discovery
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ node: Process is not running||`last(/RabbitMQ node by TAA agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])=0`|High||
-|RabbitMQ node: Failed to fetch nodes data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/nodes/{$RABBITMQ.CLUSTER.NAME}@{HOST.NAME}?memory=true"],30m)=1 and last(/RabbitMQ node by TAA agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>RabbitMQ node: Process is not running</li></ul>|
-|RabbitMQ node: Service is down||`last(/RabbitMQ node by TAA agent/net.tcp.service["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"])=0 and last(/RabbitMQ node by TAA agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Average|**Manual close**: Yes|
-|RabbitMQ node: Node is not running|<p>RabbitMQ node is not running.</p>|`max(/RabbitMQ node by TAA agent/rabbitmq.node.running,5m)=0 and last(/RabbitMQ node by TAA agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Average|**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
-|RabbitMQ node: Service response time is too high||`min(/RabbitMQ node by TAA agent/net.tcp.service.perf["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"],5m)>{$RABBITMQ.RESPONSE_TIME.MAX.WARN} and last(/RabbitMQ node by TAA agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
+|RabbitMQ node: Process is not running||`last(/RabbitMQ node by TAAE agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])=0`|High||
+|RabbitMQ node: Failed to fetch nodes data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/nodes/{$RABBITMQ.CLUSTER.NAME}@{HOST.NAME}?memory=true"],30m)=1 and last(/RabbitMQ node by TAAE agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>RabbitMQ node: Process is not running</li></ul>|
+|RabbitMQ node: Service is down||`last(/RabbitMQ node by TAAE agent/net.tcp.service["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"])=0 and last(/RabbitMQ node by TAAE agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Average|**Manual close**: Yes|
+|RabbitMQ node: Node is not running|<p>RabbitMQ node is not running.</p>|`max(/RabbitMQ node by TAAE agent/rabbitmq.node.running,5m)=0 and last(/RabbitMQ node by TAAE agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Average|**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
+|RabbitMQ node: Service response time is too high||`min(/RabbitMQ node by TAAE agent/net.tcp.service.perf["{$RABBITMQ.API.SCHEME}","{$RABBITMQ.API.HOST}","{$RABBITMQ.API.PORT}"],5m)>{$RABBITMQ.RESPONSE_TIME.MAX.WARN} and last(/RabbitMQ node by TAAE agent/rabbitmq.proc.num[{#RABBITMQ.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>RabbitMQ node: Service is down</li></ul>|
 
 ### LLD rule Health Check 3.8.10+ discovery
 
@@ -279,21 +279,21 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Healthcheck: local alarms in effect on this node{#SINGLETON}|<p>It responds with a status code `200 OK` if there are no local alarms in effect on the target node.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/local-alarms{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
-|Healthcheck: expiration date on the certificates{#SINGLETON}|<p>It checks the expiration date on the certificates for every listener configured to use the Transport Layer Security (TLS).</p><p>It responds with a status code `200 OK` if all the certificates are valid (have not expired).</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/certificate-expiration/1/months{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
-|Healthcheck: virtual hosts on this node{#SINGLETON}|<p>It responds with It responds with a status code `200 OK` if all virtual hosts are running on the target node.</p><p>Otherwise it responds with a status code `503 Service Unavailable`.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/virtual-hosts{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
-|Healthcheck: classic mirrored queues without synchronized mirrors online{#SINGLETON}|<p>It checks if there are classic mirrored queues without synchronized mirrors online (queues that would potentially lose data if the target node is shut down).</p><p>It responds with a status code `200 OK` if there are no such classic mirrored queues.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-mirror-sync-critical{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
-|Healthcheck: queues with minimum online quorum{#SINGLETON}|<p>It checks if there are quorum queues with minimum online quorum (queues that would lose their quorum and availability if the target node is shut down).</p><p>It responds with a status code `200 OK` if there are no such quorum queues.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-quorum-critical{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
+|Healthcheck: local alarms in effect on this node{#SINGLETON}|<p>It responds with a status code `200 OK` if there are no local alarms in effect on the target node.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/local-alarms{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
+|Healthcheck: expiration date on the certificates{#SINGLETON}|<p>It checks the expiration date on the certificates for every listener configured to use the Transport Layer Security (TLS).</p><p>It responds with a status code `200 OK` if all the certificates are valid (have not expired).</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/certificate-expiration/1/months{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
+|Healthcheck: virtual hosts on this node{#SINGLETON}|<p>It responds with It responds with a status code `200 OK` if all virtual hosts are running on the target node.</p><p>Otherwise it responds with a status code `503 Service Unavailable`.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/virtual-hosts{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
+|Healthcheck: classic mirrored queues without synchronized mirrors online{#SINGLETON}|<p>It checks if there are classic mirrored queues without synchronized mirrors online (queues that would potentially lose data if the target node is shut down).</p><p>It responds with a status code `200 OK` if there are no such classic mirrored queues.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-mirror-sync-critical{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
+|Healthcheck: queues with minimum online quorum{#SINGLETON}|<p>It checks if there are quorum queues with minimum online quorum (queues that would lose their quorum and availability if the target node is shut down).</p><p>It responds with a status code `200 OK` if there are no such quorum queues.</p><p>Otherwise, it responds with a status code `503 Service Unavailable`.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-quorum-critical{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `HTTP\/1\.1\b\s(\d+) \1`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
 
 ### Trigger prototypes for Health Check 3.8.10+ discovery
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ node: There are active alarms in the node|<p>It checks the active alarms in the nodes via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/local-alarms{#SINGLETON}"])=0`|Average||
-|RabbitMQ node: There are valid TLS certificates expiring in the next month|<p>It checks if there are valid TLS certificates expiring in the next month. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/certificate-expiration/1/months{#SINGLETON}"])=0`|Average||
-|RabbitMQ node: There are not running virtual hosts|<p>It checks if there are not running virtual hosts via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/virtual-hosts{#SINGLETON}"])=0`|Average||
-|RabbitMQ node: There are queues that could potentially lose data if this node goes offline.|<p>It checks whether there are queues that could potentially lose data if this node goes offline via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-mirror-sync-critical{#SINGLETON}"])=0`|Average||
-|RabbitMQ node: There are queues that would lose their quorum and availability if this node is shut down.|<p>It checks if there are queues that could potentially lose data if this node goes offline via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-quorum-critical{#SINGLETON}"])=0`|Average||
+|RabbitMQ node: There are active alarms in the node|<p>It checks the active alarms in the nodes via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/local-alarms{#SINGLETON}"])=0`|Average||
+|RabbitMQ node: There are valid TLS certificates expiring in the next month|<p>It checks if there are valid TLS certificates expiring in the next month. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/certificate-expiration/1/months{#SINGLETON}"])=0`|Average||
+|RabbitMQ node: There are not running virtual hosts|<p>It checks if there are not running virtual hosts via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/virtual-hosts{#SINGLETON}"])=0`|Average||
+|RabbitMQ node: There are queues that could potentially lose data if this node goes offline.|<p>It checks whether there are queues that could potentially lose data if this node goes offline via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-mirror-sync-critical{#SINGLETON}"])=0`|Average||
+|RabbitMQ node: There are queues that would lose their quorum and availability if this node is shut down.|<p>It checks if there are queues that could potentially lose data if this node goes offline via API. This is the default API endpoint path: http://{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/index.html.</p>|`last(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/health/checks/node-is-quorum-critical{#SINGLETON}"])=0`|Average||
 
 ### LLD rule Health Check 3.8.9- discovery
 
@@ -305,13 +305,13 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Healthcheck{#SINGLETON}|<p>It checks whether the RabbitMQ application is running; and whether the channels and queues can be listed successfully; and that no alarms are in effect.</p>|TAA agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/healthchecks/node{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li><li><p>JSON Path: `$.status`</p></li><li><p>Boolean to decimal</p><p>⛔️Custom on fail: Set value to: `0`</p></li></ul>|
+|Healthcheck{#SINGLETON}|<p>It checks whether the RabbitMQ application is running; and whether the channels and queues can be listed successfully; and that no alarms are in effect.</p>|TAAE agent|web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/healthchecks/node{#SINGLETON}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `\n\s?\n(.*) \1`</p></li><li><p>JSON Path: `$.status`</p></li><li><p>Boolean to decimal</p><p>⛔️Custom on fail: Set value to: `0`</p></li></ul>|
 
 ### Trigger prototypes for Health Check 3.8.9- discovery
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ node: Node healthcheck failed|<p>For more details see [Health Checks](https://www.rabbitmq.com/monitoring.html#health-checks).</p>|`last(/RabbitMQ node by TAA agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/healthchecks/node{#SINGLETON}"])=0`|Average||
+|RabbitMQ node: Node healthcheck failed|<p>For more details see [Health Checks](https://www.rabbitmq.com/monitoring.html#health-checks).</p>|`last(/RabbitMQ node by TAAE agent/web.page.get["{$RABBITMQ.API.SCHEME}://{$RABBITMQ.API.USER}:{$RABBITMQ.API.PASSWORD}@{$RABBITMQ.API.HOST}:{$RABBITMQ.API.PORT}/api/healthchecks/node{#SINGLETON}"])=0`|Average||
 
 ### LLD rule Queues discovery
 
@@ -347,11 +347,11 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|RabbitMQ node: Too many messages in queue [{#VHOST}][{#QUEUE}]||`min(/RabbitMQ node by TAA agent/rabbitmq.queue.messages["{#VHOST}/{#QUEUE}"],5m)>{$RABBITMQ.MESSAGES.MAX.WARN:"{#QUEUE}"}`|Warning||
+|RabbitMQ node: Too many messages in queue [{#VHOST}][{#QUEUE}]||`min(/RabbitMQ node by TAAE agent/rabbitmq.queue.messages["{#VHOST}/{#QUEUE}"],5m)>{$RABBITMQ.MESSAGES.MAX.WARN:"{#QUEUE}"}`|Warning||
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

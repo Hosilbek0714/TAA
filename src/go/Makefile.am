@@ -16,10 +16,10 @@ GOLDFLAGS += -X ${PKG}.compileArch=${GOARCH}
 
 AGENT_GOLDFLAGS = ${GOLDFLAGS}
 AGENT_GOLDFLAGS += -X main.confDefault=${AGENT2_CONFIG_FILE}
-AGENT_GOLDFLAGS += -X main.applicationName=taa_agent2
+AGENT_GOLDFLAGS += -X main.applicationName=taae_agent2
 
 WEBSERVICE_GOLDFLAGS = ${GOLDFLAGS}
-WEBSERVICE_GOLDFLAGS += -X main.applicationName=taa_web_service
+WEBSERVICE_GOLDFLAGS += -X main.applicationName=taae_web_service
 
 if HAVE_PCRE2
 AGENT_GOTAGS = pcre2

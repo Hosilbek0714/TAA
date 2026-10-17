@@ -105,7 +105,7 @@ class testPageMonitoringLatestData extends CWebTest {
 			],
 			[
 				'host' => self::MAINTENANCE_HOSTNAME,
-				'groups' => ['groupid' => 4], // TAA servers.
+				'groups' => ['groupid' => 4], // TAAE servers.
 				'items' => [
 					[
 						'name' => 'Trapper',
@@ -117,7 +117,7 @@ class testPageMonitoringLatestData extends CWebTest {
 			],
 			[
 				'host' => 'Host with item descriptions',
-				'groups' => ['groupid' => 4], // TAA servers.
+				'groups' => ['groupid' => 4], // TAAE servers.
 				'items' => $items_descriptions_data
 			]
 		]);
@@ -139,7 +139,7 @@ class testPageMonitoringLatestData extends CWebTest {
 				'description' => 'Maintenance for icon check in Latest data',
 				'active_since' => $time,
 				'active_till' => time() + 31536000,
-				'groups' => [['groupid' => 4]], // TAA servers.
+				'groups' => [['groupid' => 4]], // TAAE servers.
 				'timeperiods' => [[]]
 			]
 		]);

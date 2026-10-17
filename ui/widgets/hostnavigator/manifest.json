@@ -5,7 +5,7 @@
 	"name": "Host navigator",
 	"namespace": "HostNavigator",
 	"version": "1.0",
-	"author": "TAA",
+	"author": "TAAE",
 	"description": "Displays host hierarchy with ability to control other widgets based on selected host.",
 	"url": "web_interface/frontend_sections/dashboards/widgets/host_navigator",
 	"widget": {

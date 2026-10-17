@@ -1,6 +1,6 @@
 # Event-Driven Ansible webhook
 
-This guide describes how to integrate your TAA 7.4 installation with Event-Driven Ansible using the TAA webhook feature. This guide will provide instructions on setting up a media type, a user and an action in TAA.
+This guide describes how to integrate your TAAE 7.4 installation with Event-Driven Ansible using the TAAE webhook feature. This guide will provide instructions on setting up a media type, a user and an action in TAAE.
 
 ## Setting up Event-Driven Ansible Webhook
 
@@ -16,7 +16,7 @@ sources:
 3\. Set necessary actions in the rules section. As an example you can use:
 ```
 ---
-- name: TAA Test rulebook
+- name: TAAE Test rulebook
   hosts: all
   sources:
     - ansible.eda.webhook:
@@ -36,10 +36,10 @@ ansible-rulebook --rulebook test-rulebook.yml -i inventory.yml --verbose
 > Note: before starting, make sure that the eda-server is running and you are in the eda-server virtual environment
 
 
-## Setting up TAA Webhook
+## Setting up TAAE Webhook
 
-The configuration consists of a _media type_ in TAA which will invoke a webhook to send alerts to Event-Driven Ansible.
-To utilize the media type, you need to create a TAA user to represent Event-Driven Ansible. Then, create an alert action to notify the user via this media type whenever a problem is detected.
+The configuration consists of a _media type_ in TAAE which will invoke a webhook to send alerts to Event-Driven Ansible.
+To utilize the media type, you need to create a TAAE user to represent Event-Driven Ansible. Then, create an alert action to notify the user via this media type whenever a problem is detected.
 
 > Note: only trigger-based and only problem events are currently supported
 
@@ -82,9 +82,9 @@ To utilize the media type, you need to create a TAA user to represent Event-Driv
 
 7\. Start getting alerts! You have made it!
 
-For more information see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications), [Event-Driven Ansible](https://github.com/ansible/eda-server/blob/main/README.md) and [Ansible-Rulebook](https://ansible-rulebook.readthedocs.io/en/latest/getting_started.html) documentations.
+For more information see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications), [Event-Driven Ansible](https://github.com/ansible/eda-server/blob/main/README.md) and [Ansible-Rulebook](https://ansible-rulebook.readthedocs.io/en/latest/getting_started.html) documentations.
 
 ## Supported Versions
-TAA 6.0 and higher
+TAAE 6.0 and higher
 
 

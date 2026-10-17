@@ -102,14 +102,14 @@ $from_list = (new CFormList())
 		new CLabel([
 			_('Resolve secret vault macros by'),
 			makeHelpIcon([
-				_('TAA server: secrets are retrieved from Vault by TAA server and forwarded to proxies when needed.'),
+				_('TAAE server: secrets are retrieved from Vault by TAAE server and forwarded to proxies when needed.'),
 				BR(),
-				_('TAA server and proxy: secrets are retrieved from Vault by both TAA server and proxies, allowing them to resolve macros independently.')
+				_('TAAE server and proxy: secrets are retrieved from Vault by both TAAE server and proxies, allowing them to resolve macros independently.')
 			])
 		]),
 		(new CRadioButtonList('proxy_secrets_provider', (int) $data['proxy_secrets_provider']))
-			->addValue(_('TAA server'), ZBX_PROXY_SECRETS_PROVIDER_SERVER)
-			->addValue(_('TAA server and proxy'), ZBX_PROXY_SECRETS_PROVIDER_PROXY)
+			->addValue(_('TAAE server'), ZBX_PROXY_SECRETS_PROVIDER_SERVER)
+			->addValue(_('TAAE server and proxy'), ZBX_PROXY_SECRETS_PROVIDER_PROXY)
 			->setModern()
 	)
 	->addRow((new CTag('h4', true, _('Security')))->addClass('input-section-header'))

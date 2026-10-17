@@ -1,17 +1,17 @@
 #!/bin/sh
 # =============================================================================
-# TAA - veb-interfeysdagi "Zabbix" nomini TAA ga almashtirish.
-# taa-web image yig'ilayotganda Dockerfile'dan chaqiriladi (root sifatida,
+# TAAE - veb-interfeysdagi "Zabbix" nomini TAAE ga almashtirish.
+# taae-web image yig'ilayotganda Dockerfile'dan chaqiriladi (root sifatida,
 # perl vaqtincha o'rnatilgan holda).
 #
 # Qoidalar:
 #   - izoh qatorlari (litsenziya/mualliflik huquqi) o'zgarmaydi - AGPLv3 talabi;
 #   - PHP namespace'lar (Zabbix\Core, Zabbix\Widgets) va CZabbixServer kabi
 #     kod nomlari o'zgarmaydi - aks holda dastur ishlamaydi;
-#   - qolgan "Zabbix" so'zlari (jumladan _('...') tarjima kalitlari) -> "TAA".
+#   - qolgan "Zabbix" so'zlari (jumladan _('...') tarjima kalitlari) -> "TAAE".
 #     ui/locale/*/frontend.po dagi msgid'lar ham xuddi shu qoida bilan
 #     o'zgartirilgan, shuning uchun o'zbekcha tarjima mos keladi;
-#   - zabbix.php -> taa.php (manzil qatori). Eski zabbix.php ham ishlaydi.
+#   - zabbix.php -> taae.php (manzil qatori). Eski zabbix.php ham ishlaydi.
 # =============================================================================
 set -eu
 
@@ -23,25 +23,25 @@ find . -type f \( -name '*.php' -o -name '*.js' \) ! -path './vendor/*' -print0 
 		next if m{^\s*(\*|//|/\*|#)};
 		s{https://www\.zabbix\.com/license}{https://www.gnu.org/licenses/agpl-3.0.html}g;
 		s{https?://(?:www\.|services\.)?zabbix\.com[^\x27"\s`]*}{#}g;
-		s/\bZabbix SIA\b/TAA/g;
-		s/\bZabbix\b(?!\\)/TAA/g;
-		s/\bzabbix\.php\b/taa.php/g;
-		s/\bzabbix-logo/taa-logo/g;
+		s/\bZabbix SIA\b/TAAE/g;
+		s/\bZabbix\b(?!\\)/TAAE/g;
+		s/\bzabbix\.php\b/taae.php/g;
+		s/\bzabbix-logo/taae-logo/g;
 	'
 
 # CSS: logotip klasslari va ikonka shrifti nomi
 if [ -d assets/fonts ]; then
 	for ext in svg ttf woff woff2; do
-		[ -f "assets/fonts/zabbix-icons.$ext" ] && cp -p "assets/fonts/zabbix-icons.$ext" "assets/fonts/taa-icons.$ext"
+		[ -f "assets/fonts/zabbix-icons.$ext" ] && cp -p "assets/fonts/zabbix-icons.$ext" "assets/fonts/taae-icons.$ext"
 	done
-	[ -f assets/fonts/taa-icons.svg ] && sed -i 's/zabbix-icons/taa-icons/g' assets/fonts/taa-icons.svg
+	[ -f assets/fonts/taae-icons.svg ] && sed -i 's/zabbix-icons/taae-icons/g' assets/fonts/taae-icons.svg
 fi
 find assets/styles -name '*.css' -print0 2>/dev/null \
-	| xargs -0 -r perl -pi -e 's/zabbix-icons/taa-icons/g; s/\bzabbix-logo/taa-logo/g; s/\bZabbix\b/TAA/g'
+	| xargs -0 -r perl -pi -e 's/zabbix-icons/taae-icons/g; s/\bzabbix-logo/taae-logo/g; s/\bZabbix\b/TAAE/g'
 
 # Widget va modul manifestlari: "author": "Zabbix"
 find widgets modules -name manifest.json -print0 2>/dev/null \
-	| xargs -0 -r perl -pi -e 's/"author":\s*"Zabbix[^"]*"/"author": "TAA"/g'
+	| xargs -0 -r perl -pi -e 's/"author":\s*"Zabbix[^"]*"/"author": "TAAE"/g'
 
 # Yuqori kontrastli mavzular olib tashlanadi (faqat yorug' va qora qoladi)
 perl -i -ne "print unless /High-contrast (light|dark)/" include/classes/core/ZBase.php
@@ -52,16 +52,16 @@ if grep -q "hc-light\|hc-dark" include/classes/core/ZBase.php; then
 	exit 1
 fi
 
-# Sessiya cookie nomi: zbx_session -> taa_session
-sed -i "s/define('ZBX_SESSION_NAME', 'zbx_session')/define('ZBX_SESSION_NAME', 'taa_session')/" include/defines.inc.php
+# Sessiya cookie nomi: zbx_session -> taae_session
+sed -i "s/define('ZBX_SESSION_NAME', 'zbx_session')/define('ZBX_SESSION_NAME', 'taae_session')/" include/defines.inc.php
 
-# Manzil qatorida zabbix.php o'rniga taa.php
-cp -p zabbix.php taa.php
+# Manzil qatorida zabbix.php o'rniga taae.php
+cp -p zabbix.php taae.php
 
 # nginx server nomi
 for f in /etc/nginx/includes/server-common.conf /etc/nginx/includes/server-ssl.conf \
 		/etc/zabbix/nginx.conf /etc/zabbix/nginx_ssl.conf; do
-	[ -f "$f" ] && sed -i 's/server_name\s\+zabbix;/server_name     taa;/' "$f"
+	[ -f "$f" ] && sed -i 's/server_name\s\+zabbix;/server_name     taae;/' "$f"
 done
 
 # Tekshiruv: izoh bo'lmagan qatorlarda "Zabbix" so'zi qolmasligi kerak
@@ -74,4 +74,4 @@ if [ -n "$left" ]; then
 	echo "$left" >&2
 fi
 
-echo "TAA rebrending: veb-interfeys tayyor"
+echo "TAAE rebrending: veb-interfeys tayyor"

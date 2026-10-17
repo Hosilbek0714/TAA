@@ -104,8 +104,8 @@ function _s($string) {
  * Supports unlimited parameters; placeholders must be defined as %1$s, %2$s etc.
  *
  * Examples:
- * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'TAA server', 1) // 1 item on host TAA server
- * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'TAA server', 2) // 2 items on host TAA server
+ * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'TAAE server', 1) // 1 item on host TAAE server
+ * _n('%2$s item on host %1$s', '%2$s items on host %1$s', 'TAAE server', 2) // 2 items on host TAAE server
  *
  * @param string $string1		singular string
  * @param string $string2		plural string
@@ -238,7 +238,7 @@ function setupLocale(string $language, ?string &$error = null): bool {
 
 	if (!$locale_set) {
 		$error = 'Locale for language "'.$language.'" is not found on the web server. Tried to set: '.
-			implode(', ', $locale_variants).'. Unable to translate TAA interface.';
+			implode(', ', $locale_variants).'. Unable to translate TAAE interface.';
 	}
 
 	return ($error === null);

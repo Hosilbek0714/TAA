@@ -6,7 +6,7 @@ TARGET_APP="SimpleAgent"
 MONITOR_APP="junit_test"
 KEYSTORE_PASS="kuseruser"
 TRUSTSTORE_PASS="tuseruser"
-D_NAME="CN=TAA, OU=Dev, O=JMX_Test, L=Riga, S=VI, C=LA"
+D_NAME="CN=TAAE, OU=Dev, O=JMX_Test, L=Riga, S=VI, C=LA"
 
 TARGET_DIR="cert1"
 CUR_DIR=$(pwd)

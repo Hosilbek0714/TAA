@@ -700,7 +700,7 @@ EOF
 sub usage()
 {
 	print "Usage: $0 [c|mysql|postgresql|sqlite3|timescaledb]\n";
-	print "The script generates TAA SQL schemas and C code for different database engines.\n";
+	print "The script generates TAAE SQL schemas and C code for different database engines.\n";
 	exit;
 }
 

@@ -15,14 +15,14 @@ if [ -n "$PID_FILE" ]; then
 					exit 0
 				fi
 			done
-			echo "TAA Java Gateway did not stop"
+			echo "TAAE Java Gateway did not stop"
 			exit 1
 		fi
 		rm -f "$PID_FILE"
 	fi
-	echo "TAA Java Gateway is not running"
+	echo "TAAE Java Gateway is not running"
 	exit 1
 else
-	echo "TAA Java Gateway is not configured as a daemon: variable \$PID_FILE is not set"
+	echo "TAAE Java Gateway is not configured as a daemon: variable \$PID_FILE is not set"
 	exit 1
 fi

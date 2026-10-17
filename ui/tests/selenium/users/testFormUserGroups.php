@@ -51,16 +51,16 @@ class testFormUserGroups extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'name' => 'TAA administrators',
+					'name' => 'TAAE administrators',
 					'error_msg' => 'Cannot add user group',
-					'error' => 'User group "TAA administrators" already exists.'
+					'error' => 'User group "TAAE administrators" already exists.'
 				]
 			],
 			[
 				[
 					'expected' => TEST_BAD,
 					'name' => 'Selenium test add admin in disabled group',
-					'user_group' => 'TAA administrators',
+					'user_group' => 'TAAE administrators',
 					'user' => 'Admin',
 					'enabled' => false,
 					'error_msg' => 'Cannot add user group',
@@ -71,7 +71,7 @@ class testFormUserGroups extends CLegacyWebTest {
 				[
 					'expected' => TEST_BAD,
 					'name' => 'Selenium test add admin in group with disabled GUI access',
-					'user_group' => 'TAA administrators',
+					'user_group' => 'TAAE administrators',
 					'user' => 'Admin',
 					'frontend_access' => 'Disabled',
 					'error_msg' => 'Cannot add user group',
@@ -164,16 +164,16 @@ class testFormUserGroups extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'name' => 'TAA administrators',
+					'name' => 'TAAE administrators',
 					'error_msg' => 'Cannot update user group',
-					'error' => 'User group "TAA administrators" already exists.'
+					'error' => 'User group "TAAE administrators" already exists.'
 				]
 			],
 			[
 				[
 					'expected' => TEST_BAD,
 					'name' => 'Selenium test group update, admin in disabled group',
-					'user_group' => 'TAA administrators',
+					'user_group' => 'TAAE administrators',
 					'user' => 'Admin',
 					'enabled' => false,
 					'error_msg' => 'Cannot update user group',
@@ -184,7 +184,7 @@ class testFormUserGroups extends CLegacyWebTest {
 				[
 					'expected' => TEST_BAD,
 					'name' => 'Selenium group update, admin in group with disabled GUI access',
-					'user_group' => 'TAA administrators',
+					'user_group' => 'TAAE administrators',
 					'user' => 'Admin',
 					'frontend_access' => 'Disabled',
 					'error_msg' => 'Cannot update user group',
@@ -269,8 +269,8 @@ class testFormUserGroups extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'name' => 'TAA administrators',
-					'error' => 'User group "TAA administrators" is used in'
+					'name' => 'TAAE administrators',
+					'error' => 'User group "TAAE administrators" is used in'
 				]
 			],
 			[

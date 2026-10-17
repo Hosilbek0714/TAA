@@ -14,7 +14,7 @@ dnl
 
 dnl Process this file with autoconf to produce a configure script.
 
-AC_INIT([TAA], [7.4.0rc2])
+AC_INIT([TAAE], [7.4.0rc2])
 
 AC_MSG_NOTICE([Configuring $PACKAGE_NAME $PACKAGE_VERSION])
 
@@ -1393,7 +1393,7 @@ if test "x#static_linking" = "xyes" && test "x$static_linking_libs" = "xyes"; th
   AC_MSG_ERROR([cannot use --static and --static-libs at the same time])
 fi
 
-AC_ARG_ENABLE(server,[  --enable-server         Turn on build of TAA server],
+AC_ARG_ENABLE(server,[  --enable-server         Turn on build of TAAE server],
 [case "${enableval}" in
   yes) server=yes ;;
   no)  server=no ;;
@@ -1402,7 +1402,7 @@ esac],
 [server=no])
 AM_CONDITIONAL(SERVER, test "x$server" = "xyes")
 
-AC_ARG_ENABLE(proxy,[  --enable-proxy          Turn on build of TAA proxy],
+AC_ARG_ENABLE(proxy,[  --enable-proxy          Turn on build of TAAE proxy],
 [case "${enableval}" in
   yes) proxy=yes ;;
   no)  proxy=no ;;
@@ -1411,7 +1411,7 @@ esac],
 [proxy=no])
 AM_CONDITIONAL(PROXY, test "x$proxy" = "xyes")
 
-AC_ARG_ENABLE(agent,[  --enable-agent          Turn on build of TAA agent and client utilities],
+AC_ARG_ENABLE(agent,[  --enable-agent          Turn on build of TAAE agent and client utilities],
 [case "${enableval}" in
   yes) agent=yes ;;
   no)  agent=no ;;
@@ -1420,7 +1420,7 @@ esac],
 [agent=no])
 AM_CONDITIONAL(AGENT, test "x$agent" = "xyes")
 
-AC_ARG_ENABLE(agent2,[  --enable-agent2         Turn on build of TAA agent 2],
+AC_ARG_ENABLE(agent2,[  --enable-agent2         Turn on build of TAAE agent 2],
 [case "${enableval}" in
   yes) agent2=yes ;;
   no)  agent2=no ;;
@@ -1430,7 +1430,7 @@ esac
 [agent2=no])
 AM_CONDITIONAL(AGENT2, test "x$agent2" = "xyes")
 
-AC_ARG_ENABLE(webservice,[  --enable-webservice         Turn on build of TAA web service],
+AC_ARG_ENABLE(webservice,[  --enable-webservice         Turn on build of TAAE web service],
 [case "${enableval}" in
   yes) webservice=yes ;;
   no)  webservice=no ;;
@@ -1440,7 +1440,7 @@ esac
 [webservice=no])
 AM_CONDITIONAL(WEBSERVICE, test "x$webservice" = "xyes")
 
-AC_ARG_ENABLE(java,[  --enable-java           Turn on build of TAA Java gateway],
+AC_ARG_ENABLE(java,[  --enable-java           Turn on build of TAAE Java gateway],
 [case "${enableval}" in
   yes) java=yes ;;
   no)  java=no ;;
@@ -1523,7 +1523,7 @@ if test "x$server" = "xyes" || test "x$proxy" = "xyes"; then
 	AX_LIB_SQLITE3()
 	if test "x$want_sqlite3" = "xyes"; then
 		if test "x$server" = "xyes"; then
-			AC_MSG_ERROR([SQLite is not supported as a main TAA database backend.])
+			AC_MSG_ERROR([SQLite is not supported as a main TAAE database backend.])
 		fi
 
 		if test "x$have_db" != "xno"; then
@@ -1555,10 +1555,10 @@ if test "x$server" = "xyes" || test "x$proxy" = "xyes"; then
 		fi
 	fi
 
-	AC_MSG_CHECKING(for TAA server/proxy database selection)
+	AC_MSG_CHECKING(for TAAE server/proxy database selection)
 	if test "x$have_db" = "xno"; then
 		AC_MSG_RESULT(error)
-		AC_MSG_ERROR([No database selected for TAA server/proxy. Use --with-mysql or --with-postgresql or --with-sqlite3.])
+		AC_MSG_ERROR([No database selected for TAAE server/proxy. Use --with-mysql or --with-postgresql or --with-sqlite3.])
 	else
 		AC_MSG_RESULT(ok)
 	fi
@@ -1699,7 +1699,7 @@ if test "x$server" = "xyes" || test "x$proxy" = "xyes"; then
 
 	AC_SUBST(OPENIPMI_CFLAGS)
 
-	dnl Check for zlib, used by TAA server-proxy communications
+	dnl Check for zlib, used by TAAE server-proxy communications
 	ZLIB_CHECK_CONFIG([no])
 	if test "x$found_zlib" != "xyes"; then
 		AC_MSG_ERROR([Unable to use zlib (zlib check failed)])
@@ -1758,7 +1758,7 @@ AM_CONDITIONAL(HAVE_UNIXODBC, test "x$have_unixodbc" = "xyes")
 AM_CONDITIONAL(HAVE_SSH, [test "x$have_ssh" = "xyes (libssh)"])
 AM_CONDITIONAL(HAVE_SSH2, [test "x$have_ssh" = "xyes (libssh2)"])
 
-dnl Check if TAA internal IPC services are used
+dnl Check if TAAE internal IPC services are used
 have_ipcservice="no"
 if test "x$have_ipmi" = "xyes"; then
 	have_ipcservice="yes"
@@ -1774,9 +1774,9 @@ fi
 
 AM_CONDITIONAL(PROXY_IPCSERVICE, [test "x$have_ipmi" = "xyes"])
 
-dnl Check for libevent, used by TAA IPC services
+dnl Check for libevent, used by TAAE IPC services
 if test "x$have_ipcservice" = "xyes"; then
-	AC_DEFINE([HAVE_IPCSERVICE], 1, [Define to 1 if TAA IPC services are used])
+	AC_DEFINE([HAVE_IPCSERVICE], 1, [Define to 1 if TAAE IPC services are used])
 
 	LIBEVENT_CHECK_CONFIG([no])
 	if test "x$found_libevent" != "xyes"; then
@@ -2555,7 +2555,7 @@ echo
 echo "***********************************************************"
 echo "*            Now run '${am_make} install'                       *"
 echo "*                                                         *"
-echo "*            Thank you for using TAA!                  *"
+echo "*            Thank you for using TAAE!                  *"
 echo "*              <https://www.zabbix.com>                   *"
 echo "***********************************************************"
 echo

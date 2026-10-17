@@ -1773,7 +1773,7 @@ class CMacrosResolverGeneral {
 			else {
 				/*
 				 * Collecting host IDs for items without interface. Macros for such items will resolve to either the
-				 * TAA agent, SNMP, JMX or IPMI interface of the host in this order of priority or to 'UNKNOWN' if
+				 * TAAE agent, SNMP, JMX or IPMI interface of the host in this order of priority or to 'UNKNOWN' if
 				 * the host does not have any interface.
 				 */
 				$hostids[$db_item['hostid']][] = $itemid;
@@ -2863,10 +2863,10 @@ class CMacrosResolverGeneral {
 	 * Output:
 	 *     array (
 	 *         0 => array (
-	 *             '{USER.FULLNAME}' => 'TAA Administrator',
+	 *             '{USER.FULLNAME}' => 'TAAE Administrator',
 	 *         ),
 	 *         1 => array (
-	 *             '{USER.NAME}' => 'TAA',
+	 *             '{USER.NAME}' => 'TAAE',
 	 *             '{USER.SURNAME}' => 'Administrator',
 	 *         )
 	 *     )

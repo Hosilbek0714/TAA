@@ -680,7 +680,7 @@ class testFormTriggerPrototype extends CLegacyWebTest {
 					'description' => 'MyTrigger_generalCheck',
 					'expression' => 'last(/Simple form test host/item-prototype-reuse[{#KEY}],#1)<5',
 					'type' => true,
-					'comments' => 'Trigger status (expression) is recalculated every time TAA server receives new'.
+					'comments' => 'Trigger status (expression) is recalculated every time TAAE server receives new'.
 							' value, if this value is part of this expression. If time based functions are used in the'.
 							' expression, it is recalculated every 30 seconds by a zabbix timer process. ',
 					'url_name' => 'Trigger context menu name for trigger URL.',
@@ -837,14 +837,14 @@ class testFormTriggerPrototype extends CLegacyWebTest {
 				[
 					'expected' => TEST_BAD,
 					'description' => 'MyTrigger',
-					'expression' => 'last(/TAA host/item-prototype-reuse,#1)<0 or 8 and 9',
+					'expression' => 'last(/TAAE host/item-prototype-reuse,#1)<0 or 8 and 9',
 					'constructor' => [
 						'text' => ['A or (B and C)', 'Or', 'And', 'A', 'B', 'C'],
 						'elements' => ['expr_0_43', 'expr_48_48', 'expr_54_54'],
 						'elementError' => true,
 						'element_count' => 2,
 						'errors' => [
-							'last(/TAA host/item-prototype-reuse,#1): Unknown host, no such host present in system'
+							'last(/TAAE host/item-prototype-reuse,#1): Unknown host, no such host present in system'
 						]
 					]
 				]

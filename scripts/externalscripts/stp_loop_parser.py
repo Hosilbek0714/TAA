@@ -1,10 +1,10 @@
 #!/usr/bin/env python3
-"""TAA External Check: SNMP trap matnidan port/VLAN/MAC ni ajratib JSON qaytaradi.
+"""TAAE External Check: SNMP trap matnidan port/VLAN/MAC ni ajratib JSON qaytaradi.
 
-Bu skript TAA tomondan ikki xil chaqirilishi mumkin:
+Bu skript TAAE tomondan ikki xil chaqirilishi mumkin:
   1. Argument orqali:
         stp_loop_parser.py "%SPANTREE-2-BLOCK_PVID: Blocking Gi0/12 on VLAN0030 ..."
-  2. Stdin orqali (TAA preprocessing "Script" item bilan):
+  2. Stdin orqali (TAAE preprocessing "Script" item bilan):
         echo "<trap matni>" | stp_loop_parser.py
 
 Chiqishi (stdout) — bitta satrli JSON:
@@ -112,7 +112,7 @@ def main() -> int:
     """Asosiy kirish nuqtasi."""
     raw = read_input().strip()
     if not raw:
-        # Bo'sh kirishda ham TAA uchun JSON qaytaramiz
+        # Bo'sh kirishda ham TAAE uchun JSON qaytaramiz
         sys.stdout.write(
             json.dumps(
                 {

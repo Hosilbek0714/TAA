@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Apache Kafka monitoring by TAA via JMX and doesn't require any external scripts.
+This template is designed for the effortless deployment of Apache Kafka monitoring by TAAE via JMX and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -112,7 +112,7 @@ Metrics are collected by JMX.
 |Apache Kafka: One or more partitions have no leader|<p>Any partition without an active leader will be completely inaccessible, and both consumers and producers of that partition will be blocked until a leader becomes available.</p>|`last(/Apache Kafka by JMX/jmx["kafka.controller:type=KafkaController,name=OfflinePartitionsCount","Value"]) > 0`|Warning||
 |Apache Kafka: Request handler average idle percent is too low|<p>The request handler idle ratio metric indicates the percentage of time the request handlers are not in use. The lower this number, the more loaded the broker is.</p>|`max(/Apache Kafka by JMX/jmx["kafka.server:type=KafkaRequestHandlerPool,name=RequestHandlerAvgIdlePercent","OneMinuteRate"],15m)<{$KAFKA.REQUEST_HANDLER_AVG_IDLE.MIN.WARN}`|Average||
 |Apache Kafka: Network processor average idle percent is too low|<p>The network processor idle ratio metric indicates the percentage of time the network processor are not in use. The lower this number, the more loaded the broker is.</p>|`max(/Apache Kafka by JMX/jmx["kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent","Value"],15m)<{$KAFKA.NET_PROC_AVG_IDLE.MIN.WARN}`|Average||
-|Apache Kafka: Failed to fetch info data|<p>TAA has not received data for items for the last 15 minutes</p>|`nodata(/Apache Kafka by JMX/jmx["kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent","Value"],15m)=1`|Warning||
+|Apache Kafka: Failed to fetch info data|<p>TAAE has not received data for items for the last 15 minutes</p>|`nodata(/Apache Kafka by JMX/jmx["kafka.network:type=SocketServer,name=NetworkProcessorAvgIdlePercent","Value"],15m)=1`|Warning||
 |Apache Kafka: There are partitions under the min ISR|<p>The Under min ISR partitions metric displays the number of partitions, where the number of In-Sync Replicas (ISR) is less than the minimum number of in-sync replicas specified. The two most common causes of under-min ISR partitions are that one or more brokers is unresponsive, or the cluster is experiencing performance issues and one or more brokers are falling behind.</p>|`last(/Apache Kafka by JMX/jmx["kafka.server:type=ReplicaManager,name=UnderMinIsrPartitionCount","Value"])>0`|Average||
 |Apache Kafka: There are under replicated partitions|<p>The Under replicated partitions metric displays the number of partitions that do not have enough replicas to meet the desired replication factor. A partition will also be considered under-replicated if the correct number of replicas exist, but one or more of the replicas have fallen significantly behind the partition leader. The two most common causes of under-replicated partitions are that one or more brokers is unresponsive, or the cluster is experiencing performance issues and one or more brokers have fallen behind.</p>|`last(/Apache Kafka by JMX/jmx["kafka.server:type=ReplicaManager,name=UnderReplicatedPartitions","Value"])>0`|Average||
 |Apache Kafka: Version has changed|<p>The Kafka version has changed. Acknowledge to close the problem manually.</p>|`last(/Apache Kafka by JMX/jmx["kafka.server:type=app-info","version"],#1)<>last(/Apache Kafka by JMX/jmx["kafka.server:type=app-info","version"],#2) and length(last(/Apache Kafka by JMX/jmx["kafka.server:type=app-info","version"]))>0`|Info|**Manual close**: Yes|
@@ -160,5 +160,5 @@ Metrics are collected by JMX.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

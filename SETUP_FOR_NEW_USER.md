@@ -1,6 +1,6 @@
-# TAA ni clone qilib qurilmasiz tekshirish va keyin real qurilmaga ulash
+# TAAE ni clone qilib qurilmasiz tekshirish va keyin real qurilmaga ulash
 
-Ushbu qo'llanma TAA loyihasini boshqa kompyuterda `git clone` qilib tekshirish uchun yozilgan. Hozir real Catalyst 3560G, router yoki TP-Link qurilmalari bo'lmasa ham, TAA UI ichidagi tayyor konfiguratsiya ko'riladi:
+Ushbu qo'llanma TAAE loyihasini boshqa kompyuterda `git clone` qilib tekshirish uchun yozilgan. Hozir real Catalyst 3560G, router yoki TP-Link qurilmalari bo'lmasa ham, TAAE UI ichidagi tayyor konfiguratsiya ko'riladi:
 
 - `core-sw01` hosti;
 - `edge-rt01` hosti;
@@ -53,8 +53,8 @@ Portlar:
 
 | Port | Vazifa |
 |---:|---|
-| `8098` | TAA Web UI |
-| `10051` | TAA server trapper/active checks |
+| `8098` | TAAE Web UI |
+| `10051` | TAAE server trapper/active checks |
 | `10050` | lokal agent konteyneri |
 | `5433` | PostgreSQL host porti |
 
@@ -79,7 +79,7 @@ Yangi clone qilinganda quyidagi buyruq yetarli:
 docker compose up -d --build
 ```
 
-Muhim: PostgreSQL container faqat birinchi startda `taa_database_backup_utf8.sql` faylini import qiladi. Agar sizda oldingi `postgres-data` volume mavjud bo'lsa, yangi dump avtomatik import bo'lmaydi.
+Muhim: PostgreSQL container faqat birinchi startda `taae_database_backup_utf8.sql` faylini import qiladi. Agar sizda oldingi `postgres-data` volume mavjud bo'lsa, yangi dump avtomatik import bo'lmaydi.
 
 Test uchun toza DB kerak bo'lsa:
 
@@ -99,10 +99,10 @@ docker compose ps
 Kutilgan holat:
 
 ```text
-taa-server          Up
-taa-web             Up / healthy
+taae-server          Up
+taae-web             Up / healthy
 postgres            Up
-taa-agent           Up
+taae-agent           Up
 ```
 
 Web UI:
@@ -123,7 +123,7 @@ Password: zabbix
 Quyidagilarni ishlatish mumkin:
 
 ```bash
-docker exec taa-db psql -U taa -d taa -c "select h.host,h.name,hi.ip,hi.port from hosts h left join interface hi on hi.hostid=h.hostid where h.host='core-sw01';"
+docker exec taae-db psql -U taae -d taae -c "select h.host,h.name,hi.ip,hi.port from hosts h left join interface hi on hi.hostid=h.hostid where h.host='core-sw01';"
 ```
 
 Kutilgan natija:
@@ -135,25 +135,25 @@ core-sw01 | Catalyst 3560G - core-sw01 | 192.168.99.2 | 161
 Triggerlarni tekshirish:
 
 ```bash
-docker exec taa-db psql -U taa -d taa -c "select triggerid,description,status,priority from triggers where description ilike '%core-sw01%' order by triggerid;"
+docker exec taae-db psql -U taae -d taae -c "select triggerid,description,status,priority from triggers where description ilike '%core-sw01%' order by triggerid;"
 ```
 
 Router triggerini tekshirish:
 
 ```bash
-docker exec taa-db psql -U taa -d taa -c "select triggerid,description,status,priority from triggers where description ilike '%edge-rt01%' order by triggerid;"
+docker exec taae-db psql -U taae -d taae -c "select triggerid,description,status,priority from triggers where description ilike '%edge-rt01%' order by triggerid;"
 ```
 
 Actionlarni tekshirish:
 
 ```bash
-docker exec taa-db psql -U taa -d taa -c "select actionid,name,status from actions where name ilike '%core-sw01%' order by actionid;"
+docker exec taae-db psql -U taae -d taae -c "select actionid,name,status from actions where name ilike '%core-sw01%' order by actionid;"
 ```
 
 Router actionini tekshirish:
 
 ```bash
-docker exec taa-db psql -U taa -d taa -c "select actionid,name,status from actions where name ilike '%edge-rt01%' order by actionid;"
+docker exec taae-db psql -U taae -d taae -c "select actionid,name,status from actions where name ilike '%edge-rt01%' order by actionid;"
 ```
 
 Status qiymati:
@@ -165,7 +165,7 @@ Auto-remediation action real rejimda `0` bo'lishi kerak.
 
 ## 7. UI ichida tekshirish
 
-TAA UI da:
+TAAE UI da:
 
 ```text
 Ma'lumot yig'ish -> Hostlar
@@ -195,7 +195,7 @@ Qurilma ulanmagan bo'lsa, Latest data ichida SNMP metrikalar kelmasligi normal h
 
 ## 8. Real switch ulanganda nima o'zgartiriladi
 
-TAA UI da:
+TAAE UI da:
 
 ```text
 Ma'lumot yig'ish -> Hostlar -> core-sw01 -> Interfeyslar
@@ -246,13 +246,13 @@ scripts/network-configs/eem-applets/export_binding_hourly.tcl
 
 Real switchda quyidagilar sozlangan bo'lishi kerak:
 
-- SNMP traplar TAA server IP manziliga yuboriladi;
+- SNMP traplar TAAE server IP manziliga yuboriladi;
 - port-security traplar yoqilgan;
 - bridge/STP topology change traplar yoqilgan;
 - EEM appletlar flashga yuklangan va registered;
-- `logging host <TAA_SERVER_IP>` sozlangan.
+- `logging host <TAAE_SERVER_IP>` sozlangan.
 
-Namuna config ichidagi `10.0.10.10` qiymatini o'z TAA server IP manzilingizga almashtiring.
+Namuna config ichidagi `10.0.10.10` qiymatini o'z TAAE server IP manzilingizga almashtiring.
 
 ## 10. Cisco 1800 router tomoni
 
@@ -272,15 +272,15 @@ scripts/network-configs/eem-applets/wan_brute_detect.tcl
 Applet ishga tushganda:
 
 - `flash:/brute.log` ichiga diagnostika yozadi;
-- `TAA-BRUTE` SNMP trap yuboradi;
-- `TAA-ALERT` syslog xabarini chiqaradi;
+- `TAAE-BRUTE` SNMP trap yuboradi;
+- `TAAE-ALERT` syslog xabarini chiqaradi;
 - agar router mail serverga kira olsa, qisqa email yuboradi.
 
-TAA tomonda oldindan yaratilgan item:
+TAAE tomonda oldindan yaratilgan item:
 
 ```text
 WAN Brute Force Trap
-snmptrap[TAA-BRUTE|WAN_BRUTE_DETECT|TAA-ALERT]
+snmptrap[TAAE-BRUTE|WAN_BRUTE_DETECT|TAAE-ALERT]
 ```
 
 Oldindan yaratilgan trigger:
@@ -297,10 +297,10 @@ edge-rt01 WAN brute xabari
 
 Real routerda quyidagilar sozlangan bo'lishi kerak:
 
-- SNMP traplar TAA server IP manziliga yuboriladi;
-- `logging host <TAA_SERVER_IP>` sozlangan;
+- SNMP traplar TAAE server IP manziliga yuboriladi;
+- `logging host <TAAE_SERVER_IP>` sozlangan;
 - `WAN_BRUTE_DETECT` EEM applet registered;
-- TAA serverda SNMP trapper ishlaydi.
+- TAAE serverda SNMP trapper ishlaydi.
 
 ## 11. Email actionni sozlash
 
@@ -310,7 +310,7 @@ DB ichida `Admin` userga vaqtincha placeholder address qo'yilgan:
 admin@example.com
 ```
 
-TAA UI da uni o'zgartiring:
+TAAE UI da uni o'zgartiring:
 
 ```text
 Foydalanuvchilar -> Admin -> Media
@@ -336,13 +336,13 @@ Repo ichida alert va external scriptlar bor:
 
 ```text
 scripts/alertscripts/auto_remediation.py
-scripts/alertscripts/taa_email.sh
-scripts/alertscripts/taa_telegram.sh
+scripts/alertscripts/taae_email.sh
+scripts/alertscripts/taae_telegram.sh
 scripts/externalscripts/stp_loop_parser.py
 scripts/externalscripts/ip_inventory.py
 ```
 
-Bare-metal TAA serverda:
+Bare-metal TAAE serverda:
 
 ```bash
 sudo bash scripts/install.sh
@@ -368,13 +368,13 @@ core-sw01 Port Security auto-remediation
 U quyidagi global scriptni chaqiradi:
 
 ```text
-TAA auto-remediation port shutdown
+TAAE auto-remediation port shutdown
 ```
 
 Command:
 
 ```bash
-/usr/lib/zabbix/alertscripts/auto_remediation.py --switch {HOST.IP} --trap-text "{ITEM.LASTVALUE}" --reason "{EVENT.NAME}" --operator "TAA-ACTION"
+/usr/lib/zabbix/alertscripts/auto_remediation.py --switch {HOST.IP} --trap-text "{ITEM.LASTVALUE}" --reason "{EVENT.NAME}" --operator "TAAE-ACTION"
 ```
 
 `auto_remediation.py` trap matnidan `Gi0/5`, `Fa0/24`, `Te1/0/1` yoki to'liq `GigabitEthernet0/5` kabi port nomini avtomatik ajratadi. Port topilmasa, script `exit 2` bilan to'xtaydi va hech qanday shutdown qilmaydi.
@@ -395,11 +395,11 @@ AUDIT_DB
 4. Trap ichida real port nomi kelayotganini tekshiring, masalan:
 
 ```text
-TAA-PSEC port=Gi0/5 mac=aabb.ccdd.eeff host=core-sw01
+TAAE-PSEC port=Gi0/5 mac=aabb.ccdd.eeff host=core-sw01
 ```
 
-5. Switchda `taa_auto` user faqat kerakli buyruqlarni bajaradigan cheklangan privilege bilan yaratilgan bo'lsin.
-6. `/var/lib/taa/audit.db` yoziladigan bo'lsin.
+5. Switchda `taae_auto` user faqat kerakli buyruqlarni bajaradigan cheklangan privilege bilan yaratilgan bo'lsin.
+6. `/var/lib/taae/audit.db` yoziladigan bo'lsin.
 
 ## 14. Qurilmasiz tekshiruv nimani isbotlaydi
 
@@ -426,9 +426,9 @@ Qurilmasiz quyidagilar tekshirilmaydi:
 - [ ] `core-sw01` IP real switch IPga almashtirildi.
 - [ ] `edge-rt01` IP real router IPga almashtirildi.
 - [ ] SNMPv3 user/password/protocol qiymatlari to'g'ri.
-- [ ] Switchdan TAA serverga UDP 162 traplar boradi.
-- [ ] Routerdan TAA serverga UDP 162 traplar boradi.
-- [ ] TAA serverda SNMP trapper ishlaydi.
+- [ ] Switchdan TAAE serverga UDP 162 traplar boradi.
+- [ ] Routerdan TAAE serverga UDP 162 traplar boradi.
+- [ ] TAAE serverda SNMP trapper ishlaydi.
 - [ ] `Monitoring -> Latest data` ichida SNMP qiymatlar paydo bo'ldi.
 - [ ] Port security trap test qilindi.
 - [ ] STP topology/root change trap test qilindi.
@@ -436,4 +436,4 @@ Qurilmasiz quyidagilar tekshirilmaydi:
 - [ ] Email action real manzilga xabar yubordi.
 - [ ] Auto-remediation action enabled holatda.
 - [ ] Port security trap qiymatida port nomi bor.
-- [ ] Auto-remediation portni shutdown qildi va `/var/lib/taa/audit.db` ichiga yozuv qo'shdi.
+- [ ] Auto-remediation portni shutdown qildi va `/var/lib/taae/audit.db` ichiga yozuv qo'shdi.

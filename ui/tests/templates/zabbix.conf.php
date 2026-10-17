@@ -1,5 +1,5 @@
 <?php
-// TAA GUI configuration file.
+// TAAE GUI configuration file.
 global $DB;
 
 $DB['TYPE']				= '{DBTYPE}';

@@ -177,7 +177,7 @@ class testPageItemPrototypesTemplate extends testPagePrototypes {
 	}
 
 	/**
-	 * Check that empty values displayed in Trends and Interval columns. SNMP, TAA trappers has empty values in trends column.
+	 * Check that empty values displayed in Trends and Interval columns. SNMP, TAAE trappers has empty values in trends column.
 	 * Dependent items has empty update interval column.
 	 *
 	 * @dataProvider getItemPrototypesNotDisplayedValuesData

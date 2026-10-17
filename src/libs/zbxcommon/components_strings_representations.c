@@ -16,7 +16,7 @@
 
 /******************************************************************************
  *                                                                            *
- * Purpose: Returns TAA process name                                       *
+ * Purpose: Returns TAAE process name                                       *
  *                                                                            *
  * Parameters: proc_type - [IN] process type; ZBX_PROCESS_TYPE_*              *
  *                                                                            *

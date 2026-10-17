@@ -25,39 +25,39 @@ class CTriggerGeneralHelperTest extends TestCase {
 		return [
 			[
 				'func(/host/item)',
-				'host', 'TAA server',
-				'func(/TAA server/item)'
+				'host', 'TAAE server',
+				'func(/TAAE server/item)'
 			],
 			[
 				'5 + func(/host/item) <> 0 or {$MACRO: "context"} or {#MACRO} or {TRIGGER.VALUE} or'.
 					' func(/host/item) or func(/host2/item2)',
-				'host', 'TAA server',
-				'5 + func(/TAA server/item) <> 0 or {$MACRO: "context"} or {#MACRO} or {TRIGGER.VALUE} or'.
-					' func(/TAA server/item) or func(/host2/item2)'
+				'host', 'TAAE server',
+				'5 + func(/TAAE server/item) <> 0 or {$MACRO: "context"} or {#MACRO} or {TRIGGER.VALUE} or'.
+					' func(/TAAE server/item) or func(/host2/item2)'
 			],
 			[
 				'5 + func(/host/item) <> 0 or {$MACRO: "context"} or'.
 					' {{#MACRO}.regsub("^([0-9]+)", "{#MACRO}: \1")} or {TRIGGER.VALUE} or'.
 					' func(/host/item) or func(/host2/item2)',
-				'host', 'TAA server',
-				'5 + func(/TAA server/item) <> 0 or {$MACRO: "context"} or'.
+				'host', 'TAAE server',
+				'5 + func(/TAAE server/item) <> 0 or {$MACRO: "context"} or'.
 					' {{#MACRO}.regsub("^([0-9]+)", "{#MACRO}: \1")} or {TRIGGER.VALUE} or'.
-					' func(/TAA server/item) or func(/host2/item2)'
+					' func(/TAAE server/item) or func(/host2/item2)'
 			],
 			[
 				'func(/host/item) or {{#M}.regsub("func(/host/item)", "\1")}',
-				'host', 'TAA server',
-				'func(/TAA server/item) or {{#M}.regsub("func(/host/item)", "\1")}'
+				'host', 'TAAE server',
+				'func(/TAAE server/item) or {{#M}.regsub("func(/host/item)", "\1")}'
 			],
 			[
-				'5 + func(/TAA server/item) <> 0 or func(/TAA server/item) or func(/host2/item2)',
-				'TAA server', 'host',
+				'5 + func(/TAAE server/item) <> 0 or func(/TAAE server/item) or func(/host2/item2)',
+				'TAAE server', 'host',
 				'5 + func(/host/item) <> 0 or func(/host/item) or func(/host2/item2)'
 			],
 			[
 				'min(func(/host/item), func(/host/item), "func(/host/item)") = "func(/host/item)"',
-				'host', 'TAA server',
-				'min(func(/TAA server/item), func(/TAA server/item), "func(/host/item)") = "func(/host/item)"'
+				'host', 'TAAE server',
+				'min(func(/TAAE server/item), func(/TAAE server/item), "func(/host/item)") = "func(/host/item)"'
 			]
 		];
 	}

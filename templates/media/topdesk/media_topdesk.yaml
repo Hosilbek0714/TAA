@@ -239,7 +239,7 @@ zabbix_export:
                     || (params.event_source == 3 && params.event_value == 1)
                     || params.event_source == 1 || params.event_source == 2) {
                 Zabbix.log(4, '[ ' + Media.name + ' Webhook ] Request of the ticket creating.');
-                fields.caller = {dynamicName: 'TAA'};
+                fields.caller = {dynamicName: 'TAAE'};
                 fields.briefDescription = params.alert_subject;
                 fields.request = params.alert_message.replace(/\n/g, '<br>');
                 fields.priority = {name: priority};
@@ -291,7 +291,7 @@ zabbix_export:
       description: |
         Please refer to https://developers.topdesk.com/documentation/index.html and https://www.zabbix.com/documentation/7.4/manual/config/notifications/media/webhook#example_scripts.
           
-        Set global macro {$ZABBIX.URL} with your TAA server URL.
+        Set global macro {$ZABBIX.URL} with your TAAE server URL.
         Add a dedicated user with the media type "TOPdesk".
         Change the values of the variables topdesk_api (URL), topdesk_password, topdesk_user. The topdesk_status is the default status for creating a new TOPdesk ticket.
       message_templates:

@@ -90,10 +90,10 @@ out:
   groups: [abc,xyz]
   filter: '(not {0} and not {1})'
 ---
-test case: Expression '(group="TAA servers") or ("TAA servers"=group)'
+test case: Expression '(group="TAAE servers") or ("TAAE servers"=group)'
 in:
-  expression: '(group="TAA servers") or ("TAA servers"=group)'
+  expression: '(group="TAAE servers") or ("TAAE servers"=group)'
 out:
-  groups: [TAA servers,TAA servers]
+  groups: [TAAE servers,TAAE servers]
   filter: '({0} or {1})'
 ...

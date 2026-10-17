@@ -422,7 +422,7 @@ class testSidebarMenu extends CWebTest {
 			[
 				[
 					'section' => 'Sign out',
-					'title' => 'TAA'
+					'title' => 'TAAE'
 				]
 			]
 		];
@@ -442,7 +442,7 @@ class testSidebarMenu extends CWebTest {
 		}
 		else {
 			$this->query('xpath://ul[@class="menu-user"]//a[text()="'.$data['section'].'"]')->one()->click();
-			$this->page->assertTitle('TAA');
+			$this->page->assertTitle('TAAE');
 		}
 	}
 }

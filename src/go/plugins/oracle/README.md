@@ -1,7 +1,7 @@
 # Oracle Database plugin
 
-This plugin provides native TAA solution to monitor Oracle Database (multi-model database management system).
-It can monitor several Oracle instances simultaneously; remote or local to TAA agent.
+This plugin provides native TAAE solution to monitor Oracle Database (multi-model database management system).
+It can monitor several Oracle instances simultaneously; remote or local to TAAE agent.
 The plugin keeps connections in an open state to reduce network congestion, latency, CPU and
 memory usage. It is highly recommended to use in conjunction with the official 
 [Oracle template.](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/db/oracle_agent2) 
@@ -112,7 +112,7 @@ One way to do this is using **pipelined table functions**:
       END;
       ```
   
-  4. Grant the TAA monitoring user the Execute privilege on the created pipelined table function and replace the monitoring user `V$RESTORE_POINT` view with the `SYS` user function (in this example, the `SYS` user is used to create DB types and function):
+  4. Grant the TAAE monitoring user the Execute privilege on the created pipelined table function and replace the monitoring user `V$RESTORE_POINT` view with the `SYS` user function (in this example, the `SYS` user is used to create DB types and function):
 
       ```sql
       GRANT EXECUTE ON zbx_mon_restore_point TO c##zabbix_mon;
@@ -140,7 +140,7 @@ One way to do this is using **pipelined table functions**:
 
 ## Configuration
 
-To configure plugins, TAA agent 2 configuration file is used.
+To configure plugins, TAAE agent 2 configuration file is used.
 
 **Plugins.Oracle.CallTimeout** — the maximum time in seconds for waiting when a request has to be done.  
 *Default value:* equals the global Timeout configuration parameter.  
@@ -153,7 +153,7 @@ To configure plugins, TAA agent 2 configuration file is used.
 **Plugins.Oracle.CustomQueriesPath** — Full pathname of a directory containing *.sql* files with custom queries.  
 *Default value:*: `/usr/local/share/zabbix/custom-queries/oracle` for unix systems
 
-*Default value:* `*:\Program Files\TAA Agent 2\Custom Queries\Oracle` for windows systems,
+*Default value:* `*:\Program Files\TAAE Agent 2\Custom Queries\Oracle` for windows systems,
 where * is drive name taken from `ProgramFiles` environment variable
 
 **Plugins.Oracle.CustomQueriesEnabled** — If set enables the execution of the `mysql.custom.query`item key.
@@ -357,6 +357,6 @@ WHERE
 
 ## Troubleshooting
 
-The plugin uses logs of TAA agent 2. You can increase debugging level of TAA agent 2 if you need more details about the current situation.
+The plugin uses logs of TAAE agent 2. You can increase debugging level of TAAE agent 2 if you need more details about the current situation.
 The environment variable DPI_DEBUG_LEVEL can be used to selectively turn on the printing of various logging messages from Oracle Database Programming Interface for C (ODPI-C).
 See [ODPI-C Debugging](https://oracle.github.io/odpi/doc/user_guide/debugging.html) for details.

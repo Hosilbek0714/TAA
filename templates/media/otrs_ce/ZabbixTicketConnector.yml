@@ -2,7 +2,7 @@
 Debugger:
   DebugThreshold: error
   TestMode: '0'
-Description: TAA Ticket Connector
+Description: TAAE Ticket Connector
 FrameworkVersion: 6.0.27
 Provider:
   Operation:

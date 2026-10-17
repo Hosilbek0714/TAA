@@ -46,7 +46,7 @@ class BinaryProtocolSpeaker
 
 		byte[] data;
 
-		logger.debug("reading TAA protocol header");
+		logger.debug("reading TAAE protocol header");
 		data = new byte[5];
 		dis.readFully(data);
 

@@ -2081,7 +2081,7 @@ static int	DBpatch_6050165(void)
 							"'%s'\n"
 							"Resulting escaped value would be:\n"
 							"'%s\n"
-							"DB upgrade and TAA server can continue to run,"
+							"DB upgrade and TAAE server can continue to run,"
 							" but to make sure this function works correctly\n"
 							"MANUAL INTERVENTION IS REQUIRED !\n"
 							"Need to manually reduce the size of this parameter"

@@ -1,21 +1,21 @@
 [Unit]
-Description=TAA Agent 2 (TAA monitoring agent)
-Documentation=https://taa.local/docs
+Description=TAAE Agent 2 (TAAE monitoring agent)
+Documentation=https://taae.local/docs
 After=network-online.target syslog.target
 Wants=network-online.target
 
 [Service]
 Type=simple
-User=taa-agent
-Group=taa-agent
-EnvironmentFile=-/etc/taa/agent/taa_agent2.env
-ExecStart=/usr/sbin/taa_agent2 -f -c /etc/taa/agent/taa_agent2.conf
+User=taae-agent
+Group=taae-agent
+EnvironmentFile=-/etc/taae/agent/taae_agent2.env
+ExecStart=/usr/sbin/taae_agent2 -f -c /etc/taae/agent/taae_agent2.conf
 ExecReload=/bin/kill -HUP $MAINPID
-RuntimeDirectory=taa/agent
+RuntimeDirectory=taae/agent
 RuntimeDirectoryMode=0750
-LogsDirectory=taa/agent
+LogsDirectory=taae/agent
 LogsDirectoryMode=0750
-StateDirectory=taa/agent
+StateDirectory=taae/agent
 StateDirectoryMode=0750
 Restart=on-failure
 RestartSec=5s

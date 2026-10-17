@@ -33,10 +33,10 @@
 .
 .  hy \\n(HY
 ..
-.TH ZABBIX_SENDER 1 "2022\-01\-06" TAA
+.TH ZABBIX_SENDER 1 "2022\-01\-06" TAAE
 .if n .ad l
 .SH NAME
-zabbix_sender \- TAA sender utility
+zabbix_sender \- TAAE sender utility
 .SH SYNOPSIS
 .B zabbix_sender
 .RB [ \-v ]
@@ -377,15 +377,15 @@ zabbix_sender \- TAA sender utility
 .B zabbix_sender \-V
 .SH DESCRIPTION
 .B zabbix_sender
-is a command line utility for sending monitoring data to TAA server or proxy.
-On the TAA server an item of type \fBZabbix trapper\fR should be created with corresponding key.
+is a command line utility for sending monitoring data to TAAE server or proxy.
+On the TAAE server an item of type \fBZabbix trapper\fR should be created with corresponding key.
 Note that incoming values will only be accepted from hosts specified in \fBAllowed hosts\fR field for this item.
 .SH OPTIONS
 .IP "\fB\-c\fR, \fB\-\-config\fR \fIconfig\-file\fR"
 Use \fIconfig\-file\fR.
 \fBZabbix sender\fR reads server details from the agentd configuration file.
 By default
-.B TAA sender
+.B TAAE sender
 does not read any configuration file.
 Only parameters \fBHostname\fR, \fBServerActive\fR, \fBSourceIP\fR, \fBTLSConnect\fR, \fBTLSCAFile\fR, \fBTLSCRLFile\fR,
 \fBTLSServerCertIssuer\fR, \fBTLSServerCertSubject\fR, \fBTLSCertFile\fR, \fBTLSKeyFile\fR, \fBTLSPSKIdentity\fR and \fBTLSPSKFile\fR are supported.
@@ -393,11 +393,11 @@ Hostname defined through \fBHostnameItem\fR parameter will not be picked up, in 
 All addresses defined in the agent \fBServerActive\fR configuration parameter are used for sending data.
 If sending of batch data fails to one address, the following batches are not sent to this address.
 .IP "\fB\-z\fR, \fB\-\-zabbix\-server\fR \fIserver\fR"
-Hostname or IP address of TAA server.
+Hostname or IP address of TAAE server.
 If a host is monitored by a proxy, proxy hostname or IP address should be used instead.
 When used together with \fB\-\-config\fR, overrides the entries of \fBServerActive\fR parameter specified in agentd configuration file.
 .IP "\fB\-p\fR, \fB\-\-port\fR \fIport\fR"
-Specify port number of TAA server trapper running on the server.
+Specify port number of TAAE server trapper running on the server.
 Default is 10051.
 When used together with \fB\-\-config\fR, overrides the port entries of \fBServerActive\fR parameter specified in agentd configuration file.
 .IP "\fB\-I\fR, \fB\-\-source\-address\fR \fIIP\-address\fR"
@@ -406,7 +406,7 @@ When used together with \fB\-\-config\fR, overrides \fBSourceIP\fR parameter spe
 .IP "\fB\-t\fR, \fB\-\-timeout\fR \fIseconds\fR"
 Specify timeout. Valid range: 1\-300 seconds (default: 60)
 .IP "\fB\-s\fR, \fB\-\-host\fR \fIhost\fR"
-Specify host name the item belongs to (as registered in TAA frontend).
+Specify host name the item belongs to (as registered in TAAE frontend).
 Host IP address and DNS name will not work.
 When used together with \fB\-\-config\fR, overrides \fBHostname\fR parameter specified in agentd configuration file.
 .IP "\fB\-k\fR, \fB\-\-key\fR \fIkey\fR"
@@ -418,7 +418,7 @@ Load values from input file.
 Specify \fB\-\fR as \fB<input-file>\fR to read values from standard input.
 Each line of file contains whitespace delimited: \fB<hostname> <key> <value>\fR.
 Each value must be specified on its own line.  Each line must contain 3 whitespace delimited entries:
-\fB<hostname> <key> <value>\fR, where "hostname" is the name of monitored host as registered in TAA frontend,
+\fB<hostname> <key> <value>\fR, where "hostname" is the name of monitored host as registered in TAAE frontend,
 "key" is target item key and "value" \- the value to send. Specify \fB-\fR as \fB<hostname>\fR to use hostname from
 agent configuration file or from \fB\-\-host\fR argument.
 
@@ -426,8 +426,8 @@ An example of a line of an input file:
 
 \fB "Linux DB3" db.connections 43\fR
 
-The value type must be correctly set in item configuration of TAA frontend.
-TAA sender will send up to 250 values in one connection.
+The value type must be correctly set in item configuration of TAAE frontend.
+TAAE sender will send up to 250 values in one connection.
 Contents of the input file must be in the UTF\-8 encoding.
 All values from the input file are sent in a sequential order top\-down.
 Entries must be formatted using the following rules:
@@ -535,20 +535,20 @@ If data sending failed, the exit status is 1.
 \fBzabbix_sender \-c /etc/zabbix/zabbix_agentd.conf \-k mysql.queries \-o 342.45\fR
 .br
 .RS
-Send \fB342.45\fR as the value for \fBmysql.queries\fR item of monitored host. Use monitored host and TAA server defined in agent configuration file.
+Send \fB342.45\fR as the value for \fBmysql.queries\fR item of monitored host. Use monitored host and TAAE server defined in agent configuration file.
 .RE
 
 \fBzabbix_sender \-c /etc/zabbix/zabbix_agentd.conf \-s "Monitored Host" \-k mysql.queries \-o 342.45\fR
 .br
 .RS
-Send \fB342.45\fR as the value for \fBmysql.queries\fR item of \fBMonitored Host\fR host using TAA server defined in agent configuration file.
+Send \fB342.45\fR as the value for \fBmysql.queries\fR item of \fBMonitored Host\fR host using TAAE server defined in agent configuration file.
 .RE
 
 .br
 \fBzabbix_sender \-z 192.168.1.113 \-i data_values.txt\fR
 .RS
 .br
-Send values from file \fBdata_values.txt\fR to TAA server with IP \fB192.168.1.113\fR.
+Send values from file \fBdata_values.txt\fR to TAAE server with IP \fB192.168.1.113\fR.
 Host names and keys are defined in the file.
 .RE
 
@@ -556,15 +556,15 @@ Host names and keys are defined in the file.
 \fBecho "\- hw.serial.number 1287872261 SQ4321ASDF" | zabbix_sender \-c /usr/local/etc/zabbix_agentd.conf \-T \-i \-\fR
 .br
 .RS
-Send a timestamped value from the commandline to TAA server, specified in the agent configuration file.
+Send a timestamped value from the commandline to TAAE server, specified in the agent configuration file.
 Dash in the input data indicates that hostname also should be used from the same configuration file.
 .RE
 
 .br
-\fBecho '"TAA server" trapper.item ""' | zabbix_sender \-z 192.168.1.113 \-p 10000 \-i \-\fR
+\fBecho '"TAAE server" trapper.item ""' | zabbix_sender \-z 192.168.1.113 \-p 10000 \-i \-\fR
 .br
 .RS
-Send empty value of an item to the TAA server with IP address \fB192.168.1.113\fR on port \fB10000\fR from the commandline.
+Send empty value of an item to the TAAE server with IP address \fB192.168.1.113\fR on port \fB10000\fR from the commandline.
 Empty values must be indicated by empty double quotes.
 .RE
 
@@ -574,7 +574,7 @@ Empty values must be indicated by empty double quotes.
 Send \fB342.45\fR as the value for \fBmysql.queries\fR item in \fBMonitored Host\fR host to server with IP \fB192.168.1.113\fR using TLS with certificate.
 .RE
 
-\fBzabbix_sender \-z 192.168.1.113  \-s "Monitored Host" \-k mysql.queries \-o 342.45 \-\-tls\-connect psk \-\-tls\-psk\-identity "PSK ID TAA agentd" \-\-tls\-psk\-file /home/zabbix/zabbix_agentd.psk\fR
+\fBzabbix_sender \-z 192.168.1.113  \-s "Monitored Host" \-k mysql.queries \-o 342.45 \-\-tls\-connect psk \-\-tls\-psk\-identity "PSK ID TAAE agentd" \-\-tls\-psk\-file /home/zabbix/zabbix_agentd.psk\fR
 .br
 .RS
 Send \fB342.45\fR as the value for \fBmysql.queries\fR item in \fBMonitored Host\fR host to server with IP \fB192.168.1.113\fR using TLS with pre-shared key (PSK).

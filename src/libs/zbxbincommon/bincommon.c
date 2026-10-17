@@ -72,7 +72,7 @@ void	zbx_print_usage(const char *progname, const char **usage_message)
 
 static const char	help_message_footer[] =
 	"Report bugs to: <https://support.zabbix.com>\n"
-	"TAA home page: <https://www.zabbix.com>\n"
+	"TAAE home page: <https://www.zabbix.com>\n"
 	"Documentation: <https://www.zabbix.com/documentation>";
 
 

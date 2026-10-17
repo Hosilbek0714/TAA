@@ -69,7 +69,7 @@ switch ($data['method']) {
 
 			if ($ZBX_SERVER === null && $ZBX_SERVER_PORT === null) {
 				$status = false;
-				$message = _('TAA server is not running: the information displayed may not be current.');
+				$message = _('TAAE server is not running: the information displayed may not be current.');
 			}
 			else {
 				$zabbix_server = new CZabbixServer($ZBX_SERVER, $ZBX_SERVER_PORT,
@@ -83,10 +83,10 @@ switch ($data['method']) {
 				$tls_error = $zabbix_server->getErrorCode() === CZabbixServer::ERROR_CODE_TLS;
 
 				if (!$can_connect && $tls_error) {
-					$message = _('Unable to connect to the TAA server due to TLS settings. Some functions are unavailable.');
+					$message = _('Unable to connect to the TAAE server due to TLS settings. Some functions are unavailable.');
 				}
 				elseif (!$status) {
-					$message = _('TAA server is not running: the information displayed may not be current.');
+					$message = _('TAAE server is not running: the information displayed may not be current.');
 				}
 			}
 
@@ -98,10 +98,10 @@ switch ($data['method']) {
 			$status = (bool) CSessionHelper::get('serverCheckResult');
 
 			if (CSessionHelper::get('serverCheckResultTlsError') === true) {
-				$message = _('Unable to connect to the TAA server due to TLS settings. Some functions are unavailable.');
+				$message = _('Unable to connect to the TAAE server due to TLS settings. Some functions are unavailable.');
 			}
 			elseif (!$status) {
-				$message = _('TAA server is not running: the information displayed may not be current.');
+				$message = _('TAAE server is not running: the information displayed may not be current.');
 			}
 		}
 

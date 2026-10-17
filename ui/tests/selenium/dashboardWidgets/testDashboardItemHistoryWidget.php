@@ -128,7 +128,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_ITEM,
 										'name' => 'columns.0.itemid',
-										'value' => '42227' // item name in widget 'ЗАББИКС Сервер: Linux: Host name of TAA agent running'.
+										'value' => '42227' // item name in widget 'ЗАББИКС Сервер: Linux: Host name of TAAE agent running'.
 									],
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_STR,
@@ -153,7 +153,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_ITEM,
 										'name' => 'columns.0.itemid',
-										'value' => '42227' // item name in widget 'ЗАББИКС Сервер: Linux: Host name of TAA agent running'.
+										'value' => '42227' // item name in widget 'ЗАББИКС Сервер: Linux: Host name of TAAE agent running'.
 									]
 								]
 							]
@@ -258,7 +258,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_ITEM,
 										'name' => 'columns.0.itemid',
-										'value' => '42227' // item name in widget 'ЗАББИКС Сервер: Linux: Host name of TAA agent running'.
+										'value' => '42227' // item name in widget 'ЗАББИКС Сервер: Linux: Host name of TAAE agent running'.
 									],
 									[
 										'type' => ZBX_WIDGET_FIELD_TYPE_STR,
@@ -2285,11 +2285,11 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('now')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history'
+							'Value' => 'TAAE Item history'
 						]
 					],
 					'item_data' => [
-						['itemid' => '42227', 'values' => 'TAA Item history', 'time' => strtotime('Now')]
+						['itemid' => '42227', 'values' => 'TAAE Item history', 'time' => strtotime('Now')]
 					]
 				]
 			],
@@ -2300,23 +2300,23 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('now')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history'
+							'Value' => 'TAAE Item history'
 						],
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('-1 minute')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history2'
+							'Value' => 'TAAE Item history2'
 						],
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('-2 minutes')),
 							'Name' => 'Host name',
-							'Value' => 'TAA plain ⓣⓔⓧⓣ'
+							'Value' => 'TAAE plain ⓣⓔⓧⓣ'
 						]
 					],
 					'item_data' => [
-						['itemid' => '42227', 'values' => 'TAA Item history', 'time' => strtotime('now')],
-						['itemid' => '42227', 'values' => 'TAA Item history2', 'time' => strtotime('-1 minute')],
-						['itemid' => '42227', 'values' => 'TAA plain ⓣⓔⓧⓣ', 'time' => strtotime('-2 minutes')]
+						['itemid' => '42227', 'values' => 'TAAE Item history', 'time' => strtotime('now')],
+						['itemid' => '42227', 'values' => 'TAAE Item history2', 'time' => strtotime('-1 minute')],
+						['itemid' => '42227', 'values' => 'TAAE plain ⓣⓔⓧⓣ', 'time' => strtotime('-2 minutes')]
 					]
 				]
 			],
@@ -2519,7 +2519,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('now')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history'
+							'Value' => 'TAAE Item history'
 						],
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('-80 seconds')),
@@ -2541,7 +2541,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('now')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history'
+							'Value' => 'TAAE Item history'
 						],
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('-1 week')),
@@ -2555,7 +2555,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						]
 					],
 					'item_data' => [
-						['itemid' => '42227', 'values' => 'TAA Item history', 'time' => strtotime('now')],
+						['itemid' => '42227', 'values' => 'TAAE Item history', 'time' => strtotime('now')],
 						['itemid' => '99142', 'values' => '7.777777', 'time' => strtotime('-80 seconds')],
 						['itemid' => '42227', 'values' => STRING_255, 'time' => strtotime('-1 week')],
 						['itemid' => '42244', 'values' => '82.061797', 'time' => strtotime('-1 month')]
@@ -2639,7 +2639,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('now')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history'
+							'Value' => 'TAAE Item history'
 						],
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('-80 seconds')),
@@ -2656,7 +2656,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('now')),
 							'Name' => 'Host name',
-							'Value' => 'TAA Item history'
+							'Value' => 'TAAE Item history'
 						],
 						[
 							'Timestamp' => date('Y-m-d H:i:s', strtotime('-80 seconds')),
@@ -2665,7 +2665,7 @@ class testDashboardItemHistoryWidget extends testWidgets {
 						]
 					],
 					'item_data' => [
-						['itemid' => '42227', 'values' => 'TAA Item history', 'time' => strtotime('now')],
+						['itemid' => '42227', 'values' => 'TAAE Item history', 'time' => strtotime('now')],
 						['itemid' => '99142', 'values' => '7.777777', 'time' => strtotime('-80 seconds')],
 						['itemid' => '42227', 'values' => STRING_255, 'time' => strtotime('-1 week')],
 						['itemid' => '42244', 'values' => '82.061797', 'time' => strtotime('+1 hours')]

@@ -1485,14 +1485,14 @@ class testManualActionScripts extends CWebTest {
 						'Advanced configuration' => true,
 						'Enable user input' => true,
 						'Input prompt' => 'Test version?',
-						'Default input string' => 'TAA 7.0.0',
-						'Input validation rule' => 'TAA [0-9]+\.[0-9]\.[0-9]+',
+						'Default input string' => 'TAAE 7.0.0',
+						'Input validation rule' => 'TAAE [0-9]+\.[0-9]\.[0-9]+',
 						'Enable confirmation' => true,
 						'Confirmation text' => 'Selected version is {MANUALINPUT}, proceed?'
 					],
-					'manual_input' => 'TAA 6.4.11',
+					'manual_input' => 'TAAE 6.4.11',
 					'prompt' => 'Test version?',
-					'confirmation' => 'Selected version is TAA 6.4.11, proceed?',
+					'confirmation' => 'Selected version is TAAE 6.4.11, proceed?',
 					'event' => 'Attention: script execution is needed',
 					'urls' => [
 						'Problems' => 'zabbix.php?action=problem.view',
@@ -2298,11 +2298,11 @@ class testManualActionScripts extends CWebTest {
 					$output_dialog = COverlayDialogElement::find()->waitUntilReady()->one();
 					$this->assertEquals($data['fields']['Name'], $output_dialog->getTitle());
 
-					// Check that TAA server is down and return error message.
-					$error = "Connection to TAA server \"localhost:10051\" refused. Possible reasons:\n".
+					// Check that TAAE server is down and return error message.
+					$error = "Connection to TAAE server \"localhost:10051\" refused. Possible reasons:\n".
 						"1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n".
 						"2. Security environment (for example, SELinux) is blocking the connection;\n".
-						"3. TAA server daemon not running;\n".
+						"3. TAAE server daemon not running;\n".
 						"4. Firewall is blocking TCP connection.\n".
 						"Connection refused";
 					$this->assertMessage(TEST_BAD, 'Cannot execute script.', $error);

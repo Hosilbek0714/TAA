@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# TAA Agent 2 — Linux o'rnatish skripti (DL-160 Gen9 / Ubuntu 22.04)
+# TAAE Agent 2 — Linux o'rnatish skripti (DL-160 Gen9 / Ubuntu 22.04)
 # -----------------------------------------------------------------------------
 # Maqsad: kross-kompilyatsiya qilingan binar, config va systemd unitni
 #         maqsadli serverga idempotent tarzda o'rnatish.
@@ -29,21 +29,21 @@ done
 SCRIPT_DIR="$(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)"
 
 # --- Konstantalar ---
-TAA_USER="taa-agent"
-TAA_GROUP="taa-agent"
-BIN_SRC="${SCRIPT_DIR}/dist/taa_agent2"
-BIN_DST="/usr/sbin/taa_agent2"
-CONF_SRC="${SCRIPT_DIR}/taa_agent2.conf"
-CONF_DST="/etc/taa/agent/taa_agent2.conf"
-UNIT_SRC="${SCRIPT_DIR}/taa-agent2.service"
-UNIT_DST="/etc/systemd/system/taa-agent2.service"
+TAAE_USER="taae-agent"
+TAAE_GROUP="taae-agent"
+BIN_SRC="${SCRIPT_DIR}/dist/taae_agent2"
+BIN_DST="/usr/sbin/taae_agent2"
+CONF_SRC="${SCRIPT_DIR}/taae_agent2.conf"
+CONF_DST="/etc/taae/agent/taae_agent2.conf"
+UNIT_SRC="${SCRIPT_DIR}/taae-agent2.service"
+UNIT_DST="/etc/systemd/system/taae-agent2.service"
 
 DIRS_750=(
-    /etc/taa/agent
-    /etc/taa/agent/taa_agent2.d
-    /var/log/taa/agent
-    /var/run/taa/agent
-    /var/lib/taa/agent
+    /etc/taae/agent
+    /etc/taae/agent/taae_agent2.d
+    /var/log/taae/agent
+    /var/run/taae/agent
+    /var/lib/taae/agent
 )
 
 # --- Yordamchilar ---
@@ -73,18 +73,18 @@ fi
 # -----------------------------------------------------------------------------
 # 1) Guruh va foydalanuvchi yaratish (idempotent)
 # -----------------------------------------------------------------------------
-if getent group "${TAA_GROUP}" >/dev/null 2>&1; then
-    log "Guruh allaqachon mavjud: ${TAA_GROUP}"
+if getent group "${TAAE_GROUP}" >/dev/null 2>&1; then
+    log "Guruh allaqachon mavjud: ${TAAE_GROUP}"
 else
-    log "Guruh yaratilmoqda: ${TAA_GROUP}"
-    run "groupadd --system ${TAA_GROUP}"
+    log "Guruh yaratilmoqda: ${TAAE_GROUP}"
+    run "groupadd --system ${TAAE_GROUP}"
 fi
 
-if id -u "${TAA_USER}" >/dev/null 2>&1; then
-    log "Foydalanuvchi allaqachon mavjud: ${TAA_USER}"
+if id -u "${TAAE_USER}" >/dev/null 2>&1; then
+    log "Foydalanuvchi allaqachon mavjud: ${TAAE_USER}"
 else
-    log "Foydalanuvchi yaratilmoqda: ${TAA_USER}"
-    run "useradd --system --no-create-home --shell /usr/sbin/nologin --gid ${TAA_GROUP} ${TAA_USER}"
+    log "Foydalanuvchi yaratilmoqda: ${TAAE_USER}"
+    run "useradd --system --no-create-home --shell /usr/sbin/nologin --gid ${TAAE_GROUP} ${TAAE_USER}"
 fi
 
 # -----------------------------------------------------------------------------
@@ -95,10 +95,10 @@ for d in "${DIRS_750[@]}"; do
         log "Papka mavjud: ${d}"
     else
         log "Papka yaratilmoqda: ${d}"
-        run "install -d -m 0750 -o ${TAA_USER} -g ${TAA_GROUP} ${d}"
+        run "install -d -m 0750 -o ${TAAE_USER} -g ${TAAE_GROUP} ${d}"
     fi
     # Egalik va ruxsatni har doim qayta tasdiqlash (idempotent)
-    run "chown ${TAA_USER}:${TAA_GROUP} ${d}"
+    run "chown ${TAAE_USER}:${TAAE_GROUP} ${d}"
     run "chmod 0750 ${d}"
 done
 
@@ -119,7 +119,7 @@ if [[ -f "${CONF_DST}" ]]; then
     log "Mavjud config saqlab qolindi; yangi config o'rnatilmadi."
 else
     log "Config o'rnatilmoqda: ${CONF_DST}"
-    run "install -m 0640 -o ${TAA_USER} -g ${TAA_GROUP} ${CONF_SRC} ${CONF_DST}"
+    run "install -m 0640 -o ${TAAE_USER} -g ${TAAE_GROUP} ${CONF_SRC} ${CONF_DST}"
 fi
 
 # -----------------------------------------------------------------------------
@@ -128,7 +128,7 @@ fi
 log "Systemd unit o'rnatilmoqda: ${UNIT_DST}"
 run "install -m 0644 -o root -g root ${UNIT_SRC} ${UNIT_DST}"
 run "systemctl daemon-reload"
-run "systemctl enable taa-agent2"
+run "systemctl enable taae-agent2"
 
 # -----------------------------------------------------------------------------
 # 6) Firewall (UFW)
@@ -136,7 +136,7 @@ run "systemctl enable taa-agent2"
 if command -v ufw >/dev/null 2>&1; then
     if ufw status 2>/dev/null | grep -qi "Status: active"; then
         log "UFW faol — 10050/tcp ochilmoqda"
-        run "ufw allow 10050/tcp comment 'TAA agent'"
+        run "ufw allow 10050/tcp comment 'TAAE agent'"
     else
         log "UFW o'rnatilgan, lekin faol emas — port qoidasi qo'shilmadi"
     fi
@@ -165,10 +165,10 @@ fi
 # Yakuniy xabar
 # -----------------------------------------------------------------------------
 log "==============================================================="
-log "TAA Agent 2 o'rnatildi (yoki yangilandi)."
-log "Boshlash:        sudo systemctl start taa-agent2"
-log "Holatni ko'rish: systemctl status taa-agent2"
-log "Loglar:          journalctl -u taa-agent2 -f"
-log "                 tail -f /var/log/taa/agent/taa_agent2.log"
+log "TAAE Agent 2 o'rnatildi (yoki yangilandi)."
+log "Boshlash:        sudo systemctl start taae-agent2"
+log "Holatni ko'rish: systemctl status taae-agent2"
+log "Loglar:          journalctl -u taae-agent2 -f"
+log "                 tail -f /var/log/taae/agent/taae_agent2.log"
 log "Config:          ${CONF_DST}"
 log "==============================================================="

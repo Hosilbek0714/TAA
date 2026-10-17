@@ -77,7 +77,7 @@ class JMXItemChecker extends ItemChecker
 			mbsc = null;
 
 			// We used to disallow other JNDI service providers than "rmi" here for security
-			// reasonse but then we decided TAA shouldn't interfere this way and it's the
+			// reasonse but then we decided TAAE shouldn't interfere this way and it's the
 			// task of admin to ensure security when using different JNDI service providers.
 
 			username = request.optString(JSON_TAG_USERNAME, null);

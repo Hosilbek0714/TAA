@@ -1,30 +1,30 @@
-# TAA Monitoring Platform (TAA Uzbek Localization & Rebranding Project)
+# TAAE Monitoring Platform (TAAE Uzbek Localization & Rebranding Project)
 
 ## Project Overview
 
-This project is a comprehensive effort to fully localize and rebrand the TAA monitoring platform into the **TAA** (Tizimshunoslik va Analitik Asboblar / System Analytics and Tools) monitoring platform with complete Uzbek language support. The original TAA is an enterprise-class, open-source distributed monitoring solution designed to monitor the performance and availability of network devices, servers, services, and other IT resources.
+This project is a comprehensive effort to fully localize and rebrand the TAAE monitoring platform into the **TAAE** (Tizimshunoslik va Analitik Asboblar / System Analytics and Tools) monitoring platform with complete Uzbek language support. The original TAAE is an enterprise-class, open-source distributed monitoring solution designed to monitor the performance and availability of network devices, servers, services, and other IT resources.
 
 ### Purpose
 - **Complete Uzbek Translation**: Translate all user interface elements, messages, and documentation into Uzbek
-- **Full Rebranding**: Transform TAA into TAA with custom branding, logos, and icons
+- **Full Rebranding**: Transform TAAE into TAAE with custom branding, logos, and icons
 - **Cultural Adaptation**: Ensure the translation and branding is culturally appropriate for Uzbek-speaking users
 - **Custom Identity**: Create a unique monitoring platform identity for the Uzbek market
 - **Accessibility**: Make monitoring accessible to Uzbek-speaking IT professionals and organizations
-- **Brand Recognition**: Establish TAA as a recognized monitoring solution in Uzbekistan
+- **Brand Recognition**: Establish TAAE as a recognized monitoring solution in Uzbekistan
 
 ## Project Structure
 
 ```
-taa-monitoring/ (formerly zabbix/)
-├── assets/                      # TAA Brand Assets
-│   ├── favicon.ico              # TAA favicon
-│   ├── logo.svg                 # TAA main logo
-│   ├── icons/                   # TAA custom icons
+taae-monitoring/ (formerly zabbix/)
+├── assets/                      # TAAE Brand Assets
+│   ├── favicon.ico              # TAAE favicon
+│   ├── logo.svg                 # TAAE main logo
+│   ├── icons/                   # TAAE custom icons
 │   └── branding/                # Additional brand assets
 ├── ui/                          # Web interface files
 │   ├── assets/                  # UI assets and images
-│   │   ├── img/                 # Custom TAA images
-│   │   └── styles/              # TAA brand styling
+│   │   ├── img/                 # Custom TAAE images
+│   │   └── styles/              # TAAE brand styling
 │   ├── locale/                  # Localization files
 │   │   ├── uz/                  # Uzbek locale (Latin script)
 │   │   ├── uz_UZ/               # Uzbek locale (Cyrillic script)
@@ -34,11 +34,11 @@ taa-monitoring/ (formerly zabbix/)
 │   └── include/
 │       ├── locales.inc.php      # Language configuration file
 │       └── defines.inc.php      # Brand name definitions
-├── branding/                    # TAA Branding Resources
-│   ├── logos/                   # TAA logos in various formats
-│   ├── icons/                   # TAA icon sets
-│   ├── colors.md                # TAA color palette
-│   └── style-guide.md           # TAA style guidelines
+├── branding/                    # TAAE Branding Resources
+│   ├── logos/                   # TAAE logos in various formats
+│   ├── icons/                   # TAAE icon sets
+│   ├── colors.md                # TAAE color palette
+│   └── style-guide.md           # TAAE style guidelines
 ├── docker-compose.yml           # Docker composition for development
 ├── Dockerfile                   # Docker build configuration (with branding)
 └── src/                         # Source code directories
@@ -46,7 +46,7 @@ taa-monitoring/ (formerly zabbix/)
 
 ## Features
 
-### TAA Core Features
+### TAAE Core Features
 - **Resource Discovery**: Network entities, server resources, device monitoring
 - **Metric Acquisition**: Agent and agent-less monitoring from multiple sources
 - **Root Cause Analysis**: Real-time problem detection and correlation
@@ -55,16 +55,16 @@ taa-monitoring/ (formerly zabbix/)
 - **Multitenancy**: Support for multiple organizations and data centers
 - **Flexibility**: Extensive customization and integration capabilities
 
-### TAA Platform Features
+### TAAE Platform Features
 - ✅ **UI Language Support**: Uzbek language is registered in the system
 - 📝 **Translation Files**: `.po` and `.mo` files for Uzbek translations
-- 🎨 **Custom Branding**: Complete TAA visual identity with logos and icons
-- 🏷️ **Name Replacement**: All "TAA" references replaced with "TAA"
+- 🎨 **Custom Branding**: Complete TAAE visual identity with logos and icons
+- 🏷️ **Name Replacement**: All "TAAE" references replaced with "TAAE"
 - 🔧 **Build Integration**: Docker setup includes Uzbek locale and branding assets
 - 🌐 **Cultural Adaptation**: Proper date, time, and number formatting
 - 📚 **Documentation**: Comprehensive setup and build documentation
 - 🖼️ **Asset Management**: Automated copying of brand assets during Docker build
-- 🎯 **Brand Consistency**: Unified TAA identity across all platform components
+- 🎯 **Brand Consistency**: Unified TAAE identity across all platform components
 
 ## Prerequisites
 
@@ -83,26 +83,26 @@ taa-monitoring/ (formerly zabbix/)
 ### 1. Clone the Repository
 ```bash
 git clone <repository-url>
-cd taa-monitoring
+cd taae-monitoring
 ```
 
 ### 2. Build and Run with Docker
 ```bash
-# Start the complete TAA stack
+# Start the complete TAAE stack
 docker-compose up -d --build
 
 # Check container status
 docker-compose ps
 
 # View logs
-docker-compose logs -f taa-web
+docker-compose logs -f taae-web
 ```
 
 ### 3. Access the Application
 - **Web Interface**: http://localhost:8098
-- **Default Credentials**: Admin/taa (changed from zabbix)
+- **Default Credentials**: Admin/taae (changed from zabbix)
 - **Language Setting**: Go to User Settings → Language → Select "Uzbek (uz_UZ)"
-- **Branding**: All logos and icons will display TAA branding
+- **Branding**: All logos and icons will display TAAE branding
 
 ## Docker Configuration
 
@@ -118,50 +118,50 @@ postgres:
     POSTGRES_DB: zabbix
 ```
 
-#### TAA Server (TAA Server Backend)
+#### TAAE Server (TAAE Server Backend)
 ```yaml
-taa-server:
+taae-server:
   image: zabbix/zabbix-server-pgsql:alpine-7.0-latest
   environment:
     DB_SERVER_HOST: postgres
-    POSTGRES_USER: taa_user
-    POSTGRES_PASSWORD: taa_password
-    POSTGRES_DB: taa_monitoring
+    POSTGRES_USER: taae_user
+    POSTGRES_PASSWORD: taae_password
+    POSTGRES_DB: taae_monitoring
 ```
 
-#### TAA Web Interface (Custom Build with Branding)
+#### TAAE Web Interface (Custom Build with Branding)
 ```yaml
-taa-web:
-  image: taa-web:custom
+taae-web:
+  image: taae-web:custom
   build:
     context: .
-    dockerfile: Dockerfile.taa
+    dockerfile: Dockerfile.taae
   volumes:
     # Localization files
     - ./ui/locale/uz_UZ:/usr/share/zabbix/locale/uz_UZ:ro
     - ./ui/locale/uz:/usr/share/zabbix/locale/uz:ro
     - ./ui/include/locales.inc.php:/usr/share/zabbix/include/locales.inc.php:ro
-    # TAA Branding assets
+    # TAAE Branding assets
     - ./assets/logo.svg:/usr/share/zabbix/assets/img/logo.svg:ro
     - ./assets/favicon.ico:/usr/share/zabbix/favicon.ico:ro
     - ./branding/icons:/usr/share/zabbix/assets/img/icons:ro
     - ./branding/logos:/usr/share/zabbix/assets/img/logos:ro
-    # Custom TAA configurations
+    # Custom TAAE configurations
     - ./ui/include/defines.inc.php:/usr/share/zabbix/include/defines.inc.php:ro
     - ./ui/assets/styles:/usr/share/zabbix/assets/styles:ro
 ```
 
 ### Volume Mappings
-The Docker setup mounts essential files for complete TAA transformation:
+The Docker setup mounts essential files for complete TAAE transformation:
 - **Localization**: Uzbek locale directories (`uz` and `uz_UZ`)
 - **Language Config**: Language configuration file (`locales.inc.php`)
 - **Translation Files**: Compiled `.mo` files for runtime
-- **Brand Assets**: TAA logos, icons, and visual elements
-- **Custom Styles**: TAA-specific CSS and styling
+- **Brand Assets**: TAAE logos, icons, and visual elements
+- **Custom Styles**: TAAE-specific CSS and styling
 - **Brand Definitions**: Name replacement configurations
-- **Frontend Assets**: All UI customizations for TAA identity
+- **Frontend Assets**: All UI customizations for TAAE identity
 
-## TAA Transformation & Localization Workflow
+## TAAE Transformation & Localization Workflow
 
 ### Current Status
 - ✅ Language code registered: `uz_UZ` in `locales.inc.php`
@@ -176,72 +176,72 @@ The Docker setup mounts essential files for complete TAA transformation:
 
 #### 1. Asset Preparation
 ```bash
-# Create TAA brand asset directories
+# Create TAAE brand asset directories
 mkdir -p branding/{logos,icons,styles}
 mkdir -p assets/{icons,branding}
 
-# Prepare TAA assets in various formats
+# Prepare TAAE assets in various formats
 branding/logos/
-├── taa-logo-main.svg        # Main TAA logo
-├── taa-logo-small.png       # Small size logo
-├── taa-logo-large.png       # Large size logo
-├── taa-logo-white.svg       # White version for dark backgrounds
-└── taa-logo-favicon.ico     # Favicon
+├── taae-logo-main.svg        # Main TAAE logo
+├── taae-logo-small.png       # Small size logo
+├── taae-logo-large.png       # Large size logo
+├── taae-logo-white.svg       # White version for dark backgrounds
+└── taae-logo-favicon.ico     # Favicon
 
 branding/icons/
-├── taa-icon-16x16.png      # Small icons
-├── taa-icon-32x32.png      # Medium icons
-├── taa-icon-64x64.png      # Large icons
-└── taa-iconset.svg         # Icon sprite sheet
+├── taae-icon-16x16.png      # Small icons
+├── taae-icon-32x32.png      # Medium icons
+├── taae-icon-64x64.png      # Large icons
+└── taae-iconset.svg         # Icon sprite sheet
 ```
 
 #### 2. Name Replacement Configuration
 Create `ui/include/defines.inc.php` for global name replacements:
 ```php
 <?php
-// TAA Brand Name Definitions
-define('PRODUCT_NAME', 'TAA');
+// TAAE Brand Name Definitions
+define('PRODUCT_NAME', 'TAAE');
 define('PRODUCT_FULL_NAME', 'Tizimshunoslik va Analitik Asboblar');
 define('PRODUCT_DESCRIPTION', 'Monitoring va Analitik Platform');
-define('COPYRIGHT_MESSAGE', '© 2024 TAA Monitoring Platform');
-define('DEFAULT_THEME', 'taa-theme');
+define('COPYRIGHT_MESSAGE', '© 2024 TAAE Monitoring Platform');
+define('DEFAULT_THEME', 'taae-theme');
 ```
 
 #### 3. Docker Build Integration
-Create `Dockerfile.taa` for complete asset copying with explicit source mappings:
+Create `Dockerfile.taae` for complete asset copying with explicit source mappings:
 ```dockerfile
 FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest
 
-# ===== TAA BRANDING ASSETS MAPPING =====
+# ===== TAAE BRANDING ASSETS MAPPING =====
 # Main Logo Replacements
 COPY assets/logo.svg /usr/share/zabbix/assets/img/logo.svg
-COPY branding/logos/taa-logo-main.svg /usr/share/zabbix/assets/img/
-COPY branding/logos/taa-logo-small.png /usr/share/zabbix/assets/img/
-COPY branding/logos/taa-logo-large.png /usr/share/zabbix/assets/img/
+COPY branding/logos/taae-logo-main.svg /usr/share/zabbix/assets/img/
+COPY branding/logos/taae-logo-small.png /usr/share/zabbix/assets/img/
+COPY branding/logos/taae-logo-large.png /usr/share/zabbix/assets/img/
 
 # Favicon and Browser Icons
 COPY assets/favicon.ico /usr/share/zabbix/favicon.ico
-COPY branding/logos/taa-logo-favicon.ico /usr/share/zabbix/assets/img/favicon.ico
+COPY branding/logos/taae-logo-favicon.ico /usr/share/zabbix/assets/img/favicon.ico
 
 # Navigation and UI Icons
-COPY branding/icons/taa-icon-16x16.png /usr/share/zabbix/assets/img/icon-16.png
-COPY branding/icons/taa-icon-32x32.png /usr/share/zabbix/assets/img/icon-32.png
-COPY branding/icons/taa-icon-64x64.png /usr/share/zabbix/assets/img/icon-64.png
+COPY branding/icons/taae-icon-16x16.png /usr/share/zabbix/assets/img/icon-16.png
+COPY branding/icons/taae-icon-32x32.png /usr/share/zabbix/assets/img/icon-32.png
+COPY branding/icons/taae-icon-64x64.png /usr/share/zabbix/assets/img/icon-64.png
 
 # Header and Footer Logos
-COPY branding/logos/taa-logo-header.svg /usr/share/zabbix/assets/img/zabbix_logo.svg
-COPY branding/logos/taa-logo-white.svg /usr/share/zabbix/assets/img/zabbix_logo_sidebar.svg
+COPY branding/logos/taae-logo-header.svg /usr/share/zabbix/assets/img/zabbix_logo.svg
+COPY branding/logos/taae-logo-white.svg /usr/share/zabbix/assets/img/zabbix_logo_sidebar.svg
 
 # Dashboard and Login Page Assets
-COPY branding/logos/taa-logo-login.png /usr/share/zabbix/assets/img/zabbix_logo_login.png
-COPY branding/logos/taa-logo-dashboard.svg /usr/share/zabbix/assets/img/dashboard_logo.svg
+COPY branding/logos/taae-logo-login.png /usr/share/zabbix/assets/img/zabbix_logo_login.png
+COPY branding/logos/taae-logo-dashboard.svg /usr/share/zabbix/assets/img/dashboard_logo.svg
 
 # Copy all icons to respective UI directories
 COPY branding/icons/* /usr/share/zabbix/assets/img/icons/
 COPY branding/logos/* /usr/share/zabbix/assets/img/logos/
 
-# Custom TAA Styles and Themes
-COPY branding/styles/taa-theme.css /usr/share/zabbix/assets/styles/
+# Custom TAAE Styles and Themes
+COPY branding/styles/taae-theme.css /usr/share/zabbix/assets/styles/
 COPY branding/styles/* /usr/share/zabbix/assets/styles/
 
 # Copy localization files
@@ -255,19 +255,19 @@ COPY ui/assets/styles /usr/share/zabbix/assets/styles
 COPY ui/assets/img /usr/share/zabbix/assets/img
 
 # ===== CRITICAL: REPLACE ORIGINAL ZABBIX ASSETS =====
-# Override original TAA branding files with TAA equivalents
-RUN cp /usr/share/zabbix/assets/img/taa-logo-main.svg /usr/share/zabbix/assets/img/zabbix_logo.svg
-RUN cp /usr/share/zabbix/assets/img/taa-logo-header.svg /usr/share/zabbix/assets/img/zabbix_logo_header.svg
-RUN cp /usr/share/zabbix/assets/img/taa-icon-32x32.png /usr/share/zabbix/assets/img/zabbix_icon.png
+# Override original TAAE branding files with TAAE equivalents
+RUN cp /usr/share/zabbix/assets/img/taae-logo-main.svg /usr/share/zabbix/assets/img/zabbix_logo.svg
+RUN cp /usr/share/zabbix/assets/img/taae-logo-header.svg /usr/share/zabbix/assets/img/zabbix_logo_header.svg
+RUN cp /usr/share/zabbix/assets/img/taae-icon-32x32.png /usr/share/zabbix/assets/img/zabbix_icon.png
 
 # Set proper permissions
 RUN chown -R nginx:nginx /usr/share/zabbix/assets/
 RUN chown -R nginx:nginx /usr/share/zabbix/locale/
 
-# Update index.php and other files to use TAA branding
-RUN find /usr/share/zabbix -name "*.php" -exec sed -i 's/TAA/TAA/g' {} \;
-RUN find /usr/share/zabbix -name "*.js" -exec sed -i 's/TAA/TAA/g' {} \;
-RUN find /usr/share/zabbix -name "*.css" -exec sed -i 's/zabbix_logo/taa-logo/g' {} \;
+# Update index.php and other files to use TAAE branding
+RUN find /usr/share/zabbix -name "*.php" -exec sed -i 's/TAAE/TAAE/g' {} \;
+RUN find /usr/share/zabbix -name "*.js" -exec sed -i 's/TAAE/TAAE/g' {} \;
+RUN find /usr/share/zabbix -name "*.css" -exec sed -i 's/zabbix_logo/taae-logo/g' {} \;
 ```
 
 ### Translation Process
@@ -300,15 +300,15 @@ msgstr "Monitoring"
 ```
 
 #### 4. Brand Name Translation
-Update translation files to include TAA branding:
+Update translation files to include TAAE branding:
 ```po
 #: branding
-msgid "TAA"
-msgstr "TAA"
+msgid "TAAE"
+msgstr "TAAE"
 
 #: branding
-msgid "TAA monitoring"
-msgstr "TAA monitoring"
+msgid "TAAE monitoring"
+msgstr "TAAE monitoring"
 
 #: branding
 msgid "System Analytics and Tools"
@@ -321,23 +321,23 @@ msgstr "Tizimshunoslik va Analitik Asboblar"
 ./make_mo.sh
 ```
 
-#### 6. Build TAA Docker Image
+#### 6. Build TAAE Docker Image
 ```bash
-# Build custom TAA image with all assets
-docker build -f Dockerfile.taa -t taa-web:custom .
+# Build custom TAAE image with all assets
+docker build -f Dockerfile.taae -t taae-web:custom .
 
 # Verify asset copying
-docker run --rm taa-web:custom ls -la /usr/share/zabbix/assets/img/logos/
+docker run --rm taae-web:custom ls -la /usr/share/zabbix/assets/img/logos/
 ```
 
-#### 7. Test Complete TAA Platform
+#### 7. Test Complete TAAE Platform
 ```bash
-# Rebuild and restart containers with TAA branding
+# Rebuild and restart containers with TAAE branding
 docker-compose down
 docker-compose up -d --build
 
-# Verify TAA branding is applied
-curl -s http://localhost:8098 | grep -i "TAA"
+# Verify TAAE branding is applied
+curl -s http://localhost:8098 | grep -i "TAAE"
 ```
 
 ### Translation Guidelines
@@ -349,16 +349,16 @@ curl -s http://localhost:8098 | grep -i "TAA"
 - **Pluralization**: Set correct plural forms in .po file headers
 
 #### Example Translations
-| English/TAA | Uzbek/TAA | Context |
+| English/TAAE | Uzbek/TAAE | Context |
 |---------|-------|---------|
 | Dashboard | Boshqaruv paneli | Main interface |
 | Host | Xost | IT infrastructure |
 | Trigger | Trigger | Monitoring alerts |
 | Template | Shablon | Configuration |
 | Network | Tarmoq | Infrastructure |
-| TAA | TAA | Brand name |
-| TAA Server | TAA Server | System component |
-| TAA Agent | TAA Agent | Monitoring agent |
+| TAAE | TAAE | Brand name |
+| TAAE Server | TAAE Server | System component |
+| TAAE Agent | TAAE Agent | Monitoring agent |
 | Monitoring | Monitoring | Core function |
 | System Analytics | Tizim tahlili | Platform purpose |
 
@@ -383,69 +383,69 @@ sudo make install
 
 ### Docker Build Process
 ```bash
-# Build custom TAA web image with all branding
-docker build -f Dockerfile.taa -t taa-web:custom .
+# Build custom TAAE web image with all branding
+docker build -f Dockerfile.taae -t taae-web:custom .
 
-# Or use docker-compose with TAA configuration
-docker-compose build taa-web
+# Or use docker-compose with TAAE configuration
+docker-compose build taae-web
 
 # Build with cache busting for fresh assets
-docker build --no-cache -f Dockerfile.taa -t taa-web:latest .
+docker build --no-cache -f Dockerfile.taae -t taae-web:latest .
 
-# Verify TAA assets are copied correctly
-docker run --rm taa-web:custom find /usr/share/zabbix -name "*taa*" -o -name "*TAA*"
+# Verify TAAE assets are copied correctly
+docker run --rm taae-web:custom find /usr/share/zabbix -name "*taae*" -o -name "*TAAE*"
 ```
 
 ### Frontend Asset Management
 ```bash
-# Automated script to prepare all TAA assets
+# Automated script to prepare all TAAE assets
 #!/bin/bash
-# prepare_taa_assets.sh
+# prepare_taae_assets.sh
 
-echo "Preparing TAA brand assets..."
+echo "Preparing TAAE brand assets..."
 
 # Create asset directories
 mkdir -p {branding/{logos,icons,styles},assets/{icons,branding},ui/assets/{img,styles}}
 
-# Copy TAA logos to multiple locations
-cp branding/logos/taa-logo-main.svg assets/logo.svg
-cp branding/logos/taa-logo-favicon.ico assets/favicon.ico
+# Copy TAAE logos to multiple locations
+cp branding/logos/taae-logo-main.svg assets/logo.svg
+cp branding/logos/taae-logo-favicon.ico assets/favicon.ico
 
 # Copy icons for UI
 cp -r branding/icons/* ui/assets/img/icons/
 
-# Copy custom TAA styles
+# Copy custom TAAE styles
 cp -r branding/styles/* ui/assets/styles/
 
-echo "TAA assets prepared for Docker build"
+echo "TAAE assets prepared for Docker build"
 ```
 
 ## Frontend Asset Source Mapping & Build Process
 
-### Original TAA Asset Locations (What Gets Replaced)
-During the Docker build, TAA assets replace these original TAA locations:
+### Original TAAE Asset Locations (What Gets Replaced)
+During the Docker build, TAAE assets replace these original TAAE locations:
 
 #### **Primary Logo Locations:**
 ```bash
-# Original TAA Assets → TAA Replacements
-/usr/share/zabbix/assets/img/zabbix_logo.svg → taa-logo-header.svg
-/usr/share/zabbix/assets/img/zabbix_logo_header.svg → taa-logo-header.svg
-/usr/share/zabbix/assets/img/zabbix_logo_sidebar.svg → taa-logo-white.svg
-/usr/share/zabbix/assets/img/zabbix_logo_login.png → taa-logo-login.png
-/usr/share/zabbix/favicon.ico → taa-logo-favicon.ico
+# Original TAAE Assets → TAAE Replacements
+/usr/share/zabbix/assets/img/zabbix_logo.svg → taae-logo-header.svg
+/usr/share/zabbix/assets/img/zabbix_logo_header.svg → taae-logo-header.svg
+/usr/share/zabbix/assets/img/zabbix_logo_sidebar.svg → taae-logo-white.svg
+/usr/share/zabbix/assets/img/zabbix_logo_login.png → taae-logo-login.png
+/usr/share/zabbix/favicon.ico → taae-logo-favicon.ico
 ```
 
 #### **Icon and UI Element Locations:**
 ```bash
 # Icons used throughout the interface
-/usr/share/zabbix/assets/img/icon-16.png → taa-icon-16x16.png
-/usr/share/zabbix/assets/img/icon-32.png → taa-icon-32x32.png
-/usr/share/zabbix/assets/img/icon-64.png → taa-icon-64x64.png
-/usr/share/zabbix/assets/img/zabbix_icon.png → taa-icon-32x32.png
+/usr/share/zabbix/assets/img/icon-16.png → taae-icon-16x16.png
+/usr/share/zabbix/assets/img/icon-32.png → taae-icon-32x32.png
+/usr/share/zabbix/assets/img/icon-64.png → taae-icon-64x64.png
+/usr/share/zabbix/assets/img/zabbix_icon.png → taae-icon-32x32.png
 
 # Dashboard and widget icons
-/usr/share/zabbix/assets/img/dashboard_logo.svg → taa-logo-dashboard.svg
-/usr/share/zabbix/ui/assets/img/ → (entire TAA icon set)
+/usr/share/zabbix/assets/img/dashboard_logo.svg → taae-logo-dashboard.svg
+/usr/share/zabbix/ui/assets/img/ → (entire TAAE icon set)
 ```
 
 #### **CSS and Style References:**
@@ -457,38 +457,38 @@ During the Docker build, TAA assets replace these original TAA locations:
 /usr/share/zabbix/assets/styles/hc-dark.css
 ```
 
-### TAA Asset Source Structure (Build Input)
+### TAAE Asset Source Structure (Build Input)
 Your local project should have this structure for successful Docker builds:
 
 ```bash
-taa-monitoring/
-├── branding/                    # 📁 Source TAA Brand Assets
+taae-monitoring/
+├── branding/                    # 📁 Source TAAE Brand Assets
 │   ├── logos/
-│   │   ├── taa-logo-main.svg           # Main TAA logo
-│   │   ├── taa-logo-header.svg         # Header logo (replaces zabbix_logo.svg)
-│   │   ├── taa-logo-sidebar.svg        # Sidebar logo
-│   │   ├── taa-logo-white.svg          # White version for dark themes
-│   │   ├── taa-logo-login.png          # Login page logo
-│   │   ├── taa-logo-dashboard.svg      # Dashboard widget logo
-│   │   ├── taa-logo-small.png          # Small size (16x16, 24x24)
-│   │   ├── taa-logo-large.png          # Large size (64x64, 128x128)
-│   │   └── taa-logo-favicon.ico        # Browser favicon
+│   │   ├── taae-logo-main.svg           # Main TAAE logo
+│   │   ├── taae-logo-header.svg         # Header logo (replaces zabbix_logo.svg)
+│   │   ├── taae-logo-sidebar.svg        # Sidebar logo
+│   │   ├── taae-logo-white.svg          # White version for dark themes
+│   │   ├── taae-logo-login.png          # Login page logo
+│   │   ├── taae-logo-dashboard.svg      # Dashboard widget logo
+│   │   ├── taae-logo-small.png          # Small size (16x16, 24x24)
+│   │   ├── taae-logo-large.png          # Large size (64x64, 128x128)
+│   │   └── taae-logo-favicon.ico        # Browser favicon
 │   ├── icons/
-│   │   ├── taa-icon-16x16.png          # Small UI icons
-│   │   ├── taa-icon-32x32.png          # Medium UI icons
-│   │   ├── taa-icon-64x64.png          # Large UI icons
-│   │   ├── taa-iconset.svg             # Icon sprite sheet
+│   │   ├── taae-icon-16x16.png          # Small UI icons
+│   │   ├── taae-icon-32x32.png          # Medium UI icons
+│   │   ├── taae-icon-64x64.png          # Large UI icons
+│   │   ├── taae-iconset.svg             # Icon sprite sheet
 │   │   └── ui-elements/                # Individual UI element icons
 │   │       ├── menu-icon.svg
 │   │       ├── settings-icon.svg
 │   │       └── notification-icon.svg
 │   └── styles/
-│       ├── taa-theme.css               # Custom TAA theme
-│       ├── taa-colors.css              # TAA color definitions
+│       ├── taae-theme.css               # Custom TAAE theme
+│       ├── taae-colors.css              # TAAE color definitions
 │       └── logo-overrides.css          # Logo positioning rules
 └── assets/                      # 📁 Quick Access Assets
-    ├── logo.svg                        # Symlink to taa-logo-main.svg
-    ├── favicon.ico                     # Symlink to taa-logo-favicon.ico
+    ├── logo.svg                        # Symlink to taae-logo-main.svg
+    ├── favicon.ico                     # Symlink to taae-logo-favicon.ico
     └── branding/                       # Additional brand materials
 ```
 
@@ -497,17 +497,17 @@ taa-monitoring/
 #### **Step 1: Pre-Build Asset Validation**
 ```bash
 #!/bin/bash
-# validate_taa_assets.sh
+# validate_taae_assets.sh
 
-echo "🔍 Validating TAA assets before Docker build..."
+echo "🔍 Validating TAAE assets before Docker build..."
 
 # Check required logo files
 required_logos=(
-    "branding/logos/taa-logo-main.svg"
-    "branding/logos/taa-logo-header.svg"
-    "branding/logos/taa-logo-white.svg"
-    "branding/logos/taa-logo-login.png"
-    "branding/logos/taa-logo-favicon.ico"
+    "branding/logos/taae-logo-main.svg"
+    "branding/logos/taae-logo-header.svg"
+    "branding/logos/taae-logo-white.svg"
+    "branding/logos/taae-logo-login.png"
+    "branding/logos/taae-logo-favicon.ico"
 )
 
 for logo in "${required_logos[@]}"; do
@@ -521,9 +521,9 @@ done
 
 # Check icon files
 required_icons=(
-    "branding/icons/taa-icon-16x16.png"
-    "branding/icons/taa-icon-32x32.png"
-    "branding/icons/taa-icon-64x64.png"
+    "branding/icons/taae-icon-16x16.png"
+    "branding/icons/taae-icon-32x32.png"
+    "branding/icons/taae-icon-64x64.png"
 )
 
 for icon in "${required_icons[@]}"; do
@@ -535,18 +535,18 @@ for icon in "${required_icons[@]}"; do
     fi
 done
 
-echo "✅ All TAA assets validated successfully!"
+echo "✅ All TAAE assets validated successfully!"
 ```
 
 #### **Step 2: Asset Optimization During Build**
 ```dockerfile
-# In Dockerfile.taa - Add optimization steps
+# In Dockerfile.taae - Add optimization steps
 FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest
 
 # Install image optimization tools
 RUN apk add --no-cache imagemagick optipng
 
-# Copy and optimize TAA assets
+# Copy and optimize TAAE assets
 COPY branding/logos/ /tmp/logos/
 COPY branding/icons/ /tmp/icons/
 
@@ -554,9 +554,9 @@ COPY branding/icons/ /tmp/icons/
 RUN find /tmp/icons -name "*.png" -exec optipng -o7 {} \;
 
 # Generate missing icon sizes if needed
-RUN convert /tmp/logos/taa-logo-main.svg -resize 16x16 /tmp/icons/taa-icon-16x16.png
-RUN convert /tmp/logos/taa-logo-main.svg -resize 32x32 /tmp/icons/taa-icon-32x32.png
-RUN convert /tmp/logos/taa-logo-main.svg -resize 64x64 /tmp/icons/taa-icon-64x64.png
+RUN convert /tmp/logos/taae-logo-main.svg -resize 16x16 /tmp/icons/taae-icon-16x16.png
+RUN convert /tmp/logos/taae-logo-main.svg -resize 32x32 /tmp/icons/taae-icon-32x32.png
+RUN convert /tmp/logos/taae-logo-main.svg -resize 64x64 /tmp/icons/taae-icon-64x64.png
 
 # Now copy optimized assets to final locations
 # [Previous COPY commands with /tmp/ sources]
@@ -565,18 +565,18 @@ RUN convert /tmp/logos/taa-logo-main.svg -resize 64x64 /tmp/icons/taa-icon-64x64
 #### **Step 3: Runtime Asset Verification**
 ```bash
 #!/bin/bash
-# verify_taa_deployment.sh
+# verify_taae_deployment.sh
 
-echo "🔍 Verifying TAA branding in deployed container..."
+echo "🔍 Verifying TAAE branding in deployed container..."
 
-CONTAINER_NAME="taa-web"
+CONTAINER_NAME="taae-web"
 
-# Check if TAA logos are properly placed
+# Check if TAAE logos are properly placed
 echo "Checking logo deployment..."
-docker exec $CONTAINER_NAME ls -la /usr/share/zabbix/assets/img/ | grep -i taa
+docker exec $CONTAINER_NAME ls -la /usr/share/zabbix/assets/img/ | grep -i taae
 
-# Verify original TAA assets are replaced
-echo "Verifying TAA asset replacement..."
+# Verify original TAAE assets are replaced
+echo "Verifying TAAE asset replacement..."
 docker exec $CONTAINER_NAME file /usr/share/zabbix/assets/img/zabbix_logo.svg
 
 # Check favicon
@@ -585,49 +585,49 @@ docker exec $CONTAINER_NAME ls -la /usr/share/zabbix/favicon.ico
 
 # Test web accessibility
 echo "Testing web interface..."
-curl -s http://localhost:8098 | grep -i "TAA" && echo "✅ TAA branding detected in HTML"
+curl -s http://localhost:8098 | grep -i "TAAE" && echo "✅ TAAE branding detected in HTML"
 
-echo "🎯 TAA deployment verification complete!"
+echo "🎯 TAAE deployment verification complete!"
 ```
 
 ### Frontend Build Integration Points
 
 #### **PHP Template Integration**
-The frontend builds need to reference TAA assets in these key files:
+The frontend builds need to reference TAAE assets in these key files:
 ```php
 // ui/include/page_header.php
-$logo_src = 'assets/img/taa-logo-header.svg';
+$logo_src = 'assets/img/taae-logo-header.svg';
 
 // ui/include/views/general.login.php  
-$login_logo = 'assets/img/taa-logo-login.png';
+$login_logo = 'assets/img/taae-logo-login.png';
 
 // ui/include/classes/core/CView.php
-$favicon = 'favicon.ico'; // Points to TAA favicon
+$favicon = 'favicon.ico'; // Points to TAAE favicon
 ```
 
 #### **JavaScript Asset References**
 ```javascript
 // ui/js/main.js - Update logo references
-const LOGO_PATH = 'assets/img/taa-logo-main.svg';
+const LOGO_PATH = 'assets/img/taae-logo-main.svg';
 const ICON_PATH = 'assets/img/icons/';
 
 // ui/js/dashboard.js - Dashboard logo
-const DASHBOARD_LOGO = 'assets/img/taa-logo-dashboard.svg';
+const DASHBOARD_LOGO = 'assets/img/taae-logo-dashboard.svg';
 ```
 
 #### **CSS Asset Integration**
 ```css
-/* ui/assets/styles/taa-theme.css */
+/* ui/assets/styles/taae-theme.css */
 .header-logo {
-    background-image: url('../img/taa-logo-header.svg');
+    background-image: url('../img/taae-logo-header.svg');
 }
 
 .login-logo {
-    background-image: url('../img/taa-logo-login.png');
+    background-image: url('../img/taae-logo-login.png');
 }
 
 .sidebar-logo {
-    background-image: url('../img/taa-logo-white.svg');
+    background-image: url('../img/taae-logo-white.svg');
 }
 ```
 
@@ -642,8 +642,8 @@ location ~* \.(svg|png|ico|css|js)$ {
     add_header Vary Accept-Encoding;
 }
 
-# Specific cache busting for TAA assets
-location /assets/img/taa- {
+# Specific cache busting for TAAE assets
+location /assets/img/taae- {
     expires 30d;
     add_header Cache-Control "public";
 }
@@ -652,62 +652,62 @@ location /assets/img/taa- {
 #### **Asset Versioning Strategy**
 ```bash
 # Generate version hash for cache busting
-TAA_VERSION=$(date +%Y%m%d_%H%M%S)
-echo "TAA_ASSET_VERSION='$TAA_VERSION'" > ui/include/taa_version.php
+TAAE_VERSION=$(date +%Y%m%d_%H%M%S)
+echo "TAAE_ASSET_VERSION='$TAAE_VERSION'" > ui/include/taae_version.php
 
 # Update asset URLs with version
-sed -i "s/taa-logo-main.svg/taa-logo-main.svg?v=$TAA_VERSION/g" ui/**/*.php
+sed -i "s/taae-logo-main.svg/taae-logo-main.svg?v=$TAAE_VERSION/g" ui/**/*.php
 ```
 
-This comprehensive mapping ensures that all TAA branding assets are properly integrated during the Docker build process, replacing all original TAA visual elements with TAA branding.
+This comprehensive mapping ensures that all TAAE branding assets are properly integrated during the Docker build process, replacing all original TAAE visual elements with TAAE branding.
 
 ## Development Setup
 
 ### Local Development Environment
 ```bash
 # Start only database and server
-docker-compose up -d postgres taa-server
+docker-compose up -d postgres taae-server
 
-# Run web interface locally for development with TAA branding
+# Run web interface locally for development with TAAE branding
 cd ui
 php -S localhost:8080
 
-# Or run with TAA assets mounted
-docker-compose up -d postgres taa-server
-docker run -p 8080:8080 -v $(pwd)/ui:/usr/share/zabbix -v $(pwd)/branding:/usr/share/zabbix/assets/branding taa-web:custom
+# Or run with TAAE assets mounted
+docker-compose up -d postgres taae-server
+docker run -p 8080:8080 -v $(pwd)/ui:/usr/share/zabbix -v $(pwd)/branding:/usr/share/zabbix/assets/branding taae-web:custom
 ```
 
 ### File Watching and Hot Reload
 ```bash
 # Watch for changes in locale files and branding assets
-find ui/locale -name "*.po" -o -path "branding/*" -o -path "assets/*" | entr -r docker-compose restart taa-web
+find ui/locale -name "*.po" -o -path "branding/*" -o -path "assets/*" | entr -r docker-compose restart taae-web
 
-# Watch specifically for TAA asset changes
-find branding assets ui/assets -type f | entr -r sh -c 'docker-compose build taa-web && docker-compose up -d taa-web'
+# Watch specifically for TAAE asset changes
+find branding assets ui/assets -type f | entr -r sh -c 'docker-compose build taae-web && docker-compose up -d taae-web'
 
 # Auto-compile translations and rebuild on changes
-find ui/locale -name "*.po" | entr -r sh -c 'cd ui/locale && ./make_mo.sh && docker-compose restart taa-web'
+find ui/locale -name "*.po" | entr -r sh -c 'cd ui/locale && ./make_mo.sh && docker-compose restart taae-web'
 ```
 
-### TAA Development Workflow
+### TAAE Development Workflow
 ```bash
 # Complete development setup script
 #!/bin/bash
-# dev_setup_taa.sh
+# dev_setup_taae.sh
 
-echo "Setting up TAA development environment..."
+echo "Setting up TAAE development environment..."
 
 # Prepare assets
-./prepare_taa_assets.sh
+./prepare_taae_assets.sh
 
 # Start development stack
-docker-compose up -d postgres taa-server
+docker-compose up -d postgres taae-server
 
-# Build and start TAA web with development mounts
-docker-compose up -d taa-web
+# Build and start TAAE web with development mounts
+docker-compose up -d taae-web
 
-echo "TAA development environment ready at http://localhost:8098"
-echo "Username: Admin, Password: taa"
+echo "TAAE development environment ready at http://localhost:8098"
+echo "Username: Admin, Password: taae"
 ```
 
 ## Testing
@@ -791,7 +791,7 @@ grep -n "uz_UZ" ui/include/locales.inc.php
 ```
 
 ### Debug Mode
-Enable debug mode in TAA configuration:
+Enable debug mode in TAAE configuration:
 ```php
 // In zabbix.conf.php
 $ZBX_CONFIG['debug'] = true;
@@ -825,20 +825,20 @@ $ZBX_CONFIG['debug'] = true;
 
 ## License
 
-This project maintains the same license as TAA: **AGPL-3.0-only**
+This project maintains the same license as TAAE: **AGPL-3.0-only**
 
 See [COPYING](COPYING) for full license text.
 
 ## Resources
 
 ### Documentation
-- [TAA Official Documentation](https://www.zabbix.com/documentation/current/en/)
-- [TAA Installation Manual](https://www.zabbix.com/documentation/current/en/manual/installation)
+- [TAAE Official Documentation](https://www.zabbix.com/documentation/current/en/)
+- [TAAE Installation Manual](https://www.zabbix.com/documentation/current/en/manual/installation)
 - [gettext Documentation](https://www.gnu.org/software/gettext/manual/)
 
 ### Community
-- [TAA Community Forums](https://www.zabbix.com/forum/)
-- [TAA GitHub Repository](https://github.com/zabbix/zabbix)
+- [TAAE Community Forums](https://www.zabbix.com/forum/)
+- [TAAE GitHub Repository](https://github.com/zabbix/zabbix)
 - Uzbek Localization Team: [Contact Information]
 
 ### Tools
@@ -869,7 +869,7 @@ See [COPYING](COPYING) for full license text.
 - [ ] Performance optimization
 
 ### Long-term Goals (6+ months)
-- [ ] Official TAA inclusion
+- [ ] Official TAAE inclusion
 - [ ] Maintenance and updates
 - [ ] Regional dialect support
 - [ ] Mobile app localization

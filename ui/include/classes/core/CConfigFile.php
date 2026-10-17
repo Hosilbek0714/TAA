@@ -277,7 +277,7 @@ class CConfigFile {
 	public function getString() {
 		return
 '<?php
-// TAA GUI configuration file.
+// TAAE GUI configuration file.
 
 $DB[\'TYPE\']			= \''.addcslashes($this->config['DB']['TYPE'], "'\\").'\';
 $DB[\'SERVER\']			= \''.addcslashes($this->config['DB']['SERVER'], "'\\").'\';
@@ -308,7 +308,7 @@ $DB[\'VAULT_KEY_FILE\']		= \''.addcslashes($this->config['DB']['VAULT_KEY_FILE']
 // Uncomment to bypass local caching of credentials.
 // $DB[\'VAULT_CACHE\']		= true;
 
-// Uncomment and set to desired values to override TAA hostname/IP and port.
+// Uncomment and set to desired values to override TAAE hostname/IP and port.
 // $ZBX_SERVER			= \'\';
 // $ZBX_SERVER_PORT		= \'\';
 

@@ -5,7 +5,7 @@
 	"name": "Clock2",
 	"namespace": "Clock2",
 	"version": "1.1",
-	"author": "TAA QA department",
+	"author": "TAAE QA department",
 	"widget": {
 		"template_support": true,
 		"size": {

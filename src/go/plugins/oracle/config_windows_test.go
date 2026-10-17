@@ -53,7 +53,7 @@ func Test_PluginOptions_setCustomQueriesDirDefault(t *testing.T) {
 			},
 			&PluginOptions{
 				CustomQueriesPath: fmt.Sprintf(
-					"%s\\TAA Agent 2\\Custom Queries\\Oracle", os.Getenv("ProgramFiles"),
+					"%s\\TAAE Agent 2\\Custom Queries\\Oracle", os.Getenv("ProgramFiles"),
 				),
 				CustomQueriesEnabled: true,
 			},

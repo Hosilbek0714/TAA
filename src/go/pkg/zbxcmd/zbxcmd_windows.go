@@ -70,7 +70,7 @@ func (e *ZBXExec) execute(command string, timeout time.Duration, execDir string,
 
 	werr := cmd.Wait()
 
-	// we need to check context error so we can inform the user if timeout was reached and TAA agent2
+	// we need to check context error so we can inform the user if timeout was reached and TAAE agent2
 	// terminated the command
 	if errors.Is(ctx.Err(), context.DeadlineExceeded) {
 		return "", fmt.Errorf("command execution failed: %s", ctx.Err())

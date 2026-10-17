@@ -5,7 +5,7 @@
 	"name": "Test Listener",
 	"namespace": "TestListener",
 	"version": "1.0",
-	"author": "TAA",
+	"author": "TAAE",
 	"description": "Allows to test broadcasting functionality of other widgets.",
 	"widget": {
 		"size": {

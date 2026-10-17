@@ -644,7 +644,7 @@ class CControllerPopupTriggerExpr extends CController {
 			],
 			'fuzzytime' => [
 				'types' => [ZBX_FUNCTION_TYPE_HISTORY],
-				'description' => _('fuzzytime() - Difference between item value (as timestamp) and TAA server timestamp is less than or equal to T seconds (1 - true, 0 - false)'),
+				'description' => _('fuzzytime() - Difference between item value (as timestamp) and TAAE server timestamp is less than or equal to T seconds (1 - true, 0 - false)'),
 				'params' => $this->param1Sec,
 				'allowed_types' => $this->allowedTypesNumeric,
 				'operators' => ['=', '<>']

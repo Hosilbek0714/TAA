@@ -1,4 +1,4 @@
-# TAA veb-interfeysi (asos: rasmiy 7.0 veb image)
+# TAAE veb-interfeysi (asos: rasmiy 7.0 veb image)
 FROM zabbix/zabbix-web-nginx-pgsql:alpine-7.0-latest
 
 # Rootga o'tamiz (papkalar/COPY uchun)
@@ -90,7 +90,7 @@ RUN set -eux; \
     if [ -f "$css" ]; then \
       { \
         echo ''; \
-        echo '/* TAA logo override */'; \
+        echo '/* TAAE logo override */'; \
         echo 'div.zabbix-logo{background:url("assets/img/logo.svg") no-repeat !important;background-size:contain !important;width:114px !important;height:30px !important;}'; \
         echo 'div.zabbix-logo-sidebar{background:url("assets/img/logo-sidebar.svg") no-repeat !important;background-size:contain !important;width:91px !important;height:24px !important;}'; \
         echo 'div.zabbix-logo-sidebar-compact{background:url("assets/img/logo-compact.svg") no-repeat !important;background-size:contain !important;width:24px !important;height:24px !important;}'; \
@@ -102,23 +102,23 @@ RUN set -eux; \
     fi; \
   done
 
-# TAA dizayn tizimi (ui/assets/styles/taa): ranglar + umumiy komponentlar.
+# TAAE dizayn tizimi (ui/assets/styles/taae): ranglar + umumiy komponentlar.
 # Faqat yorug' (blue) va qora mavzu bor; yuqori kontrastli mavzular
-# taa-rebrand-web.sh da olib tashlanadi.
+# taae-rebrand-web.sh da olib tashlanadi.
 RUN cd /usr/share/zabbix/assets/styles \
- && cat taa/tokens-light.css taa/components.css >> blue-theme.css \
- && cat taa/tokens-dark.css taa/components.css >> dark-theme.css
+ && cat taae/tokens-light.css taae/components.css >> blue-theme.css \
+ && cat taae/tokens-dark.css taae/components.css >> dark-theme.css
 
 RUN sed -i 's/en_US/uz_UZ/' /usr/share/zabbix/include/defines.inc.php
 
-# TAA: interfeysdagi eski brend nomini butunlay olib tashlash.
+# TAAE: interfeysdagi eski brend nomini butunlay olib tashlash.
 # Barcha COPY'lardan keyin turishi shart - repo'dan ko'chirilgan fayllar ham
 # qayta ishlanadi. perl faqat shu qadam uchun o'rnatiladi va o'chiriladi.
-COPY docker/taa-rebrand-web.sh /tmp/taa-rebrand-web.sh
-RUN apk add --no-cache --virtual .taa-rebrand perl \
- && sh /tmp/taa-rebrand-web.sh \
- && apk del .taa-rebrand \
- && rm -f /tmp/taa-rebrand-web.sh
+COPY docker/taae-rebrand-web.sh /tmp/taae-rebrand-web.sh
+RUN apk add --no-cache --virtual .taae-rebrand perl \
+ && sh /tmp/taae-rebrand-web.sh \
+ && apk del .taae-rebrand \
+ && rm -f /tmp/taae-rebrand-web.sh
 
 # Ish muhitini sozlash va default userga qaytish
 WORKDIR /usr/share/zabbix

@@ -122,7 +122,7 @@ static int	tm_execute_remote_command(zbx_uint64_t taskid, int clock, int ttl, ti
 
 	if (ZBX_SCRIPT_EXECUTE_ON_PROXY == script.execute_on)
 	{
-		/* always wait for execution result when executing on TAA proxy */
+		/* always wait for execution result when executing on TAAE proxy */
 		alertid = 0;
 
 		if (ZBX_SCRIPT_TYPE_CUSTOM_SCRIPT == script.type)
@@ -142,7 +142,7 @@ static int	tm_execute_remote_command(zbx_uint64_t taskid, int clock, int ttl, ti
 	}
 	else
 	{
-		/* only wait for execution result when executed on TAA agent if it's not automatic alert but */
+		/* only wait for execution result when executed on TAAE agent if it's not automatic alert but */
 		/* manually initiated command through frontend                                                  */
 		ZBX_DBROW2UINT64(alertid, row[11]);
 	}

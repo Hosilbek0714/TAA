@@ -51,10 +51,10 @@ class testTriggerExpressions extends CWebTest {
 		$this->assertTrue($message->isBad());
 		$this->assertEquals('Cannot evaluate expression', $message->getTitle());
 
-		$message_details = "Connection to TAA server \"localhost:10051\" refused. Possible reasons:\n".
+		$message_details = "Connection to TAAE server \"localhost:10051\" refused. Possible reasons:\n".
 				"1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n".
 				"2. Security environment (for example, SELinux) is blocking the connection;\n".
-				"3. TAA server daemon not running;\n".
+				"3. TAAE server daemon not running;\n".
 				"4. Firewall is blocking TCP connection.\n".
 				"Connection refused";
 

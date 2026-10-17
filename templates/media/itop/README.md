@@ -1,6 +1,6 @@
 # iTop webhook
 
-This guide describes how to integrate TAA 7.4 installation with iTop using the TAA webhook feature. This guide provides instructions on setting up a media type, a user and an action in TAA.<br>
+This guide describes how to integrate TAAE 7.4 installation with iTop using the TAAE webhook feature. This guide provides instructions on setting up a media type, a user and an action in TAAE.<br>
 Please note that recovery and update operations are supported only for trigger-based events.
 
 ## Setting up iTop
@@ -9,7 +9,7 @@ Please note that recovery and update operations are supported only for trigger-b
 *&lt;itop_url&gt;/pages/UI.php?operation=details&class=Organization&**id=1**&c\[menu\]=Organization*
 
 
-## Setting up the webhook in TAA
+## Setting up the webhook in TAAE
 1\. In the *Administration > Media types* section, import [media_itop.yaml](media_itop.yaml).
 
 2\. Open the newly added **iTop** media type and replace all *&lt;PLACEHOLDERS&gt;* with your values.<br>
@@ -18,15 +18,15 @@ The following parameters are required:<br>
 **itop_user** - iTop user login.<br>
 **itop_password** - user's password.<br>
 **itop_organization_id** - ID of your organization.<br>
-**itop_class** - name of the class to be used when creating new tickets from TAA notifications. For example, *UserRequest* or *Problem*.<br>
-**itop_log** - the type of log section in the ticket for posting problem's updates from TAA. Must be *Private* or *Public*.<br>
+**itop_class** - name of the class to be used when creating new tickets from TAAE notifications. For example, *UserRequest* or *Problem*.<br>
+**itop_log** - the type of log section in the ticket for posting problem's updates from TAAE. Must be *Private* or *Public*.<br>
 **itop_comment** - the comment that will be posted to ticket's history.
 
-3\. Create a **TAA user** and add **Media** with the **iTop** media type. 
+3\. Create a **TAAE user** and add **Media** with the **iTop** media type. 
 Though a "Send to" field is not used in iTop webhook, it cannot be empty. To comply with frontend requirements, you can put any symbol there.
 Make sure this user has access to all hosts, for which you would like problem notifications to be converted into iTop tasks.
 
-For more information see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [iTop](https://www.itophub.io/wiki/page) documentations.
+For more information see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [iTop](https://www.itophub.io/wiki/page) documentations.
 
 ## Supported versions
-TAA 7.4 and higher
+TAAE 7.4 and higher

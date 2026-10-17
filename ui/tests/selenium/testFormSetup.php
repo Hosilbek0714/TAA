@@ -269,7 +269,7 @@ class testFormSetup extends CWebTest {
 		// Check layout via screenshot for default theme.
 		$this->assertScreenshotExcept($form, $this->query('id:label-default-timezone')->one(), 'GUISettings_Default');
 
-		// Check TAA server name field.
+		// Check TAAE server name field.
 		$server_name = $this->query('id:zbx_server_name')->one();
 		$this->assertEquals(255, $server_name->getAttribute('maxlength'));
 		$this->assertEquals('', $server_name->getValue());
@@ -319,12 +319,12 @@ class testFormSetup extends CWebTest {
 	public function testFormSetup_summarySection() {
 		$this->openSpecifiedSection('Pre-installation summary');
 
-		// Check that TAA server name field is not displayed if it is not populated.
-		$this->assertFalse($this->query('xpath://span[text()="TAA server name"]')->one(false)->isValid());
+		// Check that TAAE server name field is not displayed if it is not populated.
+		$this->assertFalse($this->query('xpath://span[text()="TAAE server name"]')->one(false)->isValid());
 		$this->query('button:Back')->one()->click();
 
-		// Fill in the TAA server name field and proceed with checking Pre-installation summary.
-		$this->query('id:zbx_server_name')->one()->fill('TAA server name');
+		// Fill in the TAAE server name field and proceed with checking Pre-installation summary.
+		$this->query('id:zbx_server_name')->one()->fill('TAAE server name');
 		$this->query('button:Next step')->one()->click();
 		$db_parameters = $this->getDbParameters();
 		$text = 'Please check configuration parameters. If all is correct, press "Next step" button, or "Back" button '.
@@ -336,7 +336,7 @@ class testFormSetup extends CWebTest {
 			'Database name' => $db_parameters['Database name'],
 			'Database user' => $db_parameters['User'],
 			'Database password' => '******',
-			'TAA server name' => 'TAA server name',
+			'TAAE server name' => 'TAAE server name',
 			'Encrypt connections from Web interface' => 'false'
 		];
 
@@ -376,7 +376,7 @@ class testFormSetup extends CWebTest {
 	public function testFormSetup_installSection() {
 		$this->openSpecifiedSection('Install');
 		$this->checkPageTextElements('Install', 'Configuration file "conf/zabbix.conf.php" created.');
-		$this->assertEquals('Congratulations! You have successfully installed TAA frontend.',
+		$this->assertEquals('Congratulations! You have successfully installed TAAE frontend.',
 				$this->query('class:green')->one()->getText());
 		$this->checkButtons('last section');
 		$this->assertScreenshotExcept($this->query('xpath://form')->one(), $this->query('xpath://p')->one(), 'Install');
@@ -442,7 +442,7 @@ class testFormSetup extends CWebTest {
 						'name' => 'Database schema',
 						'value' => 'incorrect schema'
 					],
-					'error_details' => 'Unable to determine current TAA database version: the table "dbversion" was not found.'
+					'error_details' => 'Unable to determine current TAAE database version: the table "dbversion" was not found.'
 				]
 			],
 			// Incorrect user name.

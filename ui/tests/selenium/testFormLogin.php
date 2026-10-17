@@ -59,7 +59,7 @@ class testFormLogin extends CWebTest {
 			[
 				[
 					'login' => 'Admin',
-					'password' => 'TAA',
+					'password' => 'TAAE',
 					'expected' => TEST_BAD,
 					'error_message' => 'Incorrect user name or password or account is temporarily blocked.',
 					'dbCheck' => true
@@ -163,7 +163,7 @@ class testFormLogin extends CWebTest {
 	}
 
 	/**
-	 * Function makes two authentifications with different data to different TAA views, separately clicking on
+	 * Function makes two authentifications with different data to different TAAE views, separately clicking on
 	 * sign in button and checking by views header, if correct url is opened.
 	 **/
 	public function testFormLogin_LoginWithRequest() {

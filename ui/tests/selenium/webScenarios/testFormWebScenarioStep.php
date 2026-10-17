@@ -779,7 +779,7 @@ class testFormWebScenarioStep extends CWebTest {
 						'Name' => '   Step with trailing and leading spaces   ',
 						'id:url' => '   http://zabbix.com'   ,
 						'Timeout' => '   15   ',
-						'Required string' => '   TAA   ',
+						'Required string' => '   TAAE   ',
 						'Required status codes' => '   404   '
 					],
 					'Query fields' => [

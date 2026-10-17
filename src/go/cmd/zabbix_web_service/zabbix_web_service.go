@@ -33,7 +33,7 @@ import (
 )
 
 const usageMessageFormat = //
-`Usage of TAA web service:
+`Usage of TAAE web service:
   %[1]s [-c config-file]
   %[1]s [-c config-file] -T
   %[1]s -h
@@ -176,7 +176,7 @@ func main() {
 	stop := make(chan os.Signal, 1)
 	signal.Notify(stop, os.Interrupt, syscall.SIGINT, syscall.SIGTERM)
 
-	log.Infof("starting TAA web service")
+	log.Infof("starting TAAE web service")
 
 	go func() {
 		if err := run(); err != nil {
@@ -186,7 +186,7 @@ func main() {
 
 	<-stop
 
-	farewell := "TAA web service stopped."
+	farewell := "TAAE web service stopped."
 	log.Infof(farewell)
 
 	if options.LogType != "console" {

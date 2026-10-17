@@ -96,7 +96,7 @@ class CExpressionParser extends CParser {
 	 * Parse an expression and set public variables $this->error, $this->result
 	 *
 	 * Examples:
-	 *   last(/TAA server/agent.ping,0) = 1 and {TRIGGER.VALUE} = {$MACRO}
+	 *   last(/TAAE server/agent.ping,0) = 1 and {TRIGGER.VALUE} = {$MACRO}
 	 *
 	 * @param string $source
 	 * @param int    $pos

@@ -1,15 +1,15 @@
 # Modbus plugin
-This plugin provides a native solution for monitoring modbus devices by TAA. 
-The plugin can monitor several modbus devices simultaneously via TAA agent 2. Both TCP and 
+This plugin provides a native solution for monitoring modbus devices by TAAE. 
+The plugin can monitor several modbus devices simultaneously via TAAE agent 2. Both TCP and 
 RTU connections are supported.
 
 ## Installation
-The plugin is supplied as part of the TAA Agent 2 and does not require any special installation steps. Once 
-TAA Agent 2 is installed, the plugin is ready to work. Now you need to make sure that a modbus device is 
+The plugin is supplied as part of the TAAE Agent 2 and does not require any special installation steps. Once 
+TAAE Agent 2 is installed, the plugin is ready to work. Now you need to make sure that a modbus device is 
 available for connection and configure monitoring.
 
 ## Configuration
-Open the TAA Agent configuration file (zabbix_agent2.conf) and set the required parameters.
+Open the TAAE Agent configuration file (zabbix_agent2.conf) and set the required parameters.
 
 **Plugins.Modbus.Timeout** — request execution timeout (how long to wait for a request to complete before shutting it down).  
 *Default value:* equals the global 'Timeout' (configuration parameter set in zabbix_agent2.conf).  
@@ -35,7 +35,7 @@ Now, these names can be used as connStrings in keys instead of URIs:
     modbus.get[MB2,,,30001,1,uint64,le,0]
 
 ### Parameters priority
-TAA checks parameters in the following order:
+TAAE checks parameters in the following order:
 1. Item key parameters (checked first).
 2. Named session parameters in configuration file (Plugins.Modbus.Sessions.\<sessionName\>.\<parameter\>). Checked only if values provided in a key parameters are empty. →
   
@@ -55,5 +55,5 @@ TAA checks parameters in the following order:
 Array of numbers in JSON format.
 
 ## Troubleshooting
-The plugin uses TAA Agent logs. To receive more detailed information about logged events, consider increasing a debug level 
-of TAA Agent.
+The plugin uses TAAE Agent logs. To receive more detailed information about logged events, consider increasing a debug level 
+of TAAE Agent.

@@ -49,10 +49,10 @@ function run
 	# use xgettext on all php files
 	find . -type f -name '*.php' | sort -d -f > $potlist
 
-	# keyword "_n" is TAA frontend plural function
-	# keyword "_s" is TAA frontend placeholder function
-	# keyword "_x" is TAA frontend context function
-	# keyword "_xs" is TAA frontend context function
+	# keyword "_n" is TAAE frontend plural function
+	# keyword "_s" is TAAE frontend placeholder function
+	# keyword "_x" is TAAE frontend context function
+	# keyword "_xs" is TAAE frontend context function
 	xgettext --files-from=$potlist \
 		--from-code=UTF-8 \
 		--output=$newpot \

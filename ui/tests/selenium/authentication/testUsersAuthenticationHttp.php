@@ -52,7 +52,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 		// Check default values.
 		$default_values = [
 			'Enable HTTP authentication' => false,
-			'Default login form' => 'TAA login form',
+			'Default login form' => 'TAAE login form',
 			'Remove domain name' => '',
 			'Case-sensitive login' => true
 		];
@@ -65,7 +65,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 		}
 
 		// Check dropdown options.
-		$this->assertEquals(['TAA login form', 'HTTP login form'], $form->getField('Default login form')
+		$this->assertEquals(['TAAE login form', 'HTTP login form'], $form->getField('Default login form')
 				->getOptions()->asText());
 
 		// Check input field maxlength.
@@ -75,7 +75,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 		$form->getLabel('Enable HTTP authentication')->query('class:zi-help-filled-small')->one()->click();
 		$hintbox = $form->query('xpath://div[@class="overlay-dialogue wordbreak"]')->waitUntilPresent();
 		$this->assertEquals('If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal)'.
-			' will be authenticated by the web server, not by TAA.', $hintbox->one()->getText());
+			' will be authenticated by the web server, not by TAAE.', $hintbox->one()->getText());
 
 		// Close the hintbox.
 		$hintbox->query('class:btn-overlay-close')->one()->click()->waitUntilNotPresent();
@@ -184,7 +184,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 						// Login after logout.
 						[
 							'page' => 'index.php?reconnect=1&form=default',
-							'error' => 'TAA has received an incorrect request.',
+							'error' => 'TAAE has received an incorrect request.',
 							'no_login' => true
 						]
 					],
@@ -196,7 +196,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 					]
 				]
 			],
-			// HTTP authentication enabled (default login form is set to 'TAA login form').
+			// HTTP authentication enabled (default login form is set to 'TAAE login form').
 			[
 				[
 					'user' => 'Admin',
@@ -205,7 +205,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 					'file' => 'pwfile',
 					'http_authentication' => [
 						'Enable HTTP authentication' => true,
-						'Default login form' => 'TAA login form'
+						'Default login form' => 'TAAE login form'
 					],
 					'pages' => [
 						[
@@ -234,7 +234,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 						// Sign in through zabbix login form after logout.
 						[
 							'page' => 'index.php?reconnect=1&form=default',
-							'error' => 'TAA has received an incorrect request.',
+							'error' => 'TAAE has received an incorrect request.',
 							'no_login' => true
 						],
 						// Couldn't open Hosts page due access.
@@ -351,7 +351,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 					]
 				]
 			],
-			// HTTP authentication - Login with user http-auth-admin (TAA Admin).
+			// HTTP authentication - Login with user http-auth-admin (TAAE Admin).
 			[
 				[
 					'user' => 'local.com\\http-auth-admin',
@@ -407,7 +407,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 					]
 				]
 			],
-			// HTTP authentication - Login with user test-user (TAA User),
+			// HTTP authentication - Login with user test-user (TAAE User),
 			[
 				[
 					'user' => 'local.com\\test-user',
@@ -472,7 +472,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 					'file' => 'htaccess',
 					'http_authentication' => [
 						'Enable HTTP authentication' => true,
-						'Default login form' => 'TAA login form',
+						'Default login form' => 'TAAE login form',
 						'Case-sensitive login' => true
 					],
 					'pages' => [
@@ -497,7 +497,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 					'user_case_sensitive' => 'Admin',
 					'http_authentication' => [
 						'Enable HTTP authentication' => true,
-						'Default login form' => 'TAA login form',
+						'Default login form' => 'TAAE login form',
 						'Case-sensitive login' => false
 					],
 					'pages' => [
@@ -647,7 +647,7 @@ class testUsersAuthenticationHttp extends CLegacyWebTest {
 	 * @dataProvider getHttpAuthData
 	 */
 	public function testUsersAuthenticationHttp_HttpAuthStatusChange($data) {
-		// Update TAA frontend config.
+		// Update TAAE frontend config.
 		$pattern = array('/\/\/ \$ALLOW_HTTP_AUTH = false;/', '/\$ALLOW_HTTP_AUTH = true;/');
 		$content = preg_replace($pattern, $data['config_string'], file_get_contents($this->getFilePath()), 1);
 		file_put_contents($this->getFilePath(), $content);

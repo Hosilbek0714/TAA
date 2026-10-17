@@ -516,7 +516,7 @@ class CDRule extends CApiService {
 			if (array_key_exists('uniq', $dcheck) && ($dcheck['uniq'] == 1)) {
 				if (!in_array($dcheck['type'], [SVC_AGENT, SVC_SNMPv1, SVC_SNMPv2c, SVC_SNMPv3])) {
 					self::exception(ZBX_API_ERROR_PARAMETERS,
-						_('Only TAA agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique.')
+						_('Only TAAE agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique.')
 					);
 				}
 

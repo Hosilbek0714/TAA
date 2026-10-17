@@ -257,7 +257,7 @@ static int	query_xpath(zbx_variant_t *value, const char *params, int *is_empty, 
 	ZBX_UNUSED(value);
 	ZBX_UNUSED(params);
 	ZBX_UNUSED(is_empty);
-	*errmsg = zbx_dsprintf(*errmsg, "TAA was compiled without libxml2 support");
+	*errmsg = zbx_dsprintf(*errmsg, "TAAE was compiled without libxml2 support");
 
 	return FAIL;
 #else
@@ -763,7 +763,7 @@ int	zbx_xml_to_json(char *xml_data, char **jstr, char **errmsg)
 #ifndef HAVE_LIBXML2
 	ZBX_UNUSED(xml_data);
 	ZBX_UNUSED(jstr);
-	*errmsg = zbx_dsprintf(*errmsg, "TAA was compiled without libxml2 support");
+	*errmsg = zbx_dsprintf(*errmsg, "TAAE was compiled without libxml2 support");
 	return FAIL;
 #else
 	xmlDoc				*doc = NULL;
@@ -972,7 +972,7 @@ int	zbx_json_to_xml(char *json_data, char **xstr, char **errmsg)
 #ifndef HAVE_LIBXML2
 	ZBX_UNUSED(json_data);
 	ZBX_UNUSED(xstr);
-	*errmsg = zbx_dsprintf(*errmsg, "TAA was compiled without libxml2 support");
+	*errmsg = zbx_dsprintf(*errmsg, "TAAE was compiled without libxml2 support");
 	return FAIL;
 #else
 	char			*attr = NULL, *attr_val = NULL, *text = NULL;

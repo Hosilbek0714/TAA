@@ -358,7 +358,7 @@ class testPageMaintenance extends CWebTest {
 			[
 				[
 					'filter' => [
-						'Host groups' => ['Discovered hosts', 'TAA servers']
+						'Host groups' => ['Discovered hosts', 'TAAE servers']
 					],
 					'expected' => [
 						self::ACTIVE_MAINTENANCE,
@@ -469,7 +469,7 @@ class testPageMaintenance extends CWebTest {
 					'filter' => [
 						'Name' => 'Host',
 						'State' => 'Expired',
-						'Host groups' => 'TAA servers'
+						'Host groups' => 'TAAE servers'
 					],
 					'expected' => [
 						self::MULTIPLE_GROUPS_MAINTENANCE,

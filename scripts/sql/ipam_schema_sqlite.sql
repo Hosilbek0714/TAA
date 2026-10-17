@@ -1,5 +1,5 @@
 -- =============================================================================
--- TAA — IPAM va audit jurnali (SQLite varianti)
+-- TAAE — IPAM va audit jurnali (SQLite varianti)
 -- -----------------------------------------------------------------------------
 -- PostgreSQL schemaning SQLite versiyasi. Asosan DL-160 da yengilroq cron
 -- skriptlar (auto_remediation.py audit jurnali) uchun ishlatiladi.
@@ -11,7 +11,7 @@
 --   - COMMENT ON ...      -> "-- " inline izohlar (SQLite COMMENT'ni qo'llab-quvvatlamaydi)
 --
 -- Yaratish:
---   sqlite3 /var/lib/taa/audit.db < scripts/sql/ipam_schema_sqlite.sql
+--   sqlite3 /var/lib/taae/audit.db < scripts/sql/ipam_schema_sqlite.sql
 -- =============================================================================
 
 PRAGMA foreign_keys = ON;

@@ -21,4 +21,4 @@
 //$ZBX_GUI_ACCESS_IP_RANGE = array('127.0.0.1');
 
 // Message shown on warning screen (optional).
-//$ZBX_GUI_ACCESS_MESSAGE = 'TAA is under maintenance.';
+//$ZBX_GUI_ACCESS_MESSAGE = 'TAAE is under maintenance.';

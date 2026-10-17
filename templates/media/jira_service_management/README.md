@@ -3,13 +3,13 @@
 
 ## Overview
 
-This guide describes how to integrate your TAA installation with Jira Service Management using the TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
+This guide describes how to integrate your TAAE installation with Jira Service Management using the TAAE webhook feature, providing instructions on setting up a media type, user, and action in TAAE.
 
 > IMPORTANT! This webhook was previously named "Jira Servicedesk".
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Parameters
 
@@ -30,13 +30,13 @@ The configurable parameters are intended to be changed according to the webhook 
 |jira_priority_autoregistration|Low|String value of Jira priority to assign to autoregistration event tickets.|
 |jira_priority_discovery|Low|String value of Jira priority to assign to discovery event tickets.|
 |jira_priority_internal|Low|String value of Jira priority to assign to internal event tickets.|
-|severity_not_classified|Lowest|Jira priority to assign to tickets when event has TAA severity "Not classified".|
-|severity_information|Lowest|Jira priority to assign to tickets when event has TAA severity "Information".|
-|severity_warning|Low|Jira priority to assign to tickets when event has TAA severity "Warning".|
-|severity_average|Medium|Jira priority to assign to tickets when event has TAA severity "Average".|
-|severity_high|High|Jira priority to assign to tickets when event has TAA severity "High".|
-|severity_disaster|Highest|Jira priority to assign to tickets when event has TAA severity "Disaster".|
-|zabbix_url|\{$ZABBIX\.URL\}|Current TAA URL.|
+|severity_not_classified|Lowest|Jira priority to assign to tickets when event has TAAE severity "Not classified".|
+|severity_information|Lowest|Jira priority to assign to tickets when event has TAAE severity "Information".|
+|severity_warning|Low|Jira priority to assign to tickets when event has TAAE severity "Warning".|
+|severity_average|Medium|Jira priority to assign to tickets when event has TAAE severity "Average".|
+|severity_high|High|Jira priority to assign to tickets when event has TAAE severity "High".|
+|severity_disaster|Highest|Jira priority to assign to tickets when event has TAAE severity "Disaster".|
+|zabbix_url|\{$ZABBIX\.URL\}|Current TAAE URL.|
 
 ### Internal parameters
 
@@ -64,15 +64,15 @@ Internal parameters are reserved for predefined macros that are not meant to be 
 
 Refer to the vendor documentation.
 
-## TAA configuration
+## TAAE configuration
 
-1\. Before you can start using the Jira Service Management webhook, you need to set up the global macro `{$ZABBIX.URL}` containing an URL to the TAA frontend.
+1\. Before you can start using the Jira Service Management webhook, you need to set up the global macro `{$ZABBIX.URL}` containing an URL to the TAAE frontend.
 
 The global macro can also be used, for example, to populate a custom field in Jira with a URL linking to event information or a graph.
 
 [![](images/thumb.1.png?raw=true)](images/1.png)
 
-2\. In the TAA frontend *Alerts -> Media types* section, import the [`media_jira_service_management.yaml`](media_jira_service_management.yaml) file.
+2\. In the TAAE frontend *Alerts -> Media types* section, import the [`media_jira_service_management.yaml`](media_jira_service_management.yaml) file.
 
 3\. Open the newly added Jira Service Management media type and, under *Parameters*, replace all <PLACEHOLDERS> with your values.
 The following parameters are required:
@@ -86,18 +86,18 @@ The following parameters are required:
 however, be aware that they use the default Jira priorities.
 **Please, adjust these values to fit your Jira environment.**
 
-The following parameters are for events in TAA that support severities:
-- **severity_not_classified** - for "Not Classified" TAA severity
-- **severity_information** - for "Information" TAA severity
-- **severity_warning** - for "Warning" TAA severity
-- **severity_average** - for "Average" TAA severity
-- **severity_high** - for "High" TAA severity
-- **severity_disaster** - for "Disaster" TAA severity
+The following parameters are for events in TAAE that support severities:
+- **severity_not_classified** - for "Not Classified" TAAE severity
+- **severity_information** - for "Information" TAAE severity
+- **severity_warning** - for "Warning" TAAE severity
+- **severity_average** - for "Average" TAAE severity
+- **severity_high** - for "High" TAAE severity
+- **severity_disaster** - for "Disaster" TAAE severity
 
-And the following for TAA events that do not have severities:
-- **jira_priority_internal** - for TAA internal events
-- **jira_priority_discovery** - for TAA discovery events
-- **jira_priority_autoregistration** - for TAA autoregistration events
+And the following for TAAE events that do not have severities:
+- **jira_priority_internal** - for TAAE internal events
+- **jira_priority_discovery** - for TAAE discovery events
+- **jira_priority_autoregistration** - for TAAE autoregistration events
 
 [![](images/2.png?raw=true)](images/2.png)
 
@@ -124,20 +124,20 @@ Note that you can enter only one value per custom field, except in the `multi-se
 
 **URL custom fields** can be configured in different ways.
 
-If you want a TAA URL to appear in the Jira custom URL field, set the field to `zabbix_url`. By default, the value of `zabbix_url` is the `{$ZABBIX.URL}` macro. The script will then use the value of `zabbix_url` for your custom field, formatting it to the action being run:
-  * for trigger actions, the script will append a path to your TAA URL leading directly to the problem event;
-  * for service actions, the script will append a path to your TAA URL leading to service actions;
+If you want a TAAE URL to appear in the Jira custom URL field, set the field to `zabbix_url`. By default, the value of `zabbix_url` is the `{$ZABBIX.URL}` macro. The script will then use the value of `zabbix_url` for your custom field, formatting it to the action being run:
+  * for trigger actions, the script will append a path to your TAAE URL leading directly to the problem event;
+  * for service actions, the script will append a path to your TAAE URL leading to service actions;
   * for the rest of the actions, it will leave the URL as is.
 
 [![](images/4.png?raw=true)](images/4.png)
 
-If you don't need to use the TAA URL in the custom field and want to link to something else (another service), you can manually enter the URL, and the script won't modify it.
+If you don't need to use the TAAE URL in the custom field and want to link to something else (another service), you can manually enter the URL, and the script won't modify it.
 
 [![](images/5.png?raw=true)](images/5.png)
 
 For the **DateTime custom field**, you can combine parameter values using the format `{EVENT.DATE}T{EVENT.TIME}`.
 
-Note that the date and time must be provided in the ISO 8601 format with the timezone of TAA server (2020-01-01T23:59:59+0200).
+Note that the date and time must be provided in the ISO 8601 format with the timezone of TAAE server (2020-01-01T23:59:59+0200).
 If server time is set to UTC, there is no need to add the timezone at the end of the parameter value.
 
 6\. This webhook also supports components, but they're not used by default. To include a component, add a new parameter to the Jira media type for each one. The parameter key (*Name*) should start with `component_` and end with a unique identifier. In the *Value* field, enter the component name from Jira.
@@ -146,15 +146,15 @@ If server time is set to UTC, there is no need to add the timezone at the end of
 
 > IMPORTANT! Compass components are not supported!
 
-7\. Create a TAA user and add **Media** with the **Jira Service Management** media type.
+7\. Create a TAAE user and add **Media** with the **Jira Service Management** media type.
 Though the *Send to* field is not used in the Jira Service Management webhook, it cannot be empty. To comply with frontend requirements, enter any symbol in the field.
 
 Make sure this user has access to all the hosts for which you would like problem notifications to be converted into Jira tasks.
 
-For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Jira Service Management](https://confluence.atlassian.com/servicedesk) documentation.
+For more information, please see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Jira Service Management](https://confluence.atlassian.com/servicedesk) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

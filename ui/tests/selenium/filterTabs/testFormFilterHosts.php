@@ -151,7 +151,7 @@ class testFormFilterHosts extends testFormFilter {
 			[
 				[
 					'Name' => 'Test name',
-					'Host groups' => ['TAA servers'],
+					'Host groups' => ['TAAE servers'],
 					'IP' => '192.168.10.1',
 					'DNS' => 'test.name',
 					'Port' => '10055',

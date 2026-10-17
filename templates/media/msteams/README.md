@@ -3,7 +3,7 @@
 
 ## Overview
 
-This guide describes how to integrate your TAA installation with MS Teams using the TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
+This guide describes how to integrate your TAAE installation with MS Teams using the TAAE webhook feature, providing instructions on setting up a media type, user, and action in TAAE.
 
 This integration is supported only on Teams **as part of Office 365**.
 
@@ -11,7 +11,7 @@ Please note that the Teams free plan does **not** support the [incoming webhook]
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Parameters
 
@@ -23,7 +23,7 @@ The configurable parameters are intended to be changed according to the webhook 
 
 |Name|Value|Description|
 |----|-----|-----------|
-|zabbix_url|\{$ZABBIX\.URL\}|Current TAA URL.|
+|zabbix_url|\{$ZABBIX\.URL\}|Current TAAE URL.|
 |teams_endpoint|\<PLACE WEBHOOK URL HERE\>|Teams webhook URL.|
 |use_default_message|false|Notification format toggle.|
 
@@ -68,14 +68,14 @@ The Microsoft Teams webhook only supports integrating with a single channel.
 
 First, you need to get a webhook URL for the channel. There are two ways to do this:
 
-- Add an official **TAA webhook** connector from MS Teams apps for the channel where you want to receive notifications. (See: [how to add a connector to a channel](https://docs.microsoft.com/en-us/microsoftteams/office-365-custom-connectors#add-a-connector-to-a-channel))
+- Add an official **TAAE webhook** connector from MS Teams apps for the channel where you want to receive notifications. (See: [how to add a connector to a channel](https://docs.microsoft.com/en-us/microsoftteams/office-365-custom-connectors#add-a-connector-to-a-channel))
 
 - Create an **Incoming webhook** for your channel.
 (See [Teams documentation](https://docs.microsoft.com/en-US/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook#add-an-incoming-webhook-to-a-teams-channel) for step-by-step instructions).
 
-## TAA configuration
+## TAAE configuration
 
-1\. In the TAA web interface, go to *Administration* > *Macros*. Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the TAA frontend.
+1\. In the TAAE web interface, go to *Administration* > *Macros*. Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the TAAE frontend.
 The URL should be either an IP address, a fully qualified domain name, or a localhost. Specifying a protocol is mandatory, whereas the port is optional.
   - Good examples:
     - `http://zabbix.com`
@@ -89,7 +89,7 @@ The URL should be either an IP address, a fully qualified domain name, or a loca
 
 [![](images/thumb.1.png?raw=true)](images/1.png)
 
-2\. In the TAA frontend *Alerts > Media types* section, import the [`media_msteams.yaml`](media_msteams.yaml) file.
+2\. In the TAAE frontend *Alerts > Media types* section, import the [`media_msteams.yaml`](media_msteams.yaml) file.
 
 3\. Open the newly added **MS Teams** media type and replace `PLACE WEBHOOK URL HERE` with the **incoming webhook URL** created during the webhook setup in Teams.
 
@@ -108,7 +108,7 @@ The URL should be either an IP address, a fully qualified domain name, or a loca
 
 [![](images/thumb.2.png?raw=true)](images/2.png)
 
-5\. To receive TAA notifications in Teams, you need to create a TAA user and add **Media** with the **MS Teams** media type.
+5\. To receive TAAE notifications in Teams, you need to create a TAAE user and add **Media** with the **MS Teams** media type.
 
 In *Users* > *Users*, click *Create user* in the top-right corner. In the *User* tab, fill in the required fields (marked with red asterisks). In the *Media* tab, add a new media and select **MS Teams** type from the drop-down list. Though the *Send to* field is not used in Teams media, it cannot be empty. To comply with the frontend requirements, enter any symbol in the field.
 
@@ -118,10 +118,10 @@ Make sure this user has access to all the hosts for which you would like problem
 
 6\. Done! You can now start receiving Teams alerts.
 
-For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Microsoft Teams webhook](https://docs.microsoft.com/en-US/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) documentation.
+For more information, please see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Microsoft Teams webhook](https://docs.microsoft.com/en-US/microsoftteams/platform/webhooks-and-connectors/how-to/add-incoming-webhook) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

@@ -14,7 +14,7 @@
 **/
 
 /**
- * TAA log file helper.
+ * TAAE log file helper.
  */
 class CLogHelper {
 

@@ -1,7 +1,7 @@
 # Docker plugin
 This plugin provides a native solution to monitor Docker
-containers and images by TAA. 
-The plugin can monitor docker instances with TAA agent 2 using docker socket
+containers and images by TAAE. 
+The plugin can monitor docker instances with TAAE agent 2 using docker socket
 and querying docker API. It can be used in conjunction with the official 
 [Docker template](https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/app/docker). 
 You can extend it or create your own template to cater specific needs.
@@ -10,13 +10,13 @@ You can extend it or create your own template to cater specific needs.
 * Docker, version 19.03.5
 
 ## Installation
-The plugin is supplied as an out-of-box part of TAA agent 2 and 
+The plugin is supplied as an out-of-box part of TAAE agent 2 and 
 does not require any special installation steps. Once 
-TAA agent 2 is installed, the plugin is ready to work. 
+TAAE agent 2 is installed, the plugin is ready to work. 
 Now, you need to make sure that a Docker instance is available.
 
 ## Configuration
-Open TAA agent 2 docker configuration file `zabbix_agent2.d/plugins.d/docker.conf` and 
+Open TAAE agent 2 docker configuration file `zabbix_agent2.d/plugins.d/docker.conf` and 
 set the required parameters.
 
 **Plugins.Docker.Endpoint** — the Docker API endpoint.
@@ -62,5 +62,5 @@ All (not required; default: false) — returns all containers (true) or only run
 - "0" if the connection is broken (is returned if there is any error during the test, or the response is not "OK").
 
 ## Troubleshooting
-The plugin uses log output of TAA agent 2. You can increase debugging level of TAA agent 2 
+The plugin uses log output of TAAE agent 2. You can increase debugging level of TAAE agent 2 
 if you need more details about the current situation.

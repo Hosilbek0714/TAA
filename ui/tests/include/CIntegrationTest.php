@@ -35,7 +35,7 @@ class CIntegrationTest extends CAPITest {
 	const HOUSEKEEPER_EXEC_DELAY			= 5; // Housekeeper execution delay.
 	const DATA_PROCESSING_DELAY			= 10; // Data processing delay.
 
-	// TAA component constants.
+	// TAAE component constants.
 	const COMPONENT_SERVER			= 'server';
 	const COMPONENT_SERVER_HANODE1	= 'server_ha1';
 	const COMPONENT_PROXY			= 'proxy';
@@ -44,7 +44,7 @@ class CIntegrationTest extends CAPITest {
 	const COMPONENT_AGENT2			= 'agent2';
 	const COMPONENT_AGENT_3_0		= 'agentd_3.0';
 
-	// TAA component port constants.
+	// TAAE component port constants.
 	const AGENT_PORT_SUFFIX = '50';
 	const SERVER_PORT_SUFFIX = '51';
 	const PROXY_PORT_SUFFIX = '52';
@@ -360,7 +360,7 @@ class CIntegrationTest extends CAPITest {
 						break;
 
 					case self::COMPONENT_AGENT2:
-						self::waitForLogLineToBePresent($component, 'TAA Agent2 hostname', false, 5, 1);
+						self::waitForLogLineToBePresent($component, 'TAAE Agent2 hostname', false, 5, 1);
 						break;
 				}
 				return;
@@ -682,7 +682,7 @@ class CIntegrationTest extends CAPITest {
 		self::validateComponent($component);
 
 		if ($component === self::COMPONENT_AGENT || $component === self::COMPONENT_AGENT2 || $component == self::COMPONENT_AGENT_3_0) {
-			throw new Exception('There is no client available for TAA Agent.');
+			throw new Exception('There is no client available for TAAE Agent.');
 		}
 
 		return new CZabbixClient('localhost', self::getConfigurationValue($component, 'ListenPort', 10051), 3, 3,

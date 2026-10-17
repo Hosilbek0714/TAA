@@ -1283,7 +1283,7 @@ out:
 		if (0 == config_allow_unsupported_db_versions)
 		{
 			zabbix_log(LOG_LEVEL_ERR, " ");
-			zabbix_log(LOG_LEVEL_ERR, "Unable to start TAA server due to unsupported %s database server"
+			zabbix_log(LOG_LEVEL_ERR, "Unable to start TAAE server due to unsupported %s database server"
 					" version (%s).", db_version_info.database,
 					db_version_info.friendly_current_version);
 
@@ -1292,7 +1292,7 @@ out:
 
 			zabbix_log(LOG_LEVEL_ERR, "Use of supported database version is highly recommended.");
 			zabbix_log(LOG_LEVEL_ERR, "Override by setting AllowUnsupportedDBVersions=1"
-					" in TAA server configuration file at your own risk.");
+					" in TAAE server configuration file at your own risk.");
 			zabbix_log(LOG_LEVEL_ERR, " ");
 
 			db_version_info.flag = DB_VERSION_HIGHER_THAN_MAXIMUM_ERROR;
@@ -1337,7 +1337,7 @@ int	zbx_history_elastic_init(zbx_history_iface_t *hist, unsigned char value_type
 	ZBX_UNUSED(config_history_storage_url);
 	ZBX_UNUSED(config_log_slow_queries);
 
-	*error = zbx_strdup(*error, "TAA must be compiled with cURL library for Elasticsearch history backend");
+	*error = zbx_strdup(*error, "TAAE must be compiled with cURL library for Elasticsearch history backend");
 
 	return FAIL;
 }

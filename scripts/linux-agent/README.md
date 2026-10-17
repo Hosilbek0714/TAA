@@ -1,11 +1,11 @@
-# TAA Agent 2 — Linux uchun build, o'rnatish va Docker
+# TAAE Agent 2 — Linux uchun build, o'rnatish va Docker
 
-Ushbu papka TAA monitoring tizimining **Linux** uchun mo'ljallangan agentini
-(`taa_agent2`) bare-metal serverga (masalan, **HPE DL-160 Gen9 + Ubuntu 22.04**)
+Ushbu papka TAAE monitoring tizimining **Linux** uchun mo'ljallangan agentini
+(`taae_agent2`) bare-metal serverga (masalan, **HPE DL-160 Gen9 + Ubuntu 22.04**)
 o'rnatish va Docker konteynerida ishga tushirish uchun barcha artifactlarni
 o'z ichiga oladi.
 
-Windows varianti `D:\TAA\zoddix\bin\win64\taa_agent2.exe` da, bu yerdagi
+Windows varianti `D:\TAAE\zoddix\bin\win64\taae_agent2.exe` da, bu yerdagi
 fayllar esa Linux uchun **kross-kompilyatsiya** va **o'rnatish skriptlari**dir.
 
 ---
@@ -15,12 +15,12 @@ fayllar esa Linux uchun **kross-kompilyatsiya** va **o'rnatish skriptlari**dir.
 | Fayl                                | Vazifasi                                                       |
 |-------------------------------------|----------------------------------------------------------------|
 | `build.sh`                          | Linux uchun Go bilan kross-kompilyatsiya                       |
-| `taa_agent2.conf`                   | Linux FHS yo'llari bilan agent konfiguratsiyasi                |
-| `taa-agent2.service`                | systemd unit fayli                                             |
+| `taae_agent2.conf`                   | Linux FHS yo'llari bilan agent konfiguratsiyasi                |
+| `taae-agent2.service`                | systemd unit fayli                                             |
 | `install.sh`                        | DL-160 Gen9 / Ubuntu 22.04 uchun idempotent o'rnatuvchi        |
 | `uninstall.sh`                      | O'rnatishni bekor qiluvchi                                     |
-| `Dockerfile`                        | TAA-brandlangan multi-stage Docker image                       |
-| `docker-compose.taa-agent.yml`      | Asosiy compose ustida overlay                                  |
+| `Dockerfile`                        | TAAE-brandlangan multi-stage Docker image                       |
+| `docker-compose.taae-agent.yml`      | Asosiy compose ustida overlay                                  |
 
 ---
 
@@ -34,22 +34,22 @@ fayllar esa Linux uchun **kross-kompilyatsiya** va **o'rnatish skriptlari**dir.
 sudo ./scripts/linux-agent/install.sh
 
 # 3) Configni tahrirlang: Server, ServerActive, Hostname
-sudo nano /etc/taa/agent/taa_agent2.conf
+sudo nano /etc/taae/agent/taae_agent2.conf
 
 # 4) Servisni ishga tushiring
-sudo systemctl start taa-agent2
-sudo systemctl status taa-agent2
+sudo systemctl start taae-agent2
+sudo systemctl status taae-agent2
 ```
 
 `install.sh` quyidagilarni bajaradi:
 
-- `taa-agent` tizim foydalanuvchisi va guruhini yaratadi (idempotent)
-- `/etc/taa/agent`, `/var/log/taa/agent`, `/var/run/taa/agent`,
-  `/var/lib/taa/agent` papkalarini `0750` ruxsat bilan tayyorlaydi
-- `taa_agent2` ni `/usr/sbin/` ga joylaydi (`0755`, `root:root`)
-- `taa_agent2.conf` ni `/etc/taa/agent/` ga joylaydi (`0640`, `taa-agent:taa-agent`).
+- `taae-agent` tizim foydalanuvchisi va guruhini yaratadi (idempotent)
+- `/etc/taae/agent`, `/var/log/taae/agent`, `/var/run/taae/agent`,
+  `/var/lib/taae/agent` papkalarini `0750` ruxsat bilan tayyorlaydi
+- `taae_agent2` ni `/usr/sbin/` ga joylaydi (`0755`, `root:root`)
+- `taae_agent2.conf` ni `/etc/taae/agent/` ga joylaydi (`0640`, `taae-agent:taae-agent`).
   Mavjud config bo'lsa `.bak.<timestamp>` qilib saqlaydi va ustiga yozmaydi.
-- `taa-agent2.service` ni `/etc/systemd/system/` ga joylaydi va `enable` qiladi
+- `taae-agent2.service` ni `/etc/systemd/system/` ga joylaydi va `enable` qiladi
 - UFW faol bo'lsa `10050/tcp` ni ochadi
 - SELinux Enforcing bo'lsa `semanage port` orqali siyosat qo'shadi
 
@@ -64,17 +64,17 @@ sudo ./scripts/linux-agent/install.sh --dry-run
 ## 2. Docker varianti
 
 ```bash
-# TAA-brandlangan image yig'ish va ishga tushirish
+# TAAE-brandlangan image yig'ish va ishga tushirish
 docker compose \
     -f docker-compose.yml \
-    -f scripts/linux-agent/docker-compose.taa-agent.yml \
+    -f scripts/linux-agent/docker-compose.taae-agent.yml \
     up -d --build
 
 # Konteyner logini ko'rish
-docker logs -f taa-agent-linux
+docker logs -f taae-agent-linux
 
 # Sog'liq tekshiruvi
-docker inspect --format '{{.State.Health.Status}}' taa-agent-linux
+docker inspect --format '{{.State.Health.Status}}' taae-agent-linux
 ```
 
 Hostda port: **10053** -> konteynerda **10050**
@@ -84,26 +84,26 @@ Hostda port: **10053** -> konteynerda **10050**
 
 ## 3. Konfiguratsiya
 
-Asosiy fayl: `/etc/taa/agent/taa_agent2.conf`
+Asosiy fayl: `/etc/taae/agent/taae_agent2.conf`
 
 Eng kamida o'zgartirishingiz lozim parametrlar:
 
 ```ini
-Server=<TAA server IP>
-ServerActive=<TAA server IP>:10051
+Server=<TAAE server IP>
+ServerActive=<TAAE server IP>:10051
 Hostname=<frontendda ro'yxatdan o'tkazilgan host nomi>
 ```
 
-Drop-in fayllar uchun `/etc/taa/agent/taa_agent2.d/*.conf` qo'shilishi mumkin.
+Drop-in fayllar uchun `/etc/taae/agent/taae_agent2.d/*.conf` qo'shilishi mumkin.
 
 ### TLS (ishlab chiqarishda majburiy)
 
-`taa_agent2.conf` ichida PSK misoli izohlangan. PSK kalit yarating:
+`taae_agent2.conf` ichida PSK misoli izohlangan. PSK kalit yarating:
 
 ```bash
-sudo openssl rand -hex 32 | sudo tee /etc/taa/agent/taa_agent2.psk
-sudo chown taa-agent:taa-agent /etc/taa/agent/taa_agent2.psk
-sudo chmod 0600 /etc/taa/agent/taa_agent2.psk
+sudo openssl rand -hex 32 | sudo tee /etc/taae/agent/taae_agent2.psk
+sudo chown taae-agent:taae-agent /etc/taae/agent/taae_agent2.psk
+sudo chmod 0600 /etc/taae/agent/taae_agent2.psk
 ```
 
 Configdagi `TLSConnect`, `TLSAccept`, `TLSPSKIdentity`, `TLSPSKFile` qatorlarini yoqing.
@@ -114,10 +114,10 @@ Configdagi `TLSConnect`, `TLSAccept`, `TLSPSKIdentity`, `TLSPSKFile` qatorlarini
 
 ```bash
 # Lokal agentdan kalitni so'rash
-taa_agent2 -t agent.ping -c /etc/taa/agent/taa_agent2.conf
-taa_agent2 -t system.uname -c /etc/taa/agent/taa_agent2.conf
+taae_agent2 -t agent.ping -c /etc/taae/agent/taae_agent2.conf
+taae_agent2 -t system.uname -c /etc/taae/agent/taae_agent2.conf
 
-# Server tomonidan tekshirish (TAA serverdan)
+# Server tomonidan tekshirish (TAAE serverdan)
 zabbix_get -s <agent_ip> -p 10050 -k agent.ping
 ```
 
@@ -127,10 +127,10 @@ zabbix_get -s <agent_ip> -p 10050 -k agent.ping
 
 ```bash
 # systemd jurnali (jonli)
-journalctl -u taa-agent2 -f
+journalctl -u taae-agent2 -f
 
 # Agent log fayli
-sudo tail -f /var/log/taa/agent/taa_agent2.log
+sudo tail -f /var/log/taae/agent/taae_agent2.log
 ```
 
 ---

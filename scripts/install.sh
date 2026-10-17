@@ -1,6 +1,6 @@
 #!/usr/bin/env bash
 # =============================================================================
-# TAA — alert/external skriptlarni o'rnatish (DL-160 Gen9, Ubuntu 22.04)
+# TAAE — alert/external skriptlarni o'rnatish (DL-160 Gen9, Ubuntu 22.04)
 # -----------------------------------------------------------------------------
 # Bajaradi:
 #   1. /usr/lib/zabbix/{alertscripts,externalscripts} papkalarini yaratadi
@@ -8,7 +8,7 @@
 #      symlink qiladi (yoki --copy bilan ko'chiradi).
 #   3. Egasini zabbix:zabbix qiladi, +x bayrog'ini qo'yadi.
 #   4. scripts/requirements.txt mavjud bo'lsa, pip install bajaradi.
-#   5. SQLite audit DB ni initsializatsiya qiladi (/var/lib/taa/audit.db).
+#   5. SQLite audit DB ni initsializatsiya qiladi (/var/lib/taae/audit.db).
 #   6. /etc/zabbix/.env yo'q bo'lsa, .env.example dan ko'chiradi (chmod 600).
 #
 # Idempotent: qayta ishga tushirish xavfsiz, qayta yaratmaydi.
@@ -29,8 +29,8 @@ REPO_ROOT="$(cd "${SCRIPT_DIR}/.." && pwd)"                   # .../zoddix
 
 ALERTSCRIPTS_DIR="/usr/lib/zabbix/alertscripts"
 EXTSCRIPTS_DIR="/usr/lib/zabbix/externalscripts"
-TAA_DATA_DIR="/var/lib/taa"
-SQLITE_DB="${TAA_DATA_DIR}/audit.db"
+TAAE_DATA_DIR="/var/lib/taae"
+SQLITE_DB="${TAAE_DATA_DIR}/audit.db"
 ENV_TARGET="/etc/zabbix/.env"
 ENV_EXAMPLE="${SCRIPT_DIR}/docker/.env.example"
 REQS_FILE="${SCRIPT_DIR}/requirements.txt"
@@ -108,7 +108,7 @@ fi
 log "Papkalarni yaratish (mavjud bo'lsa o'tkazib yuboriladi)..."
 run install -d -m 0750 "${ALERTSCRIPTS_DIR}"
 run install -d -m 0750 "${EXTSCRIPTS_DIR}"
-run install -d -m 0750 "${TAA_DATA_DIR}"
+run install -d -m 0750 "${TAAE_DATA_DIR}"
 run install -d -m 0750 "$(dirname "${ENV_TARGET}")"
 
 # -----------------------------------------------------------------------------

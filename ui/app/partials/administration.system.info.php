@@ -26,7 +26,7 @@ $info_table = (new CTableInfo())
 	->setHeadingColumn(0)
 	->addClass(ZBX_STYLE_LIST_TABLE_STICKY_HEADER)
 	->addRow([
-		_('TAA server ishlayapti'),
+		_('TAAE server ishlayapti'),
 		(new CSpan($status['is_running'] ? _('Yes') : _('No')))
 			->addClass($status['is_running'] ? ZBX_STYLE_COLOR_POSITIVE : ZBX_STYLE_COLOR_NEGATIVE),
 		$data['system_info']['server_details']
@@ -80,14 +80,14 @@ if ($data['system_info']['is_software_update_check_enabled']) {
 
 if ($data['user_type'] == USER_TYPE_SUPER_ADMIN) {
 	$info_table->addRow([
-		_('TAA server versiyasi'),
+		_('TAAE server versiyasi'),
 		$server_version,
 		$server_version_details
 	]);
 }
 
 $info_table->addRow([
-	_('TAA frontend versiyasi'),
+	_('TAAE frontend versiyasi'),
 	$frontend_version,
 	$frontend_version_details
 ]);
@@ -195,7 +195,7 @@ if ($data['user_type'] == USER_TYPE_SUPER_ADMIN) {
 
 	if (!$data['system_info']['is_global_scripts_enabled']) {
 		$info_table->addRow([
-			_('TAA serverdagi global skriptlar'),
+			_('TAAE serverdagi global skriptlar'),
 			(new CSpan(_('Disabled'))),
 			''
 		]);
@@ -205,14 +205,14 @@ if ($data['user_type'] == USER_TYPE_SUPER_ADMIN) {
 	foreach ($data['system_info']['dbversion_status'] as $dbversion) {
 		switch ($dbversion['flag']) {
 			case DB_VERSION_LOWER_THAN_MINIMUM:
-				$error = _s('Error! Unable to start TAA server.').' '.
+				$error = _s('Error! Unable to start TAAE server.').' '.
 					_s('Minimum required %1$s database version is %2$s.', $dbversion['database'],
 						$dbversion['min_version']
 					);
 				break;
 
 			case DB_VERSION_HIGHER_THAN_MAXIMUM:
-				$error = _s('Error! Unable to start TAA server.').' '.
+				$error = _s('Error! Unable to start TAAE server.').' '.
 					_s('Maximum required %1$s database version is %2$s.', $dbversion['database'],
 						$dbversion['max_version']
 					);
@@ -224,7 +224,7 @@ if ($data['user_type'] == USER_TYPE_SUPER_ADMIN) {
 				break;
 
 			case DB_VERSION_NOT_SUPPORTED_ERROR:
-				$error = _s('Error! Unable to start TAA server.').' '.
+				$error = _s('Error! Unable to start TAAE server.').' '.
 					_s('Unsupported %1$s database server version. Must be at least %2$s.', $dbversion['database'],
 						$dbversion['min_supported_version']
 					);
@@ -237,7 +237,7 @@ if ($data['user_type'] == USER_TYPE_SUPER_ADMIN) {
 				break;
 
 			case DB_VERSION_HIGHER_THAN_MAXIMUM_ERROR:
-				$error = _s('Error! Unable to start TAA server.').' '.
+				$error = _s('Error! Unable to start TAAE server.').' '.
 					_s('Unsupported %1$s database server version. Must not be higher than %2$s.',
 						$dbversion['database'], $dbversion['max_version']
 					);

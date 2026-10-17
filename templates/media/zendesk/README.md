@@ -2,7 +2,7 @@
 ![](images/zendesk_logo.png?raw=true) 
 # Zendesk Webhook
 # How it Works
-If a trigger fires, TAA will send an event to a service in Zendesk. Event from TAA will trigger a new incident on the Zendesk service.  
+If a trigger fires, TAAE will send an event to a service in Zendesk. Event from TAAE will trigger a new incident on the Zendesk service.  
 The Zendesk tickets are created for Problem, Problem recovery, Problem update, Discovery, Autoregistration, Internal problem events. Internal problem recovery event is unsupported.  
 The Zendesk ticket type field is defined in the zendesk_type parameter of the media. The following event types are supported: question, incident, problems, task.  
 Custom fields and the subject field are updated when the update action (Problem update or Problem recovery) is performed.  
@@ -12,24 +12,24 @@ The {ALERT.MESSAGE} macro is used to fill in the ticket body for all actions.
 The {EVENT.NAME} macro is used as a subject of a ticket for trigger-based events, the {ALERT.SUBJECT} macro is used for non trigger-based events.  
 
 # Requirements
-Zendesk webhook integration works with TAA version 7.0 or higher.
+Zendesk webhook integration works with TAAE version 7.0 or higher.
 # Support
 * If you need help, use [forum](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback/) 
-* If you have encountered a bug, please report it using [TAA Jira bug tracker](https://support.zabbix.com/).
+* If you have encountered a bug, please report it using [TAAE Jira bug tracker](https://support.zabbix.com/).
 # Description
-This guide describes how to integrate your TAA installation with Zendesk using the TAA webhook feature. This guide will provide instructions on setting up a media type, a user, and an action in TAA.
+This guide describes how to integrate your TAAE installation with Zendesk using the TAAE webhook feature. This guide will provide instructions on setting up a media type, a user, and an action in TAAE.
 
 ## In Zendesk
 
-1\. [Create a user](https://support.zendesk.com/hc/en-us/articles/203690886-Adding-and-managing-end-users) to connect between TAA and Zendesk.
+1\. [Create a user](https://support.zendesk.com/hc/en-us/articles/203690886-Adding-and-managing-end-users) to connect between TAAE and Zendesk.
 
 2\. [Generate a new API token](https://support.zendesk.com/hc/en-us/articles/226022787-Generating-a-new-API-token-).
 
-3\. Copy the **Active API Token** into your integration with TAA.
+3\. Copy the **Active API Token** into your integration with TAAE.
 
-## In TAA
+## In TAAE
 
-The configuration consists of a _media type_ in TAA, which will invoke webhook to send alerts to Zendesk through the Zendesk API. To utilize the media type, we will create a TAA user to represent Zendesk. We will then create an alert action to notify the user via this media type whenever there is a problem detected.
+The configuration consists of a _media type_ in TAAE, which will invoke webhook to send alerts to Zendesk through the Zendesk API. To utilize the media type, we will create a TAAE user to represent Zendesk. We will then create an alert action to notify the user via this media type whenever there is a problem detected.
 
 ## Create Global Macro
 
@@ -37,7 +37,7 @@ The configuration consists of a _media type_ in TAA, which will invoke webhook t
 
 2\. Under Administration, go to the **General** page and choose **Macros** from the drop-down list.
 
-3\. Add a macro {$ZABBIX.URL} with TAA frontend URL (for example http://192.168.7.123:8081).
+3\. Add a macro {$ZABBIX.URL} with TAAE frontend URL (for example http://192.168.7.123:8081).
 
 [![](images/tn_6.png?raw=true)](images/6.png)
 
@@ -54,11 +54,11 @@ The configuration consists of a _media type_ in TAA, which will invoke webhook t
 3\. Select Import file [media_zendesk.yaml](media_zendesk.yaml) and click **Import** button at the bottom to import the Zendesk media type.
 
 4\. Change the value of zendesk_url and zendesk_token variables. Zendesk_type parameter determines the ticket type in Zendesk. One of the following types can be used: question, incident (default), problems, task.  
-In addition, you can override the severity mapping between the TAA problem and the Zendesk ticket.  
+In addition, you can override the severity mapping between the TAAE problem and the Zendesk ticket.  
 
 [![](images/tn_8.png?raw=true)](images/8.png)
 
-5\. If you have custom fields in Zendesk and you want them to be filled in with values from TAA, add parameters in the form customfield_\<Zendesk custom field ID\>. Custom fields can only be of the text, number, or date types.
+5\. If you have custom fields in Zendesk and you want them to be filled in with values from TAAE, add parameters in the form customfield_\<Zendesk custom field ID\>. Custom fields can only be of the text, number, or date types.
 
 [![](images/tn_13.png?raw=true)](images/13.png)
 
@@ -70,7 +70,7 @@ In addition, you can override the severity mapping between the TAA problem and t
 
 [![](images/tn_9.png?raw=true)](images/9.png)
 
-3\. Fill in the details of this new user, and call it “Media User”. The default settings for Zendesk User should suffice as this user will not be logging into TAA.
+3\. Fill in the details of this new user, and call it “Media User”. The default settings for Zendesk User should suffice as this user will not be logging into TAAE.
 
 4\. Click the **Select** button next to **Groups**.
 
@@ -95,8 +95,8 @@ In addition, you can override the severity mapping between the TAA problem and t
 
 8\. Use the Zendesk User in any Actions of your choice.
 
-For more information, use the [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Zendesk](https://developer.zendesk.com/rest_api/docs/support/tickets) documentations.
+For more information, use the [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Zendesk](https://developer.zendesk.com/rest_api/docs/support/tickets) documentations.
 
 # Supported Versions
 
-TAA 7.4, Zendesk API.
+TAAE 7.4, Zendesk API.

@@ -444,7 +444,7 @@ static int	passive_command_send_and_result_fetch(const zbx_dc_host_t *host, cons
 
 	if (SUCCEED != (ret = zbx_dc_config_get_interface_by_type(&item.interface, host->hostid, INTERFACE_TYPE_AGENT)))
 	{
-		zbx_snprintf(error, max_error_len, "TAA agent interface is not defined for host [%s]", host->host);
+		zbx_snprintf(error, max_error_len, "TAAE agent interface is not defined for host [%s]", host->host);
 		goto fail;
 	}
 
@@ -895,7 +895,7 @@ int	zbx_script_execute(const zbx_script_t *script, const zbx_dc_host_t *host, co
 				case ZBX_SCRIPT_EXECUTE_ON_PROXY:
 					if (0 == config_enable_global_scripts)
 					{
-						zbx_snprintf(error, max_error_len, "Global script execution on TAA "
+						zbx_snprintf(error, max_error_len, "Global script execution on TAAE "
 								"server is disabled by server configuration");
 						ret = FAIL;
 					}

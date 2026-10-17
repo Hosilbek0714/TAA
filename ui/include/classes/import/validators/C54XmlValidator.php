@@ -15,7 +15,7 @@
 
 
 /**
- * Validate import data from TAA 5.4.x.
+ * Validate import data from TAAE 5.4.x.
  */
 class C54XmlValidator extends CXmlValidatorGeneral {
 
@@ -952,7 +952,7 @@ class C54XmlValidator extends CXmlValidatorGeneral {
 							'name' =>					['type' => XML_STRING | XML_REQUIRED],
 							'delay' =>					['type' => XML_STRING, 'default' => '1m'],
 							'attempts' =>				['type' => XML_STRING, 'default' => '1'],
-							'agent' =>					['type' => XML_STRING, 'default' => 'TAA'],
+							'agent' =>					['type' => XML_STRING, 'default' => 'TAAE'],
 							'http_proxy' =>				['type' => XML_STRING, 'default' => ''],
 							'variables' =>				['type' => XML_INDEXED_ARRAY, 'prefix' => 'variable', 'rules' => [
 								'variable' =>				['type' => XML_ARRAY, 'rules' => [
@@ -1633,7 +1633,7 @@ class C54XmlValidator extends CXmlValidatorGeneral {
 							'name' =>					['type' => XML_STRING | XML_REQUIRED],
 							'delay' =>					['type' => XML_STRING, 'default' => '1m'],
 							'attempts' =>				['type' => XML_STRING, 'default' => '1'],
-							'agent' =>					['type' => XML_STRING, 'default' => 'TAA'],
+							'agent' =>					['type' => XML_STRING, 'default' => 'TAAE'],
 							'http_proxy' =>				['type' => XML_STRING, 'default' => ''],
 							'variables' =>				['type' => XML_INDEXED_ARRAY, 'prefix' => 'variable', 'rules' => [
 								'variable' =>				['type' => XML_ARRAY, 'rules' => [

@@ -129,7 +129,7 @@ class testFormConnectors extends CWebTest {
 
 		// Check default values.
 		$form->checkValue($default_labels['default']);
-		$this->assertEquals('TAA Streaming Protocol v1.0', $form->getField('Protocol')->getText());
+		$this->assertEquals('TAAE Streaming Protocol v1.0', $form->getField('Protocol')->getText());
 
 		foreach ($http_auth as $auth => $auth_fields) {
 			$form->fill(['HTTP authentication' => $auth]);

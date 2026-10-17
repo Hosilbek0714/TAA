@@ -282,8 +282,8 @@ class testScheduledReportPermissions extends CWebTest {
 	public function testScheduledReportPermissions_UsersWithoutPermissions($data) {
 		$report = 'report to check users without permissions';
 		// User with admin type can't see other user alias or user group name.
-		$owner = ($data['type'] === 'admin') ? 'Inaccessible user' : 'Admin (TAA Administrator)';
-		$group = ($data['type'] === 'admin') ? 'Inaccessible user group' : 'TAA administrators';
+		$owner = ($data['type'] === 'admin') ? 'Inaccessible user' : 'Admin (TAAE Administrator)';
+		$group = ($data['type'] === 'admin') ? 'Inaccessible user group' : 'TAAE administrators';
 		$this->page->userLogin($data['alias'], $data['password']);
 
 		// Check report in dashboard.
@@ -498,7 +498,7 @@ class testScheduledReportPermissions extends CWebTest {
 					'password' => 'xibbaz123',
 					'Subscriptions' => [
 						[
-							'Recipient' => 'Admin (TAA Administrator)',
+							'Recipient' => 'Admin (TAAE Administrator)',
 							'Generate report by' => 'second super-admin report permissions'
 						],
 						[
@@ -542,7 +542,7 @@ class testScheduledReportPermissions extends CWebTest {
 							'Generate report by' => 'Recipient'
 						],
 						[
-							'Recipient' => 'TAA administrators',
+							'Recipient' => 'TAAE administrators',
 							'Generate report by' => 'second super-admin report permissions'
 						]
 					]

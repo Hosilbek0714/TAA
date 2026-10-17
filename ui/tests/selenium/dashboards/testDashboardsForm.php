@@ -63,7 +63,7 @@ class testDashboardsForm extends CWebTest {
 	 * Default values of dashboard properties.
 	 */
 	private $default_values = [
-		'Owner' => 'Admin (TAA Administrator)',
+		'Owner' => 'Admin (TAAE Administrator)',
 		'Name' => 'New dashboard',
 		'Default page display period' => '30 seconds',
 		'Start slideshow automatically' => true
@@ -562,7 +562,7 @@ class testDashboardsForm extends CWebTest {
 		$form = $dialog->asForm();
 
 		// Check the properties values of the cloned dashboard.
-		$original_values['Owner'] = 'Admin (TAA Administrator)';
+		$original_values['Owner'] = 'Admin (TAAE Administrator)';
 		$form->checkValue($original_values);
 
 		// Change name and save dashboard properties.
@@ -633,7 +633,7 @@ class testDashboardsForm extends CWebTest {
 					'dashboard' => 'Dashboard for update',
 					'groups' => [
 						[
-							'name' => 'TAA administrators'
+							'name' => 'TAAE administrators'
 						]
 					]
 				]
@@ -645,7 +645,7 @@ class testDashboardsForm extends CWebTest {
 					'users' => [
 						[
 							'name' => 'Admin',
-							'full_name' => 'Admin (TAA Administrator)'
+							'full_name' => 'Admin (TAAE Administrator)'
 						]
 					]
 				]
@@ -675,14 +675,14 @@ class testDashboardsForm extends CWebTest {
 					'groups' => [
 						[
 							'action' => USER_ACTION_UPDATE,
-							'name' => 'TAA administrators',
+							'name' => 'TAAE administrators',
 							'permissions' => 'Read-write'
 						]
 					],
 					'users' => [
 						[
 							'action' => USER_ACTION_UPDATE,
-							'name' => 'Admin (TAA Administrator)',
+							'name' => 'Admin (TAAE Administrator)',
 							'permissions' => 'Read-only'
 						]
 					]
@@ -863,7 +863,7 @@ class testDashboardsForm extends CWebTest {
 
 				// Add name and surname to Admin user.
 				if ($list === 'Users' && $result[0] === 'Admin') {
-					$result[0] = 'Admin (TAA Administrator)';
+					$result[0] = 'Admin (TAAE Administrator)';
 				}
 
 				$this->assertTableHasDataColumn($result, $list, $selector);

@@ -1,15 +1,15 @@
 #!/usr/bin/env python3
-"""TAA avtomatik remediation skripti.
+"""TAAE avtomatik remediation skripti.
 
 Vazifasi:
-    TAA action triggeri (masalan, port-security violation yoki STP loop)
+    TAAE action triggeri (masalan, port-security violation yoki STP loop)
     chaqirganda Catalyst 3560G kommutatorda muammoli portni `shutdown`
     qilib, hodisani SQLite audit jurnaliga yozib qo'yadi.
 
 Foydalanish:
     auto_remediation.py --switch 10.0.99.2 --port Gi0/5 --reason "PSEC_VIOLATION"
     auto_remediation.py --switch 10.0.99.2 \
-        --trap-text "TAA-PSEC port=Gi0/5 mac=aabb.ccdd.eeff" \
+        --trap-text "TAAE-PSEC port=Gi0/5 mac=aabb.ccdd.eeff" \
         --reason "PSEC_VIOLATION"
 
 Muhit o'zgaruvchilari (env):
@@ -18,7 +18,7 @@ Muhit o'zgaruvchilari (env):
     SW_ENABLE   - enable rejimi paroli (ixtiyoriy; agar yo'q bo'lsa,
                   enable secret'siz ulanish urinadi)
     AUDIT_DB    - SQLite audit DB yo'li (ixtiyoriy,
-                  default: /var/lib/taa/audit.db)
+                  default: /var/lib/taae/audit.db)
 
 Chiqish kodlari:
     0 - muvaffaqiyatli
@@ -49,7 +49,7 @@ except ImportError as exc:  # pragma: no cover - import xatosini aniq ko'rsatish
     raise SystemExit(2) from exc
 
 
-# Loglar stderr ga yoziladi (stdout ni TAA natijaviy matn uchun qoldiramiz)
+# Loglar stderr ga yoziladi (stdout ni TAAE natijaviy matn uchun qoldiramiz)
 logging.basicConfig(
     level=logging.INFO,
     format="%(asctime)s [%(levelname)s] auto_remediation: %(message)s",
@@ -58,7 +58,7 @@ logging.basicConfig(
 log = logging.getLogger("auto_remediation")
 
 
-DEFAULT_DB_PATH = "/var/lib/taa/audit.db"
+DEFAULT_DB_PATH = "/var/lib/taae/audit.db"
 
 PORT_RE = re.compile(
     r"\b("
@@ -76,7 +76,7 @@ PORT_RE = re.compile(
 def parse_args() -> argparse.Namespace:
     """CLI argumentlarni o'qiydi."""
     parser = argparse.ArgumentParser(
-        description="TAA: violation bo'lgan portni avtomatik shutdown qilish.",
+        description="TAAE: violation bo'lgan portni avtomatik shutdown qilish.",
     )
     parser.add_argument(
         "--switch",
@@ -90,7 +90,7 @@ def parse_args() -> argparse.Namespace:
     )
     port_group.add_argument(
         "--trap-text",
-        help="TAA trap/log matni; port nomi shu matndan avtomatik ajratiladi",
+        help="TAAE trap/log matni; port nomi shu matndan avtomatik ajratiladi",
     )
     parser.add_argument(
         "--reason",
@@ -99,8 +99,8 @@ def parse_args() -> argparse.Namespace:
     )
     parser.add_argument(
         "--operator",
-        default="TAA-AUTO",
-        help="Audit jurnalida operator nomi (default: TAA-AUTO)",
+        default="TAAE-AUTO",
+        help="Audit jurnalida operator nomi (default: TAAE-AUTO)",
     )
     return parser.parse_args()
 
@@ -277,7 +277,7 @@ def main() -> int:
         operator=args.operator,
     )
 
-    # TAA Action uchun qisqa muvaffaqiyat xabari (stdout)
+    # TAAE Action uchun qisqa muvaffaqiyat xabari (stdout)
     print(f"OK: {args.switch} {port} shutdown ({args.reason})")
     return 0
 

@@ -90,7 +90,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' => [
 							'Not classified' => '2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '4'
 						]
@@ -128,7 +128,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 							'Warning' => '1',
 							'Information' => '1'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Warning' => '5'
 						]
 					]
@@ -175,27 +175,27 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' => [
 							'Not classified' => '2 of 2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1 of 1',
 							'Warning' => '5 of 5'
 						]
 					]
 				]
 			],
-			// #6 Create a widget with 'TAA servers' and 'Another group to check Overview' host group problems.
+			// #6 Create a widget with 'TAAE servers' and 'Another group to check Overview' host group problems.
 			[
 				[
 					'fields' => [
 						'Type' => 'Problems by severity',
 						'Name' => 'Show only problems from 2 groups',
-						'Host groups' => ['TAA servers', 'Another group to check Overview'],
+						'Host groups' => ['TAAE servers', 'Another group to check Overview'],
 						'Show operational data' => 'With problem name'
 					],
 					'expected' => [
 						'Another group to check Overview' => [
 							'Average' => '1'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '5'
 						]
@@ -205,13 +205,13 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 					]
 				]
 			],
-			// #7 Create a widget that excludes "TAA servers" host group.
+			// #7 Create a widget that excludes "TAAE servers" host group.
 			[
 				[
 					'fields' => [
 						'Type' => 'Problems by severity',
 						'Name' => 'Exclude one group',
-						'Exclude host groups' => ['TAA servers', 'Empty group', 'Group to check Overview']
+						'Exclude host groups' => ['TAAE servers', 'Empty group', 'Group to check Overview']
 					]
 				]
 			],
@@ -250,7 +250,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Problem display' => 'Separated'
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Warning' => '1 of 1'
 						]
 					]
@@ -265,7 +265,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Problem' => 'Test trigger with tag'
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Warning' => '5'
 						]
 					]
@@ -293,7 +293,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' => [
 							'Not classified' => '2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '5'
 						]
@@ -388,15 +388,15 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 					]
 				]
 			],
-			// #16 Totals: Create a widget with 'TAA servers' and 'Another group to check Overview' host group problems.
+			// #16 Totals: Create a widget with 'TAAE servers' and 'Another group to check Overview' host group problems.
 			[
 				[
 					'fields' => [
 						'Type' => 'Problems by severity',
-						'Name' => 'Totals: Show only "TAA servers" and "Another group to check Overview" problems',
+						'Name' => 'Totals: Show only "TAAE servers" and "Another group to check Overview" problems',
 						'Show' => 'Totals',
 						'Layout' => 'Horizontal',
-						'Host groups' => ['TAA servers', 'Another group to check Overview']
+						'Host groups' => ['TAAE servers', 'Another group to check Overview']
 					],
 					'expected' => [
 						'Average' => '2',
@@ -409,11 +409,11 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 				[
 					'fields' => [
 						'Type' => 'Problems by severity',
-						'Name' => 'Totals: Exclude "TAA servers" with separated problem display',
+						'Name' => 'Totals: Exclude "TAAE servers" with separated problem display',
 						'Show' => 'Totals',
 						'Layout' => 'Vertical',
 						'Problem display' => 'Separated',
-						'Exclude host groups' => ['TAA servers', 'Group to check triggers filtering']
+						'Exclude host groups' => ['TAAE servers', 'Group to check triggers filtering']
 					],
 					'expected' => [
 						'Disaster' => '1 of 1',
@@ -624,7 +624,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' => [
 							'Not classified' => '2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '5'
 						]
@@ -658,7 +658,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for suppression' => [
 							'Average' => '1 of 1'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1 of 1'
 						]
 					]
@@ -687,7 +687,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' => [
 							'Not classified' => '2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '5'
 						]
@@ -717,13 +717,13 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 					]
 				]
 			],
-			// #5 Empty widget output: return problems of 'TAA servers' hostroup and a host that doesn't belong to it.
+			// #5 Empty widget output: return problems of 'TAAE servers' hostroup and a host that doesn't belong to it.
 			[
 				[
 					'widget to update' => 'Reference widget 6',
 					'fields' => [
-						'Name' => 'Return "TAA servers" and "Another group to check Overview" problems',
-						'Host groups' => ['TAA servers'],
+						'Name' => 'Return "TAAE servers" and "Another group to check Overview" problems',
+						'Host groups' => ['TAAE servers'],
 						'Hosts' => [
 							'values' => ['Empty host'],
 							'context' => 'Empty group'
@@ -753,7 +753,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' =>[
 							'Not classified' => '2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '5'
 						]
@@ -768,27 +768,27 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Name' => 'Return "ЗАББИКС Сервер" problems',
 						'Hosts' => [
 							'values' => ['ЗАББИКС Сервер'],
-							'context' => 'TAA servers'
+							'context' => 'TAAE servers'
 						]
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '5'
 						]
 					]
 				]
 			],
-			// #8 Empty widget output: problems of "ЗАББИКС Сервер" host with excluded "TAA servers" hostgroup.
+			// #8 Empty widget output: problems of "ЗАББИКС Сервер" host with excluded "TAAE servers" hostgroup.
 			[
 				[
 					'widget to update' => 'Reference widget 9',
 					'fields' => [
-						'Name' => 'Display ЗАББИКС Сервер problems with excluded "TAA servers"',
-						'Exclude host groups' => ['TAA servers'],
+						'Name' => 'Display ЗАББИКС Сервер problems with excluded "TAAE servers"',
+						'Exclude host groups' => ['TAAE servers'],
 						'Hosts' => [
 							'values' => ['ЗАББИКС Сервер'],
-							'context' => 'TAA servers'
+							'context' => 'TAAE servers'
 						],
 						'Severity' => ['Disaster', 'High', 'Average', 'Warning', 'Information', 'Not classified']
 					],
@@ -863,7 +863,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'disabled' => true
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '1'
 						]
@@ -885,7 +885,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Host group for tag permissions' => [
 							'Not classified' => '2'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '1'
 						]
@@ -905,7 +905,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						['name' => 'Database', 'operator' => 'Contains', 'value' => '']
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1'
 						]
 					]
@@ -931,7 +931,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Group to check triggers filtering' => [
 							'Average' => '1'
 						],
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1'
 						]
 					]
@@ -950,7 +950,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						['name' => 'Tag5', 'operator' => 'Equals', 'value' => '5']
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1'
 						]
 					]
@@ -970,7 +970,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						['name' => 'Tag5', 'operator' => 'Equals', 'value' => '5']
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Average' => '1',
 							'Warning' => '1'
 						]
@@ -991,7 +991,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						['name' => 'Delta', 'operator' => 'Equals', 'value' => 't']
 					],
 					'expected' => [
-						'TAA servers' => [
+						'TAAE servers' => [
 							'Warning' => '3'
 						]
 					]
@@ -1223,13 +1223,13 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 					]
 				]
 			],
-			// #31 Empty widget output: return problems of 'TAA servers' hostroup and a host that doesn't belong to it.
+			// #31 Empty widget output: return problems of 'TAAE servers' hostroup and a host that doesn't belong to it.
 			[
 				[
 					'widget to update' => 'Totals reference widget 4',
 					'fields' => [
-						'Name' => 'Totals: return "TAA servers" and "Another group to check Overview" problems',
-						'Host groups' => ['TAA servers'],
+						'Name' => 'Totals: return "TAAE servers" and "Another group to check Overview" problems',
+						'Host groups' => ['TAAE servers'],
 						'Hosts' => [
 							'values' => ['Empty host'],
 							'context' => 'Empty group'
@@ -1261,7 +1261,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 						'Name' => 'Totals: Return "ЗАББИКС Сервер" problems',
 						'Hosts' => [
 							'values' => ['ЗАББИКС Сервер'],
-							'context' => 'TAA servers'
+							'context' => 'TAAE servers'
 						]
 					],
 					'expected' => [
@@ -1270,17 +1270,17 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 					]
 				]
 			],
-			// #34 Empty widget output: problems of "ЗАББИКС Сервер" host with excluded "TAA servers" hostgroup.
+			// #34 Empty widget output: problems of "ЗАББИКС Сервер" host with excluded "TAAE servers" hostgroup.
 			[
 				[
 					'widget to update' => 'Totals reference widget 7',
 					'fields' => [
-						'Name' => 'Totals: Display ЗАББИКС Сервер problems with excluded "TAA servers"',
-						'Exclude host groups' => ['TAA servers'],
+						'Name' => 'Totals: Display ЗАББИКС Сервер problems with excluded "TAAE servers"',
+						'Exclude host groups' => ['TAAE servers'],
 						'Severity' => ['Not classified', 'Information', 'Warning', 'Average', 'High', 'Disaster'],
 						'Hosts' => [
 							'values' => ['ЗАББИКС Сервер'],
-							'context' => 'TAA servers'
+							'context' => 'TAAE servers'
 						]
 					],
 					'expected' => []
@@ -1536,7 +1536,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 				'Host group for tag permissions' => [
 					'Not classified' => '2'
 				],
-				'TAA servers' => [
+				'TAAE servers' => [
 					'Average' => '1',
 					'Warning' => '5'
 				],
@@ -1662,7 +1662,7 @@ class testDashboardProblemsBySeverityWidget extends CWebTest {
 		// Open the pop-up for severity "Average"
 		if ($show === 'Host groups') {
 			$table = $widget->getContent()->asTable();
-			$hostgroup_row = $table->findRow('Host group', 'TAA servers');
+			$hostgroup_row = $table->findRow('Host group', 'TAAE servers');
 			$hostgroup_row->query('xpath:.//td[@class="average-bg"]/span/a')->one()->click();
 		}
 		else {

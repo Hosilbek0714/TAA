@@ -1,6 +1,6 @@
 -- ============================================================
--- TAA Rebranding SQL Script
--- Zabbix display nomlarini TAA ga o'zgartirish
+-- TAAE Rebranding SQL Script
+-- Zabbix display nomlarini TAAE ga o'zgartirish
 -- FAQAT UI display nomlari o'zgartiriladi
 -- Internal key, macro va DB owner TEGLANMAYDI
 -- ============================================================
@@ -10,15 +10,15 @@ BEGIN;
 -- ============================================================
 -- 1. ACTIONS (Harakatlar)
 -- ============================================================
-UPDATE actions SET name = 'TAA administratorlariga muammolarni xabar qilish'
+UPDATE actions SET name = 'TAAE administratorlariga muammolarni xabar qilish'
   WHERE name = 'Report problems to Zabbix administrators';
 
 -- ============================================================
 -- 2. USER GROUPS (Foydalanuvchi guruhlari)
 -- ============================================================
 UPDATE usrgrp SET name = CASE name
-	WHEN 'Zabbix administrators' THEN 'TAA administratorlari'
-	WHEN 'TAA administrators' THEN 'TAA administratorlari'
+	WHEN 'Zabbix administrators' THEN 'TAAE administratorlari'
+	WHEN 'TAAE administrators' THEN 'TAAE administratorlari'
 	WHEN 'Guests' THEN 'Mehmonlar'
 	WHEN 'Disabled' THEN 'O''chirilgan'
 	WHEN 'Enabled debug mode' THEN 'Nosozliklarni tuzatish rejimi yoqilgan'
@@ -27,11 +27,11 @@ UPDATE usrgrp SET name = CASE name
 	ELSE name
   END
   WHERE name IN (
-	'Zabbix administrators', 'TAA administrators', 'Guests', 'Disabled',
+	'Zabbix administrators', 'TAAE administrators', 'Guests', 'Disabled',
 	'Enabled debug mode', 'No access to the frontend', 'Internal'
   );
 
-UPDATE users SET name = 'TAA',
+UPDATE users SET name = 'TAAE',
                  surname = 'Administratori'
   WHERE username = 'Admin' AND name = 'Zabbix' AND surname = 'Administrator';
 
@@ -47,25 +47,25 @@ UPDATE role SET name = CASE name
 -- ============================================================
 -- 3. DASHBOARDS (Boshqaruv panellari)
 -- ============================================================
-UPDATE dashboard SET name = 'TAA server holati'
+UPDATE dashboard SET name = 'TAAE server holati'
   WHERE name = 'Zabbix server health';
 
-UPDATE dashboard SET name = 'TAA proksi holati'
+UPDATE dashboard SET name = 'TAAE proksi holati'
   WHERE name = 'Zabbix proxy health';
 
-UPDATE dashboard SET name = 'TAA server'
+UPDATE dashboard SET name = 'TAAE server'
   WHERE name = 'Zabbix server';
 
-UPDATE dashboard SET name = 'TAA agent: Umumiy ko''rinish'
+UPDATE dashboard SET name = 'TAAE agent: Umumiy ko''rinish'
   WHERE name = 'Zabbix agent: Overview';
 
-UPDATE dashboard SET name = 'TAA agent aktiv: Umumiy ko''rinish'
+UPDATE dashboard SET name = 'TAAE agent aktiv: Umumiy ko''rinish'
   WHERE name = 'Zabbix agent active: Overview';
 
-UPDATE dashboard SET name = 'Masofadagi TAA server holati'
+UPDATE dashboard SET name = 'Masofadagi TAAE server holati'
   WHERE name = 'Remote Zabbix server health';
 
-UPDATE dashboard SET name = 'Masofadagi TAA proksi holati'
+UPDATE dashboard SET name = 'Masofadagi TAAE proksi holati'
   WHERE name = 'Remote Zabbix proxy health';
 
 -- ============================================================
@@ -73,28 +73,28 @@ UPDATE dashboard SET name = 'Masofadagi TAA proksi holati'
 -- ============================================================
 
 -- Server va proxy health template nomlari
-UPDATE hosts SET name = 'TAA server holati',
-                 name_upper = 'TAA SERVER HOLATI'
-  WHERE host = 'TAA serveri holati' OR name = 'Zabbix server health';
+UPDATE hosts SET name = 'TAAE server holati',
+                 name_upper = 'TAAE SERVER HOLATI'
+  WHERE host = 'TAAE serveri holati' OR name = 'Zabbix server health';
 
-UPDATE hosts SET name = 'TAA proksi holati',
-                 name_upper = 'TAA PROKSI HOLATI'
+UPDATE hosts SET name = 'TAAE proksi holati',
+                 name_upper = 'TAAE PROKSI HOLATI'
   WHERE name = 'Zabbix proxy health';
 
-UPDATE hosts SET name = 'Masofadagi TAA server holati',
-                 name_upper = 'MASOFADAGI TAA SERVER HOLATI'
+UPDATE hosts SET name = 'Masofadagi TAAE server holati',
+                 name_upper = 'MASOFADAGI TAAE SERVER HOLATI'
   WHERE name = 'Remote Zabbix server health';
 
-UPDATE hosts SET name = 'Masofadagi TAA proksi holati',
-                 name_upper = 'MASOFADAGI TAA PROKSI HOLATI'
+UPDATE hosts SET name = 'Masofadagi TAAE proksi holati',
+                 name_upper = 'MASOFADAGI TAAE PROKSI HOLATI'
   WHERE name = 'Remote Zabbix proxy health';
 
 -- Template nomlari: "Name by SNMP" -> "Name (SNMP orqali)".
 UPDATE hosts SET name = REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(name,
-		' by Zabbix agent 2 active', ' (TAA agent 2 aktiv orqali)'),
-		' by Zabbix agent active', ' (TAA agent aktiv orqali)'),
-		' by Zabbix agent 2', ' (TAA agent 2 orqali)'),
-		' by Zabbix agent', ' (TAA agent orqali)'),
+		' by Zabbix agent 2 active', ' (TAAE agent 2 aktiv orqali)'),
+		' by Zabbix agent active', ' (TAAE agent aktiv orqali)'),
+		' by Zabbix agent 2', ' (TAAE agent 2 orqali)'),
+		' by Zabbix agent', ' (TAAE agent orqali)'),
 		' by Browser', ' (Brauzer orqali)'),
 		' by HTTP', ' (HTTP orqali)'),
 		' by SNMP', ' (SNMP orqali)'),
@@ -108,106 +108,106 @@ UPDATE hosts SET name_upper = upper(name)
   WHERE status = 3;
 
 UPDATE hosts SET host = REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(REPLACE(host,
-		' by Zabbix agent 2 active', ' (TAA agent 2 aktiv orqali)'),
-		' by Zabbix agent active', ' (TAA agent aktiv orqali)'),
-		' by Zabbix agent 2', ' (TAA agent 2 orqali)'),
-		' by Zabbix agent', ' (TAA agent orqali)'),
-		'Remote Zabbix server health', 'Masofadagi TAA server holati'),
-		'Remote Zabbix proxy health', 'Masofadagi TAA proksi holati'),
-		'Zabbix server health', 'TAA server holati'),
-		'Zabbix proxy health', 'TAA proksi holati')
+		' by Zabbix agent 2 active', ' (TAAE agent 2 aktiv orqali)'),
+		' by Zabbix agent active', ' (TAAE agent aktiv orqali)'),
+		' by Zabbix agent 2', ' (TAAE agent 2 orqali)'),
+		' by Zabbix agent', ' (TAAE agent orqali)'),
+		'Remote Zabbix server health', 'Masofadagi TAAE server holati'),
+		'Remote Zabbix proxy health', 'Masofadagi TAAE proksi holati'),
+		'Zabbix server health', 'TAAE server holati'),
+		'Zabbix proxy health', 'TAAE proksi holati')
   WHERE status = 3 AND host LIKE '%Zabbix%';
 
-UPDATE hosts SET host = 'TAA agent'
+UPDATE hosts SET host = 'TAAE agent'
   WHERE status = 3 AND host = 'Zabbix agent';
 
-UPDATE hosts SET host = 'TAA agent aktiv'
+UPDATE hosts SET host = 'TAAE agent aktiv'
   WHERE status = 3 AND host = 'Zabbix agent active';
 
 -- Suffix almashtirilgandan keyin qolishi mumkin bo'lgan health/agent nomlari.
 UPDATE hosts SET name = REPLACE(REPLACE(REPLACE(REPLACE(name,
-		'Remote Zabbix server health', 'Masofadagi TAA server holati'),
-		'Remote Zabbix proxy health', 'Masofadagi TAA proksi holati'),
-		'Zabbix server health', 'TAA server holati'),
-		'Zabbix proxy health', 'TAA proksi holati')
+		'Remote Zabbix server health', 'Masofadagi TAAE server holati'),
+		'Remote Zabbix proxy health', 'Masofadagi TAAE proksi holati'),
+		'Zabbix server health', 'TAAE server holati'),
+		'Zabbix proxy health', 'TAAE proksi holati')
   WHERE status = 3 AND name LIKE '%Zabbix%';
 
-UPDATE hosts SET name = 'TAA agent'
+UPDATE hosts SET name = 'TAAE agent'
   WHERE status = 3 AND name = 'Zabbix agent';
 
-UPDATE hosts SET name = 'TAA agent aktiv'
+UPDATE hosts SET name = 'TAAE agent aktiv'
   WHERE status = 3 AND name = 'Zabbix agent active';
 
 UPDATE hosts SET name_upper = upper(name)
   WHERE status = 3;
 
 -- Standalone agent templatelar
-UPDATE hosts SET name = 'TAA agent aktiv',
-                 name_upper = 'TAA AGENT AKTIV'
+UPDATE hosts SET name = 'TAAE agent aktiv',
+                 name_upper = 'TAAE AGENT AKTIV'
   WHERE name = 'Zabbix agent active' AND status = 3;
 
-UPDATE hosts SET name = 'TAA agent',
-                 name_upper = 'TAA AGENT'
+UPDATE hosts SET name = 'TAAE agent',
+                 name_upper = 'TAAE AGENT'
   WHERE name = 'Zabbix agent' AND status = 3;
 
 -- Template vendor metadata.
-UPDATE hosts SET vendor_name = 'TAA'
+UPDATE hosts SET vendor_name = 'TAAE'
   WHERE status = 3 AND vendor_name = 'Zabbix';
 
 -- ============================================================
 -- 5. TEMPLATE TAGS
 -- ============================================================
 UPDATE host_tag SET value = CASE lower(value)
-    WHEN 'zabbix' THEN 'taa'
-    WHEN 'zabbix-agent' THEN 'taa-agent'
+    WHEN 'zabbix' THEN 'taae'
+    WHEN 'zabbix-agent' THEN 'taae-agent'
     ELSE value
   END
   WHERE lower(tag) = 'target' AND lower(value) IN ('zabbix', 'zabbix-agent');
 
-UPDATE event_tag SET value = 'taa'
+UPDATE event_tag SET value = 'taae'
   WHERE lower(tag) = 'target' AND lower(value) = 'zabbix';
 
-UPDATE problem_tag SET value = 'taa'
+UPDATE problem_tag SET value = 'taae'
   WHERE lower(tag) = 'target' AND lower(value) = 'zabbix';
 
 -- ============================================================
 -- 6. TRIGGERS — foydalanuvchiga ko'rinadigan xabarlar
 -- ============================================================
-UPDATE triggers SET description = REPLACE(description, 'Zabbix agent is not available', 'TAA agent mavjud emas')
+UPDATE triggers SET description = REPLACE(description, 'Zabbix agent is not available', 'TAAE agent mavjud emas')
   WHERE description LIKE '%Zabbix agent is not available%';
 
-UPDATE triggers SET description = REPLACE(description, 'Zabbix server is not running', 'TAA server ishlamayapti')
+UPDATE triggers SET description = REPLACE(description, 'Zabbix server is not running', 'TAAE server ishlamayapti')
   WHERE description LIKE '%Zabbix server is not running%';
 
-UPDATE triggers SET description = REPLACE(description, 'Zabbix proxy is not running', 'TAA proksi ishlamayapti')
+UPDATE triggers SET description = REPLACE(description, 'Zabbix proxy is not running', 'TAAE proksi ishlamayapti')
   WHERE description LIKE '%Zabbix proxy is not running%';
 
-UPDATE triggers SET description = REPLACE(description, 'Zabbix value cache', 'TAA qiymat keshi')
+UPDATE triggers SET description = REPLACE(description, 'Zabbix value cache', 'TAAE qiymat keshi')
   WHERE description LIKE '%Zabbix value cache%';
 
-UPDATE triggers SET description = REPLACE(description, 'More than 100 items having missing data for more than 10 minutes', 'TAA: 10 daqiqadan ortiq ma''lumot yo''q — 100 dan ortiq element')
+UPDATE triggers SET description = REPLACE(description, 'More than 100 items having missing data for more than 10 minutes', 'TAAE: 10 daqiqadan ortiq ma''lumot yo''q — 100 dan ortiq element')
   WHERE description LIKE '%More than 100 items having missing data%';
 
 -- event_name ichidagi Zabbix ham
-UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix agent is not available', 'TAA agent mavjud emas')
+UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix agent is not available', 'TAAE agent mavjud emas')
   WHERE event_name LIKE '%Zabbix agent is not available%';
 
-UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix server is not running', 'TAA server ishlamayapti')
+UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix server is not running', 'TAAE server ishlamayapti')
   WHERE event_name LIKE '%Zabbix server is not running%';
 
-UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix proxy is not running', 'TAA proksi ishlamayapti')
+UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix proxy is not running', 'TAAE proksi ishlamayapti')
   WHERE event_name LIKE '%Zabbix proxy is not running%';
 
 -- ============================================================
 -- 7. ITEMS — display nomlari
 -- ============================================================
-UPDATE items SET name = REPLACE(name, 'Zabbix server', 'TAA server')
+UPDATE items SET name = REPLACE(name, 'Zabbix server', 'TAAE server')
   WHERE name LIKE 'Zabbix server%' AND flags IN (0, 4);
 
-UPDATE items SET name = REPLACE(name, 'Zabbix proxy', 'TAA proksi')
+UPDATE items SET name = REPLACE(name, 'Zabbix proxy', 'TAAE proksi')
   WHERE name LIKE 'Zabbix proxy%' AND flags IN (0, 4);
 
-UPDATE items SET name = REPLACE(name, 'Zabbix agent', 'TAA agent')
+UPDATE items SET name = REPLACE(name, 'Zabbix agent', 'TAAE agent')
   WHERE name LIKE 'Zabbix agent%' AND flags IN (0, 4);
 
 -- ============================================================
@@ -216,7 +216,7 @@ UPDATE items SET name = REPLACE(name, 'Zabbix agent', 'TAA agent')
 UPDATE hstgrp SET name = CASE name
 	WHEN 'Templates' THEN 'Shablonlar'
 	WHEN 'Linux servers' THEN 'Linux serverlari'
-	WHEN 'Zabbix servers' THEN 'TAA serverlari'
+	WHEN 'Zabbix servers' THEN 'TAAE serverlari'
 	WHEN 'Discovered hosts' THEN 'Aniqlangan hostlar'
 	WHEN 'Virtual machines' THEN 'Virtual mashinalar'
 	WHEN 'Hypervisors' THEN 'Gipervizorlar'
@@ -247,25 +247,25 @@ UPDATE hstgrp SET name = CASE name
 -- 9. TEMPLATE DESCRIPTIONS — tavsiflar
 --    Faqat "designed to monitor internal Zabbix" kabi UI text
 -- ============================================================
-UPDATE hosts SET description = REPLACE(description, 'internal Zabbix metrics', 'TAA ichki ko''rsatkichlari')
+UPDATE hosts SET description = REPLACE(description, 'internal Zabbix metrics', 'TAAE ichki ko''rsatkichlari')
   WHERE description LIKE '%internal Zabbix metrics%' AND status = 3;
 
-UPDATE hosts SET description = REPLACE(description, 'Zabbix server', 'TAA server')
+UPDATE hosts SET description = REPLACE(description, 'Zabbix server', 'TAAE server')
   WHERE description LIKE '%Zabbix server%' AND status = 3;
 
-UPDATE hosts SET description = REPLACE(description, 'Zabbix proxy', 'TAA proksi')
+UPDATE hosts SET description = REPLACE(description, 'Zabbix proxy', 'TAAE proksi')
   WHERE description LIKE '%Zabbix proxy%' AND status = 3;
 
-UPDATE hosts SET description = REPLACE(description, 'Zabbix agent', 'TAA agent')
+UPDATE hosts SET description = REPLACE(description, 'Zabbix agent', 'TAAE agent')
   WHERE description LIKE '%Zabbix agent%' AND status = 3;
 
-UPDATE hosts SET description = REPLACE(description, 'Zabbix bulk data', 'TAA to''plam ma''lumotlar')
+UPDATE hosts SET description = REPLACE(description, 'Zabbix bulk data', 'TAAE to''plam ma''lumotlar')
   WHERE description LIKE '%Zabbix bulk data%' AND status = 3;
 
 -- ============================================================
 -- 10. MEDIA TYPES — bildirishnoma nomlari
 -- ============================================================
-UPDATE media_type SET name = REPLACE(name, 'Zabbix', 'TAA')
+UPDATE media_type SET name = REPLACE(name, 'Zabbix', 'TAAE')
   WHERE name LIKE '%Zabbix%';
 
 -- ============================================================
@@ -273,31 +273,31 @@ UPDATE media_type SET name = REPLACE(name, 'Zabbix', 'TAA')
 --    Internal {$ZABBIX.*} macros and zabbix.com URLs are intentionally
 --    not modified by these case-sensitive replacements.
 -- ============================================================
-UPDATE dashboard SET name = REPLACE(name, 'Zabbix', 'TAA')
+UPDATE dashboard SET name = REPLACE(name, 'Zabbix', 'TAAE')
   WHERE name LIKE '%Zabbix%';
 
-UPDATE actions SET name = REPLACE(name, 'Zabbix', 'TAA')
+UPDATE actions SET name = REPLACE(name, 'Zabbix', 'TAAE')
   WHERE name LIKE '%Zabbix%';
 
-UPDATE usrgrp SET name = REPLACE(name, 'Zabbix', 'TAA')
+UPDATE usrgrp SET name = REPLACE(name, 'Zabbix', 'TAAE')
   WHERE name LIKE '%Zabbix%';
 
-UPDATE hosts SET description = REPLACE(description, 'Zabbix', 'TAA')
+UPDATE hosts SET description = REPLACE(description, 'Zabbix', 'TAAE')
   WHERE description LIKE '%Zabbix%';
 
-UPDATE hosts SET description = replace(replace(description, 'zbx_monitor', 'taa_monitor'), 'zbx_mon', 'taa_mon')
+UPDATE hosts SET description = replace(replace(description, 'zbx_monitor', 'taae_monitor'), 'zbx_mon', 'taae_mon')
   WHERE description LIKE '%zbx%';
 
-UPDATE items SET name = REPLACE(name, 'Zabbix', 'TAA')
+UPDATE items SET name = REPLACE(name, 'Zabbix', 'TAAE')
   WHERE name LIKE '%Zabbix%';
 
-UPDATE items SET description = REPLACE(description, 'Zabbix', 'TAA')
+UPDATE items SET description = REPLACE(description, 'Zabbix', 'TAAE')
   WHERE description LIKE '%Zabbix%';
 
-UPDATE triggers SET description = REPLACE(description, 'Zabbix', 'TAA')
+UPDATE triggers SET description = REPLACE(description, 'Zabbix', 'TAAE')
   WHERE description LIKE '%Zabbix%';
 
-UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix', 'TAA')
+UPDATE triggers SET event_name = REPLACE(event_name, 'Zabbix', 'TAAE')
   WHERE event_name LIKE '%Zabbix%';
 
 UPDATE valuemap_mapping SET newvalue = CASE newvalue
@@ -322,12 +322,12 @@ UPDATE valuemap_mapping SET newvalue = CASE newvalue
 
 -- Common default-template display phrases. Product/protocol names, item keys,
 -- macros and URLs are intentionally left intact.
-CREATE TEMP TABLE tmp_taa_display_phrase_map (
+CREATE TEMP TABLE tmp_taae_display_phrase_map (
 	source text PRIMARY KEY,
 	target text NOT NULL
 ) ON COMMIT DROP;
 
-INSERT INTO tmp_taa_display_phrase_map (source, target) VALUES
+INSERT INTO tmp_taae_display_phrase_map (source, target) VALUES
 	('Local network', 'Mahalliy tarmoq'),
 	('/etc/passwd has been changed', '/etc/passwd fayli o''zgartirildi'),
 	(' on {HOST.NAME}', ' ({HOST.NAME} da)'),
@@ -461,7 +461,7 @@ DO $$
 DECLARE
 	phrase record;
 BEGIN
-	FOR phrase IN SELECT source, target FROM tmp_taa_display_phrase_map LOOP
+	FOR phrase IN SELECT source, target FROM tmp_taae_display_phrase_map LOOP
 		UPDATE sysmaps SET name = replace(name, phrase.source, phrase.target)
 			WHERE position(phrase.source in name) > 0;
 

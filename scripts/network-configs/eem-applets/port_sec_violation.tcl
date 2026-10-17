@@ -4,8 +4,8 @@
 ! KXD ref.   : P1 (binding/block), P2 (DoS / scan / unauthorized)
 ! Trigger    : %PORT_SECURITY-2-PSECURE_VIOLATION syslog message
 ! Outcome    : - Save the offending port's running-config to flash
-!              - Emit an SNMP trap with port + MAC for TAA
-!              - Emit a critical syslog line that TAA can match on
+!              - Emit an SNMP trap with port + MAC for TAAE
+!              - Emit a critical syslog line that TAAE can match on
 ! NOTE       : Filename ends in .tcl for archival consistency only.
 !              The body below is IOS CLI 'event manager applet'
 !              syntax (not TCL policy).
@@ -16,7 +16,7 @@
 no event manager applet PORT_SEC_VIOLATION
 !
 event manager applet PORT_SEC_VIOLATION
- description "TAA - port-security violation responder"
+ description "TAAE - port-security violation responder"
  event tag real syslog pattern "PSECURE_VIOLATION" maxrun 30
  event tag manual none
  trigger
@@ -33,8 +33,8 @@ event manager applet PORT_SEC_VIOLATION
  action 0080 cli command "show clock | append flash:/violations.log"
  action 0090 cli command "show running-config interface $port | append flash:/violations.log"
  action 0100 cli command "show mac address-table interface $port | append flash:/violations.log"
- action 0110 snmp-trap strdata "TAA-PSEC port=$port mac=$mac host=core-sw01"
- action 0120 syslog priority critical msg "TAA-ALERT: PSEC violation port=$port mac=$mac"
+ action 0110 snmp-trap strdata "TAAE-PSEC port=$port mac=$mac host=core-sw01"
+ action 0120 syslog priority critical msg "TAAE-ALERT: PSEC violation port=$port mac=$mac"
  action 0130 cli command "end"
 !
 end

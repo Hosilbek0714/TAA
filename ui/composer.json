@@ -1,6 +1,6 @@
 {
 	"name": "zabbix/ui",
-	"description": "Hosted TAA User Interface in PHP",
+	"description": "Hosted TAAE User Interface in PHP",
 	"homepage": "https://www.zabbix.com",
 	"license": "AGPL-3.0-only",
 	"require": {

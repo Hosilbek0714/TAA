@@ -5,11 +5,11 @@
 
 The template for monitoring Asterisk over HTTP that works without any external scripts.
 It collects metrics by polling the Asterisk Manager API remotely using an HTTP agent and JS preprocessing.
-All metrics are collected at once, thanks to TAA's bulk data collection.
+All metrics are collected at once, thanks to TAAE's bulk data collection.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,15 +18,15 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 You should enable the mini-HTTP Server, add the option webenabled=yes in the general section of the manager.conf file and create Asterisk Manager user with system and command write permissions within your Asterisk instance. 
 Disable the PJSIP driver if you do not use PJSIP or do not have PJSIP endpoints.
-Please, define AMI address in the {$AMI.URL} macro. Also, set the hostname or IP address of the AMI host in the {$AMI.HOST} macro for TAA to check Asterisk service status.
+Please, define AMI address in the {$AMI.URL} macro. Also, set the hostname or IP address of the AMI host in the {$AMI.HOST} macro for TAAE to check Asterisk service status.
 Then you can define {$AMI.USERNAME} and {$AMI.SECRET} macros in the template for using on the host level.
-If there are errors, increase the logging to debug level and see the TAA server log.
+If there are errors, increase the logging to debug level and see the TAAE server log.
 
 ### Macros used
 
@@ -84,7 +84,7 @@ If there are errors, increase the logging to debug level and see the TAA server 
 |Asterisk: Service response time is too high||`min(/Asterisk by HTTP/net.tcp.service.perf["tcp","{$AMI.HOST}","{$AMI.PORT}"],5m)>{$AMI.RESPONSE_TIME.MAX.WARN}`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Asterisk: Service is down</li></ul>|
 |Asterisk: Version has changed|<p>The Asterisk version has changed. Acknowledge to close the problem manually.</p>|`last(/Asterisk by HTTP/asterisk.version,#1)<>last(/Asterisk by HTTP/asterisk.version,#2) and length(last(/Asterisk by HTTP/asterisk.version))>0`|Info|**Manual close**: Yes|
 |Asterisk: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Asterisk by HTTP/asterisk.uptime)<10m`|Info|**Manual close**: Yes|
-|Asterisk: Failed to fetch AMI page|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Asterisk by HTTP/asterisk.uptime,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Asterisk: Service is down</li></ul>|
+|Asterisk: Failed to fetch AMI page|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/Asterisk by HTTP/asterisk.uptime,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Asterisk: Service is down</li></ul>|
 |Asterisk: Configuration has been reloaded|<p>Uptime is less than 10 minutes.</p>|`last(/Asterisk by HTTP/asterisk.uptime_reload)<10m`|Info|**Manual close**: Yes|
 |Asterisk: Total number of active channels of SIP trunks is too high|<p>The SIP trunks may not be able to process new calls.</p>|`min(/Asterisk by HTTP/asterisk.sip.active_channels,10m)>={$AMI.TRUNK_ACTIVE_CHANNELS_TOTAL.MAX.WARN:"SIP"}`|Warning||
 |Asterisk: Total number of active channels of IAX trunks is too high|<p>The IAX trunks may not be able to process new calls.</p>|`min(/Asterisk by HTTP/asterisk.iax.active_channels,10m)>={$AMI.TRUNK_ACTIVE_CHANNELS_TOTAL.MAX.WARN:"IAX"}`|Warning||
@@ -178,5 +178,5 @@ If there are errors, increase the logging to debug level and see the TAA server 
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

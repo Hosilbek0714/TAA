@@ -1,5 +1,5 @@
 /*
-** Copyright (C) 2026 TAA Project
+** Copyright (C) 2026 TAAE Project
 ** Based on Agent 2 source code.
 **/
 
@@ -52,7 +52,7 @@ const usageMessageFormatRuntimeControlFormat = //
 `
 
 const usageMessageFormat = //
-`Usage of TAA agent 2:
+`Usage of TAAE agent 2:
   %[1]s [-c config-file]
   %[1]s [-c config-file] [-v] -p
   %[1]s [-c config-file] [-v] -t item-key
@@ -63,16 +63,16 @@ const usageMessageFormat = //
 `
 
 const helpMessageFormat = //
-`A TAA daemon for monitoring of various server parameters.
+`A TAAE daemon for monitoring of various server parameters.
 
 Options:
 %[1]s
 
-Example: taa_agent2 -c %[2]s
+Example: taae_agent2 -c %[2]s
 
-Report bugs to: <support@taa.uz>
-TAA home page: <https://taa.uz>
-Documentation: <https://taa.uz/documentation>
+Report bugs to: <support@taae.uz>
+TAAE home page: <https://taae.uz>
+Documentation: <https://taae.uz/documentation>
 `
 
 var (
@@ -111,10 +111,10 @@ func main() {
 		fatalCloseOSItems()
 		cliErr := &errs.CLIError{}
 		if !errors.As(err, &cliErr) {
-			fmt.Fprintf(os.Stderr, "taa_agent2 [%d]: ERROR: %s\n", os.Getpid(), err.Error())
+			fmt.Fprintf(os.Stderr, "taae_agent2 [%d]: ERROR: %s\n", os.Getpid(), err.Error())
 			os.Exit(1)
 		}
-		fmt.Fprintf(os.Stderr, "taa_agent2 [%d]: ERROR: %s\n", os.Getpid(), cliErr.Message)
+		fmt.Fprintf(os.Stderr, "taae_agent2 [%d]: ERROR: %s\n", os.Getpid(), cliErr.Message)
 		os.Exit(cliErr.ExitCode)
 	}
 	os.Exit(0)
@@ -278,7 +278,7 @@ func runAgent(isForeground bool, configPath string, systemOpt agent.PluginSystem
 	}
 
 	zbxlib.SetLogLevel(agent.Options.DebugLevel)
-	greeting := fmt.Sprintf("Starting TAA Agent 2 (%s)", version.Long())
+	greeting := fmt.Sprintf("Starting TAAE Agent 2 (%s)", version.Long())
 	log.Infof(greeting)
 
 	addresses, err := agent.ParseServerActive(agent.Options.ServerActive)
@@ -352,7 +352,7 @@ func runAgent(isForeground bool, configPath string, systemOpt agent.PluginSystem
 	}
 
 	agent.FirstHostname = hostnames[0]
-	hostmessage := fmt.Sprintf("TAA Agent 2 hostname: [%s]", agent.Options.Hostname)
+	hostmessage := fmt.Sprintf("TAAE Agent 2 hostname: [%s]", agent.Options.Hostname)
 	log.Infof(hostmessage)
 
 	if isForeground && agent.Options.LogType != "console" {
@@ -422,7 +422,7 @@ func runAgent(isForeground bool, configPath string, systemOpt agent.PluginSystem
 	}
 
 	monitor.Wait(monitor.Output)
-	farewell := fmt.Sprintf("TAA Agent 2 stopped. (%s)", version.Long())
+	farewell := fmt.Sprintf("TAAE Agent 2 stopped. (%s)", version.Long())
 	log.Infof(farewell)
 
 	if isForeground && agent.Options.LogType != "console" {
@@ -453,7 +453,7 @@ func parseArgs() (string, *Arguments, error) {
 			Flag: zbxflag.Flag{
 				Name:        "foreground",
 				Shorthand:   "f",
-				Description: "Run TAA agent in foreground",
+				Description: "Run TAAE agent in foreground",
 			},
 			Default: true,
 			Dest:    &args.foreground,

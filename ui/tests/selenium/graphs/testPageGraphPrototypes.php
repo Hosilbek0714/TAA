@@ -47,7 +47,7 @@ class testPageGraphPrototypes extends testPagePrototypes {
 						]
 					]
 				],
-				'groups' => [['groupid' => 4]], // TAA server
+				'groups' => [['groupid' => 4]], // TAAE server
 				'discoveryrules' => [
 					[
 						'name' => 'Drule for prototype check',

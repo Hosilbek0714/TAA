@@ -39,10 +39,10 @@ test case: "7. Big text"
 in:
   string: |
    Hello world!
-   From smart homes to multi-tenant enterprise environments, TAA is scalable to any infrastructure
-   Deploy	and	scale	a	TAA	infrastructure	from	a	central	Web	UI	with	native	encryption	between	components
+   From smart homes to multi-tenant enterprise environments, TAAE is scalable to any infrastructure
+   Deploy	and	scale	a	TAAE	infrastructure	from	a	central	Web	UI	with	native	encryption	between	components
 out:
-  string: Hello world!\nFrom smart homes to multi-tenant enterprise environments, TAA is scalable to any infrastructure\nDeploy\tand\tscale\ta\tZabbix\tinfrastructure\tfrom\ta\tcentral\tWeb\tUI\twith\tnative\tencryption\tbetween\tcomponents\n
+  string: Hello world!\nFrom smart homes to multi-tenant enterprise environments, TAAE is scalable to any infrastructure\nDeploy\tand\tscale\ta\tZabbix\tinfrastructure\tfrom\ta\tcentral\tWeb\tUI\twith\tnative\tencryption\tbetween\tcomponents\n
 ---
 test case: "9. Subscript and superscript with tabs"
 in:

@@ -472,7 +472,7 @@ class testDashboardProblemsWidget extends CWebTest {
 				[
 					'fields' => [
 						'Name' => 'Array of groups',
-						'Host groups' => [ 'Group to check Overview',  'TAA servers'],
+						'Host groups' => [ 'Group to check Overview',  'TAAE servers'],
 						'Exclude host groups' => ['Group to copy all graph', 'Inheritance test'],
 						'Hosts' => ['Host to check graph 1', 'Host for triggers filtering']
 					]

@@ -1577,7 +1577,7 @@ static int	zbx_close_inactive_host(zbx_ipmi_host_t *h)
 	zbx_snprintf(domain_name, sizeof(domain_name), "%u", h->domain_nr);
 
 	/* Search the list of domains in OpenIPMI library and find which one to close. It could happen that */
-	/* the domain is not found (e.g. if TAA allocated an IPMI host during network problem and the domain was */
+	/* the domain is not found (e.g. if TAAE allocated an IPMI host during network problem and the domain was */
 	/* closed by OpenIPMI library but the host is still in our 'hosts' list). */
 
 	domain_id_found = 0;

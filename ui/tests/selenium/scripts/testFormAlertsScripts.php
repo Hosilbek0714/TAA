@@ -708,7 +708,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Description' => 'Test description',
 						'User group' => 'Selenium user group',
 						'Host group' => 'Selected',
-						'xpath://div[@id="groupid"]/..' => 'TAA servers',
+						'xpath://div[@id="groupid"]/..' => 'TAAE servers',
 						'Required host permissions' => 'Write',
 						'Advanced configuration' => true,
 						'Enable confirmation' => true,
@@ -741,7 +741,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Timeout' => '60s',
 						'Description' => 'Test description',
 						'Host group' => 'Selected',
-						'xpath://div[@id="groupid"]/..' => 'TAA servers'
+						'xpath://div[@id="groupid"]/..' => 'TAAE servers'
 					],
 					'Parameters' => [
 						[
@@ -772,7 +772,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Description' => 'Test description',
 						'User group' => 'Selenium user group',
 						'Host group' => 'Selected',
-						'xpath://div[@id="groupid"]/..' => 'TAA servers',
+						'xpath://div[@id="groupid"]/..' => 'TAAE servers',
 						'Required host permissions' => 'Write',
 						'Advanced configuration' => true,
 						'Enable confirmation' => true,
@@ -884,7 +884,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Scope' => 'Manual host action',
 						'Menu path' => 'path_1/path_2',
 						'Type' => 'Script',
-						'Execute on' => 'TAA proxy or server',
+						'Execute on' => 'TAAE proxy or server',
 						'Commands' => 'Script command',
 						'Description' => 'Test description',
 						'User group' => 'Selenium user group',
@@ -903,7 +903,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Name' => 'Max script 2',
 						'Scope' => 'Action operation',
 						'Type' => 'Script',
-						'Execute on' => 'TAA proxy or server',
+						'Execute on' => 'TAAE proxy or server',
 						'Commands' => 'Script command',
 						'Description' => 'Test description',
 						'Host group' => 'Selected',
@@ -919,7 +919,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Scope' => 'Manual event action',
 						'Menu path' => 'path_1/path_2',
 						'Type' => 'Script',
-						'Execute on' => 'TAA proxy or server',
+						'Execute on' => 'TAAE proxy or server',
 						'Commands' => 'Script command',
 						'Description' => 'Test description',
 						'User group' => 'Selenium user group',
@@ -1193,8 +1193,8 @@ class testFormAlertsScripts extends CWebTest {
 						'Open in a new window' => false,
 						'Description' => 'selected Url type',
 						'Host group' => 'Selected',
-						'User group' => 'TAA administrators',
-						'xpath://div[@id="groupid"]/..' => 'TAA servers',
+						'User group' => 'TAAE administrators',
+						'xpath://div[@id="groupid"]/..' => 'TAAE servers',
 						'Required host permissions' => 'Write',
 						'Advanced configuration' => true,
 						'Enable confirmation' => true,
@@ -1225,8 +1225,8 @@ class testFormAlertsScripts extends CWebTest {
 						'Advanced configuration' => true,
 						'Enable user input' => true,
 						'Input prompt' => 'Test version?',
-						'Default input string' => 'TAA 7.0.0 alpha',
-						'Input validation rule' => 'TAA [0-9]+\.[0-9]\.[0-9]+ alpha'
+						'Default input string' => 'TAAE 7.0.0 alpha',
+						'Input validation rule' => 'TAAE [0-9]+\.[0-9]\.[0-9]+ alpha'
 					]
 				]
 			],
@@ -1253,7 +1253,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Name' => 'User input type - dropdown',
 						'Scope' => 'Manual host action',
 						'Type' => 'Script',
-						'Execute on' => 'TAA server',
+						'Execute on' => 'TAAE server',
 						'Commands' => 'test',
 						'Advanced configuration' => true,
 						'Enable user input' => true,
@@ -1338,14 +1338,14 @@ class testFormAlertsScripts extends CWebTest {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Name' => 'Open TAA page',
+						'Name' => 'Open TAAE page',
 						'Scope' => 'Manual host action',
 						'Type' => 'URL',
 						'URL' => 'http://localhost/ui/zabbix.php?action={MANUALINPUT}',
 						'Advanced configuration' => true,
 						'Enable user input' => true,
 						'Enable confirmation' => true,
-						'Input prompt' => 'TAA page to open:',
+						'Input prompt' => 'TAAE page to open:',
 						'Input type' => 'Dropdown',
 						'Dropdown options' => 'dashboard.view,discovery.view',
 						'Confirmation text' => 'Are you sure you want to open {MANUALINPUT} page?'
@@ -1359,7 +1359,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Name' => 'Ping count',
 						'Scope' => 'Manual host action',
 						'Type' => 'Script',
-						'Execute on' => 'TAA server',
+						'Execute on' => 'TAAE server',
 						'Commands' => 'ping -c {MANUALINPUT} {HOST.CONN};',
 						'Advanced configuration' => true,
 						'Enable user input' => true,
@@ -1399,7 +1399,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Name' => 'Trim check for string input type',
 						'Scope' => 'Manual event action',
 						'Type' => 'Script',
-						'Execute on' => 'TAA server',
+						'Execute on' => 'TAAE server',
 						'Commands' => 'ping localhost;',
 						'Advanced configuration' => true,
 						'Enable user input' => true,
@@ -1547,7 +1547,7 @@ class testFormAlertsScripts extends CWebTest {
 		$modal->asForm()->fill([
 			'Name' => 'Cancelled script',
 			'Type' => 'Script',
-			'Execute on' => 'TAA server',
+			'Execute on' => 'TAAE server',
 			'Commands' => 'Script command',
 			'Description' => 'Cancelled description',
 			'User group' => 'Disabled',
@@ -1640,7 +1640,7 @@ class testFormAlertsScripts extends CWebTest {
 
 		$default_values = ['Scope' => 'Action operation', 'Type' => 'Webhook', 'Host group' => 'All',
 			'User group' => 'All', 'Required host permissions' => 'Read', 'Enable confirmation' => false, 'Timeout' => '30s',
-			'Execute on' => 'TAA agent', 'Authentication method' => 'Password', 'Open in a new window' => true
+			'Execute on' => 'TAAE agent', 'Authentication method' => 'Password', 'Open in a new window' => true
 		];
 		$form->checkValue($default_values);
 
@@ -1693,7 +1693,7 @@ class testFormAlertsScripts extends CWebTest {
 		$segmented_elements = [
 			'Scope' => ['Action operation', 'Manual host action', 'Manual event action'],
 			'Type' => ['URL', 'Webhook', 'Script', 'SSH', 'Telnet', 'IPMI'],
-			'Execute on' => ['TAA agent', 'TAA proxy or server', 'TAA server'],
+			'Execute on' => ['TAAE agent', 'TAAE proxy or server', 'TAAE server'],
 			'Required host permissions' => ['Read', 'Write'],
 			'Input type' => ['String', 'Dropdown']
 		];
@@ -1807,7 +1807,7 @@ class testFormAlertsScripts extends CWebTest {
 			'Script' => [
 				'fields' => ['Execute on', 'Commands'],
 				'required' => ['Commands'],
-				'default' => ['Execute on' => 'TAA agent']
+				'default' => ['Execute on' => 'TAAE agent']
 			],
 			'SSH' => [
 				'fields' => ['Authentication method', 'Username', 'Password', 'Port', 'Commands'],
@@ -2029,7 +2029,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Enable confirmation' => true,
 						'Confirmation text' => '{USER.FULLNAME}, {USER.NAME}, {USER.SURNAME}, {USER.USERNAME}'
 					],
-					'resolved_macros' => 'TAA Administrator (Admin), TAA, Administrator, Admin',
+					'resolved_macros' => 'TAAE Administrator (Admin), TAAE, Administrator, Admin',
 					'host' => 'ЗАББИКС Сервер',
 					'trigger' => 'Test trigger with tag'
 				]
@@ -2045,7 +2045,7 @@ class testFormAlertsScripts extends CWebTest {
 						'Enable confirmation' => true,
 						'Confirmation text' => '{USER.FULLNAME}, {USER.NAME}, {USER.SURNAME}, {USER.USERNAME}'
 					],
-					'resolved_macros' => 'TAA Administrator (Admin), TAA, Administrator, Admin',
+					'resolved_macros' => 'TAAE Administrator (Admin), TAAE, Administrator, Admin',
 					'host' => 'ЗАББИКС Сервер',
 					'trigger' => 'Test trigger with tag'
 				]

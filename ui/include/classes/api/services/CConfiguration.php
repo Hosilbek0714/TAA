@@ -272,7 +272,7 @@ class CConfiguration extends CApiService {
 			->getObject(ZABBIX_EXPORT_VERSION)
 			->getSchema();
 
-		// Convert human readable import constants to values TAA API can work with.
+		// Convert human readable import constants to values TAAE API can work with.
 		$data = (new CConstantImportConverter($schema))->convert($data);
 
 		// Add default values in place of missed tags.

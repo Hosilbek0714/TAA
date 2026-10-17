@@ -1393,9 +1393,9 @@ static void	execute_commands(const zbx_db_event *event, const zbx_db_event *r_ev
 
 		if (EVENT_SOURCE_SERVICE == event->source)
 		{
-			/* service event cannot have target, force execution on TAA server */
+			/* service event cannot have target, force execution on TAAE server */
 			script.execute_on = ZBX_SCRIPT_EXECUTE_ON_SERVER;
-			zbx_strscpy(host.host, "TAA server");
+			zbx_strscpy(host.host, "TAAE server");
 		}
 		else
 		{

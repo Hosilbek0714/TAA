@@ -741,7 +741,7 @@ static int	process_discovery(int *nextcheck, zbx_hashset_t *incomplete_druleids,
 				if (0 == tmt_agent && FAIL == dcheck_get_timeout(ITEM_TYPE_ZABBIX, &tmt_agent,
 						um_handle, err, sizeof(err)))
 				{
-					zbx_snprintf(error, sizeof(error), "Invalid global timeout for TAA Agent"
+					zbx_snprintf(error, sizeof(error), "Invalid global timeout for TAAE Agent"
 							" checks: \"%s\"", err);
 					discoverer_queue_append_error(drule_errors, drule->druleid, error);
 					zbx_vector_uint64_append(err_druleids, drule->druleid);

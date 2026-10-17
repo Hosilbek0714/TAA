@@ -47,7 +47,7 @@ func init() {
 		"agent.hostmetadata", "Returns string with agent host metadata.",
 		"agent.ping", "Returns agent availability check result.",
 		"agent.variant", "Returns agent variant.",
-		"agent.version", "Version of TAA agent.",
+		"agent.version", "Version of TAAE agent.",
 	)
 	if err != nil {
 		panic(errs.Wrap(err, "failed to register metrics"))

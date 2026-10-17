@@ -5,7 +5,7 @@
 ! Trigger    : SPANTREE BPDUGUARD / LOOPBACK / BLOCK_PVID / LOOPGUARD
 ! Outcome    : - Capture STP state to flash
 !              - Shut the offending port
-!              - Emit SNMP trap + emergency syslog for TAA
+!              - Emit SNMP trap + emergency syslog for TAAE
 ! NOTE       : Filename ends in .tcl for archival consistency only.
 !              The body below is IOS CLI 'event manager applet' syntax.
 ! Install    : paste in 'configure terminal' on core-sw01
@@ -15,7 +15,7 @@
 no event manager applet STP_LOOP_DETECT
 !
 event manager applet STP_LOOP_DETECT
- description "TAA - STP loop / BPDU guard responder"
+ description "TAAE - STP loop / BPDU guard responder"
  event tag real syslog pattern "(SPANTREE.*BPDUGUARD|LOOPBACK|BLOCK_PVID|LOOPGUARD)" maxrun 30
  event tag manual none
  trigger
@@ -35,7 +35,7 @@ event manager applet STP_LOOP_DETECT
  action 0120  cli command "shutdown"
  action 0130  cli command "end"
  action 0140 end
- action 0150 snmp-trap strdata "TAA-LOOP port=$port action=shutdown host=core-sw01"
- action 0160 syslog priority emergencies msg "TAA-ALERT: LOOP detected, port=$port shutdown"
+ action 0150 snmp-trap strdata "TAAE-LOOP port=$port action=shutdown host=core-sw01"
+ action 0160 syslog priority emergencies msg "TAAE-ALERT: LOOP detected, port=$port shutdown"
 !
 end

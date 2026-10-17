@@ -8,7 +8,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,7 +17,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -82,7 +82,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|HPE Primera: There are errors in requests to WSAPI|<p>TAA has received errors in requests to WSAPI.</p>|`length(last(/HPE Primera by HTTP/hpe.primera.get.errors))>0`|Average|**Depends on**:<br><ul><li>HPE Primera: Service is unavailable</li></ul>|
+|HPE Primera: There are errors in requests to WSAPI|<p>TAAE has received errors in requests to WSAPI.</p>|`length(last(/HPE Primera by HTTP/hpe.primera.get.errors))>0`|Average|**Depends on**:<br><ul><li>HPE Primera: Service is unavailable</li></ul>|
 |HPE Primera: Service is unavailable||`max(/HPE Primera by HTTP/net.tcp.service["{$HPE.PRIMERA.API.SCHEME}","{$HPE.PRIMERA.API.HOST}","{$HPE.PRIMERA.API.PORT}"],5m)=0`|High|**Manual close**: Yes|
 
 ### LLD rule Common provisioning groups discovery
@@ -278,5 +278,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

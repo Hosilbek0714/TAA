@@ -274,7 +274,7 @@ static unsigned long	compute_match_recursion_limit(void)
 	/* The default stack reservation size used by the linker is 1 MB.               */
 	/* If it is not possible to detect current thread stack limits,                 */
 	/* assume ~1 MB stack and ~800 bytes per recursion, add some additional margin. */
-	/* Recursion limit 2000 seems to bee too large and it might cause TAA agent  */
+	/* Recursion limit 2000 seems to bee too large and it might cause TAAE agent  */
 	/* crash while executing prce_exec() (see ZBX-22900).                           */
 #	define REGEXP_RECURSION_DEFAULT	1000
 		typedef void (WINAPI *GetStackLimits)(PULONG_PTR, PULONG_PTR);

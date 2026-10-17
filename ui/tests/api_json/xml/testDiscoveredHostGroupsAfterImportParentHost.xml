@@ -566,7 +566,7 @@
                     </application>
                     <delay>1m</delay>
                     <attempts>1</attempts>
-                    <agent>TAA</agent>
+                    <agent>TAAE</agent>
                     <http_proxy/>
                     <variables/>
                     <headers/>

@@ -64,7 +64,7 @@ class CIPRangeParserTest extends TestCase {
 				]
 			],
 			[
-				'TAA server', [], [
+				'TAAE server', [], [
 					'rc' => CParser::PARSE_FAIL,
 					'error' => 'incorrect address starting from "server"',
 					'max_ip_count' => '0',

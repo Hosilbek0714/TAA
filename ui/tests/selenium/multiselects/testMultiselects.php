@@ -69,9 +69,9 @@ class testMultiselects extends CWebTest {
 		$this->page->updateViewport();
 		$form = $this->query('name:zbx_filter')->asForm()->one()->waitUntilVisible();
 		$field = $form->getField('Host groups');
-		$field->select('TAA servers');
+		$field->select('TAAE servers');
 		$element = $field->query('tag:input')->one();
-		$element->type('TAA server');
+		$element->type('TAAE server');
 		$this->query('class:multiselect-matches')->waitUntilVisible();
 		$this->assertScreenshotExcept($element->parents('class:table-forms')->one(), [$element]);
 	}

@@ -92,7 +92,7 @@ func main() {
 	var foregroundFlag bool
 	const (
 		foregroundDefault     = true
-		foregroundDescription = "Run TAA mock server in foreground"
+		foregroundDescription = "Run TAAE mock server in foreground"
 	)
 	flag.BoolVar(&foregroundFlag, "foreground", foregroundDefault, foregroundDescription)
 	flag.BoolVar(&foregroundFlag, "f", foregroundDefault, foregroundDescription+" (shorhand)")
@@ -130,7 +130,7 @@ func main() {
 		os.Exit(1)
 	}
 
-	greeting := fmt.Sprintf("Starting TAA Mock server [(hostname placeholder)]. (version placeholder)")
+	greeting := fmt.Sprintf("Starting TAAE Mock server [(hostname placeholder)]. (version placeholder)")
 	log.Infof(greeting)
 
 	if foregroundFlag {

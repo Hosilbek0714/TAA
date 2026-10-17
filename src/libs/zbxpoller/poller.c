@@ -112,7 +112,7 @@ static const char	*item_type_agent_string(zbx_item_type_t item_type)
 	switch (item_type)
 	{
 		case ITEM_TYPE_ZABBIX:
-			return "TAA agent";
+			return "TAAE agent";
 		case ITEM_TYPE_SNMP:
 			return "SNMP agent";
 		case ITEM_TYPE_IPMI:

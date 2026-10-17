@@ -1,17 +1,17 @@
 
-# Ceph by TAA agent 2
+# Ceph by TAAE agent 2
 
 ## Overview
 
-The template to monitor Ceph cluster by TAA that work without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor Ceph cluster by TAAE that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
-Template `Ceph by TAA agent 2` — collects metrics by polling zabbix-agent2.
+Template `Ceph by TAAE agent 2` — collects metrics by polling zabbix-agent2.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -20,13 +20,13 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 1. Setup and configure zabbix-agent2 compiled with the Ceph monitoring plugin.
 2. Set the {$CEPH.CONNSTRING} such as <protocol(host:port)> or named session.
-3. Set the user name and password in host macros ({$CEPH.USER}, {$CEPH.API.KEY}) if you want to override parameters from the TAA agent configuration file.
+3. Set the user name and password in host macros ({$CEPH.USER}, {$CEPH.API.KEY}) if you want to override parameters from the TAAE agent configuration file.
 
 Test availability: `zabbix_get -s ceph-host -k ceph.ping["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]`
 
@@ -43,11 +43,11 @@ Test availability: `zabbix_get -s ceph-host -k ceph.ping["{$CEPH.CONNSTRING}","{
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get overall cluster status||TAA agent|ceph.status["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
-|Get OSD stats||TAA agent|ceph.osd.stats["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
-|Get OSD dump||TAA agent|ceph.osd.dump["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
-|Get df||TAA agent|ceph.df.details["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
-|Ping||TAA agent|ceph.ping["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
+|Get overall cluster status||TAAE agent|ceph.status["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
+|Get OSD stats||TAAE agent|ceph.osd.stats["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
+|Get OSD dump||TAAE agent|ceph.osd.dump["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
+|Get df||TAAE agent|ceph.df.details["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
+|Ping||TAAE agent|ceph.ping["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
 |Number of Monitors|<p>The number of Monitors configured in a Ceph cluster.</p>|Dependent item|ceph.num_mon<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.num_mon`</p></li><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
 |Overall cluster status|<p>The overall Ceph cluster status, eg 0 - HEALTH_OK, 1 - HEALTH_WARN or 2 - HEALTH_ERR.</p>|Dependent item|ceph.overall_status<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.overall_status`</p></li><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
 |Minimum Mon release version|<p>min_mon_release_name</p>|Dependent item|ceph.min_mon_release_name<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.min_mon_release_name`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
@@ -99,16 +99,16 @@ Test availability: `zabbix_get -s ceph-host -k ceph.ping["{$CEPH.CONNSTRING}","{
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Ceph: Can not connect to cluster|<p>The connection to the Ceph RESTful module is broken (if there is any error presented including *AUTH* and the configuration issues).</p>|`last(/Ceph by TAA agent 2/ceph.ping["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"])=0`|Average||
-|Ceph: Cluster in ERROR state||`last(/Ceph by TAA agent 2/ceph.overall_status)=2`|Average|**Manual close**: Yes|
-|Ceph: Cluster in WARNING state||`last(/Ceph by TAA agent 2/ceph.overall_status)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Ceph: Cluster in ERROR state</li></ul>|
-|Ceph: Minimum monitor release version has changed|<p>A Ceph version has changed. Acknowledge to close the problem manually.</p>|`last(/Ceph by TAA agent 2/ceph.min_mon_release_name,#1)<>last(/Ceph by TAA agent 2/ceph.min_mon_release_name,#2) and length(last(/Ceph by TAA agent 2/ceph.min_mon_release_name))>0`|Info|**Manual close**: Yes|
+|Ceph: Can not connect to cluster|<p>The connection to the Ceph RESTful module is broken (if there is any error presented including *AUTH* and the configuration issues).</p>|`last(/Ceph by TAAE agent 2/ceph.ping["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"])=0`|Average||
+|Ceph: Cluster in ERROR state||`last(/Ceph by TAAE agent 2/ceph.overall_status)=2`|Average|**Manual close**: Yes|
+|Ceph: Cluster in WARNING state||`last(/Ceph by TAAE agent 2/ceph.overall_status)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Ceph: Cluster in ERROR state</li></ul>|
+|Ceph: Minimum monitor release version has changed|<p>A Ceph version has changed. Acknowledge to close the problem manually.</p>|`last(/Ceph by TAAE agent 2/ceph.min_mon_release_name,#1)<>last(/Ceph by TAAE agent 2/ceph.min_mon_release_name,#2) and length(last(/Ceph by TAAE agent 2/ceph.min_mon_release_name))>0`|Info|**Manual close**: Yes|
 
 ### LLD rule OSD
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|OSD||TAA agent|ceph.osd.discovery["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
+|OSD||TAAE agent|ceph.osd.discovery["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
 
 ### Item prototypes for OSD
 
@@ -125,15 +125,15 @@ Test availability: `zabbix_get -s ceph-host -k ceph.ping["{$CEPH.CONNSTRING}","{
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Ceph: OSD osd.{#OSDNAME} is down|<p>OSD osd.{#OSDNAME} is marked "down" in the *osdmap*.<br>The OSD daemon may have been stopped, or peer OSDs may be unable to reach the OSD over the network.</p>|`last(/Ceph by TAA agent 2/ceph.osd[{#OSDNAME},up]) = 0`|Average||
-|Ceph: OSD osd.{#OSDNAME} is full||`min(/Ceph by TAA agent 2/ceph.osd[{#OSDNAME},fill],15m) > last(/Ceph by TAA agent 2/ceph.osd_full_ratio)*100`|Average||
-|Ceph: Ceph OSD osd.{#OSDNAME} is near full||`min(/Ceph by TAA agent 2/ceph.osd[{#OSDNAME},fill],15m) > last(/Ceph by TAA agent 2/ceph.osd_nearfull_ratio)*100`|Warning|**Depends on**:<br><ul><li>Ceph: OSD osd.{#OSDNAME} is full</li></ul>|
+|Ceph: OSD osd.{#OSDNAME} is down|<p>OSD osd.{#OSDNAME} is marked "down" in the *osdmap*.<br>The OSD daemon may have been stopped, or peer OSDs may be unable to reach the OSD over the network.</p>|`last(/Ceph by TAAE agent 2/ceph.osd[{#OSDNAME},up]) = 0`|Average||
+|Ceph: OSD osd.{#OSDNAME} is full||`min(/Ceph by TAAE agent 2/ceph.osd[{#OSDNAME},fill],15m) > last(/Ceph by TAAE agent 2/ceph.osd_full_ratio)*100`|Average||
+|Ceph: Ceph OSD osd.{#OSDNAME} is near full||`min(/Ceph by TAAE agent 2/ceph.osd[{#OSDNAME},fill],15m) > last(/Ceph by TAAE agent 2/ceph.osd_nearfull_ratio)*100`|Warning|**Depends on**:<br><ul><li>Ceph: OSD osd.{#OSDNAME} is full</li></ul>|
 
 ### LLD rule Pool
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Pool||TAA agent|ceph.pool.discovery["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
+|Pool||TAAE agent|ceph.pool.discovery["{$CEPH.CONNSTRING}","{$CEPH.USER}","{$CEPH.API.KEY}"]|
 
 ### Item prototypes for Pool
 
@@ -153,5 +153,5 @@ Test availability: `zabbix_get -s ceph-host -k ceph.ping["{$CEPH.CONNSTRING}","{
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

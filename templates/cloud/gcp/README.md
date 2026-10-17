@@ -3,14 +3,14 @@
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform (hereinafter - GCP) by TAA.
+This template is designed to monitor Google Cloud Platform (hereinafter - GCP) by TAAE.
 It works without any external scripts and uses the script item.
 The template currently supports the discovery of [Compute Engine](https://cloud.google.com/compute)/[Cloud SQL](https://cloud.google.com/sql) instances and Compute Engine project quota metrics.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -47,14 +47,14 @@ This template has been tested on:
 
 **IMPORTANT!!!**
 
-     Secret authorization token is defined as a plain text in host prototype settings by default due to TAA templates export/import limits: therefore, it is highly recommended to change the user macro `{$GCP.AUTH.TOKEN}` value type to `SECRET` for all host prototypes after the template `GCP by HTTP` import.
+     Secret authorization token is defined as a plain text in host prototype settings by default due to TAAE templates export/import limits: therefore, it is highly recommended to change the user macro `{$GCP.AUTH.TOKEN}` value type to `SECRET` for all host prototypes after the template `GCP by HTTP` import.
 
      All the instances/quotas/metrics discovered are related to a particular GCP project.
-     To monitor several GCP projects - create their corresponding service accounts/TAA hosts.
+     To monitor several GCP projects - create their corresponding service accounts/TAAE hosts.
 
      GCP Access Token is available for 1 hour (3600 seconds) after the generation request.
 
-     To avoid a GCP token inconsistency between TAA database and TAA server configuration cache, don't set TAA server configuration parameter CacheUpdateFrequency to a value over 45 minutes and don't set the update interval for the GCP Authorization item to more than 1 hour (maximum CacheUpdateFrequency value).
+     To avoid a GCP token inconsistency between TAAE database and TAAE server configuration cache, don't set TAAE server configuration parameter CacheUpdateFrequency to a value over 45 minutes and don't set the update interval for the GCP Authorization item to more than 1 hour (maximum CacheUpdateFrequency value).
 
 Additional information about metrics and used API methods:
 
@@ -122,7 +122,7 @@ Additional information about metrics and used API methods:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|GCP: Authorization has failed|<p>GCP: Authorization has failed.<br>Check the authorization parameters and GCP API availability from a network segment, where TAA-server/proxy is located.</p>|`length(last(/GCP by HTTP/gcp.auth.err.check)) > 0`|Average||
+|GCP: Authorization has failed|<p>GCP: Authorization has failed.<br>Check the authorization parameters and GCP API availability from a network segment, where TAAE-server/proxy is located.</p>|`length(last(/GCP by HTTP/gcp.auth.err.check)) > 0`|Average||
 
 ### LLD rule GCP Compute Engine: Instances discovery
 
@@ -175,12 +175,12 @@ Additional information about metrics and used API methods:
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Compute Engine instances by TAA.
+This template is designed to monitor Google Cloud Platform Compute Engine instances by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -189,7 +189,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -278,12 +278,12 @@ This template will be automatically connected to discovered entities with all th
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Cloud SQL MySQL instances by TAA.
+This template is designed to monitor Google Cloud Platform Cloud SQL MySQL instances by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -292,7 +292,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -366,12 +366,12 @@ This template will be automatically connected to discovered entities with all th
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Cloud SQL metrics for the MySQL read-only replica instances by TAA.
+This template is designed to monitor Google Cloud Platform Cloud SQL metrics for the MySQL read-only replica instances by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -380,7 +380,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -411,12 +411,12 @@ This template will be automatically connected to discovered entities with all th
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Cloud SQL PostgreSQL database metrics by TAA.
+This template is designed to monitor Google Cloud Platform Cloud SQL PostgreSQL database metrics by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -425,7 +425,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -521,12 +521,12 @@ This template will be automatically connected to discovered entities with all th
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Cloud SQL PostgreSQL read-only replica instances by TAA.
+This template is designed to monitor Google Cloud Platform Cloud SQL PostgreSQL read-only replica instances by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -535,7 +535,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -568,12 +568,12 @@ This template will be automatically connected to discovered entities with all th
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Cloud SQL MSSQL instances by TAA.
+This template is designed to monitor Google Cloud Platform Cloud SQL MSSQL instances by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -582,7 +582,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -720,12 +720,12 @@ This template will be automatically connected to discovered entities with all th
 
 ## Overview
 
-This template is designed to monitor Google Cloud Platform Cloud SQL MSSQL read-only replica instances by TAA.
+This template is designed to monitor Google Cloud Platform Cloud SQL MSSQL read-only replica instances by TAAE.
 
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -734,7 +734,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -764,5 +764,5 @@ This template will be automatically connected to discovered entities with all th
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

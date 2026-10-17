@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""TAA — Catalyst 3560G ko'p portli port-security provisioning skripti.
+"""TAAE — Catalyst 3560G ko'p portli port-security provisioning skripti.
 
 Vazifasi:
     Inventory YAML faylidan port konfiguratsiyalarini o'qib,
@@ -74,7 +74,7 @@ TEMPLATE_NAME = "interface_template.j2"
 def parse_args() -> argparse.Namespace:
     """CLI argumentlarni o'qiydi."""
     parser = argparse.ArgumentParser(
-        description="TAA: Catalyst 3560G port-security provisioning.",
+        description="TAAE: Catalyst 3560G port-security provisioning.",
     )
     parser.add_argument(
         "--inventory",

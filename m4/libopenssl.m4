@@ -46,7 +46,7 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 
 AC_DEFUN([LIBOPENSSL_ACCEPT_VERSION],
 [
-	# TAA minimal supported version of OpenSSL.
+	# TAAE minimal supported version of OpenSSL.
 	# Version numbering scheme is described in /usr/include/openssl/opensslv.h.
 
 	# Is it OpenSSL 3? Test OPENSSL_VERSION_MAJOR - it is defined only in OpenSSL 3.0.

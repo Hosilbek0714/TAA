@@ -1,8 +1,8 @@
 # `scripts/network-configs/` - Cisco baseline va EEM applet fayllari
 
-Ushbu papkada TAA loyihasi uchun **Cisco IOS** qurilmalariga yuklanishi kerak
+Ushbu papkada TAAE loyihasi uchun **Cisco IOS** qurilmalariga yuklanishi kerak
 bo'lgan baseline konfiguratsiya fayllari va EEM (Embedded Event Manager)
-appletlari saqlanadi. Hujjat `KXD_TAA_SCRIPT_YECHIM.md` da tasvirlangan
+appletlari saqlanadi. Hujjat `KXD_TAAE_SCRIPT_YECHIM.md` da tasvirlangan
 yechimning *qurilma tomondagi* qismidir.
 
 > Diqqat: bu papkadagi fayllar **template** hisoblanadi. Ulardagi har bir
@@ -19,7 +19,7 @@ yechimning *qurilma tomondagi* qismidir.
 | `cisco-1800.cfg` | Cisco 1800 router (`edge-rt01`) | Edge/WAN baseline: NAT, WAN/LAN ACL, dot1q sub-interfeyslar, SSH, AAA, SNMPv3, logging, NTP master |
 | `eem-applets/port_sec_violation.tcl` | 3560G | `PSECURE_VIOLATION` syslogini ushlab, port + MAC bo'yicha SNMP trap va kritik syslog yuboradi (P1, P2) |
 | `eem-applets/stp_loop_detect.tcl` | 3560G | BPDU guard / loopback / loopguard hodisalarini ushlab portni `shutdown` qiladi va emergency trap yuboradi (P3) |
-| `eem-applets/export_binding_hourly.tcl` | 3560G | Har soat boshida DHCP snooping binding jadvali va running-config ni TFTP orqali TAA serverga uzatadi (P5) |
+| `eem-applets/export_binding_hourly.tcl` | 3560G | Har soat boshida DHCP snooping binding jadvali va running-config ni TFTP orqali TAAE serverga uzatadi (P5) |
 | `eem-applets/wan_brute_detect.tcl` | 1800 | 60 sekund ichida 5+ `Authentication failure` log paydo bo'lsa SNMP trap + syslog + email yuboradi (P2, P4) |
 
 > `.tcl` kengaytmasi shartli - fayllar ichida **TCL skripti emas**, balki
@@ -34,11 +34,11 @@ yechimning *qurilma tomondagi* qismidir.
 
 ### 2.1. TFTP orqali (eng oddiy yo'l)
 
-TAA serverda (`10.0.10.10`) `tftpd-hpa` o'rnatilgan va `/srv/tftp/configs/`
+TAAE serverda (`10.0.10.10`) `tftpd-hpa` o'rnatilgan va `/srv/tftp/configs/`
 papkasi yozish uchun ochiq bo'lsin.
 
 ```bash
-# TAA serverdan (DL-160) fayllarni TFTP root ga ko'chirish
+# TAAE serverdan (DL-160) fayllarni TFTP root ga ko'chirish
 sudo cp scripts/network-configs/catalyst-3560g.cfg /srv/tftp/configs/
 sudo cp scripts/network-configs/cisco-1800.cfg     /srv/tftp/configs/
 sudo chown tftp:tftp /srv/tftp/configs/*.cfg
@@ -75,11 +75,11 @@ SCP server qurilmada yoqilgan bo'lsa:
 core-sw01(config)# ip scp server enable
 ```
 
-TAA serverdan:
+TAAE serverdan:
 
 ```bash
 scp scripts/network-configs/catalyst-3560g.cfg \
-    taa_auto@10.0.99.2:flash:/catalyst-3560g.cfg
+    taae_auto@10.0.99.2:flash:/catalyst-3560g.cfg
 
 # Keyin qurilma ustida:
 core-sw01# copy flash:/catalyst-3560g.cfg running-config
@@ -148,7 +148,7 @@ edge-rt01# event manager run WAN_BRUTE_DETECT
 So'ngra natijalarni tekshiring:
 
 ```cisco
-core-sw01# show logging | include TAA-
+core-sw01# show logging | include TAAE-
 core-sw01# more flash:/violations.log
 core-sw01# more flash:/stp_event.log
 core-sw01# more flash:/export.log
@@ -156,7 +156,7 @@ core-sw01# more flash:/export.log
 edge-rt01# more flash:/brute.log
 ```
 
-TAA serverda esa SNMP trap'lar `snmptrapd` log fayliga (yoki TAA
+TAAE serverda esa SNMP trap'lar `snmptrapd` log fayliga (yoki TAAE
 trapper itemiga) tushishi kerak:
 
 ```bash
@@ -175,7 +175,7 @@ qo'shilmagan) saqlab, deploy paytida `sed` bilan to'ldirish.
 | Placeholder | Qaerda | Nima bilan almashtirish |
 |-------------|--------|-------------------------|
 | `<REPLACE_ME_ENABLE_SECRET>` | `catalyst-3560g.cfg`, `cisco-1800.cfg` | `enable secret` qiymati (kuchli parol) |
-| `<REPLACE_ME_USER_PASS>` | `catalyst-3560g.cfg`, `cisco-1800.cfg` | `taa_auto` foydalanuvchining paroli (TAA server `.env` da ham yangilang) |
+| `<REPLACE_ME_USER_PASS>` | `catalyst-3560g.cfg`, `cisco-1800.cfg` | `taae_auto` foydalanuvchining paroli (TAAE server `.env` da ham yangilang) |
 | `<REPLACE_ME_AUTH_PASS>` | har ikkala `.cfg` | SNMPv3 `auth sha` paroli (≥ 8 belgi) |
 | `<REPLACE_ME_PRIV_PASS>` | har ikkala `.cfg` | SNMPv3 `priv aes 128` paroli (≥ 8 belgi) |
 
@@ -205,14 +205,14 @@ nusxasini **darhol o'chiring**.
 | **P2** WAN brute | `cisco-1800.cfg` (WAN_IN ACL) + `eem-applets/wan_brute_detect.tcl` |
 | **P3** loop | `catalyst-3560g.cfg` - RSTP + loopguard default + bpduguard default, plus `eem-applets/stp_loop_detect.tcl` |
 | **P4** alert pipeline | har ikkala `.cfg` da `snmp-server host 10.0.10.10` + `logging host 10.0.10.10`; applet'lar `snmp-trap strdata` chiqaradi |
-| **P5** IP jurnal | `eem-applets/export_binding_hourly.tcl` har soatda TFTP push, TAA serverda `ip_inventory.py` qabul qiladi |
+| **P5** IP jurnal | `eem-applets/export_binding_hourly.tcl` har soatda TFTP push, TAAE serverda `ip_inventory.py` qabul qiladi |
 
 ---
 
 ## 7. Bog'liq hujjatlar
 
-- `D:\TAA\zoddix\KXD_TAA_SCRIPT_YECHIM.md` - umumiy yechim xaritasi
-- `scripts/alertscripts/` - TAA tomondagi alert skriptlar (Telegram, auto-remediation)
-- `scripts/externalscripts/` - TAA tomondagi parser skriptlar
+- `D:\TAAE\zoddix\KXD_TAAE_SCRIPT_YECHIM.md` - umumiy yechim xaritasi
+- `scripts/alertscripts/` - TAAE tomondagi alert skriptlar (Telegram, auto-remediation)
+- `scripts/externalscripts/` - TAAE tomondagi parser skriptlar
 - `scripts/provisioning/` - port-security va MAC binding'ni 47 portga
   avtomatik tarqatuvchi Ansible/netmiko skriptlar

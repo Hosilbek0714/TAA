@@ -161,7 +161,7 @@ class testInheritanceHostPrototype extends CLegacyWebTest {
 				[
 					'fields' => [
 						'Host name' => 'test Inheritance host prototype',
-						'Host groups' => 'TAA servers'
+						'Host groups' => 'TAAE servers'
 					],
 					'interfaces' => [
 						[
@@ -420,7 +420,7 @@ class testInheritanceHostPrototype extends CLegacyWebTest {
 					'create_enabled' => true,
 					'hostgroup' => 'Hypervisors',
 					'group_prototype' => 'Clone group prototype {#CLONE_GROUP_PROTO}',
-					'template' => 'macOS by TAA agent',
+					'template' => 'macOS by TAAE agent',
 					'inventory' => 'Manual',
 					'check_form' => true
 				]

@@ -1,4 +1,4 @@
-# This binary exists to ensure that libzbxcommon does not depend on any other TAA library.
+# This binary exists to ensure that libzbxcommon does not depend on any other TAAE library.
 # There is already zbxcommon libs folder, but there are MOCK_DATA_DEPS MOCK_TEST_DEPS dependencies on cmocka.
 # However, to make it very clear and obvious that common should not have any dependencies at all,
 # it is preferred to keep this test in a separate dedicate directory and be a separate build target.

@@ -307,7 +307,7 @@ function hex2rgb($color) {
 
 /**
  * Convert suffixed string to decimal bytes ('10K' => 10240).
- * Note: this function must not depend on optional PHP libraries, since it is used in TAA setup.
+ * Note: this function must not depend on optional PHP libraries, since it is used in TAAE setup.
  *
  * @param string $value
  *
@@ -338,7 +338,7 @@ function str2mem($value) {
 
 /**
  * Convert decimal bytes to suffixed string (10240 => '10K').
- * Note: this function must not depend on optional PHP libraries, since it is used in TAA setup.
+ * Note: this function must not depend on optional PHP libraries, since it is used in TAAE setup.
  *
  * @param int $bytes
  *
@@ -1682,7 +1682,7 @@ function filter_messages(): array {
 		foreach ($messages as $message) {
 			if ($message['type'] === CMessageHelper::MESSAGE_TYPE_ERROR	&& $message['is_technical_error']) {
 				if (!$generic_exists) {
-					CMessageHelper::addError(_('System error occurred. Please contact TAA administrator.'));
+					CMessageHelper::addError(_('System error occurred. Please contact TAAE administrator.'));
 					$generic_exists = true;
 				}
 			}

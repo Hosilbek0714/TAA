@@ -271,7 +271,7 @@ func (p *Plugin) exportDevices(params []string, timeout int) (any, error) {
 		return nil, err
 	}
 
-	// Needed so the executor is initialized once, this should be done in configure, but then TAA agent 2
+	// Needed so the executor is initialized once, this should be done in configure, but then TAAE agent 2
 	// will not start if there are issues with finding cmd.exe on windows, and that will break backwards compatibility.
 	if p.executor == nil {
 		p.executor, err = zbxcmd.InitExecutor()

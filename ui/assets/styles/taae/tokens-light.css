@@ -1,0 +1,33 @@
+
+/* =====================================================================
+   TAAE dizayn tizimi - yorug' mavzu ranglari (blue-theme.css oxiriga qo'shiladi)
+   ===================================================================== */
+:root {
+	--taae-primary: #146ffc;
+	--taae-primary-hover: #0e5bd6;
+	--taae-primary-soft: #eaf2ff;
+	--taae-primary-ring: rgba(20, 111, 252, 0.18);
+
+	--taae-bg: #f3f6fb;
+	--taae-surface: #ffffff;
+	--taae-surface-2: #f8fafc;
+	--taae-row-hover: #f4f8ff;
+	--taae-border: #e2e8f0;
+	--taae-border-strong: #cbd5e1;
+
+	--taae-text: #0f172a;
+	--taae-text-2: #334155;
+	--taae-muted: #64748b;
+
+	--taae-input-bg: #ffffff;
+
+	--taae-sidebar-top: #0b1b3a;
+	--taae-sidebar-bottom: #0f2a5c;
+	--taae-sidebar-text: #c7d2e6;
+	--taae-sidebar-muted: #8fa3c7;
+	--taae-sidebar-hover: rgba(255, 255, 255, 0.07);
+	--taae-sidebar-sub-active: rgba(20, 111, 252, 0.28);
+
+	--taae-shadow: 0 1px 2px rgba(15, 23, 42, 0.05), 0 4px 14px rgba(15, 23, 42, 0.06);
+	--taae-shadow-lg: 0 18px 48px rgba(15, 23, 42, 0.18);
+}

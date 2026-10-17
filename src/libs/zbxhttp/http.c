@@ -342,7 +342,7 @@ int	zbx_http_req(const char *url, const char *header, long timeout, const char *
 		goto clean;
 	}
 
-	if (CURLE_OK != (err = curl_easy_setopt(easyhandle, CURLOPT_USERAGENT, "TAA " ZABBIX_VERSION)))
+	if (CURLE_OK != (err = curl_easy_setopt(easyhandle, CURLOPT_USERAGENT, "TAAE " ZABBIX_VERSION)))
 	{
 		*error = zbx_dsprintf(NULL, "Cannot set user agent: %s", curl_easy_strerror(err));
 		goto clean;

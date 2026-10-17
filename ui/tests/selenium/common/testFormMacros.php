@@ -594,7 +594,7 @@ abstract class testFormMacros extends CLegacyWebTest {
 			}
 
 			$name = $is_prototype ? $data['Name'].' {#KEY}' : $data['Name'];
-			$group_name = ($host_type === 'template') ? 'Templates' : 'TAA servers';
+			$group_name = ($host_type === 'template') ? 'Templates' : 'TAAE servers';
 			$group_field = ($host_type === 'template') ? 'Template groups' : 'Host groups';
 
 			$general_data = [
@@ -790,7 +790,7 @@ abstract class testFormMacros extends CLegacyWebTest {
 			$form = $this->query('name:'.$form_type.'Form')->waitUntilPresent()->asForm(['normalized' => true])->one();
 			$name = 'Host prototype with edited global {#MACRO} '.time();
 			$form->fill(['Host name' => $name]);
-			$form->fill(['Host groups' => 'TAA servers']);
+			$form->fill(['Host groups' => 'TAAE servers']);
 		}
 		else {
 			if ($host_type === 'host') {
@@ -819,7 +819,7 @@ abstract class testFormMacros extends CLegacyWebTest {
 			else {
 				$form->asGridForm(['normalized' => true])->fill([
 					'Host name' => $name,
-					'Host groups' => 'TAA servers'
+					'Host groups' => 'TAAE servers'
 				]);
 			}
 		}

@@ -20,7 +20,7 @@ require_once dirname(__FILE__).'/../../include/classes/core/ZBase.php';
 require_once dirname(__FILE__).'/../../include/classes/server/CZabbixServer.php';
 
 /**
- * Client for TAA Server/Proxy protocol.
+ * Client for TAAE Server/Proxy protocol.
  */
 class CZabbixClient extends CZabbixServer {
 

@@ -807,7 +807,7 @@ int	process_eventslog(zbx_vector_addr_ptr_t *addrs, zbx_vector_ptr_t *agent2_res
 				if (0 >= (delay = metric->nextcheck - (int)time(NULL)))
 					delay = 1;
 
-				/* do not flood TAA server if file grows too fast */
+				/* do not flood TAAE server if file grows too fast */
 				if (s_count >= (rate * delay))
 					break;
 

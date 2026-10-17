@@ -1,15 +1,15 @@
-# TAA `scripts/` — KXD muammolarini yechish to'plami
+# TAAE `scripts/` — KXD muammolarini yechish to'plami
 
 Bu papka **KXD muammolari** hujjatida keltirilgan 5 ta amaliy tarmoq xavfsizlik muammosini quyidagi to'rt qurilma sherikligida hal qiluvchi barcha skript, konfiguratsiya va hujjatlarni o'z ichiga oladi:
 
 | Rol | Qurilma | Tarmoqdagi vazifasi |
 |-----|---------|---------------------|
-| Server | **HP ProLiant DL-160 Gen9** | TAA (Linux + Docker), barcha alert/inventory skriptlari shu yerda |
+| Server | **HP ProLiant DL-160 Gen9** | TAAE (Linux + Docker), barcha alert/inventory skriptlari shu yerda |
 | L3 Switch | **Cisco Catalyst 3560G 48-port** | Port-security, DHCP snooping, ARP inspection, EEM applet'lar, SNMP trap manbasi |
 | Router | **Cisco 1800 series** | WAN/NAT, EEM applet bilan brute force va CPU monitoring |
 | L1 Switch | **TP-Link TL-SF 1024D** | Unmanaged. **Skript yozib bo'lmaydi.** 3560G uplinkda cheklanadi |
 
-Yechimning to'liq strategik xaritasi va asoslari uchun loyiha ildizida joylashgan [`KXD_TAA_SCRIPT_YECHIM.md`](../KXD_TAA_SCRIPT_YECHIM.md) ga qarang. Ushbu `scripts/` papkasi shu hujjatning **amaliy ko'rinishi** — har bir bo'lim u yerdagi muvofiq raqamga (P1..P5) ishora qiladi.
+Yechimning to'liq strategik xaritasi va asoslari uchun loyiha ildizida joylashgan [`KXD_TAAE_SCRIPT_YECHIM.md`](../KXD_TAAE_SCRIPT_YECHIM.md) ga qarang. Ushbu `scripts/` papkasi shu hujjatning **amaliy ko'rinishi** — har bir bo'lim u yerdagi muvofiq raqamga (P1..P5) ishora qiladi.
 
 ---
 
@@ -17,8 +17,8 @@ Yechimning to'liq strategik xaritasi va asoslari uchun loyiha ildizida joylashga
 
 ```
 scripts/
-├── alertscripts/       # TAA media type / action skriptlari (Telegram, auto-remediation)
-├── externalscripts/    # TAA External Check skriptlari (SNMP trap parser, inventory poller)
+├── alertscripts/       # TAAE media type / action skriptlari (Telegram, auto-remediation)
+├── externalscripts/    # TAAE External Check skriptlari (SNMP trap parser, inventory poller)
 ├── provisioning/       # Catalyst 3560G portlarini avtomatik provisioning (netmiko + Jinja2)
 ├── network-configs/    # Cisco IOS baseline config'lar va EEM applet shablonlari
 ├── sql/                # IPAM (Postgres) database schemasi va seed migratsiyalari
@@ -45,9 +45,9 @@ Quyidagi oqim **toza apparat** (yangi DL-160 + zavod sozlamalaridagi 3560G va 18
 sudo apt update && sudo apt install -y docker.io docker-compose-plugin \
     python3-pip tftpd-hpa snmptrapd
 sudo pip3 install netmiko psycopg2-binary jinja2 pyyaml
-cd /opt && sudo git clone <ushbu repo> taa && cd taa
+cd /opt && sudo git clone <ushbu repo> taae && cd taae
 sudo docker compose up -d
-# TAA web UI: http://10.0.10.10  (login: Admin / parol: zabbix dastlab)
+# TAAE web UI: http://10.0.10.10  (login: Admin / parol: zabbix dastlab)
 ```
 
 To'liq yo'riqnoma: [`docs/setup.md`](docs/setup.md).
@@ -73,12 +73,12 @@ sudo cp scripts/network-configs/cisco1800_baseline.cfg /srv/tftp/
 #   write memory
 ```
 
-### Qadam 4 — TAA UI sozlash
+### Qadam 4 — TAAE UI sozlash
 
-TAA web UI ga kiring (http://10.0.10.10) va quyidagilarni yarating:
+TAAE web UI ga kiring (http://10.0.10.10) va quyidagilarni yarating:
 
-1. **Hostlar**: `core-sw01` (3560G, SNMPv3), `edge-rt01` (1800, SNMPv3), `tp-link-edge` (faqat ICMP), `taa-server` (Linux agent).
-2. **Media types**: `Telegram-custom` → Script: `taa_telegram.sh`.
+1. **Hostlar**: `core-sw01` (3560G, SNMPv3), `edge-rt01` (1800, SNMPv3), `tp-link-edge` (faqat ICMP), `taae-server` (Linux agent).
+2. **Media types**: `Telegram-custom` → Script: `taae_telegram.sh`.
 3. **Actions**: "Network critical events" → Operation: Telegram + Remote command (`auto_remediation.py`).
 4. **Network discovery**: `10.0.10.0/24`, `10.0.20.0/24`, `10.0.30.0/24`.
 
@@ -101,7 +101,7 @@ Har bir test bo'yicha batafsil yo'riqnoma — [`docs/validation.md`](docs/valida
 
 | # | Apparat | Versiya / IOS | Tarmoqdagi IP | Boshqaruv interfeysi |
 |---|---------|---------------|---------------|----------------------|
-| 1 | HP ProLiant DL-160 Gen9 | Ubuntu 22.04 LTS, Docker 24.x, TAA 7.x | `10.0.10.10/24` | SSH, TAA Web |
+| 1 | HP ProLiant DL-160 Gen9 | Ubuntu 22.04 LTS, Docker 24.x, TAAE 7.x | `10.0.10.10/24` | SSH, TAAE Web |
 | 2 | Cisco Catalyst 3560G-48TS | IOS `12.2(55)SE12` yoki yuqori | `10.0.99.2/24` (Vlan99 mgmt) | SSH (v2), SNMPv3 |
 | 3 | Cisco 1800 (1841/1812) | IOS `15.1(4)M12` yoki `12.4(15)T17` | WAN: ISP, LAN: `10.0.99.1/24` | SSH (v2), SNMPv3 |
 | 4 | TP-Link TL-SF 1024D v3 | Aparat unmanaged (firmware yo'q) | IPsiz | **Boshqarib bo'lmaydi** |
@@ -139,7 +139,7 @@ DL-160 Gen9 da quyidagi paketlar va kutubxonalar talab qilinadi:
 | `curl` | 7.x+ | Telegram Bot API ga POST |
 | `tftpd-hpa` | 5.2+ | 3560G konfiguratsiyasini va binding'larni qabul qilish |
 | `snmptrapd` | net-snmp 5.9+ | SNMP trap'larni qabul qilish |
-| Docker Engine | 24.x+ | TAA, Postgres, (ixtiyoriy) phpIPAM konteynerlari |
+| Docker Engine | 24.x+ | TAAE, Postgres, (ixtiyoriy) phpIPAM konteynerlari |
 
 O'rnatish:
 
@@ -159,7 +159,7 @@ Loyiha asosiy hujjati ([`README.md`](../README.md)) ga muvofiq, ushbu skript to'
 
 ## 7. Qo'shimcha o'qish
 
-- [`../KXD_TAA_SCRIPT_YECHIM.md`](../KXD_TAA_SCRIPT_YECHIM.md) — strategik yechim xaritasi
+- [`../KXD_TAAE_SCRIPT_YECHIM.md`](../KXD_TAAE_SCRIPT_YECHIM.md) — strategik yechim xaritasi
 - [`docs/setup.md`](docs/setup.md) — to'liq o'rnatish yo'riqnomasi (BIOS dan dashboardgacha)
 - [`docs/validation.md`](docs/validation.md) — har bir KXD muammosi bo'yicha test stsenariylari
 - [`docs/security.md`](docs/security.md) — xavfsizlik bo'yicha eslatmalar va sekretlarni boshqarish

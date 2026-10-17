@@ -22,7 +22,7 @@ class C70ImportConverterTest extends CImportConverterTest {
 				'host' => 'host_prototype.{#LLD}',
 				'name' => 'host_prototype.{#LLD}',
 				'group_links' => [
-					['group' => ['name' => 'TAA servers']]
+					['group' => ['name' => 'TAAE servers']]
 				]
 			]
 		];

@@ -38,7 +38,7 @@ class testFormMapConstructor extends CLegacyWebTest {
 		$host = CDataHelper::createHosts([
 			[
 				'host' => self::HOST_MACRO_FUNCTIONS,
-				'groups' => ['groupid' => 4], // TAA servers.
+				'groups' => ['groupid' => 4], // TAAE servers.
 				'items' => [
 					[
 						'name' => self::ITEM_NAME,

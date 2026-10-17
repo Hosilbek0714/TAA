@@ -99,7 +99,7 @@ class C10ImportConverterTest extends CImportConverterTest {
 					'status' => HOST_STATUS_MONITORED,
 					'proxy_hostid' => 0,
 					'groups' => [
-						'TAA server',
+						'TAAE server',
 						'Linux server'
 					]
 				],
@@ -108,7 +108,7 @@ class C10ImportConverterTest extends CImportConverterTest {
 					'status' => HOST_STATUS_MONITORED,
 					'proxy_hostid' => 0,
 					'groups' => [
-						'TAA server',
+						'TAAE server',
 						'My group'
 					]
 				],
@@ -126,7 +126,7 @@ class C10ImportConverterTest extends CImportConverterTest {
 		$result = $this->createExpectedResult([
 			'groups' => [
 				[
-					'name' => 'TAA server'
+					'name' => 'TAAE server'
 				],
 				[
 					'name' => 'Linux server'
@@ -157,7 +157,7 @@ class C10ImportConverterTest extends CImportConverterTest {
 					],
 					'groups' => [
 						[
-							'name' => 'TAA server'
+							'name' => 'TAAE server'
 						],
 						[
 							'name' => 'Linux server'
@@ -174,7 +174,7 @@ class C10ImportConverterTest extends CImportConverterTest {
 					],
 					'groups' => [
 						[
-							'name' => 'TAA server'
+							'name' => 'TAAE server'
 						],
 						[
 							'name' => 'My group'

@@ -56,7 +56,7 @@ class testFormMaintenance extends CLegacyWebTest {
 				'active_since' => 1534885200,
 				'active_till' => 1534971600,
 				'description' => 'Test description update',
-				'groups' => [['groupid' => 4]], // TAA servers.
+				'groups' => [['groupid' => 4]], // TAAE servers.
 				'tags_evaltype' => 2,
 				'tags' => [
 					['tag' => 'Tag1', 'operator' => MAINTENANCE_TAG_OPERATOR_LIKE, 'value' => 'A'],
@@ -84,7 +84,7 @@ class testFormMaintenance extends CLegacyWebTest {
 
 		// Type maintenance name.
 		$form = COverlayDialogElement::find()->waitUntilReady()->asForm()->one();
-		$form->fill(['Name' => $this->name, 'Host groups' => 'TAA servers', 'id:tags_evaltype' => 'Or']);
+		$form->fill(['Name' => $this->name, 'Host groups' => 'TAAE servers', 'id:tags_evaltype' => 'Or']);
 
 		$periods = [
 			[

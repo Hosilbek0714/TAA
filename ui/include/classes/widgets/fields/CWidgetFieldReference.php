@@ -22,7 +22,7 @@ class CWidgetFieldReference extends CWidgetField {
 
 	public const DEFAULT_VALUE = '';
 
-	// This field name is reserved by TAA for this particular use case. See comments below.
+	// This field name is reserved by TAAE for this particular use case. See comments below.
 	public const FIELD_NAME = 'reference';
 
 	/**

@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of ClickHouse monitoring by TAA via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of ClickHouse monitoring by TAAE via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -136,7 +136,7 @@ This template has been tested on:
 |ClickHouse: Service is down||`last(/ClickHouse by HTTP/clickhouse.ping)=0 or last(/ClickHouse by HTTP/net.tcp.service[{$CLICKHOUSE.SCHEME},"{$CLICKHOUSE.HOST}","{$CLICKHOUSE.PORT}"]) = 0`|Average|**Manual close**: Yes<br>**Depends on**:<br><ul><li>ClickHouse: Port {$CLICKHOUSE.PORT} is unavailable</li></ul>|
 |ClickHouse: Version has changed|<p>The ClickHouse version has changed. Acknowledge to close the problem manually.</p>|`last(/ClickHouse by HTTP/clickhouse.version,#1)<>last(/ClickHouse by HTTP/clickhouse.version,#2) and length(last(/ClickHouse by HTTP/clickhouse.version))>0`|Info|**Manual close**: Yes|
 |ClickHouse: Host has been restarted|<p>The host uptime is less than 10 minutes.</p>|`last(/ClickHouse by HTTP/clickhouse.uptime)<10m`|Info|**Manual close**: Yes|
-|ClickHouse: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/ClickHouse by HTTP/clickhouse.uptime,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>ClickHouse: Service is down</li></ul>|
+|ClickHouse: Failed to fetch info data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/ClickHouse by HTTP/clickhouse.uptime,30m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>ClickHouse: Service is down</li></ul>|
 |ClickHouse: Too many throttled insert queries|<p>Clickhouse have INSERT queries that are throttled due to high number of active data parts for partition in a MergeTree, please decrease INSERT frequency</p>|`min(/ClickHouse by HTTP/clickhouse.insert.delay,5m)>{$CLICKHOUSE.DELAYED.INSERTS.MAX.WARN}`|Warning|**Manual close**: Yes|
 |ClickHouse: Too many MergeTree parts|<p>Descease INSERT queries frequency.<br>Clickhouse MergeTree table engine split each INSERT query to partitions (PARTITION BY expression)<br>and add one or more PARTS per INSERT inside each partition,<br>after that background merge process run, and when you have too much unmerged parts inside partition,<br>SELECT queries performance can significate degrade, so clickhouse try delay insert, or abort it.</p>|`min(/ClickHouse by HTTP/clickhouse.max.part.count.for.partition,5m)>{$CLICKHOUSE.PARTS.PER.PARTITION.WARN} * 0.9`|Warning|**Manual close**: Yes|
 |ClickHouse: Too many network errors|<p>Number of errors (timeouts and connection failures) during query execution, background pool tasks and DNS cache update is too high.</p>|`min(/ClickHouse by HTTP/clickhouse.network.error.rate,5m)>{$CLICKHOUSE.NETWORK.ERRORS.MAX.WARN}`|Warning||
@@ -226,5 +226,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

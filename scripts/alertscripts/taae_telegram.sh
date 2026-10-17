@@ -1,19 +1,19 @@
 #!/usr/bin/env bash
 # =============================================================================
-# TAA Media type: "Telegram-custom"
+# TAAE Media type: "Telegram-custom"
 # -----------------------------------------------------------------------------
-# Vazifa: TAA tomonidan kelgan alert xabarlarini Telegram botiga yuborish.
+# Vazifa: TAAE tomonidan kelgan alert xabarlarini Telegram botiga yuborish.
 # Xabar Markdown formatda, "code block" ichida — matn buzilmaydi.
 #
-# Foydalanish (TAA Media type "Script parameters"):
+# Foydalanish (TAAE Media type "Script parameters"):
 #   $1 = chat_id       (Telegram chat ID, masalan: -1001234567890)
-#   $2 = subject       (TAA da {ALERT.SUBJECT})
-#   $3 = message       (TAA da {ALERT.MESSAGE})
+#   $2 = subject       (TAAE da {ALERT.SUBJECT})
+#   $3 = message       (TAAE da {ALERT.MESSAGE})
 #
 # Majburiy environment o'zgaruvchisi:
 #   TG_TOKEN  — BotFather bergan token.  Hech qachon skript ichida hardcode QILINMASIN.
 #
-# Joylashuv: /usr/lib/zabbix/alertscripts/taa_telegram.sh
+# Joylashuv: /usr/lib/zabbix/alertscripts/taae_telegram.sh
 # Egasi: zabbix:zabbix    Huquqlar: 0750
 # =============================================================================
 
@@ -44,7 +44,7 @@ fi
 # --- Markdown formatda matn tayyorlash ---------------------------------------
 # Sarlavha *bold*, asosiy xabar uchburchak (```) ichida — Markdown maxsus
 # belgilari (`*`, `_`, `[` va h.k.) "code block" ichida xavfsiz ko'rinadi.
-TEXT="$(printf '*TAA: %s*\n```\n%s\n```' "$SUBJECT" "$MESSAGE")"
+TEXT="$(printf '*TAAE: %s*\n```\n%s\n```' "$SUBJECT" "$MESSAGE")"
 
 # --- API chaqiruvi -----------------------------------------------------------
 # --fail-with-body: HTTP 4xx/5xx bo'lsa exit code !=0, lekin javob tanasi
@@ -61,9 +61,9 @@ RESPONSE=$(
         --data-urlencode "text=${TEXT}" \
         2>&1
 ) || {
-    echo "[taa_telegram] Telegram API xatosi: ${RESPONSE}" >&2
+    echo "[taae_telegram] Telegram API xatosi: ${RESPONSE}" >&2
     exit 1
 }
 
 # Muvaffaqiyatli yuborish — log uchun bitta qator
-echo "[taa_telegram] OK: chat_id=${CHAT_ID} subject=\"${SUBJECT}\""
+echo "[taae_telegram] OK: chat_id=${CHAT_ID} subject=\"${SUBJECT}\""

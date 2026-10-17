@@ -384,13 +384,13 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_STRING_UTF8, 'length' => 16],
-				'TAA server',
+				'TAAE server',
 				'/1/name',
-				'TAA server'
+				'TAAE server'
 			],
 			[
 				['type' => API_STRING_UTF8, 'length' => 16],
-				'TAA Server++++',
+				'TAAE Server++++',
 				'/1/name',
 				'Invalid parameter "/1/name": value is too long.'
 			],
@@ -1880,7 +1880,7 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_OBJECT, 'fields' => []],
-				['host' => 'TAA server'],
+				['host' => 'TAAE server'],
 				'/',
 				'Invalid parameter "/": should be empty.'
 			],
@@ -1888,17 +1888,17 @@ class CApiInputValidatorTest extends TestCase {
 				['type' => API_OBJECT, 'fields' => [
 					'host' => ['type' => API_STRING_UTF8]
 				]],
-				['host' => 'TAA server'],
+				['host' => 'TAAE server'],
 				'/',
-				['host' => 'TAA server']
+				['host' => 'TAAE server']
 			],
 			[
 				['type' => API_OBJECT, 'fields' => [
 					'host' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'TAA server',
-					'name' => 'TAA server'
+					'host' => 'TAAE server',
+					'name' => 'TAAE server'
 				],
 				'/',
 				'Invalid parameter "/": unexpected parameter "name".'
@@ -1908,13 +1908,13 @@ class CApiInputValidatorTest extends TestCase {
 					'host' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'TAA server',
-					'name' => 'TAA server'
+					'host' => 'TAAE server',
+					'name' => 'TAAE server'
 				],
 				'/',
 				[
-					'host' => 'TAA server',
-					'name' => 'TAA server'
+					'host' => 'TAAE server',
+					'name' => 'TAAE server'
 				]
 			],
 			[
@@ -1923,11 +1923,11 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'TAA server'
+					'host' => 'TAAE server'
 				],
 				'/',
 				[
-					'host' => 'TAA server'
+					'host' => 'TAAE server'
 				]
 			],
 			[
@@ -1936,11 +1936,11 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'TAA server'
+					'host' => 'TAAE server'
 				],
 				'/',
 				[
-					'host' => 'TAA server'
+					'host' => 'TAAE server'
 				]
 			],
 			[
@@ -1949,13 +1949,13 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					'host' => 'TAA server',
-					'name' => 'TAA server'
+					'host' => 'TAAE server',
+					'name' => 'TAAE server'
 				],
 				'/',
 				[
-					'host' => 'TAA server',
-					'name' => 'TAA server'
+					'host' => 'TAAE server',
+					'name' => 'TAAE server'
 				]
 			],
 			[
@@ -1965,11 +1965,11 @@ class CApiInputValidatorTest extends TestCase {
 				]],
 				[
 					'uuid' => '',
-					'name' => 'TAA server'
+					'name' => 'TAAE server'
 				],
 				'/',
 				[
-					'name' => 'TAA server'
+					'name' => 'TAAE server'
 				]
 			],
 			[
@@ -1979,7 +1979,7 @@ class CApiInputValidatorTest extends TestCase {
 				]],
 				[
 					'uuid' => '56079badd056419383cc26e6a4fcc7e0',
-					'name' => 'TAA server'
+					'name' => 'TAAE server'
 				],
 				'/',
 				'Invalid parameter "/uuid": value must be empty.'
@@ -1990,7 +1990,7 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8, 'flags' => API_REQUIRED]
 				]],
 				[
-					'host' => 'TAA server'
+					'host' => 'TAAE server'
 				],
 				'/',
 				'Invalid parameter "/": the parameter "name" is missing.'
@@ -2322,15 +2322,15 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_OBJECTS, 'fields' => []],
-				[['host' => 'TAA server']],
+				[['host' => 'TAAE server']],
 				'/',
 				'Invalid parameter "/1": should be empty.'
 			],
 			[
 				['type' => API_OBJECTS, 'flags' => API_ALLOW_UNEXPECTED, 'fields' => []],
-				[['host' => 'TAA server']],
+				[['host' => 'TAAE server']],
 				'/',
-				[['host' => 'TAA server']]
+				[['host' => 'TAAE server']]
 			],
 			[
 				['type' => API_OBJECTS, 'fields' => [
@@ -2338,13 +2338,13 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8]
 				]],
 				[
-					['host' => 'TAA server', 'name' => 'TAA server'],
-					['host' => 'TAA server']
+					['host' => 'TAAE server', 'name' => 'TAAE server'],
+					['host' => 'TAAE server']
 				],
 				'/',
 				[
-					['host' => 'TAA server', 'name' => 'TAA server'],
-					['host' => 'TAA server']
+					['host' => 'TAAE server', 'name' => 'TAAE server'],
+					['host' => 'TAAE server']
 				]
 			],
 			[
@@ -2356,13 +2356,13 @@ class CApiInputValidatorTest extends TestCase {
 					'height' => ['type' => API_INT32]
 				]],
 				[
-					['name' => 'TAA server 1'],
-					['name' => 'TAA server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
+					['name' => 'TAAE server 1'],
+					['name' => 'TAAE server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
 				],
 				'/',
 				[
-					['name' => 'TAA server 1', 'col' => 0, 'row' => 1],
-					['name' => 'TAA server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
+					['name' => 'TAAE server 1', 'col' => 0, 'row' => 1],
+					['name' => 'TAAE server 2', 'col' => 5, 'row' => 10, 'width' => 1, 'height' => 1]
 				]
 			],
 			[
@@ -2371,8 +2371,8 @@ class CApiInputValidatorTest extends TestCase {
 					'name' => ['type' => API_STRING_UTF8, 'flags' => API_REQUIRED]
 				]],
 				[
-					['host' => 'TAA server', 'name' => 'TAA server'],
-					['host' => 'TAA server']
+					['host' => 'TAAE server', 'name' => 'TAAE server'],
+					['host' => 'TAAE server']
 				],
 				'/',
 				'Invalid parameter "/2": the parameter "name" is missing.'
@@ -3038,13 +3038,13 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_HG_NAME, 'length' => 16],
-				'TAA servers',
+				'TAAE servers',
 				'/1/name',
-				'TAA servers'
+				'TAAE servers'
 			],
 			[
 				['type' => API_HG_NAME, 'length' => 16],
-				'TAA Servers+++',
+				'TAAE Servers+++',
 				'/1/name',
 				'Invalid parameter "/1/name": value is too long.'
 			],
@@ -3111,13 +3111,13 @@ class CApiInputValidatorTest extends TestCase {
 			],
 			[
 				['type' => API_H_NAME, 'length' => 16],
-				'TAA server',
+				'TAAE server',
 				'/1/name',
-				'TAA server'
+				'TAAE server'
 			],
 			[
 				['type' => API_H_NAME, 'length' => 16],
-				'TAA server++++',
+				'TAAE server++++',
 				'/1/name',
 				'Invalid parameter "/1/name": value is too long.'
 			],
@@ -3148,7 +3148,7 @@ class CApiInputValidatorTest extends TestCase {
 			[
 				['type' => API_H_NAME],
 				// broken UTF-8 byte sequence
-				'TAA '."\xd1".'server',
+				'TAAE '."\xd1".'server',
 				'/1/name',
 				'Invalid parameter "/1/name": invalid byte sequence in UTF-8.'
 			],

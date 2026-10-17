@@ -1,10 +1,10 @@
 # ============================================================
-# TAA: Catalyst 3560G port-provisioning inventory misoli.
+# TAAE: Catalyst 3560G port-provisioning inventory misoli.
 #
 # Bu faylni `inventory.yaml` nomi bilan nusxalab, o'zingizning
 # tarmoq ma'lumotlaringizga moslab tahrirlang. Sekretlar
 # (parol/enable) bu faylga YOZILMAYDI — ular env orqali beriladi:
-#     export SW_USER=taa_auto
+#     export SW_USER=taae_auto
 #     export SW_PASS=...
 # Keyin: provision_ports.py --inventory inventory.yaml \
 #                            --switch 10.0.99.2 --dry-run

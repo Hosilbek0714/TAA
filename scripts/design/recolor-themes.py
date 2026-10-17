@@ -1,12 +1,12 @@
 #!/usr/bin/env python3
 """
-TAA dizayni: mavzu fayllaridagi eski fon ranglarini TAA palitrasiga xaritalash.
+TAAE dizayni: mavzu fayllaridagi eski fon ranglarini TAAE palitrasiga xaritalash.
 
   blue-theme.css - oldingi dizayndan qolgan binafsha fonlar (asli Zabbix'ning oq
-                   rangi) -> oq / TAA fon rangi
-  dark-theme.css - neytral kulranglar -> TAA'ning to'q ko'k-kulrang palitrasi
+                   rangi) -> oq / TAAE fon rangi
+  dark-theme.css - neytral kulranglar -> TAAE'ning to'q ko'k-kulrang palitrasi
 
-Ranglar ui/assets/styles/taa/tokens-*.css bilan mos. Qayta ishga tushirish
+Ranglar ui/assets/styles/taae/tokens-*.css bilan mos. Qayta ishga tushirish
 xavfsiz (idempotent). Ishlatish (repo ildizida):
     python scripts/design/recolor-themes.py
 """
@@ -18,14 +18,14 @@ STYLES = Path(__file__).resolve().parents[2] / 'ui' / 'assets' / 'styles'
 MAPS = {
     'blue-theme.css': {
         '#f0ebff': '#ffffff',   # kartochka / maydon foni
-        '#faf8ff': '#f3f6fb',   # sahifa foni (--taa-bg)
+        '#faf8ff': '#f3f6fb',   # sahifa foni (--taae-bg)
     },
     'dark-theme.css': {
         '#0e0e0e': '#0a0f1a', '#0d0d0d': '#0a0f1a', '#0d0f11': '#0a0f1a',
         '#0e1012': '#0a0f1a', '#121212': '#0a0f1a',
         '#191919': '#0e1320', '#1c1c1c': '#0e1320', '#1f1f1f': '#0e1320',
-        '#202020': '#0e1320',                                   # --taa-bg
-        '#2b2b2b': '#151b2b',                                   # --taa-surface
+        '#202020': '#0e1320',                                   # --taae-bg
+        '#2b2b2b': '#151b2b',                                   # --taae-surface
         '#303030': '#182033',
         '#383838': '#1c2538',
         '#3a3a3a': '#222c42', '#3d3d3d': '#222c42', '#404040': '#222c42',

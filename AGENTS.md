@@ -1,8 +1,8 @@
-# AGENTS.md - Developer Guide for TAA/TAA Monitoring Platform
+# AGENTS.md - Developer Guide for TAAE/TAAE Monitoring Platform
 
 ## Project Overview
 
-This is a **TAA monitoring platform** that is being customized and rebranded as **TAA (Telecom Analytics & Automation / Tizimshunoslik va Analitik Asboblar)** with full Uzbek language localization support.
+This is a **TAAE monitoring platform** that is being customized and rebranded as **TAAE (Telecom Analytics & Automation / Tizimshunoslik va Analitik Asboblar)** with full Uzbek language localization support.
 
 **Core Technology Stack:**
 - **Backend (C)**: Core monitoring engine, server, proxy, and agent components
@@ -55,8 +55,8 @@ This is a **TAA monitoring platform** that is being customized and rebranded as 
 
 - `sass/` - SASS source files for styling
 - `css/` - Compiled CSS stylesheets
-- `assets/` - TAA brand assets (logos, favicons)
-- `branding/` - TAA branding resources (mentioned in docs)
+- `assets/` - TAAE brand assets (logos, favicons)
+- `branding/` - TAAE branding resources (mentioned in docs)
 
 ### Testing
 
@@ -77,10 +77,10 @@ This is a **TAA monitoring platform** that is being customized and rebranded as 
 ### Documentation
 
 - `README.md` - Project overview
-- `TAA_REBRANDING_DOCUMENTATION.md` - Rebranding guide
-- `TAA_UZBEK_LOCALIZATION.md` - Uzbek localization documentation
-- `TAA_FRONTEND_REBRANDING_GUIDE.md` - Frontend branding guide
-- `TAA_DOCKER_BRANDING_DOCUMENTATION.md` - Docker branding guide
+- `TAAE_REBRANDING_DOCUMENTATION.md` - Rebranding guide
+- `TAAE_UZBEK_LOCALIZATION.md` - Uzbek localization documentation
+- `TAAE_FRONTEND_REBRANDING_GUIDE.md` - Frontend branding guide
+- `TAAE_DOCKER_BRANDING_DOCUMENTATION.md` - Docker branding guide
 - `man/` - Manual pages for command-line tools
 
 ## Key Development Guidelines
@@ -142,7 +142,7 @@ This is a **TAA monitoring platform** that is being customized and rebranded as 
 - Mock implementations in `tests/mocks/`
 - Test naming: `{function_name}.c` and `{function_name}.yaml`
 
-### Localization (TAA Project Specific)
+### Localization (TAAE Project Specific)
 
 - Translation files: `ui/locale/{lang}/LC_MESSAGES/frontend.{po,mo}`
 - Supported languages: 40+ including `uz` and `uz_UZ` for Uzbek
@@ -151,9 +151,9 @@ This is a **TAA monitoring platform** that is being customized and rebranded as 
 - Language registration in `ui/include/locales.inc.php`
 - All user-facing strings should be translatable
 
-### Branding (TAA Project Specific)
+### Branding (TAAE Project Specific)
 
-- Replace "TAA" with "TAA" in:
+- Replace "TAAE" with "TAAE" in:
   - PHP constants (`ui/include/defines.inc.php`)
   - CSS class names and styles
   - Page titles and meta tags
@@ -192,7 +192,7 @@ docker-compose up -d --build
 docker-compose logs -f zabbix-web
 
 # Access UI at http://localhost:8098
-# Default credentials: Admin/zabbix (or Admin/taa for TAA version)
+# Default credentials: Admin/zabbix (or Admin/taae for TAAE version)
 ```
 
 ### Compiling Translations
@@ -322,21 +322,21 @@ phpunit --testsuite api_json
 - [ ] Memory management correct (C code: malloc/free)
 - [ ] Security considerations addressed (input validation, SQL injection, XSS)
 - [ ] Changes work with all supported databases (if applicable)
-- [ ] Branding consistency maintained (TAA project)
+- [ ] Branding consistency maintained (TAAE project)
 
 ## Additional Resources
 
 - **Official Documentation**: https://www.zabbix.com/documentation/
 - **API Documentation**: https://www.zabbix.com/documentation/current/en/manual/api
 - **Git Repository**: Check commit history for examples
-- **Community**: TAA forums and mailing lists
+- **Community**: TAAE forums and mailing lists
 
-## Project-Specific Notes (TAA)
+## Project-Specific Notes (TAAE)
 
 This is a **rebranding and localization project**. Key objectives:
 
 1. **Uzbek Localization**: Complete translation to Uzbek (Latin and Cyrillic)
-2. **TAA Rebranding**: Replace all TAA references with TAA branding
+2. **TAAE Rebranding**: Replace all TAAE references with TAAE branding
 3. **Custom Identity**: Unique logos, icons, and visual identity
 4. **Docker Deployment**: Containerized setup for easy deployment
 
@@ -347,8 +347,8 @@ This is a **rebranding and localization project**. Key objectives:
 - Docker integration: ✅ Complete
 
 When making changes, ensure:
-- Maintain compatibility with base TAA features
+- Maintain compatibility with base TAAE features
 - Preserve upgradeability
-- Document TAA-specific modifications
+- Document TAAE-specific modifications
 - Test with both Uzbek and other languages
 - Verify branding consistency across all components

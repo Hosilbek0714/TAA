@@ -194,7 +194,7 @@ static void	recv_agenthistory(zbx_socket_t *sock, struct zbx_json_parse *jp, zbx
 	{
 		if (!ZBX_IS_RUNNING())
 		{
-			info = zbx_strdup(info, "TAA server shutdown in progress");
+			info = zbx_strdup(info, "TAAE server shutdown in progress");
 			zabbix_log(LOG_LEVEL_WARNING, "cannot receive agent history data from \"%s\": %s", sock->peer,
 					info);
 			ret = FAIL;
@@ -238,7 +238,7 @@ static void	recv_senderhistory(zbx_socket_t *sock, struct zbx_json_parse *jp, zb
 	}
 	else if (!ZBX_IS_RUNNING())
 	{
-		info = zbx_strdup(info, "TAA server shutdown in progress");
+		info = zbx_strdup(info, "TAAE server shutdown in progress");
 		zabbix_log(LOG_LEVEL_WARNING, "cannot process sender data from \"%s\": %s", sock->peer, info);
 		ret = FAIL;
 	}
@@ -974,11 +974,11 @@ out:
 
 /********************************************************************************
  *                                                                              *
- * Purpose: processes TAA stats request                                      *
+ * Purpose: processes TAAE stats request                                      *
  *                                                                              *
  * Parameters: sock                    - [IN] request socket                    *
  *             jp                      - [IN] request data                      *
- *             config_comms            - [IN] TAA server/proxy configuration *
+ *             config_comms            - [IN] TAAE server/proxy configuration *
  *                                            for communication                 *
  *             config_startup_time     - [IN] program startup time              *
  *             config_stats_allowed_ip - [IN]                                   *

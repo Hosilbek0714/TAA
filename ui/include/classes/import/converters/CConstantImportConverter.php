@@ -32,7 +32,7 @@ class CConstantImportConverter extends CConverter {
 	}
 
 	/**
-	 * Convert human readable import constants to values TAA API can work with.
+	 * Convert human readable import constants to values TAAE API can work with.
 	 *
 	 * @param mixed  $data   Import data.
 	 * @param array  $rules  XML rules.

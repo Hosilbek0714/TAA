@@ -40,7 +40,7 @@ func Get(url string, timeout time.Duration, dump bool) (string, error) {
 	}
 
 	req.Header = map[string][]string{
-		"User-Agent": {"TAA " + version.Long()},
+		"User-Agent": {"TAAE " + version.Long()},
 	}
 
 	client := &http.Client{

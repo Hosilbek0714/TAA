@@ -1,6 +1,6 @@
 # Brevis.one webhook
 
-This guide describes how to integrate TAA 7.4 installation with Brevis.one SMS Gateway using HTTP API and TAA webhook feature. This guide provides instructions on setting up a media type, a user, and an action in TAA.<br>
+This guide describes how to integrate TAAE 7.4 installation with Brevis.one SMS Gateway using HTTP API and TAAE webhook feature. This guide provides instructions on setting up a media type, a user, and an action in TAAE.<br>
 
 ## Setting up Brevis.one
 1\. Create a user for HTTP API or use an existing one.<br>
@@ -8,8 +8,8 @@ This guide describes how to integrate TAA 7.4 installation with Brevis.one SMS G
 2\. Grant to the user *Access to the HTTP API* permission. See Brevis.one [documentation](https://docs.brevis.one/current/en/Content/Functionality/Sending%20Messages/HTTP%20API.htm) for the information.<br>
 
 
-## Setting up the webhook in TAA
-1\. Before setting up a media type, you need to set up a global macro "{$ZABBIX.URL}", which must contain the URL to TAA frontend.
+## Setting up the webhook in TAAE
+1\. Before setting up a media type, you need to set up a global macro "{$ZABBIX.URL}", which must contain the URL to TAAE frontend.
 
 2\. In the *Administration > Media types* section, import [media_brevis.one.xml](media_brevis.one.xml).
 
@@ -22,7 +22,7 @@ The following parameters should be filled out:<br>
 3\. The following parameters can help you customize the alerts: ***ring**, **flash**, **telauto**<br>
 See Brevis.one [documentation](https://docs.brevis.one/current/en/Content/Functionality/Sending%20Messages/HTTP%20API.htm) for details.<br>
 
-4\. Create a service **TAA user** or use any existing user, then add **Media** with the **Brevis.one**.
+4\. Create a service **TAAE user** or use any existing user, then add **Media** with the **Brevis.one**.
 The "Send to" field should be filled as a phone number without a plus (+) sign or as "mode:option".<br>
 Allowed modes: number (Default), group, telgroup, telnumber, user, teluser.<br>
 Examples:
@@ -33,7 +33,7 @@ See Brevis.one [documentation](https://docs.brevis.one/current/en/Content/Functi
 Note, that the "Send to" field cannot be empty. If the phone number or user/group ID is already specified in the **send_to** parameter, you can put any symbol in this field to comply with frontend requirements.
 Make sure this user has access to all hosts, for which you would like problem notifications to be sent via Brevis.one HTTP API.
 
-For more information see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Brevis.one](https://docs.brevis.one/current/en/Content/Home.htm) documentations.
+For more information see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Brevis.one](https://docs.brevis.one/current/en/Content/Home.htm) documentations.
 
 ## Supported versions
-TAA 7.4 and higher
+TAAE 7.4 and higher

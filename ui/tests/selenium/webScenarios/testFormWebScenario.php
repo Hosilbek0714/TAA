@@ -161,7 +161,7 @@ class testFormWebScenario extends CWebTest {
 			'Name' => ['autofocus' => 'true', 'maxlength' => 64],
 			'Update interval' => ['value' => '1m', 'maxlength' => 255],
 			'Attempts' => ['value' => 1, 'maxlength' => 2],
-			'Agent' => ['value' => 'TAA'],
+			'Agent' => ['value' => 'TAAE'],
 			'id:agent_other' => ['visible' => false, 'maxlength' => 255],
 			'HTTP proxy' => ['placeholder' => '[protocol://][user[:password]@]proxy.example.com[:port]', 'maxlength' => 255],
 			'xpath:(//table[@id="variables"]//textarea)[1]' => ['placeholder' => 'name', 'maxlength' => 255],
@@ -193,7 +193,7 @@ class testFormWebScenario extends CWebTest {
 			'Internet Explorer 8', 'Firefox 73 (Windows)', 'Firefox 73 (Linux)', 'Firefox 73 (macOS)', 'Chrome 80 (Windows)',
 			'Chrome 80 (Linux)', 'Chrome 80 (macOS)', 'Chrome 80 (iOS)', 'Chromium 80 (Linux)', 'Opera 67 (Windows)',
 			'Opera 67 (Linux)', 'Opera 67 (macOS)', 'Safari 13 (macOS)', 'Safari 13 (iPhone)', 'Safari 13 (iPad)',
-			'Safari 13 (iPod Touch)', 'TAA', 'Lynx 2.8.8rel.2', 'Links 2.8', 'Googlebot 2.1', 'other ...'
+			'Safari 13 (iPod Touch)', 'TAAE', 'Lynx 2.8.8rel.2', 'Links 2.8', 'Googlebot 2.1', 'other ...'
 		];
 
 		// Check the agents dropdown options.

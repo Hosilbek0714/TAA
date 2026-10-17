@@ -1,7 +1,7 @@
 
 # SysAid webhook 
 
-This guide describes how to integrate your TAA installation with SysAid using the TAA webhook feature. This guide will provide instructions on setting up a media type, a user and an action in TAA.
+This guide describes how to integrate your TAAE installation with SysAid using the TAAE webhook feature. This guide will provide instructions on setting up a media type, a user and an action in TAAE.
 
 ## In SysAid
 
@@ -9,9 +9,9 @@ This guide describes how to integrate your TAA installation with SysAid using th
 2. Configure Incident templates in Settings -> Service Desk templates -> Incident templates
 3. Configure category in Settings -> Service Desk -> Categories (Category, Subcategory and Third level category will be used during ticket creation)
 
-## In TAA
+## In TAAE
 
-The configuration consists of a _media type_ in TAA, which will invoke the webhook to send alerts to SysAid through the Sysaid API.
+The configuration consists of a _media type_ in TAAE, which will invoke the webhook to send alerts to SysAid through the Sysaid API.
 
 You will need to configure the following fields in Sysaid webhook
 
@@ -26,17 +26,17 @@ You will need to configure the following fields in Sysaid webhook
 
 
 
-For more information about the TAA Webhook configuration, please see the [documentation](https://www.zabbix.com/documentation/7.4/manual/config/notifications/media/webhook).
+For more information about the TAAE Webhook configuration, please see the [documentation](https://www.zabbix.com/documentation/7.4/manual/config/notifications/media/webhook).
 
-To utilize the media type, we recommend creating a dedicated [TAA user](https://www.zabbix.com/documentation/7.4/manual/web_interface/frontend_sections/administration/users) to represent SysAid. The default settings for SysAid User should suffice as this user will not be logging into TAA. Please note, that in order to be notified about problems on a host, this user must have at least read permissions for the host.  
+To utilize the media type, we recommend creating a dedicated [TAAE user](https://www.zabbix.com/documentation/7.4/manual/web_interface/frontend_sections/administration/users) to represent SysAid. The default settings for SysAid User should suffice as this user will not be logging into TAAE. Please note, that in order to be notified about problems on a host, this user must have at least read permissions for the host.  
 
 ## Internal alerts
 To receive notifications about internal problem and recovery events in SysAid: in the internal action configuration mark the Custom message checkbox and specify custom message templates for problem and recovery operations. 
 If an internal action operation is configured without a custom message, the notification will not be sent. 
 Note, that this step is required only for notifications about internal events; for other event types specifying a custom message is optional. For other even types message templates still should be defined on media type level.
 
-For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [SysAid](http://cdn1.SysAid.com/SysAidUserManual.pdf) documentation.
+For more information, please see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [SysAid](http://cdn1.SysAid.com/SysAidUserManual.pdf) documentation.
 
 ## Supported Versions
 
-TAA 7.4+, SysAid.
+TAAE 7.4+, SysAid.

@@ -248,7 +248,7 @@ class testFormFilterProblems extends testFormFilter {
 			],
 			[
 				[
-					'Host groups' => ['TAA servers'],
+					'Host groups' => ['TAAE servers'],
 					'Hosts' => ['ЗАББИКС Сервер'],
 					'Not classified' => true,
 					'Warning' => true,

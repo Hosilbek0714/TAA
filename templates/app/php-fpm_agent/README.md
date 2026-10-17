@@ -1,20 +1,20 @@
 
-# PHP-FPM by TAA agent
+# PHP-FPM by TAAE agent
 
 ## Overview
 
-This template is developed to monitor the FastCGI Process Manager (PHP-FPM) by TAA agent that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+This template is developed to monitor the FastCGI Process Manager (PHP-FPM) by TAAE agent that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
-The template `PHP-FPM by TAA agent` - collects metrics by polling the PHP-FPM status-page locally with TAA agent.
+The template `PHP-FPM by TAAE agent` - collects metrics by polling the PHP-FPM status-page locally with TAAE agent.
 
 Note that this template doesn't support HTTPS and redirects (limitations of `web.page.get`).
 
-It also uses TAA agent to collect `php-fpm` Linux process statistics, such as CPU usage, memory usage, and whether the process is running or not.
+It also uses TAAE agent to collect `php-fpm` Linux process statistics, such as CPU usage, memory usage, and whether the process is running or not.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -24,7 +24,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -147,9 +147,9 @@ If you use another web server port for the location of the PHP-FPM status/ping p
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get processes summary|<p>The aggregated data of summary metrics for all processes.</p>|TAA agent|proc.get[{$PHP_FPM.PROCESS.NAME.PARAMETER},,,summary]|
-|php-fpm_ping||TAA agent|web.page.get["{$PHP_FPM.HOST}","{$PHP_FPM.PING.PAGE}","{$PHP_FPM.PORT}"]|
-|Get status page||TAA agent|web.page.get["{$PHP_FPM.HOST}","{$PHP_FPM.STATUS.PAGE}?json","{$PHP_FPM.PORT}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `^[.\s\S]*({.+}) \1`</p></li></ul>|
+|Get processes summary|<p>The aggregated data of summary metrics for all processes.</p>|TAAE agent|proc.get[{$PHP_FPM.PROCESS.NAME.PARAMETER},,,summary]|
+|php-fpm_ping||TAAE agent|web.page.get["{$PHP_FPM.HOST}","{$PHP_FPM.PING.PAGE}","{$PHP_FPM.PORT}"]|
+|Get status page||TAAE agent|web.page.get["{$PHP_FPM.HOST}","{$PHP_FPM.STATUS.PAGE}?json","{$PHP_FPM.PORT}"]<p>**Preprocessing**</p><ul><li><p>Regular expression: `^[.\s\S]*({.+}) \1`</p></li></ul>|
 |Ping||Dependent item|php-fpm.ping<p>**Preprocessing**</p><ul><li><p>Regular expression: `{$PHP_FPM.PING.REPLY}($|\r?\n) 1`</p><p>⛔️Custom on fail: Set value to: `0`</p></li></ul>|
 |Processes, active|<p>The total number of active processes.</p>|Dependent item|php-fpm.processes_active<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.['active processes']`</p></li></ul>|
 |Version|<p>The current version of the PHP. You can get it from the HTTP-Header "X-Powered-By"; it may not work if you have changed the default HTTP-headers.</p>|Dependent item|php-fpm.version<p>**Preprocessing**</p><ul><li><p>Regular expression: `^[.\s\S]*X-Powered-By: PHP/([.\d]{1,}) \1`</p><p>⛔️Custom on fail: Discard value</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
@@ -172,11 +172,11 @@ If you use another web server port for the location of the PHP-FPM status/ping p
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|PHP-FPM: Version has changed|<p>The PHP-FPM version has changed. Acknowledge to close the problem manually.</p>|`last(/PHP-FPM by TAA agent/php-fpm.version,#1)<>last(/PHP-FPM by TAA agent/php-fpm.version,#2) and length(last(/PHP-FPM by TAA agent/php-fpm.version))>0`|Info|**Manual close**: Yes|
-|PHP-FPM: Pool has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/PHP-FPM by TAA agent/php-fpm.uptime)<10m`|Info|**Manual close**: Yes|
-|PHP-FPM: Queue utilization is high|<p>The queue for this pool has reached `{$PHP_FPM.QUEUE.WARN.MAX}%` of its maximum capacity. <br>Items in the queue represent the current number of connections that have been initiated on this pool but not yet accepted.</p>|`min(/PHP-FPM by TAA agent/php-fpm.listen_queue_usage,15m) > {$PHP_FPM.QUEUE.WARN.MAX}`|Warning||
-|PHP-FPM: Manager changed|<p>The PHP-FPM manager has changed. Acknowledge to close the problem manually.</p>|`last(/PHP-FPM by TAA agent/php-fpm.process_manager,#1)<>last(/PHP-FPM by TAA agent/php-fpm.process_manager,#2)`|Info|**Manual close**: Yes|
-|PHP-FPM: Detected slow requests|<p>The PHP-FPM has detected a slow request. <br>The slow request means that it took more time to execute than expected (defined in the configuration of your pool).</p>|`min(/PHP-FPM by TAA agent/php-fpm.slow_requests,#3)>0`|Warning||
+|PHP-FPM: Version has changed|<p>The PHP-FPM version has changed. Acknowledge to close the problem manually.</p>|`last(/PHP-FPM by TAAE agent/php-fpm.version,#1)<>last(/PHP-FPM by TAAE agent/php-fpm.version,#2) and length(last(/PHP-FPM by TAAE agent/php-fpm.version))>0`|Info|**Manual close**: Yes|
+|PHP-FPM: Pool has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/PHP-FPM by TAAE agent/php-fpm.uptime)<10m`|Info|**Manual close**: Yes|
+|PHP-FPM: Queue utilization is high|<p>The queue for this pool has reached `{$PHP_FPM.QUEUE.WARN.MAX}%` of its maximum capacity. <br>Items in the queue represent the current number of connections that have been initiated on this pool but not yet accepted.</p>|`min(/PHP-FPM by TAAE agent/php-fpm.listen_queue_usage,15m) > {$PHP_FPM.QUEUE.WARN.MAX}`|Warning||
+|PHP-FPM: Manager changed|<p>The PHP-FPM manager has changed. Acknowledge to close the problem manually.</p>|`last(/PHP-FPM by TAAE agent/php-fpm.process_manager,#1)<>last(/PHP-FPM by TAAE agent/php-fpm.process_manager,#2)`|Info|**Manual close**: Yes|
+|PHP-FPM: Detected slow requests|<p>The PHP-FPM has detected a slow request. <br>The slow request means that it took more time to execute than expected (defined in the configuration of your pool).</p>|`min(/PHP-FPM by TAAE agent/php-fpm.slow_requests,#3)>0`|Warning||
 
 ### LLD rule PHP-FPM process discovery
 
@@ -193,19 +193,19 @@ If you use another web server port for the location of the PHP-FPM status/ping p
 |Memory usage (vsize)|<p>The summary of virtual memory used by a process `{#PHP_FPM.NAME}` expressed in bytes.</p>|Dependent item|php-fpm.proc.vmem[{#PHP_FPM.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.vsize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Memory usage, %|<p>The percentage of real memory used by a process `{#PHP_FPM.NAME}`.</p>|Dependent item|php-fpm.proc.pmem[{#PHP_FPM.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.pmem`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Number of running processes|<p>The number of running processes `{#PHP_FPM.NAME}`.</p>|Dependent item|php-fpm.proc.num[{#PHP_FPM.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.processes`</p><p>⛔️Custom on fail: Set value to: `0`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
-|CPU utilization|<p>The percentage of the CPU utilization by a process `{#PHP_FPM.NAME}`.</p>|TAA agent|proc.cpu.util[{#PHP_FPM.NAME}]|
+|CPU utilization|<p>The percentage of the CPU utilization by a process `{#PHP_FPM.NAME}`.</p>|TAAE agent|proc.cpu.util[{#PHP_FPM.NAME}]|
 
 ### Trigger prototypes for PHP-FPM process discovery
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|PHP-FPM: Process is not running||`last(/PHP-FPM by TAA agent/php-fpm.proc.num[{#PHP_FPM.NAME}])=0`|High||
-|PHP-FPM: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/PHP-FPM by TAA agent/php-fpm.uptime,30m)=1 and last(/PHP-FPM by TAA agent/php-fpm.proc.num[{#PHP_FPM.NAME}])>0`|Info|**Manual close**: Yes|
-|PHP-FPM: Service is down||`(last(/PHP-FPM by TAA agent/php-fpm.ping)=0 or nodata(/PHP-FPM by TAA agent/php-fpm.ping,3m)=1) and last(/PHP-FPM by TAA agent/php-fpm.proc.num[{#PHP_FPM.NAME}])>0`|High|**Manual close**: Yes|
+|PHP-FPM: Process is not running||`last(/PHP-FPM by TAAE agent/php-fpm.proc.num[{#PHP_FPM.NAME}])=0`|High||
+|PHP-FPM: Failed to fetch info data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/PHP-FPM by TAAE agent/php-fpm.uptime,30m)=1 and last(/PHP-FPM by TAAE agent/php-fpm.proc.num[{#PHP_FPM.NAME}])>0`|Info|**Manual close**: Yes|
+|PHP-FPM: Service is down||`(last(/PHP-FPM by TAAE agent/php-fpm.ping)=0 or nodata(/PHP-FPM by TAAE agent/php-fpm.ping,3m)=1) and last(/PHP-FPM by TAAE agent/php-fpm.proc.num[{#PHP_FPM.NAME}])>0`|High|**Manual close**: Yes|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

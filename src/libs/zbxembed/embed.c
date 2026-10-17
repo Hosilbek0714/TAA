@@ -341,7 +341,7 @@ int	zbx_es_init_env(zbx_es_t *es, const char *config_source_ip, char **error)
 		goto out;
 	}
 
-	/* initialize TAA object */
+	/* initialize TAAE object */
 	zbx_es_init_zabbix(es, error);
 
 	/* initialize console object */

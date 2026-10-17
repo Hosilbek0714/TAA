@@ -352,7 +352,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = TAA;
+        		this.logger = TAAE;
         	}
         	else {
         		this.logger = logger;
@@ -611,7 +611,7 @@ zabbix_export:
       event_menu_url: '{EVENT.TAGS.__zbx_zammad_ticketlink}'
       event_menu_name: 'Zammad: Ticket #{EVENT.TAGS.__zbx_zammad_ticket_id}'
       description: |
-        This media type integrates your TAA installation with your Zammad installation using the TAA webhook feature.
+        This media type integrates your TAAE installation with your Zammad installation using the TAAE webhook feature.
         
         Zammad configuration:
         
@@ -620,11 +620,11 @@ zabbix_export:
         3. Set the "ticket.agent" permission for the token and press Create.
         4. Copy and save the created token somewhere, as it will be shown only once for security reasons.
         
-        TAA configuration:
+        TAAE configuration:
         
         1. Before you can start using Zammad webhook, set up the global macro "{$ZABBIX.URL}":
-        - In the TAA web interface, go to "Administration" → "Macros" section in the dropdown menu in the top left corner.
-        - Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
+        - In the TAAE web interface, go to "Administration" → "Macros" section in the dropdown menu in the top left corner.
+        - Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAAE frontend. The URL should be either an IP address, a fully qualified domain name, or localhost.
         - Specifying a protocol is mandatory, whereas the port is optional. Depending on the web server configuration you might also need to append "/zabbix" to the end of URL. Good examples:
           - http://zabbix.com
           - https://zabbix.lan/zabbix
@@ -639,20 +639,20 @@ zabbix_export:
         - zammad_access_token - the access token that you created during Zammad configuration
         - zammad_url - the frontend URL of your Zammad installation
         - zammad_customer - the Zammad user email
-        - zammad_enable_tags - if you want to add the TAA event tags to the Zammad tickets that are created, you can set it to one of the following values: "1", "true", "yes", "on" (note, that if the tag support is enabled, each tag is sent via separate HTTP request and created tags will also remain in the Zammad when tickets are closed/deleted)
+        - zammad_enable_tags - if you want to add the TAAE event tags to the Zammad tickets that are created, you can set it to one of the following values: "1", "true", "yes", "on" (note, that if the tag support is enabled, each tag is sent via separate HTTP request and created tags will also remain in the Zammad when tickets are closed/deleted)
         - zammad_group - if needed, you can change the Zammad user group
         
-        3. If you want to prioritize issues according to the severity values in TAA, you can define mapping parameters (create them as additional webhook parameters):
+        3. If you want to prioritize issues according to the severity values in TAAE, you can define mapping parameters (create them as additional webhook parameters):
         - severity_<name> - the Zammad priority ID (<name> in the parameter name can be one of the following values: "not_classified", "information", "warning", "average", "high", "disaster")
         
-        4. Create a TAA user and add media:
+        4. Create a TAAE user and add media:
         - If you want to create a new user, go to the "Users" → "Users" section, click the "Create user" button in the top right corner. In the "User" tab, fill in all required fields (marked with red asterisks).
         - In the "Media" tab, add a new media and select "Zammad" type from the drop-down list. Add any value to the "Send to" field: it is required to be filled, but it is not used.
         - Make sure this user has access to all hosts for which you would like problem notifications to be sent to Zammad.
         
         5. Great! You can now start using this media type in actions and create tickets!
         
-        You can find the latest version of this media and additional information in the official TAA repository:
+        You can find the latest version of this media and additional information in the official TAAE repository:
         https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/zammad
       message_templates:
         - event_source: TRIGGERS

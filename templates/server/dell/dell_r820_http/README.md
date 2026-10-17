@@ -3,11 +3,11 @@
 
 ## Overview
 
-This is a template for monitoring DELL PowerEdge R820 servers with iDRAC 8/9 firmware 4.32 (and later) with Redfish API enabled via TAA script items. This template works without any external scripts.
+This is a template for monitoring DELL PowerEdge R820 servers with iDRAC 8/9 firmware 4.32 (and later) with Redfish API enabled via TAAE script items. This template works without any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -24,7 +24,7 @@ This template has been tested on:
 
 2\. Create a user for monitoring with read-only permissions in the Dell iDRAC interface.
 
-3\. Create a host for Dell server with iDRAC IP as the TAA agent interface.
+3\. Create a host for Dell server with iDRAC IP as the TAAE agent interface.
 
 4\. Link the template to the host.
 
@@ -275,5 +275,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

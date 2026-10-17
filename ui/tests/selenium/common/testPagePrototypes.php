@@ -341,9 +341,9 @@ class testPagePrototypes extends CWebTest {
 					'sort_by' => 'Type',
 					'sort' => 'type',
 					'result' => [
-						'TAA trapper',
-						'TAA internal',
-						'TAA agent (active)',
+						'TAAE trapper',
+						'TAAE internal',
+						'TAAE agent (active)',
 						'Calculated',
 						'HTTP agent'
 					]
@@ -1006,12 +1006,12 @@ class testPagePrototypes extends CWebTest {
 					]
 				]
 			],
-			// #1 TAA trapper without interval.
+			// #1 TAAE trapper without interval.
 			[
 				[
 					'fields' => [
-						'Name' => 'Empty TAA trapper interval',
-						'Type' => 'TAA trapper',
+						'Name' => 'Empty TAAE trapper interval',
+						'Type' => 'TAAE trapper',
 						'Key' => 'zabbix_trapper_interval_[{#KEY}]'
 					],
 					'check' => [
@@ -1033,12 +1033,12 @@ class testPagePrototypes extends CWebTest {
 					]
 				]
 			],
-			// #3 TAA agent with type of information - text.
+			// #3 TAAE agent with type of information - text.
 			[
 				[
 					'fields' => [
 						'Name' => 'Text zabbix trapper',
-						'Type' => 'TAA trapper',
+						'Type' => 'TAAE trapper',
 						'Type of information' => 'Text',
 						'Key' => 'text_[{#KEY}]'
 					],
@@ -1047,12 +1047,12 @@ class testPagePrototypes extends CWebTest {
 					]
 				]
 			],
-			// #4 TAA agent with type of information - character.
+			// #4 TAAE agent with type of information - character.
 			[
 				[
 					'fields' => [
 						'Name' => 'Character zabbix trapper',
-						'Type' => 'TAA trapper',
+						'Type' => 'TAAE trapper',
 						'Type of information' => 'Character',
 						'Key' => 'character_[{#KEY}]'
 					],
@@ -1061,12 +1061,12 @@ class testPagePrototypes extends CWebTest {
 					]
 				]
 			],
-			// #5 TAA agent with type of information - log.
+			// #5 TAAE agent with type of information - log.
 			[
 				[
 					'fields' => [
 						'Name' => 'Log zabbix trapper',
-						'Type' => 'TAA trapper',
+						'Type' => 'TAAE trapper',
 						'Type of information' => 'Log',
 						'Key' => 'log_[{#KEY}]'
 					],
@@ -1079,7 +1079,7 @@ class testPagePrototypes extends CWebTest {
 	}
 
 	/**
-	 * Check that empty values displayed in Trends and Interval columns. SNMP, TAA trappers has empty values in trends column.
+	 * Check that empty values displayed in Trends and Interval columns. SNMP, TAAE trappers has empty values in trends column.
 	 * Dependent items has empty update interval column.
 	 * Only for Item prototype.
 	 */

@@ -1,13 +1,13 @@
 
-# MSSQL by TAA agent 2
+# MSSQL by TAAE agent 2
 
 ## Overview
 
-This template is designed for the effortless deployment of MSSQL monitoring by TAA via TAA agent 2 and doesn't require any external scripts.
+This template is designed for the effortless deployment of MSSQL monitoring by TAAE via TAAE agent 2 and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,11 +16,11 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-1. Deploy TAA agent 2 with the MSSQL plugin. You can use this template starting with version 7.4.0 of both TAA and the MSSQL plugin. For more information, see [MSSQL plugin documentation](https://git.zabbix.com/projects/AP/repos/mssql/browse).
+1. Deploy TAAE agent 2 with the MSSQL plugin. You can use this template starting with version 7.4.0 of both TAAE and the MSSQL plugin. For more information, see [MSSQL plugin documentation](https://git.zabbix.com/projects/AP/repos/mssql/browse).
 
 **Important!** Starting with version 7.4-1 of this template, the MSSQL plugin must be updated to a version equal to or above 7.4.0. (You can check the version of the template in its YAML file under the "vendor" section.)
 
@@ -109,18 +109,18 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
 |Service's TCP port state|<p>Test the availability of MSSQL Server on a TCP port.</p>|Simple check|net.tcp.service[tcp,{$MSSQL.HOST},{$MSSQL.PORT}]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Get last backup|<p>The item gets information about backup processes.</p>|TAA agent|mssql.last.backup.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get job status|<p>The item gets the SQL agent job status.</p>|TAA agent|mssql.job.status.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get performance counters|<p>The item gets server global status information.</p>|TAA agent|mssql.perfcounter.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get availability groups|<p>The item gets availability group states - name, primary and secondary health, synchronization health.</p>|TAA agent|mssql.availability.group.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get local DB|<p>Getting the states of the local availability database.</p>|TAA agent|mssql.local.db.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get DB mirroring|<p>Getting DB mirroring.</p>|TAA agent|mssql.mirroring.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get non-local DB|<p>Getting the non-local availability database.</p>|TAA agent|mssql.nonlocal.db.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get replica|<p>Getting the database replica.</p>|TAA agent|mssql.replica.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get quorum|<p>Getting quorum - cluster name, type, and state.</p>|TAA agent|mssql.quorum.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get quorum member|<p>Getting quorum members - member name, type, state, and number of quorum votes.</p>|TAA agent|mssql.quorum.member.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Get database|<p>Getting databases - database name and recovery model.</p>|TAA agent|mssql.db.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
-|Version|<p>MSSQL Server version.</p>|TAA agent|mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
+|Get last backup|<p>The item gets information about backup processes.</p>|TAAE agent|mssql.last.backup.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get job status|<p>The item gets the SQL agent job status.</p>|TAAE agent|mssql.job.status.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get performance counters|<p>The item gets server global status information.</p>|TAAE agent|mssql.perfcounter.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get availability groups|<p>The item gets availability group states - name, primary and secondary health, synchronization health.</p>|TAAE agent|mssql.availability.group.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get local DB|<p>Getting the states of the local availability database.</p>|TAAE agent|mssql.local.db.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get DB mirroring|<p>Getting DB mirroring.</p>|TAAE agent|mssql.mirroring.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get non-local DB|<p>Getting the non-local availability database.</p>|TAAE agent|mssql.nonlocal.db.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get replica|<p>Getting the database replica.</p>|TAAE agent|mssql.replica.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get quorum|<p>Getting quorum - cluster name, type, and state.</p>|TAAE agent|mssql.quorum.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get quorum member|<p>Getting quorum members - member name, type, state, and number of quorum votes.</p>|TAAE agent|mssql.quorum.member.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Get database|<p>Getting databases - database name and recovery model.</p>|TAAE agent|mssql.db.get["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]|
+|Version|<p>MSSQL Server version.</p>|TAAE agent|mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 |Uptime|<p>MSSQL Server uptime in the format "N days, hh:mm:ss".</p>|Dependent item|mssql.uptime<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.counter_name=='Uptime')].cntr_value.first()`</p></li></ul>|
 |Get Access Methods counters|<p>The item gets server information about access methods.</p>|Dependent item|mssql.access_methods.raw<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.object_name=~'.*Access Methods')]`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Forwarded records per second|<p>Number of records per second fetched through forwarded record pointers.</p>|Dependent item|mssql.forwarded_records_sec.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `The text is too long. Please see the template.`</p></li><li>Change per second</li></ul>|
@@ -203,30 +203,30 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: Service is unavailable|<p>The TCP port of the MSSQL Server service is currently unavailable.</p>|`last(/MSSQL by TAA agent 2/net.tcp.service[tcp,{$MSSQL.HOST},{$MSSQL.PORT}])=0`|Disaster||
-|MSSQL: Version has changed|<p>MSSQL version has changed. Acknowledge to close the problem manually.</p>|`last(/MSSQL by TAA agent 2/mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"],#1)<>last(/MSSQL by TAA agent 2/mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"],#2) and length(last(/MSSQL by TAA agent 2/mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]))>0`|Info|**Manual close**: Yes|
-|MSSQL: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MSSQL by TAA agent 2/mssql.uptime)<10m`|Info|**Manual close**: Yes|
-|MSSQL: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/MSSQL by TAA agent 2/mssql.uptime,30m)=1`|Info|**Depends on**:<br><ul><li>MSSQL: Service is unavailable</li></ul>|
-|MSSQL: Too frequently using pointers|<p>Rows with VARCHAR columns can experience expansion when VARCHAR values are updated with a longer string. In the case where the row cannot fit in the existing page, the row migrates, and access to the row will traverse a pointer. This only happens on heaps (tables without clustered indexes). In cases where clustered indexes cannot be used, drop non-clustered indexes, build a clustered index to reorg pages and rows, drop the clustered index, then recreate non-clustered indexes.</p>|`last(/MSSQL by TAA agent 2/mssql.forwarded_records_sec.rate) * 100 > 10 * last(/MSSQL by TAA agent 2/mssql.batch_requests_sec.rate)`|Warning||
-|MSSQL: Number of work files created per second is high|<p>Too many work files created per second to store temporary results for hash joins and hash aggregates.</p>|`min(/MSSQL by TAA agent 2/mssql.workfiles_created_sec.rate,5m)>{$MSSQL.WORK_FILES.MAX}`|Average||
-|MSSQL: Number of work tables created per second is high|<p>Too many work tables created per second to store temporary results for query spool, LOB variables, XML variables, and cursors.</p>|`min(/MSSQL by TAA agent 2/mssql.worktables_created_sec.rate,5m)>{$MSSQL.WORK_TABLES.MAX}`|Average||
-|MSSQL: Percentage of work tables available from the work table cache is low|<p>A value less than 90% may indicate insufficient memory, since execution plans are being dropped, or, on 32-bit systems, may indicate the need for an upgrade to a 64-bit system.</p>|`max(/MSSQL by TAA agent 2/mssql.worktables_from_cache_ratio,5m)<{$MSSQL.WORKTABLES_FROM_CACHE_RATIO.MIN.CRIT}`|High||
-|MSSQL: Percentage of the buffer cache efficiency is low|<p>Too low buffer cache hit ratio.</p>|`max(/MSSQL by TAA agent 2/mssql.buffer_cache_hit_ratio,5m)<{$MSSQL.BUFFER_CACHE_RATIO.MIN.CRIT}`|High||
-|MSSQL: Percentage of the buffer cache efficiency is low|<p>Low buffer cache hit ratio.</p>|`max(/MSSQL by TAA agent 2/mssql.buffer_cache_hit_ratio,5m)<{$MSSQL.BUFFER_CACHE_RATIO.MIN.WARN}`|Warning|**Depends on**:<br><ul><li>MSSQL: Percentage of the buffer cache efficiency is low</li></ul>|
-|MSSQL: Number of rps waiting for a free page is high|<p>Some requests have to wait for a free page.</p>|`min(/MSSQL by TAA agent 2/mssql.free_list_stalls_sec.rate,5m)>{$MSSQL.FREE_LIST_STALLS.MAX}`|Warning||
-|MSSQL: Number of buffers written per second by the lazy writer is high|<p>The number of buffers written per second by the buffer manager's lazy writer exceeds the threshold.</p>|`min(/MSSQL by TAA agent 2/mssql.lazy_writes_sec.rate,5m)>{$MSSQL.LAZY_WRITES.MAX}`|Warning||
-|MSSQL: Page life expectancy is low|<p>The page stays in the buffer pool without references for less time than the threshold value.</p>|`max(/MSSQL by TAA agent 2/mssql.page_life_expectancy,15m)<{$MSSQL.PAGE_LIFE_EXPECTANCY.MIN}`|High||
-|MSSQL: Number of physical database page reads per second is high|<p>The physical database page reads are issued too frequently.</p>|`min(/MSSQL by TAA agent 2/mssql.page_reads_sec.rate,5m)>{$MSSQL.PAGE_READS.MAX}`|Warning||
-|MSSQL: Number of physical database page writes per second is high|<p>The physical database page writes are issued too frequently.</p>|`min(/MSSQL by TAA agent 2/mssql.page_writes_sec.rate,5m)>{$MSSQL.PAGE_WRITES.MAX}`|Warning||
-|MSSQL: Too many physical reads occurring|<p>If this value makes up even a sizeable minority of the total "Page Reads/sec" (say, greater than 20% of the total page reads), you may have too many physical reads occurring.</p>|`last(/MSSQL by TAA agent 2/mssql.readahead_pages_sec.rate) > {$MSSQL.PERCENT_READAHEAD.MAX} / 100 * last(/MSSQL by TAA agent 2/mssql.page_reads_sec.rate)`|Warning||
-|MSSQL: Total average wait time for locks is high|<p>An average wait time longer than 500 ms may indicate excessive blocking. This value should generally correlate to "Lock Waits/sec" and move up or down with it accordingly.</p>|`min(/MSSQL by TAA agent 2/mssql.average_wait_time,5m)>{$MSSQL.AVERAGE_WAIT_TIME.MAX}`|Warning||
-|MSSQL: Total number of locks per second is high|<p>Number of new locks and lock conversions per second requested from the lock manager is high.</p>|`min(/MSSQL by TAA agent 2/mssql.lock_requests_sec.rate,5m)>{$MSSQL.LOCK_REQUESTS.MAX}`|Warning||
-|MSSQL: Total lock requests per second that timed out is high|<p>The total number of timed out lock requests per second, including requests for NOWAIT locks, is high.</p>|`min(/MSSQL by TAA agent 2/mssql.lock_timeouts_sec.rate,5m)>{$MSSQL.LOCK_TIMEOUTS.MAX}`|Warning||
-|MSSQL: Some blocking is occurring for 5m|<p>Values greater than zero indicate at least some blocking is occurring, while a value of zero can quickly eliminate blocking as a potential root-cause problem.</p>|`min(/MSSQL by TAA agent 2/mssql.lock_waits_sec.rate,5m)>0`|Average||
-|MSSQL: Number of deadlocks is high|<p>Too many deadlocks are occurring currently.</p>|`min(/MSSQL by TAA agent 2/mssql.number_deadlocks_sec.rate,5m)>{$MSSQL.DEADLOCKS.MAX}`|Average||
-|MSSQL: Percent of ad hoc queries running is high|<p>The lower this value is, the better. High values often indicate excessive ad hoc querying and should be as low as possible. If excessive ad hoc querying is happening, try rewriting the queries as procedures or invoke the queries using `sp_executeSQL`. When rewriting isn't possible, consider using a plan guide or setting the database to parameterization forced mode.</p>|`min(/MSSQL by TAA agent 2/mssql.percent_of_adhoc_queries,15m) > {$MSSQL.PERCENT_COMPILATIONS.MAX}`|Warning||
-|MSSQL: Percent of times statement recompiles is high|<p>This number should be at or near zero, since recompiles can cause deadlocks and exclusive compile locks. This counter's value should follow in proportion to "Batch Requests/sec" and "SQL Compilations/sec".</p>|`min(/MSSQL by TAA agent 2/mssql.percent_recompilations_to_compilations,15m) > {$MSSQL.PERCENT_RECOMPILATIONS.MAX}`|Warning||
-|MSSQL: Number of index and table scans exceeds index searches in the last 15m|<p>Index searches are preferable to index and table scans. For OLTP applications, optimize for more index searches and less scans (preferably, 1 full scan for every 1000 index searches). Index and table scans are expensive I/O operations.</p>|`min(/MSSQL by TAA agent 2/mssql.scan_to_search,15m) > 0.001`|Warning||
+|MSSQL: Service is unavailable|<p>The TCP port of the MSSQL Server service is currently unavailable.</p>|`last(/MSSQL by TAAE agent 2/net.tcp.service[tcp,{$MSSQL.HOST},{$MSSQL.PORT}])=0`|Disaster||
+|MSSQL: Version has changed|<p>MSSQL version has changed. Acknowledge to close the problem manually.</p>|`last(/MSSQL by TAAE agent 2/mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"],#1)<>last(/MSSQL by TAAE agent 2/mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"],#2) and length(last(/MSSQL by TAAE agent 2/mssql.version["{$MSSQL.URI}","{$MSSQL.USER}","{$MSSQL.PASSWORD}"]))>0`|Info|**Manual close**: Yes|
+|MSSQL: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MSSQL by TAAE agent 2/mssql.uptime)<10m`|Info|**Manual close**: Yes|
+|MSSQL: Failed to fetch info data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/MSSQL by TAAE agent 2/mssql.uptime,30m)=1`|Info|**Depends on**:<br><ul><li>MSSQL: Service is unavailable</li></ul>|
+|MSSQL: Too frequently using pointers|<p>Rows with VARCHAR columns can experience expansion when VARCHAR values are updated with a longer string. In the case where the row cannot fit in the existing page, the row migrates, and access to the row will traverse a pointer. This only happens on heaps (tables without clustered indexes). In cases where clustered indexes cannot be used, drop non-clustered indexes, build a clustered index to reorg pages and rows, drop the clustered index, then recreate non-clustered indexes.</p>|`last(/MSSQL by TAAE agent 2/mssql.forwarded_records_sec.rate) * 100 > 10 * last(/MSSQL by TAAE agent 2/mssql.batch_requests_sec.rate)`|Warning||
+|MSSQL: Number of work files created per second is high|<p>Too many work files created per second to store temporary results for hash joins and hash aggregates.</p>|`min(/MSSQL by TAAE agent 2/mssql.workfiles_created_sec.rate,5m)>{$MSSQL.WORK_FILES.MAX}`|Average||
+|MSSQL: Number of work tables created per second is high|<p>Too many work tables created per second to store temporary results for query spool, LOB variables, XML variables, and cursors.</p>|`min(/MSSQL by TAAE agent 2/mssql.worktables_created_sec.rate,5m)>{$MSSQL.WORK_TABLES.MAX}`|Average||
+|MSSQL: Percentage of work tables available from the work table cache is low|<p>A value less than 90% may indicate insufficient memory, since execution plans are being dropped, or, on 32-bit systems, may indicate the need for an upgrade to a 64-bit system.</p>|`max(/MSSQL by TAAE agent 2/mssql.worktables_from_cache_ratio,5m)<{$MSSQL.WORKTABLES_FROM_CACHE_RATIO.MIN.CRIT}`|High||
+|MSSQL: Percentage of the buffer cache efficiency is low|<p>Too low buffer cache hit ratio.</p>|`max(/MSSQL by TAAE agent 2/mssql.buffer_cache_hit_ratio,5m)<{$MSSQL.BUFFER_CACHE_RATIO.MIN.CRIT}`|High||
+|MSSQL: Percentage of the buffer cache efficiency is low|<p>Low buffer cache hit ratio.</p>|`max(/MSSQL by TAAE agent 2/mssql.buffer_cache_hit_ratio,5m)<{$MSSQL.BUFFER_CACHE_RATIO.MIN.WARN}`|Warning|**Depends on**:<br><ul><li>MSSQL: Percentage of the buffer cache efficiency is low</li></ul>|
+|MSSQL: Number of rps waiting for a free page is high|<p>Some requests have to wait for a free page.</p>|`min(/MSSQL by TAAE agent 2/mssql.free_list_stalls_sec.rate,5m)>{$MSSQL.FREE_LIST_STALLS.MAX}`|Warning||
+|MSSQL: Number of buffers written per second by the lazy writer is high|<p>The number of buffers written per second by the buffer manager's lazy writer exceeds the threshold.</p>|`min(/MSSQL by TAAE agent 2/mssql.lazy_writes_sec.rate,5m)>{$MSSQL.LAZY_WRITES.MAX}`|Warning||
+|MSSQL: Page life expectancy is low|<p>The page stays in the buffer pool without references for less time than the threshold value.</p>|`max(/MSSQL by TAAE agent 2/mssql.page_life_expectancy,15m)<{$MSSQL.PAGE_LIFE_EXPECTANCY.MIN}`|High||
+|MSSQL: Number of physical database page reads per second is high|<p>The physical database page reads are issued too frequently.</p>|`min(/MSSQL by TAAE agent 2/mssql.page_reads_sec.rate,5m)>{$MSSQL.PAGE_READS.MAX}`|Warning||
+|MSSQL: Number of physical database page writes per second is high|<p>The physical database page writes are issued too frequently.</p>|`min(/MSSQL by TAAE agent 2/mssql.page_writes_sec.rate,5m)>{$MSSQL.PAGE_WRITES.MAX}`|Warning||
+|MSSQL: Too many physical reads occurring|<p>If this value makes up even a sizeable minority of the total "Page Reads/sec" (say, greater than 20% of the total page reads), you may have too many physical reads occurring.</p>|`last(/MSSQL by TAAE agent 2/mssql.readahead_pages_sec.rate) > {$MSSQL.PERCENT_READAHEAD.MAX} / 100 * last(/MSSQL by TAAE agent 2/mssql.page_reads_sec.rate)`|Warning||
+|MSSQL: Total average wait time for locks is high|<p>An average wait time longer than 500 ms may indicate excessive blocking. This value should generally correlate to "Lock Waits/sec" and move up or down with it accordingly.</p>|`min(/MSSQL by TAAE agent 2/mssql.average_wait_time,5m)>{$MSSQL.AVERAGE_WAIT_TIME.MAX}`|Warning||
+|MSSQL: Total number of locks per second is high|<p>Number of new locks and lock conversions per second requested from the lock manager is high.</p>|`min(/MSSQL by TAAE agent 2/mssql.lock_requests_sec.rate,5m)>{$MSSQL.LOCK_REQUESTS.MAX}`|Warning||
+|MSSQL: Total lock requests per second that timed out is high|<p>The total number of timed out lock requests per second, including requests for NOWAIT locks, is high.</p>|`min(/MSSQL by TAAE agent 2/mssql.lock_timeouts_sec.rate,5m)>{$MSSQL.LOCK_TIMEOUTS.MAX}`|Warning||
+|MSSQL: Some blocking is occurring for 5m|<p>Values greater than zero indicate at least some blocking is occurring, while a value of zero can quickly eliminate blocking as a potential root-cause problem.</p>|`min(/MSSQL by TAAE agent 2/mssql.lock_waits_sec.rate,5m)>0`|Average||
+|MSSQL: Number of deadlocks is high|<p>Too many deadlocks are occurring currently.</p>|`min(/MSSQL by TAAE agent 2/mssql.number_deadlocks_sec.rate,5m)>{$MSSQL.DEADLOCKS.MAX}`|Average||
+|MSSQL: Percent of ad hoc queries running is high|<p>The lower this value is, the better. High values often indicate excessive ad hoc querying and should be as low as possible. If excessive ad hoc querying is happening, try rewriting the queries as procedures or invoke the queries using `sp_executeSQL`. When rewriting isn't possible, consider using a plan guide or setting the database to parameterization forced mode.</p>|`min(/MSSQL by TAAE agent 2/mssql.percent_of_adhoc_queries,15m) > {$MSSQL.PERCENT_COMPILATIONS.MAX}`|Warning||
+|MSSQL: Percent of times statement recompiles is high|<p>This number should be at or near zero, since recompiles can cause deadlocks and exclusive compile locks. This counter's value should follow in proportion to "Batch Requests/sec" and "SQL Compilations/sec".</p>|`min(/MSSQL by TAAE agent 2/mssql.percent_recompilations_to_compilations,15m) > {$MSSQL.PERCENT_RECOMPILATIONS.MAX}`|Warning||
+|MSSQL: Number of index and table scans exceeds index searches in the last 15m|<p>Index searches are preferable to index and table scans. For OLTP applications, optimize for more index searches and less scans (preferably, 1 full scan for every 1000 index searches). Index and table scans are expensive I/O operations.</p>|`min(/MSSQL by TAAE agent 2/mssql.scan_to_search,15m) > 0.001`|Warning||
 
 ### LLD rule Database discovery
 
@@ -266,16 +266,16 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: DB '{#DBNAME}': State is {ITEM.VALUE}|<p>The DB has a non-working state.</p>|`last(/MSSQL by TAA agent 2/mssql.db.state["{#DBNAME}"])>1`|High||
-|MSSQL: DB '{#DBNAME}': Number of commits waiting for the log flush is high|<p>Too many commits are waiting for the log flush.</p>|`min(/MSSQL by TAA agent 2/mssql.db.log_flush_waits_sec.rate["{#DBNAME}"],5m)>{$MSSQL.LOG_FLUSH_WAITS.MAX:"{#DBNAME}"}`|Warning||
-|MSSQL: DB '{#DBNAME}': Total wait time to flush the log is high|<p>The wait time to flush the log is too long.</p>|`min(/MSSQL by TAA agent 2/mssql.db.log_flush_wait_time["{#DBNAME}"],5m)>{$MSSQL.LOG_FLUSH_WAIT_TIME.MAX:"{#DBNAME}"}`|Warning||
-|MSSQL: DB '{#DBNAME}': Percent of log usage is high|<p>There's not enough space left in the log.</p>|`min(/MSSQL by TAA agent 2/mssql.db.percent_log_used["{#DBNAME}"],5m)>{$MSSQL.PERCENT_LOG_USED.MAX:"{#DBNAME}"}`|Warning||
-|MSSQL: DB '{#DBNAME}': Diff backup is old|<p>The differential backup has not been executed for a long time.</p>|`last(/MSSQL by TAA agent 2/mssql.backup.diff["{#DBNAME}"])>{$MSSQL.BACKUP_DIFF.CRIT:"{#DBNAME}"} and {$MSSQL.BACKUP_DIFF.USED:"{#DBNAME}"}=1`|High|**Manual close**: Yes|
-|MSSQL: DB '{#DBNAME}': Diff backup is old|<p>The differential backup has not been executed for a long time.</p>|`last(/MSSQL by TAA agent 2/mssql.backup.diff["{#DBNAME}"])>{$MSSQL.BACKUP_DIFF.WARN:"{#DBNAME}"} and {$MSSQL.BACKUP_DIFF.USED:"{#DBNAME}"}=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MSSQL: DB '{#DBNAME}': Diff backup is old</li></ul>|
-|MSSQL: DB '{#DBNAME}': Full backup is old|<p>The full backup has not been executed for a long time.</p>|`last(/MSSQL by TAA agent 2/mssql.backup.full["{#DBNAME}"])>{$MSSQL.BACKUP_FULL.CRIT:"{#DBNAME}"} and {$MSSQL.BACKUP_FULL.USED:"{#DBNAME}"}=1`|High|**Manual close**: Yes|
-|MSSQL: DB '{#DBNAME}': Full backup is old|<p>The full backup has not been executed for a long time.</p>|`last(/MSSQL by TAA agent 2/mssql.backup.full["{#DBNAME}"])>{$MSSQL.BACKUP_FULL.WARN:"{#DBNAME}"} and {$MSSQL.BACKUP_FULL.USED:"{#DBNAME}"}=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MSSQL: DB '{#DBNAME}': Full backup is old</li></ul>|
-|MSSQL: DB '{#DBNAME}': Log backup is old|<p>The log backup has not been executed for a long time.</p>|`last(/MSSQL by TAA agent 2/mssql.backup.log["{#DBNAME}"])>{$MSSQL.BACKUP_LOG.CRIT:"{#DBNAME}"} and {$MSSQL.BACKUP_LOG.USED:"{#DBNAME}"}=1 and last(/MSSQL by TAA agent 2/mssql.backup.recovery_model["{#DBNAME}"])<>3`|High|**Manual close**: Yes|
-|MSSQL: DB '{#DBNAME}': Log backup is old|<p>The log backup has not been executed for a long time.</p>|`last(/MSSQL by TAA agent 2/mssql.backup.log["{#DBNAME}"])>{$MSSQL.BACKUP_LOG.WARN:"{#DBNAME}"} and {$MSSQL.BACKUP_LOG.USED:"{#DBNAME}"}=1 and last(/MSSQL by TAA agent 2/mssql.backup.recovery_model["{#DBNAME}"])<>3`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MSSQL: DB '{#DBNAME}': Log backup is old</li></ul>|
+|MSSQL: DB '{#DBNAME}': State is {ITEM.VALUE}|<p>The DB has a non-working state.</p>|`last(/MSSQL by TAAE agent 2/mssql.db.state["{#DBNAME}"])>1`|High||
+|MSSQL: DB '{#DBNAME}': Number of commits waiting for the log flush is high|<p>Too many commits are waiting for the log flush.</p>|`min(/MSSQL by TAAE agent 2/mssql.db.log_flush_waits_sec.rate["{#DBNAME}"],5m)>{$MSSQL.LOG_FLUSH_WAITS.MAX:"{#DBNAME}"}`|Warning||
+|MSSQL: DB '{#DBNAME}': Total wait time to flush the log is high|<p>The wait time to flush the log is too long.</p>|`min(/MSSQL by TAAE agent 2/mssql.db.log_flush_wait_time["{#DBNAME}"],5m)>{$MSSQL.LOG_FLUSH_WAIT_TIME.MAX:"{#DBNAME}"}`|Warning||
+|MSSQL: DB '{#DBNAME}': Percent of log usage is high|<p>There's not enough space left in the log.</p>|`min(/MSSQL by TAAE agent 2/mssql.db.percent_log_used["{#DBNAME}"],5m)>{$MSSQL.PERCENT_LOG_USED.MAX:"{#DBNAME}"}`|Warning||
+|MSSQL: DB '{#DBNAME}': Diff backup is old|<p>The differential backup has not been executed for a long time.</p>|`last(/MSSQL by TAAE agent 2/mssql.backup.diff["{#DBNAME}"])>{$MSSQL.BACKUP_DIFF.CRIT:"{#DBNAME}"} and {$MSSQL.BACKUP_DIFF.USED:"{#DBNAME}"}=1`|High|**Manual close**: Yes|
+|MSSQL: DB '{#DBNAME}': Diff backup is old|<p>The differential backup has not been executed for a long time.</p>|`last(/MSSQL by TAAE agent 2/mssql.backup.diff["{#DBNAME}"])>{$MSSQL.BACKUP_DIFF.WARN:"{#DBNAME}"} and {$MSSQL.BACKUP_DIFF.USED:"{#DBNAME}"}=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MSSQL: DB '{#DBNAME}': Diff backup is old</li></ul>|
+|MSSQL: DB '{#DBNAME}': Full backup is old|<p>The full backup has not been executed for a long time.</p>|`last(/MSSQL by TAAE agent 2/mssql.backup.full["{#DBNAME}"])>{$MSSQL.BACKUP_FULL.CRIT:"{#DBNAME}"} and {$MSSQL.BACKUP_FULL.USED:"{#DBNAME}"}=1`|High|**Manual close**: Yes|
+|MSSQL: DB '{#DBNAME}': Full backup is old|<p>The full backup has not been executed for a long time.</p>|`last(/MSSQL by TAAE agent 2/mssql.backup.full["{#DBNAME}"])>{$MSSQL.BACKUP_FULL.WARN:"{#DBNAME}"} and {$MSSQL.BACKUP_FULL.USED:"{#DBNAME}"}=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MSSQL: DB '{#DBNAME}': Full backup is old</li></ul>|
+|MSSQL: DB '{#DBNAME}': Log backup is old|<p>The log backup has not been executed for a long time.</p>|`last(/MSSQL by TAAE agent 2/mssql.backup.log["{#DBNAME}"])>{$MSSQL.BACKUP_LOG.CRIT:"{#DBNAME}"} and {$MSSQL.BACKUP_LOG.USED:"{#DBNAME}"}=1 and last(/MSSQL by TAAE agent 2/mssql.backup.recovery_model["{#DBNAME}"])<>3`|High|**Manual close**: Yes|
+|MSSQL: DB '{#DBNAME}': Log backup is old|<p>The log backup has not been executed for a long time.</p>|`last(/MSSQL by TAAE agent 2/mssql.backup.log["{#DBNAME}"])>{$MSSQL.BACKUP_LOG.WARN:"{#DBNAME}"} and {$MSSQL.BACKUP_LOG.USED:"{#DBNAME}"}=1 and last(/MSSQL by TAAE agent 2/mssql.backup.recovery_model["{#DBNAME}"])<>3`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MSSQL: DB '{#DBNAME}': Log backup is old</li></ul>|
 
 ### LLD rule Availability group discovery
 
@@ -296,10 +296,10 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: AG '{#GROUP_NAME}': Primary replica recovery health in progress|<p>The primary replica is in the synchronization process.</p>|`last(/MSSQL by TAA agent 2/mssql.primary_recovery_health["{#GROUP_NAME}"])=0`|Warning||
-|MSSQL: AG '{#GROUP_NAME}': Secondary replica recovery health in progress|<p>The secondary replica is in the synchronization process.</p>|`last(/MSSQL by TAA agent 2/mssql.secondary_recovery_health["{#GROUP_NAME}"])=0`|Warning||
-|MSSQL: AG '{#GROUP_NAME}': All replicas unhealthy|<p>None of the availability replicas have a healthy synchronization.</p>|`last(/MSSQL by TAA agent 2/mssql.synchronization_health["{#GROUP_NAME}"])=0`|Disaster||
-|MSSQL: AG '{#GROUP_NAME}': Some replicas unhealthy|<p>The synchronization health of some, but not all, availability replicas is healthy.</p>|`last(/MSSQL by TAA agent 2/mssql.synchronization_health["{#GROUP_NAME}"])=1`|High||
+|MSSQL: AG '{#GROUP_NAME}': Primary replica recovery health in progress|<p>The primary replica is in the synchronization process.</p>|`last(/MSSQL by TAAE agent 2/mssql.primary_recovery_health["{#GROUP_NAME}"])=0`|Warning||
+|MSSQL: AG '{#GROUP_NAME}': Secondary replica recovery health in progress|<p>The secondary replica is in the synchronization process.</p>|`last(/MSSQL by TAAE agent 2/mssql.secondary_recovery_health["{#GROUP_NAME}"])=0`|Warning||
+|MSSQL: AG '{#GROUP_NAME}': All replicas unhealthy|<p>None of the availability replicas have a healthy synchronization.</p>|`last(/MSSQL by TAAE agent 2/mssql.synchronization_health["{#GROUP_NAME}"])=0`|Disaster||
+|MSSQL: AG '{#GROUP_NAME}': Some replicas unhealthy|<p>The synchronization health of some, but not all, availability replicas is healthy.</p>|`last(/MSSQL by TAAE agent 2/mssql.synchronization_health["{#GROUP_NAME}"])=1`|High||
 
 ### LLD rule Local database discovery
 
@@ -319,9 +319,9 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: AG '{#GROUP_NAME}' Local DB '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The local availability database has a non-working state.</p>|`last(/MSSQL by TAA agent 2/mssql.local_db.state["{#DBNAME}"])>0`|Warning||
-|MSSQL: AG '{#GROUP_NAME}' Local DB '{#DBNAME}': "{#DBNAME}" is Not healthy|<p>The synchronization state of the local availability database is "Not synchronizing".</p>|`last(/MSSQL by TAA agent 2/mssql.local_db.synchronization_health["{#DBNAME}"])=0`|High||
-|MSSQL: AG '{#GROUP_NAME}' Local DB '{#DBNAME}': "{#DBNAME}" is Partially healthy|<p>A database on a synchronous-commit availability replica is considered partially healthy if synchronization state is "Synchronizing".</p>|`last(/MSSQL by TAA agent 2/mssql.local_db.synchronization_health["{#DBNAME}"])=1`|Average||
+|MSSQL: AG '{#GROUP_NAME}' Local DB '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The local availability database has a non-working state.</p>|`last(/MSSQL by TAAE agent 2/mssql.local_db.state["{#DBNAME}"])>0`|Warning||
+|MSSQL: AG '{#GROUP_NAME}' Local DB '{#DBNAME}': "{#DBNAME}" is Not healthy|<p>The synchronization state of the local availability database is "Not synchronizing".</p>|`last(/MSSQL by TAAE agent 2/mssql.local_db.synchronization_health["{#DBNAME}"])=0`|High||
+|MSSQL: AG '{#GROUP_NAME}' Local DB '{#DBNAME}': "{#DBNAME}" is Partially healthy|<p>A database on a synchronous-commit availability replica is considered partially healthy if synchronization state is "Synchronizing".</p>|`last(/MSSQL by TAAE agent 2/mssql.local_db.synchronization_health["{#DBNAME}"])=1`|Average||
 
 ### LLD rule Non-local database discovery
 
@@ -340,8 +340,8 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: AG '{#GROUP_NAME}' Non-Local DB '*{#REPLICA_NAME}*{#DBNAME}': Log queue size is growing|<p>The log records of the primary database are not sent to the secondary databases.</p>|`last(/MSSQL by TAA agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#1)>last(/MSSQL by TAA agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2) and last(/MSSQL by TAA agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2)>last(/MSSQL by TAA agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#3)`|High||
-|MSSQL: AG '{#GROUP_NAME}' Non-Local DB '*{#REPLICA_NAME}*{#DBNAME}': Redo log queue size is growing|<p>The log records in the log files of the secondary replica have not yet been redone.</p>|`last(/MSSQL by TAA agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#1)>last(/MSSQL by TAA agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2) and last(/MSSQL by TAA agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2)>last(/MSSQL by TAA agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#3)`|High||
+|MSSQL: AG '{#GROUP_NAME}' Non-Local DB '*{#REPLICA_NAME}*{#DBNAME}': Log queue size is growing|<p>The log records of the primary database are not sent to the secondary databases.</p>|`last(/MSSQL by TAAE agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#1)>last(/MSSQL by TAAE agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2) and last(/MSSQL by TAAE agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2)>last(/MSSQL by TAAE agent 2/mssql.non-local_db.log_send_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#3)`|High||
+|MSSQL: AG '{#GROUP_NAME}' Non-Local DB '*{#REPLICA_NAME}*{#DBNAME}': Redo log queue size is growing|<p>The log records in the log files of the secondary replica have not yet been redone.</p>|`last(/MSSQL by TAAE agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#1)>last(/MSSQL by TAAE agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2) and last(/MSSQL by TAAE agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#2)>last(/MSSQL by TAAE agent 2/mssql.non-local_db.redo_queue_size["{#GROUP_NAME}*{#REPLICA_NAME}*{#DBNAME}"],#3)`|High||
 
 ### LLD rule Quorum discovery
 
@@ -392,13 +392,13 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is disconnected|<p>The response of an availability replica to the "Disconnected" state depends on its role:<br>On the primary replica, if a secondary replica is disconnected, its secondary databases are marked as "Not synchronized" on the primary replica, which waits for the secondary to reconnect;<br>On a secondary replica, upon detecting that it is disconnected, the secondary replica attempts to reconnect to the primary replica.</p>|`last(/MSSQL by TAA agent 2/mssql.replica.connected_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=0 and last(/MSSQL by TAA agent 2/mssql.replica.role["{#GROUP_NAME}_{#REPLICA_NAME}"])=2`|Warning||
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is {ITEM.VALUE}|<p>The operational state of the replica in a given availability group is "Pending" or "Offline".</p>|`last(/MSSQL by TAA agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=0 or last(/MSSQL by TAA agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=1 or last(/MSSQL by TAA agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=3`|Warning||
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is {ITEM.VALUE}|<p>The operational state of the replica in a given availability group is "Failed".</p>|`last(/MSSQL by TAA agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=4`|Average||
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is {ITEM.VALUE}|<p>The operational state of the replica in a given availability group is "Failed, no quorum".</p>|`last(/MSSQL by TAA agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=5`|High||
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} Recovery in progress|<p>At least one joined database has a database state other than "Online".</p>|`last(/MSSQL by TAA agent 2/mssql.replica.recovery_health["{#GROUP_NAME}_{#REPLICA_NAME}"])=0`|Info||
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is Not healthy|<p>At least one joined database is in the "Not synchronizing" state.</p>|`last(/MSSQL by TAA agent 2/mssql.replica.synchronization_health["{#GROUP_NAME}_{#REPLICA_NAME}"])=0`|Average||
-|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is Partially healthy|<p>Some replicas are not in the target synchronization state: synchronous-commit replicas should be synchronized, and asynchronous-commit replicas should be synchronizing.</p>|`last(/MSSQL by TAA agent 2/mssql.replica.synchronization_health["{#GROUP_NAME}_{#REPLICA_NAME}"])=1`|Warning||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is disconnected|<p>The response of an availability replica to the "Disconnected" state depends on its role:<br>On the primary replica, if a secondary replica is disconnected, its secondary databases are marked as "Not synchronized" on the primary replica, which waits for the secondary to reconnect;<br>On a secondary replica, upon detecting that it is disconnected, the secondary replica attempts to reconnect to the primary replica.</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.connected_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=0 and last(/MSSQL by TAAE agent 2/mssql.replica.role["{#GROUP_NAME}_{#REPLICA_NAME}"])=2`|Warning||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is {ITEM.VALUE}|<p>The operational state of the replica in a given availability group is "Pending" or "Offline".</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=0 or last(/MSSQL by TAAE agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=1 or last(/MSSQL by TAAE agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=3`|Warning||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is {ITEM.VALUE}|<p>The operational state of the replica in a given availability group is "Failed".</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=4`|Average||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is {ITEM.VALUE}|<p>The operational state of the replica in a given availability group is "Failed, no quorum".</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.operational_state["{#GROUP_NAME}_{#REPLICA_NAME}"])=5`|High||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} Recovery in progress|<p>At least one joined database has a database state other than "Online".</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.recovery_health["{#GROUP_NAME}_{#REPLICA_NAME}"])=0`|Info||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is Not healthy|<p>At least one joined database is in the "Not synchronizing" state.</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.synchronization_health["{#GROUP_NAME}_{#REPLICA_NAME}"])=0`|Average||
+|MSSQL: AG '{#GROUP_NAME}' Replica '{#REPLICA_NAME}': {#REPLICA_NAME} is Partially healthy|<p>Some replicas are not in the target synchronization state: synchronous-commit replicas should be synchronized, and asynchronous-commit replicas should be synchronizing.</p>|`last(/MSSQL by TAAE agent 2/mssql.replica.synchronization_health["{#GROUP_NAME}_{#REPLICA_NAME}"])=1`|Warning||
 
 ### LLD rule Mirroring discovery
 
@@ -420,10 +420,10 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The state of the mirror database and of the database mirroring session is "Suspended", "Disconnected from the other partner", or "Synchronizing".</p>|`last(/MSSQL by TAA agent 2/mssql.mirroring.state["{#DBNAME}"])>=0 and last(/MSSQL by TAA agent 2/mssql.mirroring.state["{#DBNAME}"])<=2`|Info||
-|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The state of the mirror database and of the database mirroring session is "Pending failover".</p>|`last(/MSSQL by TAA agent 2/mssql.mirroring.state["{#DBNAME}"])=3`|Warning||
-|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The state of the mirror database and of the database mirroring session is "Not synchronized". The partners are not synchronized. A failover is not possible now.</p>|`last(/MSSQL by TAA agent 2/mssql.mirroring.state["{#DBNAME}"])=5`|High||
-|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" Witness is disconnected|<p>The state of the witness in the database mirroring session of the database is "Disconnected".</p>|`last(/MSSQL by TAA agent 2/mssql.mirroring.witness_state["{#DBNAME}"])=2`|Warning||
+|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The state of the mirror database and of the database mirroring session is "Suspended", "Disconnected from the other partner", or "Synchronizing".</p>|`last(/MSSQL by TAAE agent 2/mssql.mirroring.state["{#DBNAME}"])>=0 and last(/MSSQL by TAAE agent 2/mssql.mirroring.state["{#DBNAME}"])<=2`|Info||
+|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The state of the mirror database and of the database mirroring session is "Pending failover".</p>|`last(/MSSQL by TAAE agent 2/mssql.mirroring.state["{#DBNAME}"])=3`|Warning||
+|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" is {ITEM.VALUE}|<p>The state of the mirror database and of the database mirroring session is "Not synchronized". The partners are not synchronized. A failover is not possible now.</p>|`last(/MSSQL by TAAE agent 2/mssql.mirroring.state["{#DBNAME}"])=5`|High||
+|MSSQL: Mirroring '{#DBNAME}': "{#DBNAME}" Witness is disconnected|<p>The state of the witness in the database mirroring session of the database is "Disconnected".</p>|`last(/MSSQL by TAAE agent 2/mssql.mirroring.witness_state["{#DBNAME}"])=2`|Warning||
 
 ### LLD rule Job discovery
 
@@ -447,12 +447,12 @@ Note: Since version 7.2.0, you can also connect to the MSSQL instance using its 
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MSSQL: Job '{#JOBNAME}': Failed to run|<p>The last run of the job has failed.</p>|`last(/MSSQL by TAA agent 2/mssql.job.runstatus["{#JOBNAME}"])=0`|Warning|**Manual close**: Yes|
-|MSSQL: Job '{#JOBNAME}': Job duration is high|<p>The job is taking too long.</p>|`last(/MSSQL by TAA agent 2/mssql.job.run_duration["{#JOBNAME}"])>{$MSSQL.BACKUP_DURATION.WARN:"{#JOBNAME}"}`|Warning|**Manual close**: Yes|
+|MSSQL: Job '{#JOBNAME}': Failed to run|<p>The last run of the job has failed.</p>|`last(/MSSQL by TAAE agent 2/mssql.job.runstatus["{#JOBNAME}"])=0`|Warning|**Manual close**: Yes|
+|MSSQL: Job '{#JOBNAME}': Job duration is high|<p>The job is taking too long.</p>|`last(/MSSQL by TAAE agent 2/mssql.job.run_duration["{#JOBNAME}"])>{$MSSQL.BACKUP_DURATION.WARN:"{#JOBNAME}"}`|Warning|**Manual close**: Yes|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

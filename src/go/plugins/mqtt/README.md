@@ -1,17 +1,17 @@
 # MQTT plugin
 This plugin provides a native solution for monitoring messages published by MQTT brokers. 
-The plugin can monitor several broker instances simultaneously via TAA agent 2. Proxy and websocket connections are 
+The plugin can monitor several broker instances simultaneously via TAAE agent 2. Proxy and websocket connections are 
 supported. The plugin keeps all subscriptions to a single broker in one connection to reduce network strain. The plugin 
 supports active checks only.
 
 This plugin works using "Eclipse Paho MQTT Go client library" (https://github.com/eclipse/paho.mqtt.golang)
 
 ## Installation
-The plugin is supplied as part of the TAA Agent 2 and does not require any special installation steps. Once 
-TAA Agent 2 is installed, the plugin is ready to work. Now you need to make sure that an MQTT broker is available.
+The plugin is supplied as part of the TAAE Agent 2 and does not require any special installation steps. Once 
+TAAE Agent 2 is installed, the plugin is ready to work. Now you need to make sure that an MQTT broker is available.
 
 ## Configuration
-Open the TAA Agent configuration file (zabbix_agent2.conf) and set the required parameters.
+Open the TAAE Agent configuration file (zabbix_agent2.conf) and set the required parameters.
 
 **Plugins.MQTT.Timeout** — connection timeout (how long to wait for a connection to respond before shutting it down).  
 *Default value:* equals the global 'Timeout' (configuration parameter set in zabbix_agent2.conf).  
@@ -45,11 +45,11 @@ The last two parameters username and password need to be provided only if requir
 
 Websocket connection is supported using "ws://" scheme.
 
-If the TAA agent 2 is running behind a http/https proxy then the following environment variables are used 
+If the TAAE agent 2 is running behind a http/https proxy then the following environment variables are used 
 'TP_PROXY', 'HTTPS_PROXY' and 'NO_PROXY', when this plugin establishes a connection.
 
 TLS encryption certificates can be used, by providing them either via session or default parameters
-in TAA agent 2 MQTT plugin configuration file.
+in TAAE agent 2 MQTT plugin configuration file.
 For TLS use "tls://" scheme
 
 If broker URI is left empty the default value of "localhost" is used.
@@ -80,5 +80,5 @@ and waits for publications.
 - error message (if there was an error connecting to the broker or topic)
 
 ## Troubleshooting
-The plugin uses TAA agent 2 logs. To receive more detailed information about logged events, consider increasing a debug level 
-of TAA agent 2.
+The plugin uses TAAE agent 2 logs. To receive more detailed information about logged events, consider increasing a debug level 
+of TAAE agent 2.

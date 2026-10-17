@@ -1106,7 +1106,7 @@ static void	am_queue_watchdog_alerts(zbx_am_t *manager, const zbx_db_config_t *d
 		zbx_am_mediatype_t	*mediatype;
 		zbx_am_alertpool_t	*alertpool;
 		zbx_am_alert_t		*alert;
-		const char		*alert_subject = "TAA database is not available.";
+		const char		*alert_subject = "TAAE database is not available.";
 		char			*alert_message;
 
 		if (NULL == (mediatype = am_get_mediatype(manager, media->mediatypeid)))

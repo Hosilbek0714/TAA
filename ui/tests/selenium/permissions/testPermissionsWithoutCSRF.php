@@ -27,7 +27,7 @@ require_once __DIR__.'/../behaviors/CMessageBehavior.php';
 class testPermissionsWithoutCSRF extends CWebTest {
 
 	const INCORRECT_REQUEST = [
-		'message' => 'TAA has received an incorrect request.',
+		'message' => 'TAAE has received an incorrect request.',
 		'details' => 'Operation cannot be performed due to unauthorized request.'
 	];
 
@@ -158,7 +158,7 @@ class testPermissionsWithoutCSRF extends CWebTest {
 					'overlay' => 'create_host',
 					'fields' => [
 						'id:host' => 'CSRF validation host create',
-						'xpath://div[@id="groups_"]/..' => 'TAA servers'
+						'xpath://div[@id="groups_"]/..' => 'TAAE servers'
 					]
 				]
 			],
@@ -169,7 +169,7 @@ class testPermissionsWithoutCSRF extends CWebTest {
 					'link' => 'zabbix.php?action=popup&popup=host.edit&hostid=99062',
 					'fields' => [
 						'id:host' => 'CSRF validation host update',
-						'xpath://div[@id="groups_"]/..' => 'TAA servers'
+						'xpath://div[@id="groups_"]/..' => 'TAAE servers'
 					]
 				]
 			],
@@ -778,7 +778,7 @@ class testPermissionsWithoutCSRF extends CWebTest {
 							'&subscriptions%5B0%5D%5Bcreator_type%5D=0&subscriptions%5B0%5D%5Bcreator_name%5D=user-recipient+of+the+report'.
 							'&subscriptions%5B0%5D%5Bcreator_inaccessible%5D=0&subscriptions%5B0%5D%5Bexclude%5D=0'.
 							'&subscriptions%5B1%5D%5Brecipientid%5D=7&subscriptions%5B1%5D%5Brecipient_type%5D=1'.
-							'&subscriptions%5B1%5D%5Brecipient_name%5D=TAA+administrators&subscriptions%5B1%5D%5Brecipient_inaccessible%5D=0'.
+							'&subscriptions%5B1%5D%5Brecipient_name%5D=TAAE+administrators&subscriptions%5B1%5D%5Brecipient_inaccessible%5D=0'.
 							'&subscriptions%5B1%5D%5Bcreatorid%5D=0&subscriptions%5B1%5D%5Bcreator_type%5D=1'.
 							'&subscriptions%5B1%5D%5Bcreator_name%5D=Recipient&subscriptions%5B1%5D%5Bcreator_inaccessible%5D=0'.
 							'&description=&status=0&action=scheduledreport.update',

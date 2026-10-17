@@ -933,7 +933,7 @@ int	item_preproc_get_error_from_xml(const zbx_variant_t *value, const char *para
 	ZBX_UNUSED(params);
 	ZBX_UNUSED(error);
 
-	*error = zbx_dsprintf(*error, "TAA was compiled without libxml2 support");
+	*error = zbx_dsprintf(*error, "TAAE was compiled without libxml2 support");
 
 	return FAIL;
 #else

@@ -40,7 +40,7 @@ func getConf(confFilePath string) string {
 
 	var sb strings.Builder
 
-	sb.WriteString(fmt.Sprintf("TAA Agent 2 [%s]. (%s)\n", agent.Options.Hostname, version.Long()))
+	sb.WriteString(fmt.Sprintf("TAAE Agent 2 [%s]. (%s)\n", agent.Options.Hostname, version.Long()))
 	sb.WriteString(fmt.Sprintf("using configuration file: %s\n", confFilePath))
 	sb.WriteString(fmt.Sprintf("ServerActive: %s\n", agent.Options.ServerActive))
 	sb.WriteString(fmt.Sprintf("ListenPort: %s\n", listenPort))

@@ -221,7 +221,7 @@ class testPageTemplateGroups extends testPageGroups {
 			[
 				[
 					'expected' => TEST_BAD,
-					'error' => 'Template "Linux by TAA agent" cannot be without template group.'
+					'error' => 'Template "Linux by TAAE agent" cannot be without template group.'
 				]
 			],
 			// One of the groups can't be deleted.

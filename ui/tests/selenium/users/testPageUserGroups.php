@@ -88,7 +88,7 @@ class testPageUserGroups extends CLegacyWebTest {
 		$usrgrpid = $group['usrgrpid'];
 		$name = $group['name'];
 
-		$cannotDisable = ('TAA administrators' == $name);
+		$cannotDisable = ('TAAE administrators' == $name);
 
 		$sqlHashGroups = "select * from usrgrp where usrgrpid<>$usrgrpid order by usrgrpid";
 		$oldHashGroups = CDBHelper::getHash($sqlHashGroups);
@@ -199,9 +199,9 @@ class testPageUserGroups extends CLegacyWebTest {
 
 	public function testPageUserGroups_FilterByName() {
 		$this->zbxTestLogin('zabbix.php?action=usergroup.list');
-		$this->zbxTestInputTypeOverwrite('filter_name', 'TAA administrators');
+		$this->zbxTestInputTypeOverwrite('filter_name', 'TAAE administrators');
 		$this->zbxTestClickButtonText('Apply');
-		$this->zbxTestAssertElementText("//tbody/tr[1]/td[2]/a", 'TAA administrators');
+		$this->zbxTestAssertElementText("//tbody/tr[1]/td[2]/a", 'TAAE administrators');
 		$this->page->waitUntilReady();
 		$this->zbxTestTextNotPresent('Displaying 0 of 0 found');
 	}
@@ -220,7 +220,7 @@ class testPageUserGroups extends CLegacyWebTest {
 
 	public function testPageUserGroups_FilterByStatus() {
 		$this->zbxTestLogin('zabbix.php?action=usergroup.list');
-		$this->zbxTestInputTypeOverwrite('filter_name', 'TAA administrators');
+		$this->zbxTestInputTypeOverwrite('filter_name', 'TAAE administrators');
 		$this->zbxTestClickXpathWait("//label[@for='filter_user_status_1']");
 		$this->zbxTestClickButtonText('Apply');
 		$this->page->waitUntilReady();

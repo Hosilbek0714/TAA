@@ -37,12 +37,12 @@ zbx_startup_type_t;
 /******************************************************************************
  *                                                                            *
  * Purpose: converts service state code from value used in Microsoft Windows  *
- *          to value used in TAA                                           *
+ *          to value used in TAAE                                           *
  *                                                                            *
  * Parameters: state - [IN] service state code (e.g. obtained via             *
  *                          QueryServiceStatus() function)                    *
  *                                                                            *
- * Return value: service state code used in TAA or 7 if service state code *
+ * Return value: service state code used in TAAE or 7 if service state code *
  *               is not recognized by this function                           *
  *                                                                            *
  ******************************************************************************/
@@ -107,7 +107,7 @@ static void	log_if_buffer_too_small(const char *function_name, DWORD sz)
 
 	if (ERROR_INSUFFICIENT_BUFFER == GetLastError())
 	{
-		zabbix_log(LOG_LEVEL_WARNING, "%s() required buffer size %u. Please report this to TAA developers",
+		zabbix_log(LOG_LEVEL_WARNING, "%s() required buffer size %u. Please report this to TAAE developers",
 				function_name, (unsigned int)sz);
 	}
 }

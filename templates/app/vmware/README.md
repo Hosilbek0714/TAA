@@ -8,11 +8,11 @@ This template set is designed for the effortless deployment of VMware vCenter an
 - The template "VMware Guest" is used in discovery and normally should not be manually linked to a host.
 - The template "VMware Hypervisor" can be used in discovery as well as manually linked to a host.
 
-For additional information, please see [TAA documentation on VM monitoring](https://www.zabbix.com/documentation/7.4/manual/vm_monitoring).
+For additional information, please see [TAAE documentation on VM monitoring](https://www.zabbix.com/documentation/7.4/manual/vm_monitoring).
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -21,12 +21,12 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-1. Compile TAA server with the required options (`--with-libxml2` and `--with-libcurl`)
-2. Set the `StartVMwareCollectors` option in the TAA server configuration file to "1" or more
+1. Compile TAAE server with the required options (`--with-libxml2` and `--with-libcurl`)
+2. Set the `StartVMwareCollectors` option in the TAAE server configuration file to "1" or more
 3. Create a new host
 4. If you want to use a separate user for monitoring, make sure that the user is a member of the `SystemConfiguration.ReadOnly` and `vStatsGroup` groups
 Set the host macros (on the host or template level) required for VMware authentication:
@@ -279,13 +279,13 @@ This template is designed for the effortless deployment of VMware ESX hypervisor
 
 This template can be used in discovery as well as manually linked to a host.
 
-For additional information, please see [TAA documentation on VM monitoring](https://www.zabbix.com/documentation/7.4/manual/vm_monitoring).
+For additional information, please see [TAAE documentation on VM monitoring](https://www.zabbix.com/documentation/7.4/manual/vm_monitoring).
 
 To use this template as manually linked to a host, attach it to the host and manually set the value of the `{$VMWARE.HV.UUID}` macro.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -294,13 +294,13 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 To use this template as manually linked to a host:
-  1. Compile TAA server with the required options (`--with-libxml2` and `--with-libcurl`)
-  2. Set the `StartVMwareCollectors` option in the TAA server configuration file to "1" or more
+  1. Compile TAAE server with the required options (`--with-libxml2` and `--with-libcurl`)
+  2. Set the `StartVMwareCollectors` option in the TAAE server configuration file to "1" or more
   3. Create a new host
   4. Set the host macros (on the host or template level) required for VMware authentication:
   ```text
@@ -469,5 +469,5 @@ To use this template as manually linked to a host:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

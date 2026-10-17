@@ -3599,7 +3599,7 @@ class testCalculatedFormula extends CWebTest {
 			],
 			[
 				[
-					'formula' => 'insert(last(//trap_text),2,1,"ab")="TAA"'
+					'formula' => 'insert(last(//trap_text),2,1,"ab")="TAAE"'
 				]
 			],
 			[
@@ -3609,12 +3609,12 @@ class testCalculatedFormula extends CWebTest {
 			],
 			[
 				[
-					'formula' => 'ltrim(last(//trap_text),"T")="TAA"'
+					'formula' => 'ltrim(last(//trap_text),"T")="TAAE"'
 				]
 			],
 			[
 				[
-					'formula' => 'ltrim(last(//trap_text))="TAA"'
+					'formula' => 'ltrim(last(//trap_text))="TAAE"'
 				]
 			],
 			[
@@ -3659,12 +3659,12 @@ class testCalculatedFormula extends CWebTest {
 			],
 			[
 				[
-					'formula' => 'trim(last(//trap_text))="TAA"'
+					'formula' => 'trim(last(//trap_text))="TAAE"'
 				]
 			],
 			[
 				[
-					'formula' => 'trim(last(//trap_text),"t")="TAA"'
+					'formula' => 'trim(last(//trap_text),"t")="TAAE"'
 				]
 			],
 			// String functions validation.
@@ -3725,7 +3725,7 @@ class testCalculatedFormula extends CWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'formula' => 'insert(last(//trap_text),2)="TAA"',
+					'formula' => 'insert(last(//trap_text),2)="TAAE"',
 					'inline_error' => [
 						'Formula' => 'Invalid number of parameters in function "insert".'
 					]
@@ -3734,7 +3734,7 @@ class testCalculatedFormula extends CWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'formula' => 'insert(last(//trap_text),2,1)="TAA"',
+					'formula' => 'insert(last(//trap_text),2,1)="TAAE"',
 					'inline_error' => [
 						'Formula' => 'Invalid number of parameters in function "insert".'
 					]
@@ -3743,27 +3743,27 @@ class testCalculatedFormula extends CWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'formula' => 'insert(last(//trap_text),2,1,test)="TAA"',
+					'formula' => 'insert(last(//trap_text),2,1,test)="TAAE"',
 					'inline_error' => [
-						'Formula' => 'Incorrect expression starting from "insert(last(//trap_text),2,1,test)="TAA"".'
+						'Formula' => 'Incorrect expression starting from "insert(last(//trap_text),2,1,test)="TAAE"".'
 					]
 				]
 			],
 			[
 				[
 					'expected' => TEST_BAD,
-					'formula' => 'insert(last(//trap_text),,,"test")="TAA"',
+					'formula' => 'insert(last(//trap_text),,,"test")="TAAE"',
 					'inline_error' => [
-						'Formula' => 'Incorrect expression starting from "insert(last(//trap_text),,,"test")="TAA"".'
+						'Formula' => 'Incorrect expression starting from "insert(last(//trap_text),,,"test")="TAAE"".'
 					]
 				]
 			],
 			[
 				[
 					'expected' => TEST_BAD,
-					'formula' => 'Insert(last(//trap_text),2,1,"ab")="TAA"',
+					'formula' => 'Insert(last(//trap_text),2,1,"ab")="TAAE"',
 					'inline_error' => [
-						'Formula' => 'Incorrect expression starting from "Insert(last(//trap_text),2,1,"ab")="TAA"".'
+						'Formula' => 'Incorrect expression starting from "Insert(last(//trap_text),2,1,"ab")="TAAE"".'
 					]
 				]
 			],
@@ -3797,9 +3797,9 @@ class testCalculatedFormula extends CWebTest {
 			[
 				[
 					'expected' => TEST_BAD,
-					'formula' => 'ltrim(last(//trap_text),test)="TAA"',
+					'formula' => 'ltrim(last(//trap_text),test)="TAAE"',
 					'inline_error' => [
-						'Formula' => 'Incorrect expression starting from "ltrim(last(//trap_text),test)="TAA"".'
+						'Formula' => 'Incorrect expression starting from "ltrim(last(//trap_text),test)="TAAE"".'
 					]
 				]
 			],

@@ -1,7 +1,7 @@
 -- Test data for API tests
 
--- Activate "TAA Server" host
-UPDATE hosts SET status=0 WHERE host='TAA server';
+-- Activate "TAAE Server" host
+UPDATE hosts SET status=0 WHERE host='TAAE server';
 
 -- host groups
 INSERT INTO hosts (hostid, host, name, status, description, readme) VALUES (50009, 'API Host', 'API Host', 0, '', '');
@@ -209,38 +209,38 @@ INSERT INTO icon_mapping (iconmappingid, iconmapid, iconid, inventory_link, expr
 INSERT INTO sysmaps (sysmapid, name, width, height, backgroundid, label_type, label_location, highlight, expandproblem, markelements, show_unack, iconmapid, userid, private) VALUES (7, 'Map with iconmap', 800, 600, NULL, 0, 0, 1, 1, 1, 2, 7, 1, 0);
 
 -- web scenarios
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15000, 'Api web scenario', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15000, 'Api web scenario', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15000, 15000, 'Api step', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15001, 'Api web scenario for update one', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15001, 'Api web scenario for update one', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15001, 15001, 'Api step for update one', 1, 'http://api1.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15002, 'Api web scenario for update two', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15002, 'Api web scenario for update two', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15002, 15002, 'Api step for update two', 1, 'http://api2.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15003, 'Api web scenario for delete0', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15003, 'Api web scenario for delete0', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15003, 15003, 'Api step for delete0', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15004, 'Api web scenario for delete1', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15004, 'Api web scenario for delete1', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15004, 15004, 'Api step for delete1', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15005, 'Api web scenario for delete2', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15005, 'Api web scenario for delete2', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15005, 15005, 'Api step for delete2', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15006, 'Api templated web scenario', 60, 'TAA', 50010);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15006, 'Api templated web scenario', 60, 'TAAE', 50010);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15006, 15006, 'Api templated step', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid, templateid) VALUES (15007, 'Api templated web scenario', 60, 'TAA', 50009, 15006);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid, templateid) VALUES (15007, 'Api templated web scenario', 60, 'TAAE', 50009, 15006);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15007, 15007, 'Api templated step', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15008, 'Api web scenario with read permissions', 60, 'TAA', 50012);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15008, 'Api web scenario with read permissions', 60, 'TAAE', 50012);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15008, 15008, 'Api step with read permissions', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15009, 'Api web with deny permissions', 60, 'TAA', 50014);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15009, 'Api web with deny permissions', 60, 'TAAE', 50014);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15009, 15009, 'Api step with deny permissions', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15010, 'Api web scenario for delete as zabbix-admin', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15010, 'Api web scenario for delete as zabbix-admin', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15010, 15010, 'Api step for delete as zabbix-admin', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15011, 'Api web scenario for delete as zabbix-user', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15011, 'Api web scenario for delete as zabbix-user', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15011, 15011, 'Api step for delete as zabbix-user', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15012, 'Api web scenario for update having 1 step', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15012, 'Api web scenario for update having 1 step', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15012, 15012, 'Api step for update having 1 step', 1, 'http://api.com', '');
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15013, 'Api web scenario for update having 2 steps', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15013, 'Api web scenario for update having 2 steps', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15013, 15013, 'Api step 1', 1, 'http://api.com', '');
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15014, 15013, 'Api step 2', 2, 'http://api.com', '');
 
 -- web scenario for webitem update testing
-INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15015, 'Webtest key_name', 60, 'TAA', 50009);
+INSERT INTO httptest (httptestid, name, delay, agent, hostid) VALUES (15015, 'Webtest key_name', 60, 'TAAE', 50009);
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15015, 15015, 'Webstep name 1', 1, 'http://api.com', '');
 INSERT INTO httpstep (httpstepid, httptestid, name, no, url, posts) VALUES (15016, 15015, 'Webstep name 2', 2, 'http://api.com', '');
 INSERT INTO items (itemid,hostid,interfaceid,type,value_type,name,key_,delay,history,status,params,description,query_fields,flags,posts,headers) VALUES (150143, 50009, 1, 9, 0,'Download speed for scenario "Api templated step".','web.test.in[Webtest key_name,,bps]','2m','30d',0,'','','',0,'','');

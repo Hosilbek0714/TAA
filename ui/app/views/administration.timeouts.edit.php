@@ -36,7 +36,7 @@ $form_grid = (new CFormGrid())
 	->addItem(
 		(new CFormFieldset(_('Timeouts for item types')))
 			->addItem([
-				(new CLabel(_('TAA agent'), 'timeout_zabbix_agent'))->setAsteriskMark(),
+				(new CLabel(_('TAAE agent'), 'timeout_zabbix_agent'))->setAsteriskMark(),
 				new CFormField(
 					(new CTextBox('timeout_zabbix_agent', $data['timeout_zabbix_agent'], false,
 						CSettingsSchema::getFieldLength('timeout_zabbix_agent')

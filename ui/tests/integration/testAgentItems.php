@@ -812,7 +812,7 @@ class testAgentItems extends CIntegrationTest {
 	public function testAgentItems_checkDataCollection() {
 		foreach ([self::COMPONENT_AGENT, self::COMPONENT_AGENT2] as $component) {
 			$this->waitForLogLineToBePresent(self::COMPONENT_SERVER,
-				'enabling TAA agent checks on host "'.$component.'": interface became available', false
+				'enabling TAAE agent checks on host "'.$component.'": interface became available', false
 			);
 		}
 

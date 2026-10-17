@@ -768,7 +768,7 @@ var hintBox = {
 };
 
 /**
- * Perform JSON-RPC TAA API call.
+ * Perform JSON-RPC TAAE API call.
  *
  * @param {string} method
  * @param {object} params

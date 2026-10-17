@@ -1,12 +1,12 @@
 #!/usr/bin/env bash
 # =============================================================================
-# TAA Media type: "Email-custom"
+# TAAE Media type: "Email-custom"
 # -----------------------------------------------------------------------------
-# Vazifa: TAA tomonidan kelgan alertlarni msmtp orqali SMTP serverga yuborish.
+# Vazifa: TAAE tomonidan kelgan alertlarni msmtp orqali SMTP serverga yuborish.
 # UTF-8 sarlavha RFC 2047 (base64) ko'rinishida kodlanadi — kirillcha va
 # o'zbekcha matnlar to'g'ri ko'rinadi.
 #
-# Foydalanish (TAA Media type "Script parameters"):
+# Foydalanish (TAAE Media type "Script parameters"):
 #   $1 = to        (qabul qiluvchi email, {ALERT.SENDTO})
 #   $2 = subject   ({ALERT.SUBJECT})
 #   $3 = body      ({ALERT.MESSAGE})
@@ -19,7 +19,7 @@
 #   FROM_ADDR   — "From:" maydoni uchun manzil
 #
 # Bog'liqlik: msmtp (apt install msmtp ca-certificates)
-# Joylashuv: /usr/lib/zabbix/alertscripts/taa_email.sh
+# Joylashuv: /usr/lib/zabbix/alertscripts/taae_email.sh
 # Egasi: zabbix:zabbix    Huquqlar: 0750
 # =============================================================================
 
@@ -44,7 +44,7 @@ BODY="$3"
 
 # --- msmtp mavjudligini tekshirish -------------------------------------------
 if ! command -v msmtp >/dev/null 2>&1; then
-    echo "[taa_email] msmtp o'rnatilmagan. apt install msmtp ca-certificates" >&2
+    echo "[taae_email] msmtp o'rnatilmagan. apt install msmtp ca-certificates" >&2
     exit 3
 fi
 
@@ -93,22 +93,22 @@ auth           on
 tls            on
 tls_starttls   ${TLS_STARTTLS}
 tls_trust_file /etc/ssl/certs/ca-certificates.crt
-logfile        /var/log/taa/msmtp.log
+logfile        /var/log/taae/msmtp.log
 
-account taa
+account taae
 host     ${SMTP_HOST}
 port     ${SMTP_PORT}
 from     ${ENVELOPE_FROM}
 user     ${SMTP_USER}
 password ${SMTP_PASS}
 
-account default : taa
+account default : taae
 EOF
 
 # --- Email matnini yig'ish (header + body) -----------------------------------
 # Content-Type: UTF-8 charset, Date — RFC 5322 formatda.
 DATE_HDR="$(date -R)"
-MSG_ID="$(printf '<%s.%s@taa>' "$(date +%s)" "$$")"
+MSG_ID="$(printf '<%s.%s@taae>' "$(date +%s)" "$$")"
 
 {
     printf 'From: %s\r\n'                        "${FROM_ADDR}"
@@ -119,12 +119,12 @@ MSG_ID="$(printf '<%s.%s@taa>' "$(date +%s)" "$$")"
     printf 'MIME-Version: 1.0\r\n'
     printf 'Content-Type: text/plain; charset=UTF-8\r\n'
     printf 'Content-Transfer-Encoding: 8bit\r\n'
-    printf 'X-Mailer: TAA (taa_email.sh)\r\n'
+    printf 'X-Mailer: TAAE (taae_email.sh)\r\n'
     printf '\r\n'
     printf '%s\r\n'                              "${BODY}"
 } | msmtp --file="${MSMTP_CONF}" -t -- "${TO_ADDR}" || {
-    echo "[taa_email] msmtp yuborish xatoligi (to=${TO_ADDR})" >&2
+    echo "[taae_email] msmtp yuborish xatoligi (to=${TO_ADDR})" >&2
     exit 1
 }
 
-echo "[taa_email] OK: to=${TO_ADDR} subject=\"${SUBJECT}\""
+echo "[taae_email] OK: to=${TO_ADDR} subject=\"${SUBJECT}\""

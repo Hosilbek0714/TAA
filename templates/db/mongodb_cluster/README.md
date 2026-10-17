@@ -1,16 +1,16 @@
 
-# MongoDB cluster by TAA agent 2
+# MongoDB cluster by TAAE agent 2
 
 ## Overview
 
-The template to monitor MongoDB sharded cluster by TAA that work without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor MongoDB sharded cluster by TAAE that work without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
-`MongoDB cluster by TAA agent 2` — collects metrics from mongos proxy(router) by polling zabbix-agent2.
+`MongoDB cluster by TAAE agent 2` — collects metrics from mongos proxy(router) by polling zabbix-agent2.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,17 +19,17 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 1. Setup and configure zabbix-agent2 compiled with the MongoDB monitoring plugin.
 2. Set the {$MONGODB.CONNSTRING} such as <protocol(host:port)> or named session of mongos proxy(router).
-3. Set the user name and password in host macros ({$MONGODB.USER}, {$MONGODB.PASSWORD}) if you want to override parameters from the TAA agent configuration file.
+3. Set the user name and password in host macros ({$MONGODB.USER}, {$MONGODB.PASSWORD}) if you want to override parameters from the TAAE agent configuration file.
 
 **Note**, depending on the number of DBs and collections discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.NOT_MATCHES}.
 
-All sharded Mongodb nodes (mongod) will be discovered with attached template "MongoDB node by TAA agent 2".
+All sharded Mongodb nodes (mongod) will be discovered with attached template "MongoDB node by TAAE agent 2".
 
 
 Test availability: `zabbix_get -s mongos.node -k 'mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]"`
@@ -53,10 +53,10 @@ Test availability: `zabbix_get -s mongos.node -k 'mongodb.ping["{$MONGODB.CONNST
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get server status|<p>The mongos statistic</p>|TAA agent|mongodb.server.status["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
-|Get mongodb.connpool.stats|<p>Returns current info about connpool.stats.</p>|TAA agent|mongodb.connpool.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
-|Ping|<p>Test if a connection is alive or not.</p>|TAA agent|mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
-|Jumbo chunks|<p>Total number of 'jumbo' chunks in the mongo cluster.</p>|TAA agent|mongodb.jumbo_chunks.count["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Get server status|<p>The mongos statistic</p>|TAAE agent|mongodb.server.status["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Get mongodb.connpool.stats|<p>Returns current info about connpool.stats.</p>|TAAE agent|mongodb.connpool.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Ping|<p>Test if a connection is alive or not.</p>|TAAE agent|mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `30m`</p></li></ul>|
+|Jumbo chunks|<p>Total number of 'jumbo' chunks in the mongo cluster.</p>|TAAE agent|mongodb.jumbo_chunks.count["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 |Mongos version|<p>Version of the Mongos server</p>|Dependent item|mongodb.version<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.version`</p></li><li><p>Discard unchanged with heartbeat: `3h`</p></li></ul>|
 |Uptime|<p>Number of seconds since the Mongos server start.</p>|Dependent item|mongodb.uptime<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.uptime`</p></li></ul>|
 |Operations: command|<p>The number of commands issued to the database per second.</p><p>Counts all commands except the write commands: insert, update, and delete.</p>|Dependent item|mongodb.opcounters.command.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.opcounters.command`</p></li><li>Change per second</li></ul>|
@@ -92,25 +92,25 @@ Test availability: `zabbix_get -s mongos.node -k 'mongodb.ping["{$MONGODB.CONNST
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MongoDB cluster: Connection to mongos proxy is unavailable|<p>Connection to mongos proxy instance is currently unavailable.</p>|`last(/MongoDB cluster by TAA agent 2/mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"])=0`|High||
-|MongoDB cluster: Version has changed|<p>MongoDB cluster version has changed. Acknowledge to close the problem manually.</p>|`last(/MongoDB cluster by TAA agent 2/mongodb.version,#1)<>last(/MongoDB cluster by TAA agent 2/mongodb.version,#2) and length(last(/MongoDB cluster by TAA agent 2/mongodb.version))>0`|Info|**Manual close**: Yes|
-|MongoDB cluster: Mongos server has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MongoDB cluster by TAA agent 2/mongodb.uptime)<10m`|Info|**Manual close**: Yes|
-|MongoDB cluster: Failed to fetch info data|<p>TAA has not received data for items for the last 10 minutes</p>|`nodata(/MongoDB cluster by TAA agent 2/mongodb.uptime,10m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MongoDB cluster: Connection to mongos proxy is unavailable</li></ul>|
-|MongoDB cluster: Available connections is low|<p>Too few available connections.<br>Consider this value in combination with the value of connections current to understand the connection load on the database.</p>|`max(/MongoDB cluster by TAA agent 2/mongodb.connections.available,5m)<{$MONGODB.CONNS.AVAILABLE.MIN.WARN}`|Warning||
-|MongoDB cluster: Too many cursors opened by MongoDB for clients||`min(/MongoDB cluster by TAA agent 2/mongodb.cursor.open.total,5m)>{$MONGODB.CURSOR.OPEN.MAX.WARN}`|Warning||
-|MongoDB cluster: Too many cursors are timing out||`min(/MongoDB cluster by TAA agent 2/mongodb.cursor.timed_out.rate,5m)>{$MONGODB.CURSOR.TIMEOUT.MAX.WARN}`|Warning||
+|MongoDB cluster: Connection to mongos proxy is unavailable|<p>Connection to mongos proxy instance is currently unavailable.</p>|`last(/MongoDB cluster by TAAE agent 2/mongodb.ping["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"])=0`|High||
+|MongoDB cluster: Version has changed|<p>MongoDB cluster version has changed. Acknowledge to close the problem manually.</p>|`last(/MongoDB cluster by TAAE agent 2/mongodb.version,#1)<>last(/MongoDB cluster by TAAE agent 2/mongodb.version,#2) and length(last(/MongoDB cluster by TAAE agent 2/mongodb.version))>0`|Info|**Manual close**: Yes|
+|MongoDB cluster: Mongos server has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/MongoDB cluster by TAAE agent 2/mongodb.uptime)<10m`|Info|**Manual close**: Yes|
+|MongoDB cluster: Failed to fetch info data|<p>TAAE has not received data for items for the last 10 minutes</p>|`nodata(/MongoDB cluster by TAAE agent 2/mongodb.uptime,10m)=1`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>MongoDB cluster: Connection to mongos proxy is unavailable</li></ul>|
+|MongoDB cluster: Available connections is low|<p>Too few available connections.<br>Consider this value in combination with the value of connections current to understand the connection load on the database.</p>|`max(/MongoDB cluster by TAAE agent 2/mongodb.connections.available,5m)<{$MONGODB.CONNS.AVAILABLE.MIN.WARN}`|Warning||
+|MongoDB cluster: Too many cursors opened by MongoDB for clients||`min(/MongoDB cluster by TAAE agent 2/mongodb.cursor.open.total,5m)>{$MONGODB.CURSOR.OPEN.MAX.WARN}`|Warning||
+|MongoDB cluster: Too many cursors are timing out||`min(/MongoDB cluster by TAAE agent 2/mongodb.cursor.timed_out.rate,5m)>{$MONGODB.CURSOR.TIMEOUT.MAX.WARN}`|Warning||
 
 ### LLD rule Database discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Database discovery|<p>Collect database metrics.</p><p>Note, depending on the number of DBs this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}.</p>|TAA agent|mongodb.db.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Database discovery|<p>Collect database metrics.</p><p>Note, depending on the number of DBs this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}.</p>|TAAE agent|mongodb.db.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 
 ### Item prototypes for Database discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|MongoDB {#DBNAME}: Get db stats {#DBNAME}|<p>Returns statistics reflecting the database system's state.</p>|TAA agent|mongodb.db.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}"]|
+|MongoDB {#DBNAME}: Get db stats {#DBNAME}|<p>Returns statistics reflecting the database system's state.</p>|TAAE agent|mongodb.db.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}"]|
 |MongoDB {#DBNAME}: Objects, avg size|<p>The average size of each document in bytes.</p>|Dependent item|mongodb.db.size["{#DBNAME}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.avgObjSize`</p></li></ul>|
 |MongoDB {#DBNAME}: Size, data|<p>Total size of the data held in this database including the padding factor.</p>|Dependent item|mongodb.db.data_size["{#DBNAME}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.dataSize`</p></li></ul>|
 |MongoDB {#DBNAME}: Size, file|<p>Total size of the data held in this database including the padding factor (only available with the mmapv1 storage engine).</p>|Dependent item|mongodb.db.file_size["{#DBNAME}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.fileSize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
@@ -123,13 +123,13 @@ Test availability: `zabbix_get -s mongos.node -k 'mongodb.ping["{$MONGODB.CONNST
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Collection discovery|<p>Collect collections metrics.</p><p>Note, depending on the number of DBs and collections this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.NOT_MATCHES}.</p>|TAA agent|mongodb.collections.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Collection discovery|<p>Collect collections metrics.</p><p>Note, depending on the number of DBs and collections this discovery operation may be expensive. Use filters with macros {$MONGODB.LLD.FILTER.DB.MATCHES}, {$MONGODB.LLD.FILTER.DB.NOT_MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.MATCHES}, {$MONGODB.LLD.FILTER.COLLECTION.NOT_MATCHES}.</p>|TAAE agent|mongodb.collections.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 
 ### Item prototypes for Collection discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|MongoDB {#DBNAME}.{#COLLECTION}: Get collection stats {#DBNAME}.{#COLLECTION}|<p>Returns a variety of storage statistics for a given collection.</p>|TAA agent|mongodb.collection.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}","{#COLLECTION}"]|
+|MongoDB {#DBNAME}.{#COLLECTION}: Get collection stats {#DBNAME}.{#COLLECTION}|<p>Returns a variety of storage statistics for a given collection.</p>|TAAE agent|mongodb.collection.stats["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}","{#DBNAME}","{#COLLECTION}"]|
 |MongoDB {#DBNAME}.{#COLLECTION}: Size|<p>The total size in bytes of the data in the collection plus the size of every indexes on the mongodb.collection.</p>|Dependent item|mongodb.collection.size["{#DBNAME}","{#COLLECTION}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.size`</p></li></ul>|
 |MongoDB {#DBNAME}.{#COLLECTION}: Objects, avg size|<p>The size of the average object in the collection in bytes.</p>|Dependent item|mongodb.collection.avg_obj_size["{#DBNAME}","{#COLLECTION}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.avgObjSize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |MongoDB {#DBNAME}.{#COLLECTION}: Objects, count|<p>Total number of objects in the collection.</p>|Dependent item|mongodb.collection.count["{#DBNAME}","{#COLLECTION}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.count`</p></li></ul>|
@@ -143,17 +143,17 @@ Test availability: `zabbix_get -s mongos.node -k 'mongodb.ping["{$MONGODB.CONNST
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Shards discovery|<p>Discovery shared cluster hosts.</p>|TAA agent|mongodb.sh.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Shards discovery|<p>Discovery shared cluster hosts.</p>|TAAE agent|mongodb.sh.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 
 ### LLD rule Config servers discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Config servers discovery|<p>Discovery shared cluster config servers.</p>|TAA agent|mongodb.cfg.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
+|Config servers discovery|<p>Discovery shared cluster config servers.</p>|TAAE agent|mongodb.cfg.discovery["{$MONGODB.CONNSTRING}","{$MONGODB.USER}","{$MONGODB.PASSWORD}"]|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

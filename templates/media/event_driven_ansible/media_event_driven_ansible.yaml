@@ -40,7 +40,7 @@ zabbix_export:
           value: '{HOST.PORT}'
         - name: HTTPProxy
         - name: monitoring_source
-          value: 'TAA sever'
+          value: 'TAAE sever'
         - name: operation_data
           value: '{EVENT.OPDATA}'
         - name: send_to

@@ -235,11 +235,11 @@ out:
 
 /**********************************************************************************
  *                                                                                *
- * Purpose: retrieves data from TAA server (internally supported items)        *
+ * Purpose: retrieves data from TAAE server (internally supported items)        *
  *                                                                                *
  * Parameters: item                      - [IN] item we are interested in         *
  *             result                    - [OUT] value of requested item          *
- *             config_comms              - [IN] TAA server/proxy configuration *
+ *             config_comms              - [IN] TAAE server/proxy configuration *
  *                                              for communication                 *
  *             config_startup_time       - [IN] program startup time              *
  *             config_java_gateway       - [IN]                                   *

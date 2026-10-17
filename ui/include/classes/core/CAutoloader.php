@@ -15,7 +15,7 @@
 
 
 /**
- * The TAA autoloader class.
+ * The TAAE autoloader class.
  */
 class CAutoloader {
 

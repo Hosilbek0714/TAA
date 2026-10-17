@@ -793,7 +793,7 @@ class CMacrosResolver extends CMacrosResolverGeneral {
 	/**
 	 * Resolve {HOST.HOST<1-9} and empty placeholders in the expression macros.
 	 *   For example:
-	 *     {?last(/ /key)} => {?last(/TAA server/key)}
+	 *     {?last(/ /key)} => {?last(/TAAE server/key)}
 	 *     {?last(/MySQL server/key)} => {?last(/MySQL server/key)}
 	 *     {?last(/{HOST.HOST}/key)} => {?last(/host/key)}
 	 *
@@ -1847,12 +1847,12 @@ class CMacrosResolver extends CMacrosResolverGeneral {
 	 *     [
 	 *         10084 => [
 	 *             57 => [
-	 *                 'confirmation' => 'Are you sure you want to edit TAA server now?',
+	 *                 'confirmation' => 'Are you sure you want to edit TAAE server now?',
 	 *                 'url' => 'http://zabbix/ui/zabbix.php?action=host.edit&hostid=10084'
 	 *             ],
 	 *             61 => [
-	 *                 'confirmation' => 'Hello, TAA Administrator! Execute script?',
-	 *                 'manualinput_prompt' => 'Add manualinput value for script execution with TAA server:
+	 *                 'confirmation' => 'Hello, TAAE Administrator! Execute script?',
+	 *                 'manualinput_prompt' => 'Add manualinput value for script execution with TAAE server:
 	 *             ],
 	 *             42 => [
 	 *                 'manualinput_prompt' => 'Enter port number',
@@ -1975,12 +1975,12 @@ class CMacrosResolver extends CMacrosResolverGeneral {
 	 *     [
 	 *         19 => [
 	 *             57 => [
-	 *                 'confirmation' => 'Responsible hosts TAA server, TAA PC! Navigate to triggers?',
+	 *                 'confirmation' => 'Responsible hosts TAAE server, TAAE PC! Navigate to triggers?',
 	 *                 'url' => 'http://zabbix/ui/triggers.php?context=host&filter_hostids[]=10084&filter_hostids[]=10134&filter_set=1'
 	 *             ),
 	 *             61 => [
-	 *                 'confirmation' => 'Hello, TAA Administrator! Execute script?',
-	 *                 'manualinput_prompt' => 'Execute script for TAA server?'
+	 *                 'confirmation' => 'Hello, TAAE Administrator! Execute script?',
+	 *                 'manualinput_prompt' => 'Execute script for TAAE server?'
 	 *             ],
 	 *             42 => [
 	 *                 'manualinput_prompt' => 'Enter port number',

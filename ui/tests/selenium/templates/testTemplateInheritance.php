@@ -49,7 +49,7 @@ class testTemplateInheritance extends CLegacyWebTest {
 	}
 
 	public function testTemplateInheritance_linkHost(){
-		$sql = "select hostid from hosts where host='Linux by TAA agent';";
+		$sql = "select hostid from hosts where host='Linux by TAAE agent';";
 		$this->assertEquals(1, CDBHelper::getCount($sql));
 		$row = DBfetch(DBselect($sql));
 		$hostid = $row['hostid'];
@@ -61,8 +61,8 @@ class testTemplateInheritance extends CLegacyWebTest {
 		$this->zbxTestClickButtonMultiselect('add_templates_');
 		$this->zbxTestLaunchOverlayDialog('Templates');
 		COverlayDialogElement::find()->all()->last()->setDataContext('Templates');
-		$this->zbxTestClickLinkTextWait('Linux by TAA agent');
-		$this->zbxTestTextPresent('Linux by TAA agent');
+		$this->zbxTestClickLinkTextWait('Linux by TAAE agent');
+		$this->zbxTestTextPresent('Linux by TAAE agent');
 		$form->submit();
 
 		$this->zbxTestWaitUntilMessageTextPresent('msg-good', 'Host updated');
@@ -433,10 +433,10 @@ class testTemplateInheritance extends CLegacyWebTest {
 		$this->zbxTestTextPresent('Test LLD trigger');
 
 		$sql = "SELECT triggerid FROM triggers WHERE description='Test LLD trigger' AND status='1' AND templateid IS NULL";
-		$this->assertEquals(1, CDBHelper::getCount($sql), 'Trigger prototype has not been added into TAA DB');
+		$this->assertEquals(1, CDBHelper::getCount($sql), 'Trigger prototype has not been added into TAAE DB');
 
 		$sql = "SELECT triggerid FROM triggers WHERE description='Test LLD trigger' AND status='1' AND templateid IS NOT NULL";
-		$this->assertEquals(1, CDBHelper::getCount($sql), 'Trigger prototype has not been added into TAA DB');
+		$this->assertEquals(1, CDBHelper::getCount($sql), 'Trigger prototype has not been added into TAAE DB');
 
 		// check that the inherited trigger prototype matches the original
 		$this->zbxTestOpen(self::HOST_LIST_PAGE);

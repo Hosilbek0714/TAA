@@ -72,7 +72,7 @@ CURLMcode	zbx_curl_multi_wait(CURLM *multi_handle, int timeout_ms, int *numfds)
 #ifndef _WINDOWS
 		if (NULL == (handle = dlopen(NULL, RTLD_LAZY | RTLD_NOLOAD)))
 		{
-			zabbix_log(LOG_LEVEL_CRIT, "cannot dlopen() TAA binary: %s", dlerror());
+			zabbix_log(LOG_LEVEL_CRIT, "cannot dlopen() TAAE binary: %s", dlerror());
 			exit(EXIT_FAILURE);
 		}
 
@@ -156,7 +156,7 @@ const char	*zbx_curl_content_type(CURL *easyhandle)
 #ifndef _WINDOWS
 		if (NULL == (handle = dlopen(NULL, RTLD_LAZY | RTLD_NOLOAD)))
 		{
-			zabbix_log(LOG_LEVEL_CRIT, "cannot dlopen() TAA binary: %s", dlerror());
+			zabbix_log(LOG_LEVEL_CRIT, "cannot dlopen() TAAE binary: %s", dlerror());
 			exit(EXIT_FAILURE);
 		}
 

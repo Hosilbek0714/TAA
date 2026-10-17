@@ -1,9 +1,9 @@
-# KXD muammolari → TAA + Apparat: Script darajasidagi yechim xaritasi
+# KXD muammolari → TAAE + Apparat: Script darajasidagi yechim xaritasi
 
-Ushbu hujjat `KXD muammolari.docx` da keltirilgan 5 ta amaliy muammoning quyidagi 4 ta qurilmada **script** (TAA tomondan tashqi skript, qurilma tomondan EEM/TCL, SNMP polling skripti, va h.k.) yordamida qanday hal qilinishini bosqichma‑bosqich ko‘rsatadi.
+Ushbu hujjat `KXD muammolari.docx` da keltirilgan 5 ta amaliy muammoning quyidagi 4 ta qurilmada **script** (TAAE tomondan tashqi skript, qurilma tomondan EEM/TCL, SNMP polling skripti, va h.k.) yordamida qanday hal qilinishini bosqichma‑bosqich ko‘rsatadi.
 
 Apparat ro‘yxati (foydalanuvchi tomonidan belgilangan):
-1. **Server**: HP ProLiant DL‑160 Gen9 — TAA server (Linux + Docker) shu yerda turadi.
+1. **Server**: HP ProLiant DL‑160 Gen9 — TAAE server (Linux + Docker) shu yerda turadi.
 2. **Router**: Cisco 1800 series — internet/WAN edge, IOS 12.4+ (EEM 2.x).
 3. **L3 Switch**: Catalyst 3560G 48‑port — IOS 12.2(50)SE+ (EEM 3.x, port‑security, DHCP snooping, ARP inspection, STP, MAC notification).
 4. **L1 Switch**: TP‑Link TL‑SF 1024D 24‑port — **boshqarib bo‘lmaydigan (unmanaged) switch**. Bu qurilma uchun **biror script yozish imkoniyati YO‘Q**.
@@ -26,30 +26,30 @@ Apparat ro‘yxati (foydalanuvchi tomonidan belgilangan):
 
 | Qurilma | P1 (binding/blok) | P2 (DoS/scan) | P3 (loop) | P4 (alert) | P5 (IP jurnal) |
 |---------|:-----------------:|:-------------:|:---------:|:----------:|:--------------:|
-| **DL‑160 Gen9** (TAA host) | Aralash skript: SNMP polling + auto‑remediation (netmiko orqali switchda port `shutdown`) | TAA trigger + custom Python skript (fail2ban‑uslubidagi auto‑blok) | TAA SNMP trap kollektor skripti — port/VLAN/MAC ni ajratib oluvchi parser | **To‘liq.** Telegram/Email skripti — Python/Bash | **To‘liq.** Python skript IP/MAC ni DBga yozadi, web UI da ko‘rsatadi |
-| **Cisco 1800** | Imkoniyati past — bu router, switching uchun emas. EEM orqali NAT/ACL log + interfeys monitor | EEM applet: log pattern → shutdown / ACL update | Yo‘q — router STP qatnashmaydi | EEM applet → syslog → TAA (alert) | Yo‘q (router IPlarni biriktirmaydi) |
-| **Catalyst 3560G** | **To‘liq.** Port‑security + DHCP snooping + ARP inspection + EEM applet | **To‘liq.** EEM applet violation → err‑disable + SNMP trap | **To‘liq.** BPDU/Loop guard + EEM applet → shutdown + trap | EEM applet → SNMP trap → TAA | DHCP snooping binding jadvali (`show ip dhcp snooping binding`) — TAA skripti parser |
+| **DL‑160 Gen9** (TAAE host) | Aralash skript: SNMP polling + auto‑remediation (netmiko orqali switchda port `shutdown`) | TAAE trigger + custom Python skript (fail2ban‑uslubidagi auto‑blok) | TAAE SNMP trap kollektor skripti — port/VLAN/MAC ni ajratib oluvchi parser | **To‘liq.** Telegram/Email skripti — Python/Bash | **To‘liq.** Python skript IP/MAC ni DBga yozadi, web UI da ko‘rsatadi |
+| **Cisco 1800** | Imkoniyati past — bu router, switching uchun emas. EEM orqali NAT/ACL log + interfeys monitor | EEM applet: log pattern → shutdown / ACL update | Yo‘q — router STP qatnashmaydi | EEM applet → syslog → TAAE (alert) | Yo‘q (router IPlarni biriktirmaydi) |
+| **Catalyst 3560G** | **To‘liq.** Port‑security + DHCP snooping + ARP inspection + EEM applet | **To‘liq.** EEM applet violation → err‑disable + SNMP trap | **To‘liq.** BPDU/Loop guard + EEM applet → shutdown + trap | EEM applet → SNMP trap → TAAE | DHCP snooping binding jadvali (`show ip dhcp snooping binding`) — TAAE skripti parser |
 | **TP‑Link TL‑SF 1024D** | **YO‘Q.** Unmanaged | **YO‘Q.** Unmanaged | **YO‘Q.** STP yo‘q. Loop bo‘lsa BPDU guardni 3560G da ushlaymiz | **YO‘Q** | **YO‘Q** |
 
-> Asosiy xulosa: **deyarli barcha muammolarning ish bajaruvchi tomoni Catalyst 3560G + DL‑160 Gen9 (TAA server) sherikligi**. Cisco 1800 — yordamchi (WAN/NAT/log), TP‑Link — passiv L1 segment.
+> Asosiy xulosa: **deyarli barcha muammolarning ish bajaruvchi tomoni Catalyst 3560G + DL‑160 Gen9 (TAAE server) sherikligi**. Cisco 1800 — yordamchi (WAN/NAT/log), TP‑Link — passiv L1 segment.
 
 ---
 
-## 2. DL‑160 Gen9 (TAA server) — yozish mumkin bo‘lgan skriptlar
+## 2. DL‑160 Gen9 (TAAE server) — yozish mumkin bo‘lgan skriptlar
 
-TAA serverida skript shu yerlarga joylashadi:
-- **External Checks**: `/usr/lib/zabbix/externalscripts/` (TAA frontenddan item turi “External check” bilan chaqiriladi).
+TAAE serverida skript shu yerlarga joylashadi:
+- **External Checks**: `/usr/lib/zabbix/externalscripts/` (TAAE frontenddan item turi “External check” bilan chaqiriladi).
 - **Alert Scripts**: `/usr/lib/zabbix/alertscripts/` (Media type orqali chaqiriladi — Telegram, email, custom).
-- **Custom cron**: TAA serveridan tashqari skriptlar — masalan IP inventarini har 5 daqiqada yangilab turish.
+- **Custom cron**: TAAE serveridan tashqari skriptlar — masalan IP inventarini har 5 daqiqada yangilab turish.
 
 ### 2.1. P1/P2/P3 yechimi — `auto_remediation.py`
-Qachon ishlaydi: **TAA action** “port‑security violation” triggerni ko‘rganda Operation → **Remote command → Custom script** orqali bu skriptni chaqiradi.
+Qachon ishlaydi: **TAAE action** “port‑security violation” triggerni ko‘rganda Operation → **Remote command → Custom script** orqali bu skriptni chaqiradi.
 
 Fayl: `/usr/lib/zabbix/alertscripts/auto_remediation.py`
 ```python
 #!/usr/bin/env python3
 """
-TAA Trigger -> Catalyst 3560G da violation bo'lgan portni shutdown qiladi
+TAAE Trigger -> Catalyst 3560G da violation bo'lgan portni shutdown qiladi
 va hodisani SQLite ga yozib qo'yadi (audit jurnali).
 Chaqirish: auto_remediation.py <switch_ip> <port> <reason>
 """
@@ -57,7 +57,7 @@ import sys, sqlite3, datetime, os
 from netmiko import ConnectHandler
 
 SWITCH_IP, PORT, REASON = sys.argv[1], sys.argv[2], sys.argv[3]
-DB = "/var/lib/taa/audit.db"
+DB = "/var/lib/taae/audit.db"
 
 conn = ConnectHandler(
     device_type="cisco_ios",
@@ -82,10 +82,10 @@ db.execute("INSERT INTO blocks VALUES (?,?,?,?)",
 db.commit()
 print(f"OK: {SWITCH_IP} {PORT} shutdown ({REASON})")
 ```
-Bunga `pip install netmiko` kerak. Switch user `taa_auto` privilege 15 bilan, faqat 10.0.10.10 dan kirishga ruxsat (3560G da `access-class` ACL bilan).
+Bunga `pip install netmiko` kerak. Switch user `taae_auto` privilege 15 bilan, faqat 10.0.10.10 dan kirishga ruxsat (3560G da `access-class` ACL bilan).
 
 ### 2.2. P3 yechimi — `stp_loop_parser.py` (SNMP trap parser)
-Qachon ishlaydi: TAA `snmptrap` itemiga **preprocessing** sifatida chaqiriladi yoki TAA item key `system.run["stp_loop_parser.py {ITEM.VALUE}"]` orqali. Maqsadi — trap matnidan port, VLAN, MAC ni JSON sifatida ajratish.
+Qachon ishlaydi: TAAE `snmptrap` itemiga **preprocessing** sifatida chaqiriladi yoki TAAE item key `system.run["stp_loop_parser.py {ITEM.VALUE}"]` orqali. Maqsadi — trap matnidan port, VLAN, MAC ni JSON sifatida ajratish.
 
 Fayl: `/usr/lib/zabbix/externalscripts/stp_loop_parser.py`
 ```python
@@ -104,33 +104,33 @@ print(json.dumps({
     "raw":  raw[:300],
 }))
 ```
-TAA trigger expressionida `{ITEM.LASTVALUE}` ichida shu JSON ko‘rinadi → hodisa matni *aniq qaerda loop borligini* ko‘rsatadi.
+TAAE trigger expressionida `{ITEM.LASTVALUE}` ichida shu JSON ko‘rinadi → hodisa matni *aniq qaerda loop borligini* ko‘rsatadi.
 
-### 2.3. P4 yechimi — `taa_telegram.sh` (custom alert script)
-TAA da “Telegram” media type ichki ravishda bor, lekin custom skript orqali boshqa formatda yuborish (markdown, jadval, foydalanuvchi tagi) qulay.
+### 2.3. P4 yechimi — `taae_telegram.sh` (custom alert script)
+TAAE da “Telegram” media type ichki ravishda bor, lekin custom skript orqali boshqa formatda yuborish (markdown, jadval, foydalanuvchi tagi) qulay.
 
-Fayl: `/usr/lib/zabbix/alertscripts/taa_telegram.sh`
+Fayl: `/usr/lib/zabbix/alertscripts/taae_telegram.sh`
 ```bash
 #!/usr/bin/env bash
-# Foydalanish: taa_telegram.sh <chat_id> <subject> <message>
+# Foydalanish: taae_telegram.sh <chat_id> <subject> <message>
 TOKEN="${TG_TOKEN:?TG_TOKEN env required}"
 CHAT_ID="$1"; SUBJECT="$2"; MESSAGE="$3"
-TEXT=$(printf "*TAA: %s*\n\`\`\`\n%s\n\`\`\`" "$SUBJECT" "$MESSAGE")
+TEXT=$(printf "*TAAE: %s*\n\`\`\`\n%s\n\`\`\`" "$SUBJECT" "$MESSAGE")
 curl -sS -X POST "https://api.telegram.org/bot${TOKEN}/sendMessage" \
      -d "chat_id=${CHAT_ID}" \
      -d "parse_mode=Markdown" \
      --data-urlencode "text=${TEXT}" >/dev/null
 ```
-TAA → Administration → Media types → Script → `taa_telegram.sh`, parametrlar `{ALERT.SENDTO}`, `{ALERT.SUBJECT}`, `{ALERT.MESSAGE}`.
+TAAE → Administration → Media types → Script → `taae_telegram.sh`, parametrlar `{ALERT.SENDTO}`, `{ALERT.SUBJECT}`, `{ALERT.MESSAGE}`.
 
 ### 2.4. P5 yechimi — `ip_inventory.py` (IPAM o‘rnida)
-Qachon ishlaydi: cron har 5 daqiqada yoki TAA External Check orqali. 3560G dan DHCP snooping binding va MAC jadvalini chiqaradi va PostgreSQL/SQLite ga yozadi. Frontend uchun kichik Flask sahifa ham yozish mumkin.
+Qachon ishlaydi: cron har 5 daqiqada yoki TAAE External Check orqali. 3560G dan DHCP snooping binding va MAC jadvalini chiqaradi va PostgreSQL/SQLite ga yozadi. Frontend uchun kichik Flask sahifa ham yozish mumkin.
 
-Fayl: `/opt/taa/scripts/ip_inventory.py`
+Fayl: `/opt/taae/scripts/ip_inventory.py`
 ```python
 #!/usr/bin/env python3
 """3560G: 'show ip dhcp snooping binding' + 'show mac address-table'
-   -> Postgres (taa_ipam) ga UPSERT."""
+   -> Postgres (taae_ipam) ga UPSERT."""
 import os, re, psycopg2
 from netmiko import ConnectHandler
 
@@ -151,7 +151,7 @@ rows_m = re.findall(
     r"^\s*(\d+)\s+([0-9a-f]{4}\.[0-9a-f]{4}\.[0-9a-f]{4})\s+\S+\s+(\S+)",
     mactab, re.M | re.I)
 
-db = psycopg2.connect("dbname=taa_ipam user=taa password=...")
+db = psycopg2.connect("dbname=taae_ipam user=taae password=...")
 cur = db.cursor()
 cur.execute("""CREATE TABLE IF NOT EXISTS leases(
    mac TEXT PRIMARY KEY, ip TEXT, vlan INT, port TEXT, seen_at TIMESTAMP DEFAULT now())""")
@@ -176,20 +176,20 @@ event manager applet WAN_BRUTE_DETECT
  event syslog pattern "Authentication failure" period 60 occurs 5
  action 010 cli command "enable"
  action 020 cli command "show users | append flash:/brute.log"
- action 030 syslog priority warnings msg "TAA-ALERT: 5 ta login fail 60s ichida"
- action 040 mail server "10.0.10.10" to "admin@taa.local" from "rt1800@taa.local" \
+ action 030 syslog priority warnings msg "TAAE-ALERT: 5 ta login fail 60s ichida"
+ action 040 mail server "10.0.10.10" to "admin@taae.local" from "rt1800@taae.local" \
             subject "WAN brute" body "1800 routerda 5+ auth fail"
 ```
-TAA `logging host 10.0.10.10` orqali bu syslog xabarini SNMP trap yoki log itemi sifatida olib trigger qiladi.
+TAAE `logging host 10.0.10.10` orqali bu syslog xabarini SNMP trap yoki log itemi sifatida olib trigger qiladi.
 
 ### 3.2. P4 yechimi — EEM: interfeys/yuk haddan oshganda
 ```cisco
 event manager applet HIGH_CPU_TRAP
  event snmp oid "1.3.6.1.4.1.9.9.109.1.1.1.1.7.1" get-type next \
        entry-op gt entry-val 85 poll-interval 30
- action 010 syslog priority critical msg "TAA-ALERT: Router CPU > 85%"
+ action 010 syslog priority critical msg "TAAE-ALERT: Router CPU > 85%"
 ```
-TAA `Cisco IOS by SNMP` template trigger bilan dublikatlash mumkin — bunda EEM darhol ishlaydi, TAA esa keyingi polling siklida ko‘radi.
+TAAE `Cisco IOS by SNMP` template trigger bilan dublikatlash mumkin — bunda EEM darhol ishlaydi, TAAE esa keyingi polling siklida ko‘radi.
 
 ### 3.3. Skript yozish iloji **YO‘Q** bo‘lgan narsalar (Cisco 1800)
 - **P1** (port‑security): router asosan WAN intefeysli — switching emas. Iloji yo‘q.
@@ -200,7 +200,7 @@ TAA `Cisco IOS by SNMP` template trigger bilan dublikatlash mumkin — bunda EEM
 
 ## 4. Catalyst 3560G 48‑port — eng ko‘p script yozsa bo‘ladigan qurilma
 
-Bu qurilmada **EEM 3.x** (TCL applet va aksiya rejimida) hamda CLI configuration darajasidagi qoidalar P1/P2/P3 ni *qurilmaning o‘zida* hal qiladi. TAA esa hodisalarni qabul qilib alert beradi.
+Bu qurilmada **EEM 3.x** (TCL applet va aksiya rejimida) hamda CLI configuration darajasidagi qoidalar P1/P2/P3 ni *qurilmaning o‘zida* hal qiladi. TAAE esa hodisalarni qabul qilib alert beradi.
 
 ### 4.1. P1 yechimi — port‑security + DHCP snooping (asosiy)
 Bu “script” emas, **deklarativ config**. Lekin bittagina foydalanuvchi MAC ga IP biriktirib qo‘yish quyidagicha:
@@ -230,10 +230,10 @@ event manager applet PORT_SEC_VIOLATION
  action 020 regexp "([0-9a-f]{4}\.[0-9a-f]{4}\.[0-9a-f]{4})" "$_syslog_msg" mac
  action 030 cli command "enable"
  action 040 cli command "show running-config interface $port | append flash:/violations.log"
- action 050 snmp-trap strdata "TAA-PSEC port=$port mac=$mac"
- action 060 syslog priority critical msg "TAA-ALERT: $port da $mac MAC violation"
+ action 050 snmp-trap strdata "TAAE-PSEC port=$port mac=$mac"
+ action 060 syslog priority critical msg "TAAE-ALERT: $port da $mac MAC violation"
 ```
-DL‑160 (TAA) bu `snmp-trap strdata` ni `snmptrap.fallback` itemida qabul qiladi, parser orqali tahlil qilib trigger ishga tushiradi.
+DL‑160 (TAAE) bu `snmp-trap strdata` ni `snmptrap.fallback` itemida qabul qiladi, parser orqali tahlil qilib trigger ishga tushiradi.
 
 ### 4.3. P3 yechimi — EEM applet: loop / BPDU guard
 ```cisco
@@ -245,15 +245,15 @@ event manager applet STP_LOOP_DETECT
  action 040 cli command "configure terminal"
  action 050 cli command "interface $port"
  action 060 cli command "shutdown"
- action 070 snmp-trap strdata "TAA-LOOP port=$port shutdown"
- action 080 syslog priority emergencies msg "TAA-ALERT: LOOP $port shutdown qilindi"
+ action 070 snmp-trap strdata "TAAE-LOOP port=$port shutdown"
+ action 080 syslog priority emergencies msg "TAAE-ALERT: LOOP $port shutdown qilindi"
 ```
-Bu applet *qurilma o‘zida* loopni avtomatik to‘xtatib qo‘yadi va TAA ga alert beradi — bu KXD muammolari hujjatining 3‑bandiga (qaerda halqa hosil bo‘ldi) to‘g‘ridan‑to‘g‘ri javob.
+Bu applet *qurilma o‘zida* loopni avtomatik to‘xtatib qo‘yadi va TAAE ga alert beradi — bu KXD muammolari hujjatining 3‑bandiga (qaerda halqa hosil bo‘ldi) to‘g‘ridan‑to‘g‘ri javob.
 
-### 4.4. P4 yechimi — SNMP traps to TAA
+### 4.4. P4 yechimi — SNMP traps to TAAE
 Configuration:
 ```cisco
-snmp-server host 10.0.10.10 version 3 priv taa_user udp-port 162
+snmp-server host 10.0.10.10 version 3 priv taae_user udp-port 162
 snmp-server enable traps port-security
 snmp-server enable traps mac-notification change move threshold
 snmp-server enable traps bridge newroot topologychange
@@ -262,7 +262,7 @@ snmp-server enable traps storm-control trap-rate 10
 snmp-server enable traps snmp linkdown linkup
 logging host 10.0.10.10
 ```
-DL‑160 da `snmptrapd` + TAA SNMP trapper (`StartSNMPTrapper=1`) qabul qiladi.
+DL‑160 da `snmptrapd` + TAAE SNMP trapper (`StartSNMPTrapper=1`) qabul qiladi.
 
 ### 4.5. P5 yechimi — `show` natijalarini avtomatik chiqarish (TCL)
 3560G ichida tclsh ishlaydi. EEM applet har soatda DHCP binding ni TFTP orqali DL‑160 ga yuboradi:
@@ -321,42 +321,42 @@ Bu *TP‑Linkning o‘zida* emas, balki **uning sherigi bo‘lgan 3560G da** qoi
 
 ## 6. KXD muammosi → konkret skript fayl xaritasi
 
-| KXD | Qaysi qurilmada | Skript / Config fayli | TAA da nima yoziladi |
+| KXD | Qaysi qurilmada | Skript / Config fayli | TAAE da nima yoziladi |
 |-----|------------------|------------------------|------------------------|
 | **P1** binding | 3560G (asosiy) + DL‑160 (provisioning) | 3560G config + `provision_ports.py` (netmiko + Jinja) | Host `core-sw01` + SNMPv3 + port‑security violation trigger |
 | **P1** auto‑blok | DL‑160 + 3560G | `auto_remediation.py` | Action → Operation → Remote command → script |
 | **P2** DoS/scan | 3560G EEM + DL‑160 | `PORT_SEC_VIOLATION` applet + `auto_remediation.py` | `snmptrap[*ciscoCpsIfPort*]` item + trigger |
 | **P2** WAN brute | Cisco 1800 EEM | `WAN_BRUTE_DETECT` applet | Log item `log[/var/log/cisco1800.log,"Authentication failure"]` + trigger |
 | **P3** loop | 3560G EEM (asosiy) + DL‑160 | `STP_LOOP_DETECT` applet + `stp_loop_parser.py` | `snmptrap[*bridgeNewRoot*]` + trigger; dashboard “Halqa hodisalari” |
-| **P4** Telegram alert | DL‑160 | `taa_telegram.sh` | Media type “Telegram‑custom”, action |
-| **P4** Email alert | DL‑160 | (TAA ichki SMTP) yoki `taa_email.sh` | Media type Email |
+| **P4** Telegram alert | DL‑160 | `taae_telegram.sh` | Media type “Telegram‑custom”, action |
+| **P4** Email alert | DL‑160 | (TAAE ichki SMTP) yoki `taae_email.sh` | Media type Email |
 | **P5** IP jurnal (asosiy) | DL‑160 (cron) + 3560G (TFTP push) | `ip_inventory.py` + 3560G `EXPORT_BINDING_HOURLY` | Inventory mode = Automatic; custom Inventory dashboard |
-| **P5** IPAM kengaytma | DL‑160 (qo‘shimcha konteyner) | `docker-compose.yml` ga **phpIPAM** xizmati | TAA Script orqali phpIPAM REST API sinxronizatsiyasi |
+| **P5** IPAM kengaytma | DL‑160 (qo‘shimcha konteyner) | `docker-compose.yml` ga **phpIPAM** xizmati | TAAE Script orqali phpIPAM REST API sinxronizatsiyasi |
 
 ---
 
 ## 7. Aniq bajarish tartibi (qisqa to‑do)
 
-1. **DL‑160**: Ubuntu 22.04 → `docker compose up -d` → TAA web ishlayotganini tasdiqlash.
+1. **DL‑160**: Ubuntu 22.04 → `docker compose up -d` → TAAE web ishlayotganini tasdiqlash.
 2. **3560G**: 2‑bo‘limdagi konfiguratsiyani kiritish (VLAN, port‑security, DHCP snooping, EEM appletlar, SNMPv3 + traplar, logging host).
 3. **Cisco 1800**: SNMPv3 + `logging host 10.0.10.10` + `WAN_BRUTE_DETECT` EEM applet.
 4. **TP‑Link**: hech narsa qilinmaydi. Faqat uni 3560G ning `Gi0/25` portiga ulash va uplinkda cheklash qoidalari.
 5. **DL‑160 da skriptlar**:
-   - `mkdir -p /usr/lib/zabbix/{externalscripts,alertscripts} /opt/taa/scripts`
+   - `mkdir -p /usr/lib/zabbix/{externalscripts,alertscripts} /opt/taae/scripts`
    - `pip install netmiko psycopg2-binary`
    - 2.1, 2.2, 2.3, 2.4 dagi skriptlarni shu papkalarga yozish.
    - `chmod +x` qilish, `zabbix:zabbix` egasi.
    - SW credentialslarni `/etc/zabbix/.env` da saqlash (`chmod 600`).
-6. **TAA UI**:
-   - Hostlar: `core-sw01` (3560G, SNMPv3), `edge-rt01` (1800, SNMPv3), `tp-link-edge` (faqat ICMP ping), `taa-server` (Linux agent).
-   - Media types: Telegram‑custom (script `taa_telegram.sh`), Email (SMTP).
+6. **TAAE UI**:
+   - Hostlar: `core-sw01` (3560G, SNMPv3), `edge-rt01` (1800, SNMPv3), `tp-link-edge` (faqat ICMP ping), `taae-server` (Linux agent).
+   - Media types: Telegram‑custom (script `taae_telegram.sh`), Email (SMTP).
    - Actions: “Network critical events” → Telegram + Email + Remote command `auto_remediation.py`.
    - Network discovery rule: 10.0.10.0/24, 10.0.20.0/24, 10.0.30.0/24.
    - Inventory: Automatic mode.
    - Dashboard: “Halqa hodisalari”, “Port security violations”, “DHCP binding count”.
 7. **Tekshirish (validation)**:
-   - Bir foydalanuvchi portiga begona MAC ulash → 3560G err‑disable + TAA Telegram alert ≤ 30 s.
-   - Ikkita user portni o‘zaro patch‑kord bilan ulash (loop) → BPDU guard tushadi + `STP_LOOP_DETECT` applet shutdown + TAA alert “qaerda” aniq matn bilan.
+   - Bir foydalanuvchi portiga begona MAC ulash → 3560G err‑disable + TAAE Telegram alert ≤ 30 s.
+   - Ikkita user portni o‘zaro patch‑kord bilan ulash (loop) → BPDU guard tushadi + `STP_LOOP_DETECT` applet shutdown + TAAE alert “qaerda” aniq matn bilan.
    - `psql -c "select count(*) from leases"` — IP jurnali to‘ldirilayotganini ko‘rish.
    - Telegram botida xabar olish.
 
@@ -366,14 +366,14 @@ Bu *TP‑Linkning o‘zida* emas, balki **uning sherigi bo‘lgan 3560G da** qoi
 
 | Talab (KXD) | Skript bilan to‘liq hal | Skript bilan qisman | Iloji yo‘q |
 |-------------|:------------------------:|:--------------------:|:-----------:|
-| P1 binding/blok (3560G+TAA) | ✔ | | |
+| P1 binding/blok (3560G+TAAE) | ✔ | | |
 | P1 binding (TP‑Link orqasidagi user) | | | ✘ |
 | P2 ichki tarmoqda DoS/scan | ✔ | | |
 | P2 WAN brute (1800) | ✔ | | |
-| P3 loop (3560G EEM + TAA parser) | ✔ | | |
+| P3 loop (3560G EEM + TAAE parser) | ✔ | | |
 | P3 loop (faqat TP‑Link segmentida) | | | ✘ |
 | P4 Telegram/Email alert | ✔ | | |
 | P5 IP jurnal (host inventory + skript) | | ✔ | |
 | P5 IP jurnal (to‘liq IPAM) | ✔ (phpIPAM konteyner qo‘shilsa) | | |
 
-**Xulosa**: KXD muammolari hujjatidagi 5 ta talabning **4 tasi to‘liq, 1 tasi (P5) qisman/kengaytma bilan** TAA + Catalyst 3560G + DL‑160 sherikligida skript darajasida hal qilinadi. **TP‑Link TL‑SF 1024D ostidagi alohida foydalanuvchilar uchun talab printsipial darajada bajarilmaydi** — apparat almashtirilmaguncha bu qism *xavfli zona* bo‘lib qoladi.
+**Xulosa**: KXD muammolari hujjatidagi 5 ta talabning **4 tasi to‘liq, 1 tasi (P5) qisman/kengaytma bilan** TAAE + Catalyst 3560G + DL‑160 sherikligida skript darajasida hal qilinadi. **TP‑Link TL‑SF 1024D ostidagi alohida foydalanuvchilar uchun talab printsipial darajada bajarilmaydi** — apparat almashtirilmaguncha bu qism *xavfli zona* bo‘lib qoladi.

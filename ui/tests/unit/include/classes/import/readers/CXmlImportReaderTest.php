@@ -36,8 +36,8 @@ class CXmlImportReaderTest extends TestCase {
 				'<'.'?xml version="1.0"?'.'>'."\n".
 				'<zabbix_export version="1.0" date="09.01.10" time="14.23">'."\n".
 				'<hosts>'."\n".
-				'    <host host="TAA server"/>'."\n".
-				'    <host host="TAA server2"/>'."\n".
+				'    <host host="TAAE server"/>'."\n".
+				'    <host host="TAAE server2"/>'."\n".
 				'</hosts>'."\n".
 				'</zabbix_export>',
 				[
@@ -47,10 +47,10 @@ class CXmlImportReaderTest extends TestCase {
 						'time' => '14.23',
 						'hosts' => [
 							'host' => [
-								'host' => 'TAA server'
+								'host' => 'TAAE server'
 							],
 							'host1' => [
-								'host' => 'TAA server2'
+								'host' => 'TAAE server2'
 							]
 						]
 					]
@@ -60,7 +60,7 @@ class CXmlImportReaderTest extends TestCase {
 				'<'.'?xml version="1.0"?'.'>'."\n".
 				'<zabbix_export version="1.0" date="09.01.10" time="14.23">'."\n".
 				'<hosts>'."\n".
-				'    <host host="TAA server">'."\n".
+				'    <host host="TAAE server">'."\n".
 				'        <status>0</status>'."\n".
 				'    </host>'."\n".
 				'    <host host="Linux server">'."\n".
@@ -76,7 +76,7 @@ class CXmlImportReaderTest extends TestCase {
 						'time' => '14.23',
 						'hosts' => [
 							'host' => [
-								'host' => 'TAA server',
+								'host' => 'TAAE server',
 								'status' => '0'
 							],
 							'host1' => [
@@ -125,7 +125,7 @@ class CXmlImportReaderTest extends TestCase {
 				'<'.'?xml version="1.0"?'.'>'."\n".
 				'<zabbix_export version="1.0" date="09.01.10" time="14.23">'."\n".
 				'<hosts>'."\n".
-				'    <host host="TAA server">'."\n".
+				'    <host host="TAAE server">'."\n".
 				'        abc'."\n".
 				'    </host>'."\n".
 				'</hosts>'."\n".

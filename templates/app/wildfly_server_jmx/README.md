@@ -8,7 +8,7 @@ Official JMX Template for WildFly server.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -17,7 +17,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -26,7 +26,7 @@ This template works with standalone and domain instances.
 
 1. Enable and configure JMX access to WildFly. See documentation for [instructions](https://docs.wildfly.org/23/Admin_Guide.html#JMX).
 2. Copy jboss-client.jar from `/(wildfly,EAP,Jboss,AS)/bin/client` in to directory `/usr/share/zabbix-java-gateway/lib`
-3. Restart TAA Java gateway
+3. Restart TAAE Java gateway
 4. Set the user name and password in host macros {$WILDFLY.USER} and {$WILDFLY.PASSWORD}.
 Depending on your server setup, you may need to specify a custom JMX scheme in macro {$WILDFLY.JMX.PROTOCOL} (default: remote+http)
 
@@ -73,7 +73,7 @@ Depending on your server setup, you may need to specify a custom JMX scheme in m
 |WildFly Server: Server controller is not in RUNNING state||`find(/WildFly Server by JMX/jmx["jboss.as:management-root=server","serverState"],,"like","running")=0`|Warning|**Depends on**:<br><ul><li>WildFly Server: Server needs to restart for configuration change.</li></ul>|
 |WildFly Server: Version has changed|<p>WildFly version has changed. Acknowledge to close the problem manually.</p>|`last(/WildFly Server by JMX/jmx["jboss.as:management-root=server","productVersion"],#1)<>last(/WildFly Server by JMX/jmx["jboss.as:management-root=server","productVersion"],#2) and length(last(/WildFly Server by JMX/jmx["jboss.as:management-root=server","productVersion"]))>0`|Info|**Manual close**: Yes|
 |WildFly Server: Host has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/WildFly Server by JMX/jmx["java.lang:type=Runtime","Uptime"])<10m`|Info|**Manual close**: Yes|
-|WildFly Server: Failed to fetch info data|<p>TAA has not received data for items for the last 15 minutes</p>|`nodata(/WildFly Server by JMX/jmx["java.lang:type=Runtime","Uptime"],15m)=1`|Warning||
+|WildFly Server: Failed to fetch info data|<p>TAAE has not received data for items for the last 15 minutes</p>|`nodata(/WildFly Server by JMX/jmx["java.lang:type=Runtime","Uptime"],15m)=1`|Warning||
 
 ### LLD rule Deployments discovery
 
@@ -168,7 +168,7 @@ Depending on your server setup, you may need to specify a custom JMX scheme in m
 |----|-----------|----------|--------|--------------------------------|
 |WildFly Server: {#JMX_DATA_SOURCE}: There are no active connections for 5m||`max(/WildFly Server by JMX/jmx["{#JMXOBJ}",ActiveCount],5m)=0`|Warning||
 |WildFly Server: {#JMX_DATA_SOURCE}: Connection usage is too high||`min(/WildFly Server by JMX/jmx["{#JMXOBJ}",InUseCount],5m)/last(/WildFly Server by JMX/jmx["{#JMXOBJ}",AvailableCount])*100>{$WILDFLY.CONN.USAGE.WARN.MAX}`|High||
-|WildFly Server: {#JMX_DATA_SOURCE}: Pools monitoring statistic is not enabled|<p>TAA has not received data for items for the last 15 minutes</p>|`last(/WildFly Server by JMX/jmx["{#JMXOBJ}",statisticsEnabled])=0`|Info||
+|WildFly Server: {#JMX_DATA_SOURCE}: Pools monitoring statistic is not enabled|<p>TAAE has not received data for items for the last 15 minutes</p>|`last(/WildFly Server by JMX/jmx["{#JMXOBJ}",statisticsEnabled])=0`|Info||
 |WildFly Server: {#JMX_DATA_SOURCE}: There are timeout connections||`last(/WildFly Server by JMX/jmx["{#JMXOBJ}",TimedOut])>0`|Warning||
 |WildFly Server: {#JMX_DATA_SOURCE}: Too many waiting connections||`min(/WildFly Server by JMX/jmx["{#JMXOBJ}",WaitCount],5m)>{$WILDFLY.CONN.WAIT.MAX.WARN}`|Warning||
 
@@ -197,5 +197,5 @@ Depending on your server setup, you may need to specify a custom JMX scheme in m
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

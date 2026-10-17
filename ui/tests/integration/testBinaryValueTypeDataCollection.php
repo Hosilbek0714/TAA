@@ -248,8 +248,8 @@ class testBinaryValueTypeDataCollection extends CIntegrationTest {
 	public function testBinaryValueTypeDataCollection_checkAgentData() {
 
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER, [
-			'enabling TAA agent checks on host "agent": interface became available',
-			'resuming TAA agent checks on host "agent": connection restored'
+			'enabling TAAE agent checks on host "agent": interface became available',
+			'resuming TAAE agent checks on host "agent": connection restored'
 		]);
 
 		$this->reloadConfigurationCache(self::COMPONENT_SERVER);
@@ -324,8 +324,8 @@ class testBinaryValueTypeDataCollection extends CIntegrationTest {
 		self::waitForLogLineToBePresent(self::COMPONENT_SERVER, 'sending configuration data to proxy "proxy"');
 		self::waitForLogLineToBePresent(self::COMPONENT_PROXY, 'received configuration data from server');
 		self::waitForLogLineToBePresent(self::COMPONENT_PROXY, [
-			'enabling TAA agent checks on host "proxy_agent": interface became available',
-			'resuming TAA agent checks on host "proxy_agent": connection restored'
+			'enabling TAAE agent checks on host "proxy_agent": interface became available',
+			'resuming TAAE agent checks on host "proxy_agent": connection restored'
 		]);
 
 		$this->reloadConfigurationCache(self::COMPONENT_PROXY);

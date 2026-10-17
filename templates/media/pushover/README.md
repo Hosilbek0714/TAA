@@ -1,4 +1,4 @@
-# TAA Pushover webhook integration
+# TAAE Pushover webhook integration
 
 [![](images/pushover_logo.png?raw=true)](images/pushover_logo.png)
 
@@ -8,25 +8,25 @@ With Pushover, a user can be notified the most convenient way — with push noti
 
 Register the account at https://pushover.net/ and then install Pushover app at your iOS or Android device.
 
-Then [click here](https://pushover.net/apps/clone/zabbix) to create new integration with TAA.
+Then [click here](https://pushover.net/apps/clone/zabbix) to create new integration with TAAE.
 
 [![](images/tn/pushover2.png?raw=true)](images/pushover2.png)
 
-At this point, we have **Application API Token (token)** of the TAA application and **Pushover User Key**.
+At this point, we have **Application API Token (token)** of the TAAE application and **Pushover User Key**.
 
-You would need both in TAA pushover webhook.
+You would need both in TAAE pushover webhook.
 
-## TAA setup
+## TAAE setup
 
 ### Set {$ZABBIX.URL} global macro
 
-Go to Administration->General (Macro) and create new macro that points to your TAA frontend
+Go to Administration->General (Macro) and create new macro that points to your TAAE frontend
 
 `{$ZABBIX.URL}` = <https://myzabbix.local>
 
 ### Setup Pushover media type
 
-Proceed to Administration→ Media types at the TAA frontend and find Pushover. If you don't have it, import it from the official TAA repository here:
+Proceed to Administration→ Media types at the TAAE frontend and find Pushover. If you don't have it, import it from the official TAAE repository here:
 
 https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/templates/media/pushover
 
@@ -42,13 +42,13 @@ Next, proceed to your User profile and create new Media of Pushover type, use yo
 
 [![](images/tn/zabbix2.png?raw=true)](images/zabbix2.png)
 
-Also, you can customize Pushover message priority for each TAA severity. Change value of **priority_\<severity_name\>** parameter. It must be between -2 and 2.<br>
+Also, you can customize Pushover message priority for each TAAE severity. Change value of **priority_\<severity_name\>** parameter. It must be between -2 and 2.<br>
 By default, messages have normal priority (a priority of 0).
 For more information check [Pushover documentation](https://pushover.net/api#priority).
 
 ### Check trigger actions
 
-Make sure proper trigger actions are set at Configuration→Actions page. For starters, you can enable default "Report problems to TAA administrators" rule.
+Make sure proper trigger actions are set at Configuration→Actions page. For starters, you can enable default "Report problems to TAAE administrators" rule.
 
 [![](images/tn/zabbix3.png?raw=true)](images/zabbix3.png)
 

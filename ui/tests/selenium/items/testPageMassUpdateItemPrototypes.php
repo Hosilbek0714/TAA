@@ -185,7 +185,7 @@ class testPageMassUpdateItemPrototypes extends testMassUpdateItems {
 				'type' => 15,
 				'value_type' => 0,
 				'delay' => '50s',
-				'params' => 'avg("TAA Server:zabbix[wcache,values]",600)',
+				'params' => 'avg("TAAE Server:zabbix[wcache,values]",600)',
 				'tags' => [
 					[
 						'tag' => 'Item_tag_name',
@@ -201,7 +201,7 @@ class testPageMassUpdateItemPrototypes extends testMassUpdateItems {
 				'type' => 15,
 				'value_type' => 0,
 				'delay' => '30s',
-				'params' => 'sum("TAA Server:zabbix[wcache,values]",900)',
+				'params' => 'sum("TAAE Server:zabbix[wcache,values]",900)',
 				'tags' => [
 					[
 						'tag' => 'Item_tag_name_1',
@@ -250,7 +250,7 @@ class testPageMassUpdateItemPrototypes extends testMassUpdateItems {
 						'2_Item'
 					],
 					'change' => [
-						'Type' => ['id' => 'type', 'value' => 'TAA agent'],
+						'Type' => ['id' => 'type', 'value' => 'TAAE agent'],
 						'Host interface' => ['id' => 'interface-select', 'value' => '127.0.5.1:10051'],
 						'Create enabled' => ['id' => 'status', 'value' => 'No'],
 						'Discover' => ['id' => 'discover', 'value' => 'No']

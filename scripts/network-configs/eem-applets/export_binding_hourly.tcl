@@ -1,13 +1,13 @@
 ! =====================================================================
 ! EEM applet : EXPORT_BINDING_HOURLY
 ! Platform   : Catalyst 3560G (IOS 12.2(50)SE+, EEM 3.x)
-! KXD ref.   : P5 (IP / MAC / port inventory feed to TAA)
+! KXD ref.   : P5 (IP / MAC / port inventory feed to TAAE)
 ! Trigger    : cron-style timer, top of every hour
-! Outcome    : - Upload the DHCP snooping binding table to the TAA TFTP
+! Outcome    : - Upload the DHCP snooping binding table to the TAAE TFTP
 !                server (10.0.10.10)
-!              - Upload the running-config so the TAA server keeps
+!              - Upload the running-config so the TAAE server keeps
 !                rolling config snapshots
-! NOTE       : The TFTP server on the TAA host (tftpd-hpa) must allow
+! NOTE       : The TFTP server on the TAAE host (tftpd-hpa) must allow
 !              create + overwrite under /srv/tftp/binding and
 !              /srv/tftp/configs.
 ! Install    : paste in 'configure terminal' on core-sw01
@@ -17,7 +17,7 @@
 no event manager applet EXPORT_BINDING_HOURLY
 !
 event manager applet EXPORT_BINDING_HOURLY
- description "TAA - hourly export of DHCP snooping bindings + config"
+ description "TAAE - hourly export of DHCP snooping bindings + config"
  event tag real timer cron name BINDING cron-entry "0 * * * *"
  event tag manual none
  trigger
@@ -30,6 +30,6 @@ event manager applet EXPORT_BINDING_HOURLY
  action 0060 cli command "copy running-config tftp://10.0.10.10/configs/core-sw01.cfg" pattern "Address|filename"
  action 0070 cli command ""
  action 0080 cli command ""
- action 0090 syslog priority informational msg "TAA-INFO: hourly inventory export sent to 10.0.10.10"
+ action 0090 syslog priority informational msg "TAAE-INFO: hourly inventory export sent to 10.0.10.10"
 !
 end

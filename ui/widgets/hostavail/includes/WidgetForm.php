@@ -39,8 +39,8 @@ class WidgetForm extends CWidgetForm {
 			)
 			->addField(
 				new CWidgetFieldCheckBoxList('interface_type', _('Interface type'), [
-					INTERFACE_TYPE_AGENT_ACTIVE => _('TAA agent (active checks)'),
-					INTERFACE_TYPE_AGENT => _('TAA agent (passive checks)'),
+					INTERFACE_TYPE_AGENT_ACTIVE => _('TAAE agent (active checks)'),
+					INTERFACE_TYPE_AGENT => _('TAAE agent (passive checks)'),
 					INTERFACE_TYPE_SNMP => _('SNMP'),
 					INTERFACE_TYPE_JMX => _('JMX'),
 					INTERFACE_TYPE_IPMI => _('IPMI')

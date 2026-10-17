@@ -1,19 +1,19 @@
 <?php
-// TAA GUI configuration file.
+// TAAE GUI configuration file.
 global $DB;
 
 $DB['TYPE']     = 'POSTGRESQL';
-$DB['SERVER']   = 'taa-db';
+$DB['SERVER']   = 'taae-db';
 $DB['PORT']     = '5432';
-$DB['DATABASE'] = 'taa';
-$DB['USER']     = 'taa';
-$DB['PASSWORD'] = 'taa_password';
+$DB['DATABASE'] = 'taae';
+$DB['USER']     = 'taae';
+$DB['PASSWORD'] = 'taae_password';
 
 // Schema name. Used for PostgreSQL.
 $DB['SCHEMA'] = '';
 
-$ZBX_SERVER      = 'taa-server';
+$ZBX_SERVER      = 'taae-server';
 $ZBX_SERVER_PORT = '10051';
-$ZBX_SERVER_NAME = 'TAA monitoring tizimi';
+$ZBX_SERVER_NAME = 'TAAE monitoring tizimi';
 
 $IMAGE_FORMAT_DEFAULT = IMAGE_FORMAT_PNG;

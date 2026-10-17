@@ -17,13 +17,13 @@
 class C54ImportConverterTest extends CImportConverterTest {
 
 	public function importConverterDataProvider(): array {
-		$simple_macros_source = '{TAA server:system.hostname.last()}'.
-			'{TAA server:system.hostname.last(0)}{{HOST.HOST}:system.hostname.min(1s)}'.
+		$simple_macros_source = '{TAAE server:system.hostname.last()}'.
+			'{TAAE server:system.hostname.last(0)}{{HOST.HOST}:system.hostname.min(1s)}'.
 			'{{HOST.HOST1}:system.hostname.max(1m)}{{HOST.HOST2}:system.hostname.avg(1h)}'.
 			'{{HOSTNAME}:system.hostname.min(1d)}{{HOSTNAME1}:system.hostname.max(24h)}'.
 			'{{HOSTNAME1}:system.hostname.max(24h,)}{{HOSTNAME2}:system.hostname.avg(3600)}';
-		$simple_macros_expected = '{?last(/TAA server/system.hostname)}'.
-			'{?last(/TAA server/system.hostname)}{?min(/'.'/system.hostname,1s)}'.
+		$simple_macros_expected = '{?last(/TAAE server/system.hostname)}'.
+			'{?last(/TAAE server/system.hostname)}{?min(/'.'/system.hostname,1s)}'.
 			'{?max(/'.'/system.hostname,1m)}{?avg(/{HOST.HOST2}/system.hostname,1h)}'.
 			'{?min(/'.'/system.hostname,1d)}{?max(/'.'/system.hostname,24h)}'.
 			'{?max(/'.'/system.hostname,24h)}{?avg(/{HOST.HOST2}/system.hostname,3600s)}';
@@ -37,9 +37,9 @@ class C54ImportConverterTest extends CImportConverterTest {
 				[
 					'hosts' => [
 						[
-							'host' => 'TAA server',
+							'host' => 'TAAE server',
 							'groups' => [
-								['name' => 'TAA servers']
+								['name' => 'TAAE servers']
 							],
 							'discovery_rules' => [
 								[
@@ -97,9 +97,9 @@ class C54ImportConverterTest extends CImportConverterTest {
 				[
 					'hosts' => [
 						[
-							'host' => 'TAA server',
+							'host' => 'TAAE server',
 							'groups' => [
-								['name' => 'TAA servers']
+								['name' => 'TAAE servers']
 							],
 							'discovery_rules' => [
 								[
@@ -159,9 +159,9 @@ class C54ImportConverterTest extends CImportConverterTest {
 				[
 					'hosts' => [
 						[
-							'host' => 'TAA server',
+							'host' => 'TAAE server',
 							'groups' => [
-								['name' => 'TAA servers']
+								['name' => 'TAAE servers']
 							],
 							'items' => [
 								[
@@ -199,9 +199,9 @@ class C54ImportConverterTest extends CImportConverterTest {
 				[
 					'hosts' => [
 						[
-							'host' => 'TAA server',
+							'host' => 'TAAE server',
 							'groups' => [
-								['name' => 'TAA servers']
+								['name' => 'TAAE servers']
 							],
 							'items' => [
 								[
@@ -245,43 +245,43 @@ class C54ImportConverterTest extends CImportConverterTest {
 	public function importConverterDataProviderCalcItemFormula(): array {
 		$formulas = [
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],0s))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"], 0m))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"], 0h ))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"], 0d ))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"],  0w ))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"]))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"]))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"]))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"]))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"]))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"],0s))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"], 0m))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"], 0h ))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"], 0d ))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"],  0w ))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"]))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"]))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], 15s))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"], 15s))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"], 15s))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"], 15s))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], {$MACRO}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"], {$MACRO}))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"], {$MACRO}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"], {$MACRO}))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"], "{$MACRO: context}"))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"], 1h ))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"], "{$MACRO: context}"))'.
-					' or sum(last_foreach(/*/key?[group="TAA servers"], 1h ))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"], "{$MACRO: context}"))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"], 1h ))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"], "{$MACRO: context}"))'.
+					' or sum(last_foreach(/*/key?[group="TAAE servers"], 1h ))',
 				'prototype' => false
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],{#LLD}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"],{#LLD}))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"],{#LLD}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"],{#LLD}))',
 				'prototype' => true
 			],
 			[
-				'source' => 'sum(last_foreach(/*/key?[group="TAA servers"],  {#LLD}))',
-				'expected' => 'sum(last_foreach(/*/key?[group="TAA servers"],  {#LLD}))',
+				'source' => 'sum(last_foreach(/*/key?[group="TAAE servers"],  {#LLD}))',
+				'expected' => 'sum(last_foreach(/*/key?[group="TAAE servers"],  {#LLD}))',
 				'prototype' => true
 			]
 		];

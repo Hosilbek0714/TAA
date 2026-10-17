@@ -28,7 +28,7 @@ class CLegacyWebTest extends CWebTest {
 
 	// List of strings that SHOULD appear on every page.
 	public $failIfNotExists = [
-		'TAA Integrations',
+		'TAAE Integrations',
 		'Help',
 		'Admin',
 		'Sign out'

@@ -24,7 +24,7 @@
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -33,7 +33,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -112,8 +112,8 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure by HTTP/azure.get.errors))>0`|Average||
-|Azure: There are errors in storages requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure by HTTP/azure.get.storage.acc.errors))>0`|Average|**Depends on**:<br><ul><li>Azure: There are errors in requests to API</li></ul>|
+|Azure: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure by HTTP/azure.get.errors))>0`|Average||
+|Azure: There are errors in storages requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure by HTTP/azure.get.storage.acc.errors))>0`|Average|**Depends on**:<br><ul><li>Azure: There are errors in requests to API</li></ul>|
 
 ### LLD rule Storage accounts discovery
 
@@ -237,7 +237,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -246,7 +246,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -336,7 +336,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure VM Scale: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure VM Scale Set by HTTP/azure.scaleset.data.errors))>0`|Average||
+|Azure VM Scale: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure VM Scale Set by HTTP/azure.scaleset.data.errors))>0`|Average||
 |Azure VM Scale: Virtual machine scale set is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure VM Scale Set by HTTP/azure.scaleset.availability.state)=2`|High||
 |Azure VM Scale: Virtual machine scale set is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure VM Scale Set by HTTP/azure.scaleset.availability.state)=1`|Average||
 |Azure VM Scale: Virtual machine scale set is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure VM Scale Set by HTTP/azure.scaleset.availability.state)=3`|Warning||
@@ -352,7 +352,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -361,7 +361,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -457,7 +457,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure VM: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Virtual Machine by HTTP/azure.vm.data.errors))>0`|Average||
+|Azure VM: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Virtual Machine by HTTP/azure.vm.data.errors))>0`|Average||
 |Azure VM: Virtual machine is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure Virtual Machine by HTTP/azure.vm.availability.state)=2`|High||
 |Azure VM: Virtual machine is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure Virtual Machine by HTTP/azure.vm.availability.state)=1`|Average||
 |Azure VM: Virtual machine is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure Virtual Machine by HTTP/azure.vm.availability.state)=3`|Warning||
@@ -472,7 +472,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -481,7 +481,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -539,7 +539,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure MySQL Flexible: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure MySQL Flexible Server by HTTP/azure.db.mysql.data.errors))>0`|Average||
+|Azure MySQL Flexible: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure MySQL Flexible Server by HTTP/azure.db.mysql.data.errors))>0`|Average||
 |Azure MySQL Flexible: MySQL server is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure MySQL Flexible Server by HTTP/azure.db.mysql.availability.state)=2`|High||
 |Azure MySQL Flexible: MySQL server is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure MySQL Flexible Server by HTTP/azure.db.mysql.availability.state)=1`|Average||
 |Azure MySQL Flexible: MySQL server is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure MySQL Flexible Server by HTTP/azure.db.mysql.availability.state)=3`|Warning||
@@ -557,7 +557,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -566,7 +566,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -624,7 +624,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure MySQL Single: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure MySQL Single Server by HTTP/azure.db.mysql.data.errors))>0`|Average||
+|Azure MySQL Single: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure MySQL Single Server by HTTP/azure.db.mysql.data.errors))>0`|Average||
 |Azure MySQL Single: MySQL server is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure MySQL Single Server by HTTP/azure.db.mysql.availability.state)=2`|High||
 |Azure MySQL Single: MySQL server is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure MySQL Single Server by HTTP/azure.db.mysql.availability.state)=1`|Average||
 |Azure MySQL Single: MySQL server is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure MySQL Single Server by HTTP/azure.db.mysql.availability.state)=3`|Warning||
@@ -643,7 +643,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -652,7 +652,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -715,7 +715,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure PostgreSQL Flexible: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure PostgreSQL Flexible Server by HTTP/azure.db.pgsql.data.errors))>0`|Average||
+|Azure PostgreSQL Flexible: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure PostgreSQL Flexible Server by HTTP/azure.db.pgsql.data.errors))>0`|Average||
 |Azure PostgreSQL Flexible: PostgreSQL server is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure PostgreSQL Flexible Server by HTTP/azure.db.pgsql.availability.state)=2`|High||
 |Azure PostgreSQL Flexible: PostgreSQL server is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure PostgreSQL Flexible Server by HTTP/azure.db.pgsql.availability.state)=1`|Average||
 |Azure PostgreSQL Flexible: PostgreSQL server is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure PostgreSQL Flexible Server by HTTP/azure.db.pgsql.availability.state)=3`|Warning||
@@ -733,7 +733,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -742,7 +742,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -800,7 +800,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure PostgreSQL Single: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure PostgreSQL Single Server by HTTP/azure.db.pgsql.data.errors))>0`|Average||
+|Azure PostgreSQL Single: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure PostgreSQL Single Server by HTTP/azure.db.pgsql.data.errors))>0`|Average||
 |Azure PostgreSQL Single: PostgreSQL server is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure PostgreSQL Single Server by HTTP/azure.db.pgsql.availability.state)=2`|High||
 |Azure PostgreSQL Single: PostgreSQL server is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure PostgreSQL Single Server by HTTP/azure.db.pgsql.availability.state)=1`|Average||
 |Azure PostgreSQL Single: PostgreSQL server is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure PostgreSQL Single Server by HTTP/azure.db.pgsql.availability.state)=3`|Warning||
@@ -818,7 +818,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -827,7 +827,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -892,7 +892,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure MSSQL Serverless: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Microsoft SQL Serverless Database by HTTP/azure.db.mssql.data.errors))>0`|Average||
+|Azure MSSQL Serverless: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Microsoft SQL Serverless Database by HTTP/azure.db.mssql.data.errors))>0`|Average||
 |Azure MSSQL Serverless: Microsoft SQL database is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure Microsoft SQL Serverless Database by HTTP/azure.db.mssql.availability.state)=2`|High||
 |Azure MSSQL Serverless: Microsoft SQL database is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure Microsoft SQL Serverless Database by HTTP/azure.db.mssql.availability.state)=1`|Average||
 |Azure MSSQL Serverless: Microsoft SQL database is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure Microsoft SQL Serverless Database by HTTP/azure.db.mssql.availability.state)=3`|Warning||
@@ -909,7 +909,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -918,7 +918,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -983,7 +983,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure MSSQL DTU: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Microsoft SQL DTU Database by HTTP/azure.db.mssql.data.errors))>0`|Average||
+|Azure MSSQL DTU: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Microsoft SQL DTU Database by HTTP/azure.db.mssql.data.errors))>0`|Average||
 |Azure MSSQL DTU: Microsoft SQL database is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure Microsoft SQL DTU Database by HTTP/azure.db.mssql.availability.state)=2`|High||
 |Azure MSSQL DTU: Microsoft SQL database is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure Microsoft SQL DTU Database by HTTP/azure.db.mssql.availability.state)=1`|Average||
 |Azure MSSQL DTU: Microsoft SQL database is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure Microsoft SQL DTU Database by HTTP/azure.db.mssql.availability.state)=3`|Warning||
@@ -1001,7 +1001,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1010,7 +1010,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -1076,7 +1076,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure MSSQL: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Microsoft SQL Database by HTTP/azure.db.mssql.data.errors))>0`|Average||
+|Azure MSSQL: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Microsoft SQL Database by HTTP/azure.db.mssql.data.errors))>0`|Average||
 |Azure MSSQL: Microsoft SQL database is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure Microsoft SQL Database by HTTP/azure.db.mssql.availability.state)=2`|High||
 |Azure MSSQL: Microsoft SQL database is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure Microsoft SQL Database by HTTP/azure.db.mssql.availability.state)=1`|Average||
 |Azure MSSQL: Microsoft SQL database is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure Microsoft SQL Database by HTTP/azure.db.mssql.availability.state)=3`|Warning||
@@ -1088,11 +1088,11 @@ This template has been tested on:
 
 ## Overview
 
-This template is designed for the effortless deployment of Azure Cosmos DB for MongoDB monitoring by TAA via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Azure Cosmos DB for MongoDB monitoring by TAAE via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1101,7 +1101,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -1157,7 +1157,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure Cosmos DB: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Cosmos DB for MongoDB by HTTP/azure.cosmosdb.data.errors))>0`|Average||
+|Azure Cosmos DB: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Cosmos DB for MongoDB by HTTP/azure.cosmosdb.data.errors))>0`|Average||
 |Azure Cosmos DB: Cosmos DB for MongoDB account: Availability is low||`(min(/Azure Cosmos DB for MongoDB by HTTP/azure.cosmosdb.service.availability,#3))<{$AZURE.DB.COSMOS.MONGO.AVAILABILITY}`|Warning||
 
 # Azure Cost Management by HTTP
@@ -1169,7 +1169,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1178,7 +1178,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -1222,8 +1222,8 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure Cost: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Cost Management by HTTP/azure.get.monthly.costs.errors))>0`|Average||
-|Azure Cost: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Cost Management by HTTP/azure.get.daily.costs.errors))>0`|Average||
+|Azure Cost: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Cost Management by HTTP/azure.get.monthly.costs.errors))>0`|Average||
+|Azure Cost: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Cost Management by HTTP/azure.get.daily.costs.errors))>0`|Average||
 
 ### LLD rule Azure daily costs by services discovery
 
@@ -1294,7 +1294,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1303,7 +1303,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -1356,7 +1356,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure SQL instance: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure SQL Managed Instance by HTTP/azure.sql_inst.data.errors))>0`|Average||
+|Azure SQL instance: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure SQL Managed Instance by HTTP/azure.sql_inst.data.errors))>0`|Average||
 |Azure SQL instance: Azure SQL managed instance is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure SQL Managed Instance by HTTP/azure.sql_inst.availability.state)=2`|High||
 |Azure SQL instance: Azure SQL managed instance is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure SQL Managed Instance by HTTP/azure.sql_inst.availability.state)=1`|Average||
 |Azure SQL instance: Azure SQL managed instance is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure SQL Managed Instance by HTTP/azure.sql_inst.availability.state)=3`|Warning||
@@ -1377,7 +1377,7 @@ It works without any external scripts and uses the script item.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -1386,7 +1386,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -1441,7 +1441,7 @@ This template has been tested on:
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Azure backup jobs: There are errors in requests to API|<p>TAA has received errors in response to API requests.</p>|`length(last(/Azure Backup Jobs by HTTP/azure.vault.data.errors))>0`|Average||
+|Azure backup jobs: There are errors in requests to API|<p>TAAE has received errors in response to API requests.</p>|`length(last(/Azure Backup Jobs by HTTP/azure.vault.data.errors))>0`|Average||
 |Azure backup jobs: Azure vault is unavailable|<p>The resource state is unavailable.</p>|`last(/Azure Backup Jobs by HTTP/azure.vault.availability.state)=2`|High||
 |Azure backup jobs: Azure vault is degraded|<p>The resource is in a degraded state.</p>|`last(/Azure Backup Jobs by HTTP/azure.vault.availability.state)=1`|Average||
 |Azure backup jobs: Azure vault is in unknown state|<p>The resource state is unknown.</p>|`last(/Azure Backup Jobs by HTTP/azure.vault.availability.state)=3`|Warning||
@@ -1475,5 +1475,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

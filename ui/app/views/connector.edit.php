@@ -42,7 +42,7 @@ $form_grid = (new CFormGrid())
 	->addItem([
 		new CLabel(_('Protocol')),
 		new CFormField([
-			_('TAA Streaming Protocol v1.0'),
+			_('TAAE Streaming Protocol v1.0'),
 			new CInput('hidden', 'protocol', $data['form']['protocol'])
 		])
 	])

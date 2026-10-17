@@ -841,8 +841,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'host' => ['string', 'required']
 				]],
-				['host' => 'TAA server', 'name' => 'TAA server'],
-				['host' => 'TAA server'],
+				['host' => 'TAAE server', 'name' => 'TAAE server'],
+				['host' => 'TAAE server'],
 				CFormValidator::SUCCESS,
 				[]
 			],
@@ -850,8 +850,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'host' => ['string', 'required']
 				]],
-				['name' => 'TAA server'],
-				['name' => 'TAA server'],
+				['name' => 'TAAE server'],
+				['name' => 'TAAE server'],
 				CFormValidator::ERROR,
 				['/host' => [
 					['message' => 'Required field is missing.', 'level' => CFormValidator::ERROR_LEVEL_PRIMARY]
@@ -861,8 +861,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'host' => ['not_empty', 'string']
 				]],
-				['host' => 'TAA server'],
-				['host' => 'TAA server'],
+				['host' => 'TAAE server'],
+				['host' => 'TAAE server'],
 				CFormValidator::SUCCESS,
 				[]
 			],
@@ -1064,8 +1064,8 @@ class CFormValidatorTest extends TestCase {
 				['object', 'fields' => [
 					'name' => ['string']
 				]],
-				['name' => 'TAA server'],
-				['name' => 'TAA server'],
+				['name' => 'TAAE server'],
+				['name' => 'TAAE server'],
 				CFormValidator::SUCCESS,
 				[]
 			],
@@ -1623,8 +1623,8 @@ class CFormValidatorTest extends TestCase {
 						]
 					]
 				]],
-				['value' => ['name' => 'TAA server']],
-				['value' => ['name' => 'TAA server']],
+				['value' => ['name' => 'TAAE server']],
+				['value' => ['name' => 'TAAE server']],
 				CFormValidator::SUCCESS,
 				[]
 			],

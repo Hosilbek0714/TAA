@@ -34,7 +34,7 @@ import (
 	"golang.zabbix.com/sdk/zbxflag"
 )
 
-const usageMessageExampleConfPath = `C:\TAA\agent\taa_agent2.conf`
+const usageMessageExampleConfPath = `C:\TAAE\agent\taae_agent2.conf`
 
 const (
 	startTypeAutomatic = "automatic"
@@ -44,7 +44,7 @@ const (
 )
 
 var (
-	serviceName = "TAA Agent 2"
+	serviceName = "TAAE Agent 2"
 
 	svcInstallFlag       bool
 	svcUninstallFlag     bool
@@ -82,7 +82,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "install",
 				Shorthand:   "i",
-				Description: "Install TAA agent 2 as service",
+				Description: "Install TAAE agent 2 as service",
 			},
 			Default: false,
 			Dest:    &svcInstallFlag,
@@ -91,7 +91,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "uninstall",
 				Shorthand:   "d",
-				Description: "Uninstall TAA agent 2 from service",
+				Description: "Uninstall TAAE agent 2 from service",
 			},
 			Default: false,
 			Dest:    &svcUninstallFlag,
@@ -100,7 +100,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "start",
 				Shorthand:   "s",
-				Description: "Start TAA agent 2 service",
+				Description: "Start TAAE agent 2 service",
 			},
 			Default: false,
 			Dest:    &svcStartFlag,
@@ -109,7 +109,7 @@ func osDependentFlags() zbxflag.Flags {
 			Flag: zbxflag.Flag{
 				Name:        "stop",
 				Shorthand:   "x",
-				Description: "Stop TAA agent 2 service",
+				Description: "Stop TAAE agent 2 service",
 			},
 			Default: false,
 			Dest:    &svcStopFlag,
@@ -119,7 +119,7 @@ func osDependentFlags() zbxflag.Flags {
 				Name:      "startup-type",
 				Shorthand: "S",
 				Description: fmt.Sprintf(
-					"Set startup type of the TAA Windows agent service to be installed."+
+					"Set startup type of the TAAE Windows agent service to be installed."+
 						" Allowed values: %s (default), %s, %s, %s",
 					startTypeAutomatic,
 					startTypeDelayed,
@@ -356,7 +356,7 @@ func resolveWindowsService(confPath string) error {
 		msg = fmt.Sprintf("service '%s' startup type configured successfully", serviceName)
 	}
 
-	msg = fmt.Sprintf("taa_agent2 [%d]: %s\n", os.Getpid(), msg)
+	msg = fmt.Sprintf("taae_agent2 [%d]: %s\n", os.Getpid(), msg)
 	fmt.Fprintf(os.Stdout, msg)
 	if err := eventLogInfo(msg); err != nil {
 		return fmt.Errorf("failed to log to event log: %s", err)
@@ -414,7 +414,7 @@ func svcStartTypeFlagParse() (uint32, bool, error) {
 func svcInstall(conf string) error {
 	exepath, err := getAgentPath()
 	if err != nil {
-		return fmt.Errorf("failed to get TAA Agent 2 executable path: %s", err.Error())
+		return fmt.Errorf("failed to get TAAE Agent 2 executable path: %s", err.Error())
 	}
 
 	m, err := mgr.Connect()
@@ -616,7 +616,7 @@ func sendServiceStop() {
 
 func runService() {
 	if err := svc.Run(serviceName, &winService{}); err != nil {
-		panic(errs.Wrap(err, "use foreground option to run TAA agent as console application"))
+		panic(errs.Wrap(err, "use foreground option to run TAAE agent as console application"))
 	}
 }
 

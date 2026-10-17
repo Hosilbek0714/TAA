@@ -38,7 +38,7 @@ class testScriptManualInput extends CIntegrationTest {
 		 * Calling for a script execution requires a host context,
 		 * regardless of where the script will eventually execute.
 		 *
-		 * Although a default TAA installation already defines a host, the
+		 * Although a default TAAE installation already defines a host, the
 		 * server itself, we want the tests to be self-contained.
 		 */
 		if ($initialized)

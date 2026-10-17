@@ -26,7 +26,7 @@ require_once __DIR__ . '/../../include/CWebTest.php';
 class testFormUser extends CWebTest {
 
 	const SQL = 'SELECT * FROM users';
-	const ZABBIX_LDAP_USER = 'John TAA';
+	const ZABBIX_LDAP_USER = 'John TAAE';
 	const UPDATE_USER = 'Tag-user';
 	const UPDATE_PASSWORD = 'Zabbix_Test_123';
 
@@ -58,7 +58,7 @@ class testFormUser extends CWebTest {
 		// Create group with frontend access -> LDAP and previously created LDAP server.
 		CDataHelper::call('usergroup.create', [
 			[
-				'name' => 'TAA LDAP',
+				'name' => 'TAAE LDAP',
 				'gui_access' => GROUP_GUI_ACCESS_LDAP,
 				'userdirectoryid' => $userdirectoryids['LDAP server #1']
 			]
@@ -78,7 +78,7 @@ class testFormUser extends CWebTest {
 				'roleid' => '2',
 				'usrgrps' => [
 					[
-						'usrgrpid' => $usergrpids['TAA LDAP']
+						'usrgrpid' => $usergrpids['TAAE LDAP']
 					]
 				]
 			]
@@ -141,7 +141,7 @@ class testFormUser extends CWebTest {
 					],
 					'enabled_buttons' => ['Update', 'Delete', 'Cancel', 'Select'],
 					'hintbox_warning' => [
-						'Password' => 'Password can only be changed for users using the internal TAA authentication.'
+						'Password' => 'Password can only be changed for users using the internal TAAE authentication.'
 					]
 				]
 			],
@@ -152,9 +152,9 @@ class testFormUser extends CWebTest {
 					'required' => ['Username', 'Current password', 'Password', 'Password (once again)', 'Refresh', 'Rows per page'],
 					'default' => [
 						'Username' => 'Admin',
-						'Name' => 'TAA',
+						'Name' => 'TAAE',
 						'Last name' => 'Administrator',
-						'Groups' => ['Internal', 'TAA administrators'],
+						'Groups' => ['Internal', 'TAAE administrators'],
 						'Current password' => '',
 						'Password' => '',
 						'Password (once again)' => '',
@@ -374,7 +374,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Admin',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -389,7 +389,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => '',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'zabbix',
 						'Password (once again)' => 'zabbix'
 					],
@@ -404,7 +404,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => '   ',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -419,7 +419,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test1',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -447,7 +447,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test2',
-						'Groups' => 'TAA administrators'
+						'Groups' => 'TAAE administrators'
 					],
 					'role' => 'Super admin role',
 					'error_title' => 'Cannot add user',
@@ -460,7 +460,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test3',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678'
 					],
 					'role' => 'Super admin role',
@@ -474,7 +474,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test4',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password (once again)' => 'test5678'
 					],
 					'role' => 'Super admin role',
@@ -488,7 +488,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test5',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'tEST5678'
 					],
@@ -503,7 +503,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test6',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => ''
@@ -519,7 +519,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test7',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => '123abc'
@@ -535,7 +535,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test8',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => '3601'
@@ -550,7 +550,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test_2h',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => '2h'
@@ -565,7 +565,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test_61m',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => '61m'
@@ -581,7 +581,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test9',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => '00000000000001'
@@ -597,7 +597,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test10',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Rows per page' => '0'
@@ -613,7 +613,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test11',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Rows per page' => 'abc123'
@@ -629,7 +629,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test12',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -647,7 +647,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test12_1m',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -666,7 +666,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test13',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -684,7 +684,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test13_1441m',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -702,7 +702,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test13_25h',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -721,7 +721,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test14',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -740,7 +740,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test15',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678'
 					],
@@ -759,7 +759,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test16',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'URL (after login)' => 'javascript:alert(123);'
@@ -775,7 +775,7 @@ class testFormUser extends CWebTest {
 					'expected' => TEST_BAD,
 					'fields' => [
 						'Username' => 'Negative_Test19',
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'URL (after login)' => 'snmp://zabbix.com'
@@ -806,7 +806,7 @@ class testFormUser extends CWebTest {
 						'Username' => 'Оверлорд',
 						'Name' => 'Антон Антонович',
 						'Last name' => 'Антонов',
-						'Groups' => ['TAA administrators'],
+						'Groups' => ['TAAE administrators'],
 						'Password' => 'абвгдеЁж',
 						'Password (once again)' => 'абвгдеЁж',
 						'Theme' => 'High-contrast dark',
@@ -829,7 +829,7 @@ class testFormUser extends CWebTest {
 						'Last name' => 'Bunny',
 						'Groups' => [
 							'Selenium user group in configuration',
-							'TAA administrators'
+							'TAAE administrators'
 						],
 						'Password' => '!@#$%^&*()_+',
 						'Password (once again)' => '!@#$%^&*()_+',
@@ -1129,7 +1129,7 @@ class testFormUser extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'teST5678'
 					],
@@ -1142,7 +1142,7 @@ class testFormUser extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Groups' => 'TAA administrators',
+						'Groups' => 'TAAE administrators',
 						'Password' => 'test5678',
 						'Password (once again)' => 'test5678',
 						'Refresh' => ''
@@ -1435,7 +1435,7 @@ class testFormUser extends CWebTest {
 
 		if ($update_user === 'LDAP change password button check') {
 			$this->assertFalse($form->query('button:Change password')->one()->isClickable());
-			$hintbox = 'Password can only be changed for users using the internal TAA authentication.';
+			$hintbox = 'Password can only be changed for users using the internal TAAE authentication.';
 			$this->assertEquals($hintbox, $this->query('xpath://button[contains(@data-hintbox-contents, '.
 					CXPathHelper::escapeQuotes($hintbox).')]')->one()->getAttribute('data-hintbox-contents')
 			);
@@ -1598,7 +1598,7 @@ class testFormUser extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'username' => 'guest',
-					'error_details' => 'Cannot delete TAA internal user "guest", try disabling that user.'
+					'error_details' => 'Cannot delete TAAE internal user "guest", try disabling that user.'
 				]
 			],
 			// Attempt to delete a user that owns a map.

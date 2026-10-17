@@ -569,7 +569,7 @@ class testFormHostPrototype extends CLegacyWebTest {
 					'checkbox' => true,
 					'hostgroup' => 'Virtual machines',
 					'group_prototype' => 'New test {#MACRO}',
-					'template' => 'Windows by TAA agent',
+					'template' => 'Windows by TAAE agent',
 					'inventory' => 'Automatic'
 				]
 			],

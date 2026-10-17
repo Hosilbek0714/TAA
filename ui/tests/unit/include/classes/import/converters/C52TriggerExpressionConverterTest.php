@@ -505,10 +505,10 @@ class C52TriggerExpressionConverterTest extends TestCase {
 			'enrich simple trigger expression' => [
 				[
 					'expression' => '{dayofweek()}=0',
-					'host' => 'TAA server',
+					'host' => 'TAAE server',
 					'item' => 'trap'
 				],
-				'expression' => '(dayofweek()=0) or (last(/TAA server/trap)<>last(/TAA server/trap))'
+				'expression' => '(dayofweek()=0) or (last(/TAAE server/trap)<>last(/TAAE server/trap))'
 			]
 		];
 	}

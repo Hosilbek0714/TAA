@@ -5,13 +5,13 @@
 
 The template to monitor Kubernetes nodes that work without any external scripts.
 It works without external scripts and uses the script item to make HTTP requests to the Kubernetes API.
-Install the TAA Helm Chart (https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) in your Kubernetes cluster.
+Install the TAAE Helm Chart (https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) in your Kubernetes cluster.
 
 Change the values according to the environment in the file $HOME/zabbix_values.yaml.
 
 For example:
 
- -  ## Enables use of **TAA proxy**
+ -  ## Enables use of **TAAE proxy**
     enabled: false
 
 Set the `{$KUBE.API.URL}` such as `<scheme>://<host>:<port>`.
@@ -27,7 +27,7 @@ Set up the macros to filter the metrics of discovered nodes
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -36,11 +36,11 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
-Install the [TAA Helm Chart](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) in your Kubernetes cluster.
+Install the [TAAE Helm Chart](https://git.zabbix.com/projects/ZT/repos/kubernetes-helm/browse?at=refs%2Fheads%2Fmaster) in your Kubernetes cluster.
 
 Set the `{$KUBE.API.URL}` such as `<scheme>://<host>:<port>`.
 
@@ -49,7 +49,7 @@ Get the generated service account token using the command
 `kubectl get secret zabbix-service-account -n monitoring -o jsonpath={.data.token} | base64 -d`
 
 Then set it to the macro `{$KUBE.API.TOKEN}`.
-Set `{$KUBE.NODES.ENDPOINT.NAME}` with TAA agent's endpoint name. See `kubectl -n monitoring get ep`. Default: `zabbix-zabbix-helm-chrt-agent`.
+Set `{$KUBE.NODES.ENDPOINT.NAME}` with TAAE agent's endpoint name. See `kubectl -n monitoring get ep`. Default: `zabbix-zabbix-helm-chrt-agent`.
 
 Set up the macros to filter the metrics of discovered nodes and host creation based on host prototypes:
 
@@ -82,7 +82,7 @@ See the Kubernetes documentation for details about labels and annotations:
 - <https://kubernetes.io/docs/concepts/overview/working-with-objects/labels/>
 - <https://kubernetes.io/docs/concepts/overview/working-with-objects/annotations/>
 
-**Note**, the discovered nodes will be created as separate hosts in TAA with the Linux template automatically assigned to them.
+**Note**, the discovered nodes will be created as separate hosts in TAAE with the Linux template automatically assigned to them.
 
 
 
@@ -207,5 +207,5 @@ See the Kubernetes documentation for details about labels and annotations:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

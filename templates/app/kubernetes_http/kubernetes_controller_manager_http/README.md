@@ -3,14 +3,14 @@
 
 ## Overview
 
-The template to monitor Kubernetes Controller manager by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor Kubernetes Controller manager by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 Template `Kubernetes Controller manager by HTTP` - collects metrics by HTTP agent from Controller manager /metrics endpoint.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -19,7 +19,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -29,7 +29,7 @@ Template needs to use Authorization via API token.
 Don't forget change macros {$KUBE.CONTROLLER.SERVER.URL}, {$KUBE.API.TOKEN}.
 Also, see the Macros section for a list of macros used to set trigger values.
 
-*NOTE.* You might need to set the `--binding-address` option for Controller Manager to the address where TAA proxy can reach it.
+*NOTE.* You might need to set the `--binding-address` option for Controller Manager to the address where TAAE proxy can reach it.
 For example, for clusters created with `kubeadm` it can be set in the following manifest file (changes will be applied immediately):
 
 - /etc/kubernetes/manifests/kube-controller-manager.yaml
@@ -98,5 +98,5 @@ For example, for clusters created with `kubeadm` it can be set in the following 
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

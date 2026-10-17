@@ -527,7 +527,7 @@ INVENTORY.VENDOR -> "					. REDUCTED_PRINTABLE_ASCII		. " <-";
 			"TRIGGER.EVENTS.PROBLEM.ACK -> "			. '0'												. " <-\n" .
 			"TRIGGER.EVENTS.PROBLEM.UNACK -> "			. '1'												. " <-\n" .
 			"TRIGGER.EVENTS.UNACK -> "					. '1'												. " <-\n" .
-			"TRIGGER.HOSTGROUP.NAME -> "				. 'TAA servers'									. " <-\n" . // 4 -> 'TAA servers'
+			"TRIGGER.HOSTGROUP.NAME -> "				. 'TAAE servers'									. " <-\n" . // 4 -> 'TAAE servers'
 			"TRIGGER.EXPRESSION -> "					. self::$trigger_expression							. " <-\n" .
 			"TRIGGER.EXPRESSION.RECOVERY -> "			. self::$trigger_recovery_expression				. " <-\n" .
 			"TRIGGER.NAME -> "							. 'trigger_trap'									. " <-\n" .
@@ -1039,7 +1039,7 @@ INVENTORY.VENDOR -> "					. REDUCTED_PRINTABLE_ASCII		. " <-";
 			"TRIGGER.EVENTS.PROBLEM.ACK -> "			. '0'												. " <-\n" .
 			"TRIGGER.EVENTS.PROBLEM.UNACK -> "			. '1'												. " <-\n" .
 			"TRIGGER.EVENTS.UNACK -> "					. '2'												. " <-\n" .
-			"TRIGGER.HOSTGROUP.NAME -> "				. 'TAA servers'									. " <-\n" . // 4 -> 'TAA servers'
+			"TRIGGER.HOSTGROUP.NAME -> "				. 'TAAE servers'									. " <-\n" . // 4 -> 'TAAE servers'
 			"TRIGGER.EXPRESSION -> "					. self::$trigger_expression							. " <-\n" .
 			"TRIGGER.EXPRESSION.RECOVERY -> "			. self::$trigger_recovery_expression				. " <-\n" .
 			"TRIGGER.NAME -> "							. 'trigger_trap'									. " <-\n" .

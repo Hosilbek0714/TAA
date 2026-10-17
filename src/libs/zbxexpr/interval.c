@@ -1643,7 +1643,7 @@ int	zbx_check_time_period(const char *period, time_t time, const char *tz, int *
 
 /******************************************************************************
  *                                                                            *
- * Purpose: calculates item nextcheck for TAA agent type items             *
+ * Purpose: calculates item nextcheck for TAAE agent type items             *
  *                                                                            *
  ******************************************************************************/
 int	zbx_get_agent_item_nextcheck(zbx_uint64_t itemid, const char *delay, int now,

@@ -481,7 +481,7 @@ class CSetupWizard extends CForm {
 
 	private function stageWelcome(): array {
 		preg_match('/^\d+\.\d+/', ZABBIX_VERSION, $version);
-		$setup_title = (new CDiv([new CSpan(_('Xush kelibsiz')), 'TAA '.$version[0]]))->addClass(ZBX_STYLE_SETUP_TITLE);
+		$setup_title = (new CDiv([new CSpan(_('Xush kelibsiz')), 'TAAE '.$version[0]]))->addClass(ZBX_STYLE_SETUP_TITLE);
 
 		$default_lang = $this->getConfig('default_lang');
 		$lang_select = (new CSelect('default_lang'))
@@ -821,7 +821,7 @@ class CSetupWizard extends CForm {
 
 		$table = (new CFormGrid())
 			->addItem([
-				new CLabel(_('TAA server nomi')),
+				new CLabel(_('TAAE server nomi')),
 				(new CTextBox('zbx_server_name', $this->getConfig('ZBX_SERVER_NAME', '')))
 					->setWidth(ZBX_TEXTAREA_SMALL_WIDTH)
 			])
@@ -1064,7 +1064,7 @@ class CSetupWizard extends CForm {
 			$table
 				->addRow(null)
 				->addRow(
-					(new CSpan(_('TAA server nomi')))->addClass(ZBX_STYLE_GREY),
+					(new CSpan(_('TAAE server nomi')))->addClass(ZBX_STYLE_GREY),
 					$this->getConfig('ZBX_SERVER_NAME')
 				);
 		}
@@ -1320,7 +1320,7 @@ class CSetupWizard extends CForm {
 
 		$message_box = null;
 		$message = [
-			(new CTag('h1', true, _('Tabriklaymiz! Siz TAA frontend muvaffaqiyatli o\'rnatdingiz.')))
+			(new CTag('h1', true, _('Tabriklaymiz! Siz TAAE frontend muvaffaqiyatli o\'rnatdingiz.')))
 				->addClass(ZBX_STYLE_GREEN),
 			new CTag('p', true, _s('Configuration file "%1$s" created.', ltrim(CConfigFile::CONFIG_FILE_PATH, '/')))
 		];

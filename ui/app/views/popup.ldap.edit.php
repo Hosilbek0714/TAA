@@ -251,7 +251,7 @@ $form
 			(new CLabel([
 				_('Media type mapping'),
 				makeHelpIcon(
-					_("Map user's LDAP media attributes (e.g. email) to TAA user media for sending notifications.")
+					_("Map user's LDAP media attributes (e.g. email) to TAAE user media for sending notifications.")
 			)]))->addClass('allow-jit-provisioning'),
 			(new CFormField(
 				(new CDiv(

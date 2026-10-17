@@ -2482,7 +2482,7 @@ class testUsers extends CAPITest {
 			// Try delete internal user.
 			[
 				'user' => ['2'],
-				'expected_error' => 'Cannot delete TAA internal user "guest", try disabling that user.'
+				'expected_error' => 'Cannot delete TAAE internal user "guest", try disabling that user.'
 			],
 			// Check if deleted users used in actions.
 			[

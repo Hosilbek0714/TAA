@@ -1,14 +1,14 @@
 #!/usr/bin/env bash
 # =============================================================================
-# TAA Agent 2 — Linux uchun kross-kompilyatsiya skripti
+# TAAE Agent 2 — Linux uchun kross-kompilyatsiya skripti
 # -----------------------------------------------------------------------------
-# Maqsad: Windows yoki Linux hostda Go yordamida `taa_agent2` Linux binarini
+# Maqsad: Windows yoki Linux hostda Go yordamida `taae_agent2` Linux binarini
 #         (amd64 yoki arm64) yig'ish.
 # Foydalanish:
-#   ./build.sh                         # default: amd64, dist/taa_agent2
+#   ./build.sh                         # default: amd64, dist/taae_agent2
 #   ./build.sh --arch arm64            # ARM64 uchun
 #   ./build.sh --static                # CGO_ENABLED=0 (statik bog'lanish)
-#   ./build.sh --out /tmp/taa_agent2   # boshqa chiqish yo'li
+#   ./build.sh --out /tmp/taae_agent2   # boshqa chiqish yo'li
 # =============================================================================
 
 set -euo pipefail
@@ -64,7 +64,7 @@ esac
 
 # --- Default chiqish yo'li ---
 if [[ -z "${OUT}" ]]; then
-    OUT="${SCRIPT_DIR}/dist/taa_agent2"
+    OUT="${SCRIPT_DIR}/dist/taae_agent2"
 fi
 
 # --- Boshlang'ich tekshirishlar ---

@@ -267,7 +267,7 @@ int	zbx_is_double(const char *str, double *value)
 	double	tmp;
 	char	*endptr;
 
-	/* Not all strings accepted by strtod() can be accepted in TAA. */
+	/* Not all strings accepted by strtod() can be accepted in TAAE. */
 	/* Therefore additional, more strict syntax check is used before strtod(). */
 
 	if (SUCCEED != is_double_valid_syntax(str))

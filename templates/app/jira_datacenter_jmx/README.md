@@ -5,12 +5,12 @@
 
 This template is used for monitoring Jira Data Center health. It is designed for standalone operation for on-premises Jira installations.
 
-This template uses a single data source, JMX, which requires JMX RMI setup of your Jira application and Java Gateway setup on the TAA side.
+This template uses a single data source, JMX, which requires JMX RMI setup of your Jira application and Java Gateway setup on the TAAE side.
 If you need "Garbage collector" and "Web server" monitoring, add "Generic Java JMX" and "Apache Tomcat by JMX" templates on the same host.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -20,12 +20,12 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
 Metrics are collected by JMX.
-0. Deploy the TAA Java Gateway component ([instructions](https://www.zabbix.com/documentation/7.4/manual/concepts/java)).
+0. Deploy the TAAE Java Gateway component ([instructions](https://www.zabbix.com/documentation/7.4/manual/concepts/java)).
 1. Enable and configure JMX access to Jira Data Center. See documentation for [instructions](https://confluence.atlassian.com/adminjiraserver/live-monitoring-using-the-jmx-interface-939707304.html).
 2. Assign the "Jira Data Center by JMX" template to the host with a JMX interface.
 2. If your Jira installation requires authentication for JMX, set the values in the host macros `{$JMX.USERNAME}` and `{$JMX.PASSWORD}`.
@@ -199,5 +199,5 @@ Metrics are collected by JMX.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

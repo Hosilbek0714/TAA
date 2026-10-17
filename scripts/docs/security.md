@@ -1,6 +1,6 @@
-# TAA — xavfsizlik bo'yicha eslatmalar
+# TAAE — xavfsizlik bo'yicha eslatmalar
 
-Bu hujjat TAA + Catalyst 3560G + Cisco 1800 + DL-160 Gen9 yechimini ishlatish jarayonida e'tibor berilishi kerak bo'lgan **sekret boshqaruvi, SNMP kuchaytirilgan rejimi, ACL, audit jurnali va backup** bo'yicha minimal majburiy chora-tadbirlarni belgilaydi.
+Bu hujjat TAAE + Catalyst 3560G + Cisco 1800 + DL-160 Gen9 yechimini ishlatish jarayonida e'tibor berilishi kerak bo'lgan **sekret boshqaruvi, SNMP kuchaytirilgan rejimi, ACL, audit jurnali va backup** bo'yicha minimal majburiy chora-tadbirlarni belgilaydi.
 
 > Bu yo'riqnomadagi sozlamalar **majburiy minimum** — ulardan pastroq darajada qoldirish KXD muammolari hujjatining maqsadlariga ziddir.
 
@@ -33,7 +33,7 @@ Buni avtomatik tekshirish (CI/CD da yoki qo'lda):
 
 ```bash
 grep -RIn --exclude-dir=.git --include="*.py" --include="*.sh" \
-     -E "password[[:space:]]*=[[:space:]]*['\"][^'\"]+" /opt/taa/scripts \
+     -E "password[[:space:]]*=[[:space:]]*['\"][^'\"]+" /opt/taae/scripts \
      && echo "WARNING: hardcoded password found!" || echo "OK"
 ```
 
@@ -50,11 +50,11 @@ core-sw01(config)# ! v1/v2c ni o'chirish:
 core-sw01(config)# no snmp-server community public
 core-sw01(config)# no snmp-server community private
 core-sw01(config)# !
-core-sw01(config)# snmp-server view TAA_VIEW iso included
-core-sw01(config)# snmp-server group TAA_GROUP v3 priv read TAA_VIEW
-core-sw01(config)# snmp-server user taa_user TAA_GROUP v3 \
+core-sw01(config)# snmp-server view TAAE_VIEW iso included
+core-sw01(config)# snmp-server group TAAE_GROUP v3 priv read TAAE_VIEW
+core-sw01(config)# snmp-server user taae_user TAAE_GROUP v3 \
                        auth sha <STRONG_SHA_PASS> priv aes 128 <STRONG_AES_PASS>
-core-sw01(config)# snmp-server host 10.0.10.10 version 3 priv taa_user udp-port 162
+core-sw01(config)# snmp-server host 10.0.10.10 version 3 priv taae_user udp-port 162
 ```
 
 ### Cisco 1800 — xuddi shu sozlamalar.
@@ -67,7 +67,7 @@ snmpwalk -v2c -c public 10.0.99.2 sysDescr
 # Timeout: No Response from 10.0.99.2
 
 # v3 bilan ishlashi kerak:
-snmpwalk -v3 -l authPriv -u taa_user -a SHA -A <STRONG_SHA_PASS> \
+snmpwalk -v3 -l authPriv -u taae_user -a SHA -A <STRONG_SHA_PASS> \
          -x AES -X <STRONG_AES_PASS> 10.0.99.2 sysDescr.0
 ```
 
@@ -81,7 +81,7 @@ snmpwalk -v3 -l authPriv -u taa_user -a SHA -A <STRONG_SHA_PASS> \
 
 ## 3. Switch CLI access — `access-class` ACL
 
-Switch va router'larga SSH faqat TAA serveridan (`10.0.10.10`) kirishga ruxsat etiladi. Boshqa hech qaysi xostdan kirish — **rad etilgan**.
+Switch va router'larga SSH faqat TAAE serveridan (`10.0.10.10`) kirishga ruxsat etiladi. Boshqa hech qaysi xostdan kirish — **rad etilgan**.
 
 ### 3560G va 1800
 
@@ -112,16 +112,16 @@ core-sw01(config-line)# exec-timeout 10 0
 
 ```bash
 # 10.0.10.10 dan kirish - OK:
-ssh taa_auto@10.0.99.2
+ssh taae_auto@10.0.99.2
 
 # Boshqa IP dan urinish - REFUSED bo'lishi kerak:
 # (boshqa workstationdan)
-ssh taa_auto@10.0.99.2
+ssh taae_auto@10.0.99.2
 # ssh: connect to host 10.0.99.2 port 22: Connection refused
 # Yoki "Permission denied"
 ```
 
-ACL `log` qatori bilan `show logging | include MGMT_ACL` orqali ruxsatsiz urinishlarni ko'rsa bo'ladi — bu *o'zi* TAA log itemi orqali alert beradi.
+ACL `log` qatori bilan `show logging | include MGMT_ACL` orqali ruxsatsiz urinishlarni ko'rsa bo'ladi — bu *o'zi* TAAE log itemi orqali alert beradi.
 
 ---
 
@@ -141,10 +141,10 @@ core-sw01(config)# privilege interface level 7 shutdown
 core-sw01(config)# privilege interface level 7 no shutdown
 core-sw01(config)# privilege interface level 7 description
 core-sw01(config)# !
-core-sw01(config)# username taa_auto privilege 7 secret <STRONG>
+core-sw01(config)# username taae_auto privilege 7 secret <STRONG>
 ```
 
-`taa_auto` user endi:
+`taae_auto` user endi:
 
 - `show port-security`, `show interfaces` ko'ra oladi
 - Faqat **interfeys ostida shutdown/no shutdown/description** qila oladi
@@ -153,7 +153,7 @@ core-sw01(config)# username taa_auto privilege 7 secret <STRONG>
 ### Tasdiqlash
 
 ```bash
-ssh taa_auto@10.0.99.2
+ssh taae_auto@10.0.99.2
 core-sw01> show privilege
 # Current privilege level is 7
 core-sw01> reload
@@ -170,7 +170,7 @@ core-sw01(config-if)# spanning-tree portfast   # Command authorization failed.
 
 `auto_remediation.py` har safar port o'chirilganda **ikki joyga** yozadi:
 
-1. **SQLite** `/var/lib/taa/audit.db` `blocks` jadvali (DL-160 da).
+1. **SQLite** `/var/lib/taae/audit.db` `blocks` jadvali (DL-160 da).
 2. **Cisco logging buffer + flash** (`flash:/violations.log` — 3560G da).
 
 ### SQLite jadval schemasi
@@ -181,15 +181,15 @@ CREATE TABLE IF NOT EXISTS blocks(
     switch  TEXT,        -- masalan "10.0.99.2"
     port    TEXT,        -- masalan "Gi0/3"
     reason  TEXT,        -- masalan "psecure-violation"
-    actor   TEXT,        -- skript chaqirgan TAA user (qo'shimcha)
-    trigger_id TEXT      -- TAA trigger ID (qo'shimcha)
+    actor   TEXT,        -- skript chaqirgan TAAE user (qo'shimcha)
+    trigger_id TEXT      -- TAAE trigger ID (qo'shimcha)
 );
 ```
 
 ### Audit ko'rish
 
 ```bash
-sudo -u zabbix sqlite3 /var/lib/taa/audit.db \
+sudo -u zabbix sqlite3 /var/lib/taae/audit.db \
    "select ts, switch, port, reason from blocks order by ts desc limit 20;"
 ```
 
@@ -224,23 +224,23 @@ CREATE INDEX IF NOT EXISTS idx_audit_blocks_switch_port ON audit_blocks(switch, 
 
 ## 6. Backup va tiklash
 
-Loyiha ildiz papkasida (`D:\TAA\zoddix`) tayyor backup fayli mavjud:
+Loyiha ildiz papkasida (`D:\TAAE\zoddix`) tayyor backup fayli mavjud:
 
 | Fayl | Hajmi (taxminan) | Mazmuni |
 |------|------------------|---------|
-| `taa_database_backup.sql` | SQL dump | TAA Postgres DB to'liq nusxasi |
-| `taa_database_backup_utf8.sql` | SQL dump (UTF-8) | UTF-8 sarlavhali variant |
-| `taa_database_backup.zip` | Siqilgan | Yuqoridagi SQL ning zip nusxasi |
-| `taa_deployment_package.zip` | Siqilgan | To'liq deployment paket |
-| `taa_restore.sh` | Bash skript | Linux/Bash da tiklash |
-| `taa_restore.ps1` | PowerShell skript | Windows da tiklash |
+| `taae_database_backup.sql` | SQL dump | TAAE Postgres DB to'liq nusxasi |
+| `taae_database_backup_utf8.sql` | SQL dump (UTF-8) | UTF-8 sarlavhali variant |
+| `taae_database_backup.zip` | Siqilgan | Yuqoridagi SQL ning zip nusxasi |
+| `taae_deployment_package.zip` | Siqilgan | To'liq deployment paket |
+| `taae_restore.sh` | Bash skript | Linux/Bash da tiklash |
+| `taae_restore.ps1` | PowerShell skript | Windows da tiklash |
 
 ### Tiklash (Linux)
 
 ```bash
-cd /opt/taa
-sudo bash taa_restore.sh
-# Bu skript taa-db konteyneriga ulanib taa_database_backup_utf8.sql ni
+cd /opt/taae
+sudo bash taae_restore.sh
+# Bu skript taae-db konteyneriga ulanib taae_database_backup_utf8.sql ni
 # import qiladi va admin parolini default holatga qaytaradi.
 ```
 
@@ -251,9 +251,9 @@ Kunlik (cron):
 ```bash
 sudo crontab -e
 # Quyidagini qo'shing:
-0 2 * * * docker exec taa-db pg_dump -U postgres taa | gzip > /var/backups/taa/taa_$(date +\%F).sql.gz
-0 3 * * * docker exec taa-db pg_dump -U taa  taa_ipam | gzip > /var/backups/taa/taa_ipam_$(date +\%F).sql.gz
-0 4 * * 0 find /var/backups/taa -name "*.sql.gz" -mtime +30 -delete
+0 2 * * * docker exec taae-db pg_dump -U postgres taae | gzip > /var/backups/taae/taae_$(date +\%F).sql.gz
+0 3 * * * docker exec taae-db pg_dump -U taae  taae_ipam | gzip > /var/backups/taae/taae_ipam_$(date +\%F).sql.gz
+0 4 * * 0 find /var/backups/taae -name "*.sql.gz" -mtime +30 -delete
 ```
 
 ### IOS konfiguratsiyasi backup
@@ -276,7 +276,7 @@ sudo git init && sudo git add -A && sudo git commit -m "initial"
 
 ---
 
-## 7. TAA web UI xavfsizligi
+## 7. TAAE web UI xavfsizligi
 
 | Sozlama | Tavsiya etilgan qiymat | Joyi |
 |---------|------------------------|------|
@@ -296,12 +296,12 @@ Quyidagi 10 ta majburiy element bajarilgan bo'lsa, yechim **xavfsiz minimal dara
 - [ ] `/etc/zabbix/.env` egasi `zabbix:zabbix`, `chmod 600`, `.gitignore` da.
 - [ ] SNMPv1 va v2c o'chirilgan, faqat SNMPv3 SHA+AES128 ishlaydi.
 - [ ] `vty access-class` faqat `10.0.10.10` ga ruxsat beradi.
-- [ ] `taa_auto` user privilege 7 (cheklangan), `reload`/`erase` qila olmaydi.
+- [ ] `taae_auto` user privilege 7 (cheklangan), `reload`/`erase` qila olmaydi.
 - [ ] `auto_remediation.py` har shutdown ni SQLite `blocks` ga yozadi.
-- [ ] `taa_database_backup_utf8.sql` mavjud va `taa_restore.sh` test qilingan.
+- [ ] `taae_database_backup_utf8.sql` mavjud va `taae_restore.sh` test qilingan.
 - [ ] Postgres dump kunlik cron orqali olinadi va 30 kun saqlanadi.
 - [ ] 3560G `running-config` har soat TFTP orqali DL-160 ga jo'natiladi va git da versiyalanadi.
-- [ ] TAA Admin parol default holatdan almashtirilgan.
-- [ ] TAA login session davri 15 daqiqa.
+- [ ] TAAE Admin parol default holatdan almashtirilgan.
+- [ ] TAAE login session davri 15 daqiqa.
 
 Agar ulardan bittasi yo'q bo'lsa — yechim ishlaydi, lekin KXD muammolari hujjatining xavfsizlik talablarini **to'liq qoplamaydi**.

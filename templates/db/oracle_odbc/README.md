@@ -13,7 +13,7 @@ Oracle Database 12c2 and newer.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -22,7 +22,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -81,7 +81,7 @@ This template has been tested on:
     GRANT SELECT ON v_$asm_diskgroup_stat TO zabbix_mon;
     GRANT SELECT ON DBA_USERS TO zabbix_mon;
     ```
-    **Important! Ensure that the ODBC connection to Oracle includes the session parameter `NLS_NUMERIC_CHARACTERS= '.,'`. It is important for displaying the float numbers in TAA correctly.**
+    **Important! Ensure that the ODBC connection to Oracle includes the session parameter `NLS_NUMERIC_CHARACTERS= '.,'`. It is important for displaying the float numbers in TAAE correctly.**
 
     **Important! These privileges grant the monitoring user `SELECT_CATALOG_ROLE`, which, in turn, gives access to thousands of tables in the database.**
     This role is required to access the `V$RESTORE_POINT` dynamic performance view.
@@ -123,7 +123,7 @@ This template has been tested on:
           END;
           ```
 
-      4. Grant the TAA monitoring user the Execute privilege on the created pipelined table function and replace the monitoring user `V$RESTORE_POINT` view with the `SYS` user function (in this example, the `SYS` user is used to create DB types and function):
+      4. Grant the TAAE monitoring user the Execute privilege on the created pipelined table function and replace the monitoring user `V$RESTORE_POINT` view with the `SYS` user function (in this example, the `SYS` user is used to create DB types and function):
 
           ```sql
           GRANT EXECUTE ON zbx_mon_restore_point TO c##zabbix_mon;
@@ -147,14 +147,14 @@ This template has been tested on:
     
     If this workaround does not work for you, there are more options available, such as __materialized views__, but look out for data refresh as `V$RESTORE_POINT` is a dynamic performance view.
 
-2. Install the ODBC driver on TAA server or TAA proxy.
+2. Install the ODBC driver on TAAE server or TAAE proxy.
   See the [Oracle documentation](https://www.oracle.com/database/technologies/releasenote-odbc-ic.html) for instructions.
 
-3. Configure TAA server or TAA proxy for using the Oracle environment:
+3. Configure TAAE server or TAAE proxy for using the Oracle environment:
 
     This step is required only when:
     
-    * installing Oracle Instant Client with .rpm packages with a version < 19.3 (if Instant Client is the only Oracle software installed on TAA server or TAA proxy);
+    * installing Oracle Instant Client with .rpm packages with a version < 19.3 (if Instant Client is the only Oracle software installed on TAAE server or TAAE proxy);
     
     * installing Oracle Instant Client manually with .zip files.
   
@@ -190,7 +190,7 @@ This template has been tested on:
     This is a minimal configuration example. Depending on the Oracle Instant Client version, required functionality and host operating system, a different set of additional packages might need to be installed.
     For more detailed configuration instructions, see the [official Oracle Instant Client installation instructions for Linux](https://www.oracle.com/database/technologies/instant-client/linux-x86-64-downloads.html).
 
-4. Restart TAA server or TAA proxy.
+4. Restart TAAE server or TAAE proxy.
 
 5. Set the username and password in the host macros `{$ORACLE.USER}` and `{$ORACLE.PASSWORD}`.
 
@@ -247,8 +247,8 @@ This template has been tested on:
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Service's TCP port state|<p>Checks the availability of Oracle on the TCP port.</p>|TAA agent|net.tcp.service[tcp,{$ORACLE.HOST},{$ORACLE.PORT}]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Number of LISTENER processes|<p>The number of running listener processes.</p>|TAA agent|proc.num[,,,"tnslsnr LISTENER"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Service's TCP port state|<p>Checks the availability of Oracle on the TCP port.</p>|TAAE agent|net.tcp.service[tcp,{$ORACLE.HOST},{$ORACLE.PORT}]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Number of LISTENER processes|<p>The number of running listener processes.</p>|TAAE agent|proc.num[,,,"tnslsnr LISTENER"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
 |Get instance state|<p>Gets the state of the current instance.</p>|Database monitor|db.odbc.get[get_instance_state,,"Driver={$ORACLE.DRIVER};DBQ=//{$ORACLE.HOST}:{$ORACLE.PORT}/{$ORACLE.SERVICE};"]|
 |Get archive log|<p>Gets the destinations of the log archive.</p>|Database monitor|db.odbc.get[get_archivelog,,"Driver={$ORACLE.DRIVER};DBQ=//{$ORACLE.HOST}:{$ORACLE.PORT}/{$ORACLE.SERVICE};"]|
 |Get ASM disk groups|<p>Gets the ASM disk groups.</p>|Database monitor|db.odbc.get[get_asm,,"Driver={$ORACLE.DRIVER};DBQ=//{$ORACLE.HOST}:{$ORACLE.PORT}/{$ORACLE.SERVICE};"]|
@@ -289,7 +289,7 @@ This template has been tested on:
 |Sessions lock rate|<p>The percentage of locked sessions. Locks are mechanisms that prevent destructive interaction between transactions accessing the same resource - either user objects, such as tables and rows or system objects not visible to users, such as shared data structures in memory and data dictionary rows.</p>|Dependent item|oracle.session_lock_rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.METRIC=='SESSION::Lock rate')].VALUE.first()`</p></li></ul>|
 |Sessions locked over {$ORACLE.SESSION.LOCK.MAX.TIME}s|<p>The count of the prolongedly locked sessions. (You can change the duration of the maximum session lock in seconds for a query using the `{$ORACLE.SESSION.LOCK.MAX.TIME}` macro. Default = 600 s).</p>|Dependent item|oracle.session_long_time_locked<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.METRIC=='SESSION::Long time locked')].VALUE.first()`</p></li></ul>|
 |Sessions concurrency|<p>The percentage of concurrency. Concurrency is a database behavior when different transactions request to change the same resource. In the case of modifying data transactions, it sequentially temporarily blocks the right to change the data, and the rest of the transactions wait for access. When the access to a resource is locked for a long time, the concurrency grows (like the transaction queue), often leaving an extremely negative impact on performance. A high contention value does not indicate the root cause of the problem, but is a signal to search for it.</p>|Dependent item|oracle.session_concurrency_rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.METRIC=='SESSION::Concurrency rate')].VALUE.first()`</p></li></ul>|
-|User '{$ORACLE.USER}' expire password|<p>The number of days before the TAA account password expires.</p>|Dependent item|oracle.user_expire_password<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.METRIC=='USER::Expire password')].VALUE.first()`</p></li></ul>|
+|User '{$ORACLE.USER}' expire password|<p>The number of days before the TAAE account password expires.</p>|Dependent item|oracle.user_expire_password<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.METRIC=='USER::Expire password')].VALUE.first()`</p></li></ul>|
 |Active serial sessions|<p>The number of active serial sessions.</p>|Dependent item|oracle.active_serial_sessions<p>**Preprocessing**</p><ul><li><p>JSON Path: `$[?(@.METRIC=='SYS::Active Serial Sessions')].VALUE.first()`</p></li></ul>|
 |Active parallel sessions|<p>The number of active parallel sessions.</p>|Dependent item|oracle.active_parallel_sessions<p>**Preprocessing**</p><ul><li><p>JSON Path: `The text is too long. Please see the template.`</p></li></ul>|
 |Long table scans per second|<p>The number of long table scans per second. A table is considered long if it is not cached and if its high water mark is greater than five blocks.</p>|Dependent item|oracle.long_table_scans_rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `The text is too long. Please see the template.`</p></li></ul>|
@@ -329,7 +329,7 @@ This template has been tested on:
 |Oracle: LISTENER process is not running|<p>The Oracle listener process is not running.</p>|`max(/Oracle by ODBC/proc.num[,,,"tnslsnr LISTENER"],#3)=0`|Disaster||
 |Oracle: Version has changed|<p>The Oracle Database version has changed. Acknowledge to close the problem manually.</p>|`last(/Oracle by ODBC/oracle.version,#1)<>last(/Oracle by ODBC/oracle.version,#2) and length(last(/Oracle by ODBC/oracle.version))>0`|Info|**Manual close**: Yes|
 |Oracle: Host has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Oracle by ODBC/oracle.uptime)<10m`|Info|**Manual close**: Yes|
-|Oracle: Failed to fetch info data|<p>TAA has not received any data for the items for the last 5 minutes. The database might be unavailable for connecting.</p>|`nodata(/Oracle by ODBC/oracle.uptime,5m)=1`|Warning|**Depends on**:<br><ul><li>Oracle: Port {$ORACLE.PORT} is unavailable</li></ul>|
+|Oracle: Failed to fetch info data|<p>TAAE has not received any data for the items for the last 5 minutes. The database might be unavailable for connecting.</p>|`nodata(/Oracle by ODBC/oracle.uptime,5m)=1`|Warning|**Depends on**:<br><ul><li>Oracle: Port {$ORACLE.PORT} is unavailable</li></ul>|
 |Oracle: Instance name has changed|<p>An Oracle Database instance name has changed. Acknowledge to close the problem manually.</p>|`last(/Oracle by ODBC/oracle.instance_name,#1)<>last(/Oracle by ODBC/oracle.instance_name,#2) and length(last(/Oracle by ODBC/oracle.instance_name))>0`|Info|**Manual close**: Yes|
 |Oracle: Instance hostname has changed|<p>An Oracle Database instance hostname has changed. Acknowledge to close the problem manually.</p>|`last(/Oracle by ODBC/oracle.instance_hostname,#1)<>last(/Oracle by ODBC/oracle.instance_hostname,#2) and length(last(/Oracle by ODBC/oracle.instance_hostname))>0`|Info|**Manual close**: Yes|
 |Oracle: Too many active processes|<p>Active processes are using more than `{$ORACLE.PROCESSES.MAX.WARN}`% of the available number of processes.</p>|`min(/Oracle by ODBC/oracle.processes_count,5m) * 100 / last(/Oracle by ODBC/oracle.processes_limit) > {$ORACLE.PROCESSES.MAX.WARN}`|Warning||
@@ -339,7 +339,7 @@ This template has been tested on:
 |Oracle: Too many locked sessions|<p>The number of locked sessions exceeds `{$ORACLE.SESSIONS.LOCK.MAX.WARN}`% of the running sessions.</p>|`min(/Oracle by ODBC/oracle.session_lock_rate,5m) > {$ORACLE.SESSIONS.LOCK.MAX.WARN}`|Warning||
 |Oracle: Too many sessions locked|<p>The number of locked sessions exceeding `{$ORACLE.SESSION.LOCK.MAX.TIME}` seconds is too high. Long-term locks can negatively affect the database performance. Therefore, if they are detected, you should first find the most difficult queries from the database point of view and then analyze possible resource leaks.</p>|`min(/Oracle by ODBC/oracle.session_long_time_locked,5m) > {$ORACLE.SESSION.LONG.LOCK.MAX.WARN}`|Warning||
 |Oracle: Too high database concurrency|<p>The concurrency rate exceeds `{$ORACLE.CONCURRENCY.MAX.WARN}`%. A high contention value does not indicate the root cause of the problem, but is a signal to review resource consumption (determine the "heaviest" queries in the database, trace sessions, etc.) This will help find the root cause and possible optimization points both in database configuration and the logic of building queries.</p>|`min(/Oracle by ODBC/oracle.session_concurrency_rate,5m) > {$ORACLE.CONCURRENCY.MAX.WARN}`|Warning||
-|Oracle: TAA account will expire soon|<p>The password for the TAA user in the database expires soon.</p>|`last(/Oracle by ODBC/oracle.user_expire_password)  < {$ORACLE.EXPIRE.PASSWORD.MIN.WARN}`|Warning||
+|Oracle: TAAE account will expire soon|<p>The password for the TAAE user in the database expires soon.</p>|`last(/Oracle by ODBC/oracle.user_expire_password)  < {$ORACLE.EXPIRE.PASSWORD.MIN.WARN}`|Warning||
 |Oracle: Total PGA inuse is too high|<p>The total PGA currently consumed by work areas is more than `{$ORACLE.PGA.USE.MAX.WARN}`% of `PGA_AGGREGATE_TARGET`.</p>|`min(/Oracle by ODBC/oracle.total_pga_used,5m) * 100 / last(/Oracle by ODBC/oracle.pga_target) > {$ORACLE.PGA.USE.MAX.WARN}`|Warning||
 |Oracle: Number of REDO logs available for switching is too low|<p>The number of inactive/unused redos available for log switching is low (risk of database downtime).</p>|`max(/Oracle by ODBC/oracle.redo_logs_available,5m) < {$ORACLE.REDO.MIN.WARN}`|Warning||
 
@@ -468,5 +468,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

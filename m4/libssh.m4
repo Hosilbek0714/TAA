@@ -30,7 +30,7 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 
 AC_DEFUN([LIBSSH_ACCEPT_VERSION],
 [
-	# TAA minimal major supported version of libssh:
+	# TAAE minimal major supported version of libssh:
 	minimal_libssh_major_version=0
 	minimal_libssh_minor_version=6
 

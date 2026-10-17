@@ -1,12 +1,12 @@
-# TAA Frontend O'zbek Tiliga O'tkazish Yo'riqnomasi
+# TAAE Frontend O'zbek Tiliga O'tkazish Yo'riqnomasi
 
-Bu dokumentatsiya TAA frontend'ini **to'liq o'zbek tiliga** o'tkazish va "TAA" nomini "TAA" ga o'zgartirish bo'yicha batafsil yo'riqnoma.
+Bu dokumentatsiya TAAE frontend'ini **to'liq o'zbek tiliga** o'tkazish va "TAAE" nomini "TAAE" ga o'zgartirish bo'yicha batafsil yo'riqnoma.
 
 ## 📋 Asosiy Maqsad
 
 Client va admin ko'radigan **barcha matnlar 100% o'zbek tilida**:
-- "TAA" → "TAA" ga o'zgartirish
-- "TAA Monitoring System" → "TAA Monitor Tizimi"
+- "TAAE" → "TAAE" ga o'zgartirish
+- "TAAE Monitoring System" → "TAAE Monitor Tizimi"
 - "Login" → "Kirish", "Password" → "Parol"
 - "Dashboard" → "Boshqaruv Paneli"
 - "Administration" → "Boshqaruv Bo'limi"
@@ -18,75 +18,75 @@ Client va admin ko'radigan **barcha matnlar 100% o'zbek tilida**:
 
 ### 1. KIRISH SAHIFASI (Login Page)
 **Fayl:** `ui/include/views/general.login.php`
-- **Muammo:** Footer'da "Powered by TAA" inglizcha ko'rinadi
-- **Maqsad:** "TAA Monitor Tizimi" o'zbekcha ko'rsatish
+- **Muammo:** Footer'da "Powered by TAAE" inglizcha ko'rinadi
+- **Maqsad:** "TAAE Monitor Tizimi" o'zbekcha ko'rsatish
 - **Yechim:** Brand configuration va localization orqali
 
 ### 2. BRAND SOZLAMALARI (Brand Configuration)
 **Fayl:** `ui/local/conf/brand.conf.php`
-- **5-qator:** `'BRAND_FOOTER' => 'TAA Monitor Tizimi'`
-- **6-qator:** `'BRAND_HELP_URL' => 'https://taa.uz/hujjatlar/'`
+- **5-qator:** `'BRAND_FOOTER' => 'TAAE Monitor Tizimi'`
+- **6-qator:** `'BRAND_HELP_URL' => 'https://taae.uz/hujjatlar/'`
 
 ### 3. O'RNATISH USTASI (Setup Wizard)
 **Fayl:** `ui/include/classes/setup/CSetupWizard.php`
-- **484-qator:** `'Xush kelibsiz', 'TAA '.$version[0]` → "Xush kelibsiz TAA 7.4"
-- **823-qator:** `_('TAA server nomi')` 
-- **1066-qator:** `_('TAA server nomi')`
-- **1322-qator:** `_('Tabriklaymiz! Siz TAA frontend muvaffaqiyatli o\'rnatdingiz.')`
+- **484-qator:** `'Xush kelibsiz', 'TAAE '.$version[0]` → "Xush kelibsiz TAAE 7.4"
+- **823-qator:** `_('TAAE server nomi')` 
+- **1066-qator:** `_('TAAE server nomi')`
+- **1322-qator:** `_('Tabriklaymiz! Siz TAAE frontend muvaffaqiyatli o\'rnatdingiz.')`
 
 ### 4. TIZIM MA'LUMOTLARI (System Information)
 **Fayl:** `ui/app/partials/administration.system.info.php`
-- **28-qator:** `_('TAA server ishlayapti')` 
-- **82-qator:** `_('TAA server versiyasi')`
-- **89-qator:** `_('TAA frontend versiyasi')`
-- **197-qator:** `_('TAA serverdagi global skriptlar')`
+- **28-qator:** `_('TAAE server ishlayapti')` 
+- **82-qator:** `_('TAAE server versiyasi')`
+- **89-qator:** `_('TAAE frontend versiyasi')`
+- **197-qator:** `_('TAAE serverdagi global skriptlar')`
 
 ### 5. SAHIFA PASTKI QISMI (Footer Helper)
 **Fayl:** `ui/include/classes/helpers/CBrandHelper.php`
-- **114-qator:** `'TAA '.ZABBIX_VERSION.'. '` 
-- **116-qator:** `'TAA Jamoasi'` (TAA Team)
+- **114-qator:** `'TAAE '.ZABBIX_VERSION.'. '` 
+- **116-qator:** `'TAAE Jamoasi'` (TAAE Team)
 
 ### 6. O'ZBEK TILIGA TARJIMA (Localization)
 **Fayllar:** `ui/locale/uz_UZ/LC_MESSAGES/frontend.po`
 
 Barcha matnlar **100% o'zbekcha**:
 ```po
-msgid "TAA server is running"
-msgstr "TAA server ishlayapti"
+msgid "TAAE server is running"
+msgstr "TAAE server ishlayapti"
 
-msgid "TAA server version"  
-msgstr "TAA server versiyasi"
+msgid "TAAE server version"  
+msgstr "TAAE server versiyasi"
 
-msgid "TAA frontend version"
-msgstr "TAA frontend versiyasi"
+msgid "TAAE frontend version"
+msgstr "TAAE frontend versiyasi"
 
 msgid "Welcome to"
 msgstr "Xush kelibsiz"
 
-msgid "TAA server name"
-msgstr "TAA server nomi"
+msgid "TAAE server name"
+msgstr "TAAE server nomi"
 
-msgid "Congratulations! You have successfully installed TAA frontend."
-msgstr "Tabriklaymiz! Siz TAA frontendni muvaffaqiyatli o'rnatdingiz."
+msgid "Congratulations! You have successfully installed TAAE frontend."
+msgstr "Tabriklaymiz! Siz TAAE frontendni muvaffaqiyatli o'rnatdingiz."
 
-msgid "Global scripts on TAA server"
-msgstr "TAA serverdagi global skriptlar"
+msgid "Global scripts on TAAE server"
+msgstr "TAAE serverdagi global skriptlar"
 
-msgid "Powered by TAA"
-msgstr "TAA Monitor Tizimi"
+msgid "Powered by TAAE"
+msgstr "TAAE Monitor Tizimi"
 
 msgid "Monitoring System"
 msgstr "Monitor Tizimi"
 
-msgid "TAA Monitoring System"
-msgstr "TAA Monitor Tizimi"
+msgid "TAAE Monitoring System"
+msgstr "TAAE Monitor Tizimi"
 ```
 
 ### 7. BARCHA MATNLARNI O'ZBEK TILIGA O'TKAZISH
 
 #### 🎯 Asosiy Maqsad
 Client ko'radigan **barcha matn va xabarlar 100% o'zbekcha**:
-- "TAA server name" → "TAA server nomi"
+- "TAAE server name" → "TAAE server nomi"
 - "Login" → "Kirish"
 - "Password" → "Parol"  
 - "Dashboard" → "Boshqaruv Paneli"
@@ -176,14 +176,14 @@ msgstr "Yordam"
 msgid "System information"
 msgstr "Tizim ma'lumotlari"
 
-msgid "TAA server is running"
-msgstr "TAA server ishlayapti"
+msgid "TAAE server is running"
+msgstr "TAAE server ishlayapti"
 
-msgid "TAA server version"
-msgstr "TAA server versiyasi"
+msgid "TAAE server version"
+msgstr "TAAE server versiyasi"
 
-msgid "TAA frontend version"
-msgstr "TAA frontend versiyasi"
+msgid "TAAE frontend version"
+msgstr "TAAE frontend versiyasi"
 
 msgid "Database"
 msgstr "Ma'lumotlar bazasi"
@@ -236,8 +236,8 @@ msgstr "Talab qilinadigan shartlarni tekshirish"
 msgid "Configure DB connection"
 msgstr "Ma'lumotlar bazasi ulanishini sozlash"
 
-msgid "TAA server details"
-msgstr "TAA server tafsilotlari"
+msgid "TAAE server details"
+msgstr "TAAE server tafsilotlari"
 
 msgid "Pre-installation summary"
 msgstr "O'rnatish oldidan umumiy ma'lumot"
@@ -245,14 +245,14 @@ msgstr "O'rnatish oldidan umumiy ma'lumot"
 msgid "Install"
 msgstr "O'rnatish"
 
-msgid "Congratulations! You have successfully installed TAA frontend."
-msgstr "Tabriklaymiz! Siz TAA frontendni muvaffaqiyatli o'rnatdingiz."
+msgid "Congratulations! You have successfully installed TAAE frontend."
+msgstr "Tabriklaymiz! Siz TAAE frontendni muvaffaqiyatli o'rnatdingiz."
 
-msgid "TAA server name"
-msgstr "TAA server nomi"
+msgid "TAAE server name"
+msgstr "TAAE server nomi"
 
-msgid "TAA server port"
-msgstr "TAA server porti"
+msgid "TAAE server port"
+msgstr "TAAE server porti"
 
 msgid "Name"
 msgstr "Nomi"
@@ -395,9 +395,9 @@ sed -i 's/msgstr "Sign in"/msgstr "Tizimga kirish"/g' ui/locale/uz_UZ/LC_MESSAGE
 sed -i 's/msgstr "System information"/msgstr "Tizim ma\047lumotlari"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 sed -i 's/msgstr "Database"/msgstr "Ma\047lumotlar bazasi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 
-# 5. TAA branding
-sed -i 's/msgstr "Powered by TAA"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
-sed -i 's/msgstr "TAA Monitoring System"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+# 5. TAAE branding
+sed -i 's/msgstr "Powered by TAAE"/msgstr "TAAE Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+sed -i 's/msgstr "TAAE Monitoring System"/msgstr "TAAE Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 ```
 
 ##### 2-BOSQICH: O'zbek Tilini Standart Til Qilish
@@ -435,7 +435,7 @@ services:
   zabbix-web:
     environment:
       - ZBX_DEFAULT_LANG=uz_UZ
-      - ZBX_SERVER_NAME=TAA Monitor Tizimi
+      - ZBX_SERVER_NAME=TAAE Monitor Tizimi
     volumes:
       - ./ui/locale/uz_UZ:/usr/share/zabbix/locale/uz_UZ:ro
       - ./ui/include/locales.inc.php:/usr/share/zabbix/include/locales.inc.php:ro
@@ -448,7 +448,7 @@ services:
 - "Foydalanuvchi nomi" va "Parol" maydonlari o'zbekcha ko'rinishi
 - "Tizimga kirish" tugmasi to'liq o'zbekcha bo'lishi
 - "Meni 30 kun davomida eslab qol" belgisi o'zbekcha
-- "TAA Monitor Tizimi" footer'da ko'rinishi
+- "TAAE Monitor Tizimi" footer'da ko'rinishi
 
 ##### 2. Asosiy Menyu Sinovi  
 - "Boshqaruv Paneli", "Nazorat Qilish", "Boshqaruv Bo'limi" menu'lar o'zbekcha
@@ -457,7 +457,7 @@ services:
 
 ##### 3. Tizim Ma'lumotlari Sinovi
 - "Tizim ma'lumotlari" sarlavha o'zbekcha
-- "TAA server nomi", "TAA server versiyasi" o'zbekcha
+- "TAAE server nomi", "TAAE server versiyasi" o'zbekcha
 - "Ma'lumotlar bazasi" va "Ishlash muddati" o'zbekcha
 
 ##### 4. Xato Xabarlari Sinovi
@@ -466,9 +466,9 @@ services:
 - "Ulanish muvaffaqiyatsiz" xabari o'zbekcha
 
 ##### 5. O'rnatish Ustasi Sinovi
-- "Xush kelibsiz TAA 7.4" sarlavha o'zbekcha
+- "Xush kelibsiz TAAE 7.4" sarlavha o'zbekcha
 - "O'rnatish jarayoni" va "Keyingi bosqich" tugmalari o'zbekcha
-- "Tabriklaymiz! Siz TAA frontendni muvaffaqiyatli o'rnatdingiz" xabari
+- "Tabriklaymiz! Siz TAAE frontendni muvaffaqiyatli o'rnatdingiz" xabari
 
 #### 📝 MUHIM MASLAHATLAR
 
@@ -486,8 +486,8 @@ services:
 // ui/local/conf/brand.conf.php
 <?php
 return [
-    'BRAND_FOOTER' => 'TAA Monitor Tizimi',  // "Powered by TAA" ni olib tashlash
-    'BRAND_HELP_URL' => 'https://taa.uz/hujjatlar/',
+    'BRAND_FOOTER' => 'TAAE Monitor Tizimi',  // "Powered by TAAE" ni olib tashlash
+    'BRAND_HELP_URL' => 'https://taae.uz/hujjatlar/',
     'BRAND_SIDEBAR_FOOTER' => false
 ];
 ```
@@ -499,7 +499,7 @@ return [
 
 // 484-qator:
 return (new CDiv([
-    (new CTag('h1', true, [_('Xush kelibsiz'), ' TAA '.$version[0]]))
+    (new CTag('h1', true, [_('Xush kelibsiz'), ' TAAE '.$version[0]]))
         ->addClass(ZBX_STYLE_SETUP_TITLE),
     ...
 ```
@@ -510,16 +510,16 @@ return (new CDiv([
 // ui/app/partials/administration.system.info.php
 
 // 28-qator:
-'name' => _('TAA server ishlayapti'),
+'name' => _('TAAE server ishlayapti'),
 
 // 82-qator:
-'name' => _('TAA server versiyasi'),
+'name' => _('TAAE server versiyasi'),
 
 // 89-qator:
-'name' => _('TAA frontend versiyasi'),
+'name' => _('TAAE frontend versiyasi'),
 
 // 197-qator:
-'name' => _('TAA serverdagi global skriptlar'),
+'name' => _('TAAE serverdagi global skriptlar'),
 ```
 
 ### 4-BOSQICH: Sahifa Pastki Qismini O'zgartirish
@@ -530,12 +530,12 @@ return (new CDiv([
 // 114-qator:
 $version_string = array_key_exists('BRAND_FOOTER', $config)
     ? $config['BRAND_FOOTER']
-    : 'TAA '.ZABBIX_VERSION.'. ';
+    : 'TAAE '.ZABBIX_VERSION.'. ';
 
 // 116-qator:
 $link = array_key_exists('BRAND_HELP_URL', $config)
     ? $config['BRAND_HELP_URL']
-    : (new CLink('TAA Jamoasi', 'https://taa.uz'))
+    : (new CLink('TAAE Jamoasi', 'https://taae.uz'))
         ->addClass(ZBX_STYLE_GREY)
         ->addClass(ZBX_STYLE_LINK_ALT)
         ->setTarget('_blank');
@@ -547,12 +547,12 @@ $link = array_key_exists('BRAND_HELP_URL', $config)
 # Har bir til uchun (masalan uz_UZ):
 # ui/locale/uz_UZ/LC_MESSAGES/frontend.po faylida:
 
-# "TAA" ni "TAA" ga almashtirish
-sed -i 's/msgstr "TAA server/msgstr "TAA server/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
-sed -i 's/msgstr ".*TAA frontend/msgstr "TAA frontend/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+# "TAAE" ni "TAAE" ga almashtirish
+sed -i 's/msgstr "TAAE server/msgstr "TAAE server/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+sed -i 's/msgstr ".*TAAE frontend/msgstr "TAAE frontend/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 
 # Monitoring System → Monitor Tizimi
-sed -i 's/msgstr ".*Monitoring System"/msgstr "TAA Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
+sed -i 's/msgstr ".*Monitoring System"/msgstr "TAAE Monitor Tizimi"/g' ui/locale/uz_UZ/LC_MESSAGES/frontend.po
 
 # .mo fayl qayta yaratish:
 msgfmt ui/locale/uz_UZ/LC_MESSAGES/frontend.po -o ui/locale/uz_UZ/LC_MESSAGES/frontend.mo
@@ -568,7 +568,7 @@ services:
   zabbix-web:
     environment:
       - ZBX_DEFAULT_LANG=uz_UZ
-      - ZBX_SERVER_NAME=TAA Monitor Tizimi
+      - ZBX_SERVER_NAME=TAAE Monitor Tizimi
     volumes:
       # Brand sozlamalari
       - ./ui/local/conf/brand.conf.php:/usr/share/zabbix/local/conf/brand.conf.php:ro
@@ -590,7 +590,7 @@ services:
 # Dockerfile qo'shimcha qatorilar
 FROM zabbix/zabbix-web-nginx-mysql:latest
 
-# TAA branding fayllarini nusxalash
+# TAAE branding fayllarini nusxalash
 COPY ui/local/conf/brand.conf.php /usr/share/zabbix/local/conf/brand.conf.php
 COPY ui/locale/ /usr/share/zabbix/locale/
 
@@ -602,7 +602,7 @@ COPY ui/include/locales.inc.php /usr/share/zabbix/include/
 
 # O'zbek tilini standart qilish
 ENV ZBX_DEFAULT_LANG=uz_UZ
-ENV ZBX_SERVER_NAME="TAA Monitor Tizimi"
+ENV ZBX_SERVER_NAME="TAAE Monitor Tizimi"
 
 # Keshni tozalash
 RUN rm -rf /tmp/cache/* /usr/share/zabbix/local/cache/*
@@ -612,25 +612,25 @@ RUN rm -rf /tmp/cache/* /usr/share/zabbix/local/cache/*
 
 ### 1. Kirish Sahifasi Sinovi
 - Browser'da `/` ga kirish
-- Footer'da "TAA Monitor Tizimi" o'zbekcha ko'rinishi kerak
-- "Powered by TAA" inglizcha yozuv ko'rinmasligi kerak
+- Footer'da "TAAE Monitor Tizimi" o'zbekcha ko'rinishi kerak
+- "Powered by TAAE" inglizcha yozuv ko'rinmasligi kerak
 - "Tizimga kirish" tugmasi o'zbekcha bo'lishi kerak
 
 ### 2. O'rnatish Ustasi Sinovi
 - Browser'da `/setup.php` ga kirish  
-- "Xush kelibsiz TAA 7.4" o'zbekcha ko'rinishi kerak
-- Server nomi maydonida "TAA server nomi" o'zbekcha ko'rinishi kerak
+- "Xush kelibsiz TAAE 7.4" o'zbekcha ko'rinishi kerak
+- Server nomi maydonida "TAAE server nomi" o'zbekcha ko'rinishi kerak
 - "Keyingi bosqich" va "Orqaga" tugmalari o'zbekcha bo'lishi kerak
 
 ### 3. Tizim Ma'lumotlari Sinovi
 - Admin paneliga kirish
 - Boshqaruv Bo'limi → Umumiy → Tizim ma'lumotlari
-- "TAA server ishlayapti", "TAA server versiyasi" o'zbekcha ko'rinishi kerak
+- "TAAE server ishlayapti", "TAAE server versiyasi" o'zbekcha ko'rinishi kerak
 - "Ma'lumotlar bazasi" va boshqa maydonlar o'zbekcha bo'lishi kerak
 
 ### 4. Til O'zgartirish Sinovi
 - Til o'zgartirish (o'zbekcha, inglizcha, ruscha)
-- Barcha tillarda "TAA" ko'rinishi kerak, "TAA" yo'q bo'lishi kerak
+- Barcha tillarda "TAAE" ko'rinishi kerak, "TAAE" yo'q bo'lishi kerak
 - O'zbek tili standart til sifatida ochilishi kerak
 
 ### 5. Docker Container Sinovi
@@ -641,9 +641,9 @@ RUN rm -rf /tmp/cache/* /usr/share/zabbix/local/cache/*
 ## 🚨 EHTIYOT VA XAVFSIZLIK CHORALARI
 
 1. **Zaxira Nusxa:** O'zgartirish oldidan barcha fayllardan zaxira nusxa oling
-2. **Ma'lumotlar Bazasi:** Database'da "TAA" nomlari o'zgarmasligi kerak
-3. **API Javoblari:** API response'larda "TAA" o'zgarmasligi kerak  
-4. **Log Fayllari:** Server log'larida "TAA" o'zgarmasligi kerak
+2. **Ma'lumotlar Bazasi:** Database'da "TAAE" nomlari o'zgarmasligi kerak
+3. **API Javoblari:** API response'larda "TAAE" o'zgarmasligi kerak  
+4. **Log Fayllari:** Server log'larida "TAAE" o'zgarmasligi kerak
 5. **Sinov:** Har bir o'zgarishdan keyin to'liq sinov o'tkazing
 6. **Performance:** Tizim ishlash tezligi pasaymasligi kerak
 
@@ -694,4 +694,4 @@ docker-compose restart zabbix-web
 **Hujjat Muallifi:** Rovo Dev  
 **Yaratilgan Sana:** 2025-01-27  
 **Hujjat Versiyasi:** 1.0  
-**Maqsad:** TAA Frontend To'liq O'zbek Tiliga O'tkazish
+**Maqsad:** TAAE Frontend To'liq O'zbek Tiliga O'tkazish

@@ -561,7 +561,7 @@ class testPageProblems extends CWebTest {
 						[
 							[
 								'Time' => '2018-08-07 11:05:35',
-								'User/Recipient' => 'Admin (TAA Administrator)',
+								'User/Recipient' => 'Admin (TAAE Administrator)',
 								'Action' => '',
 								'Message/Command' => '',
 								'Status' => '',
@@ -615,7 +615,7 @@ class testPageProblems extends CWebTest {
 						[
 							[
 								'Time' => '2018-08-07 11:05:35',
-								'User/Recipient' => 'Admin (TAA Administrator)',
+								'User/Recipient' => 'Admin (TAAE Administrator)',
 								'Action' => '',
 								'Message/Command' => '',
 								'Status' => '',
@@ -823,7 +823,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -844,7 +844,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -865,7 +865,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Host group for tag permissions', 'TAA servers'],
+						'Host groups' => ['Host group for tag permissions', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -887,7 +887,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Host group for tag permissions', 'TAA servers'],
+						'Host groups' => ['Host group for tag permissions', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -974,7 +974,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -996,7 +996,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -1021,7 +1021,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -1044,7 +1044,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -1066,7 +1066,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -1089,7 +1089,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => ['Group to check triggers filtering', 'TAA servers'],
+						'Host groups' => ['Group to check triggers filtering', 'TAAE servers'],
 						'Show timeline' => false
 					],
 					'Tags' => [
@@ -1113,7 +1113,7 @@ class testPageProblems extends CWebTest {
 			[
 				[
 					'fields' => [
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Hosts' => 'ЗАББИКС Сервер',
 						'Triggers' => ['Test trigger to check tag filter on problem page', 'Test trigger with tag'],
 						'Problem' => 'Test trigger',

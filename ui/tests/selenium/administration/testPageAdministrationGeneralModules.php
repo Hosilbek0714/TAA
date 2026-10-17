@@ -75,7 +75,7 @@ class testPageAdministrationGeneralModules extends CWebTest {
 		'Problems' => 'Displays currently open problems with quick access links to the problem details.',
 		'Problems by severity' => 'Displays the problem count by severity.',
 		'SLA report' => 'Displays SLA reports.',
-		'System information' => 'Displays the current status and system statistics of the TAA server and its '.
+		'System information' => 'Displays the current status and system statistics of the TAAE server and its '.
 				'associated components.',
 		'Top hosts' => 'Displays top N hosts that have the highest or the lowest item value (for example, CPU load) '.
 				'with an option to add progress-bar visualizations and customize report columns.',
@@ -491,7 +491,7 @@ class testPageAdministrationGeneralModules extends CWebTest {
 			[
 				'Name' => 'Clock2',
 				'Version' => '1.1',
-				'Author' => 'TAA QA department',
+				'Author' => 'TAAE QA department',
 				'Description' => '',
 				'Status' => 'Disabled'
 			],
@@ -505,21 +505,21 @@ class testPageAdministrationGeneralModules extends CWebTest {
 			[
 				'Name' => 'Empty widget',
 				'Version' => '1.0',
-				'Author' => 'Some TAA employee',
+				'Author' => 'Some TAAE employee',
 				'Description' => '',
 				'Status' => 'Disabled'
 			],
 			[
 				'Name' => 'Test Broadcaster',
 				'Version' => '1.0',
-				'Author' => 'TAA',
+				'Author' => 'TAAE',
 				'Description' => 'Allows to test listening functionality of other widgets.',
 				'Status' => 'Disabled'
 			],
 			[
 				'Name' => 'Test Listener',
 				'Version' => '1.0',
-				'Author' => 'TAA',
+				'Author' => 'TAAE',
 				'Description' => 'Allows to test broadcasting functionality of other widgets.',
 				'Status' => 'Disabled'
 			],
@@ -539,7 +539,7 @@ class testPageAdministrationGeneralModules extends CWebTest {
 		foreach (self::$widget_descriptions as $name => $description) {
 			$widget_modules[$i]['Name'] = $name;
 			$widget_modules[$i]['Version'] = '1.0';
-			$widget_modules[$i]['Author'] = 'TAA';
+			$widget_modules[$i]['Author'] = 'TAAE';
 			$widget_modules[$i]['Description'] = $description;
 			$widget_modules[$i]['Status'] = 'Enabled';
 
@@ -652,7 +652,7 @@ class testPageAdministrationGeneralModules extends CWebTest {
 				[
 					'Name' => 'Clock2',
 					'Version' => '1.1',
-					'Author' => 'TAA QA department',
+					'Author' => 'TAAE QA department',
 					'Description' => '-',
 					'Directory' => 'modules/clock32',
 					'Namespace' => 'Modules\Clock2',
@@ -665,7 +665,7 @@ class testPageAdministrationGeneralModules extends CWebTest {
 				[
 					'Name' => 'Empty widget',
 					'Version' => '1.0',
-					'Author' => 'Some TAA employee',
+					'Author' => 'Some TAAE employee',
 					'Description' => '-',
 					'Directory' => 'modules/emptyWidget',
 					'Namespace' => 'Modules\emptyWidget',

@@ -33,9 +33,9 @@
 .
 .  hy \\n(HY
 ..
-.TH ZABBIX_WEB_SERVICE 8 "2022\-01\-06" TAA
+.TH ZABBIX_WEB_SERVICE 8 "2022\-01\-06" TAAE
 .SH NAME
-zabbix_web_service \- TAA web service
+zabbix_web_service \- TAAE web service
 .SH SYNOPSIS
 .B zabbix_web_service
 .RB [ \-c
@@ -51,7 +51,7 @@ zabbix_web_service \- TAA web service
 .B zabbix_web_service \-V
 .SH DESCRIPTION
 .B zabbix_web_service
-is an application for providing web services to TAA components. 
+is an application for providing web services to TAAE components. 
 .SH OPTIONS
 .IP "\fB\-c\fR, \fB\-\-config\fR \fIconfig\-file\fR"
 Use the alternate \fIconfig\-file\fR instead of the default one.
@@ -64,7 +64,7 @@ Output version information and exit.
 .SH FILES
 .TP
 .I /usr/local/etc/zabbix_web_service.conf
-Default location of TAA web service configuration file (if not modified during compile time).
+Default location of TAAE web service configuration file (if not modified during compile time).
 .SH "SEE ALSO"
 .UR https://www.zabbix.com/manuals
 Documentation

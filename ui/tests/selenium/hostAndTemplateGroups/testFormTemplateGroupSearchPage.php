@@ -128,7 +128,7 @@ class testFormTemplateGroupSearchPage extends testFormGroups {
 					'create' => 'Streets/Dzelzavas',
 					'groups_after' => [
 						[
-							'groups' => ['Europe/Test', 'Europe/Test/TAA'],
+							'groups' => ['Europe/Test', 'Europe/Test/TAAE'],
 							'Permissions' => 'Read-write'
 						],
 						[
@@ -176,7 +176,7 @@ class testFormTemplateGroupSearchPage extends testFormGroups {
 							'Permissions' => 'Read'
 						],
 						[
-							'groups' => ['Europe', 'Europe/Latvia', 'Europe/Test/TAA', 'Europe/Latvia/Riga/TAA',
+							'groups' => ['Europe', 'Europe/Latvia', 'Europe/Test/TAAE', 'Europe/Latvia/Riga/TAAE',
 								'Streets'],
 							'Permissions' => 'Deny'
 						]

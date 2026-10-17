@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Morningstar SureSine monitoring by TAA via SNMP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Morningstar SureSine monitoring by TAAE via SNMP and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -60,7 +60,7 @@ Refer to the vendor documentation.
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Morningstar SureSine: Status: Device has been restarted|<p>Uptime is less than 10 minutes.</p>|`(last(/Morningstar SureSine by SNMP/status.hw.uptime)>0 and last(/Morningstar SureSine by SNMP/status.hw.uptime)<10m) or (last(/Morningstar SureSine by SNMP/status.hw.uptime)=0 and last(/Morningstar SureSine by SNMP/status.net.uptime)<10m)`|Info|**Manual close**: Yes|
-|Morningstar SureSine: Status: Failed to fetch data|<p>TAA has not received data for items for the last 5 minutes.</p>|`nodata(/Morningstar SureSine by SNMP/status.net.uptime,5m)=1`|Warning|**Manual close**: Yes|
+|Morningstar SureSine: Status: Failed to fetch data|<p>TAAE has not received data for items for the last 5 minutes.</p>|`nodata(/Morningstar SureSine by SNMP/status.net.uptime,5m)=1`|Warning|**Manual close**: Yes|
 |Morningstar SureSine: Load: Device load in warning state||`last(/Morningstar SureSine by SNMP/load.state[loadState.0])={$LOAD.STATE.WARN:"lvdWarning"}  or last(/Morningstar SureSine by SNMP/load.state[loadState.0])={$LOAD.STATE.WARN:"override"}`|Warning|**Depends on**:<br><ul><li>Morningstar SureSine: Load: Device load in critical state</li></ul>|
 |Morningstar SureSine: Load: Device load in critical state||`last(/Morningstar SureSine by SNMP/load.state[loadState.0])={$LOAD.STATE.CRIT:"lvd"} or last(/Morningstar SureSine by SNMP/load.state[loadState.0])={$LOAD.STATE.CRIT:"fault"}`|High||
 |Morningstar SureSine: Status: Device has "reset" faults flag||`count(/Morningstar SureSine by SNMP/status.faults[faults.0],#3,"like","reset")=2`|High||
@@ -101,5 +101,5 @@ Refer to the vendor documentation.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

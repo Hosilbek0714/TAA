@@ -31,8 +31,8 @@ class testFormHostGroupSearchPage extends testFormGroups {
 	protected static $update_group = 'Group for Update test';
 
 	public function testFormHostGroupSearchPage_Layout() {
-		$this->link = 'zabbix.php?action=search&search=TAA+servers';
-		$this->layout('TAA servers');
+		$this->link = 'zabbix.php?action=search&search=TAAE+servers';
+		$this->layout('TAAE servers');
 	}
 
 	public function testFormHostGroupSearchPage_DiscoveredLayout() {
@@ -60,10 +60,10 @@ class testFormHostGroupSearchPage extends testFormGroups {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Group name' => 'TAA servers',
+						'Group name' => 'TAAE servers',
 						'Apply permissions and tag filters to all subgroups' => true
 					],
-					'error' => 'Host group "TAA servers" already exists.'
+					'error' => 'Host group "TAAE servers" already exists.'
 				]
 			],
 			[
@@ -193,7 +193,7 @@ class testFormHostGroupSearchPage extends testFormGroups {
 					'create' => 'Streets/Dzelzavas',
 					'groups_after' => [
 						[
-							'groups' => ['Europe/Test', 'Europe/Test/TAA'],
+							'groups' => ['Europe/Test', 'Europe/Test/TAAE'],
 							'Permissions' => 'Read-write'
 						],
 						[
@@ -219,7 +219,7 @@ class testFormHostGroupSearchPage extends testFormGroups {
 							'Tags' => 'country: test'
 						],
 						[
-							'Host groups' => 'Europe/Test/TAA',
+							'Host groups' => 'Europe/Test/TAAE',
 							'Tags' => 'country: test'
 						],
 						[
@@ -245,7 +245,7 @@ class testFormHostGroupSearchPage extends testFormGroups {
 							'Permissions' => 'Read'
 						],
 						[
-							'groups' => ['Europe', 'Europe/Latvia', 'Europe/Test/TAA', 'Europe/Latvia/Riga/TAA',
+							'groups' => ['Europe', 'Europe/Latvia', 'Europe/Test/TAAE', 'Europe/Latvia/Riga/TAAE',
 								'Streets'],
 							'Permissions' => 'Deny'
 						]
@@ -264,11 +264,11 @@ class testFormHostGroupSearchPage extends testFormGroups {
 							'Tags' => 'world'
 						],
 						[
-							'Host groups' => 'Europe/Latvia/Riga/TAA',
+							'Host groups' => 'Europe/Latvia/Riga/TAAE',
 							'Tags' => 'world'
 						],
 						[
-							'Host groups' => 'Europe/Test/TAA',
+							'Host groups' => 'Europe/Test/TAAE',
 							'Tags' => 'world'
 						],
 						[

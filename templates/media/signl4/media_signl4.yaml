@@ -89,7 +89,7 @@ zabbix_export:
         	}
         	else {
         		params['X-S4-Status'] = 'new';
-        		params['X-S4-SourceSystem'] = 'TAA';
+        		params['X-S4-SourceSystem'] = 'TAAE';
         	}
         
             payload = JSON.stringify(params);

@@ -31,7 +31,7 @@ class testMultiselectsProblems extends testMultiselectDialogs {
 			[
 				[
 					'fields' => [
-						'Host groups' => 'TAA servers'
+						'Host groups' => 'TAAE servers'
 					]
 				]
 			],
@@ -216,7 +216,7 @@ class testMultiselectsProblems extends testMultiselectDialogs {
 			// Host is not visible because there are no triggers or trigger is disabled.
 			[
 				[
-					'hostgroup' => 'TAA servers',
+					'hostgroup' => 'TAAE servers',
 					'host' => ['No Triggers Host', 'Disabled Triggers Host'],
 					'overlay' => 'hosts'
 				]

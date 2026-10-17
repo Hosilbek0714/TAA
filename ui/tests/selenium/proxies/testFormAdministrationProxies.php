@@ -546,7 +546,7 @@ class testFormAdministrationProxies extends CWebTest {
 				$form->checkValue(['Timeouts for item types' => 'Global']);
 
 				// Available timeouts list.
-				$timeouts = ['TAA agent', 'Simple check', 'SNMP agent', 'External check', 'Database monitor',
+				$timeouts = ['TAAE agent', 'Simple check', 'SNMP agent', 'External check', 'Database monitor',
 						'HTTP agent', 'SSH agent', 'TELNET agent', 'Script', 'Browser'
 				];
 
@@ -1039,7 +1039,7 @@ class testFormAdministrationProxies extends CWebTest {
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '',
+						'TAAE agent' => '',
 						'Simple check' => '',
 						'SNMP agent' => '',
 						'External check' => '',
@@ -1068,11 +1068,11 @@ class testFormAdministrationProxies extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'proxy_fields' => [
-						'Proxy name' => 'TAA agent timeout - 0',
+						'Proxy name' => 'TAAE agent timeout - 0',
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '0'
+						'TAAE agent' => '0'
 					],
 					'error' => [
 						'Invalid parameter "/1/timeout_zabbix_agent": value must be one of 1-600.'
@@ -1083,11 +1083,11 @@ class testFormAdministrationProxies extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'proxy_fields' => [
-						'Proxy name' => 'TAA agent timeout - 601',
+						'Proxy name' => 'TAAE agent timeout - 601',
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '0'
+						'TAAE agent' => '0'
 					],
 					'error' => [
 						'Invalid parameter "/1/timeout_zabbix_agent": value must be one of 1-600.'
@@ -1098,11 +1098,11 @@ class testFormAdministrationProxies extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'proxy_fields' => [
-						'Proxy name' => 'TAA agent timeout - too large',
+						'Proxy name' => 'TAAE agent timeout - too large',
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '1234567890123456'
+						'TAAE agent' => '1234567890123456'
 					],
 					'error' => [
 						'Invalid parameter "/1/timeout_zabbix_agent": a number is too large.'
@@ -1113,11 +1113,11 @@ class testFormAdministrationProxies extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'proxy_fields' => [
-						'Proxy name' => 'TAA agent timeout - test',
+						'Proxy name' => 'TAAE agent timeout - test',
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => 'test'
+						'TAAE agent' => 'test'
 					],
 					'error' => [
 						'Invalid parameter "/1/timeout_zabbix_agent": a time unit is expected.'
@@ -1687,7 +1687,7 @@ class testFormAdministrationProxies extends CWebTest {
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '{#MACROS}'
+						'TAAE agent' => '{#MACROS}'
 					],
 					'error' => [
 						'Invalid parameter "/1/timeout_zabbix_agent": a time unit is expected.'
@@ -1747,7 +1747,7 @@ class testFormAdministrationProxies extends CWebTest {
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '300',
+						'TAAE agent' => '300',
 						'Simple check' => '300',
 						'SNMP agent' => '300',
 						'External check' => '300',
@@ -1767,7 +1767,7 @@ class testFormAdministrationProxies extends CWebTest {
 						'Proxy mode' => 'Active'
 					],
 					'timeout_fields' => [
-						'TAA agent' => '{$MACROS}',
+						'TAAE agent' => '{$MACROS}',
 						'Simple check' => '{$MACROS}',
 						'SNMP agent' => '{$MACROS}',
 						'External check' => '{$MACROS}',

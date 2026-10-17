@@ -1,15 +1,15 @@
 #!/sbin/runscript
 #
-# TAA server start/stop script.
+# TAAE server start/stop script.
 #
 # Written by A. Tophofen
-# Modified for TAA 2.0.0
+# Modified for TAAE 2.0.0
 # May 2012, Zabbix SIA
 
 NAME=zabbix_server
 PATH=/bin:/usr/bin:/sbin:/usr/sbin:/usr/local/sbin
 DAEMON=/usr/local/sbin/${NAME}
-DESC="TAA server"
+DESC="TAAE server"
 PID=/tmp/$NAME.pid
 
 opts="${opts} reload"

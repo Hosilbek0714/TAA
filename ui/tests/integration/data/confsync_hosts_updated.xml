@@ -574,7 +574,7 @@
                     </master_item>
                 </item>
                 <item>
-                    <name>TAA internal updated</name>
+                    <name>TAAE internal updated</name>
                     <type>INTERNAL</type>
                     <key>zabbix[boottime]</key>
                 </item>
@@ -741,7 +741,7 @@
                     <interface_ref>if1</interface_ref>
                 </item>
                 <item>
-                    <name>TAA trappero</name>
+                    <name>TAAE trappero</name>
                     <type>TRAP</type>
                     <key>trap</key>
                     <delay>0</delay>

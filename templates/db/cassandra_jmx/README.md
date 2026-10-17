@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Apache Cassandra monitoring by TAA via JMX and doesn't require any external scripts.
+This template is designed for the effortless deployment of Apache Cassandra monitoring by TAAE via JMX and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -116,7 +116,7 @@ Metrics are collected by JMX.
 |----|-----------|----------|--------|--------------------------------|
 |Apache Cassandra: There are down nodes in cluster||`last(/Apache Cassandra by JMX/jmx["org.apache.cassandra.net:type=FailureDetector","DownEndpointCount"])>0`|Average||
 |Apache Cassandra: Version has changed|<p>Cassandra version has changed. Acknowledge to close the problem manually.</p>|`last(/Apache Cassandra by JMX/jmx["org.apache.cassandra.db:type=StorageService","ReleaseVersion"],#1)<>last(/Apache Cassandra by JMX/jmx["org.apache.cassandra.db:type=StorageService","ReleaseVersion"],#2) and length(last(/Apache Cassandra by JMX/jmx["org.apache.cassandra.db:type=StorageService","ReleaseVersion"]))>0`|Info|**Manual close**: Yes|
-|Apache Cassandra: Failed to fetch info data|<p>TAA has not received data for items for the last 15 minutes</p>|`nodata(/Apache Cassandra by JMX/jmx["org.apache.cassandra.metrics:type=Storage,name=Load","Count"],15m)=1`|Warning||
+|Apache Cassandra: Failed to fetch info data|<p>TAAE has not received data for items for the last 15 minutes</p>|`nodata(/Apache Cassandra by JMX/jmx["org.apache.cassandra.metrics:type=Storage,name=Load","Count"],15m)=1`|Warning||
 |Apache Cassandra: Too many storage exceptions||`min(/Apache Cassandra by JMX/jmx["org.apache.cassandra.metrics:type=Storage,name=Exceptions","Count"],5m)>0`|Warning||
 |Apache Cassandra: Many pending tasks||`min(/Apache Cassandra by JMX/jmx["org.apache.cassandra.metrics:type=Compaction,name=PendingTasks","Value"],15m)>{$CASSANDRA.PENDING_TASKS.MAX.WARN}`|Warning|**Depends on**:<br><ul><li>Apache Cassandra: Too many pending tasks</li></ul>|
 |Apache Cassandra: Too many pending tasks||`min(/Apache Cassandra by JMX/jmx["org.apache.cassandra.metrics:type=Compaction,name=PendingTasks","Value"],15m)>{$CASSANDRA.PENDING_TASKS.MAX.HIGH}`|Average||
@@ -166,5 +166,5 @@ Metrics are collected by JMX.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

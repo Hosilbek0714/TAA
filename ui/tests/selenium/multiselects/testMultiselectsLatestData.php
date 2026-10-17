@@ -29,7 +29,7 @@ class testMultiselectsLatestData extends testMultiselectDialogs {
 			[
 				[
 					'fields' => [
-						'Host groups' => 'TAA servers'
+						'Host groups' => 'TAAE servers'
 					],
 					'check_empty' => true
 				]

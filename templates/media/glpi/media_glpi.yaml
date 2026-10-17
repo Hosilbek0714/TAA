@@ -347,7 +347,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = TAA;
+        		this.logger = TAAE;
         	}
         	else {
         		this.logger = logger;
@@ -468,7 +468,7 @@ zabbix_export:
         		input: {
         			items_id: this.params.glpi_problem_id,
         			itemtype: 'Problem',
-        			content: this.params.alert_message + '<br> <a href=' + this.params.zabbix_url + '>Link to problem in TAA</a>',
+        			content: this.params.alert_message + '<br> <a href=' + this.params.zabbix_url + '>Link to problem in TAAE</a>',
         		}
         	};
         
@@ -519,7 +519,7 @@ zabbix_export:
         }
         
         GLPi.prototype.createProblem = function (status) {
-        	this.data.input.content = this.params.alert_message + '<br> <a href=' + this.params.zabbix_url + '>Link to problem in TAA</a>';
+        	this.data.input.content = this.params.alert_message + '<br> <a href=' + this.params.zabbix_url + '>Link to problem in TAAE</a>';
         
         	if (CParamValidator.isDefined(status)) {
         		this.data.input.status = status;
@@ -598,9 +598,9 @@ zabbix_export:
         1. To make this integration work, you will need the following from GLPi:
           * GLPi instance URL;
           * GLPi user token. API token obtained by going to Administration → Users → create or use existing user → Remote access keys → Regenerate API token.
-        2. In the TAA web interface, go to Administration → Macros section. Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAA frontend.
+        2. In the TAAE web interface, go to Administration → Macros section. Set up the global macro "{$ZABBIX.URL}" which will contain the URL to the TAAE frontend.
         3. On this page replace the placeholder '<...>' values with the ones from the step #1.
-        4. In TAA, you need to have a TAA user and add Media with the GLPi media type. Make sure this user has access to all hosts for which you would like problem issues to be created in GLPi.
+        4. In TAAE, you need to have a TAAE user and add Media with the GLPi media type. Make sure this user has access to all hosts for which you would like problem issues to be created in GLPi.
       message_templates:
         - event_source: TRIGGERS
           operation_mode: PROBLEM

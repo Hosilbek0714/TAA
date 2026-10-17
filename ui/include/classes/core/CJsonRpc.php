@@ -138,7 +138,7 @@ class CJsonRpc {
 			$user_type = CUser::$userData === null ? USER_TYPE_ZABBIX_USER : CUser::$userData['type'];
 
 			if ($response->errorCode == ZBX_API_ERROR_DB && $user_type != USER_TYPE_SUPER_ADMIN) {
-				$response->errorMessage = _('System error occurred. Please contact TAA administrator.');
+				$response->errorMessage = _('System error occurred. Please contact TAAE administrator.');
 			}
 
 			$errno = $this->_zbx2jsonErrors[$response->errorCode];

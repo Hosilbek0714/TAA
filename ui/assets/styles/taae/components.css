@@ -1,7 +1,7 @@
 
 /* =====================================================================
-   TAA dizayn tizimi - komponentlar (yorug' va qora mavzu uchun umumiy).
-   Faqat --taa-* o'zgaruvchilaridan foydalanadi; ranglar tokens-*.css da.
+   TAAE dizayn tizimi - komponentlar (yorug' va qora mavzu uchun umumiy).
+   Faqat --taae-* o'zgaruvchilaridan foydalanadi; ranglar tokens-*.css da.
    Mavzu faylining OXIRIGA qo'shiladi, shuning uchun bir xil selektorli
    asl qoidalardan ustun turadi.
    ===================================================================== */
@@ -13,33 +13,33 @@ input, select, textarea, .z-select, .multiselect {
 	font-family: "Segoe UI", system-ui, -apple-system, Roboto, "Helvetica Neue", Arial, sans-serif;
 }
 body {
-	background: var(--taa-bg);
-	color: var(--taa-text);
+	background: var(--taae-bg);
+	color: var(--taae-text);
 }
 .wrapper {
-	background: var(--taa-bg);
+	background: var(--taae-bg);
 }
 a {
-	color: var(--taa-primary);
+	color: var(--taae-primary);
 }
 a:hover {
-	color: var(--taa-primary-hover);
+	color: var(--taae-primary-hover);
 	border-bottom-color: transparent;
 }
 
 /* ---------- Yon menyu ---------- */
 .sidebar {
-	background: linear-gradient(180deg, var(--taa-sidebar-top) 0%, var(--taa-sidebar-bottom) 100%);
+	background: linear-gradient(180deg, var(--taae-sidebar-top) 0%, var(--taae-sidebar-bottom) 100%);
 	box-shadow: 1px 0 0 rgba(255, 255, 255, 0.04);
 }
-.sidebar .logo img.taa-logo-sidebar {
+.sidebar .logo img.taae-logo-sidebar {
 	background: #ffffff;
 	border-radius: 8px;
 	padding: 9px 12px;
 	box-sizing: border-box;
 }
 .sidebar .server-name {
-	color: var(--taa-sidebar-muted);
+	color: var(--taae-sidebar-muted);
 	font-size: 11px;
 	letter-spacing: 0.05em;
 	text-transform: uppercase;
@@ -51,29 +51,29 @@ a:hover {
 	color: #ffffff;
 }
 .form-search .search:focus {
-	border-color: var(--taa-primary);
-	box-shadow: 0 0 0 3px var(--taa-primary-ring);
+	border-color: var(--taae-primary);
+	box-shadow: 0 0 0 3px var(--taae-primary-ring);
 }
 
 .menu-main a,
 .menu-user a {
-	color: var(--taa-sidebar-text);
+	color: var(--taae-sidebar-text);
 	border-left: 0;
 	margin: 2px 10px;
 	border-radius: 10px;
 }
 .menu-main > li > a:hover, .menu-main > li > a:focus,
 .menu-user a:hover, .menu-user a:focus {
-	background: var(--taa-sidebar-hover);
+	background: var(--taae-sidebar-hover);
 	color: #ffffff;
 }
 .menu-main > li.is-expanded > a, .menu-main > li.is-expanded > a:focus {
-	background: var(--taa-sidebar-hover);
+	background: var(--taae-sidebar-hover);
 	color: #ffffff;
 }
 .menu-main > li.is-selected > a,
 .menu-user > li.is-selected > a {
-	background: var(--taa-primary);
+	background: var(--taae-primary);
 	color: #ffffff;
 	box-shadow: 0 4px 12px rgba(20, 111, 252, 0.35);
 }
@@ -84,31 +84,31 @@ a:hover {
 .menu-main .submenu a,
 .menu-user .submenu a {
 	background: transparent;
-	color: var(--taa-sidebar-muted);
+	color: var(--taae-sidebar-muted);
 	margin: 1px 10px 1px 22px;
 	border-radius: 8px;
 }
 .menu-main .submenu a:hover, .menu-main .submenu a:focus,
 .menu-user .submenu a:hover, .menu-user .submenu a:focus {
-	background: var(--taa-sidebar-hover);
+	background: var(--taae-sidebar-hover);
 	color: #ffffff;
 }
 .menu-main .submenu > li.is-selected > a,
 .menu-main .submenu > li.is-selected > a:hover,
 .menu-main .submenu > li.is-selected > a:focus,
 .menu-user .submenu > li.is-selected > a {
-	background: var(--taa-sidebar-sub-active);
+	background: var(--taae-sidebar-sub-active);
 	color: #ffffff;
 }
 .menu-main .submenu .submenu li.is-selected a,
 .menu-user .submenu .submenu li.is-selected a {
-	background-color: var(--taa-sidebar-sub-active);
+	background-color: var(--taae-sidebar-sub-active);
 }
 
 /* ---------- Sahifa sarlavhasi ---------- */
 header {
-	background-color: var(--taa-surface);
-	border-bottom: 1px solid var(--taa-border);
+	background-color: var(--taae-surface);
+	border-bottom: 1px solid var(--taae-border);
 }
 .header-title {
 	padding-top: 14px;
@@ -119,71 +119,71 @@ header {
 	border-radius: 6px;
 }
 .header-navigation > ul li > span.selected {
-	background-color: var(--taa-primary-soft);
-	color: var(--taa-primary);
+	background-color: var(--taae-primary-soft);
+	color: var(--taae-primary);
 }
 .header-title h1 {
 	font-size: 22px;
 	font-weight: 600;
 	letter-spacing: -0.01em;
-	color: var(--taa-text);
+	color: var(--taae-text);
 }
 
 /* ---------- Kartochkalar: filtr, jadval, formalar ---------- */
 .filter-container,
 .table-forms-container,
 .browser-warning-container {
-	background: var(--taa-surface);
-	border: 1px solid var(--taa-border);
+	background: var(--taae-surface);
+	border: 1px solid var(--taae-border);
 	border-radius: 12px;
-	box-shadow: var(--taa-shadow);
+	box-shadow: var(--taae-shadow);
 }
 .filter-container {
 	margin-bottom: 14px;
 }
 
 .list-table {
-	background: var(--taa-surface);
-	border: 1px solid var(--taa-border);
+	background: var(--taae-surface);
+	border: 1px solid var(--taae-border);
 	border-radius: 12px;
-	box-shadow: var(--taa-shadow);
+	box-shadow: var(--taae-shadow);
 	overflow: hidden;
 }
 .list-table thead th {
-	background: var(--taa-surface-2);
-	color: var(--taa-muted);
+	background: var(--taae-surface-2);
+	color: var(--taae-muted);
 	font-size: 11px;
 	font-weight: 600;
 	letter-spacing: 0.03em;
 	text-transform: uppercase;
-	border-bottom-color: var(--taa-border);
+	border-bottom-color: var(--taae-border);
 }
 .list-table td,
 .list-table th {
-	border-color: var(--taa-border);
+	border-color: var(--taae-border);
 }
 .list-table tbody tr:hover > td {
-	background-color: var(--taa-row-hover);
+	background-color: var(--taae-row-hover);
 }
 
 /* ---------- Boshqaruv paneli vidjetlari ---------- */
 .dashboard-grid-widget-header,
 .dashboard-grid-iterator-header {
-	background: var(--taa-surface);
-	border-color: var(--taa-border);
+	background: var(--taae-surface);
+	border-color: var(--taae-border);
 	border-radius: 12px 12px 0 0;
 }
 .dashboard-grid-widget-header h4,
 .dashboard-grid-iterator-header h4 {
 	font-weight: 600;
-	color: var(--taa-text);
+	color: var(--taae-text);
 }
 .dashboard-grid-widget-contents,
 .dashboard-grid-iterator-contents {
-	background: var(--taa-surface);
-	border-color: var(--taa-border);
+	background: var(--taae-surface);
+	border-color: var(--taae-border);
 	border-radius: 0 0 12px 12px;
-	box-shadow: var(--taa-shadow);
+	box-shadow: var(--taae-shadow);
 }
 
 /* ---------- Tugmalar ---------- */
@@ -191,23 +191,23 @@ header {
 	border-radius: 8px;
 }
 .btn, button {
-	background-color: var(--taa-primary);
-	border-color: var(--taa-primary);
+	background-color: var(--taae-primary);
+	border-color: var(--taae-primary);
 	color: #ffffff;
 }
 .btn:hover, button:hover,
 .btn:focus, button:focus {
-	background-color: var(--taa-primary-hover);
-	border-color: var(--taa-primary-hover);
+	background-color: var(--taae-primary-hover);
+	border-color: var(--taae-primary-hover);
 }
 .btn-alt {
-	color: var(--taa-primary);
-	border-color: var(--taa-primary);
+	color: var(--taae-primary);
+	border-color: var(--taae-primary);
 	background-color: transparent;
 }
 .btn-alt:hover, .btn-alt:focus {
-	color: var(--taa-primary);
-	background-color: var(--taa-primary-soft);
+	color: var(--taae-primary);
+	background-color: var(--taae-primary-soft);
 }
 
 /* ---------- Kiritish maydonlari ---------- */
@@ -215,21 +215,21 @@ input[type="text"], input[type="password"], input[type="search"], input[type="nu
 input[type="email"], input[type="time"], input[type="url"], input[type="tel"],
 textarea, select, .multiselect, .z-select > button.focusable {
 	border-radius: 8px;
-	border-color: var(--taa-border-strong);
-	background-color: var(--taa-input-bg);
-	color: var(--taa-text);
+	border-color: var(--taae-border-strong);
+	background-color: var(--taae-input-bg);
+	color: var(--taae-text);
 }
 input[type="text"]:focus, input[type="password"]:focus, input[type="search"]:focus,
 input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:focus,
 .multiselect.active, .z-select > button.focusable:focus {
-	border-color: var(--taa-primary);
-	box-shadow: 0 0 0 3px var(--taa-primary-ring);
+	border-color: var(--taae-primary);
+	box-shadow: 0 0 0 3px var(--taae-primary-ring);
 }
 
 /* Segment tugmalar (Har qanday / Yoqilgan / O'chirilgan) */
 .radio-list-control input[type=radio]:checked + label {
-	background-color: var(--taa-primary);
-	border-color: var(--taa-primary);
+	background-color: var(--taae-primary);
+	border-color: var(--taae-primary);
 }
 .radio-list-control li:first-child label {
 	border-radius: 8px 0 0 8px;
@@ -240,10 +240,10 @@ input[type="number"]:focus, input[type="email"]:focus, textarea:focus, select:fo
 
 /* ---------- Muloqot oynalari ---------- */
 .overlay-dialogue {
-	background-color: var(--taa-surface);
-	border: 1px solid var(--taa-border);
+	background-color: var(--taae-surface);
+	border: 1px solid var(--taae-border);
 	border-radius: 14px;
-	box-shadow: var(--taa-shadow-lg);
+	box-shadow: var(--taae-shadow-lg);
 }
 
 /* =====================================================================
@@ -268,29 +268,29 @@ textarea, select, .multiselect, .z-select > button.focusable,
 /* Tugmalar: to'qroq rang, 1px ko'tarilish, soya */
 .btn:hover:not([disabled]), button:hover:not([disabled]):not(.btn-icon):not(.btn-link) {
 	transform: translateY(-1px);
-	box-shadow: 0 4px 12px var(--taa-primary-ring);
+	box-shadow: 0 4px 12px var(--taae-primary-ring);
 }
 .btn:active:not([disabled]), button:active:not([disabled]) {
 	transform: translateY(0);
 	box-shadow: none;
 }
 .btn-alt:hover:not([disabled]) {
-	border-color: var(--taa-primary-hover);
-	color: var(--taa-primary-hover);
+	border-color: var(--taae-primary-hover);
+	color: var(--taae-primary-hover);
 }
 .btn-link:hover {
-	color: var(--taa-primary-hover);
-	border-color: var(--taa-primary-hover);
+	color: var(--taae-primary-hover);
+	border-color: var(--taae-primary-hover);
 }
 
 /* Ikonka tugmalari: yumshoq fon */
 .btn-icon:hover:not([disabled]), .btn-icon:focus:not([disabled]) {
-	background-color: var(--taa-primary-soft);
-	color: var(--taa-primary);
+	background-color: var(--taae-primary-soft);
+	color: var(--taae-primary);
 	border-radius: 6px;
 }
 .sidebar .btn-icon:hover, .sidebar .btn-icon:focus {
-	background-color: var(--taa-sidebar-hover);
+	background-color: var(--taae-sidebar-hover);
 	color: #ffffff;
 }
 
@@ -302,7 +302,7 @@ textarea, select, .multiselect, .z-select > button.focusable,
 .dashboard-grid-widget:hover .dashboard-grid-widget-contents,
 .dashboard-grid-iterator:hover .dashboard-grid-iterator-header,
 .dashboard-grid-iterator:hover .dashboard-grid-iterator-contents {
-	border-color: var(--taa-primary-ring);
+	border-color: var(--taae-primary-ring);
 }
 .dashboard-grid-widget:hover .dashboard-grid-widget-contents,
 .dashboard-grid-iterator:hover .dashboard-grid-iterator-contents {
@@ -311,10 +311,10 @@ textarea, select, .multiselect, .z-select > button.focusable,
 
 /* Jadval qatorlari: fon + chap tomonda ko'k chiziq */
 .list-table tbody tr:hover > td {
-	background-color: var(--taa-row-hover);
+	background-color: var(--taae-row-hover);
 }
 .list-table tbody tr:hover > td:first-child {
-	box-shadow: inset 3px 0 0 var(--taa-primary);
+	box-shadow: inset 3px 0 0 var(--taae-primary);
 }
 
 /* Kiritish maydonlari: chegara to'qlashadi */
@@ -325,31 +325,31 @@ input[type="number"]:hover:not([readonly]):not([disabled]),
 textarea:hover:not([readonly]):not([disabled]),
 select:hover:not([disabled]),
 .multiselect:hover, .z-select > button.focusable:hover {
-	border-color: var(--taa-primary);
+	border-color: var(--taae-primary);
 }
 
 /* Segment tugmalar va tablar */
 .radio-list-control input[type=radio] + label:hover {
-	background-color: var(--taa-primary-soft);
-	color: var(--taa-primary);
+	background-color: var(--taae-primary-soft);
+	color: var(--taae-primary);
 }
 .radio-list-control input[type=radio]:checked + label:hover {
-	background-color: var(--taa-primary-hover);
+	background-color: var(--taae-primary-hover);
 	color: #ffffff;
 }
 .ui-tabs-nav .ui-tabs-anchor:not(.btn):hover,
 .ui-tabs-nav .ui-tabs-anchor:not(.btn):focus {
-	background-color: var(--taa-primary-soft);
-	color: var(--taa-primary);
+	background-color: var(--taae-primary-soft);
+	color: var(--taae-primary);
 }
 .dashboard-navigation-tabs .sortable li div:hover {
-	background: var(--taa-primary-soft);
-	border-color: var(--taa-primary-ring);
+	background: var(--taae-primary-soft);
+	border-color: var(--taae-primary-ring);
 }
 
 /* Yo'l (breadcrumb) havolalari */
 .header-navigation > ul li > a:hover {
-	background-color: var(--taa-primary-soft);
+	background-color: var(--taae-primary-soft);
 	border-bottom-color: transparent;
 }
 
@@ -383,7 +383,7 @@ select:hover:not([disabled]),
 }
 .menu-main > li.is-selected > a:hover,
 .menu-user > li.is-selected > a:hover {
-	background: var(--taa-primary-hover);
+	background: var(--taae-primary-hover);
 }
 
 /* Animatsiyani yoqtirmaydigan foydalanuvchilar uchun */

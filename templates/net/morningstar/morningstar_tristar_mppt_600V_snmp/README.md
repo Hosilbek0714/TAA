@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Morningstar TriStar MPPT 600V monitoring by TAA via SNMP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Morningstar TriStar MPPT 600V monitoring by TAAE via SNMP and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -70,7 +70,7 @@ Refer to the vendor documentation.
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Morningstar TriStar MPPT 600V: Status: Device has been restarted|<p>Uptime is less than 10 minutes.</p>|`(last(/Morningstar TriStar MPPT 600V by SNMP/status.hw.uptime)>0 and last(/Morningstar TriStar MPPT 600V by SNMP/status.hw.uptime)<10m) or (last(/Morningstar TriStar MPPT 600V by SNMP/status.hw.uptime)=0 and last(/Morningstar TriStar MPPT 600V by SNMP/status.net.uptime)<10m)`|Info|**Manual close**: Yes|
-|Morningstar TriStar MPPT 600V: Status: Failed to fetch data|<p>TAA has not received data for items for the last 5 minutes.</p>|`nodata(/Morningstar TriStar MPPT 600V by SNMP/status.net.uptime,5m)=1`|Warning|**Manual close**: Yes|
+|Morningstar TriStar MPPT 600V: Status: Failed to fetch data|<p>TAAE has not received data for items for the last 5 minutes.</p>|`nodata(/Morningstar TriStar MPPT 600V by SNMP/status.net.uptime,5m)=1`|Warning|**Manual close**: Yes|
 |Morningstar TriStar MPPT 600V: Battery: Device charge in warning state||`last(/Morningstar TriStar MPPT 600V by SNMP/charge.state[chargeState.0])={$CHARGE.STATE.WARN}`|Warning|**Depends on**:<br><ul><li>Morningstar TriStar MPPT 600V: Battery: Device charge in critical state</li></ul>|
 |Morningstar TriStar MPPT 600V: Battery: Device charge in critical state||`last(/Morningstar TriStar MPPT 600V by SNMP/charge.state[chargeState.0])={$CHARGE.STATE.CRIT}`|High||
 |Morningstar TriStar MPPT 600V: Temperature: Low battery temperature||`max(/Morningstar TriStar MPPT 600V by SNMP/temp.battery[batteryTemperature.0],5m)<{$BATTERY.TEMP.MIN.WARN}`|Warning|**Depends on**:<br><ul><li>Morningstar TriStar MPPT 600V: Temperature: Critically low battery temperature</li></ul>|
@@ -160,5 +160,5 @@ Refer to the vendor documentation.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

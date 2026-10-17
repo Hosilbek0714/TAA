@@ -228,7 +228,7 @@ class testFormFilterLatestData extends testFormFilter {
 		return [
 			[
 				[
-					'Host groups' => ['TAA servers'],
+					'Host groups' => ['TAAE servers'],
 					'Hosts' => ['ЗАББИКС Сервер'],
 					'Name' => 'Free',
 					'Show tags' => '1'

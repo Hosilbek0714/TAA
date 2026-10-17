@@ -42,14 +42,14 @@ public class JavaGateway
 			System.exit(1);
 		}
 
-		logger.info("TAA Java Gateway {} (revision {}) has started", GeneralInformation.VERSION, GeneralInformation.REVISION);
+		logger.info("TAAE Java Gateway {} (revision {}) has started", GeneralInformation.VERSION, GeneralInformation.REVISION);
 
 		Thread shutdownHook = new Thread()
 		{
 			@Override
 			public void run()
 			{
-				logger.info("TAA Java Gateway {} (revision {}) has stopped", GeneralInformation.VERSION, GeneralInformation.REVISION);
+				logger.info("TAAE Java Gateway {} (revision {}) has stopped", GeneralInformation.VERSION, GeneralInformation.REVISION);
 			}
 		};
 

@@ -34,7 +34,7 @@ class testPageHostPrototypes extends testPagePrototypes {
 		$host_result = CDataHelper::createHosts([
 			[
 				'host' => 'Host for prototype check',
-				'groups' => [['groupid' => 4]], // TAA server
+				'groups' => [['groupid' => 4]], // TAAE server
 				'discoveryrules' => [
 					[
 						'name' => 'Drule for prototype check',
@@ -63,7 +63,7 @@ class testPageHostPrototypes extends testPagePrototypes {
 				'ruleid' => self::$host_druleids['Host for prototype check:drule'],
 				'groupLinks' => [
 					[
-						'groupid'=> 4 // TAA server
+						'groupid'=> 4 // TAAE server
 					]
 				],
 				'tags' => [
@@ -82,7 +82,7 @@ class testPageHostPrototypes extends testPagePrototypes {
 				'ruleid' => self::$host_druleids['Host for prototype check:drule'],
 				'groupLinks' => [
 					[
-						'groupid'=> 4 // TAA server
+						'groupid'=> 4 // TAAE server
 					]
 				],
 				'status' => HOST_STATUS_NOT_MONITORED
@@ -92,7 +92,7 @@ class testPageHostPrototypes extends testPagePrototypes {
 				'ruleid' => self::$host_druleids['Host for prototype check:drule'],
 				'groupLinks' => [
 					[
-						'groupid'=> 4 // TAA server
+						'groupid'=> 4 // TAAE server
 					]
 				],
 				'status' => HOST_STATUS_NOT_MONITORED,
@@ -103,7 +103,7 @@ class testPageHostPrototypes extends testPagePrototypes {
 				'ruleid' => self::$host_druleids['Host for prototype check:drule'],
 				'groupLinks' => [
 					[
-						'groupid'=> 4 // TAA server
+						'groupid'=> 4 // TAAE server
 					]
 				],
 				'discover' => HOST_NO_DISCOVER,

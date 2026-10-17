@@ -1,12 +1,12 @@
-# TAA O'zbek Tarjimalari - To'liq Yechim Dokumentatsiyasi
+# TAAE O'zbek Tarjimalari - To'liq Yechim Dokumentatsiyasi
 
 ## Kirish
 
-Bu dokumentatsiya TAA Docker konteynerida o'zbek tarjimalarini to'liq faollashtirish uchun **professional yechim** taqdim etadi. Volume mount ishlatmasdan, **Dockerfile ichida** barcha o'zgarishlarni amalga oshirish usuli keltirilgan.
+Bu dokumentatsiya TAAE Docker konteynerida o'zbek tarjimalarini to'liq faollashtirish uchun **professional yechim** taqdim etadi. Volume mount ishlatmasdan, **Dockerfile ichida** barcha o'zgarishlarni amalga oshirish usuli keltirilgan.
 
-## TAA Tarjima Sistemi - Chuqur Tahlil
+## TAAE Tarjima Sistemi - Chuqur Tahlil
 
-### TAA Til Sistemining Ishlash Prinsipi (Technical Deep Dive)
+### TAAE Til Sistemining Ishlash Prinsipi (Technical Deep Dive)
 
 #### 1. Request Processing Flow (HTTP → PHP)
 
@@ -32,7 +32,7 @@ PHP-FPM Process Manager:
 └── Environment: LANG=uz_UZ.UTF-8, LC_ALL=uz_UZ.UTF-8
 ```
 
-#### 2. TAA Application Initialization (PHP → TAA Core)
+#### 2. TAAE Application Initialization (PHP → TAAE Core)
 
 ```
 PHP Script Execution:
@@ -42,7 +42,7 @@ PHP Script Execution:
 ├── require_once 'include/classes/core/APP.php';
 └── APP::run(EXEC_MODE_DEFAULT);
     ↓
-TAA APP::run() Method:
+TAAE APP::run() Method:
 ├── File: /usr/share/zabbix/include/classes/core/APP.php
 ├── Line: ~69 public function run(int $exec_mode): void
 ├── Initialization: ZBase::initLocales(?string $language)
@@ -116,7 +116,7 @@ Step 4 - Environment Validation:
 └── Result: Translation system ready
 ```
 
-#### 5. Widget Rendering Process (TAA → Widget → Gettext)
+#### 5. Widget Rendering Process (TAAE → Widget → Gettext)
 
 ```
 Dashboard Controller Execution:
@@ -164,11 +164,11 @@ Alternative - Translation Not Found:
 └── Debug: Check gettext debug mode
 ```
 
-#### 6. HTTP Response Generation (TAA → Nginx → Browser)
+#### 6. HTTP Response Generation (TAAE → Nginx → Browser)
 
 ```
 HTML Generation:
-├── Template Engine: TAA view system
+├── Template Engine: TAAE view system
 ├── Widget HTML: <div class="widget-title">CPU ishlatishini bo'liman topish</div>
 ├── Encoding: UTF-8 character encoding
 └── Validation: HTML5 standards
@@ -305,9 +305,9 @@ services:
   zabbix-web:
     environment:
       # Mavjud konfiguratsiyalar
-      ZBX_SERVER_NAME: "TAA Monitor Tizimi"
+      ZBX_SERVER_NAME: "TAAE Monitor Tizimi"
       ZBX_DEFAULT_LANG: "uz_UZ"
-      ZBX_SERVER_HOST: TAA-server
+      ZBX_SERVER_HOST: TAAE-server
       
       # PHP-FPM uchun kerakli variable'lar
       PHP_FPM_PM: "dynamic"
@@ -316,7 +316,7 @@ services:
       PHP_FPM_PM_MIN_SPARE_SERVERS: "5"
       PHP_FPM_PM_MAX_SPARE_SERVERS: "35"
       
-      # TAA web uchun
+      # TAAE web uchun
       ZBX_MAXEXECUTIONTIME: "300"
       ZBX_MEMORYLIMIT: "128M"
       ZBX_POSTMAXSIZE: "16M"
@@ -460,7 +460,7 @@ curl -s "http://localhost:8098" | grep -i "CPU ishlatishini"
    # Yoki Developer Tools → Application → Storage → Clear storage
    ```
 
-2. **TAA session tozalash:**
+2. **TAAE session tozalash:**
    ```bash
    docker exec zabbix-web rm -rf /var/lib/php84/sessions/*
    docker restart zabbix-web
@@ -500,7 +500,7 @@ docker exec zabbix-web grep -n "CPU utilization" /usr/share/zabbix/widgets/topho
 
 ## Maintenance va Updates
 
-### TAA versiyasi yangilanganda:
+### TAAE versiyasi yangilanganda:
 
 1. **Dockerfile o'zgarishlarini saqlash**
 2. **PO fayllarni backup qilish**
@@ -514,7 +514,7 @@ docker exec zabbix-web grep -n "CPU utilization" /usr/share/zabbix/widgets/topho
 
 ## Xulosa
 
-Bu yechim **volume mount ishlatmasdan**, to'liq **Dockerfile-based approach** orqali TAA ni o'zbek tiliga moslaydi. Barcha o'zgarishlar konteyner ichida permanent saqlanadi va production environment uchun mos keladi.
+Bu yechim **volume mount ishlatmasdan**, to'liq **Dockerfile-based approach** orqali TAAE ni o'zbek tiliga moslaydi. Barcha o'zgarishlar konteyner ichida permanent saqlanadi va production environment uchun mos keladi.
 
 **Asosiy afzalliklar:**
 - ✅ Volume mount yo'q
@@ -523,7 +523,7 @@ Bu yechim **volume mount ishlatmasdan**, to'liq **Dockerfile-based approach** or
 - ✅ Maintainable
 - ✅ Widget name'lari to'liq tarjima qilinadi
 
-Bu dokumentatsiya bo'yicha amal qiling va TAA ni to'liq o'zbek tilida ishlatishingiz mumkin!
+Bu dokumentatsiya bo'yicha amal qiling va TAAE ni to'liq o'zbek tilida ishlatishingiz mumkin!
 
 
 /////////////////
@@ -537,7 +537,7 @@ o'zim qilgan o'zgarishlar
 
 qolib ketgan global viewni databasedan o'zgartidik 
 
-PS D:\TAA\zoddix> docker exec -it zoddix-postgres-1 psql -U zabbix -d zabbix
+PS D:\TAAE\zoddix> docker exec -it zoddix-postgres-1 psql -U zabbix -d zabbix
 psql (15.14 (Debian 15.14-1.pgdg13+1))
 Type "help" for help.
 

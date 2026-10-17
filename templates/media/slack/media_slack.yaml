@@ -353,7 +353,7 @@ zabbix_export:
         const CHttpRequest = function(logger) {
         	this.request = new HttpRequest();
         	if (typeof logger !== 'object' || logger === null) {
-        		this.logger = TAA;
+        		this.logger = TAAE;
         	}
         	else {
         		this.logger = logger;
@@ -498,7 +498,7 @@ zabbix_export:
         				actions: [
         					{
         						type: 'button',
-        						text: 'Open in TAA',
+        						text: 'Open in TAAE',
         						url: this.problem_url
         					}
         				]
@@ -669,14 +669,14 @@ zabbix_export:
         }
       process_tags: 'YES'
       description: |
-        Preparing slack for a TAA media type:
+        Preparing slack for a TAAE media type:
         1. On the page Your Apps (https://api.slack.com/apps) press 'Create an App', select 'From scratch' and specify its name and workspace.
         2. In the 'Add features and functionality' section, select 'Bots' and press 'Review Scopes to Add'.
         3. In the 'Scopes' section, find 'Bot Token Scopes', press 'Add an OAuth Scope' and add 'chat:write', 'im:write', 'groups:write' and 'reactions:write' scopes.
         4. In the 'Settings' section on the left side of the page press 'Install App' and then 'Install to Workspace'.
         5. Press 'Allow' and copy 'Bot User OAuth Access Token', which will be used to set up webhook.
         
-        In TAA:
+        In TAAE:
         1. Set global macro {$ZABBIX.URL}
         2. Set user media for slack using channel name or member ID
         3. Set media param 'bot_token' to the previously created token

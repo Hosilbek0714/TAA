@@ -55,46 +55,46 @@ class testFormItem extends CLegacyWebTest {
 	public static function layout() {
 		return [
 			[
-				['type' => 'TAA agent', 'host' => 'Simple form test host']
+				['type' => 'TAAE agent', 'host' => 'Simple form test host']
 			],
 			[
 				['host' => 'Simple form test host', 'key' => 'test-item-form1']
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (unsigned)',
 					'host' => 'Simple form test host'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (unsigned)',
 					'host' => 'Simple form test host'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (unsigned)',
 					'host' => 'Simple form test host'
 				]
 			],
 			[
-				['type' => 'TAA agent', 'value_type' => 'Numeric (float)', 'host' => 'Simple form test host']
+				['type' => 'TAAE agent', 'value_type' => 'Numeric (float)', 'host' => 'Simple form test host']
 			],
 			[
-				['type' => 'TAA agent', 'value_type' => 'Character', 'host' => 'Simple form test host']
+				['type' => 'TAAE agent', 'value_type' => 'Character', 'host' => 'Simple form test host']
 			],
 			[
-				['type' => 'TAA agent', 'value_type' => 'Log', 'host' => 'Simple form test host']
+				['type' => 'TAAE agent', 'value_type' => 'Log', 'host' => 'Simple form test host']
 			],
 			[
-				['type' => 'TAA agent', 'value_type' => 'Text', 'host' => 'Simple form test host']
+				['type' => 'TAAE agent', 'value_type' => 'Text', 'host' => 'Simple form test host']
 			],
 			[
-				['type' => 'TAA agent (active)', 'host' => 'Simple form test host']
+				['type' => 'TAAE agent (active)', 'host' => 'Simple form test host']
 			],
 			[
 				['type' => 'Simple check', 'host' => 'Simple form test host']
@@ -118,17 +118,17 @@ class testFormItem extends CLegacyWebTest {
 				['type' => 'SNMP trap', 'host' => 'Simple form test host']
 			],
 			[
-				['type' => 'TAA internal', 'host' => 'Simple form test host'	]
+				['type' => 'TAAE internal', 'host' => 'Simple form test host'	]
 			],
 			[
 				[
-					'type' => 'TAA internal',
+					'type' => 'TAAE internal',
 					'value_type' => 'Numeric (unsigned)',
 					'host' => 'Simple form test host'
 				]
 			],
 			[
-				['type' => 'TAA trapper', 'host' => 'Simple form test host']
+				['type' => 'TAAE trapper', 'host' => 'Simple form test host']
 			],
 			[
 				['type' => 'External check', 'host' => 'Simple form test host']
@@ -179,65 +179,65 @@ class testFormItem extends CLegacyWebTest {
 				['type' => 'Browser', 'host' => 'Simple form test host']
 			],
 			[
-				['type' => 'TAA agent', 'template' => 'Inheritance test template']
+				['type' => 'TAAE agent', 'template' => 'Inheritance test template']
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'template' => 'Inheritance test template',
 					'key' => 'test-inheritance-item1'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'host' => 'Template inheritance test host',
 					'key' => 'test-inheritance-item1'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (unsigned)',
 					'template' => 'Inheritance test template'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (unsigned)',
 					'template' => 'Inheritance test template'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (unsigned)',
 					'template' => 'Inheritance test template'
 				]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Numeric (float)',
 					'template' => 'Inheritance test template'
 					]
 			],
 			[
 				[
-					'type' => 'TAA agent',
+					'type' => 'TAAE agent',
 					'value_type' => 'Character',
 					'template' => 'Inheritance test template'
 				]
 			],
 			[
-				['type' => 'TAA agent', 'value_type' => 'Log', 'template' => 'Inheritance test template']
+				['type' => 'TAAE agent', 'value_type' => 'Log', 'template' => 'Inheritance test template']
 			],
 			[
-				['type' => 'TAA agent', 'value_type' => 'Text', 'template' => 'Inheritance test template']
+				['type' => 'TAAE agent', 'value_type' => 'Text', 'template' => 'Inheritance test template']
 			],
 			[
-				['type' => 'TAA agent (active)', 'template' => 'Inheritance test template']
+				['type' => 'TAAE agent (active)', 'template' => 'Inheritance test template']
 			],
 			[
 				['type' => 'Simple check', 'template' => 'Inheritance test template']
@@ -258,24 +258,24 @@ class testFormItem extends CLegacyWebTest {
 				['type' => 'SNMP trap', 'template' => 'Inheritance test template']
 			],
 			[
-				['type' => 'TAA internal', 'template' => 'Inheritance test template']
+				['type' => 'TAAE internal', 'template' => 'Inheritance test template']
 			],
 			[
 				[
-					'type' => 'TAA internal',
+					'type' => 'TAAE internal',
 					'value_type' => 'Numeric (unsigned)',
 					'template' => 'Inheritance test template'
 				]
 			],
 			[
 				[
-					'type' => 'TAA internal',
+					'type' => 'TAAE internal',
 					'template' => 'Inheritance test template',
 					'key' => 'test-inheritance-item1'
 				]
 			],
 			[
-				['type' => 'TAA trapper', 'template' => 'Inheritance test template']
+				['type' => 'TAAE trapper', 'template' => 'Inheritance test template']
 			],
 			[
 				['type' => 'External check', 'template' => 'Inheritance test template']
@@ -409,13 +409,13 @@ class testFormItem extends CLegacyWebTest {
 		if (!isset($templateid)) {
 			$options = $type_field->getOptions()->asText();
 			$this->assertEquals($options, [
-				'TAA agent',
-				'TAA agent (active)',
+				'TAAE agent',
+				'TAAE agent (active)',
 				'Simple check',
 				'SNMP agent',
 				'SNMP trap',
-				'TAA internal',
-				'TAA trapper',
+				'TAAE internal',
+				'TAAE trapper',
 				'External check',
 				'Database monitor',
 				'HTTP agent',
@@ -668,11 +668,11 @@ class testFormItem extends CLegacyWebTest {
 		}
 
 		switch ($type) {
-			case 'TAA agent':
-			case 'TAA agent (active)':
+			case 'TAAE agent':
+			case 'TAAE agent (active)':
 			case 'Simple check':
 			case 'SNMP agent':
-			case 'TAA internal':
+			case 'TAAE internal':
 			case 'External check':
 			case 'Database monitor':
 			case 'IPMI agent':
@@ -719,7 +719,7 @@ class testFormItem extends CLegacyWebTest {
 		}
 
 		// Custom intervals field isn't visible for some item types.
-		if (in_array($type, ['SNMP trap', 'TAA trapper', 'Dependent item'])) {
+		if (in_array($type, ['SNMP trap', 'TAAE trapper', 'Dependent item'])) {
 			$this->assertFalse($form->getField('Custom intervals')->isDisplayed());
 			$this->assertFalse($form->query("xpath://div[@id='js-item-flex-intervals-field']//button[@class='btn-link element-table-add']")
 					->one()->isDisplayed());
@@ -824,7 +824,7 @@ class testFormItem extends CLegacyWebTest {
 			$this->assertFalse($form->getField('Value mapping')->isDisplayed());
 		}
 
-		if ($type == 'TAA trapper') {
+		if ($type == 'TAAE trapper') {
 			$this->assertTrue($form->getField('Allowed hosts')->isDisplayed());
 			$this->assertEquals(255, $form->getField('Allowed hosts')->getAttribute('maxlength'));
 		}
@@ -1582,8 +1582,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA agent',
-					'name' => 'TAA agent',
+					'type' => 'TAAE agent',
+					'name' => 'TAAE agent',
 					'key' => 'item-zabbix-agent',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1593,8 +1593,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA agent (active)',
-					'name' => 'TAA agent (active) mqtt',
+					'type' => 'TAAE agent (active)',
+					'name' => 'TAAE agent (active) mqtt',
 					'key' => 'mqtt.get[0]',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1604,8 +1604,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA agent (active)',
-					'name' => 'TAA agent (active)',
+					'type' => 'TAAE agent (active)',
+					'name' => 'TAAE agent (active)',
 					'key' => 'item-zabbix-agent-active',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1648,8 +1648,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA internal',
-					'name' => 'TAA internal',
+					'type' => 'TAAE internal',
+					'name' => 'TAAE internal',
 					'key' => 'item-zabbix-internal',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1659,8 +1659,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA trapper',
-					'name' => 'TAA trapper',
+					'type' => 'TAAE trapper',
+					'name' => 'TAAE trapper',
 					'key' => 'item-zabbix-trapper',
 					'dbCheck' => true,
 					'formCheck' => true
@@ -1670,8 +1670,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA trapper',
-					'name' => 'TAA trapper with macro in allowed hosts field',
+					'type' => 'TAAE trapper',
+					'name' => 'TAAE trapper with macro in allowed hosts field',
 					'key' => 'item-zabbix-trapper-macro',
 					'allowed_hosts' => '{$TEST}',
 					'dbCheck' => true,
@@ -1682,8 +1682,8 @@ class testFormItem extends CLegacyWebTest {
 			[
 				[
 					'expected' => TEST_GOOD,
-					'type' => 'TAA trapper',
-					'name' => 'TAA trapper with macro and ip in allowed hosts field',
+					'type' => 'TAAE trapper',
+					'name' => 'TAAE trapper with macro and ip in allowed hosts field',
 					'key' => 'item-zabbix-trapper-macro-ip',
 					'allowed_hosts' => '{$MACRO},127.0.0.1',
 					'dbCheck' => true,
@@ -2078,7 +2078,7 @@ class testFormItem extends CLegacyWebTest {
 		}
 
 		// Check hidden update and custom interval for mqtt.get key.
-		if (CTestArrayHelper::get($data, 'type') === 'TAA agent (active)'
+		if (CTestArrayHelper::get($data, 'type') === 'TAAE agent (active)'
 				&& substr(CTestArrayHelper::get($data, 'key'), 0, 8) === 'mqtt.get') {
 			$this->assertFalse($form->getField('Update interval')->isDisplayed());
 			$this->assertFalse($form->getField('Custom intervals')->isDisplayed());
@@ -2117,7 +2117,7 @@ class testFormItem extends CLegacyWebTest {
 		}
 
 		switch ($type) {
-			case 'TAA agent':
+			case 'TAAE agent':
 			case 'Simple check':
 			case 'SNMP agent':
 			case 'SNMP trap':
@@ -2202,7 +2202,7 @@ class testFormItem extends CLegacyWebTest {
 			$this->assertEquals($key, $check_form->getField('Key')->getValue());
 			$this->zbxTestAssertElementPresentXpath("//z-select[@id='type']//li[text()='$type']");
 			switch ($type) {
-				case 'TAA agent':
+				case 'TAAE agent':
 				case 'Simple check':
 				case 'SNMP agent':
 				case 'SNMP trap':
@@ -2213,7 +2213,7 @@ class testFormItem extends CLegacyWebTest {
 				case 'JMX agent':
 					$this->zbxTestAssertElementPresentXpath('//z-select[@id="interface-select"]//li[text()="'.$interfaceid.'"]');
 					break;
-				case 'TAA agent (active)':
+				case 'TAAE agent (active)':
 					$this->zbxTestAssertNotVisibleId('interfaceid');
 					// Check hidden update and custom interval for mqtt.get key.
 					if (substr(CTestArrayHelper::get($data, 'key'), 0, 8) === 'mqtt.get') {
@@ -2231,7 +2231,7 @@ class testFormItem extends CLegacyWebTest {
 			$this->zbxTestAssertElementPresentXpath("//z-select[@id='value_type']//li[text()='$value_type']");
 
 			// "Execute now" button availability
-			if (in_array($type, ['TAA agent (active)', 'SNMP trap', 'TAA trapper'])) {
+			if (in_array($type, ['TAAE agent (active)', 'SNMP trap', 'TAAE trapper'])) {
 				$this->assertFalse($dialog_check->getFooter()->query('button:Execute now')->one()->isClickable());
 			}
 			else {

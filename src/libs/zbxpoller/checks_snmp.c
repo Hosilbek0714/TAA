@@ -52,13 +52,13 @@
  * Description
  * -----------
  *
- * TAA caches the whole index table for the particular OID separately based on:
+ * TAAE caches the whole index table for the particular OID separately based on:
  *   * IP address;
  *   * port;
  *   * community string (SNMPv2c);
  *   * context, security name (SNMPv3).
  *
- * TAA revalidates each index before using it to get a value and rebuilds the index cache for the OID if the
+ * TAAE revalidates each index before using it to get a value and rebuilds the index cache for the OID if the
  * index is invalid.
  *
  * Example
@@ -70,13 +70,13 @@
  * OID for getting PID (index) by process name (value):
  *   HOST-RESOURCES-MIB::hrSWRunPath:<PID> <NAME>
  *
- * SNMP OID as configured in TAA to get memory usage of "snmpd" process:
+ * SNMP OID as configured in TAAE to get memory usage of "snmpd" process:
  *   HOST-RESOURCES-MIB::hrSWRunPerfMem["index","HOST-RESOURCES-MIB::hrSWRunPath","snmpd"]
  *
- * 1. TAA walks hrSWRunPath table and caches all <PID> and <NAME> pairs of particular SNMP agent/user.
- * 2. Before each GET request TAA revalidates the cached <PID> by getting its <NAME> from hrSWRunPath table.
- * 3. If the names match then TAA uses the cached <PID> in the GET request for the hrSWRunPerfMem.
- *    Otherwise TAA rebuilds the hrSWRunPath cache for the particular agent/user (see 1.).
+ * 1. TAAE walks hrSWRunPath table and caches all <PID> and <NAME> pairs of particular SNMP agent/user.
+ * 2. Before each GET request TAAE revalidates the cached <PID> by getting its <NAME> from hrSWRunPath table.
+ * 3. If the names match then TAAE uses the cached <PID> in the GET request for the hrSWRunPerfMem.
+ *    Otherwise TAAE rebuilds the hrSWRunPath cache for the particular agent/user (see 1.).
  *
  * Implementation
  * --------------
@@ -536,7 +536,7 @@ static char	*get_item_security_name(const zbx_dc_item_t *item)
  *                                                                            *
  * Purpose: retrieves index that matches value from relevant index cache      *
  *                                                                            *
- * Parameters: item      - [IN] Configuration of TAA item, contains        *
+ * Parameters: item      - [IN] Configuration of TAAE item, contains        *
  *                              IP address, port, community string, context,  *
  *                              security name.                                *
  *             snmp_oid  - [IN] OID of table which contains indexes           *
@@ -591,7 +591,7 @@ end:
  *                                                                            *
  * Purpose: stores index-value pair in relevant index cache                   *
  *                                                                            *
- * Parameters: item      - [IN] Configuration of TAA item, contains        *
+ * Parameters: item      - [IN] Configuration of TAAE item, contains        *
  *                              IP address, port, community string, context,  *
  *                              security name.                                *
  *             snmp_oid  - [IN] OID of table which contains indexes           *
@@ -658,7 +658,7 @@ static void	cache_put_snmp_index(const zbx_dc_item_t *item, const char *snmp_oid
  *                                                                            *
  * Purpose: deletes index-value mappings from specified index cache           *
  *                                                                            *
- * Parameters: item      - [IN] Configuration of TAA item, contains        *
+ * Parameters: item      - [IN] Configuration of TAAE item, contains        *
  *                              IP address, port, community string, context,  *
  *                              security name.                                *
  *             snmp_oid  - [IN] OID of table which contains indexes           *
@@ -1447,7 +1447,7 @@ static int	zbx_oid_is_new(zbx_hashset_t *hs, size_t root_len, const oid *p_oid, 
  * Purpose: retrieves information by walking OID tree                               *
  *                                                                                  *
  * Parameters: ssp                - [IN] SNMP session handle                        *
- *             item               - [IN] configuration of TAA item               *
+ *             item               - [IN] configuration of TAAE item               *
  *             snmp_oid           - [IN] OID of table with values of interest       *
  *             error              - [OUT] buffer to store error message             *
  *             max_error_len      - [IN] maximum error message length               *

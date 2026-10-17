@@ -167,7 +167,7 @@ class testDashboardHostNavigatorWidget extends testWidgets {
 			],
 			[
 				'host' => self::MAINTENANCE_HOSTNAME,
-				'groups' => ['groupid' => 4] // TAA servers.
+				'groups' => ['groupid' => 4] // TAAE servers.
 			]
 		]);
 
@@ -180,7 +180,7 @@ class testDashboardHostNavigatorWidget extends testWidgets {
 				'description' => 'Maintenance for icon check in Host navigator widget',
 				'active_since' => time() - 100,
 				'active_till' => time() + 31536000,
-				'groups' => [['groupid' => 4]], // TAA servers.
+				'groups' => [['groupid' => 4]], // TAAE servers.
 				'timeperiods' => [[]]
 			]
 		]);
@@ -475,7 +475,7 @@ class testDashboardHostNavigatorWidget extends testWidgets {
 				[
 					'expected' => TEST_GOOD,
 					'fields' => [
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Refresh interval' => '10 seconds'
 					]
 				]
@@ -486,7 +486,7 @@ class testDashboardHostNavigatorWidget extends testWidgets {
 					'expected' => TEST_GOOD,
 					'fields' => [
 						'Host groups' => [
-							'TAA servers',
+							'TAAE servers',
 							'First Group for Host navigator check'
 						],
 						'Refresh interval' => '30 seconds'
@@ -630,7 +630,7 @@ class testDashboardHostNavigatorWidget extends testWidgets {
 						'Name' => STRING_255,
 						'Show header' => true,
 						'Host groups' => [
-							'TAA servers',
+							'TAAE servers',
 							'First Group for Host navigator check'
 						],
 						'Host patterns' => [

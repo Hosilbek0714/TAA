@@ -15,7 +15,7 @@
 
 
 /**
- * A class for TAA re-branding.
+ * A class for TAAE re-branding.
  */
 class CBrandHelper {
 
@@ -112,9 +112,9 @@ class CBrandHelper {
 		$footer = self::getValue(
 			'BRAND_FOOTER',
 			[
-				$with_version ? 'TAA '.ZABBIX_VERSION.'. ' : null,
+				$with_version ? 'TAAE '.ZABBIX_VERSION.'. ' : null,
 				COPYR(), ' '.ZABBIX_COPYRIGHT_FROM, NDASH(), ZABBIX_COPYRIGHT_TO.', ',
-				(new CLink('TAA monitoring tizimi', 'https://taa.uz'))
+				(new CLink('TAAE monitoring tizimi', 'https://taae.uz'))
 					->addClass(ZBX_STYLE_GREY)
 					->addClass(ZBX_STYLE_LINK_ALT)
 					->setTarget('_blank')

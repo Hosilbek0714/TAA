@@ -30,7 +30,7 @@ class testFormHostGroup extends testFormGroups {
 	protected static $update_group = 'Group for Update test';
 
 	public function testFormHostGroup_Layout() {
-		$this->layout('TAA servers');
+		$this->layout('TAAE servers');
 	}
 
 	public function testFormHostGroup_DiscoveredLayout() {
@@ -57,9 +57,9 @@ class testFormHostGroup extends testFormGroups {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Group name' => 'TAA servers'
+						'Group name' => 'TAAE servers'
 					],
-					'error' => 'Host group "TAA servers" already exists.'
+					'error' => 'Host group "TAAE servers" already exists.'
 				]
 			],
 			[
@@ -96,10 +96,10 @@ class testFormHostGroup extends testFormGroups {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Group name' => 'TAA servers',
+						'Group name' => 'TAAE servers',
 						'Apply permissions and tag filters to all subgroups' => true
 					],
-					'error' => 'Host group "TAA servers" already exists.'
+					'error' => 'Host group "TAAE servers" already exists.'
 				]
 			],
 			[

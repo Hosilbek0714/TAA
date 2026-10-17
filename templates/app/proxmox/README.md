@@ -3,7 +3,7 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of Proxmox VE monitoring by TAA via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of Proxmox VE monitoring by TAAE via HTTP and doesn't require any external scripts.
 
 Proxmox VE uses a REST like API. The concept is described in Resource Oriented Architecture (ROA).
 
@@ -11,7 +11,7 @@ Check the [`API documentation`](https://pve.proxmox.com/pve-docs/api-viewer/inde
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -20,7 +20,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -220,5 +220,5 @@ Please provide the necessary access levels for both the User and the Token:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

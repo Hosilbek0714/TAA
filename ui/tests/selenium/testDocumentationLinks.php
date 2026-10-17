@@ -86,7 +86,7 @@ class testDocumentationLinks extends CWebTest {
 				'maintenance_type' => MAINTENANCE_TYPE_NODATA,
 				'active_since' => 1534885200,
 				'active_till' => 1534971600,
-				'groups' => [['groupid' => 4]], // TAA servers.
+				'groups' => [['groupid' => 4]], // TAAE servers.
 				'timeperiods' => [[]]
 			]
 		]);
@@ -95,7 +95,7 @@ class testDocumentationLinks extends CWebTest {
 		$response = CDataHelper::createHosts([
 			[
 				'host' => 'Host with host prototype for documentations links',
-				'groups' => [['groupid' => 4]], // TAA server
+				'groups' => [['groupid' => 4]], // TAAE server
 				'discoveryrules' => [
 					[
 						'name' => 'Drule for documentation links check',
@@ -112,7 +112,7 @@ class testDocumentationLinks extends CWebTest {
 			[
 				'host' => 'Host prototype for documentation links test {#H}',
 				'ruleid' => self::$lldid,
-				'groupLinks' => [['groupid'=> 4]] // TAA servers.
+				'groupLinks' => [['groupid'=> 4]] // TAAE servers.
 			]
 		]);
 		$prototype_hostids = CDataHelper::getIds('host');
@@ -120,7 +120,7 @@ class testDocumentationLinks extends CWebTest {
 	}
 
 	/**
-	 * Major version of TAA the test is executed on.
+	 * Major version of TAAE the test is executed on.
 	 */
 	private static $version;
 
@@ -283,7 +283,7 @@ class testDocumentationLinks extends CWebTest {
 					'doc_link' => '/en/manual/web_interface/frontend_sections/monitoring/hosts/web'
 				]
 			],
-			// #15 Monitoring -> Host dashboards view (dashboards of TAA server host).
+			// #15 Monitoring -> Host dashboards view (dashboards of TAAE server host).
 			[
 				[
 					'url' => 'zabbix.php?action=host.dashboard.view&hostid=10084',
@@ -531,7 +531,7 @@ class testDocumentationLinks extends CWebTest {
 			// #47 Update host group via popup.
 			[
 				[
-					'url' => 'zabbix.php?action=popup&popup=hostgroup.edit&groupid=4', // TAA servers.
+					'url' => 'zabbix.php?action=popup&popup=hostgroup.edit&groupid=4', // TAAE servers.
 					'doc_link' => '/en/manual/config/hosts/host#creating-a-host-group'
 				]
 			],
@@ -552,7 +552,7 @@ class testDocumentationLinks extends CWebTest {
 			// #50 Update template view.
 			[
 				[
-					'url' => 'zabbix.php?action=popup&popup=template.edit&templateid=10076', // AIX by TAA agent.
+					'url' => 'zabbix.php?action=popup&popup=template.edit&templateid=10076', // AIX by TAAE agent.
 					'doc_link' => '/en/manual/config/templates/template#creating-a-template'
 				]
 			],
@@ -591,14 +591,14 @@ class testDocumentationLinks extends CWebTest {
 			// #54 Template item create form.
 			[
 				[
-					'url' => 'zabbix.php?action=popup&popup=item.edit&hostid=10076&context=template', // AIX by TAA agent.
+					'url' => 'zabbix.php?action=popup&popup=item.edit&hostid=10076&context=template', // AIX by TAAE agent.
 					'doc_link' => '/en/manual/config/items/item#configuration'
 				]
 			],
 			// #55 Template item update form.
 			[
 				[
-					'url' => 'zabbix.php?action=popup&popup=item.edit&context=template&itemid=22933', // Host name (AIX by TAA agent).
+					'url' => 'zabbix.php?action=popup&popup=item.edit&context=template&itemid=22933', // Host name (AIX by TAAE agent).
 					'doc_link' => '/en/manual/config/items/item#configuration'
 				]
 			],
@@ -794,7 +794,7 @@ class testDocumentationLinks extends CWebTest {
 			// #75 Template LLD item prototype create form.
 			[
 				[
-					// AIX by TAA agent, Discovery rule => Mounted filesystem discovery.
+					// AIX by TAAE agent, Discovery rule => Mounted filesystem discovery.
 					'url' => 'zabbix.php?action=popup&popup=item.prototype.edit&context=template&parent_discoveryid=57057',
 					'doc_link' => '/en/manual/discovery/low_level_discovery/item_prototypes'
 				]
@@ -1337,7 +1337,7 @@ class testDocumentationLinks extends CWebTest {
 			// #137 Edit trigger action form popup.
 			[
 				[
-					// Trigger action => Report problems to TAA administrators.
+					// Trigger action => Report problems to TAAE administrators.
 					'url' => 'zabbix.php?action=popup&popup=action.edit&actionid=3&eventsource=0',
 					'doc_link' => '/en/manual/config/notifications/action#configuring-an-action'
 				]

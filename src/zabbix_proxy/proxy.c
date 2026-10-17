@@ -92,13 +92,13 @@ static const char	*usage_message[] = {
 };
 
 static const char	*help_message[] = {
-	"A TAA daemon that collects monitoring data from devices and sends it to",
-	"TAA server.",
+	"A TAAE daemon that collects monitoring data from devices and sends it to",
+	"TAAE server.",
 	"",
 	"Options:",
 	"  -c --config config-file        Path to the configuration file",
 	"                                 (default: \"" DEFAULT_CONFIG_FILE "\")",
-	"  -f --foreground                Run TAA proxy in foreground",
+	"  -f --foreground                Run TAAE proxy in foreground",
 	"  -R --runtime-control runtime-option   Perform administrative functions",
 	"",
 	"    Runtime control options:",
@@ -264,7 +264,7 @@ static char	*config_listen_ip		= NULL;
 
 static int	config_heartbeat_frequency	= -1;
 
-/* how often active TAA proxy requests configuration data from server, in seconds */
+/* how often active TAAE proxy requests configuration data from server, in seconds */
 static int	config_proxyconfig_frequency	= 0;	/* will be set to default 5 seconds if not configured */
 static int	config_proxydata_frequency	= 1;
 static int	config_confsyncer_frequency	= 0;
@@ -364,13 +364,13 @@ static int	get_process_info_by_thread(int local_server_num, unsigned char *local
 	}
 	else if (local_server_num <= (server_count += config_forks[ZBX_PROCESS_TYPE_CONFSYNCER]))
 	{
-		/* make initial configuration sync before worker processes are forked on active TAA proxy */
+		/* make initial configuration sync before worker processes are forked on active TAAE proxy */
 		*local_process_type = ZBX_PROCESS_TYPE_CONFSYNCER;
 		*local_process_num = local_server_num - server_count + config_forks[ZBX_PROCESS_TYPE_CONFSYNCER];
 	}
 	else if (local_server_num <= (server_count += config_forks[ZBX_PROCESS_TYPE_TRAPPER]))
 	{
-		/* make initial configuration sync before worker processes are forked on passive TAA proxy */
+		/* make initial configuration sync before worker processes are forked on passive TAAE proxy */
 		*local_process_type = ZBX_PROCESS_TYPE_TRAPPER;
 		*local_process_num = local_server_num - server_count + config_forks[ZBX_PROCESS_TYPE_TRAPPER];
 	}
@@ -1187,7 +1187,7 @@ static void	zbx_on_exit(int ret, void *on_exit_args)
 
 	zbx_unload_modules();
 
-	zabbix_log(LOG_LEVEL_INFORMATION, "TAA Proxy stopped. TAA %s (revision %s).",
+	zabbix_log(LOG_LEVEL_INFORMATION, "TAAE Proxy stopped. TAAE %s (revision %s).",
 			ZABBIX_VERSION, ZABBIX_REVISION);
 
 	if (NULL != on_exit_args)
@@ -1403,14 +1403,14 @@ static void	proxy_db_init(void)
 
 	if (ZBX_DB_UNKNOWN == (db_type = zbx_db_get_database_type()))
 	{
-		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": database is not a TAA database",
+		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": database is not a TAAE database",
 				zbx_db_config->dbname);
 		goto out;
 	}
 	else if (ZBX_DB_PROXY != db_type)
 	{
-		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": TAA proxy cannot work with a"
-				" TAA server database", zbx_db_config->dbname);
+		zabbix_log(LOG_LEVEL_CRIT, "cannot use database \"%s\": TAAE proxy cannot work with a"
+				" TAAE server database", zbx_db_config->dbname);
 		goto out;
 	}
 
@@ -1644,7 +1644,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 
 	if (0 != (flags & ZBX_TASK_FLAG_FOREGROUND))
 	{
-		printf("Starting TAA Proxy (%s) [%s]. TAA %s (revision %s).\nPress Ctrl+C to exit.\n\n",
+		printf("Starting TAAE Proxy (%s) [%s]. TAAE %s (revision %s).\nPress Ctrl+C to exit.\n\n",
 				ZBX_PROXYMODE_PASSIVE == config_proxymode ? "passive" : "active",
 				config_hostname, ZABBIX_VERSION, ZABBIX_REVISION);
 	}
@@ -1713,7 +1713,7 @@ int	MAIN_ZABBIX_ENTRY(int flags)
 #	define TLS_FEATURE_STATUS	" NO"
 #endif
 
-	zabbix_log(LOG_LEVEL_INFORMATION, "Starting TAA Proxy (%s) [%s]. TAA %s (revision %s).",
+	zabbix_log(LOG_LEVEL_INFORMATION, "Starting TAAE Proxy (%s) [%s]. TAAE %s (revision %s).",
 			ZBX_PROXYMODE_PASSIVE == config_proxymode ? "passive" : "active",
 			config_hostname, ZABBIX_VERSION, ZABBIX_REVISION);
 

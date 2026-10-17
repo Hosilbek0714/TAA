@@ -433,7 +433,7 @@ class testFormEventCorrelation extends CWebTest {
 					'conditions' => [
 						[
 							'Type' => 'New event host group',
-							'Host groups' => 'TAA servers'
+							'Host groups' => 'TAAE servers'
 						],
 						[
 							'Type' => 'New event host group',

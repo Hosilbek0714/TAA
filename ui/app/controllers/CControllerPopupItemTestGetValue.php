@@ -180,7 +180,7 @@ class CControllerPopupItemTestGetValue extends CControllerPopupItemTest {
 			]
 		];
 
-		// Send test to be executed on TAA server.
+		// Send test to be executed on TAAE server.
 		$server = new CZabbixServer($ZBX_SERVER, $ZBX_SERVER_PORT,
 			timeUnitToSeconds(CSettingsHelper::get(CSettingsHelper::CONNECT_TIMEOUT)),
 			timeUnitToSeconds(CSettingsHelper::get(CSettingsHelper::ITEM_TEST_TIMEOUT)), ZBX_SOCKET_BYTES_LIMIT

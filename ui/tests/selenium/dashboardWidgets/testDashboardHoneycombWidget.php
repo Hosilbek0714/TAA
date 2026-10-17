@@ -78,7 +78,7 @@ class testDashboardHoneycombWidget extends testWidgets {
 		$response = CDataHelper::createHosts([
 			[
 				'host' => 'Host for honeycomb 1',
-				'groups' => [['groupid' => 4]], // TAA servers.
+				'groups' => [['groupid' => 4]], // TAAE servers.
 				'items' => [
 					[
 						'name' => 'Numeric for honeycomb 1',
@@ -90,7 +90,7 @@ class testDashboardHoneycombWidget extends testWidgets {
 			],
 			[
 				'host' => 'Display',
-				'groups' => [['groupid' => 4]], // TAA servers.
+				'groups' => [['groupid' => 4]], // TAAE servers.
 				'items' => [
 					[
 						'name' => 'Display item 1',
@@ -1214,7 +1214,7 @@ class testDashboardHoneycombWidget extends testWidgets {
 					'fields' => [
 						'Name' => 'With existing item, hosts and hostgroup',
 						'Item patterns' => 'Numeric for honeycomb 1',
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Hosts' => 'Host for honeycomb 1'
 					]
 				]
@@ -1379,7 +1379,7 @@ class testDashboardHoneycombWidget extends testWidgets {
 						'Name' => 'All available fields filled',
 						'Item patterns' => 'Numeric for honeycomb 1',
 						'Refresh interval' => 'No refresh',
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Hosts' => 'Host for honeycomb 1',
 						'id:primary_label_type' => 'Value',
 						'id:secondary_label_type' => 'Text',
@@ -1912,7 +1912,7 @@ class testDashboardHoneycombWidget extends testWidgets {
 			'Advanced configuration' => true,
 			'Item patterns' => 'Test_cancel',
 			'Refresh interval' => '15 minutes',
-			'Host groups' => 'TAA servers',
+			'Host groups' => 'TAAE servers',
 			'Hosts' => 'Host for honeycomb 1',
 			'id:primary_label_type' => 'Value',
 			'id:secondary_label_type' => 'Text',

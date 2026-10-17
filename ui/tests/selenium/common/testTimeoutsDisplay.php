@@ -31,7 +31,7 @@ class testTimeoutsDisplay extends CWebTest {
 	}
 
 	const GLOBAL_DEFAULT = [
-		'TAA agent' => '3s',
+		'TAAE agent' => '3s',
 		'Simple check' => '3s',
 		'SNMP agent' => '3s',
 		'External check' => '3s',
@@ -43,7 +43,7 @@ class testTimeoutsDisplay extends CWebTest {
 	];
 
 	const GLOBAL_CUSTOM = [
-		'TAA agent' => '111s',
+		'TAAE agent' => '111s',
 		'Simple check' => '222s',
 		'SNMP agent' => '333s',
 		'External check' => '444s',
@@ -55,7 +55,7 @@ class testTimeoutsDisplay extends CWebTest {
 	];
 
 	const GLOBAL_MACROS = [
-		'TAA agent' => '{$MAC1}',
+		'TAAE agent' => '{$MAC1}',
 		'Simple check' => '{$MAC2}',
 		'SNMP agent' => '{$MAC3}',
 		'External check' => '{$MAC4}',
@@ -67,7 +67,7 @@ class testTimeoutsDisplay extends CWebTest {
 	];
 
 	const PROXY_MACROS = [
-		'TAA agent' => '{$PRO1}',
+		'TAAE agent' => '{$PRO1}',
 		'Simple check' => '{$PRO2}',
 		'SNMP agent' => '{$PRO3}',
 		'External check' => '{$PRO4}',
@@ -79,7 +79,7 @@ class testTimeoutsDisplay extends CWebTest {
 	];
 
 	const PROXY_CUSTOM = [
-		'TAA agent' => '123s',
+		'TAAE agent' => '123s',
 		'Simple check' => '234s',
 		'SNMP agent' => '345s',
 		'External check' => '456s',
@@ -100,31 +100,31 @@ class testTimeoutsDisplay extends CWebTest {
 	 * @param boolean $linked			 true for timeouts from linked template, false if not
 	 */
 	public function checkGlobal($timeout_values, $link, $activity, $proxy = false, $linked = false) {
-		// Global TAA agent timeout used in active and passive agents. Add this value to array.
+		// Global TAAE agent timeout used in active and passive agents. Add this value to array.
 		switch ($timeout_values) {
 			case 'proxy_macros':
 				$values = self::PROXY_MACROS;
-				$new_value = ['TAA agent (active)' => '{$PRO1}'];
+				$new_value = ['TAAE agent (active)' => '{$PRO1}'];
 				break;
 
 			case 'proxy_custom':
 				$values = self::PROXY_CUSTOM;
-				$new_value = ['TAA agent (active)' => '123s'];
+				$new_value = ['TAAE agent (active)' => '123s'];
 				break;
 
 			case 'global_default':
 				$values = self::GLOBAL_DEFAULT;
-				$new_value = ['TAA agent (active)' => '3s'];
+				$new_value = ['TAAE agent (active)' => '3s'];
 				break;
 
 			case 'global_macros':
 				$values = self::GLOBAL_MACROS;
-				$new_value = ['TAA agent (active)' => '{$MAC1}'];
+				$new_value = ['TAAE agent (active)' => '{$MAC1}'];
 				break;
 
 			case 'global_custom':
 				$values = self::GLOBAL_CUSTOM;
-				$new_value = ['TAA agent (active)' => '111s'];
+				$new_value = ['TAAE agent (active)' => '111s'];
 				break;
 		}
 
@@ -136,7 +136,7 @@ class testTimeoutsDisplay extends CWebTest {
 			$this->fillGlobalTimeouts($values);
 		}
 
-		// Add TAA agent active timeout to array.
+		// Add TAAE agent active timeout to array.
 		$values = array_merge($values, $new_value);
 
 		// Navigate to page for timeouts checking.
@@ -272,7 +272,7 @@ class testTimeoutsDisplay extends CWebTest {
 	protected function checkLinked($values, $link, $table_selector) {
 		// If we need to check linked item prototype timeouts, we should first navigate through discovery rule.
 		if ($table_selector === 'name:itemprototype') {
-			$this->query('name:discovery')->asTable()->one()->findRow('Name', 'Template for linking: TAA agent')
+			$this->query('name:discovery')->asTable()->one()->findRow('Name', 'Template for linking: TAAE agent')
 					->getColumn('Items')->query('link:Item prototypes')->one()->click();
 			$this->page->waitUntilReady();
 		}

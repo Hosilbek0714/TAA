@@ -1,4 +1,4 @@
-# TAA skript paketlari (Python 3.10+)
+# TAAE skript paketlari (Python 3.10+)
 # O'rnatish: pip install -r scripts/requirements.txt
 
 netmiko>=4.0

@@ -995,14 +995,14 @@ class testHost extends CAPITest {
 			],
 			'Test host.create common error - host already exists' => [
 				'request' => [
-					'host' => 'TAA server',
+					'host' => 'TAAE server',
 					'groups' => [
 						[
 							'groupid' => 'ID'
 						]
 					]
 				],
-				'expected_error' => 'Host with the same name "TAA server" already exists.'
+				'expected_error' => 'Host with the same name "TAAE server" already exists.'
 			]
 		];
 	}

@@ -3,11 +3,11 @@
 
 ## Overview
 
-This guide describes how to integrate your TAA installation with Discord using the TAA webhook feature, providing instructions on setting up a media type, user, and action in TAA.
+This guide describes how to integrate your TAAE installation with Discord using the TAAE webhook feature, providing instructions on setting up a media type, user, and action in TAAE.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Parameters
 
@@ -19,7 +19,7 @@ The configurable parameters are intended to be changed according to the webhook 
 
 |Name|Value|Description|
 |----|-----|-----------|
-|zabbix_url|\{$ZABBIX\.URL\}|The URL of the TAA frontend.|
+|zabbix_url|\{$ZABBIX\.URL\}|The URL of the TAAE frontend.|
 |user_agent|ZabbixServer \(zabbix\.com, 7\.4\)|The user agent to use in the request.|
 
 ### Internal parameters
@@ -63,11 +63,11 @@ You can copy the Discord webhook URL now by pressing *Copy Webhook URL*, or you 
 
 [![](images/thumb.2.png?raw=true)](images/2.png)
 
-## TAA configuration
+## TAAE configuration
 
 1. Before you can start using the Discord webhook, you need to set up the global macro `{$ZABBIX.URL}`:
-  - In the TAA web interface, go to *Administration* > *Macros* in the top-left dropdown menu.
-  - Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the TAA frontend. The URL should be either an IP address, a fully qualified domain name, or a localhost.
+  - In the TAAE web interface, go to *Administration* > *Macros* in the top-left dropdown menu.
+  - Set up the global macro `{$ZABBIX.URL}` which will contain the URL to the TAAE frontend. The URL should be either an IP address, a fully qualified domain name, or a localhost.
   - Specifying a protocol is mandatory, whereas the port is optional. Depending on the web server configuration, you might also need to append `/zabbix` to the end of URL. Good examples:  
     - `http://zabbix.com`
     - `https://zabbix.lan/zabbix`
@@ -83,7 +83,7 @@ You can copy the Discord webhook URL now by pressing *Copy Webhook URL*, or you 
 2. Import the media type:
   - In the *Alerts* > *Media types* section, import the [`media_discord.yaml`](media_discord.yaml) file.
 
-3. Create a TAA user and add media:
+3. Create a TAAE user and add media:
   - If you want to create a new user, go to the *Users* > *Users* section and click the *Create user* button in the top-right corner. In the *User* tab, fill in all the required fields (marked with red asterisks).
   - In the *Media* tab, add a new media and select **Discord** from the *Type* drop-down list. The *Send to* field must contain the URL of the Discord webhook created previously.
   - Make sure this user has access to all the hosts for which you would like problem notifications to be sent to Discord.
@@ -92,10 +92,10 @@ You can copy the Discord webhook URL now by pressing *Copy Webhook URL*, or you 
 
 4. Done! You can now start using this media type in actions and receive alerts.
 
-For more information, please see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Discord](https://discordapp.com/developers/docs/resources/webhook#execute-webhook) documentation.
+For more information, please see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [Discord](https://discordapp.com/developers/docs/resources/webhook#execute-webhook) documentation.
 
 ## Feedback
 
 Please report any issues with the media type at [`https://support.zabbix.com`](https://support.zabbix.com).
 
-You can also provide feedback, discuss the media type, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).
+You can also provide feedback, discuss the media type, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback).

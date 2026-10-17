@@ -935,7 +935,7 @@ int	zbx_dbsync_compare_autoreg_psk(zbx_dbsync_t *sync)
 /******************************************************************************
  *                                                                            *
  * Purpose: reads autoreg hosts table in order to cache autoreg_host entries  *
- *          for hosts monitored directly by TAA server                     *
+ *          for hosts monitored directly by TAAE server                     *
  *                                                                            *
  * Parameter: sync - [OUT] result of select, only during initialization       *
  *                                                                            *

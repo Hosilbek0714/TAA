@@ -320,7 +320,7 @@ ZBX_NotificationsAudio.prototype.handleOnloadeddata = function() {
 		if (error.name === 'NotAllowedError' && this.audio.paused) {
 			console.warn(error.message);
 			console.warn(
-				'TAA was not able to play audio due to "Autoplay policy". Please see manual for more information.'
+				'TAAE was not able to play audio due to "Autoplay policy". Please see manual for more information.'
 			);
 		}
 	}.bind(this));

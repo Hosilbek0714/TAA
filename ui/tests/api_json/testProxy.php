@@ -892,7 +892,7 @@ class testProxy extends CAPITest {
 				'expected_error' => null
 			],
 
-			// Filter by TAA version.
+			// Filter by TAAE version.
 			'Test proxy.get: filter by "version"' => [
 				'request' => [
 					'output' => ['name', 'version'],

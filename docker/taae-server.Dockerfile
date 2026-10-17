@@ -1,11 +1,11 @@
 # =============================================================================
-# TAA Server (custom) — monitoring server + Python + msmtp + TAA skriptlar
+# TAAE Server (custom) — monitoring server + Python + msmtp + TAAE skriptlar
 # -----------------------------------------------------------------------------
-# Maqsad: docker compose up -d qilingan zahoti TAA Action'lar ichidan
+# Maqsad: docker compose up -d qilingan zahoti TAAE Action'lar ichidan
 #         scripts/ ichidagi Python va Bash skriptlar to'g'ridan-to'g'ri ishlasin.
 #
 # Build: avtomatik (docker-compose.yml dagi `build:` orqali)
-# Image: taa/server:custom
+# Image: taae/server:custom
 # =============================================================================
 
 FROM zabbix/zabbix-server-pgsql:alpine-7.0-latest
@@ -15,8 +15,8 @@ USER root
 
 # Bog'liqliklarni o'rnatish:
 #   - python3, py3-pip  : auto_remediation.py, ip_inventory.py, stp_loop_parser.py
-#   - bash, curl        : taa_telegram.sh
-#   - msmtp             : taa_email.sh
+#   - bash, curl        : taae_telegram.sh
+#   - msmtp             : taae_email.sh
 #   - ca-certificates   : TLS uchun
 #   - tzdata            : Asia/Tashkent vaqt zonasi
 RUN apk add --no-cache \
@@ -33,15 +33,15 @@ RUN apk add --no-cache \
       "jinja2>=3.0" \
       "pyyaml>=6.0"
 
-# Skript papkalarini yaratish va TAA skriptlarini ko'chirish
+# Skript papkalarini yaratish va TAAE skriptlarini ko'chirish
 COPY scripts/alertscripts/    /usr/lib/zabbix/alertscripts/
 COPY scripts/externalscripts/ /usr/lib/zabbix/externalscripts/
 
 # Egasi va huquqlar
 RUN chmod 750 /usr/lib/zabbix/alertscripts/*    /usr/lib/zabbix/externalscripts/* \
  && chown -R zabbix:zabbix /usr/lib/zabbix/alertscripts /usr/lib/zabbix/externalscripts \
- && install -d -o zabbix -g zabbix -m 0750 /var/lib/taa \
- && install -d -o zabbix -g zabbix -m 0750 /var/log/taa
+ && install -d -o zabbix -g zabbix -m 0750 /var/lib/taae \
+ && install -d -o zabbix -g zabbix -m 0750 /var/log/taae
 
 # Tashqi yangilanish serveriga murojaat qilmaslik (interfeysdagi
 # "yangi versiya bor" bloki va tashqi havolalar chiqmaydi)

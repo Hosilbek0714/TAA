@@ -35,7 +35,7 @@ define('ZBX_DOCUMENTATION_URL', 'https://www.zabbix.com/documentation');
 
 define('ZBX_BCRYPT_COST',		10);
 
-define('ZBX_SESSION_NAME', 'zbx_session'); // Session cookie name for TAA front-end.
+define('ZBX_SESSION_NAME', 'zbx_session'); // Session cookie name for TAAE front-end.
 
 define('CSRF_TOKEN_NAME', '_csrf_token');
 
@@ -225,7 +225,7 @@ define('ZBX_DB_EXTENSION_TIMESCALEDB', 'timescaledb');
 
 define('ZBX_EXT_ERR_UNDEFINED',							0);
 define('ZBX_EXT_SUCCEED',								1);
-//define('ZBX_TIMESCALEDB_POSTGRES_TOO_OLD',				2); obsoleted since TAA 7.0
+//define('ZBX_TIMESCALEDB_POSTGRES_TOO_OLD',				2); obsoleted since TAAE 7.0
 define('ZBX_TIMESCALEDB_VERSION_FAILED_TO_RETRIEVE',	3);
 define('ZBX_TIMESCALEDB_VERSION_LOWER_THAN_MINIMUM',	4);
 define('ZBX_TIMESCALEDB_VERSION_NOT_SUPPORTED',			5);
@@ -689,7 +689,7 @@ define('ITEM_DISCOVER',	0);
 define('ITEM_NO_DISCOVER',	1);
 
 /**
- * Starting from TAA 2.2 items could not have ITEM_STATUS_NOTSUPPORTED status
+ * Starting from TAAE 2.2 items could not have ITEM_STATUS_NOTSUPPORTED status
  * this constant is left for importing data from versions 1.8 and 2.0.
  */
 define('ITEM_STATUS_NOTSUPPORTED',	3);
@@ -1132,7 +1132,7 @@ define('PERM_NONE',			-1);
 define('PARAM_TYPE_TIME',		0);
 define('PARAM_TYPE_COUNTS',		1);
 
-define('ZBX_DEFAULT_AGENT', 'TAA');
+define('ZBX_DEFAULT_AGENT', 'TAAE');
 define('ZBX_AGENT_OTHER', -1);
 
 define('ZBX_HTTP_AUTH_NONE',		0);

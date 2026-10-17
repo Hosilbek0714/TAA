@@ -1,13 +1,13 @@
 
-# MySQL by TAA agent 2 active
+# MySQL by TAAE agent 2 active
 
 ## Overview
 
-This template is designed for the effortless deployment of MySQL monitoring by TAA via TAA agent 2 active and doesn't require any external scripts.
+This template is designed for the effortless deployment of MySQL monitoring by TAAE via TAAE agent 2 active and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -18,7 +18,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -39,13 +39,13 @@ GRANT REPLICATION CLIENT,PROCESS,SHOW DATABASES,SHOW VIEW,SLAVE MONITOR ON *.* T
 
 For more information please read the MariaDB documentation https://mariadb.com/docs/server/ref/mdb/privileges/SLAVE_MONITOR/
 
-2. Set in the {$MYSQL.DSN} macro the data source name of the MySQL instance either session name from TAA agent 2 configuration file or URI.
+2. Set in the {$MYSQL.DSN} macro the data source name of the MySQL instance either session name from TAAE agent 2 configuration file or URI.
 **Examples:** MySQL1, tcp://localhost:3306, tcp://172.16.0.10, unix:/var/run/mysql.sock
 For more information about MySQL Unix socket file, see the MySQL documentation https://dev.mysql.com/doc/refman/8.0/en/problems-with-mysql-sock.html.
 
 3. If you had set URI in the {$MYSQL.DSN}, define the user name and password in host macros ({$MYSQL.USER} and {$MYSQL.PASSWORD}).
-Leave macros {$MYSQL.USER} and {$MYSQL.PASSWORD} empty if you use a session name. Set the user name and password in the Plugins.Mysql.<...> section of your TAA agent 2 configuration file.
-For more information about configuring the TAA MySQL plugin, see the documentation https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/src/go/plugins/mysql/README.md.
+Leave macros {$MYSQL.USER} and {$MYSQL.PASSWORD} empty if you use a session name. Set the user name and password in the Plugins.Mysql.<...> section of your TAAE agent 2 configuration file.
+For more information about configuring the TAAE MySQL plugin, see the documentation https://git.zabbix.com/projects/ZBX/repos/zabbix/browse/src/go/plugins/mysql/README.md.
 
 ### Macros used
 
@@ -69,9 +69,9 @@ For more information about configuring the TAA MySQL plugin, see the documentati
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get status variables|<p>Gets server global status information.</p>|TAA agent (active)|mysql.get_status_variables["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]|
-|Status|<p>MySQL server status.</p>|TAA agent (active)|mysql.ping["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Version|<p>MySQL server version.</p>|TAA agent (active)|mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
+|Get status variables|<p>Gets server global status information.</p>|TAAE agent (active)|mysql.get_status_variables["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]|
+|Status|<p>MySQL server status.</p>|TAAE agent (active)|mysql.ping["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Version|<p>MySQL server version.</p>|TAAE agent (active)|mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
 |Uptime|<p>Number of seconds that the server has been up.</p>|Dependent item|mysql.uptime<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Uptime`</p></li></ul>|
 |Aborted clients per second|<p>Number of connections that were aborted because the client died without closing the connection properly.</p>|Dependent item|mysql.aborted_clients.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Aborted_clients`</p></li><li>Change per second</li></ul>|
 |Aborted connections per second|<p>Number of failed attempts to connect to the MySQL server.</p>|Dependent item|mysql.aborted_connects.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Aborted_connects`</p></li><li>Change per second</li></ul>|
@@ -122,41 +122,41 @@ For more information about configuring the TAA MySQL plugin, see the documentati
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MySQL: Service is down|<p>MySQL is down.</p>|`last(/MySQL by TAA agent 2 active/mysql.ping["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"])=0`|High||
-|MySQL: Version has changed|<p>The MySQL version has changed. Acknowledge to close the problem manually.</p>|`last(/MySQL by TAA agent 2 active/mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"],#1)<>last(/MySQL by TAA agent 2 active/mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"],#2) and length(last(/MySQL by TAA agent 2 active/mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]))>0`|Info|**Manual close**: Yes|
-|MySQL: Service has been restarted|<p>MySQL uptime is less than 10 minutes.</p>|`last(/MySQL by TAA agent 2 active/mysql.uptime)<10m`|Info||
-|MySQL: Failed to fetch info data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/MySQL by TAA agent 2 active/mysql.uptime,30m)=1`|Info|**Depends on**:<br><ul><li>MySQL: Service is down</li></ul>|
-|MySQL: Server has aborted connections|<p>The number of failed attempts to connect to the MySQL server is more than `{$MYSQL.ABORTED_CONN.MAX.WARN}` in the last 5 minutes.</p>|`min(/MySQL by TAA agent 2 active/mysql.aborted_connects.rate,5m)>{$MYSQL.ABORTED_CONN.MAX.WARN}`|Average|**Depends on**:<br><ul><li>MySQL: Refused connections</li></ul>|
-|MySQL: Refused connections|<p>Number of refused connections due to the `max_connections` limit being reached.</p>|`last(/MySQL by TAA agent 2 active/mysql.connection_errors_max_connections.rate)>0`|Average||
-|MySQL: Buffer pool utilization is too low|<p>The buffer pool utilization is less than `{$MYSQL.BUFF_UTIL.MIN.WARN}`% in the last 5 minutes. This means that there is a lot of unused RAM allocated for the buffer pool, which you can easily reallocate at the moment.</p>|`max(/MySQL by TAA agent 2 active/mysql.buffer_pool_utilization,5m)<{$MYSQL.BUFF_UTIL.MIN.WARN}`|Warning||
-|MySQL: Number of temporary files created per second is high|<p>The application using the database may be in need of query optimization.</p>|`min(/MySQL by TAA agent 2 active/mysql.created_tmp_files.rate,5m)>{$MYSQL.CREATED_TMP_FILES.MAX.WARN}`|Warning||
-|MySQL: Number of on-disk temporary tables created per second is high|<p>The application using the database may be in need of query optimization.</p>|`min(/MySQL by TAA agent 2 active/mysql.created_tmp_disk_tables.rate,5m)>{$MYSQL.CREATED_TMP_DISK_TABLES.MAX.WARN}`|Warning||
-|MySQL: Number of internal temporary tables created per second is high|<p>The application using the database may be in need of query optimization.</p>|`min(/MySQL by TAA agent 2 active/mysql.created_tmp_tables.rate,5m)>{$MYSQL.CREATED_TMP_TABLES.MAX.WARN}`|Warning||
-|MySQL: Server has slow queries|<p>The number of slow queries is more than `{$MYSQL.SLOW_QUERIES.MAX.WARN}` in the last 5 minutes.</p>|`min(/MySQL by TAA agent 2 active/mysql.slow_queries.rate,5m)>{$MYSQL.SLOW_QUERIES.MAX.WARN}`|Warning||
+|MySQL: Service is down|<p>MySQL is down.</p>|`last(/MySQL by TAAE agent 2 active/mysql.ping["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"])=0`|High||
+|MySQL: Version has changed|<p>The MySQL version has changed. Acknowledge to close the problem manually.</p>|`last(/MySQL by TAAE agent 2 active/mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"],#1)<>last(/MySQL by TAAE agent 2 active/mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"],#2) and length(last(/MySQL by TAAE agent 2 active/mysql.version["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]))>0`|Info|**Manual close**: Yes|
+|MySQL: Service has been restarted|<p>MySQL uptime is less than 10 minutes.</p>|`last(/MySQL by TAAE agent 2 active/mysql.uptime)<10m`|Info||
+|MySQL: Failed to fetch info data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/MySQL by TAAE agent 2 active/mysql.uptime,30m)=1`|Info|**Depends on**:<br><ul><li>MySQL: Service is down</li></ul>|
+|MySQL: Server has aborted connections|<p>The number of failed attempts to connect to the MySQL server is more than `{$MYSQL.ABORTED_CONN.MAX.WARN}` in the last 5 minutes.</p>|`min(/MySQL by TAAE agent 2 active/mysql.aborted_connects.rate,5m)>{$MYSQL.ABORTED_CONN.MAX.WARN}`|Average|**Depends on**:<br><ul><li>MySQL: Refused connections</li></ul>|
+|MySQL: Refused connections|<p>Number of refused connections due to the `max_connections` limit being reached.</p>|`last(/MySQL by TAAE agent 2 active/mysql.connection_errors_max_connections.rate)>0`|Average||
+|MySQL: Buffer pool utilization is too low|<p>The buffer pool utilization is less than `{$MYSQL.BUFF_UTIL.MIN.WARN}`% in the last 5 minutes. This means that there is a lot of unused RAM allocated for the buffer pool, which you can easily reallocate at the moment.</p>|`max(/MySQL by TAAE agent 2 active/mysql.buffer_pool_utilization,5m)<{$MYSQL.BUFF_UTIL.MIN.WARN}`|Warning||
+|MySQL: Number of temporary files created per second is high|<p>The application using the database may be in need of query optimization.</p>|`min(/MySQL by TAAE agent 2 active/mysql.created_tmp_files.rate,5m)>{$MYSQL.CREATED_TMP_FILES.MAX.WARN}`|Warning||
+|MySQL: Number of on-disk temporary tables created per second is high|<p>The application using the database may be in need of query optimization.</p>|`min(/MySQL by TAAE agent 2 active/mysql.created_tmp_disk_tables.rate,5m)>{$MYSQL.CREATED_TMP_DISK_TABLES.MAX.WARN}`|Warning||
+|MySQL: Number of internal temporary tables created per second is high|<p>The application using the database may be in need of query optimization.</p>|`min(/MySQL by TAAE agent 2 active/mysql.created_tmp_tables.rate,5m)>{$MYSQL.CREATED_TMP_TABLES.MAX.WARN}`|Warning||
+|MySQL: Server has slow queries|<p>The number of slow queries is more than `{$MYSQL.SLOW_QUERIES.MAX.WARN}` in the last 5 minutes.</p>|`min(/MySQL by TAAE agent 2 active/mysql.slow_queries.rate,5m)>{$MYSQL.SLOW_QUERIES.MAX.WARN}`|Warning||
 
 ### LLD rule Database discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Database discovery|<p>Scanning databases in DBMS.</p>|TAA agent (active)|mysql.db.discovery["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
+|Database discovery|<p>Scanning databases in DBMS.</p>|TAAE agent (active)|mysql.db.discovery["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 
 ### Item prototypes for Database discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Size of database {#DATABASE}|<p>Database size.</p>|TAA agent (active)|mysql.db.size["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}","{#DATABASE}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
+|Size of database {#DATABASE}|<p>Database size.</p>|TAAE agent (active)|mysql.db.size["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}","{#DATABASE}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
 
 ### LLD rule Replication discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Replication discovery|<p>If "show slave status" returns Master_Host, "Replication: *" items are created.</p>|TAA agent (active)|mysql.replication.discovery["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
+|Replication discovery|<p>If "show slave status" returns Master_Host, "Replication: *" items are created.</p>|TAAE agent (active)|mysql.replication.discovery["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `1d`</p></li></ul>|
 
 ### Item prototypes for Replication discovery
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Replication Slave status {#MASTER_HOST}|<p>The item gets status information on the essential parameters of the slave threads.</p>|TAA agent (active)|mysql.replication.get_slave_status["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}","{#MASTER_HOST}"]|
+|Replication Slave status {#MASTER_HOST}|<p>The item gets status information on the essential parameters of the slave threads.</p>|TAAE agent (active)|mysql.replication.get_slave_status["{$MYSQL.DSN}","{$MYSQL.USER}","{$MYSQL.PASSWORD}","{#MASTER_HOST}"]|
 |Replication Slave SQL Running State {#MASTER_HOST}|<p>This shows the state of the SQL driver threads.</p>|Dependent item|mysql.replication.slave_sql_running_state["{#MASTER_HOST}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Slave_SQL_Running_State`</p></li><li><p>Discard unchanged with heartbeat: `6h`</p></li></ul>|
 |Replication Seconds Behind Master {#MASTER_HOST}|<p>Number of seconds that the slave SQL thread is behind processing the master binary log.</p><p>A high number (or an increasing one) can indicate that the slave is unable to handle events</p><p>from the master in a timely fashion.</p>|Dependent item|mysql.replication.seconds_behind_master["{#MASTER_HOST}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Seconds_Behind_Master`</p></li><li><p>Matches regular expression: `\d+`</p><p>⛔️Custom on fail: Set error to: `Replication is not performed.`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
 |Replication Slave IO Running {#MASTER_HOST}|<p>Whether the I/O thread for reading the master's binary log is running.</p><p>Normally, you want this to be Yes unless you have not yet started a replication or have</p><p>explicitly stopped it with STOP SLAVE.</p>|Dependent item|mysql.replication.slave_io_running["{#MASTER_HOST}"]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Slave_IO_Running`</p></li><li><p>Discard unchanged with heartbeat: `1h`</p></li></ul>|
@@ -166,10 +166,10 @@ For more information about configuring the TAA MySQL plugin, see the documentati
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|MySQL: Replication lag is too high|<p>Replication delay is too long.</p>|`min(/MySQL by TAA agent 2 active/mysql.replication.seconds_behind_master["{#MASTER_HOST}"],5m)>{$MYSQL.REPL_LAG.MAX.WARN}`|Warning||
-|MySQL: The slave I/O thread is not running|<p>Whether the I/O thread for reading the master's binary log is running.</p>|`count(/MySQL by TAA agent 2 active/mysql.replication.slave_io_running["{#MASTER_HOST}"],#1,"eq","No")=1`|Average||
-|MySQL: The slave I/O thread is not connected to a replication master|<p>Whether the slave I/O thread is connected to the master.</p>|`count(/MySQL by TAA agent 2 active/mysql.replication.slave_io_running["{#MASTER_HOST}"],#1,"ne","Yes")=1`|Warning|**Depends on**:<br><ul><li>MySQL: The slave I/O thread is not running</li></ul>|
-|MySQL: The SQL thread is not running|<p>Whether the SQL thread for executing events in the relay log is running.</p>|`count(/MySQL by TAA agent 2 active/mysql.replication.slave_sql_running["{#MASTER_HOST}"],#1,"eq","No")=1`|Warning|**Depends on**:<br><ul><li>MySQL: The slave I/O thread is not running</li></ul>|
+|MySQL: Replication lag is too high|<p>Replication delay is too long.</p>|`min(/MySQL by TAAE agent 2 active/mysql.replication.seconds_behind_master["{#MASTER_HOST}"],5m)>{$MYSQL.REPL_LAG.MAX.WARN}`|Warning||
+|MySQL: The slave I/O thread is not running|<p>Whether the I/O thread for reading the master's binary log is running.</p>|`count(/MySQL by TAAE agent 2 active/mysql.replication.slave_io_running["{#MASTER_HOST}"],#1,"eq","No")=1`|Average||
+|MySQL: The slave I/O thread is not connected to a replication master|<p>Whether the slave I/O thread is connected to the master.</p>|`count(/MySQL by TAAE agent 2 active/mysql.replication.slave_io_running["{#MASTER_HOST}"],#1,"ne","Yes")=1`|Warning|**Depends on**:<br><ul><li>MySQL: The slave I/O thread is not running</li></ul>|
+|MySQL: The SQL thread is not running|<p>Whether the SQL thread for executing events in the relay log is running.</p>|`count(/MySQL by TAAE agent 2 active/mysql.replication.slave_sql_running["{#MASTER_HOST}"],#1,"eq","No")=1`|Warning|**Depends on**:<br><ul><li>MySQL: The slave I/O thread is not running</li></ul>|
 
 ### LLD rule MariaDB discovery
 
@@ -191,5 +191,5 @@ For more information about configuring the TAA MySQL plugin, see the documentati
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

@@ -317,7 +317,7 @@ class testDashboardGeomapWidget extends testWidgets {
 					'fields' => [
 						'Name' => 'New geomap widget with tags and long coordinates',
 						'Refresh interval' => '2 minutes',
-						'Host groups' => 'TAA servers',
+						'Host groups' => 'TAAE servers',
 						'Hosts' => ['Test item host', 'ЗАББИКС Сервер'],
 						'Initial view' => '51.5537236445998, -0.43871069125537776'
 					],

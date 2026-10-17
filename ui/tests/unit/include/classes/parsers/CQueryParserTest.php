@@ -20,10 +20,10 @@ class CQueryParserTest extends TestCase {
 
 	public function dataProvider() {
 		return [
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]', 0, [], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]', 0, [], [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
+				'host' => 'TAAE server',
 				'item' => 'logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
 				'filter' => [
 					'match' => '',
@@ -110,17 +110,17 @@ class CQueryParserTest extends TestCase {
 					'tokens' => []
 				]
 			]],
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log,ERROR,,1000,,,120.0]', 0, [], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log,ERROR,,1000,,,120.0]', 0, [], [
 				'rc' => CParser::PARSE_SUCCESS_CONT,
-				'match' => '/TAA server/logrt',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt',
+				'host' => 'TAAE server',
 				'item' => 'logrt',
 				'filter' => [
 					'match' => '',
 					'tokens' => []
 				]
 			]],
-			['/TAA server^/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]', 0, [], [
+			['/TAAE server^/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]', 0, [], [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'host' => '',
@@ -130,7 +130,7 @@ class CQueryParserTest extends TestCase {
 					'tokens' => []
 				]
 			]],
-			['/TAA server', 0, [], [
+			['/TAAE server', 0, [], [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'host' => '',
@@ -140,7 +140,7 @@ class CQueryParserTest extends TestCase {
 					'tokens' => []
 				]
 			]],
-			['/TAA server/', 0, [], [
+			['/TAAE server/', 0, [], [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'host' => '',
@@ -160,7 +160,7 @@ class CQueryParserTest extends TestCase {
 					'tokens' => []
 				]
 			]],
-			['/TAA server/*', 0, [], [
+			['/TAAE server/*', 0, [], [
 				'rc' => CParser::PARSE_FAIL,
 				'match' => '',
 				'host' => '',
@@ -170,10 +170,10 @@ class CQueryParserTest extends TestCase {
 					'tokens' => []
 				]
 			]],
-			['/TAA server/*', 0, ['calculated' => true], [
+			['/TAAE server/*', 0, ['calculated' => true], [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '/TAA server/*',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/*',
+				'host' => 'TAAE server',
 				'item' => '*',
 				'filter' => [
 					'match' => '',
@@ -260,40 +260,40 @@ class CQueryParserTest extends TestCase {
 					'tokens' => []
 				]
 			]],
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = "tag" and group = "group"]', 0, [], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = "tag" and group = "group"]', 0, [], [
 				'rc' => CParser::PARSE_SUCCESS_CONT,
-				'match' => '/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
+				'host' => 'TAAE server',
 				'item' => 'logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
 				'filter' => [
 					'match' => '',
 					'tokens' => []
 				]
 			]],
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = {$MACRO} and group = "group"]', 0, ['calculated' => true], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = {$MACRO} and group = "group"]', 0, ['calculated' => true], [
 				'rc' => CParser::PARSE_SUCCESS_CONT,
-				'match' => '/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
+				'host' => 'TAAE server',
 				'item' => 'logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
 				'filter' => [
 					'match' => '',
 					'tokens' => []
 				]
 			]],
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = {#MACRO} and group = "group"]', 0, ['calculated' => true], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = {#MACRO} and group = "group"]', 0, ['calculated' => true], [
 				'rc' => CParser::PARSE_SUCCESS_CONT,
-				'match' => '/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
+				'host' => 'TAAE server',
 				'item' => 'logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
 				'filter' => [
 					'match' => '',
 					'tokens' => []
 				]
 			]],
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[{$MACRO} = {{#MACRO}.func()} and group = "group"]', 0, ['usermacros' => true, 'lldmacros' => true, 'calculated' => true], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[{$MACRO} = {{#MACRO}.func()} and group = "group"]', 0, ['usermacros' => true, 'lldmacros' => true, 'calculated' => true], [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[{$MACRO} = {{#MACRO}.func()} and group = "group"]',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[{$MACRO} = {{#MACRO}.func()} and group = "group"]',
+				'host' => 'TAAE server',
 				'item' => 'logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
 				'filter' => [
 					'match' => '?[{$MACRO} = {{#MACRO}.func()} and group = "group"]',
@@ -343,10 +343,10 @@ class CQueryParserTest extends TestCase {
 					]
 				]
 			]],
-			['/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = "tag" and group = "group"]', 0, ['calculated' => true], [
+			['/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = "tag" and group = "group"]', 0, ['calculated' => true], [
 				'rc' => CParser::PARSE_SUCCESS,
-				'match' => '/TAA server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = "tag" and group = "group"]',
-				'host' => 'TAA server',
+				'match' => '/TAAE server/logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]?[tag = "tag" and group = "group"]',
+				'host' => 'TAAE server',
 				'item' => 'logrt["/home/zabbix32/test[0-9].log",ERROR,,1000,,,120.0]',
 				'filter' => [
 					'match' => '?[tag = "tag" and group = "group"]',

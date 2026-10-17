@@ -86,7 +86,7 @@ static int	parse_log_level_options(const char *opt, size_t len, unsigned int *sc
 				return FAIL;
 			}
 
-			/* convert TAA process number (e.g. "2" in "poller,2") */
+			/* convert TAAE process number (e.g. "2" in "poller,2") */
 			if (FAIL == zbx_is_ushort(proc_num, &num) || 0 == num)
 			{
 				zbx_error("invalid log level control target: invalid or unsupported process number"

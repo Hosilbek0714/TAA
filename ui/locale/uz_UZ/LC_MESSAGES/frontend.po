@@ -655,8 +655,8 @@ msgstr "Agent hostining nomi. Qaytaradi satr"
 msgid "Agent interfaces"
 msgstr "Agent interfeyslari"
 
-msgid "Agent variant check. Returns 1 - for TAA agent; 2 - for TAA agent 2"
-msgstr "Agent variantini tekshirish. 1 qaytaradi - TAA agenti uchun; 2 - TAA agent 2 uchun"
+msgid "Agent variant check. Returns 1 - for TAAE agent; 2 - for TAAE agent 2"
+msgstr "Agent variantini tekshirish. 1 qaytaradi - TAAE agenti uchun; 2 - TAAE agent 2 uchun"
 
 msgid "Aggregate"
 msgstr "Yig'ish"
@@ -1553,8 +1553,8 @@ msgstr[0] "SLAni o'chirib bo'lmaydi"
 msgstr[1] "SLAlarni o'chirib bo'lmaydi"
 
 #, c-format
-msgid "Cannot delete TAA internal user \"%1$s\", try disabling that user."
-msgstr "TAA ichki foydalanuvchisini \"%1$s\" o'chirib bo'lmaydi, iltimos, foydalanuvchini o'chirishni sinab ko'ring."
+msgid "Cannot delete TAAE internal user \"%1$s\", try disabling that user."
+msgstr "TAAE ichki foydalanuvchisini \"%1$s\" o'chirib bo'lmaydi, iltimos, foydalanuvchini o'chirishni sinab ko'ring."
 
 msgid "Cannot delete action"
 msgid_plural "Cannot delete actions"
@@ -2433,8 +2433,8 @@ msgid "Cannot read YAML: %1$s."
 msgstr "YAML ni o'qib bo'lmadi: %1$s."
 
 #, c-format
-msgid "Cannot read the response, check connection with the TAA server \"%1$s\"."
-msgstr "Javobni o'qib bo'lmadi, TAA serveri \"%1$s\" bilan aloqani tekshirib chiqing."
+msgid "Cannot read the response, check connection with the TAAE server \"%1$s\"."
+msgstr "Javobni o'qib bo'lmadi, TAAE serveri \"%1$s\" bilan aloqani tekshirib chiqing."
 
 #, c-format
 msgid "Cannot remove the tag with name \"%1$s\" and value \"%2$s\", defined in a host prototype, from host \"%3$s\"."
@@ -2456,8 +2456,8 @@ msgid "Cannot save widget \"%1$s\"."
 msgstr "Widget \"%1$s\" ni saqlab bo'lmadi."
 
 #, c-format
-msgid "Cannot send command, check connection with TAA server \"%1$s\"."
-msgstr "Buyruq yuborib bo'lmadi, TAA serveri \"%1$s\" bilan aloqani tekshirib chiqing."
+msgid "Cannot send command, check connection with TAAE server \"%1$s\"."
+msgstr "Buyruq yuborib bo'lmadi, TAAE serveri \"%1$s\" bilan aloqani tekshirib chiqing."
 
 #, c-format
 msgid "Cannot send request: %1$s."
@@ -3214,8 +3214,8 @@ msgstr "Tasdiqlash matni"
 msgid "Confirms the problem is noticed (acknowledging user will be recorded). Status change triggers action update operation."
 msgstr "Muammo e'tibor berilganligini tasdiqlaydi (foydalanuvchi tasdiqlash paytida yoziladi). Holat o'zgarishi amaliyot yangilanishini ishga tushiradi."
 
-msgid "Congratulations! You have successfully installed TAA frontend."
-msgstr "Tabriklaymiz! Siz TAA frontend'ini muvaffaqiyatli o'rnatasiz."
+msgid "Congratulations! You have successfully installed TAAE frontend."
+msgstr "Tabriklaymiz! Siz TAAE frontend'ini muvaffaqiyatli o'rnatasiz."
 
 msgid "Connect to"
 msgstr "Ulashing"
@@ -3231,45 +3231,45 @@ msgid "Connection security"
 msgstr "Ulanish xavfsizligi"
 
 #, c-format
-msgid "Connection timeout of %1$s seconds exceeded when connecting to TAA server \"%2$s\"."
-msgstr "%1$s soniyadan ortiq ulanish vaqt o'tishi TAA serveriga \"%2$s\" ulanishda o'tdi."
+msgid "Connection timeout of %1$s seconds exceeded when connecting to TAAE server \"%2$s\"."
+msgstr "%1$s soniyadan ortiq ulanish vaqt o'tishi TAAE serveriga \"%2$s\" ulanishda o'tdi."
 
 #, c-format
 msgid ""
-"Connection to TAA server \"%1$s\" failed. Possible reasons:\n"
+"Connection to TAAE server \"%1$s\" failed. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect DNS server configuration.\n"
 msgstr ""
-"TAA serveriga \"%1$s\" ulanishi muvaffaqiyatsiz. Mumkin bo'lgan sabablari:\n"
+"TAAE serveriga \"%1$s\" ulanishi muvaffaqiyatsiz. Mumkin bo'lgan sabablari:\n"
 "1. \"zabbix_server.conf\" faylida \"NodeAddress\" yoki \"ListenPort\" noto'g'ri yoki \"zabbix.conf.php\" faylida server IP/DNS noto'g'ri ko'rsatilgan;\n"
 "2. DNS serverining noto'g'ri konfiguratsiyasi.\n"
 
 #, c-format
 msgid ""
-"Connection to TAA server \"%1$s\" refused. Possible reasons:\n"
+"Connection to TAAE server \"%1$s\" refused. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Security environment (for example, SELinux) is blocking the connection;\n"
-"3. TAA server daemon not running;\n"
+"3. TAAE server daemon not running;\n"
 "4. Firewall is blocking TCP connection.\n"
 msgstr ""
-"TAA serveriga \"%1$s\" ulanishi rad etildi. Mumkin bo'lgan sabablari:\n"
+"TAAE serveriga \"%1$s\" ulanishi rad etildi. Mumkin bo'lgan sabablari:\n"
 "1. \"zabbix_server.conf\" faylida \"NodeAddress\" yoki \"ListenPort\" noto'g'ri yoki \"zabbix.conf.php\" faylida server IP/DNS noto'g'ri ko'rsatilgan;\n"
 "2. Xavfsizlik muhitida (masalan, SELinux) ulanishni bloklaydi;\n"
-"3. TAA serveri ishlamayapti;\n"
+"3. TAAE serveri ishlamayapti;\n"
 "4. Firewall TCP ulanishini bloklamoqda.\n"
 
 #, c-format
 msgid ""
-"Connection to TAA server \"%1$s\" timed out. Possible reasons:\n"
+"Connection to TAAE server \"%1$s\" timed out. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Firewall is blocking TCP connection.\n"
 msgstr ""
-"TAA serveriga \"%1$s\" ulanishi vaqt o'tdi. Mumkin bo'lgan sabablari:\n"
+"TAAE serveriga \"%1$s\" ulanishi vaqt o'tdi. Mumkin bo'lgan sabablari:\n"
 "1. \"zabbix_server.conf\" faylida \"NodeAddress\" yoki \"ListenPort\" noto'g'ri yoki \"zabbix.conf.php\" faylida server IP/DNS noto'g'ri ko'rsatilgan;\n"
 "2. Firewall TCP ulanishini bloklamoqda.\n"
 
-msgid "Connection to TAA server failed. Incorrect configuration."
-msgstr "TAA serveriga ulanish muvaffaqiyatsiz. Noto'g'ri konfiguratsiya."
+msgid "Connection to TAAE server failed. Incorrect configuration."
+msgstr "TAAE serveriga ulanish muvaffaqiyatsiz. Noto'g'ri konfiguratsiya."
 
 msgid "Connection will not be encrypted because it uses a socket file (on Unix) or shared memory (Windows)."
 msgstr "Ulanish shifrlanmaydi, chunki socket fayli (Unixda) yoki umumiy xotira (Windowsda) ishlatiladi."
@@ -5031,8 +5031,8 @@ msgstr "Jadval uchun qidiruv so'rovida xato \"%1$s\"."
 msgid "Error message"
 msgstr "Xato xabari"
 
-msgid "Error! Unable to start TAA server."
-msgstr "Xato! TAA serverini ishga tushurish imkonsiz."
+msgid "Error! Unable to start TAAE server."
+msgstr "Xato! TAAE serverini ishga tushurish imkonsiz."
 
 #, c-format
 msgid "Error: %1$s"
@@ -5317,8 +5317,8 @@ msgstr "Failover davri"
 msgid "Failure Audit"
 msgstr "Muvaffaqiyatsizlik auditini"
 
-msgid "Fatal error, please report to the TAA team"
-msgstr "Halokatli xato, iltimos TAA jamoasiga xabar bering"
+msgid "Fatal error, please report to the TAAE team"
+msgstr "Halokatli xato, iltimos TAAE jamoasiga xabar bering"
 
 msgid "Favorite graphs"
 msgstr "Sevimli grafikalar"
@@ -5560,11 +5560,11 @@ msgstr "Global"
 msgid "Global regular expression \"%1$s\" does not exist."
 msgstr "Global muntazam ifoda \"%1$s\" mavjud emas."
 
-msgid "Global script execution on TAA server is disabled by server configuration."
-msgstr "TAA serverida global skriptni bajarish server konfiguratsiyasi tomonidan o'chirilgan."
+msgid "Global script execution on TAAE server is disabled by server configuration."
+msgstr "TAAE serverida global skriptni bajarish server konfiguratsiyasi tomonidan o'chirilgan."
 
-msgid "Global scripts on TAA server"
-msgstr "TAA serveridagi global skriptlar"
+msgid "Global scripts on TAAE server"
+msgstr "TAAE serveridagi global skriptlar"
 
 msgid "Global timeouts"
 msgstr "Global vaqt o'zgartirishlari"
@@ -6329,8 +6329,8 @@ msgstr "Bir xil nomlar fazosi (%1$s) %2$s joylashgan modullar tomonidan ishlatil
 msgid "Identification of the system. Returns string"
 msgstr "Tizimni aniqlash. Satrni qaytaradi"
 
-msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAA."
-msgstr "Agar HTTP autentifikatsiyasi yoqilgan bo'lsa, barcha foydalanuvchilar (hatto LDAP/Ichki kirish ruxsati bo'lganlar ham) TAA emas, balki veb-server orqali autentifikatsiya qilinadi."
+msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAAE."
+msgstr "Agar HTTP autentifikatsiyasi yoqilgan bo'lsa, barcha foydalanuvchilar (hatto LDAP/Ichki kirish ruxsati bo'lganlar ham) TAAE emas, balki veb-server orqali autentifikatsiya qilinadi."
 
 #, c-format
 msgid "If at least %2$s child service has %1$s status or above"
@@ -6641,8 +6641,8 @@ msgid "Incorrect current password."
 msgstr "Joriy parol noto'g'ri."
 
 #, c-format
-msgid "Incorrect default charset for TAA database: %1$s."
-msgstr "TAA ma'lumotlar bazasi uchun noto'g'ri standart kodlash: %1$s."
+msgid "Incorrect default charset for TAAE database: %1$s."
+msgstr "TAAE ma'lumotlar bazasi uchun noto'g'ri standart kodlash: %1$s."
 
 #, c-format
 msgid "Incorrect field \"%1$s\" name or value in where statement for table \"%2$s\"."
@@ -6718,8 +6718,8 @@ msgid "Incorrect regular expression \"%1$s\": \"%2$s\""
 msgstr "Noto'g'ri muntazam ifoda \"%1$s\": \"%2$s\""
 
 #, c-format
-msgid "Incorrect response received from TAA server \"%1$s\"."
-msgstr "TAA serverdan \"%1$s\" noto'g'ri javob olindi."
+msgid "Incorrect response received from TAAE server \"%1$s\"."
+msgstr "TAAE serverdan \"%1$s\" noto'g'ri javob olindi."
 
 #, c-format
 msgid "Incorrect schedule: %1$s."
@@ -7525,17 +7525,17 @@ msgstr "Operatsion tizim jarayonlarining atributlari bilan ro'yxati. JSON massiv
 msgid "List of Windows Registry values or keys located at given key. Returns JSON."
 msgstr "Berilgan kalitdagi Windows Registry qiymatlari yoki kalitlarining ro'yxati. JSON qaytaradi."
 
-msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
-msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps) va moslik (hozirgi/eski/qollab-quvvatlanmaydi) bilan ro'yxati. JSON qaytaradi."
+msgid "List of TAAE proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
+msgstr "TAAE proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps) va moslik (hozirgi/eski/qollab-quvvatlanmaydi) bilan ro'yxati. JSON qaytaradi."
 
-msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
-msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, agar proxy guruhga tegishli bo'lsa, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
+msgid "List of TAAE proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
+msgstr "TAAE proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, agar proxy guruhga tegishli bo'lsa, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
 
-msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
-msgstr "TAA proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
+msgid "List of TAAE proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
+msgstr "TAAE proxy-larining nomi, rejimi, shifrlash, siqish, versiyasi, oxirgi ko'rish, hostlar soni, elementlar soni, zarur qiymatlar soni (vps), moslik (hozirgi/eski/qollab-quvvatlanmaydi), timeoutlar, proxy guruhi nomi, holat (noaniq/offline/onlayn) bilan ro'yxati. JSON qaytaradi."
 
-msgid "List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
-msgstr "TAA proxy guruhlari konfiguratsiya ma'lumotlari va real vaqt ma'lumotlari ro'yxati. Konfiguratsiya ma'lumotlari proxy guruhi nomi, failover kechikish va guruhni onlayn qilish uchun kerakli minimal onlayn proxylar sonini o'z ichiga oladi. Real vaqt ma'lumotlari onlayn proxylar soni, onlayn proxylar foizi va proxy guruhi holati (noaniq, offline, tiklanayotgan, onlayn, kamayayotgan). Ushbu element guruhga tegishli bo'lmagan proxylarni qaytarmaydi. JSON qaytaradi."
+msgid "List of TAAE proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
+msgstr "TAAE proxy guruhlari konfiguratsiya ma'lumotlari va real vaqt ma'lumotlari ro'yxati. Konfiguratsiya ma'lumotlari proxy guruhi nomi, failover kechikish va guruhni onlayn qilish uchun kerakli minimal onlayn proxylar sonini o'z ichiga oladi. Real vaqt ma'lumotlari onlayn proxylar soni, onlayn proxylar foizi va proxy guruhi holati (noaniq, offline, tiklanayotgan, onlayn, kamayayotgan). Ushbu element guruhga tegishli bo'lmagan proxylarni qaytarmaydi. JSON qaytaradi."
 
 msgid "List of block devices and their type. Returns JSON"
 msgstr "Blok qurilmalari ro'yxati va ularning turi. JSON qaytaradi"
@@ -7847,11 +7847,11 @@ msgstr "Xarita shakli"
 msgid "Map update failed."
 msgstr "Xarita yangilanishi muvaffaqiyatsiz bo'ldi."
 
-msgid "Map user's LDAP media attributes (e.g. email) to TAA user media for sending notifications."
-msgstr "Xarita foydalanuvchisining LDAP media atributlarini (masalan, elektron pochta) TAA foydalanuvchi media atributlariga yuborish uchun."
+msgid "Map user's LDAP media attributes (e.g. email) to TAAE user media for sending notifications."
+msgstr "Xarita foydalanuvchisining LDAP media atributlarini (masalan, elektron pochta) TAAE foydalanuvchi media atributlariga yuborish uchun."
 
-msgid "Map user's SAML media attributes (e.g. email) to TAA user media for sending notifications."
-msgstr "Xarita foydalanuvchisining SAML media atributlarini (masalan, elektron pochta) TAA foydalanuvchi media atributlariga yuborish uchun."
+msgid "Map user's SAML media attributes (e.g. email) to TAAE user media for sending notifications."
+msgstr "Xarita foydalanuvchisining SAML media atributlarini (masalan, elektron pochta) TAAE foydalanuvchi media atributlariga yuborish uchun."
 
 #, c-format
 msgid "Map with ID \"%1$s\" is not available."
@@ -8822,8 +8822,8 @@ msgstr "Hostlar soni (yoqilgan/yoqilmagan)"
 msgid "Number of items (enabled/disabled/not supported)"
 msgstr "Elementlar soni (yoqilgan/yopiq/qo'llab-quvvatlanmaydi)"
 
-msgid "Number of items in TAA database."
-msgstr "TAA ma'lumotlar bazasidagi elementlar soni."
+msgid "Number of items in TAAE database."
+msgstr "TAAE ma'lumotlar bazasidagi elementlar soni."
 
 msgid "Number of items in proxy history that are not yet sent to the server"
 msgstr "Proksi tarixida hali serverga yuborilmagan elementlar soni"
@@ -8831,8 +8831,8 @@ msgstr "Proksi tarixida hali serverga yuborilmagan elementlar soni"
 msgid "Number of items in the queue which are delayed by from to seconds, inclusive."
 msgstr "Navbatdagi elementlar soni, bu elementlar \"dan\" dan \"gacha\" sekundgacha kechiktirilgan."
 
-msgid "Number of items in the queue which are delayed in TAA server or proxy by \"from\" till \"to\" seconds, inclusive."
-msgstr "TAA serveri yoki proksisida \"dan\" \"gacha\" sekundgacha kechiktirilgan elementlar soni."
+msgid "Number of items in the queue which are delayed in TAAE server or proxy by \"from\" till \"to\" seconds, inclusive."
+msgstr "TAAE serveri yoki proksisida \"dan\" \"gacha\" sekundgacha kechiktirilgan elementlar soni."
 
 msgid "Number of monitored hosts"
 msgstr "Kuzatilgan hostlar soni"
@@ -8873,11 +8873,11 @@ msgstr "Shablonlar soni"
 msgid "Number of triggers (enabled/disabled [problem/ok])"
 msgstr "Triggerlar soni (yoqilgan/yopiq [muammo/ok])"
 
-msgid "Number of triggers in TAA database."
-msgstr "TAA ma'lumotlar bazasidagi triggerlar soni."
+msgid "Number of triggers in TAAE database."
+msgstr "TAAE ma'lumotlar bazasidagi triggerlar soni."
 
-msgid "Number of unsupported items in TAA database."
-msgstr "TAA ma'lumotlar bazasida qo'llab-quvvatlanmaydigan elementlar soni."
+msgid "Number of unsupported items in TAAE database."
+msgstr "TAAE ma'lumotlar bazasida qo'llab-quvvatlanmaydigan elementlar soni."
 
 msgid "Number of unsupported items on the host."
 msgstr "Hostdagi qo'llab-quvvatlanmaydigan elementlar soni."
@@ -9008,8 +9008,8 @@ msgstr "Faqat Super admin yoki Admin foydalanuvchilari \"%1$s\" parametrini yang
 msgid "Only Super admin users can update \"%1$s\" parameter."
 msgstr "Faqat Super admin foydalanuvchilari \"%1$s\" parametrini yangilay olishadi."
 
-msgid "Only TAA agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
-msgstr "Faqat TAA agenti, SNMPv1, SNMPv2 va SNMPv3 tekshiruvlari noyob qilib belgilanishi mumkin."
+msgid "Only TAAE agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
+msgstr "Faqat TAAE agenti, SNMPv1, SNMPv2 va SNMPv3 tekshiruvlari noyob qilib belgilanishi mumkin."
 
 msgid "Only administrators can set map owner."
 msgstr "Faqat administratorlar xarita egasini belgilashlari mumkin."
@@ -9393,8 +9393,8 @@ msgstr "Parol"
 msgid "Password (once again)"
 msgstr "Parol (yana bir bor)"
 
-msgid "Password can only be changed for users using the internal TAA authentication."
-msgstr "Parol faqat ichki TAA autentifikatsiyasini ishlatgan foydalanuvchilar uchun o'zgartirilishi mumkin."
+msgid "Password can only be changed for users using the internal TAAE authentication."
+msgstr "Parol faqat ichki TAAE autentifikatsiyasini ishlatgan foydalanuvchilar uchun o'zgartirilishi mumkin."
 
 msgid "Password is not mandatory for non internal authentication type."
 msgstr "Parol ichki autentifikatsiya turidagi bo'lmaganlar uchun majburiy emas."
@@ -9954,8 +9954,8 @@ msgstr "Qabul qiluvchi"
 msgid "Recipient already exists."
 msgstr "Qabul qiluvchi allaqachon mavjud."
 
-msgid "Recipient's TAA username"
-msgstr "Qabul qiluvchining TAA foydalanuvchi nomi"
+msgid "Recipient's TAAE username"
+msgstr "Qabul qiluvchining TAAE foydalanuvchi nomi"
 
 msgid "Recipient's name"
 msgstr "Qabul qiluvchining ismi"
@@ -10177,8 +10177,8 @@ msgstr "Majburiy"
 msgid "Required host permissions"
 msgstr "Zarur host ruxsatlari"
 
-msgid "Required performance of the TAA server, in new values per second expected."
-msgstr "TAA serverining zarur unumdorligi, soniyasiga kutilayotgan yangi qiymatlar soni."
+msgid "Required performance of the TAAE server, in new values per second expected."
+msgstr "TAAE serverining zarur unumdorligi, soniyasiga kutilayotgan yangi qiymatlar soni."
 
 msgid "Required server performance, new values per second"
 msgstr "Kerakli server unumdorligi, soniyasiga yangi qiymatlar"
@@ -10301,11 +10301,11 @@ msgstr "Unix ruxsatlari bilan sakkizlik sanoq tizimidagi 4 xonali satrni qaytara
 msgid "Returns ICMP ping response time in seconds. Example: 0.02"
 msgstr "ICMP ping javob vaqtini soniyalarda qaytaradi. Misol: 0.02"
 
-msgid "Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD."
+msgid "Returns a JSON array describing the host network interfaces configured in TAAE. Can be used for LLD."
 msgstr "TAAda sozlangan host tarmoq interfeyslarini ta'riflovchi JSON massivini qaytaradi. LLD uchun ishlatilishi mumkin."
 
-msgid "Returns a JSON object containing TAA server or proxy internal metrics."
-msgstr "TAA serveri yoki proksi ichki metrikalarini o'z ichiga olgan JSON obyektini qaytaradi."
+msgid "Returns a JSON object containing TAAE server or proxy internal metrics."
+msgstr "TAAE serveri yoki proksi ichki metrikalarini o'z ichiga olgan JSON obyektini qaytaradi."
 
 msgid "Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, active_agent, snmp, ipmi, jmx."
 msgstr "Hostdagi muayyan turdagi tekshiruvlarning mavjudligini qaytaradi. Bu element qiymati host ro'yxatidagi mavjudlik belgilariga mos keladi. Yaroqli turlar: agent, active_agent, snmp, ipmi, jmx."
@@ -10313,8 +10313,8 @@ msgstr "Hostdagi muayyan turdagi tekshiruvlarning mavjudligini qaytaradi. Bu ele
 msgid "Returns current maintenance status of the host."
 msgstr "Hostning hozirgi texnik xizmat holatini qaytaradi."
 
-msgid "Returns information associated with TAA Java gateway. Valid params are: ping, version."
-msgstr "TAA Java gateway bilan bog'liq ma'lumotlarni qaytaradi. Yaroqli parametrlar: ping, version."
+msgid "Returns information associated with TAAE Java gateway. Valid params are: ping, version."
+msgstr "TAAE Java gateway bilan bog'liq ma'lumotlarni qaytaradi. Yaroqli parametrlar: ping, version."
 
 msgid "Returns number of TCP sockets that match parameters. Returns integer"
 msgstr "Parametrlarga mos keladigan TCP soketlar sonini qaytaradi. Butun sonni qaytaradi."
@@ -10365,8 +10365,8 @@ msgid "Rules"
 msgstr "Qoidalar"
 
 #, c-format
-msgid "Run script \"%1$s\" on TAA server"
-msgstr "TAA serverida \"%1$s\" skriptini ishga tushirish"
+msgid "Run script \"%1$s\" on TAAE server"
+msgstr "TAAE serverida \"%1$s\" skriptini ishga tushirish"
 
 #, c-format
 msgid "Run script \"%1$s\" on current host"
@@ -11150,8 +11150,8 @@ msgstr "Birliklarni ko'rsatish"
 msgid "Show value"
 msgstr "Qiymatni ko'rsatish"
 
-msgid "Show warning if TAA server is down"
-msgstr "TAA serveri ishlamayotganini ogohlantirishni ko'rsatish"
+msgid "Show warning if TAAE server is down"
+msgstr "TAAE serveri ishlamayotganini ogohlantirishni ko'rsatish"
 
 msgid "Show working time"
 msgstr "Ish vaqti ni ko'rsatish"
@@ -11244,8 +11244,8 @@ msgid "Size"
 msgstr "Hajm"
 
 #, c-format
-msgid "Size of the response received from TAA server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
-msgstr "TAA serveridan olingan javob hajmi \"%1$s\" ruxsat etilgan %2$s bayt hajmiga o'tar. Ushbu qiymatni include/defines.inc.php faylidagi ZBX_SOCKET_BYTES_LIMIT konstantasida oshirish mumkin."
+msgid "Size of the response received from TAAE server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
+msgstr "TAAE serveridan olingan javob hajmi \"%1$s\" ruxsat etilgan %2$s bayt hajmiga o'tar. Ushbu qiymatni include/defines.inc.php faylidagi ZBX_SOCKET_BYTES_LIMIT konstantasida oshirish mumkin."
 
 msgid "Slovak (sk_SK)"
 msgstr "Slovak (sk_SK)"
@@ -11371,8 +11371,8 @@ msgstr "StartTLS"
 msgid "Starting TLS failed."
 msgstr "TLS boshlashda xato yuz berdi."
 
-msgid "Startup time of TAA server, Unix timestamp."
-msgstr "TAA serverining ishga tushirish vaqti, Unix vaqti belgisi."
+msgid "Startup time of TAAE server, Unix timestamp."
+msgstr "TAAE serverining ishga tushirish vaqti, Unix vaqti belgisi."
 
 msgid "State"
 msgstr "Holat"
@@ -11387,8 +11387,8 @@ msgctxt "history source selection method"
 msgid "Static"
 msgstr "Statik"
 
-msgid "Statistics and availability of TAA write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
-msgstr "TAA yozish keshining statistikasi va mavjudligi. Kesh - qiymatlardan biri (rejimlar: hamma, o'zgarmas son, butun son, matn, log, matn, qo'llab-quvvatlanmaydi), tarix (rejimlar: pfree, free, total, used, pused), indeks (rejimlar: pfree, free, total, used, pused), trend (rejimlar: pfree, free, total, used, pused)."
+msgid "Statistics and availability of TAAE write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
+msgstr "TAAE yozish keshining statistikasi va mavjudligi. Kesh - qiymatlardan biri (rejimlar: hamma, o'zgarmas son, butun son, matn, log, matn, qo'llab-quvvatlanmaydi), tarix (rejimlar: pfree, free, total, used, pused), indeks (rejimlar: pfree, free, total, used, pused), trend (rejimlar: pfree, free, total, used, pused)."
 
 msgid "Statistics and availability of proxy memory buffer. Mode (modes: pfree, free, total, used, pused)."
 msgstr "Proxy xotira buferining statistikasi va mavjudligi. Rejim (rejimlar: pfree, free, total, used, pused)."
@@ -11535,8 +11535,8 @@ msgstr "Super administrator"
 msgid "Support"
 msgstr "Qo'llab-quvvatlash"
 
-msgid "Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
-msgstr "TAA 7.0 versiyasidan boshlab Oracle DB uchun qo'llab-quvvatlash bekor qilindi va kelajakdagi versiyalarda olib tashlanadi."
+msgid "Support for Oracle DB is deprecated since TAAE 7.0 and will be removed in future versions."
+msgstr "TAAE 7.0 versiyasidan boshlab Oracle DB uchun qo'llab-quvvatlash bekor qilindi va kelajakdagi versiyalarda olib tashlanadi."
 
 msgid "Supported formats:"
 msgstr "Qo'llab-quvvatlanadigan formatlar:"
@@ -11587,8 +11587,8 @@ msgstr "Tizim ishga tushirish vaqti. Butun son (Unix timestamp)"
 msgid "System default"
 msgstr "Tizimning standart qiymati"
 
-msgid "System error occurred. Please contact TAA administrator."
-msgstr "Tizimda xato yuz berdi. Iltimos, TAA administratoriga murojaat qiling."
+msgid "System error occurred. Please contact TAAE administrator."
+msgstr "Tizimda xato yuz berdi. Iltimos, TAAE administratoriga murojaat qiling."
 
 msgid "System error."
 msgstr "Tizim xatosi."
@@ -11877,8 +11877,8 @@ msgid "The URL template is used to load and display the tile layer on geographic
 msgstr "URL shabloni geografik xaritalarda tile qatlamini yuklash va ko'rsatish uchun ishlatiladi."
 
 #, c-format
-msgid "The TAA database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
-msgstr "TAA ma'lumotlar bazasi versiyasi hozirgi talablar bilan mos kelmaydi. Sizning ma'lumotlar bazasi versiyangiz: %1$s. Kerakli versiya: %2$s. Iltimos, tizim administratoriga murojaat qiling."
+msgid "The TAAE database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
+msgstr "TAAE ma'lumotlar bazasi versiyasi hozirgi talablar bilan mos kelmaydi. Sizning ma'lumotlar bazasi versiyangiz: %1$s. Kerakli versiya: %2$s. Iltimos, tizim administratoriga murojaat qiling."
 
 msgid "The average time a read from the virtual disk takes, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier, \"instance\" - disk device instance"
 msgstr "Virtual diskdan o'qishning o'rtacha vaqti, \"url\" - VMware xizmati URL manzili, \"uuid\" - VMware virtual mashinasining global yagona identifikatori, \"instance\" - disk qurilmasi instansiyasi"
@@ -12005,7 +12005,7 @@ msgstr "O'tgan hafta shu kun"
 msgid "This field is automatically populated by item \"%1$s\"."
 msgstr "Ushbu maydon avtomatik ravishda \"%1$s\" elementidan to'ldiriladi."
 
-msgid "This is the test message from TAA"
+msgid "This is the test message from TAAE"
 msgstr "Bu TAAdan test xabari."
 
 msgid "This month"
@@ -12084,8 +12084,8 @@ msgctxt "compact table header"
 msgid "Time"
 msgstr "Vaqt"
 
-msgid "Time a particular TAA process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
-msgstr "Muayyan TAA jarayoni yoki jarayonlar guruhining (<type> va <mode> orqali aniqlanadi) <state> holatida sarflangan vaqti foizda."
+msgid "Time a particular TAAE process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
+msgstr "Muayyan TAAE jarayoni yoki jarayonlar guruhining (<type> va <mode> orqali aniqlanadi) <state> holatida sarflangan vaqti foizda."
 
 msgid "Time elapsed:"
 msgstr "O'tgan vaqt:"
@@ -12550,8 +12550,8 @@ msgid "Unable to create the configuration file."
 msgstr "Konfiguratsiya faylini yaratish mumkin emas."
 
 #, c-format
-msgid "Unable to determine current TAA database version: %1$s."
-msgstr "Hozirgi TAA ma'lumotlar bazasi versiyasini aniqlash mumkin emas: %1$s."
+msgid "Unable to determine current TAAE database version: %1$s."
+msgstr "Hozirgi TAAE ma'lumotlar bazasi versiyasini aniqlash mumkin emas: %1$s."
 
 msgid "Unable to find SAML userdirectory."
 msgstr "SAML foydalanuvchi katalogini topish mumkin emas."
@@ -12794,8 +12794,8 @@ msgctxt "compact table header"
 msgid "Uptime"
 msgstr "Ishlash vaqti"
 
-msgid "Uptime of TAA server process in seconds."
-msgstr "TAA server jarayonining ishlash vaqti (sekundlarda)."
+msgid "Uptime of TAAE server process in seconds."
+msgstr "TAAE server jarayonining ishlash vaqti (sekundlarda)."
 
 msgid "Uptime/Downtime"
 msgstr "Ishlash/Ishlamaslik vaqti"
@@ -13498,11 +13498,11 @@ msgstr "Ma'lumotlar bazasi sertifikatini tekshirish"
 msgid "Version"
 msgstr "Versiya"
 
-msgid "Version of TAA agent. Returns string"
-msgstr "TAA agentining versiyasi. Qaytaradi: satr"
+msgid "Version of TAAE agent. Returns string"
+msgstr "TAAE agentining versiyasi. Qaytaradi: satr"
 
-msgid "Version of TAA server or proxy"
-msgstr "TAA serveri yoki proksining versiyasi"
+msgid "Version of TAAE server or proxy"
+msgstr "TAAE serveri yoki proksining versiyasi"
 
 msgid "Vertical"
 msgstr "Vertikal"
@@ -13555,8 +13555,8 @@ msgstr "Ogohlantirish"
 msgid "Warning message"
 msgstr "Ogohlantirish xabari"
 
-msgid "Warning! Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
-msgstr "Ogohlantirish! Oracle DB uchun qo'llab-quvvatlash TAA 7.0 versiyasidan boshlab bekor qilindi va kelajakdagi versiyalarda olib tashlanadi."
+msgid "Warning! Support for Oracle DB is deprecated since TAAE 7.0 and will be removed in future versions."
+msgstr "Ogohlantirish! Oracle DB uchun qo'llab-quvvatlash TAAE 7.0 versiyasidan boshlab bekor qilindi va kelajakdagi versiyalarda olib tashlanadi."
 
 msgid "Warning! Unable to retrieve database version."
 msgstr "Ogohlantirish! Ma'lumotlar bazasi versiyasini olish imkoni yo'q."
@@ -13871,75 +13871,75 @@ msgstr "Xarita elementi yaratish uchun kamida bitta rasm yuklangan bo'lishi kera
 msgid "Your database is not working properly. Please wait a few minutes and try to repeat this action. If the problem still persists, please contact system administrator. The problem might be caused by long running transaction or row level lock accomplished by your database management system."
 msgstr "Sizning ma'lumotlar bazangiz to'g'ri ishlamayapti. Iltimos, bir necha daqiqa kuting va ushbu amalni takrorlashni sinab ko'ring. Agar muammo davom etsa, iltimos, tizim administratoriga murojaat qiling. Muammo, ehtimol, uzoq davom etayotgan tranzaksiya yoki ma'lumotlar bazasi boshqaruv tizimingiz tomonidan amalga oshirilgan satr darajasidagi blokirovka sababli yuzaga kelgan bo'lishi mumkin."
 
-msgid "TAA"
-msgstr "TAA"
+msgid "TAAE"
+msgstr "TAAE"
 
-msgid "TAA Integrations"
-msgstr "TAA Integratsiyalari"
+msgid "TAAE Integrations"
+msgstr "TAAE Integratsiyalari"
 
-msgid "TAA Streaming Protocol v1.0"
-msgstr "TAA Streaming Protokol v1.0"
+msgid "TAAE Streaming Protocol v1.0"
+msgstr "TAAE Streaming Protokol v1.0"
 
-msgid "TAA Technical Support"
-msgstr "TAA Texnik Yordam"
+msgid "TAAE Technical Support"
+msgstr "TAAE Texnik Yordam"
 
-msgid "TAA agent"
-msgstr "TAA agenti"
+msgid "TAAE agent"
+msgstr "TAAE agenti"
 
-msgid "TAA agent (active checks)"
-msgstr "TAA agenti (faol tekshiruvlar)"
+msgid "TAAE agent (active checks)"
+msgstr "TAAE agenti (faol tekshiruvlar)"
 
-msgid "TAA agent (active)"
-msgstr "TAA agenti (faol)"
+msgid "TAAE agent (active)"
+msgstr "TAAE agenti (faol)"
 
-msgid "TAA agent (passive checks)"
-msgstr "TAA agenti (passiv tekshiruvlar)"
+msgid "TAAE agent (passive checks)"
+msgstr "TAAE agenti (passiv tekshiruvlar)"
 
-msgid "TAA frontend version"
-msgstr "TAA frontend versiyasi"
+msgid "TAAE frontend version"
+msgstr "TAAE frontend versiyasi"
 
-msgid "TAA has received an incorrect request."
-msgstr "TAA noto'g'ri so'rovni oldi."
+msgid "TAAE has received an incorrect request."
+msgstr "TAAE noto'g'ri so'rovni oldi."
 
-msgid "TAA internal"
-msgstr "TAA ichki"
+msgid "TAAE internal"
+msgstr "TAAE ichki"
 
-msgid "TAA internal authentication"
-msgstr "TAA ichki autentifikatsiya"
+msgid "TAAE internal authentication"
+msgstr "TAAE ichki autentifikatsiya"
 
-msgid "TAA login form"
-msgstr "TAA tizimga kirish shakli"
+msgid "TAAE login form"
+msgstr "TAAE tizimga kirish shakli"
 
-msgid "TAA proxy or server"
-msgstr "TAA proksi yoki server"
+msgid "TAAE proxy or server"
+msgstr "TAAE proksi yoki server"
 
-msgid "TAA server"
-msgstr "TAA serveri"
+msgid "TAAE server"
+msgstr "TAAE serveri"
 
 #, c-format
 msgid ""
-"TAA server \"%1$s\" cannot be reached. Possible reasons:\n"
+"TAAE server \"%1$s\" cannot be reached. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect network configuration.\n"
 msgstr ""
-"TAA serveri \"%1$s\"ga ulanish mumkin emas. Ehtimoliy sabablari:\n"
+"TAAE serveri \"%1$s\"ga ulanish mumkin emas. Ehtimoliy sabablari:\n"
 "1. \"zabbix_server.conf\" faylida noto'g'ri \"NodeAddress\" yoki \"ListenPort\" yoki \"zabbix.conf.php\" faylida server IP/DNS manzilining o'zgartirilganligi;\n"
 "2. Noto'g'ri tarmoq konfiguratsiyasi.\n"
 
-msgid "TAA server (proxy)"
-msgstr "TAA serveri (proksi)"
+msgid "TAAE server (proxy)"
+msgstr "TAAE serveri (proksi)"
 
-msgid "TAA server is not running: the information displayed may not be current."
-msgstr "TAA serveri ishlamayapti: ko'rsatilgan ma'lumotlar yangilangan bo'lmasligi mumkin."
+msgid "TAAE server is not running: the information displayed may not be current."
+msgstr "TAAE serveri ishlamayapti: ko'rsatilgan ma'lumotlar yangilangan bo'lmasligi mumkin."
 
-msgid "TAA server name"
-msgstr "TAA serveri nomi"
+msgid "TAAE server name"
+msgstr "TAAE serveri nomi"
 
-msgid "TAA server version"
-msgstr "TAA serveri versiyasi"
+msgid "TAAE server version"
+msgstr "TAAE serveri versiyasi"
 
-msgid "TAA trapper"
-msgstr "TAA trapper"
+msgid "TAAE trapper"
+msgstr "TAAE trapper"
 
 msgid "Zoom out"
 msgstr "Kichraytirish"
@@ -14482,8 +14482,8 @@ msgstr "forecast() - T davriga asoslangan holda keyingi t soniya uchun prognoz"
 msgid "fourth"
 msgstr "to'rtinchi"
 
-msgid "fuzzytime() - Difference between item value (as timestamp) and TAA server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
-msgstr "fuzzytime() - Element qiymati (vaqt tamg'asi sifatida) va TAA serverining vaqt tamg'asi orasidagi farq T soniyadan kam yoki teng bo'lsa (1 - haqiqat, 0 - yolg'on)"
+msgid "fuzzytime() - Difference between item value (as timestamp) and TAAE server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
+msgstr "fuzzytime() - Element qiymati (vaqt tamg'asi sifatida) va TAAE serverining vaqt tamg'asi orasidagi farq T soniyadan kam yoki teng bo'lsa (1 - haqiqat, 0 - yolg'on)"
 
 msgid "geographical coordinates (values of comma separated latitude and longitude) are expected"
 msgstr "geografik koordinatalar (vergul bilan ajratilgan kenglik va uzunlik qiymatlari) kutilmoqda"
@@ -14492,8 +14492,8 @@ msgctxt "item_form"
 msgid "global housekeeping settings"
 msgstr "global uy ishlarini sozlash"
 
-msgid "global script execution on TAA server is disabled by server configuration"
-msgstr "TAA serverida global skript bajarilishi server konfiguratsiyasi tomonidan o'chirib qo'yilgan"
+msgid "global script execution on TAAE server is disabled by server configuration"
+msgstr "TAAE serverida global skript bajarilishi server konfiguratsiyasi tomonidan o'chirib qo'yilgan"
 
 msgid "graph"
 msgstr "grafik"
@@ -15480,8 +15480,8 @@ msgstr "masshtab darajasi \"%1$s\" va \"%2$s\" orasida bo'lishi kerak"
 # NEW TRANSLATIONS ADDED FROM uz_UZ_frontend_translations.po
 # ============================================
 
-msgid "TAA server is running"
-msgstr "TAA server ishlayapti"
+msgid "TAAE server is running"
+msgstr "TAAE server ishlayapti"
 
 msgid "Database"
 msgstr "Ma'lumotlar bazasi"
@@ -15534,17 +15534,17 @@ msgstr "Ulanish muvaffaqiyatsiz"
 msgid "Required field"
 msgstr "Majburiy maydon"
 
-msgid "TAA server details"
-msgstr "TAA server tafsilotlari"
+msgid "TAAE server details"
+msgstr "TAAE server tafsilotlari"
 
-msgid "TAA server port"
-msgstr "TAA server porti"
+msgid "TAAE server port"
+msgstr "TAAE server porti"
 
-msgid "Powered by TAA"
-msgstr "TAA monitoring tizimi"
+msgid "Powered by TAAE"
+msgstr "TAAE monitoring tizimi"
 
-msgid "TAA Monitoring System"
-msgstr "TAA monitoring tizimi"
+msgid "TAAE Monitoring System"
+msgstr "TAAE monitoring tizimi"
 
 msgid "Monitoring System"
 msgstr "Monitor Tizimi"

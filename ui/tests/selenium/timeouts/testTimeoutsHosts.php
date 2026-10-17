@@ -43,7 +43,7 @@ class testTimeoutsHosts extends testTimeoutsDisplay {
 				'host' => 'Host for timeouts check',
 				'groups' => [
 					[
-						'groupid' => 4 // TAA servers
+						'groupid' => 4 // TAAE servers
 					]
 				],
 				'interfaces' => [
@@ -70,7 +70,7 @@ class testTimeoutsHosts extends testTimeoutsDisplay {
 				],
 				'discoveryrules' => [
 					[
-						'name' => 'TAA agent',
+						'name' => 'TAAE agent',
 						'key_' => 'zabbix_agent_drule',
 						'type' => ITEM_TYPE_ZABBIX,
 						'delay' => 5
@@ -81,7 +81,7 @@ class testTimeoutsHosts extends testTimeoutsDisplay {
 				'host' => 'Host for timeouts check with proxy',
 				'groups' => [
 					[
-						'groupid' => 4 // TAA servers
+						'groupid' => 4 // TAAE servers
 					]
 				],
 				'interfaces' => [
@@ -108,7 +108,7 @@ class testTimeoutsHosts extends testTimeoutsDisplay {
 				],
 				'discoveryrules' => [
 					[
-						'name' => 'TAA agent',
+						'name' => 'TAAE agent',
 						'key_' => 'zabbix_agent_drule',
 						'type' => ITEM_TYPE_ZABBIX,
 						'delay' => 5

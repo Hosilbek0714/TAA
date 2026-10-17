@@ -76,7 +76,7 @@ ZBX_GET_CONFIG_VAR(unsigned char, zbx_program_type, ZBX_PROGRAM_TYPE_GET)
 static int	CONFIG_GET_TIMEOUT = CONFIG_GET_TIMEOUT_MAX;
 
 static const char	*help_message[] = {
-	"Get data from TAA agent.",
+	"Get data from TAAE agent.",
 	"",
 	"General options:",
 	"  -s --host host-name-or-IP  Specify host name or IP address of a host",
@@ -166,7 +166,7 @@ static const char	*help_message[] = {
 	"    --tls-key-file /home/zabbix/zabbix_get.key",
 	"",
 	"  zabbix_get -s 127.0.0.1 -p " ZBX_DEFAULT_AGENT_PORT_STR " -k \"system.cpu.load[all,avg1]\" \\",
-	"    --tls-connect psk --tls-psk-identity \"PSK ID TAA agentd\" \\",
+	"    --tls-connect psk --tls-psk-identity \"PSK ID TAAE agentd\" \\",
 	"    --tls-psk-file /home/zabbix/zabbix_agentd.psk",
 #endif
 	NULL	/* end of text */
@@ -236,7 +236,7 @@ static void	get_signal_handler(int sig)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: connect to TAA agent, receive and print value                  *
+ * Purpose: connect to TAAE agent, receive and print value                  *
  *                                                                            *
  * Parameters: host - server name or IP address                               *
  *             port - port number                                             *

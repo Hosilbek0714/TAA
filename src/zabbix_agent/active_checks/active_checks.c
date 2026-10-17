@@ -860,7 +860,7 @@ static void	process_config_item(struct zbx_json *json, const char *config, size_
 
 /******************************************************************************
  *                                                                            *
- * Purpose: retrieves list of active checks from TAA server                *
+ * Purpose: retrieves list of active checks from TAAE server                *
  *                                                                            *
  * Return value: returns SUCCEED on successful parsing,                       *
  *               FAIL on other cases                                          *
@@ -990,7 +990,7 @@ static int	refresh_active_checks(zbx_vector_addr_ptr_t *addrs, const zbx_config_
  *                                                                            *
  * Purpose: checks whether JSON response is SUCCEED                           *
  *                                                                            *
- * Parameters: response - [IN] JSON response from TAA trapper              *
+ * Parameters: response - [IN] JSON response from TAAE trapper              *
  *                                                                            *
  * Return value:  SUCCEED - processed successfully                            *
  *                FAIL - error occurred                                       *
@@ -1200,10 +1200,10 @@ static char	*connect_callback(void *data)
 
 /******************************************************************************
  *                                                                            *
- * Purpose: sends value stored in buffer to TAA server                     *
+ * Purpose: sends value stored in buffer to TAAE server                     *
  *                                                                            *
  * Parameters:                                                                *
- *   addrs              - [IN] vector with pair of TAA server IP or        *
+ *   addrs              - [IN] vector with pair of TAAE server IP or        *
  *                             Hostname and port number                       *
  *   prep_vec           - [IN/OUT] vector with data for writing into          *
  *                                 persistent files                           *
@@ -1284,14 +1284,14 @@ ret:
  * Purpose: buffers new value or sends whole buffer to server                             *
  *                                                                                        *
  * Parameters:                                                                            *
- *   addrs              - [IN] In C agent - vector with a pair of TAA server IP or     *
+ *   addrs              - [IN] In C agent - vector with a pair of TAAE server IP or     *
  *                             Hostname and port number. In Agent2 it is not used (NULL). *
  *   agent2_result      - [IN] NULL in C agent. In Agent2 it is used for passing          *
  *                             address of buffer where to store matching log              *
  *                             records. It is here to have the same function              *
  *                             prototype as in Agent2.                                    *
  *   itemid             - [IN] item identifier
- *   host               - [IN] name of host in TAA database                            *
+ *   host               - [IN] name of host in TAAE database                            *
  *   key                - [IN] name of metric                                             *
  *   value              - [IN] key value or error message why item became NOTSUPPORTED    *
  *   state              - [IN] ITEM_STATE_NORMAL or ITEM_STATE_NOTSUPPORTED               *
@@ -1313,7 +1313,7 @@ ret:
  *               FAIL on other cases                                                      *
  *                                                                                        *
  * Comments: ATTENTION! This function's address and pointers to arguments                 *
- *           are described in TAA defined type "zbx_process_value_func_t"              *
+ *           are described in TAAE defined type "zbx_process_value_func_t"              *
  *           and used when calling process_log(), process_logrt() and                     *
  *           zbx_read2(). If you ever change this process_value() arguments               *
  *           or return value do not forget to synchronize changes with the                *

@@ -22,7 +22,7 @@ See https://github.com/prometheus/node_exporter/releases/tag/v0.16.0 for details
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -33,7 +33,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -113,7 +113,7 @@ This template has been tested on:
 |Context switches per second|<p>The combined rate at which all processors on the computer are switched from one thread to another.</p>|Dependent item|system.cpu.switches[node_exporter]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `VALUE({__name__=~"node_context_switches"})`</p></li><li>Change per second</li></ul>|
 |Memory utilization|<p>Percentage calculated as (total-available)/total*100.</p>|Calculated|vm.memory.util[node_exporter]|
 |Total memory|<p>Total memory expressed in bytes.</p>|Dependent item|vm.memory.total[node_exporter]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `VALUE({__name__=~"node_memory_MemTotal"})`</p></li></ul>|
-|Available memory|<p>The available memory:</p><p>- in Linux - available = free + buffers + cache;</p><p>- on other platforms calculation may vary.</p><p></p><p>See also Appendixes in TAA Documentation about parameters of the `vm.memory.size` item.</p>|Dependent item|vm.memory.available[node_exporter]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `VALUE({__name__=~"node_memory_MemAvailable"})`</p></li></ul>|
+|Available memory|<p>The available memory:</p><p>- in Linux - available = free + buffers + cache;</p><p>- on other platforms calculation may vary.</p><p></p><p>See also Appendixes in TAAE Documentation about parameters of the `vm.memory.size` item.</p>|Dependent item|vm.memory.available[node_exporter]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `VALUE({__name__=~"node_memory_MemAvailable"})`</p></li></ul>|
 |Total swap space|<p>Total space of the swap volume/file expressed in bytes.</p>|Dependent item|system.swap.total[node_exporter]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `VALUE({__name__=~"node_memory_SwapTotal"})`</p></li></ul>|
 |Free swap space|<p>The free space of the swap volume/file expressed in bytes.</p>|Dependent item|system.swap.free[node_exporter]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `VALUE({__name__=~"node_memory_SwapFree"})`</p></li></ul>|
 |Free swap space in %|<p>The free space of the swap volume/file expressed in %.</p>|Calculated|system.swap.pfree[node_exporter]|
@@ -123,7 +123,7 @@ This template has been tested on:
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
 |Linux: node_exporter is not available|<p>Failed to fetch system metrics from node_exporter in time.</p>|`nodata(/Linux by Prom/node_exporter.get,30m)=1`|Warning|**Manual close**: Yes|
-|Linux: System time is out of sync|<p>The host's system time is different from TAA server time.</p>|`fuzzytime(/Linux by Prom/system.localtime[node_exporter],{$SYSTEM.FUZZYTIME.MAX})=0`|Warning|**Manual close**: Yes|
+|Linux: System time is out of sync|<p>The host's system time is different from TAAE server time.</p>|`fuzzytime(/Linux by Prom/system.localtime[node_exporter],{$SYSTEM.FUZZYTIME.MAX})=0`|Warning|**Manual close**: Yes|
 |Linux: System name has changed|<p>The name of the system has changed. Acknowledge to close the problem manually.</p>|`last(/Linux by Prom/system.name[node_exporter],#1)<>last(/Linux by Prom/system.name[node_exporter],#2) and length(last(/Linux by Prom/system.name[node_exporter]))>0`|Info|**Manual close**: Yes|
 |Linux: Configured max number of open filedescriptors is too low||`last(/Linux by Prom/kernel.maxfiles[node_exporter])<{$KERNEL.MAXFILES.MIN}`|Info|**Depends on**:<br><ul><li>Linux: Running out of file descriptors</li></ul>|
 |Linux: Running out of file descriptors||`last(/Linux by Prom/fd.open[node_exporter])/last(/Linux by Prom/kernel.maxfiles[node_exporter])*100>80`|Warning||
@@ -180,7 +180,7 @@ This template has been tested on:
 |FS [{#FSNAME}]: Space: Used|<p>Used storage expressed in bytes.</p><p>Reserved space is not counted in.</p>|Dependent item|vfs.fs.used[node_exporter,"{#FSNAME}"]<p>**Preprocessing**</p><ul><li><p>Prometheus to JSON: `The text is too long. Please see the template.`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
 |FS [{#FSNAME}]: Space: Used, in %|<p>Calculated as the percentage of currently used space compared to the maximum available space.</p>|Dependent item|vfs.fs.pused[node_exporter,"{#FSNAME}"]<p>**Preprocessing**</p><ul><li><p>Prometheus to JSON: `The text is too long. Please see the template.`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
 |FS [{#FSNAME}]: Inodes: Free, in %|<p>Free metadata space expressed as a percentage.</p>|Dependent item|vfs.fs.inode.pfree[node_exporter,"{#FSNAME}"]<p>**Preprocessing**</p><ul><li><p>Prometheus to JSON: `{__name__=~"node_filesystem_files.*",mountpoint="{#FSNAME}"}`</p></li><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
-|FS [{#FSNAME}]: Filesystem is read-only|<p>The filesystem is mounted as read-only. It is available only for TAA agents 6.4 and higher.</p>|Dependent item|vfs.fs.[node_exporter,"{#FSNAME}"]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `The text is too long. Please see the template.`</p></li></ul>|
+|FS [{#FSNAME}]: Filesystem is read-only|<p>The filesystem is mounted as read-only. It is available only for TAAE agents 6.4 and higher.</p>|Dependent item|vfs.fs.[node_exporter,"{#FSNAME}"]<p>**Preprocessing**</p><ul><li><p>Prometheus pattern: `The text is too long. Please see the template.`</p></li></ul>|
 
 ### Trigger prototypes for Mounted filesystem discovery
 
@@ -190,7 +190,7 @@ This template has been tested on:
 |Linux: FS [{#FSNAME}]: Space is low|<p>The storage space usage exceeds the '{$VFS.FS.PUSED.MAX.WARN:"{#FSNAME}"}%' limit.<br>The trigger expression is based on the current used and maximum available spaces.<br>Event name represents the total volume space, which can differ from the maximum available space, depending on the filesystem type.</p>|`min(/Linux by Prom/vfs.fs.pused[node_exporter,"{#FSNAME}"],5m)>{$VFS.FS.PUSED.MAX.WARN:"{#FSNAME}"}`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Linux: FS [{#FSNAME}]: Space is critically low</li></ul>|
 |Linux: FS [{#FSNAME}]: Running out of free inodes|<p>Disk writing may fail if index nodes are exhausted, leading to error messages like "No space left on device" or "Disk is full", despite available free space.</p>|`min(/Linux by Prom/vfs.fs.inode.pfree[node_exporter,"{#FSNAME}"],5m)<{$VFS.FS.INODE.PFREE.MIN.CRIT:"{#FSNAME}"}`|Average||
 |Linux: FS [{#FSNAME}]: Running out of free inodes|<p>Disk writing may fail if index nodes are exhausted, leading to error messages like "No space left on device" or "Disk is full", despite available free space.</p>|`min(/Linux by Prom/vfs.fs.inode.pfree[node_exporter,"{#FSNAME}"],5m)<{$VFS.FS.INODE.PFREE.MIN.WARN:"{#FSNAME}"}`|Warning|**Depends on**:<br><ul><li>Linux: FS [{#FSNAME}]: Running out of free inodes</li></ul>|
-|Linux: FS [{#FSNAME}]: Filesystem has become read-only|<p>The filesystem has become read-only, possibly due to an I/O error. It is available only for TAA agents 6.4 and higher.</p>|`last(/Linux by Prom/vfs.fs.[node_exporter,"{#FSNAME}"],#2)=0 and last(/Linux by Prom/vfs.fs.[node_exporter,"{#FSNAME}"])=1`|Average|**Manual close**: Yes|
+|Linux: FS [{#FSNAME}]: Filesystem has become read-only|<p>The filesystem has become read-only, possibly due to an I/O error. It is available only for TAAE agents 6.4 and higher.</p>|`last(/Linux by Prom/vfs.fs.[node_exporter,"{#FSNAME}"],#2)=0 and last(/Linux by Prom/vfs.fs.[node_exporter,"{#FSNAME}"])=1`|Average|**Manual close**: Yes|
 
 ### LLD rule Block devices discovery
 
@@ -221,5 +221,5 @@ This template has been tested on:
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

@@ -3,8 +3,8 @@
 
 ## Overview
 
-The template to monitor Kubernetes Kubelet by TAA that works without any external scripts.
-Most of the metrics are collected in one go, thanks to TAA bulk data collection.
+The template to monitor Kubernetes Kubelet by TAAE that works without any external scripts.
+Most of the metrics are collected in one go, thanks to TAAE bulk data collection.
 
 Template `Kubernetes Kubelet by HTTP` - collects metrics by HTTP agent from Kubelet /metrics endpoint.
 
@@ -14,7 +14,7 @@ Don't forget change macros {$KUBE.KUBELET.URL}, {$KUBE.API.TOKEN}.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -23,7 +23,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -127,5 +127,5 @@ Don't forget change macros {$KUBE.KUBELET.URL}, {$KUBE.API.TOKEN}.
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

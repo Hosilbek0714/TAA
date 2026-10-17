@@ -197,7 +197,7 @@ class testPageReportsActionLog extends CWebTest {
 						'Actions' => ['Trigger action 3']
 					],
 					'result' => [
-						['Action' => 'Trigger action 3', 'Recipient' => "Admin (TAA Administrator)\ntest.test@zabbix.com"]
+						['Action' => 'Trigger action 3', 'Recipient' => "Admin (TAAE Administrator)\ntest.test@zabbix.com"]
 					]
 				]
 			],
@@ -209,11 +209,11 @@ class testPageReportsActionLog extends CWebTest {
 						'Media types' => ['Email']
 					],
 					'result' => [
-						['Media type' => 'Email', 'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"],
-						['Media type' => 'Email', 'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"],
-						['Media type' => 'Email', 'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"],
-						['Media type' => 'Email', 'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"],
-						['Media type' => 'Email', 'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"]
+						['Media type' => 'Email', 'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"],
+						['Media type' => 'Email', 'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"],
+						['Media type' => 'Email', 'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"],
+						['Media type' => 'Email', 'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"],
+						['Media type' => 'Email', 'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"]
 					]
 				]
 			],
@@ -239,32 +239,32 @@ class testPageReportsActionLog extends CWebTest {
 						[
 							'Action' => 'Trigger action 3',
 							'Media type' => 'Discord',
-							'Recipient' => "Admin (TAA Administrator)\ntest.test@zabbix.com"
+							'Recipient' => "Admin (TAAE Administrator)\ntest.test@zabbix.com"
 						],
 						[
 							'Action' => 'Trigger action 2',
 							'Media type' => 'Email',
-							'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"
+							'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"
 						],
 						[
 							'Action' => 'Trigger action 2',
 							'Media type' => 'Email',
-							'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"
+							'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"
 						],
 						[
 							'Action' => 'Trigger action 2',
 							'Media type' => 'Email',
-							'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"
+							'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"
 						],
 						[
 							'Action' => 'Trigger action 2',
 							'Media type' => 'Email',
-							'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"
+							'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"
 						],
 						[
 							'Action' => 'Trigger action 2',
 							'Media type' => 'Email',
-							'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com"
+							'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com"
 						]
 					]
 				]
@@ -371,7 +371,7 @@ class testPageReportsActionLog extends CWebTest {
 					],
 					'result' => [
 						[
-							'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com",
+							'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com",
 							'Status' => "In progress:\n3 retries left"
 						]
 					]
@@ -437,15 +437,15 @@ class testPageReportsActionLog extends CWebTest {
 					'result' => [
 						[
 							'Action' => 'Trigger action 2', 'Media type' => 'Email',
-								'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com", 'Status' => 'Sent'
+								'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com", 'Status' => 'Sent'
 						],
 						[
 							'Action' => 'Trigger action 2', 'Media type' => 'Email',
-								'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com", 'Status' => 'Sent'
+								'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com", 'Status' => 'Sent'
 						],
 						[
 							'Action' => 'Trigger action 2', 'Media type' => 'Email',
-								'Recipient' => "Admin (TAA Administrator)\nigor.danoshaites@zabbix.com", 'Status' => 'Sent'
+								'Recipient' => "Admin (TAAE Administrator)\nigor.danoshaites@zabbix.com", 'Status' => 'Sent'
 						]
 					]
 				]

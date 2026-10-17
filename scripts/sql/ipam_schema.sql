@@ -1,11 +1,11 @@
 -- =============================================================================
--- TAA — IPAM va audit jurnali (PostgreSQL schemasi)
+-- TAAE — IPAM va audit jurnali (PostgreSQL schemasi)
 -- -----------------------------------------------------------------------------
 -- Bu schema ip_inventory.py, auto_remediation.py va stp_loop_parser.py
--- skriptlari uchun mo'ljallangan. DB: taa_ipam (yoki o'zgartirilgan nom).
+-- skriptlari uchun mo'ljallangan. DB: taae_ipam (yoki o'zgartirilgan nom).
 --
 -- Yaratish:
---   psql -U taa -d taa_ipam -f scripts/sql/ipam_schema.sql
+--   psql -U taae -d taae_ipam -f scripts/sql/ipam_schema.sql
 --
 -- Eslatma: barcha vaqt qiymatlari UTC da saqlanadi (TIMESTAMPTZ).
 -- =============================================================================
@@ -25,7 +25,7 @@ CREATE TABLE IF NOT EXISTS leases (
     last_seen   TIMESTAMPTZ NOT NULL DEFAULT now()
 );
 
-COMMENT ON TABLE  leases               IS 'DHCP snooping + MAC jadvalidan to''plangan IP/MAC/port binding (TAA IPAM uchun)';
+COMMENT ON TABLE  leases               IS 'DHCP snooping + MAC jadvalidan to''plangan IP/MAC/port binding (TAAE IPAM uchun)';
 COMMENT ON COLUMN leases.mac           IS 'Qurilma MAC manzili (kichik harf, ":" yoki "." ajratuvchili) — birlamchi kalit';
 COMMENT ON COLUMN leases.ip            IS 'Qurilmaga biriktirilgan IPv4/IPv6 manzili';
 COMMENT ON COLUMN leases.vlan          IS 'VLAN ID (1..4094)';
@@ -130,6 +130,6 @@ FROM leases l
 LEFT JOIN hosts_inventory h ON h.ip = l.ip
 WHERE l.last_seen >= (now() - INTERVAL '7 days');
 
-COMMENT ON VIEW v_active_leases IS 'Oxirgi 7 kun ichida faol bo''lgan IP/MAC leaselar (TAA dashboard uchun)';
+COMMENT ON VIEW v_active_leases IS 'Oxirgi 7 kun ichida faol bo''lgan IP/MAC leaselar (TAAE dashboard uchun)';
 
 COMMIT;

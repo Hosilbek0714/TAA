@@ -104,7 +104,7 @@ class testUsersAuthenticationSaml extends testFormAuthentication {
 		}
 
 		$hintboxes = [
-			'Media type mapping' => "Map user's SAML media attributes (e.g. email) to TAA user media for".
+			'Media type mapping' => "Map user's SAML media attributes (e.g. email) to TAAE user media for".
 				" sending notifications."
 		];
 

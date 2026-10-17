@@ -1,7 +1,7 @@
 #
 msgid ""
 msgstr ""
-"Project-Id-Version: TAA 6.0\n"
+"Project-Id-Version: TAAE 6.0\n"
 "Report-Msgid-Bugs-To: \n"
 "POT-Creation-Date: 2023-10-19 13:48+0300\n"
 "PO-Revision-Date: 2024-09-02 15:37+0000\n"
@@ -373,7 +373,7 @@ msgid "1 minute"
 msgstr "דקה אחת"
 
 #: app/views/host.wizard.edit.php:861
-msgid "1. Install Java Gateway on the same machine running TAA server by following the instructions in"
+msgid "1. Install Java Gateway on the same machine running TAAE server by following the instructions in"
 msgstr ""
 
 #: app/views/administration.queue.overview.php:48
@@ -1253,8 +1253,8 @@ msgid "Agent port"
 msgstr ""
 
 #: include/classes/data/CItemData.php:919
-msgid "Agent variant check. Returns 1 - for TAA agent; 2 - for TAA agent 2"
-msgstr "בדיקת הגוון סוכן. מחזירה 1 - לסוכן TAA,‏ 2 - לסוכן TAA 2"
+msgid "Agent variant check. Returns 1 - for TAAE agent; 2 - for TAAE agent 2"
+msgstr "בדיקת הגוון סוכן. מחזירה 1 - לסוכן TAAE,‏ 2 - לסוכן TAAE 2"
 
 #: app/views/host.wizard.edit.php:158 app/views/js/host.wizard.edit.js.php:1781
 msgid "Agent-based"
@@ -2815,8 +2815,8 @@ msgstr[1] "לא ניתן למחוק SLAs"
 
 #: include/classes/api/services/CUser.php:1287
 #, c-format
-msgid "Cannot delete TAA internal user \"%1$s\", try disabling that user."
-msgstr "לא ניתן למחוק את המשתמש הפנימי של TAA בשם „%1$s”, יש לנסות להשבית את המשתמש הזה."
+msgid "Cannot delete TAAE internal user \"%1$s\", try disabling that user."
+msgstr "לא ניתן למחוק את המשתמש הפנימי של TAAE בשם „%1$s”, יש לנסות להשבית את המשתמש הזה."
 
 #: app/controllers/CControllerActionDelete.php:87
 msgid "Cannot delete action"
@@ -4112,8 +4112,8 @@ msgstr "לא ניתן לקרוא YAML‏: %1$s."
 
 #: include/classes/server/CZabbixServer.php:567
 #, c-format
-msgid "Cannot read the response, check connection with the TAA server \"%1$s\"."
-msgstr "לא ניתן לקרוא את התגובה, יש לבדוק את החיבור לשרת ה־TAA‏ „%1$s”."
+msgid "Cannot read the response, check connection with the TAAE server \"%1$s\"."
+msgstr "לא ניתן לקרוא את התגובה, יש לבדוק את החיבור לשרת ה־TAAE‏ „%1$s”."
 
 #: app/controllers/CControllerPopupMassupdateHost.php:363
 #, c-format
@@ -4143,8 +4143,8 @@ msgstr "לא ניתן לשמור את הווידג׳ט „%1$s”."
 
 #: include/classes/server/CZabbixServer.php:508
 #, c-format
-msgid "Cannot send command, check connection with TAA server \"%1$s\"."
-msgstr "לא ניתן לשלוח פקודה, נא לבדוק את החיבור לשרת ה־TAA‏ „%1$s“."
+msgid "Cannot send command, check connection with TAAE server \"%1$s\"."
+msgstr "לא ניתן לשלוח פקודה, נא לבדוק את החיבור לשרת ה־TAAE‏ „%1$s“."
 
 #: app/controllers/CControllerItemMassCheckNow.php:124
 #: app/controllers/CControllerItemMassCheckNow.php:140
@@ -4308,7 +4308,7 @@ msgstr "לא ניתן לעדכן את „%1$s” עבור אבטיפוס ההק�
 
 #: include/classes/api/helpers/CApiSettingsHelper.php:94
 #, c-format
-msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading TAA to remove this limitation."
+msgid "Cannot update \"%1$s\" parameter because currently it is read-only. Consider upgrading TAAE to remove this limitation."
 msgstr ""
 
 #: include/classes/api/services/CHost.php:2344
@@ -5113,11 +5113,11 @@ msgid "Communication"
 msgstr "תקשורת"
 
 #: app/views/host.wizard.edit.php:375
-msgid "Communication between TAA agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
+msgid "Communication between TAAE agent and server/proxy is secured with a unique user-defined pre-shared key identity and a secret pre-shared key linked to it."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:414
-msgid "Communication between TAA agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
+msgid "Communication between TAAE agent and server/proxy is secured with the pre-shared key (PSK) encryption method."
 msgstr ""
 
 #: include/items.inc.php:946
@@ -5410,8 +5410,8 @@ msgid "Confirms the problem is noticed (acknowledging user will be recorded). St
 msgstr "מאשר שהוקדשה תשומת לב לבעיה (המשתמש שהכיר בבעיה יתועד). שינוי המצב מקפיץ פעולת עדכון פעילות."
 
 #: include/classes/setup/CSetupWizard.php:1059
-msgid "Congratulations! You have successfully installed TAA frontend."
-msgstr "ברכותינו! התקנת בהצלחה את מנשק המשתמש של TAA."
+msgid "Congratulations! You have successfully installed TAAE frontend."
+msgstr "ברכותינו! התקנת בהצלחה את מנשק המשתמש של TAAE."
 
 #: include/hosts.inc.php:1227 include/views/inventory.host.view.php:81
 #: include/views/js/monitoring.sysmaps.js.php:792
@@ -5436,49 +5436,49 @@ msgstr "אבטחת חיבור"
 
 #: include/classes/server/CZabbixServer.php:521
 #, c-format
-msgid "Connection timeout of %1$s seconds exceeded when connecting to TAA server \"%2$s\"."
-msgstr "תוקף זמן החיבור על סך %1$s שניות חרג בעת החיבור לשרת ה־TAA‏ „%2$s”."
+msgid "Connection timeout of %1$s seconds exceeded when connecting to TAAE server \"%2$s\"."
+msgstr "תוקף זמן החיבור על סך %1$s שניות חרג בעת החיבור לשרת ה־TAAE‏ „%2$s”."
 
 #: include/classes/server/CZabbixServer.php:634
 #, c-format
 msgid ""
-"Connection to TAA server \"%1$s\" failed. Possible reasons:\n"
+"Connection to TAAE server \"%1$s\" failed. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect DNS server configuration.\n"
 msgstr ""
-"החיבור לשרת ה־TAA‏ „%1$s” נכשל. סיבות אפשריות:\n"
+"החיבור לשרת ה־TAAE‏ „%1$s” נכשל. סיבות אפשריות:\n"
 "1. „NodeAddress” או „ListenPort” שגויים ב־„zabbix_server.conf” או דריסת IP/DNS ב־„zabbix.conf.php”;\n"
 "2. הגדרות שרת DNS שגויות.\n"
 
 #: include/classes/server/CZabbixServer.php:622
 #, c-format
 msgid ""
-"Connection to TAA server \"%1$s\" refused. Possible reasons:\n"
+"Connection to TAAE server \"%1$s\" refused. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Security environment (for example, SELinux) is blocking the connection;\n"
-"3. TAA server daemon not running;\n"
+"3. TAAE server daemon not running;\n"
 "4. Firewall is blocking TCP connection.\n"
 msgstr ""
-"החיבור לשרת ה־TAA‏ „%1$s” סורב. סיבות אפשריות:\n"
+"החיבור לשרת ה־TAAE‏ „%1$s” סורב. סיבות אפשריות:\n"
 "1. „NodeAddress” או „ListenPort” שגויים ב־„zabbix_server.conf” או דריסת IP/DNS ב־„zabbix.conf.php”;\n"
 "2. סביבת אבטחת מידע (למשל SELinux) חוסמת את החיבור;\n"
-"3. סוכן שרת ה־TAA לא פעיל;\n"
+"3. סוכן שרת ה־TAAE לא פעיל;\n"
 "4. חומת אש חוסמת את חיבור ה־TCP.\n"
 
 #: include/classes/server/CZabbixServer.php:630
 #, c-format
 msgid ""
-"Connection to TAA server \"%1$s\" timed out. Possible reasons:\n"
+"Connection to TAAE server \"%1$s\" timed out. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Firewall is blocking TCP connection.\n"
 msgstr ""
-"הזמן שהוקצה לחיבור לשרת ה־TAA‏ „%1$s” תם. סיבות אפשריות:\n"
+"הזמן שהוקצה לחיבור לשרת ה־TAAE‏ „%1$s” תם. סיבות אפשריות:\n"
 "1. „NodeAddress” או „ListenPort” שגויים ב־„zabbix_server.conf” או דריסת IP/DNS ב־„zabbix.conf.php”;\n"
 "2. חומת אש חוסמת את חיבור ה־TCP.\n"
 
 #: include/classes/server/CZabbixServer.php:614
-msgid "Connection to TAA server failed. Incorrect configuration."
-msgstr "החיבור לשרת ה־TAA נכשל. הגדרות שגויות."
+msgid "Connection to TAAE server failed. Incorrect configuration."
+msgstr "החיבור לשרת ה־TAAE נכשל. הגדרות שגויות."
 
 #: include/classes/setup/CSetupWizard.php:647
 msgid "Connection will not be encrypted because it uses a socket file (on Unix) or shared memory (Windows)."
@@ -6328,15 +6328,15 @@ msgid "Data from %1$s. Generated in %2$s sec."
 msgstr "נתונים מאת %1$s. נוצרו תוך %2$s שניות."
 
 #: app/views/host.wizard.edit.php:168
-msgid "Data is collected by TAA agent, a lightweight software `component installed on your monitoring target."
+msgid "Data is collected by TAAE agent, a lightweight software `component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:89
-msgid "Data is collected by TAA agent, a lightweight software component installed on your monitoring target."
+msgid "Data is collected by TAAE agent, a lightweight software component installed on your monitoring target."
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:90
-msgid "Data is collected by TAA server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
+msgid "Data is collected by TAAE server or proxy using standard protocols (e.g., SNMP, ICMP) or remote access methods (e.g., SSH)."
 msgstr ""
 
 #: app/views/js/webscenario.step.edit.js.php:297
@@ -8222,7 +8222,7 @@ msgid "Enable HTTP authentication for all users."
 msgstr "להפעיל אימות HTTP לכל המשתמשים."
 
 #: app/views/host.wizard.edit.php:811
-msgid "Enable IPMI checks on TAA server"
+msgid "Enable IPMI checks on TAAE server"
 msgstr ""
 
 #: app/views/administration.authentication.edit.php:209
@@ -8531,7 +8531,7 @@ msgid "Enter a non-secret pre-shared key identity string. Avoid including sensit
 msgstr ""
 
 #: app/views/host.wizard.edit.php:609
-msgid "Enter the IP/DNS address and port of the TAA agent installed on your monitoring target."
+msgid "Enter the IP/DNS address and port of the TAAE agent installed on your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:771
@@ -8604,8 +8604,8 @@ msgstr ""
 #: app/partials/administration.system.info.php:148
 #: app/partials/administration.system.info.php:160
 #: app/partials/administration.system.info.php:173
-msgid "Error! Unable to start TAA server."
-msgstr "שגיאה! לא ניתן להפעיל את שרת ה־TAA."
+msgid "Error! Unable to start TAAE server."
+msgstr "שגיאה! לא ניתן להפעיל את שרת ה־TAAE."
 
 #: include/classes/screens/CScreenHttpTestDetails.php:111
 #: include/classes/screens/CScreenHttpTestDetails.php:182
@@ -9054,8 +9054,8 @@ msgid "Failure Audit"
 msgstr "פיקוח על כשלים"
 
 #: app/views/system.warning.php:27 app/views/system.warning.php:52
-msgid "Fatal error, please report to the TAA team"
-msgstr "שגיאה מכרעת, נא לוודא לצוות של TAA"
+msgid "Fatal error, please report to the TAAE team"
+msgstr "שגיאה מכרעת, נא לוודא לצוות של TAAE"
 
 #: widgets/favgraphs/Widget.php:29
 msgid "Favorite graphs"
@@ -9512,11 +9512,11 @@ msgstr "הביטוי הרגולרי הכללי „%1$s” לא קיים."
 #: app/views/administration.script.edit.php:122
 #: app/views/popup.operation.edit.php:63
 #: include/classes/api/services/CScript.php:950
-msgid "Global script execution on TAA server is disabled by server configuration."
+msgid "Global script execution on TAAE server is disabled by server configuration."
 msgstr ""
 
 #: app/partials/administration.system.info.php:138
-msgid "Global scripts on TAA server"
+msgid "Global scripts on TAAE server"
 msgstr ""
 
 #: app/views/popup.proxy.edit.php:199
@@ -10877,7 +10877,7 @@ msgid "Identification of the system. Returns string"
 msgstr "זיהוי המערכת. מחזירה מחרוזת"
 
 #: app/views/administration.authentication.edit.php:153
-msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAA."
+msgid "If HTTP authentication is enabled, all users (even with frontend access set to LDAP/Internal) will be authenticated by the web server, not by TAAE."
 msgstr ""
 
 #: include/classes/helpers/CServiceHelper.php:83
@@ -11056,7 +11056,7 @@ msgid "In range"
 msgstr "בטווח"
 
 #: app/views/host.wizard.edit.php:813
-msgid "In the TAA server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
+msgid "In the TAAE server configuration file (zabbix_server.conf), set the StartIPMIPollers parameter to a non-zero value."
 msgstr ""
 
 #: include/classes/widgets/fields/CWidgetFieldMultiSelectSla.php:31
@@ -11417,8 +11417,8 @@ msgstr "הסיסמה הנוכחית שגויה."
 #: include/classes/db/MysqlDbBackend.php:69
 #: include/classes/db/PostgresqlDbBackend.php:95
 #, c-format
-msgid "Incorrect default charset for TAA database: %1$s."
-msgstr "ערכת תווי בררת המחדל למסד הנתונים של TAA שגויה: %1$s."
+msgid "Incorrect default charset for TAAE database: %1$s."
+msgstr "ערכת תווי בררת המחדל למסד הנתונים של TAAE שגויה: %1$s."
 
 #: include/classes/db/DB.php:696 include/classes/db/DB.php:863
 #, c-format
@@ -11533,8 +11533,8 @@ msgstr "הביטוי הרגולרי „%1$s” שגוי: „%2$s”"
 #: include/classes/server/CZabbixServer.php:575
 #: include/classes/server/CZabbixServer.php:582
 #, c-format
-msgid "Incorrect response received from TAA server \"%1$s\"."
-msgstr "התקבלה תגובה שגויה משרת ה־TAA‏ „%1$s”."
+msgid "Incorrect response received from TAAE server \"%1$s\"."
+msgstr "התקבלה תגובה שגויה משרת ה־TAAE‏ „%1$s”."
 
 #: app/controllers/CControllerSlaCreateUpdate.php:34
 #: app/controllers/CControllerSlaCreateUpdate.php:84
@@ -12038,15 +12038,15 @@ msgid "Install"
 msgstr "התקנה"
 
 #: app/views/host.wizard.edit.php:351 app/views/js/host.wizard.edit.js.php:1128
-msgid "Install TAA agent"
+msgid "Install TAAE agent"
 msgstr ""
 
 #: app/views/host.wizard.edit.php:512 app/views/host.wizard.edit.php:535
-msgid "Install TAA agent 2 and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAAE agent 2 and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:551 app/views/host.wizard.edit.php:574
-msgid "Install TAA agent and its plugins on your monitoring target by following the installation instructions below."
+msgid "Install TAAE agent and its plugins on your monitoring target by following the installation instructions below."
 msgstr ""
 
 #: setup.php:163
@@ -13507,19 +13507,19 @@ msgid "List of Windows Registry values or keys located at given key. Returns JSO
 msgstr "רשימה של ערכים או מפתחות ברישום המערכת של Windows שממוקמת תחת מפתח מסוים. מחזירה JSON."
 
 #: include/classes/data/CItemData.php:2743
-msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
-msgstr "רשימת מתווכים של TAA עם שם, מצב, הצפנה, דחיסה, גרסה, מופע אחרון, כמות מארחים, כמות פרטים, ערכים נחוצים לשנייה (vps) ותאימות (נוכחי/מיושן/לא נתמך). מחזירה JSON."
+msgid "List of TAAE proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps) and compatibility (current/outdated/unsupported). Returns JSON."
+msgstr "רשימת מתווכים של TAAE עם שם, מצב, הצפנה, דחיסה, גרסה, מופע אחרון, כמות מארחים, כמות פרטים, ערכים נחוצים לשנייה (vps) ותאימות (נוכחי/מיושן/לא נתמך). מחזירה JSON."
 
 #: include/classes/data/CItemData.php:2877
-msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
+msgid "List of TAAE proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name if proxy belongs to group, state (unknown/offline/online). Returns JSON."
 msgstr ""
 
 #: include/classes/data/CItemData.php:2905
-msgid "List of TAA proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
+msgid "List of TAAE proxies with name, mode, encryption, compression, version, last seen, host count, item count, required values per second (vps), compatibility (current/outdated/unsupported), timeouts, proxy group name, state (unknown/offline/online). Returns JSON."
 msgstr ""
 
 #: include/classes/data/CItemData.php:2935
-msgid "List of TAA proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
+msgid "List of TAAE proxy groups configuration data and real-time data. Configuration data includes proxy group name, failover delay, and minimum number of online proxies required for the group to be online. Real-time data includes number of online proxies, percentage of online proxies, and state of proxy group (unknown, offline, recovering, online, degrading). This item does not return groupless proxies. Returns JSON."
 msgstr ""
 
 #: include/classes/data/CItemData.php:1559
@@ -14018,11 +14018,11 @@ msgid "Map update failed."
 msgstr "עדכון המפה נכשל."
 
 #: app/views/popup.ldap.edit.php:259
-msgid "Map user's LDAP media attributes (e.g. email) to TAA user media for sending notifications."
+msgid "Map user's LDAP media attributes (e.g. email) to TAAE user media for sending notifications."
 msgstr ""
 
 #: app/views/administration.authentication.edit.php:512
-msgid "Map user's SAML media attributes (e.g. email) to TAA user media for sending notifications."
+msgid "Map user's SAML media attributes (e.g. email) to TAAE user media for sending notifications."
 msgstr ""
 
 #: include/classes/api/services/CDashboardGeneral.php:600
@@ -16041,8 +16041,8 @@ msgid "Number of items (enabled/disabled/not supported)"
 msgstr "מספר פריטים (פעילים/מושבתים/לא נתמכים)"
 
 #: include/classes/data/CItemData.php:2694
-msgid "Number of items in TAA database."
-msgstr "מספר הפריטים במסד הנתונים של TAA."
+msgid "Number of items in TAAE database."
+msgstr "מספר הפריטים במסד הנתונים של TAAE."
 
 #: include/classes/data/CItemData.php:2750
 msgid "Number of items in proxy history that are not yet sent to the server"
@@ -16054,8 +16054,8 @@ msgstr "מספר הפריטים בתור שהושהו למשך תקופת שני
 
 #: include/classes/data/CItemData.php:2615
 #: include/classes/data/CItemData.php:2778
-msgid "Number of items in the queue which are delayed in TAA server or proxy by \"from\" till \"to\" seconds, inclusive."
-msgstr "מספר הפריטים שמעוכבים בתור בשרת או במתווך ה־TAA לפי „מ־” ועד „עד”, כולל."
+msgid "Number of items in the queue which are delayed in TAAE server or proxy by \"from\" till \"to\" seconds, inclusive."
+msgstr "מספר הפריטים שמעוכבים בתור בשרת או במתווך ה־TAAE לפי „מ־” ועד „עד”, כולל."
 
 #: include/classes/data/CItemData.php:2687
 msgid "Number of monitored hosts"
@@ -16114,12 +16114,12 @@ msgid "Number of triggers (enabled/disabled [problem/ok])"
 msgstr "מספר ההקפצות (פעיל/מושבת [תקלה/תקין])"
 
 #: include/classes/data/CItemData.php:2799
-msgid "Number of triggers in TAA database."
-msgstr "מספר ההקפצות במסד הנתונים של TAA."
+msgid "Number of triggers in TAAE database."
+msgstr "מספר ההקפצות במסד הנתונים של TAAE."
 
 #: include/classes/data/CItemData.php:2701
-msgid "Number of unsupported items in TAA database."
-msgstr "מספר הפריטים שאינם נתמכים במסד הנתונים של TAA."
+msgid "Number of unsupported items in TAAE database."
+msgstr "מספר הפריטים שאינם נתמכים במסד הנתונים של TAAE."
 
 #: include/classes/data/CItemData.php:2659
 msgid "Number of unsupported items on the host."
@@ -16365,8 +16365,8 @@ msgid "Only Super admin users can update \"%1$s\" parameter."
 msgstr ""
 
 #: include/classes/api/services/CDRule.php:509
-msgid "Only TAA agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
-msgstr "רק בדיקות של סוכן TAA,‏ SNMPv1,‏ SNMPv2 ו־SNMPv3 יכולות להיות ייחודיות."
+msgid "Only TAAE agent, SNMPv1, SNMPv2 and SNMPv3 checks can be made unique."
+msgstr "רק בדיקות של סוכן TAAE,‏ SNMPv1,‏ SNMPv2 ו־SNMPv3 יכולות להיות ייחודיות."
 
 #: include/classes/api/services/CMap.php:666
 #: include/classes/api/services/CMap.php:1120
@@ -17120,7 +17120,7 @@ msgid "Password (once again)"
 msgstr "ססמה (פעם נוספת)"
 
 #: app/views/administration.user.edit.php:205
-msgid "Password can only be changed for users using the internal TAA authentication."
+msgid "Password can only be changed for users using the internal TAAE authentication."
 msgstr ""
 
 #: app/views/administration.user.edit.php:195
@@ -18117,8 +18117,8 @@ msgid "Recipient already exists."
 msgstr "הנמען כבר קיים."
 
 #: app/views/reports.actionlog.list.csv.php:39
-msgid "Recipient's TAA username"
-msgstr "שם המשתמש ב־TAA של הנמען"
+msgid "Recipient's TAAE username"
+msgstr "שם המשתמש ב־TAAE של הנמען"
 
 #: app/views/reports.actionlog.list.csv.php:40
 msgid "Recipient's name"
@@ -18608,8 +18608,8 @@ msgid "Required host permissions"
 msgstr "הרשאות מארח נדרשות"
 
 #: include/classes/data/CItemData.php:2771
-msgid "Required performance of the TAA server, in new values per second expected."
-msgstr "ביצועים נדרשים משרת ה־TAA, בציפייה לערכים חדשים בשנייה."
+msgid "Required performance of the TAAE server, in new values per second expected."
+msgstr "ביצועים נדרשים משרת ה־TAAE, בציפייה לערכים חדשים בשנייה."
 
 #: app/partials/administration.system.info.php:101
 msgid "Required server performance, new values per second"
@@ -18822,13 +18822,13 @@ msgid "Returns ICMP ping response time in seconds. Example: 0.02"
 msgstr "מחזירה תגובת ping מסוג ICMP בשניות. למשל: 0.02"
 
 #: include/classes/data/CItemData.php:2680
-msgid "Returns a JSON array describing the host network interfaces configured in TAA. Can be used for LLD."
-msgstr "מזירה מערך JSON שמתאר את מנשקי הרשת של המארח שמוגדרים ב־TAA. ניתן להשתמש בזה לגילוי ברמה נמוכה."
+msgid "Returns a JSON array describing the host network interfaces configured in TAAE. Can be used for LLD."
+msgstr "מזירה מערך JSON שמתאר את מנשקי הרשת של המארח שמוגדרים ב־TAAE. ניתן להשתמש בזה לגילוי ברמה נמוכה."
 
 #: include/classes/data/CItemData.php:2623
 #: include/classes/data/CItemData.php:2785
-msgid "Returns a JSON object containing TAA server or proxy internal metrics."
-msgstr "מחזירה עצם JSON שמכיל מדדים פנימיים של שרת או מתווך TAA."
+msgid "Returns a JSON object containing TAAE server or proxy internal metrics."
+msgstr "מחזירה עצם JSON שמכיל מדדים פנימיים של שרת או מתווך TAAE."
 
 #: include/classes/data/CItemData.php:2673
 msgid "Returns availability of a particular type of checks on the host. Value of this item corresponds to availability icons in the host list. Valid types are: agent, active_agent, snmp, ipmi, jmx."
@@ -18839,8 +18839,8 @@ msgid "Returns current maintenance status of the host."
 msgstr "מחזירה את מצב התחזוקה הנוכחי של המארח."
 
 #: include/classes/data/CItemData.php:2708
-msgid "Returns information associated with TAA Java gateway. Valid params are: ping, version."
-msgstr "מחזירה מידע הקשור בשער הגישה ל־TAA ב־Java. הפרמטרים האפשריים הם: ping,‏ version."
+msgid "Returns information associated with TAAE Java gateway. Valid params are: ping, version."
+msgstr "מחזירה מידע הקשור בשער הגישה ל־TAAE ב־Java. הפרמטרים האפשריים הם: ping,‏ version."
 
 #: include/classes/data/CItemData.php:1183
 msgid "Returns number of TCP sockets that match parameters. Returns integer"
@@ -18924,8 +18924,8 @@ msgstr "כללים"
 
 #: include/actions.inc.php:578
 #, c-format
-msgid "Run script \"%1$s\" on TAA server"
-msgstr "הפעלת הסקריפט „%1$s” על שרת TAA"
+msgid "Run script \"%1$s\" on TAAE server"
+msgstr "הפעלת הסקריפט „%1$s” על שרת TAAE"
 
 #: include/actions.inc.php:591
 #, c-format
@@ -19974,11 +19974,11 @@ msgid "Set this view as default"
 msgstr "הגדרת התצוגה הזאת כבררת מחדל"
 
 #: app/views/host.wizard.edit.php:493
-msgid "Set up TAA agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
+msgid "Set up TAAE agent on your monitoring target by executing the following PowerShell script [with administrator permissions]:"
 msgstr ""
 
 #: app/views/host.wizard.edit.php:477
-msgid "Set up TAA agent on your monitoring target by executing the following script [bash under root]:"
+msgid "Set up TAAE agent on your monitoring target by executing the following script [bash under root]:"
 msgstr ""
 
 #: app/views/js/popup.itemtestedit.view.js.php:383 include/forms.inc.php:1599
@@ -20290,8 +20290,8 @@ msgid "Show value"
 msgstr "הצגת ערך"
 
 #: app/views/administration.gui.edit.php:110
-msgid "Show warning if TAA server is down"
-msgstr "הצגת אזהרה אם שרת ה־TAA אינו פעיל"
+msgid "Show warning if TAAE server is down"
+msgstr "הצגת אזהרה אם שרת ה־TAAE אינו פעיל"
 
 #: include/views/configuration.graph.edit.php:126
 msgid "Show working time"
@@ -20439,11 +20439,11 @@ msgstr "גודל"
 
 #: include/classes/server/CZabbixServer.php:554
 #, c-format
-msgid "Size of the response received from TAA server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
-msgstr "גודל התגובה שהתקבל משרת ה־TAA‏ „%1$s” חורג מהגודל המותר על סך %2$s בתים. ניתן להגדיל את הערך הזה על ידי שינוי הקבוע ZBX_SOCKET_BYTES_LIMIT בתוך include/defines.inc.php."
+msgid "Size of the response received from TAAE server \"%1$s\" exceeds the allowed size of %2$s bytes. This value can be increased in the ZBX_SOCKET_BYTES_LIMIT constant in include/defines.inc.php."
+msgstr "גודל התגובה שהתקבל משרת ה־TAAE‏ „%1$s” חורג מהגודל המותר על סך %2$s בתים. ניתן להגדיל את הערך הזה על ידי שינוי הקבוע ZBX_SOCKET_BYTES_LIMIT בתוך include/defines.inc.php."
 
 #: app/views/host.wizard.edit.php:355
-msgid "Skip OS selection if you already have TAA agent installed."
+msgid "Skip OS selection if you already have TAAE agent installed."
 msgstr ""
 
 #: include/locales.inc.php:61
@@ -20653,8 +20653,8 @@ msgid "Starting TLS failed."
 msgstr "הפעלת TLS נכשלה."
 
 #: include/classes/data/CItemData.php:2631
-msgid "Startup time of TAA server, Unix timestamp."
-msgstr "מועד ההפעלה של שרת ה־TAA, חותמת זמן יוניקס."
+msgid "Startup time of TAAE server, Unix timestamp."
+msgstr "מועד ההפעלה של שרת ה־TAAE, חותמת זמן יוניקס."
 
 #: app/partials/configuration.filter.items.php:180
 #: app/partials/monitoring.latest.filter.php:187
@@ -20684,8 +20684,8 @@ msgid "Static link"
 msgstr ""
 
 #: include/classes/data/CItemData.php:2841
-msgid "Statistics and availability of TAA write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
-msgstr "סטטיסטיקה וזמינות זיכרון מטמון הכתיבה של TAA. זיכרון מטמון - אחד מבין values (מצבים: all,‏ float,‏ uint,‏ str,‏ log,‏ text,‏ not supported), history (מצבים: pfree,‏ free,‏ total,‏ used,‏ pused), index (מצבים: pfree,‏ free,‏ total,‏ used,‏ pused) ו־trend (מצבים: pfree,‏ free,‏ total,‏ used,‏ pused)."
+msgid "Statistics and availability of TAAE write cache. Cache - one of values (modes: all, float, uint, str, log, text, not supported), history (modes: pfree, free, total, used, pused), index (modes: pfree, free, total, used, pused), trend (modes: pfree, free, total, used, pused)."
+msgstr "סטטיסטיקה וזמינות זיכרון מטמון הכתיבה של TAAE. זיכרון מטמון - אחד מבין values (מצבים: all,‏ float,‏ uint,‏ str,‏ log,‏ text,‏ not supported), history (מצבים: pfree,‏ free,‏ total,‏ used,‏ pused), index (מצבים: pfree,‏ free,‏ total,‏ used,‏ pused) ו־trend (מצבים: pfree,‏ free,‏ total,‏ used,‏ pused)."
 
 #: include/classes/data/CItemData.php:2848
 msgid "Statistics and availability of proxy memory buffer. Mode (modes: pfree, free, total, used, pused)."
@@ -20976,7 +20976,7 @@ msgid "Support"
 msgstr "תמיכה"
 
 #: include/classes/setup/CSetupWizard.php:517
-msgid "Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgid "Support for Oracle DB is deprecated since TAAE 7.0 and will be removed in future versions."
 msgstr ""
 
 #: include/classes/html/widgets/fields/CWidgetFieldLatLngView.php:37
@@ -21054,8 +21054,8 @@ msgid "System default"
 msgstr "בררת מחדל של המערכת"
 
 #: include/func.inc.php:1848
-msgid "System error occurred. Please contact TAA administrator."
-msgstr "אירעה שגיאת מערכת. נא ליצור קשר עם מנהלי ה־TAA."
+msgid "System error occurred. Please contact TAAE administrator."
+msgstr "אירעה שגיאת מערכת. נא ליצור קשר עם מנהלי ה־TAAE."
 
 #: include/classes/core/CJsonRpc.php:230
 msgid "System error."
@@ -21621,7 +21621,7 @@ msgid "The %1$s is not discovered anymore and %2$s."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:101
-msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAA."
+msgid "The Host Wizard will help you set up your monitoring target (device, application, service, etc.) in TAAE."
 msgstr ""
 
 #: app/views/oauth.edit.php:48
@@ -21634,8 +21634,8 @@ msgstr "תבנית הכתובת משמשת לטעינת והצגת שכבת הא
 
 #: include/classes/db/DbBackend.php:130
 #, c-format
-msgid "The TAA database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
-msgstr "גרסת מסד הנתונים של TAA אינה תואמת לדרישות הנוכחיות. גרסת מסד הנתונים שלך: %1$s. גרסה נדרשת: %2$s. נא ליצור קשר עם הנהלת המערכת שלך."
+msgid "The TAAE database version does not match current requirements. Your database version: %1$s. Required version: %2$s. Please contact your system administrator."
+msgstr "גרסת מסד הנתונים של TAAE אינה תואמת לדרישות הנוכחיות. גרסת מסד הנתונים שלך: %1$s. גרסה נדרשת: %2$s. נא ליצור קשר עם הנהלת המערכת שלך."
 
 #: include/classes/data/CItemData.php:2485
 msgid "The average time a read from the virtual disk takes, \"url\" - VMware service URL, \"uuid\" - VMware virtual machine global unique identifier, \"instance\" - disk device instance"
@@ -21760,12 +21760,12 @@ msgstr ""
 
 #: app/views/host.wizard.edit.php:275
 #, c-format
-msgid "The template you selected (%1$s) must be linked to a host - an entity in TAA that represents your monitoring target."
+msgid "The template you selected (%1$s) must be linked to a host - an entity in TAAE that represents your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:353
 #, c-format
-msgid "The template you selected (%1$s) requires TAA agent to be installed and running on your monitoring target."
+msgid "The template you selected (%1$s) requires TAAE agent to be installed and running on your monitoring target."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:899
@@ -21858,8 +21858,8 @@ msgid "This field must contain at least one low-level discovery macro."
 msgstr ""
 
 #: app/controllers/CControllerMediatypeTestEdit.php:86
-msgid "This is the test message from TAA"
-msgstr "זו הודעת הבדיקה מ־TAA"
+msgid "This is the test message from TAAE"
+msgstr "זו הודעת הבדיקה מ־TAAE"
 
 #: include/func.inc.php:2574
 msgid "This month"
@@ -22070,8 +22070,8 @@ msgid "Time"
 msgstr "שעה"
 
 #: include/classes/data/CItemData.php:2729
-msgid "Time a particular TAA process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
-msgstr "הזמן שתהליך או קבוצת תהליכים של TAA (מזוהים ב־<type>וב־<mode>) היו במצב <state> באחוזים."
+msgid "Time a particular TAAE process or a group of processes (identified by <type> and <mode>) spent in <state> in percentage."
+msgstr "הזמן שתהליך או קבוצת תהליכים של TAAE (מזוהים ב־<type>וב־<mode>) היו במצב <state> באחוזים."
 
 #: app/views/js/mediatype.test.edit.js.php:91
 #: app/views/js/popup.scriptexec.js.php:44
@@ -22901,7 +22901,7 @@ msgstr "לא ניתן לשנות את הרשאות קובץ ההגדרות ל־0
 
 #: include/classes/server/CZabbixServer.php:673
 #: include/classes/server/CZabbixServer.php:681 jsrpc.php:86 jsrpc.php:101
-msgid "Unable to connect to the TAA server due to TLS settings. Some functions are unavailable."
+msgid "Unable to connect to the TAAE server due to TLS settings. Some functions are unavailable."
 msgstr ""
 
 #: include/classes/core/CConfigFile.php:237
@@ -22912,8 +22912,8 @@ msgstr "לא ניתן ליצור את קובץ התצורה."
 #: include/classes/db/OracleDbBackend.php:36
 #: include/classes/db/PostgresqlDbBackend.php:61
 #, c-format
-msgid "Unable to determine current TAA database version: %1$s."
-msgstr "לא ניתן לאתר את גרסת מסד הנתונים הנוכחית של TAA:‏ %1$s."
+msgid "Unable to determine current TAAE database version: %1$s."
+msgstr "לא ניתן לאתר את גרסת מסד הנתונים הנוכחית של TAAE:‏ %1$s."
 
 #: include/classes/helpers/CAuthenticationHelper.php:88
 #: include/classes/helpers/CAuthenticationHelper.php:107
@@ -23454,8 +23454,8 @@ msgid "Uptime"
 msgstr "זמן פעילות"
 
 #: include/classes/data/CItemData.php:2806
-msgid "Uptime of TAA server process in seconds."
-msgstr "זמן פעילות של שרת ה־TAA בשניות."
+msgid "Uptime of TAAE server process in seconds."
+msgstr "זמן פעילות של שרת ה־TAAE בשניות."
 
 #: include/actions.inc.php:61
 msgid "Uptime/Downtime"
@@ -24592,12 +24592,12 @@ msgid "Version"
 msgstr "גרסה"
 
 #: include/classes/data/CItemData.php:927
-msgid "Version of TAA agent. Returns string"
-msgstr "גרסת שרת TAA. מחזירה מחרוזת"
+msgid "Version of TAAE agent. Returns string"
+msgstr "גרסת שרת TAAE. מחזירה מחרוזת"
 
 #: include/classes/data/CItemData.php:2827
-msgid "Version of TAA server or proxy"
-msgstr "גרסת שרת ה־TAA או המתווך"
+msgid "Version of TAAE server or proxy"
+msgstr "גרסת שרת ה־TAAE או המתווך"
 
 #: widgets/hostavail/includes/WidgetForm.php:57
 #: widgets/problemsbysv/includes/WidgetForm.php:89
@@ -24682,7 +24682,7 @@ msgid "Warning message"
 msgstr "הודעת אזהרה"
 
 #: app/partials/administration.system.info.php:198
-msgid "Warning! Support for Oracle DB is deprecated since TAA 7.0 and will be removed in future versions."
+msgid "Warning! Support for Oracle DB is deprecated since TAAE 7.0 and will be removed in future versions."
 msgstr ""
 
 #: app/partials/administration.system.info.php:155
@@ -25261,127 +25261,127 @@ msgid "Your progress will be discarded and you will exit the Host Wizard. Are yo
 msgstr ""
 
 #: include/page_header.php:122
-msgid "TAA"
-msgstr "TAA"
+msgid "TAAE"
+msgstr "TAAE"
 
 #: include/classes/helpers/CMenuHelper.php:434
-msgid "TAA Integrations"
-msgstr "שילובים מול TAA"
+msgid "TAAE Integrations"
+msgstr "שילובים מול TAAE"
 
 #: app/views/connector.edit.php:49
-msgid "TAA Streaming Protocol v1.0"
-msgstr "פרוטוקול הזרמה של TAA בגרסה 1.0"
+msgid "TAAE Streaming Protocol v1.0"
+msgstr "פרוטוקול הזרמה של TAAE בגרסה 1.0"
 
 #: include/classes/helpers/CMenuHelper.php:427
-msgid "TAA Technical Support"
-msgstr "התמיכה הטכנית של TAA"
+msgid "TAAE Technical Support"
+msgstr "התמיכה הטכנית של TAAE"
 
 #: app/views/administration.script.edit.php:114
 #: app/views/administration.timeouts.edit.php:44
 #: app/views/popup.proxy.edit.php:206 include/discovery.inc.php:56
 #: include/items.inc.php:86
-msgid "TAA agent"
-msgstr "סוכן TAA"
+msgid "TAAE agent"
+msgstr "סוכן TAAE"
 
 #: widgets/hostavail/includes/WidgetForm.php:47
-msgid "TAA agent (active checks)"
+msgid "TAAE agent (active checks)"
 msgstr ""
 
 #: include/items.inc.php:87
-msgid "TAA agent (active)"
-msgstr "סוכן TAA (פעיל)"
+msgid "TAAE agent (active)"
+msgstr "סוכן TAAE (פעיל)"
 
 #: widgets/hostavail/includes/WidgetForm.php:48
-msgid "TAA agent (passive checks)"
+msgid "TAAE agent (passive checks)"
 msgstr ""
 
 #: app/views/js/host.wizard.edit.js.php:91
-msgid "TAA agent initiates connections to TAA server or proxy to send data. Recommended for monitoring targets behind a firewall."
+msgid "TAAE agent initiates connections to TAAE server or proxy to send data. Recommended for monitoring targets behind a firewall."
 msgstr ""
 
 #: app/views/host.wizard.edit.php:863
-msgid "TAA documentation"
+msgid "TAAE documentation"
 msgstr ""
 
 #: app/partials/administration.system.info.php:45
-msgid "TAA frontend version"
-msgstr "גרסת חזית של TAA"
+msgid "TAAE frontend version"
+msgstr "גרסת חזית של TAAE"
 
 #: include/validate.inc.php:387
-msgid "TAA has received an incorrect request."
-msgstr "מערכת ה־TAA קיבלה בקשה שגויה."
+msgid "TAAE has received an incorrect request."
+msgstr "מערכת ה־TAAE קיבלה בקשה שגויה."
 
 #: include/items.inc.php:91
-msgid "TAA internal"
-msgstr "TAA פנימי"
+msgid "TAAE internal"
+msgstr "TAAE פנימי"
 
 #: include/perm.inc.php:48
-msgid "TAA internal authentication"
-msgstr "אימות פנימי של TAA"
+msgid "TAAE internal authentication"
+msgstr "אימות פנימי של TAAE"
 
 #: app/views/administration.authentication.edit.php:169
-msgid "TAA login form"
-msgstr "טופס כניסה ל־TAA"
+msgid "TAAE login form"
+msgstr "טופס כניסה ל־TAAE"
 
 #: app/views/administration.script.edit.php:115
-msgid "TAA proxy or server"
+msgid "TAAE proxy or server"
 msgstr ""
 
 #: app/views/administration.script.edit.php:116
-msgid "TAA server"
-msgstr "שרת TAA"
+msgid "TAAE server"
+msgstr "שרת TAAE"
 
 #: include/classes/server/CZabbixServer.php:626
 #, c-format
 msgid ""
-"TAA server \"%1$s\" cannot be reached. Possible reasons:\n"
+"TAAE server \"%1$s\" cannot be reached. Possible reasons:\n"
 "1. Incorrect \"NodeAddress\" or \"ListenPort\" in the \"zabbix_server.conf\" or server IP/DNS override in the \"zabbix.conf.php\";\n"
 "2. Incorrect network configuration.\n"
 msgstr ""
-"לא ניתן לגשת לשרת ה־TAA‏ „%1$s”. סיבות אפשריות:\n"
+"לא ניתן לגשת לשרת ה־TAAE‏ „%1$s”. סיבות אפשריות:\n"
 "1. „NodeAddress” או „ListenPort” שגויים ב־„zabbix_server.conf” או דריסת IP/DNS ב־„zabbix.conf.php”;\n"
 "2. הגדרות רשת שגויות.\n"
 
 #: app/views/administration.script.edit.php:115
-msgid "TAA server (proxy)"
-msgstr "שרת TAA (מתווך)"
+msgid "TAAE server (proxy)"
+msgstr "שרת TAAE (מתווך)"
 
 #: app/views/administration.miscconfig.edit.php:112
-msgid "TAA server and proxy"
+msgid "TAAE server and proxy"
 msgstr ""
 
 #: app/views/administration.miscconfig.edit.php:107
-msgid "TAA server and proxy: secrets are retrieved from Vault by both TAA server and proxies, allowing them to resolve macros independently."
+msgid "TAAE server and proxy: secrets are retrieved from Vault by both TAAE server and proxies, allowing them to resolve macros independently."
 msgstr ""
 
 #: jsrpc.php:91
-msgid "TAA server is not running: the information displayed may not be current."
-msgstr "שרת ה־TAA אינו פעיל: יכול להיות שהמידע המוצג אינו עדכני."
+msgid "TAAE server is not running: the information displayed may not be current."
+msgstr "שרת ה־TAAE אינו פעיל: יכול להיות שהמידע המוצג אינו עדכני."
 
 #: app/partials/administration.system.info.php:34
-msgid "TAA server is running"
-msgstr "שרת ה־TAA פעיל"
+msgid "TAAE server is running"
+msgstr "שרת ה־TAAE פעיל"
 
 #: include/classes/setup/CSetupWizard.php:711
 #: include/classes/setup/CSetupWizard.php:870
-msgid "TAA server name"
-msgstr "שם שרת ה־TAA"
+msgid "TAAE server name"
+msgstr "שם שרת ה־TAAE"
 
 #: app/views/js/host.wizard.edit.js.php:92
-msgid "TAA server or proxy initiates connections to TAA agent to request data. Recommended for networks without a firewall or with open firewall ports."
+msgid "TAAE server or proxy initiates connections to TAAE agent to request data. Recommended for networks without a firewall or with open firewall ports."
 msgstr ""
 
 #: app/partials/administration.system.info.php:40
-msgid "TAA server version"
-msgstr "גרסת שרת של TAA"
+msgid "TAAE server version"
+msgstr "גרסת שרת של TAAE"
 
 #: app/views/administration.miscconfig.edit.php:105
-msgid "TAA server: secrets are retrieved from Vault by TAA server and forwarded to proxies when needed."
+msgid "TAAE server: secrets are retrieved from Vault by TAAE server and forwarded to proxies when needed."
 msgstr ""
 
 #: include/items.inc.php:92
-msgid "TAA trapper"
-msgstr "לוכד TAA"
+msgid "TAAE trapper"
+msgstr "לוכד TAAE"
 
 #: include/classes/html/CFilter.php:258 include/classes/html/CTabFilter.php:324
 msgid "Zoom out"
@@ -26410,8 +26410,8 @@ msgid "fourth"
 msgstr "רביעי"
 
 #: app/controllers/CControllerPopupTriggerExpr.php:645
-msgid "fuzzytime() - Difference between item value (as timestamp) and TAA server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
-msgstr "fuzzytime()‎ - ההפרש בין ערך פריט (בתור חותמת זמן) וחותמת הזמן של שרת ה־TAA קטנה או שווה ל־T שניות (1 - אמת, 0 - שקר)"
+msgid "fuzzytime() - Difference between item value (as timestamp) and TAAE server timestamp is less than or equal to T seconds (1 - true, 0 - false)"
+msgstr "fuzzytime()‎ - ההפרש בין ערך פריט (בתור חותמת זמן) וחותמת הזמן של שרת ה־TAAE קטנה או שווה ל־T שניות (1 - אמת, 0 - שקר)"
 
 #: include/classes/validators/CApiInputValidator.php:3317
 msgid "geographical coordinates (values of comma separated latitude and longitude) are expected"
@@ -26426,7 +26426,7 @@ msgid "global housekeeping settings"
 msgstr "הגדרות תחזוקה כלליות"
 
 #: include/classes/api/services/CScript.php:726
-msgid "global script execution on TAA server is disabled by server configuration"
+msgid "global script execution on TAAE server is disabled by server configuration"
 msgstr ""
 
 #: include/html.inc.php:795 include/html.inc.php:800 include/html.inc.php:805

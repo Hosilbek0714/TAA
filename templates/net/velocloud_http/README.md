@@ -3,11 +3,11 @@
 
 ## Overview
 
-This template is designed for the effortless deployment of VMWare SD-WAN VeloCloud monitoring by TAA via HTTP and doesn't require any external scripts.
+This template is designed for the effortless deployment of VMWare SD-WAN VeloCloud monitoring by TAAE via HTTP and doesn't require any external scripts.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -16,7 +16,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -58,7 +58,7 @@ Set Orchestrator URl for {$VELOCLOUD.URL}. e.g. example.com (where you replace e
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|VeloCloud: Failed to fetch aggregate data|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.api_version,30m)=1`|Average|**Manual close**: Yes|
+|VeloCloud: Failed to fetch aggregate data|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.api_version,30m)=1`|Average|**Manual close**: Yes|
 |VeloCloud: Orchestrator build has been changed|<p>Velocloud Orchestrator build has been changed.</p>|`last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.build,#1)<>last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.build,#2) and length(last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.build))>0`|Info|**Manual close**: Yes|
 |VeloCloud: Orchestrator version has been changed|<p>Velocloud Orchestrator version has been changed.</p>|`last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.version,#1)<>last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.version,#2) and length(last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.orchestrator.version))>0`|Info|**Manual close**: Yes|
 |VeloCloud: There are errors in aggregate script item|<p>There are errors in aggregate script item.</p>|`length(last(/VMWare SD-WAN VeloCloud by HTTP/velocloud.get.error))>0`|Warning||
@@ -193,5 +193,5 @@ Set Orchestrator URl for {$VELOCLOUD.URL}. e.g. example.com (where you replace e
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

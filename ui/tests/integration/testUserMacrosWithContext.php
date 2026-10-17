@@ -84,7 +84,7 @@ class testUserMacrosWithContext extends CIntegrationTest {
 					'dns' => '',
 					'port' => PHPUNIT_PORT_PREFIX.self::AGENT_PORT_SUFFIX
 				],
-				'groups' => [['groupid' => 4]], // TAA servers
+				'groups' => [['groupid' => 4]], // TAAE servers
 				'status' => HOST_STATUS_MONITORED
 			]
 		]);

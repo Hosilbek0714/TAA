@@ -44,7 +44,7 @@ class CRegexValidator extends CValidator
 			return false;
 		}
 
-		// escape '/' since TAA server treats them as literal characters.
+		// escape '/' since TAAE server treats them as literal characters.
 		$value = str_replace('/', '\/', $value);
 
 		// validate through preg_match

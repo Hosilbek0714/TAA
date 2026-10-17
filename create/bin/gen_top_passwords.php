@@ -49,9 +49,9 @@ $passwords = array_map('base64_encode', $passwords);
 // Generate file.
 $source = "#\n".
 	"# This file is meant to strengthen password validation for internal users. Passwords included in the list are considered\n".
-	"# weak due to their common use and are not allowed to be chosen by TAA internal users for security reasons. The file \n".
+	"# weak due to their common use and are not allowed to be chosen by TAAE internal users for security reasons. The file \n".
 	"# is generated automatically from the list of NCSC \"Top 100k passwords\", the list of SecLists \"Top 1M passwords\" and the\n".
-	"# list of TAA context-specific passwords.\n".
+	"# list of TAAE context-specific passwords.\n".
 	"#\n".
 	"# The list of passwords is used to check for commonly used passwords according to the password policy. Passwords are\n".
 	"# stored as base64-encoded strings. There must be two newlines before passwords.\n".

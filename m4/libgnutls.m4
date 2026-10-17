@@ -28,7 +28,7 @@ AC_LINK_IFELSE([AC_LANG_PROGRAM([[
 
 AC_DEFUN([LIBGNUTLS_ACCEPT_VERSION],
 [
-	# TAA minimal supported version of libgnutls:
+	# TAAE minimal supported version of libgnutls:
 	minimal_gnutls_version_major=3
 	minimal_gnutls_version_minor=1
 	minimal_gnutls_version_patch=18

@@ -117,7 +117,7 @@ static void	stats_procinfo_add(struct zbx_json *json, int proc_type, zbx_process
 
 /******************************************************************************
  *                                                                            *
- * Purpose: collects all metrics required for TAA stats request            *
+ * Purpose: collects all metrics required for TAAE stats request            *
  *                                                                            *
  * Parameters: json                - [OUT] resulting json structure           *
  *             config_startup_time - [IN] program startup time                *

@@ -146,7 +146,7 @@ class testFormNetworkDiscovery extends CWebTest {
 			'SSH' => 22,
 			'TCP' => 0,
 			'Telnet' => 23,
-			'TAA agent' => 10050
+			'TAAE agent' => 10050
 		];
 		$this->assertEquals(array_keys($check_types), $checks_form->getField('Check type')->asDropdown()->getOptions()->asText());
 
@@ -163,7 +163,7 @@ class testFormNetworkDiscovery extends CWebTest {
 				$this->assertEquals(255, $checks_form->getField('Port range')->getAttribute('maxlength'));
 
 				switch ($type) {
-					case 'TAA agent':
+					case 'TAAE agent':
 						$this->assertEqualsCanonicalizing(['Check type', 'Port range', 'Key'],
 								$checks_form->getLabels(CElementFilter::VISIBLE)->asText()
 						);
@@ -491,11 +491,11 @@ class testFormNetworkDiscovery extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Name' => 'Validation key for TAA agent'
+						'Name' => 'Validation key for TAAE agent'
 					],
 					'Checks' => [
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => '😀'
 						]
 					],
@@ -507,11 +507,11 @@ class testFormNetworkDiscovery extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Name' => 'Empty fields for TAA agent'
+						'Name' => 'Empty fields for TAAE agent'
 					],
 					'Checks' => [
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Port range' => ''
 						]
 					],
@@ -526,11 +526,11 @@ class testFormNetworkDiscovery extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Name' => 'Validation priority for TAA agent'
+						'Name' => 'Validation priority for TAAE agent'
 					],
 					'Checks' => [
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Port range' => 'test'
 						]
 					],
@@ -542,11 +542,11 @@ class testFormNetworkDiscovery extends CWebTest {
 				[
 					'expected' => TEST_BAD,
 					'fields' => [
-						'Name' => 'Validation for TAA agent'
+						'Name' => 'Validation for TAAE agent'
 					],
 					'Checks' => [
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Port range' => 'test',
 							'Key' => 'test'
 						]
@@ -824,7 +824,7 @@ class testFormNetworkDiscovery extends CWebTest {
 						'Enabled' => false
 					],
 					'radios' => [
-						'Device uniqueness criteria' => 'TAA agent (100-500) "test"',
+						'Device uniqueness criteria' => 'TAAE agent (100-500) "test"',
 						'Host name' => 'IP address',
 						'Visible name' => 'DNS name'
 					],
@@ -842,7 +842,7 @@ class testFormNetworkDiscovery extends CWebTest {
 							'Port range' => 1
 						],
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Port range' => '100-500',
 							'Key' => 'test'
 						]
@@ -889,7 +889,7 @@ class testFormNetworkDiscovery extends CWebTest {
 						'Enabled' => true
 					],
 					'radios' => [
-						'Device uniqueness criteria' => 'TAA agent "key[param1, param2]"',
+						'Device uniqueness criteria' => 'TAAE agent "key[param1, param2]"',
 						'Host name' => 'SNMPv1 agent (9999,10-200) "😀"',
 						'Visible name' => 'SNMPv3 agent "😀"'
 					],
@@ -916,7 +916,7 @@ class testFormNetworkDiscovery extends CWebTest {
 							'Privacy passphrase' => '😀'
 						],
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => 'key[param1, param2]'
 						]
 					]
@@ -948,7 +948,7 @@ class testFormNetworkDiscovery extends CWebTest {
 							'Privacy passphrase' => '      priv_pass          '
 						],
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => '     key[param1, param2]        '
 						]
 					]
@@ -1011,7 +1011,7 @@ class testFormNetworkDiscovery extends CWebTest {
 						['Check type' => 'TCP'],
 						['Check type' => 'Telnet'],
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => 'key[parameter_1, parameter_2]'
 						]
 					]
@@ -1044,7 +1044,7 @@ class testFormNetworkDiscovery extends CWebTest {
 							'Privacy passphrase' => STRING_64
 						],
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => STRING_2048
 						]
 					]
@@ -1078,7 +1078,7 @@ class testFormNetworkDiscovery extends CWebTest {
 							'Privacy passphrase' => STRING_64
 						],
 						[
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => STRING_2048
 						]
 					]
@@ -1180,7 +1180,7 @@ class testFormNetworkDiscovery extends CWebTest {
 				}
 				elseif (CTestArrayHelper::get($check, 'Port range') !== null) {
 					switch ($check['Check type']) {
-						case 'TAA agent':
+						case 'TAAE agent':
 							$type_text = $check['Check type'].' ('.$check['Port range'].') "'.$check['Key'].'"';
 							break;
 
@@ -1197,7 +1197,7 @@ class testFormNetworkDiscovery extends CWebTest {
 				}
 				else {
 					switch ($check['Check type']) {
-						case 'TAA agent':
+						case 'TAAE agent':
 							$type_text = $check['Check type'].' "'.$check['Key'].'"';
 							break;
 
@@ -1228,7 +1228,7 @@ class testFormNetworkDiscovery extends CWebTest {
 					foreach ($radio_labels as $label) {
 						$field = $form->getField($label);
 						$this->assertEquals(in_array($check['Check type'],
-								['TAA agent', 'SNMPv1 agent', 'SNMPv2 agent', 'SNMPv3 agent']),
+								['TAAE agent', 'SNMPv1 agent', 'SNMPv2 agent', 'SNMPv3 agent']),
 								$field->query('xpath:.//input[@type="radio"]/../label[text()='.
 								CXPathHelper::escapeQuotes($type_text).']')->exists()
 						);
@@ -1406,30 +1406,30 @@ class testFormNetworkDiscovery extends CWebTest {
 						[
 							'action' => USER_ACTION_UPDATE,
 							'index' => 2,
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => 'test_key'
 						]
 					],
 					'expected_checks' => [
 						'ICMP ping "allow redirect"',
 						'POP (2020)',
-						'TAA agent "test_key"'
+						'TAAE agent "test_key"'
 					],
 					'expected_radios' => [
 						'Device uniqueness criteria' => [
 							'IP address' => true,
-							'TAA agent "test_key"' => false
+							'TAAE agent "test_key"' => false
 						],
 						'Host name' => [
 							'DNS name' => true,
 							'IP address' => false,
-							'TAA agent "test_key"' => false
+							'TAAE agent "test_key"' => false
 						],
 						'Visible name' => [
 							'Host name' => false,
 							'DNS name' => false,
 							'IP address' => true,
-							'TAA agent "test_key"' => false
+							'TAAE agent "test_key"' => false
 						]
 					]
 				]
@@ -1650,7 +1650,7 @@ class testFormNetworkDiscovery extends CWebTest {
 						],
 						[
 							'action' => USER_ACTION_ADD,
-							'Check type' => 'TAA agent',
+							'Check type' => 'TAAE agent',
 							'Key' => 'key[cloned_param1, cloned_param2]'
 						]
 					],
@@ -1658,7 +1658,7 @@ class testFormNetworkDiscovery extends CWebTest {
 						'SNMPv1 agent (165) ".1.9.6.1.10.1.9.9.9"',
 						'SNMPv2 agent (113) "v2 new cloned SNMP OID"',
 						'TCP (9988)',
-						'TAA agent "key[cloned_param1, cloned_param2]"'
+						'TAAE agent "key[cloned_param1, cloned_param2]"'
 					],
 					'expected_checks' => [
 						[
@@ -1679,7 +1679,7 @@ class testFormNetworkDiscovery extends CWebTest {
 						]
 					],
 					'radios' => [
-						'Device uniqueness criteria' => 'TAA agent "key[cloned_param1, cloned_param2]"',
+						'Device uniqueness criteria' => 'TAAE agent "key[cloned_param1, cloned_param2]"',
 						'Host name' => 'IP address',
 						'Visible name' => 'SNMPv2 agent (113) "v2 new cloned SNMP OID"'
 					]

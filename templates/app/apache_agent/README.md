@@ -1,10 +1,10 @@
 
-# Apache by TAA agent
+# Apache by TAAE agent
 
 ## Overview
 
-This template is designed for the effortless deployment of Apache monitoring by TAA via TAA agent and doesn't require any external scripts.
-The template `Apache by TAA agent` - collects metrics by polling [mod_status](https://httpd.apache.org/docs/current/mod/mod_status.html) locally with TAA agent:
+This template is designed for the effortless deployment of Apache monitoring by TAAE via TAAE agent and doesn't require any external scripts.
+The template `Apache by TAAE agent` - collects metrics by polling [mod_status](https://httpd.apache.org/docs/current/mod/mod_status.html) locally with TAAE agent:
   
 ```text
 127.0.0.1
@@ -47,11 +47,11 @@ Scoreboard: ...
 
 ```
   
-It also uses TAA agent to collect `Apache` Linux process statistics such as CPU usage, memory usage, and whether the process is running or not.
+It also uses TAAE agent to collect `Apache` Linux process statistics such as CPU usage, memory usage, and whether the process is running or not.
 
 ## Requirements
 
-TAA version: 7.4 and higher.
+TAAE version: 7.4 and higher.
 
 ## Tested versions
 
@@ -60,7 +60,7 @@ This template has been tested on:
 
 ## Configuration
 
-> TAA should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
+> TAAE should be configured according to the instructions in the [Templates out of the box](https://www.zabbix.com/documentation/7.4/manual/config/templates_out_of_the_box) section.
 
 ## Setup
 
@@ -78,7 +78,7 @@ This is an example configuration of the Apache web server:
 ```
 
 If you use another path, then do not forget to change the `{$APACHE.STATUS.PATH}` macro.
-Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
+Install and setup [TAAE agent](https://www.zabbix.com/documentation/7.4/manual/installation/install_from_packages).
 
 ### Macros used
 
@@ -96,9 +96,9 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|Get status|<p>Getting data from a machine-readable version of the Apache status page.</p><p>For more information see Apache Module [mod_status](https://httpd.apache.org/docs/current/mod/mod_status.html).</p>|TAA agent|web.page.get["{$APACHE.STATUS.SCHEME}://{$APACHE.STATUS.HOST}:{$APACHE.STATUS.PORT}/{$APACHE.STATUS.PATH}"]<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
-|Service ping||TAA agent|net.tcp.service[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
-|Service response time||TAA agent|net.tcp.service.perf[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"]|
+|Get status|<p>Getting data from a machine-readable version of the Apache status page.</p><p>For more information see Apache Module [mod_status](https://httpd.apache.org/docs/current/mod/mod_status.html).</p>|TAAE agent|web.page.get["{$APACHE.STATUS.SCHEME}://{$APACHE.STATUS.HOST}:{$APACHE.STATUS.PORT}/{$APACHE.STATUS.PATH}"]<p>**Preprocessing**</p><ul><li><p>JavaScript: `The text is too long. Please see the template.`</p></li></ul>|
+|Service ping||TAAE agent|net.tcp.service[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"]<p>**Preprocessing**</p><ul><li><p>Discard unchanged with heartbeat: `10m`</p></li></ul>|
+|Service response time||TAAE agent|net.tcp.service.perf[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"]|
 |Total bytes|<p>The total bytes served.</p>|Dependent item|apache.bytes<p>**Preprocessing**</p><ul><li><p>JSON Path: `$["Total kBytes"]`</p></li><li><p>Custom multiplier: `1024`</p></li></ul>|
 |Bytes per second|<p>It is calculated as a rate of change for total bytes statistics.</p><p>`BytesPerSec` is not used, as it counts the average since the last Apache server start.</p>|Dependent item|apache.bytes.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$["Total kBytes"]`</p></li><li><p>Custom multiplier: `1024`</p></li><li>Change per second</li></ul>|
 |Requests per second|<p>It is calculated as a rate of change for the "Total requests" statistics.</p><p>`ReqPerSec` is not used, as it counts the average since the last Apache server start.</p>|Dependent item|apache.requests.rate<p>**Preprocessing**</p><ul><li><p>JSON Path: `$["Total Accesses"]`</p></li><li>Change per second</li></ul>|
@@ -118,14 +118,14 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 |Workers slot with no current process|<p>The number of slots with no current process.</p>|Dependent item|apache.workers.slot<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Workers.slot`</p></li></ul>|
 |Workers starting up|<p>The number of workers in starting state.</p>|Dependent item|apache.workers.starting<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Workers.starting`</p></li></ul>|
 |Workers waiting for connection|<p>The number of workers in waiting state.</p>|Dependent item|apache.workers.waiting<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.Workers.waiting`</p></li></ul>|
-|Get processes summary|<p>The aggregated data of summary metrics for all processes.</p>|TAA agent|proc.get[{$APACHE.PROCESS.NAME.PARAMETER},,,summary]|
+|Get processes summary|<p>The aggregated data of summary metrics for all processes.</p>|TAAE agent|proc.get[{$APACHE.PROCESS.NAME.PARAMETER},,,summary]|
 
 ### Triggers
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Apache: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Apache by TAA agent/apache.uptime)<10m`|Info|**Manual close**: Yes|
-|Apache: Version has changed|<p>Apache version has changed. Acknowledge to close the problem manually.</p>|`last(/Apache by TAA agent/apache.version,#1)<>last(/Apache by TAA agent/apache.version,#2) and length(last(/Apache by TAA agent/apache.version))>0`|Info|**Manual close**: Yes|
+|Apache: Service has been restarted|<p>Uptime is less than 10 minutes.</p>|`last(/Apache by TAAE agent/apache.uptime)<10m`|Info|**Manual close**: Yes|
+|Apache: Version has changed|<p>Apache version has changed. Acknowledge to close the problem manually.</p>|`last(/Apache by TAAE agent/apache.version,#1)<>last(/Apache by TAAE agent/apache.version,#2) and length(last(/Apache by TAAE agent/apache.version))>0`|Info|**Manual close**: Yes|
 
 ### LLD rule Event MPM discovery
 
@@ -154,7 +154,7 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Type|Key and additional info|
 |----|-----------|----|-----------------------|
-|CPU utilization|<p>The percentage of the CPU utilization by a process {#APACHE.NAME}.</p>|TAA agent|proc.cpu.util[{#APACHE.NAME}]|
+|CPU utilization|<p>The percentage of the CPU utilization by a process {#APACHE.NAME}.</p>|TAAE agent|proc.cpu.util[{#APACHE.NAME}]|
 |Get process data|<p>The summary metrics aggregated by a process {#APACHE.NAME}.</p>|Dependent item|apache.proc.get[{#APACHE.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.[?(@["name"]=="{#APACHE.NAME}")].first()`</p><p>⛔️Custom on fail: Set value to: `Failed to retrieve process {#APACHE.NAME} data`</p></li></ul>|
 |Memory usage (rss)|<p>The summary of resident set size memory used by a process {#APACHE.NAME} expressed in bytes.</p>|Dependent item|apache.proc.rss[{#APACHE.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.rss`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
 |Memory usage (vsize)|<p>The summary of virtual memory used by a process {#APACHE.NAME} expressed in bytes.</p>|Dependent item|apache.proc.vmem[{#APACHE.NAME}]<p>**Preprocessing**</p><ul><li><p>JSON Path: `$.vsize`</p><p>⛔️Custom on fail: Discard value</p></li></ul>|
@@ -165,14 +165,14 @@ Install and setup [TAA agent](https://www.zabbix.com/documentation/7.4/manual/in
 
 |Name|Description|Expression|Severity|Dependencies and additional info|
 |----|-----------|----------|--------|--------------------------------|
-|Apache: Process is not running||`last(/Apache by TAA agent/apache.proc.num[{#APACHE.NAME}])=0`|High||
-|Apache: Service is down||`last(/Apache by TAA agent/net.tcp.service[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"])=0 and last(/Apache by TAA agent/apache.proc.num[{#APACHE.NAME}])>0`|Average|**Manual close**: Yes|
-|Apache: Failed to fetch status page|<p>TAA has not received any data for items for the last 30 minutes.</p>|`nodata(/Apache by TAA agent/web.page.get["{$APACHE.STATUS.SCHEME}://{$APACHE.STATUS.HOST}:{$APACHE.STATUS.PORT}/{$APACHE.STATUS.PATH}"],30m)=1 and last(/Apache by TAA agent/apache.proc.num[{#APACHE.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
-|Apache: Service response time is too high||`min(/Apache by TAA agent/net.tcp.service.perf[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"],5m)>{$APACHE.RESPONSE_TIME.MAX.WARN} and last(/Apache by TAA agent/apache.proc.num[{#APACHE.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
+|Apache: Process is not running||`last(/Apache by TAAE agent/apache.proc.num[{#APACHE.NAME}])=0`|High||
+|Apache: Service is down||`last(/Apache by TAAE agent/net.tcp.service[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"])=0 and last(/Apache by TAAE agent/apache.proc.num[{#APACHE.NAME}])>0`|Average|**Manual close**: Yes|
+|Apache: Failed to fetch status page|<p>TAAE has not received any data for items for the last 30 minutes.</p>|`nodata(/Apache by TAAE agent/web.page.get["{$APACHE.STATUS.SCHEME}://{$APACHE.STATUS.HOST}:{$APACHE.STATUS.PORT}/{$APACHE.STATUS.PATH}"],30m)=1 and last(/Apache by TAAE agent/apache.proc.num[{#APACHE.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
+|Apache: Service response time is too high||`min(/Apache by TAAE agent/net.tcp.service.perf[http,"{$APACHE.STATUS.HOST}","{$APACHE.STATUS.PORT}"],5m)>{$APACHE.RESPONSE_TIME.MAX.WARN} and last(/Apache by TAAE agent/apache.proc.num[{#APACHE.NAME}])>0`|Warning|**Manual close**: Yes<br>**Depends on**:<br><ul><li>Apache: Service is down</li></ul>|
 
 ## Feedback
 
 Please report any issues with the template at [`https://support.zabbix.com`](https://support.zabbix.com)
 
-You can also provide feedback, discuss the template, or ask for help at [`TAA forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
+You can also provide feedback, discuss the template, or ask for help at [`TAAE forums`](https://www.zabbix.com/forum/zabbix-suggestions-and-feedback)
 

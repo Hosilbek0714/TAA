@@ -19,7 +19,7 @@ require_once __DIR__.'/../include/CIntegrationTest.php';
 
 class testTlsRequest extends TlsCaseBase {
 	public function configPairsSetupDataProvider() {
-		// Tuples where first entry is in format for cert generation, second in format for TAA issuer/subject checks.
+		// Tuples where first entry is in format for cert generation, second in format for TAAE issuer/subject checks.
 
 		// Simple case.
 		yield [

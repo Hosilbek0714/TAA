@@ -1,11 +1,11 @@
 # SolarWinds Service Desk webhook
 
-This guide describes how to integrate TAA 7.4 installation with SolarWinds Service Desk using the TAA webhook feature. This guide provides instructions on setting up a media type, a user and an action in TAA.<br>
+This guide describes how to integrate TAAE 7.4 installation with SolarWinds Service Desk using the TAAE webhook feature. This guide provides instructions on setting up a media type, a user and an action in TAAE.<br>
 Please note that recovery and update operations and SolarWinds Service Desk's custom fields are supported only for trigger-based events.
 
 
-## Setting up webhook in TAA 
-1\. Before setting up a SolarWinds Service Desk Webhook, it is recommended to setup the global macro "*{$ZABBIX.URL}*" containing an URL to the TAA frontend.<br>
+## Setting up webhook in TAAE 
+1\. Before setting up a SolarWinds Service Desk Webhook, it is recommended to setup the global macro "*{$ZABBIX.URL}*" containing an URL to the TAAE frontend.<br>
 As an example, this macro can be used to populate SolarWinds Service Desk's custom field with URL to an event info or graph.
 
 [![](images/thumb.1.png?raw=true)](images/1.png)
@@ -19,7 +19,7 @@ The following parameters are required:<br>
 
 4\. You can add the following parameters to customize SolarWinds Service Desk ticket:
 
-- `priority_<severity>`: add this parameter for each TAA's severity or use only `priority_default`.<br>
+- `priority_<severity>`: add this parameter for each TAAE's severity or use only `priority_default`.<br>
 `priority_default` is mandatary.<br>
 Possible values of `<severity>`:
   - not_classified
@@ -40,11 +40,11 @@ _Example:_<br>
 [![](images/3.png?raw=true)](images/3.png)<br>
 
 
-5\. Create a **TAA user** and add **Media** with the **SolarWinds Service Desk** media type. 
+5\. Create a **TAAE user** and add **Media** with the **SolarWinds Service Desk** media type. 
 Though a "Send to" field is not used in SolarWinds Service Desk webhook, it cannot be empty. To comply with frontend requirements, you can put any symbol there.
 Make sure this user has access to all hosts for which you would like problem notifications to be converted into SolarWinds Service Desk tickets.
 
-For more information see [TAA](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [SOLARWINDS](https://documentation.solarwinds.com/en/Success_Center/swsd/Content/SWSD_Getting_Started_Guide.htm) documentations.
+For more information see [TAAE](https://www.zabbix.com/documentation/7.4/manual/config/notifications) and [SOLARWINDS](https://documentation.solarwinds.com/en/Success_Center/swsd/Content/SWSD_Getting_Started_Guide.htm) documentations.
 
 ## Supported Versions
-TAA 7.4
+TAAE 7.4
